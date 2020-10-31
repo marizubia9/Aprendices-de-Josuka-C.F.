@@ -2,6 +2,9 @@ package Aprendices_de_Josuka.LD;
 
 import java.sql.Date;
 
+import javax.jdo.annotations.PersistenceCapable;
+
+@PersistenceCapable
 public class Entrenador {
 
 	private String nombre;
