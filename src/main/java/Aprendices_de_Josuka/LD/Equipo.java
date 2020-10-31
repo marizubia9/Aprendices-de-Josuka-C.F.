@@ -14,8 +14,11 @@ public class Equipo {
 	private String nombre;
 	@Column(name="nombre_categoria")
 	private Categoria categoria;
+	private Entrenador entrenador; 
+	private Set<Jugador>lista_jugador;
+	private Set<Material>inventario;
 	
-	public Equipo(String nombre, Set<Jugador> lista_jugador, Entrenador entrenador, Categoria categoria) {
+	public Equipo(String nombre,Categoria categoria) {
 		super();
 		this.nombre = nombre;
 		this.categoria = categoria;

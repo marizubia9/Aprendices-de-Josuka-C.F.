@@ -17,22 +17,21 @@ public class Partido {
 	@Column(name="equipo_1")
 	private Equipo equipo_1;
 	@Column(name="equipo_2")
-	private Equipo equipo_2;
-	private Entrenador entrenador_sancionado_equipo1;
-	private Entrenador entrenador_sancionado_equipo2;
-	private Set<Jugador> jugador_sancionado;
+	private String equipo_2;
+	private Set<Sancion>sanciones;
+//	private Equipo equipo_2;
+//	private Entrenador entrenador_sancionado_equipo1;
+//	private Entrenador entrenador_sancionado_equipo2;
+//	private Set<Jugador> jugador_sancionado;
 	
-	public Partido(String cod_partido, Date fecha, int resultado, Equipo equipo_1, Equipo equipo_2,
-			Entrenador entrenador_sancionado_equipo1,Entrenador entrenador_sancionado_equipo2, Set<Jugador> jugador_sancionado) {
+	public Partido(String cod_partido, Date fecha, int resultado, Equipo equipo_1, String equipo_2) {
 		super();
 		this.cod_partido = cod_partido;
 		this.fecha = fecha;
 		this.resultado = resultado;
 		this.equipo_1 = equipo_1;
 		this.equipo_2 = equipo_2;
-		this.entrenador_sancionado_equipo1 = entrenador_sancionado_equipo1;
-		this.entrenador_sancionado_equipo2 = entrenador_sancionado_equipo2;
-		this.jugador_sancionado = jugador_sancionado;
+		
 	}
 
 	public String getCod_partido() {
@@ -67,37 +66,8 @@ public class Partido {
 		this.equipo_1 = equipo_1;
 	}
 
-	public Equipo getEquipo_2() {
-		return equipo_2;
-	}
 
-	public void setEquipo_2(Equipo equipo_2) {
-		this.equipo_2 = equipo_2;
-	}
-
-	public Entrenador getEntrenador_sancionado_equipo1() {
-		return entrenador_sancionado_equipo1;
-	}
-
-	public void setEntrenador_sancionado_equipo1(Entrenador entrenador_sancionado_equipo1) {
-		this.entrenador_sancionado_equipo1 = entrenador_sancionado_equipo1;
-	}
-
-	public Entrenador getEntrenador_sancionado_equipo2() {
-		return entrenador_sancionado_equipo2;
-	}
-
-	public void setEntrenador_sancionado_equipo2(Entrenador entrenador_sancionado_equipo2) {
-		this.entrenador_sancionado_equipo2 = entrenador_sancionado_equipo2;
-	}
-
-	public Set<Jugador> getJugador_sancionado() {
-		return jugador_sancionado;
-	}
-
-	public void setJugador_sancionado(Set<Jugador> jugador_sancionado) {
-		this.jugador_sancionado = jugador_sancionado;
-	}
+	
 	
 	
 	
