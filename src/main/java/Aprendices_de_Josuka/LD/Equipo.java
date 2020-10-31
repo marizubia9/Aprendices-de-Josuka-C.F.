@@ -2,18 +2,22 @@ package Aprendices_de_Josuka.LD;
 
 import java.util.Set;
 
+import javax.jdo.annotations.Column;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
 public class Equipo {
 	
+	@PrimaryKey
 	private String nombre;
-	private Set<Jugador> lista_jugador;
-	private Entrenador entrenador;
+	@Column(name="nombre_categoria")
 	private Categoria categoria;
 	
 	public Equipo(String nombre, Set<Jugador> lista_jugador, Entrenador entrenador, Categoria categoria) {
 		super();
 		this.nombre = nombre;
-		this.lista_jugador = lista_jugador;
-		this.entrenador = entrenador;
 		this.categoria = categoria;
 	}
 
@@ -23,22 +27,6 @@ public class Equipo {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public Set<Jugador> getLista_jugador() {
-		return lista_jugador;
-	}
-
-	public void setLista_jugador(Set<Jugador> lista_jugador) {
-		this.lista_jugador = lista_jugador;
-	}
-
-	public Entrenador getEntrenador() {
-		return entrenador;
-	}
-
-	public void setEntrenador(Entrenador entrenador) {
-		this.entrenador = entrenador;
 	}
 
 	public Categoria getCategoria() {

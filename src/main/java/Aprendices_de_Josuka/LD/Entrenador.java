@@ -2,18 +2,22 @@ package Aprendices_de_Josuka.LD;
 
 import java.sql.Date;
 
+import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Entrenador {
-
+	
+	@PrimaryKey
+	private String DNI;
 	private String nombre;
 	private String apellido;
 	private Date fecha_nacimiento;
-	private String DNI;
 	private int telefono;
 	private String correo;
 	private int salario; //Bruto anual
+	@Column(name="Equipo")
 	private Equipo equipo;
 	
 	public Entrenador(String nombre, String apellido, Date fecha_nacimiento, String dNI, int telefono, String correo,

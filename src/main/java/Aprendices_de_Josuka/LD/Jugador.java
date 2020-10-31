@@ -2,17 +2,24 @@ package Aprendices_de_Josuka.LD;
 
 import java.sql.Date;
 
+import javax.jdo.annotations.Column;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
 public class Jugador {
 	
+	@PrimaryKey
+	private String DNI;
 	private String nombre;
 	private String apellido;
 	private Date fecha_nacimiento;
-	private String DNI;
 	private boolean reconocimiento_medico;
 	private boolean estado; //Tiene lesiones o no
 	private int telefono;
 	private String correo;
 	private boolean cuota_pagada;
+	@Column(name="Equipo")
 	private Equipo equipo;
 	
 	
