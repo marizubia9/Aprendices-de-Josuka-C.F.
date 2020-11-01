@@ -13,9 +13,9 @@ public class Entrenador extends Persona{
 	private long salario; //Bruto anual
 
 	
-	public Entrenador(String nombre, String apellido, Date fecha_nacimiento, String DNI, int telefono, String correo,int salario) 
+	public Entrenador(String nombre, String apellido, Date fecha_nacimiento, String DNI, int telefono, String correo,String psw, long salario) 
 	{
-		super(DNI, nombre, apellido, fecha_nacimiento, telefono, correo);
+		super(DNI, nombre, apellido, fecha_nacimiento, telefono, correo, psw);
 		this.salario = salario;
 
 	}

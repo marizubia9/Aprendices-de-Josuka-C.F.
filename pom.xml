@@ -30,6 +30,12 @@
             <version>[5.1.6, 5.9)</version>
         </dependency>
         
+        	<dependency>
+    <groupId>com.toedter</groupId>
+    <artifactId>jcalendar</artifactId>
+    <version>1.4</version>
+	</dependency>
+        
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-api-jdo</artifactId>
@@ -147,5 +153,26 @@
      </plugins>
  
 </build>
- 
+ <profiles>
+        <!-- run as 'mvn exec:java -PventanaPrincipal' -->
+        <profile>
+            <id>ventanaPrincipal</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.IniciarSesion</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
