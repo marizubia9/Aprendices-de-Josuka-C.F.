@@ -5,5 +5,5 @@ package Aprendices_de_Josuka.LD;
 
 public enum Categoria {
 
-	InfantilTxiki, InfantilHonor, CadeteHonor, CadeteeVasca, JuvenilVsaca, JuvenilNacional, JuvenilDivisionDeHonor
+	InfantilTxiki, InfantilHonor, CadeteHonor, CadeteVasca, JuvenilVasca, JuvenilNacional, JuvenilDivisionDeHonor
 }

@@ -3,13 +3,31 @@ package Aprendices_de_Josuka.LP;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Aprendices_de_Josuka.LN.Gestor;
+
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
+
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 public class Principal_Administrador extends JFrame {
 
 	private JPanel contentPane;
+	private JLabel txtLosAprendicesDe;
+	private JButton btnAnadirEquipo;
 
 	/**
 	 * Launch the application.
@@ -31,12 +49,59 @@ public class Principal_Administrador extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal_Administrador() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
-	}
+		initComponents();
+		this.setVisible(true);
+}
 
+
+public void initComponents()
+{
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	setBounds(100, 100, 1423, 904);
+	contentPane = new JPanel();
+	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+	setContentPane(contentPane);
+	contentPane.setLayout(null);
+	
+	JPanel panel_superior = new JPanel();
+	panel_superior.setBounds(0, 0, 1401, 189);
+	panel_superior.setBackground(new Color(0, 102, 0));
+	contentPane.add(panel_superior);
+	panel_superior.setLayout(null);
+	
+	txtLosAprendicesDe = new JLabel();
+	txtLosAprendicesDe.setBackground(new Color(0, 102, 0));
+	txtLosAprendicesDe.setForeground(Color.WHITE);
+	txtLosAprendicesDe.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 40));
+	txtLosAprendicesDe.setText("LOS APRENDICES DE JOSUKA C.F.");
+	txtLosAprendicesDe.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+	txtLosAprendicesDe.setBounds(46, 57, 702, 89);
+	panel_superior.add(txtLosAprendicesDe);
+	
+	
+	JPanel panel_central = new JPanel();
+	panel_central.setBackground(Color.WHITE);
+	panel_central.setBounds(0, 187, 1401, 661);
+	contentPane.add(panel_central);
+	panel_central.setLayout(null);
+	
+	btnAnadirEquipo = new JButton("AÑADIR EQUIPO");
+	btnAnadirEquipo.setForeground(Color.WHITE);
+	btnAnadirEquipo.setBackground(Color.DARK_GRAY);
+	btnAnadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 25));
+	btnAnadirEquipo.setBounds(15, 16, 245, 78);
+	panel_central.add(btnAnadirEquipo);
+	
+	btnAnadirEquipo.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+
+			setVisible(false);
+			RegistrarEquipo r= new RegistrarEquipo();
+			r.setVisible(true);
+			
+		}
+	});
+
+
+}
 }
