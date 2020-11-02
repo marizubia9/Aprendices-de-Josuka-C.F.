@@ -19,7 +19,8 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
-import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.JLabel;
 import com.toedter.calendar.JDayChooser;
@@ -193,14 +194,17 @@ public class RegistrarEntrenador extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String nombre=txtNombre.getText();
 				String apellido=txtApellido.getText();
-				Date fecha= new Date(1);
+				Date fecha_date= dateChooser.getDate();
+				String DATE_FORMAT = "dd/MM/yyyy";
+			    SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+			    String fecha_S =sdf.format(fecha_date);
 				String DNI=txtDNI.getText();
 				int telefono=Integer.parseInt(txtTelefono.getText());
 				String correo=txtCorreo.getText();
 				String psw = txtPsw.getText();
 
 			try {
-				Gestor.getInstance().RegistrarEntrenador(nombre, apellido, fecha, DNI, telefono, correo, psw);
+				Gestor.getInstance().RegistrarEntrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw);
 			} catch (RemoteException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

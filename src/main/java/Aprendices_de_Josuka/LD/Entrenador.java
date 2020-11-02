@@ -13,14 +13,14 @@ public class Entrenador {
 	private String DNI;
 	private String nombre;
 	private String apellido;
-	private Date fecha_nacimiento;
+	private String fecha_nacimiento;
 	private int telefono;
 	private String correo;
 	private String psw;
 	private long salario; //Bruto anual
 
 	
-	public Entrenador(String nombre, String apellido, Date fecha_nacimiento, String DNI, int telefono, String correo,String psw, long salario) 
+	public Entrenador(String nombre, String apellido, String  fecha_nacimiento, String DNI, int telefono, String correo,String psw, long salario) 
 	{
 		this.DNI = DNI;
 		this.nombre = nombre;
@@ -64,12 +64,12 @@ public class Entrenador {
 	}
 
 
-	public Date getFecha_nacimiento() {
+	public String getFecha_nacimiento() {
 		return fecha_nacimiento;
 	}
 
 
-	public void setFecha_nacimiento(Date fecha_nacimiento) {
+	public void setFecha_nacimiento(String fecha_nacimiento) {
 		this.fecha_nacimiento = fecha_nacimiento;
 	}
 

@@ -71,13 +71,13 @@ public class Gestor {
 		}
 		return false;
 	}
-	public static void RegistrarJugador(String nombre, String apellido, Date fecha_nacimiento, String DNI, int telefono, String correo,String password)
+	public static void RegistrarJugador(String nombre, String apellido, String fecha_nacimiento, String DNI, int telefono, String correo,String password)
 	{
 		Jugador j= new Jugador (nombre, apellido, fecha_nacimiento, DNI, false, false, telefono, correo,password, false);	
 		DAO.getInstance().guardarObjeto(j);
 	}
 	
-	public static void RegistrarEntrenador(String nombre, String apellido, Date fecha_nacimiento, String DNI, int telefono, String correo,String password)
+	public static void RegistrarEntrenador(String nombre, String apellido, String fecha_nacimiento, String DNI, int telefono, String correo,String password)
 	{
 		Entrenador e= new Entrenador (nombre, apellido, fecha_nacimiento, DNI, telefono, correo,password, 0);	
 		DAO.getInstance().guardarObjeto(e);

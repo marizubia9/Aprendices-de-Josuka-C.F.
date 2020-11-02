@@ -6,14 +6,14 @@ import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
-@PersistenceCapable
+@PersistenceCapable 
 public class Jugador {
 	
 	@PrimaryKey
 	private String DNI;
 	private String nombre;
 	private String apellido;
-	private Date fecha_nacimiento;
+	private String fecha_nacimiento;
 	private int telefono;
 	private String correo;
 	private String psw;
@@ -23,7 +23,7 @@ public class Jugador {
 
 	
 	
-	public Jugador(String nombre, String apellido, Date fecha_nacimiento, String DNI, boolean reconocimiento_medico,
+	public Jugador(String nombre, String apellido, String fecha_nacimiento, String DNI, boolean reconocimiento_medico,
 			boolean estado, int telefono, String correo, String password, boolean cuota_pagada) {
 		
 
@@ -77,16 +77,6 @@ public class Jugador {
 	}
 
 
-
-	public Date getFecha_nacimiento() {
-		return fecha_nacimiento;
-	}
-
-
-
-	public void setFecha_nacimiento(Date fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
-	}
 
 
 
@@ -158,6 +148,18 @@ public class Jugador {
 
 	public void setCuota_pagada(boolean cuota_pagada) {
 		this.cuota_pagada = cuota_pagada;
+	}
+
+
+
+	public String getFecha_nacimiento() {
+		return fecha_nacimiento;
+	}
+
+
+
+	public void setFecha_nacimiento(String fecha_nacimiento) {
+		this.fecha_nacimiento = fecha_nacimiento;
 	}
 	
 	
