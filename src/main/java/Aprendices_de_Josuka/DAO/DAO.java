@@ -39,13 +39,13 @@ public class DAO implements itfDAO {
 		try {
 			if (objeto instanceof Jugador)
 			{
-					objeto = new Jugador(((Jugador) objeto).getNombre(),((Jugador) objeto).getApellido(),((Jugador) objeto).getFecha_nacimiento(),((Jugador) objeto).getDNI(), ((Jugador) objeto).isReconocimiento_medico(),((Jugador) objeto).isEstado(),((Jugador) objeto).getTelefono(),((Jugador) objeto).getCorreo(), ((Jugador) objeto).getPsw(),((Jugador) objeto).isCuota_pagada());
+					objeto = new Jugador(((Jugador) objeto).getNombre(),((Jugador) objeto).getApellido(),((Jugador) objeto).getFecha_nacimiento(),((Jugador) objeto).getDNI(), ((Jugador) objeto).isReconocimiento_medico(),((Jugador) objeto).isEstado(),((Jugador) objeto).getTelefono(),((Jugador) objeto).getCorreo(), ((Jugador) objeto).getPsw(),((Jugador) objeto).isCuota_pagada(),((Jugador) objeto).getAsignado_equipo());
 					persistentManager.makePersistent(objeto);
 			}
 			if (objeto instanceof Entrenador)
 			{	
 					objeto = new Entrenador(((Entrenador) objeto).getNombre(),((Entrenador) objeto).getApellido(),((Entrenador) objeto).getFecha_nacimiento(),
-							((Entrenador) objeto).getDNI(),((Entrenador) objeto).getTelefono(),((Entrenador) objeto).getCorreo(), ((Entrenador) objeto).getPsw(),((Entrenador) objeto).getSalario());
+							((Entrenador) objeto).getDNI(),((Entrenador) objeto).getTelefono(),((Entrenador) objeto).getCorreo(), ((Entrenador) objeto).getPsw(),((Entrenador) objeto).getSalario(), ((Entrenador) objeto).getAsignado_equipo());
 					persistentManager.makePersistent(objeto);
 			}
 

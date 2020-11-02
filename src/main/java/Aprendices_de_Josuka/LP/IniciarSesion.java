@@ -58,7 +58,7 @@ public class IniciarSesion extends JFrame {
 public void initComponents()
 {
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	setBounds(100, 100, 1423, 904);
+	setBounds(100, 100, 1351, 862);
 	contentPane = new JPanel();
 	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 	setContentPane(contentPane);
@@ -91,7 +91,7 @@ public void initComponents()
 	btnEntrar_admin.setBackground(Color.WHITE);
 	btnEntrar_admin.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 	btnEntrar_admin.setText("Entrar como administradora");
-	btnEntrar_admin.setBounds(1084, 86, 286, 41);
+	btnEntrar_admin.setBounds(1005, 89, 286, 41);
 	btnEntrar_admin.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 	panel_superior.add(btnEntrar_admin);
 	

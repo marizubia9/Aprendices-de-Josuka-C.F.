@@ -18,9 +18,10 @@ public class Entrenador {
 	private String correo;
 	private String psw;
 	private long salario; //Bruto anual
+	private boolean asignado_equipo;
 
 	
-	public Entrenador(String nombre, String apellido, String  fecha_nacimiento, String DNI, int telefono, String correo,String psw, long salario) 
+	public Entrenador(String nombre, String apellido, String  fecha_nacimiento, String DNI, int telefono, String correo,String psw, long salario, boolean asignado_equipo) 
 	{
 		this.DNI = DNI;
 		this.nombre = nombre;
@@ -30,6 +31,7 @@ public class Entrenador {
 		this.correo = correo;
 		this.psw= psw;
 		this.salario = salario;
+		this.asignado_equipo = asignado_equipo;
 
 	}
 
@@ -111,6 +113,16 @@ public class Entrenador {
 
 	public void setSalario(long salario) {
 		this.salario = salario;
+	}
+
+
+	public boolean getAsignado_equipo() {
+		return asignado_equipo;
+	}
+
+
+	public void setAsignado_equipo(boolean asignado_equipo) {
+		this.asignado_equipo = asignado_equipo;
 	}
 
 	

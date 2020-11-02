@@ -57,7 +57,7 @@ public class Principal_Administrador extends JFrame {
 public void initComponents()
 {
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	setBounds(100, 100, 1423, 904);
+	setBounds(100, 100, 1351, 862);
 	contentPane = new JPanel();
 	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 	setContentPane(contentPane);
@@ -85,12 +85,20 @@ public void initComponents()
 	contentPane.add(panel_central);
 	panel_central.setLayout(null);
 	
+	JPanel panel_izquierdo = new JPanel();
+	panel_izquierdo.setBorder(null);
+	panel_izquierdo.setForeground(new Color(0, 102, 0));
+	panel_izquierdo.setBackground(new Color(0, 102, 0));
+	panel_izquierdo.setBounds(0, 0, 288, 661);
+	panel_central.add(panel_izquierdo);
+	panel_izquierdo.setLayout(null);
+	
 	btnAnadirEquipo = new JButton("AÑADIR EQUIPO");
+	btnAnadirEquipo.setBounds(0, 0, 288, 88);
+	panel_izquierdo.add(btnAnadirEquipo);
 	btnAnadirEquipo.setForeground(Color.WHITE);
-	btnAnadirEquipo.setBackground(Color.DARK_GRAY);
+	btnAnadirEquipo.setBackground(new Color(0, 102, 0));
 	btnAnadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 25));
-	btnAnadirEquipo.setBounds(15, 16, 245, 78);
-	panel_central.add(btnAnadirEquipo);
 	
 	btnAnadirEquipo.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {

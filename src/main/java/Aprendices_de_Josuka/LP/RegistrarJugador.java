@@ -71,7 +71,7 @@ public class RegistrarJugador extends JFrame {
 	public void initComponents()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1423, 904);
+		setBounds(100, 100, 1351, 862);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -208,7 +208,7 @@ public class RegistrarJugador extends JFrame {
 				String psw = txtPsw.getText();
 
 			try {
-				Gestor.getInstance().RegistrarJugador(nombre, apellido, fecha_S, DNI, telefono, correo, psw);
+				Gestor.getInstance().RegistrarJugador(nombre, apellido, fecha_S, DNI, telefono, correo, psw, false);
 			} catch (RemoteException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

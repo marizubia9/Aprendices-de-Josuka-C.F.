@@ -188,6 +188,7 @@
                 </plugins>
             </build>
         </profile>
+        
         <!-- run as 'mvn exec:java -Pcalendar' -->
         <profile>
             <id>calendar</id>

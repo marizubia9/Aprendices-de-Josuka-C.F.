@@ -24,11 +24,12 @@ public class Jugador {
 	private boolean reconocimiento_medico;
 	private boolean estado; //Tiene lesiones o no
 	private boolean cuota_pagada;
+	private boolean asignado_equipo;
 
 	
 	
 	public Jugador(String nombre, String apellido, String fecha_nacimiento, String DNI, boolean reconocimiento_medico,
-			boolean estado, int telefono, String correo, String password, boolean cuota_pagada) {
+			boolean estado, int telefono, String correo, String password, boolean cuota_pagada, boolean asignado_equipo) {
 		
 
 		this.DNI = DNI;
@@ -41,6 +42,7 @@ public class Jugador {
 		this.reconocimiento_medico = reconocimiento_medico;
 		this.estado = estado;
 		this.cuota_pagada = cuota_pagada;
+		this.asignado_equipo=asignado_equipo;
 
 	}
 
@@ -162,6 +164,18 @@ public class Jugador {
 
 	public void setCuota_pagada(boolean cuota_pagada) {
 		this.cuota_pagada = cuota_pagada;
+	}
+
+
+
+	public boolean getAsignado_equipo() {
+		return asignado_equipo;
+	}
+
+
+
+	public void setAsignado_equipo(boolean asignado_equipo) {
+		this.asignado_equipo = asignado_equipo;
 	}
 
 

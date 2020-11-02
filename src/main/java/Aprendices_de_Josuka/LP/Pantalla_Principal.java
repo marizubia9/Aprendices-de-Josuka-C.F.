@@ -60,7 +60,7 @@ public class Pantalla_Principal extends JFrame {
 	public void initComponents()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1423, 904);
+		setBounds(100, 100, 1351, 862);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -88,7 +88,7 @@ public class Pantalla_Principal extends JFrame {
 		txtEntrar.setBackground(new Color(153, 204, 0));
 		txtEntrar.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
 		txtEntrar.setText("Entrar");
-		txtEntrar.setBounds(1195, 86, 149, 38);
+		txtEntrar.setBounds(1160, 108, 149, 38);
 		txtEntrar.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		panel_superior.add(txtEntrar);
 		

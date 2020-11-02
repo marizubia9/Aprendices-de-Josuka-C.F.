@@ -58,7 +58,7 @@ public class IniciarSesion_Admin extends JFrame {
 public void initComponents()
 {
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	setBounds(100, 100, 1423, 904);
+	setBounds(100, 100, 1351, 862);
 	contentPane = new JPanel();
 	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 	setContentPane(contentPane);
@@ -127,6 +127,7 @@ public void initComponents()
  		try {
 			if (Gestor.getInstance().Entrar_admin(email, psw))
 			{
+				this.setVisible(false);
 				Principal_Administrador a= new Principal_Administrador();
 				a.setVisible(true);
 			}
