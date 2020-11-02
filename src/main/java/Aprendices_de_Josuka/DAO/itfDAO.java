@@ -3,6 +3,8 @@ package Aprendices_de_Josuka.DAO;
 import java.util.List;
 
 import Aprendices_de_Josuka.LD.Administrador;
+import Aprendices_de_Josuka.LD.Entrenador;
+import Aprendices_de_Josuka.LD.Jugador;
 
 public interface itfDAO 
 {
@@ -10,6 +12,10 @@ public interface itfDAO
 
 	public void cerrarConexion();
 	public List<Administrador> getAdmin();
+
+	public List<Jugador> getJugador();
+
+	public List<Entrenador> getEntrenador();
 	
 	
 }

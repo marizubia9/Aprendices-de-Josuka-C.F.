@@ -7,12 +7,18 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Aprendices_de_Josuka.LN.Gestor;
+
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -21,8 +27,8 @@ public class IniciarSesion extends JFrame {
 
 	private JPanel contentPane;
 	private JLabel txtLosAprendicesDe;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtEmail;
+	private JTextField txtPassword;
 
 	/**
 	 * Launch the application.
@@ -114,15 +120,15 @@ public void initComponents()
 	lblIniciarSesion.setBounds(345, 75, 214, 42);
 	panel_central.add(lblIniciarSesion);
 	
-	textField = new JTextField();
-	textField.setBounds(298, 167, 320, 31);
-	panel_central.add(textField);
-	textField.setColumns(10);
+	txtEmail = new JTextField();
+	txtEmail.setBounds(298, 167, 320, 31);
+	panel_central.add(txtEmail);
+	txtEmail.setColumns(10);
 	
-	textField_1 = new JTextField();
-	textField_1.setColumns(10);
-	textField_1.setBounds(298, 250, 320, 31);
-	panel_central.add(textField_1);
+	txtPassword = new JTextField();
+	txtPassword.setColumns(10);
+	txtPassword.setBounds(298, 250, 320, 31);
+	panel_central.add(txtPassword);
 	
 	JButton btnEntrar = new JButton("Entrar\r\n");
 	btnEntrar.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -147,6 +153,15 @@ public void initComponents()
 	btnRegistrarseComoJugador.setBorder(null);
 	btnRegistrarseComoJugador.setBackground(new Color(0, 102, 0));
 	
+	btnEntrar.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			
+			IniciarSesion(txtEmail.getText(),txtPassword.getText());
+		
+			
+		}
+	});
+	
 	btnRegistrarseComoJugador.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
@@ -168,4 +183,40 @@ public void initComponents()
 		}
 	});
 
-}}
+}
+
+public void IniciarSesion(String email, String psw)
+{
+		try {
+		if (Gestor.getInstance().Entrar_Jugador(email, psw))
+		{
+			Principal_Jugador a= new Principal_Jugador();
+			a.setVisible(true);
+		}
+		else
+		{
+			try {
+				if (Gestor.getInstance().Entrar_Entrenador(email, psw))
+				{
+					Principal_Entrenador a= new Principal_Entrenador();
+					a.setVisible(true);
+				}
+				else
+				{
+					JOptionPane error= new JOptionPane("ERROR");
+					error.setVisible(true);
+				}
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	} catch (RemoteException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		
+
+}
+
+}

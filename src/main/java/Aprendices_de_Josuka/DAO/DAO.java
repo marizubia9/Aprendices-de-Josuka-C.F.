@@ -75,6 +75,32 @@ public class DAO implements itfDAO {
 		extent.closeAll();
 		return administradores;
 	}
+	
+	@Override
+	public List<Jugador> getJugador() {
+		// TODO Auto-generated method stub
+		Extent<Jugador> extent = persistentManager.getExtent(Jugador.class, false);
+		List<Jugador> jugadores = new ArrayList<Jugador>();
+
+		for (Jugador p : extent) {
+			jugadores.add(p);
+		}
+		extent.closeAll();
+		return jugadores;
+	}
+	
+	@Override
+	public List<Entrenador> getEntrenador() {
+		// TODO Auto-generated method stub
+		Extent<Entrenador> extent = persistentManager.getExtent(Entrenador.class, false);
+		List<Entrenador> entrenadores = new ArrayList<Entrenador>();
+
+		for (Entrenador p : extent) {
+			entrenadores.add(p);
+		}
+		extent.closeAll();
+		return entrenadores;
+	}
 //	@Override
 //	public List<Usuario> getUsuarios() {
 //		// TODO Auto-generated method stub

@@ -39,6 +39,35 @@ public class Gestor {
 		return false;
 	}
 	
+	public static boolean Entrar_Jugador(String email, String psw)
+	{
+		for( Jugador a: DAO.getInstance().getJugador())
+		{
+			if (a.getCorreo().equals(email)&&a.getPsw().equals(psw))
+			{
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		return false;
+	}
+	
+	public static boolean Entrar_Entrenador(String email, String psw)
+	{
+		for( Entrenador a: DAO.getInstance().getEntrenador())
+		{
+			if (a.getCorreo().equals(email)&&a.getPsw().equals(psw))
+			{
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		return false;
+	}
 	public static void RegistrarJugador(String nombre, String apellido, Date fecha_nacimiento, String DNI, boolean reconocimiento_medico,
 			boolean estado, int telefono, String correo,String password,  boolean cuota_pagada)
 	{
