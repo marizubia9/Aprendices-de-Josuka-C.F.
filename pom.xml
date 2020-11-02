@@ -41,7 +41,14 @@
             <artifactId>datanucleus-api-jdo</artifactId>
             <version>[5.1.4, 5.9)</version>
         </dependency>
-        
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+  		  	<groupId>org.projectlombok</groupId>
+    		<artifactId>lombok</artifactId>
+    		<version>1.18.14</version>
+    		<scope>provided</scope>
+		</dependency>
+
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>

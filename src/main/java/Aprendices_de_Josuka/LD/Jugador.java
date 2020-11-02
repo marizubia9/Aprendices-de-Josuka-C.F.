@@ -6,6 +6,10 @@ import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
+import lombok.Getter;
+import lombok.Setter;
+
+
 @PersistenceCapable 
 public class Jugador {
 	
@@ -77,6 +81,16 @@ public class Jugador {
 	}
 
 
+
+	public String getFecha_nacimiento() {
+		return fecha_nacimiento;
+	}
+
+
+
+	public void setFecha_nacimiento(String fecha_nacimiento) {
+		this.fecha_nacimiento = fecha_nacimiento;
+	}
 
 
 
@@ -152,16 +166,7 @@ public class Jugador {
 
 
 
-	public String getFecha_nacimiento() {
-		return fecha_nacimiento;
-	}
 
-
-
-	public void setFecha_nacimiento(String fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
-	}
-	
 	
 
 	
