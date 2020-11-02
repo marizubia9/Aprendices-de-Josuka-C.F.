@@ -78,6 +78,7 @@ public class DAO implements itfDAO {
 	
 	@Override
 	public List<Jugador> getJugador() {
+	
 		// TODO Auto-generated method stub
 		Extent<Jugador> extent = persistentManager.getExtent(Jugador.class, false);
 		List<Jugador> jugadores = new ArrayList<Jugador>();
@@ -86,6 +87,7 @@ public class DAO implements itfDAO {
 			jugadores.add(p);
 		}
 		extent.closeAll();
+	
 		return jugadores;
 	}
 	

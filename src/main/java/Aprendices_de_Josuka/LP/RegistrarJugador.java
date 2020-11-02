@@ -22,6 +22,7 @@ import java.rmi.RemoteException;
 import java.sql.Date;
 
 import javax.swing.JLabel;
+import com.toedter.calendar.JDateChooser;
 
 public class RegistrarJugador extends JFrame {
 
@@ -38,6 +39,7 @@ public class RegistrarJugador extends JFrame {
 	private JTextField txtTelefono;
 	private JTextField txtCorreo;
 	private JTextField txtPsw;
+	private JDateChooser dateChooser;
 
 	/**
 	 * Launch the application.
@@ -181,6 +183,10 @@ public class RegistrarJugador extends JFrame {
 		txtPsw.setBounds(271, 535, 260, 32);
 		panel_central.add(txtPsw);
 		
+		dateChooser = new JDateChooser();
+		dateChooser.setBounds(383, 307, 148, 31);
+		panel_central.add(dateChooser);
+		
 		
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -193,7 +199,7 @@ public class RegistrarJugador extends JFrame {
 				String psw = txtPsw.getText();
 
 			try {
-				Gestor.getInstance().RegistrarJugador(nombre, apellido, fecha, DNI, false, false, telefono, correo, psw,  false);
+				Gestor.getInstance().RegistrarJugador(nombre, apellido, fecha, DNI, telefono, correo, psw);
 			} catch (RemoteException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

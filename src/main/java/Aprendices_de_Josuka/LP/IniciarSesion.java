@@ -155,8 +155,8 @@ public void initComponents()
 	
 	btnEntrar.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			
-			IniciarSesion(txtEmail.getText(),txtPassword.getText());
+		
+			Entrar(txtEmail.getText(),txtPassword.getText());
 		
 			
 		}
@@ -185,11 +185,12 @@ public void initComponents()
 
 }
 
-public void IniciarSesion(String email, String psw)
+public void Entrar(String email, String psw)
 {
 		try {
 		if (Gestor.getInstance().Entrar_Jugador(email, psw))
 		{
+			setVisible(false);
 			Principal_Jugador a= new Principal_Jugador();
 			a.setVisible(true);
 		}

@@ -22,12 +22,14 @@ import java.rmi.RemoteException;
 import java.sql.Date;
 
 import javax.swing.JLabel;
+import com.toedter.calendar.JDayChooser;
+import com.toedter.calendar.JDateChooser;
 
 public class RegistrarEntrenador extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtLosAprendicesDe;
-	private JLabel lblNuevoJugador;
+	private JLabel lblNuevoEntrenador;
 	private JLabel lblNombre;
 	private JLabel lblApellido;
 	private JLabel lblDni;
@@ -96,11 +98,11 @@ public class RegistrarEntrenador extends JFrame {
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 		
-		lblNuevoJugador = new JLabel("NUEVO JUGADOR");
-		lblNuevoJugador.setForeground(Color.DARK_GRAY);
-		lblNuevoJugador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
-		lblNuevoJugador.setBounds(68, 45, 338, 38);
-		panel_central.add(lblNuevoJugador);
+		lblNuevoEntrenador = new JLabel("NUEVO ENTRENADOR");
+		lblNuevoEntrenador.setForeground(Color.DARK_GRAY);
+		lblNuevoEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
+		lblNuevoEntrenador.setBounds(68, 45, 338, 38);
+		panel_central.add(lblNuevoEntrenador);
 		
 		lblNombre = new JLabel("Nombre");
 		lblNombre.setForeground(Color.DARK_GRAY);
@@ -180,6 +182,10 @@ public class RegistrarEntrenador extends JFrame {
 		txtPsw.setColumns(10);
 		txtPsw.setBounds(271, 535, 260, 32);
 		panel_central.add(txtPsw);
+		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(394, 307, 137, 31);
+		panel_central.add(dateChooser);
 		
 		
 		btnRegistrarse.addActionListener(new ActionListener() {

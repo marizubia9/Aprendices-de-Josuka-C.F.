@@ -41,13 +41,16 @@ public class Gestor {
 	
 	public static boolean Entrar_Jugador(String email, String psw)
 	{
+
 		for( Jugador a: DAO.getInstance().getJugador())
 		{
 			if (a.getCorreo().equals(email)&&a.getPsw().equals(psw))
 			{
+			
 				return true;
 			}
 			else {
+				
 				return false;
 			}
 		}
@@ -68,10 +71,9 @@ public class Gestor {
 		}
 		return false;
 	}
-	public static void RegistrarJugador(String nombre, String apellido, Date fecha_nacimiento, String DNI, boolean reconocimiento_medico,
-			boolean estado, int telefono, String correo,String password,  boolean cuota_pagada)
+	public static void RegistrarJugador(String nombre, String apellido, Date fecha_nacimiento, String DNI, int telefono, String correo,String password)
 	{
-		Jugador j= new Jugador (nombre, apellido, fecha_nacimiento, DNI, reconocimiento_medico, estado, telefono, correo,password, cuota_pagada);	
+		Jugador j= new Jugador (nombre, apellido, fecha_nacimiento, DNI, false, false, telefono, correo,password, false);	
 		DAO.getInstance().guardarObjeto(j);
 	}
 	
