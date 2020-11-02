@@ -20,9 +20,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import javax.swing.JLabel;
 import com.toedter.calendar.JDateChooser;
+import com.toedter.calendar.JSpinnerDateEditor;
 
 public class RegistrarJugador extends JFrame {
 
@@ -40,6 +42,7 @@ public class RegistrarJugador extends JFrame {
 	private JTextField txtCorreo;
 	private JTextField txtPsw;
 	private JDateChooser dateChooser;
+	private Date objDate;
 
 	/**
 	 * Launch the application.
@@ -186,10 +189,13 @@ public class RegistrarJugador extends JFrame {
 		dateChooser = new JDateChooser();
 		dateChooser.setBounds(383, 307, 148, 31);
 		panel_central.add(dateChooser);
-		
+
 		
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+	
+			    
 				String nombre=txtNombre.getText();
 				String apellido=txtApellido.getText();
 				Date fecha= new Date(1);
