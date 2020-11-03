@@ -29,6 +29,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 import javax.swing.JLabel;
 import com.toedter.calendar.JDateChooser;
@@ -67,7 +69,8 @@ public class RegistrarEquipo extends JFrame {
 	private JList<String> JListaJugadores2;
 	private JScrollPane scrollPane2;
 
-	private ArrayList<String> jugadores_lista;
+	private List<String> jugadores_lista;
+	private Set<String> HashSet;
 
 	private boolean MostrarJugadores;
 
@@ -223,7 +226,7 @@ public class RegistrarEquipo extends JFrame {
 
 
 		// Creamos el Jlist1 y lo rellenamos con la lista de los
-		// jugadores (Hay que cambiar la lista por edad)
+		// jugadores
 		panel_scrollpane1 = new JPanel(new BorderLayout());
 		panel_scrollpane1.setLocation(554, 387);
 		panel_scrollpane1.setSize(180, 190);
@@ -326,6 +329,9 @@ public class RegistrarEquipo extends JFrame {
 	{
 		String valor =  JListaJugadores1.getSelectedValue();
 		jugadores_lista.add(valor);
+		HashSet= new HashSet<String>(jugadores_lista);
+		jugadores_lista.clear();
+		jugadores_lista.addAll(HashSet);
 		JListaJugadores2 = new JList<String>(jugadores_lista.toArray(new String[jugadores_lista.size()]));
 		scrollPane2.setViewportView(JListaJugadores2);
 		JListaJugadores2.setLayoutOrientation(JList.VERTICAL);

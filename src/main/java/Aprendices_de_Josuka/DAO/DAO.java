@@ -11,6 +11,7 @@ import javax.jdo.Transaction;
 
 import Aprendices_de_Josuka.LD.Administrador;
 import Aprendices_de_Josuka.LD.Entrenador;
+import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LN.Gestor;
 
@@ -51,7 +52,10 @@ public class DAO implements itfDAO {
 						((Entrenador) objeto).isAsignado_equipo());
 				persistentManager.makePersistent(objeto);
 			}
-
+			if (objeto instanceof Equipo) {
+				objeto = new Equipo(((Equipo) objeto).getNombre(), ((Equipo) objeto).getCategoria());
+				persistentManager.makePersistent(objeto);
+			}
 		} catch (Exception ex) {
 
 			System.err.println("* Exception inserting data into db: " + ex.getMessage());
@@ -104,6 +108,19 @@ public class DAO implements itfDAO {
 		}
 		extent.closeAll();
 		return entrenadores;
+	}
+	
+	@Override
+	public List<Equipo> getEquipo() {
+		// TODO Auto-generated method stub
+		Extent<Equipo> extent = persistentManager.getExtent(Equipo.class, false);
+		List<Equipo> equipos = new ArrayList<Equipo>();
+
+		for (Equipo p : extent) {
+			equipos.add(p);
+		}
+		extent.closeAll();
+		return equipos;
 	}
 	// @Override
 	// public List<Usuario> getUsuarios() {

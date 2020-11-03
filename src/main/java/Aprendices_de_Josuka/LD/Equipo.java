@@ -7,6 +7,11 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @PersistenceCapable
 public class Equipo {
 
@@ -24,20 +29,5 @@ public class Equipo {
 		this.categoria = categoria;
 	}
 
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
 
 }
