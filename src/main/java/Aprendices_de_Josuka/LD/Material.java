@@ -4,6 +4,11 @@ import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @PersistenceCapable
 public class Material {
 
@@ -22,36 +27,5 @@ public class Material {
 		this.precio = precio;
 	}
 
-	public String getCod_material() {
-		return cod_material;
-	}
-
-	public void setCod_material(String cod_material) {
-		this.cod_material = cod_material;
-	}
-
-	public Tipo_Material getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(Tipo_Material tipo) {
-		this.tipo = tipo;
-	}
-
-	public int getCantidad() {
-		return cantidad;
-	}
-
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
-	}
-
-	public long getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(long precio) {
-		this.precio = precio;
-	}
 
 }

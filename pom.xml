@@ -41,13 +41,12 @@
             <artifactId>datanucleus-api-jdo</artifactId>
             <version>[5.1.4, 5.9)</version>
         </dependency>
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
-  		  	<groupId>org.projectlombok</groupId>
-    		<artifactId>lombok</artifactId>
-    		<version>1.18.14</version>
-    		<scope>provided</scope>
-		</dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.16</version>
+			<scope>provided</scope>
+	</dependency>
 
         <dependency>
             <groupId>org.datanucleus</groupId>
@@ -133,6 +132,7 @@
                 </filesets>
             </configuration>
         </plugin>
+        
 
         <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
@@ -141,6 +141,7 @@
                 <source>1.8</source>
                 <target>1.8</target>
                 <encoding>UTF-8</encoding>
+                
             </configuration>
         </plugin>
 
@@ -153,6 +154,13 @@
                 <verbose>true</verbose>
                 <props>${config.files.dir}/datanucleus.properties</props>
                 <fork>false</fork>
+                <annotationProcessorPaths>
+					<path>
+						<groupId>org.projectlombok</groupId>
+						<artifactId>lombok</artifactId>
+						<version>1.18.16</version>
+					</path>
+				</annotationProcessorPaths>
             </configuration>
 
             <executions>

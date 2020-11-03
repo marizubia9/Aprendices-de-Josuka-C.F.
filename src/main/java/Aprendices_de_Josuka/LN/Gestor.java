@@ -82,7 +82,7 @@ public class Gestor {
 		int edad=0;
 		List<String> ListaJugadores1= new ArrayList<>();
 		for (Jugador a : DAO.getInstance().getJugador()) {
-			if (!a.getAsignado_equipo()) 
+			if (!a.isAsignado_equipo()) 
 			{
 				StringTokenizer st= new StringTokenizer(a.getFecha_nacimiento(),"/");
 				Integer[] fecha=new Integer[3];

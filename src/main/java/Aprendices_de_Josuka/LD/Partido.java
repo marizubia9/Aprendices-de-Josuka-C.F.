@@ -7,6 +7,10 @@ import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
 @PersistenceCapable
 public class Partido {
 
@@ -31,40 +35,11 @@ public class Partido {
 		this.resultado = resultado;
 		this.equipo_1 = equipo_1;
 		this.equipo_2 = equipo_2;
-	
+		Sancion s= new Sancion();
+		
 		
 	}
 
-	public String getCod_partido() {
-		return cod_partido;
-	}
-
-	public void setCod_partido(String cod_partido) {
-		this.cod_partido = cod_partido;
-	}
-
-	public Date getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
-
-	public int getResultado() {
-		return resultado;
-	}
-
-	public void setResultado(int resultado) {
-		this.resultado = resultado;
-	}
-
-	public Equipo getEquipo_1() {
-		return equipo_1;
-	}
-
-	public void setEquipo_1(Equipo equipo_1) {
-		this.equipo_1 = equipo_1;
-	}
+	
 
 }

@@ -178,7 +178,7 @@ public class RegistrarEquipo extends JFrame {
 		comboEntrenador.setBounds(554, 286, 374, 32);
 
 		for (Entrenador a : DAO.getInstance().getEntrenador()) {
-			if (!a.getAsignado_equipo()) {
+			if (!a.isAsignado_equipo()) {
 				String nombre_completo= a.getNombre()+" "+a.getApellido();
 				comboEntrenador.addItem(nombre_completo);
 			}

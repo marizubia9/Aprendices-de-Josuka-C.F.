@@ -40,7 +40,7 @@ public class DAO implements itfDAO {
 						((Jugador) objeto).getFecha_nacimiento(), ((Jugador) objeto).getDNI(),
 						((Jugador) objeto).isReconocimiento_medico(), ((Jugador) objeto).isEstado(),
 						((Jugador) objeto).getTelefono(), ((Jugador) objeto).getCorreo(), ((Jugador) objeto).getPsw(),
-						((Jugador) objeto).isCuota_pagada(), ((Jugador) objeto).getAsignado_equipo());
+						((Jugador) objeto).isCuota_pagada(), ((Jugador) objeto).isAsignado_equipo());
 				persistentManager.makePersistent(objeto);
 			}
 			if (objeto instanceof Entrenador) {
@@ -48,7 +48,7 @@ public class DAO implements itfDAO {
 						((Entrenador) objeto).getFecha_nacimiento(), ((Entrenador) objeto).getDNI(),
 						((Entrenador) objeto).getTelefono(), ((Entrenador) objeto).getCorreo(),
 						((Entrenador) objeto).getPsw(), ((Entrenador) objeto).getSalario(),
-						((Entrenador) objeto).getAsignado_equipo());
+						((Entrenador) objeto).isAsignado_equipo());
 				persistentManager.makePersistent(objeto);
 			}
 

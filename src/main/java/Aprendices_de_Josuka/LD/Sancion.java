@@ -5,9 +5,11 @@ import javax.jdo.annotations.PrimaryKey;
 
 import lombok.Data;
 import lombok.Getter;
-
+import lombok.Setter;
+@Getter
+@Setter
 @PersistenceCapable
-public @Data class Sancion {
+public class Sancion {
 
 	@PrimaryKey
 	private String codigo;

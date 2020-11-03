@@ -3,6 +3,11 @@ package Aprendices_de_Josuka.LD;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @PersistenceCapable
 public class Administrador {
 
@@ -16,20 +21,6 @@ public class Administrador {
 		this.psw = psw;
 	}
 
-	public String getEmail() {
-		return email;
-	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPsw() {
-		return psw;
-	}
-
-	public void setPsw(String psw) {
-		this.psw = psw;
-	}
 
 }
