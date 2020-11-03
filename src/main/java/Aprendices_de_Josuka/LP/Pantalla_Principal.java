@@ -56,22 +56,21 @@ public class Pantalla_Principal extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-	
-	public void initComponents()
-	{
+
+	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1351, 862);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JPanel panel_superior = new JPanel();
 		panel_superior.setBounds(0, 0, 1401, 189);
 		panel_superior.setBackground(new Color(0, 102, 0));
 		contentPane.add(panel_superior);
 		panel_superior.setLayout(null);
-		
+
 		txtLosAprendicesDe = new JTextField();
 		txtLosAprendicesDe.setEditable(false);
 		txtLosAprendicesDe.setBackground(new Color(0, 102, 0));
@@ -82,7 +81,7 @@ public class Pantalla_Principal extends JFrame {
 		txtLosAprendicesDe.setBounds(46, 57, 702, 89);
 		panel_superior.add(txtLosAprendicesDe);
 		txtLosAprendicesDe.setColumns(10);
-		
+
 		txtEntrar = new JButton();
 		txtEntrar.setForeground(Color.WHITE);
 		txtEntrar.setBackground(new Color(153, 204, 0));
@@ -91,15 +90,13 @@ public class Pantalla_Principal extends JFrame {
 		txtEntrar.setBounds(1160, 108, 149, 38);
 		txtEntrar.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		panel_superior.add(txtEntrar);
-		
-		
+
 		JPanel panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
 		panel_central.setBounds(213, 365, 991, 250);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
-		
 		txtInfantiles = new JTextField();
 		txtInfantiles.setForeground(Color.DARK_GRAY);
 		txtInfantiles.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
@@ -109,7 +106,7 @@ public class Pantalla_Principal extends JFrame {
 		txtInfantiles.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		panel_central.add(txtInfantiles);
 		txtInfantiles.setColumns(10);
-		
+
 		txtCadetes = new JTextField();
 		txtCadetes.setText("CADETES");
 		txtCadetes.setForeground(Color.DARK_GRAY);
@@ -119,7 +116,7 @@ public class Pantalla_Principal extends JFrame {
 		txtCadetes.setBounds(411, 29, 197, 37);
 		txtCadetes.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		panel_central.add(txtCadetes);
-		
+
 		txtJuveniles = new JTextField();
 		txtJuveniles.setText("JUVENILES");
 		txtJuveniles.setForeground(Color.DARK_GRAY);
@@ -129,25 +126,25 @@ public class Pantalla_Principal extends JFrame {
 		txtJuveniles.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtJuveniles.setBounds(709, 29, 197, 37);
 		panel_central.add(txtJuveniles);
-		
+
 		panel_barra_infantil = new JPanel();
 		panel_barra_infantil.setBackground(new Color(153, 204, 0));
 		panel_barra_infantil.setForeground(new Color(153, 204, 0));
 		panel_barra_infantil.setBounds(94, 70, 150, 5);
 		panel_central.add(panel_barra_infantil);
-		
+
 		panel_barra_cadetes = new JPanel();
 		panel_barra_cadetes.setForeground(new Color(153, 204, 0));
 		panel_barra_cadetes.setBackground(new Color(153, 204, 0));
 		panel_barra_cadetes.setBounds(405, 70, 150, 5);
 		panel_central.add(panel_barra_cadetes);
-		
+
 		panel_barra_juveniles = new JPanel();
 		panel_barra_juveniles.setForeground(new Color(153, 204, 0));
 		panel_barra_juveniles.setBackground(new Color(153, 204, 0));
 		panel_barra_juveniles.setBounds(709, 70, 150, 5);
 		panel_central.add(panel_barra_juveniles);
-		
+
 		txtInfantilTxiki = new JTextField();
 		txtInfantilTxiki.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 23));
 		txtInfantilTxiki.setForeground(Color.GRAY);
@@ -157,7 +154,7 @@ public class Pantalla_Principal extends JFrame {
 		txtInfantilTxiki.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		panel_central.add(txtInfantilTxiki);
 		txtInfantilTxiki.setColumns(10);
-		
+
 		txtInfantilHonor = new JTextField();
 		txtInfantilHonor.setText("Infantil Honor");
 		txtInfantilHonor.setForeground(Color.GRAY);
@@ -167,7 +164,7 @@ public class Pantalla_Principal extends JFrame {
 		txtInfantilHonor.setBounds(98, 133, 146, 26);
 		txtInfantilHonor.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		panel_central.add(txtInfantilHonor);
-		
+
 		txtCadeteHonor = new JTextField();
 		txtCadeteHonor.setText("Cadete Honor");
 		txtCadeteHonor.setForeground(Color.GRAY);
@@ -177,7 +174,7 @@ public class Pantalla_Principal extends JFrame {
 		txtCadeteHonor.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtCadeteHonor.setBounds(411, 91, 146, 26);
 		panel_central.add(txtCadeteHonor);
-		
+
 		txtCadeteVasca = new JTextField();
 		txtCadeteVasca.setText("Cadete Vasca\r\n");
 		txtCadeteVasca.setForeground(Color.GRAY);
@@ -187,7 +184,7 @@ public class Pantalla_Principal extends JFrame {
 		txtCadeteVasca.setBounds(409, 133, 146, 26);
 		txtCadeteVasca.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		panel_central.add(txtCadeteVasca);
-		
+
 		txtJuvenilVasca = new JTextField();
 		txtJuvenilVasca.setText("Juvenil Vasca");
 		txtJuvenilVasca.setForeground(Color.GRAY);
@@ -197,7 +194,7 @@ public class Pantalla_Principal extends JFrame {
 		txtJuvenilVasca.setBounds(713, 91, 146, 26);
 		txtJuvenilVasca.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		panel_central.add(txtJuvenilVasca);
-		
+
 		txtJuvenilNacional = new JTextField();
 		txtJuvenilNacional.setText("Juvenil Nacional");
 		txtJuvenilNacional.setForeground(Color.GRAY);
@@ -207,7 +204,7 @@ public class Pantalla_Principal extends JFrame {
 		txtJuvenilNacional.setBounds(709, 137, 174, 26);
 		txtJuvenilNacional.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		panel_central.add(txtJuvenilNacional);
-		
+
 		txtJuvenilCadeteDe = new JTextField();
 		txtJuvenilCadeteDe.setText("Juvenil Cadete de Honor");
 		txtJuvenilCadeteDe.setForeground(Color.GRAY);
@@ -217,13 +214,13 @@ public class Pantalla_Principal extends JFrame {
 		txtJuvenilCadeteDe.setBounds(709, 179, 174, 26);
 		txtJuvenilCadeteDe.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		panel_central.add(txtJuvenilCadeteDe);
-		
+
 		txtEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				IniciarSesion iniciar=new IniciarSesion();
+				IniciarSesion iniciar = new IniciarSesion();
 				setVisible(false);
 				iniciar.setVisible(true);
-				
+
 			}
 		});
 	}

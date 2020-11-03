@@ -14,8 +14,6 @@ import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LN.Gestor;
 
-
-
 public class DAO implements itfDAO {
 	private static PersistenceManager persistentManager;
 	private static Transaction transaction;
@@ -37,21 +35,25 @@ public class DAO implements itfDAO {
 	@SuppressWarnings("unchecked")
 	public void guardarObjeto(Object objeto) {
 		try {
-			if (objeto instanceof Jugador)
-			{
-					objeto = new Jugador(((Jugador) objeto).getNombre(),((Jugador) objeto).getApellido(),((Jugador) objeto).getFecha_nacimiento(),((Jugador) objeto).getDNI(), ((Jugador) objeto).isReconocimiento_medico(),((Jugador) objeto).isEstado(),((Jugador) objeto).getTelefono(),((Jugador) objeto).getCorreo(), ((Jugador) objeto).getPsw(),((Jugador) objeto).isCuota_pagada(),((Jugador) objeto).getAsignado_equipo());
-					persistentManager.makePersistent(objeto);
+			if (objeto instanceof Jugador) {
+				objeto = new Jugador(((Jugador) objeto).getNombre(), ((Jugador) objeto).getApellido(),
+						((Jugador) objeto).getFecha_nacimiento(), ((Jugador) objeto).getDNI(),
+						((Jugador) objeto).isReconocimiento_medico(), ((Jugador) objeto).isEstado(),
+						((Jugador) objeto).getTelefono(), ((Jugador) objeto).getCorreo(), ((Jugador) objeto).getPsw(),
+						((Jugador) objeto).isCuota_pagada(), ((Jugador) objeto).getAsignado_equipo());
+				persistentManager.makePersistent(objeto);
 			}
-			if (objeto instanceof Entrenador)
-			{	
-					objeto = new Entrenador(((Entrenador) objeto).getNombre(),((Entrenador) objeto).getApellido(),((Entrenador) objeto).getFecha_nacimiento(),
-							((Entrenador) objeto).getDNI(),((Entrenador) objeto).getTelefono(),((Entrenador) objeto).getCorreo(), ((Entrenador) objeto).getPsw(),((Entrenador) objeto).getSalario(), ((Entrenador) objeto).getAsignado_equipo());
-					persistentManager.makePersistent(objeto);
+			if (objeto instanceof Entrenador) {
+				objeto = new Entrenador(((Entrenador) objeto).getNombre(), ((Entrenador) objeto).getApellido(),
+						((Entrenador) objeto).getFecha_nacimiento(), ((Entrenador) objeto).getDNI(),
+						((Entrenador) objeto).getTelefono(), ((Entrenador) objeto).getCorreo(),
+						((Entrenador) objeto).getPsw(), ((Entrenador) objeto).getSalario(),
+						((Entrenador) objeto).getAsignado_equipo());
+				persistentManager.makePersistent(objeto);
 			}
 
+		} catch (Exception ex) {
 
-			} catch (Exception ex) {
-			
 			System.err.println("* Exception inserting data into db: " + ex.getMessage());
 		}
 
@@ -75,10 +77,10 @@ public class DAO implements itfDAO {
 		extent.closeAll();
 		return administradores;
 	}
-	
+
 	@Override
 	public List<Jugador> getJugador() {
-	
+
 		// TODO Auto-generated method stub
 		Extent<Jugador> extent = persistentManager.getExtent(Jugador.class, false);
 		List<Jugador> jugadores = new ArrayList<Jugador>();
@@ -87,10 +89,10 @@ public class DAO implements itfDAO {
 			jugadores.add(p);
 		}
 		extent.closeAll();
-	
+
 		return jugadores;
 	}
-	
+
 	@Override
 	public List<Entrenador> getEntrenador() {
 		// TODO Auto-generated method stub
@@ -103,49 +105,51 @@ public class DAO implements itfDAO {
 		extent.closeAll();
 		return entrenadores;
 	}
-//	@Override
-//	public List<Usuario> getUsuarios() {
-//		// TODO Auto-generated method stub
-//		Extent<Usuario> extent = persistentManager.getExtent(Usuario.class, false);
-//		List<Usuario> usuarios= new ArrayList<Usuario>();
-//
-//		for (Usuario p : extent) {
-//			usuarios.add(p);
-//		}
-//		extent.closeAll();
-//		return usuarios;
-//	}
-//	@Override
-//	public List<Reserva> getReservas() {
-//		// TODO Auto-generated method stub
-//		Extent<Reserva> extent = persistentManager.getExtent(Reserva.class, false);
-//		List<Reserva> reservas = new ArrayList<Reserva>();
-//
-//		for (Reserva p : extent) {
-//			reservas.add(p);
-//		}
-//		extent.closeAll();
-//		return reservas;
-//	}
+	// @Override
+	// public List<Usuario> getUsuarios() {
+	// // TODO Auto-generated method stub
+	// Extent<Usuario> extent = persistentManager.getExtent(Usuario.class,
+	// false);
+	// List<Usuario> usuarios= new ArrayList<Usuario>();
+	//
+	// for (Usuario p : extent) {
+	// usuarios.add(p);
+	// }
+	// extent.closeAll();
+	// return usuarios;
+	// }
+	// @Override
+	// public List<Reserva> getReservas() {
+	// // TODO Auto-generated method stub
+	// Extent<Reserva> extent = persistentManager.getExtent(Reserva.class,
+	// false);
+	// List<Reserva> reservas = new ArrayList<Reserva>();
+	//
+	// for (Reserva p : extent) {
+	// reservas.add(p);
+	// }
+	// extent.closeAll();
+	// return reservas;
+	// }
 
 	@Override
-	public void cerrarConexion() 
-	{
+	public void cerrarConexion() {
 		persistentManager.close();
 
 	}
-	
-//	public Usuario BuscarUsuario(String email)
-//	{
-//		List <Usuario> usuarios = getUsuarios();
-//		Usuario usuario=null;
-//		for (Usuario u: usuarios){
-//			if (u.getEmail().equals(email))
-//			{
-//				usuario = new Usuario(u.getNomUsuario(), u.getApe(), u.getEmail(), u.getPassword(), u.getAeropuerto());
-//			}
-//		}
-//		return usuario;
-//	}
+
+	// public Usuario BuscarUsuario(String email)
+	// {
+	// List <Usuario> usuarios = getUsuarios();
+	// Usuario usuario=null;
+	// for (Usuario u: usuarios){
+	// if (u.getEmail().equals(email))
+	// {
+	// usuario = new Usuario(u.getNomUsuario(), u.getApe(), u.getEmail(),
+	// u.getPassword(), u.getAeropuerto());
+	// }
+	// }
+	// return usuario;
+	// }
 
 }

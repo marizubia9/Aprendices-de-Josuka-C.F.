@@ -188,10 +188,9 @@
                 </plugins>
             </build>
         </profile>
-        
-        <!-- run as 'mvn exec:java -Pcalendar' -->
+        <!-- run as 'mvn exec:java -PRegistrarEquipo' -->
         <profile>
-            <id>calendar</id>
+            <id>RegistrarEquipo</id>
             <build>
                 <plugins>
                     <plugin>
@@ -199,7 +198,7 @@
                         <artifactId>exec-maven-plugin</artifactId>
                         <version>1.2.1</version>
                         <configuration>
-                            <mainClass>prueba</mainClass>
+                            <mainClass>Aprendices_de_Josuka.LP.RegistrarEquipo</mainClass>
                             <arguments>
                                 <argument>${server.hostname}</argument>
                                 <argument>${server.port}</argument>
@@ -209,5 +208,27 @@
                 </plugins>
             </build>
         </profile>
+          <!-- run as 'mvn exec:java -Pprueba' -->
+        <profile>
+            <id>prueba</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>prueba2</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+       
     </profiles>
 </project>

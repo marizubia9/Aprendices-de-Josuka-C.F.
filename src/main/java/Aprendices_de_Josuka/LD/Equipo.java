@@ -9,16 +9,16 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Equipo {
-	
+
 	@PrimaryKey
 	private String nombre;
-	@Column(name="nombre_categoria")
+	@Column(name = "nombre_categoria")
 	private Categoria categoria;
-	private Entrenador entrenador; 
-	private Set<Jugador>lista_jugador;
-	private Set<Material>inventario;
-	
-	public Equipo(String nombre,Categoria categoria) {
+	private Entrenador entrenador;
+	private Set<Jugador> lista_jugador;
+	private Set<Material> inventario;
+
+	public Equipo(String nombre, Categoria categoria) {
 		super();
 		this.nombre = nombre;
 		this.categoria = categoria;
@@ -39,6 +39,5 @@ public class Equipo {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
-	
+
 }

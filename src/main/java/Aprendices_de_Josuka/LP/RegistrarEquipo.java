@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Aprendices_de_Josuka.DAO.DAO;
+import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
@@ -59,8 +60,14 @@ public class RegistrarEquipo extends JFrame {
 	private JPanel panel_central;
 	private JPanel panel_scrollpane2;
 	private JPanel panel_scrollpane1;
+	private List<String> ListaJugadores1;
+	private Categoria cat;
+	private JScrollPane scrollPane_Jugadores1;
+	private JList<String> JListaJugadores1;
+	private JList<String> JListaJugadores2;
+	private JScrollPane scrollPane2;
 
-	private ArrayList<String> jugadores_lista2;
+	private ArrayList<String> jugadores_lista;
 
 	private boolean MostrarJugadores;
 
@@ -152,13 +159,12 @@ public class RegistrarEquipo extends JFrame {
 		comboCategoria = new JComboBox();
 		comboCategoria.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 17));
 		comboCategoria.setBounds(554, 214, 374, 32);
-		comboCategoria.addItem("InfantilTxiki");
-		comboCategoria.addItem("InfantilHonor");
-		comboCategoria.addItem("CadeteHonor");
-		comboCategoria.addItem("CadeteVasca");
-		comboCategoria.addItem("JuvenilVasca");
-		comboCategoria.addItem("JuvenilNacional");
-		comboCategoria.addItem("JuvenilDivisionDeHonor");
+		comboCategoria.addItem(Categoria.ALEVIN);
+		comboCategoria.addItem(Categoria.INFANTIL);
+		comboCategoria.addItem(Categoria.CADETE);
+		comboCategoria.addItem(Categoria.JUVENIL);
+		comboCategoria.addItem(Categoria.SENIOR);
+
 		panel_central.add(comboCategoria);
 
 		JLabel lblEntrenador = new JLabel("Entrenador");
@@ -172,8 +178,9 @@ public class RegistrarEquipo extends JFrame {
 		comboEntrenador.setBounds(554, 286, 374, 32);
 
 		for (Entrenador a : DAO.getInstance().getEntrenador()) {
-			if (a.getAsignado_equipo() == false) {
-				comboEntrenador.addItem(a.getDNI());
+			if (!a.getAsignado_equipo()) {
+				String nombre_completo= a.getNombre()+" "+a.getApellido();
+				comboEntrenador.addItem(nombre_completo);
 			}
 		}
 		panel_central.add(comboEntrenador);
@@ -186,7 +193,7 @@ public class RegistrarEquipo extends JFrame {
 		panel.setBounds(0, -19, 288, 661);
 		panel_central.add(panel);
 
-		button = new JButton("AÑADIR EQUIPO");
+		button = new JButton("ANYADIR EQUIPO");
 		button.setForeground(Color.WHITE);
 		button.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 25));
 		button.setBackground(new Color(0, 102, 0));
@@ -199,94 +206,91 @@ public class RegistrarEquipo extends JFrame {
 		btnMostrarJugadores.setBounds(962, 217, 172, 29);
 		panel_central.add(btnMostrarJugadores);
 
-		jugadores_lista2 = new ArrayList<String>();
+		jugadores_lista = new ArrayList<String>();
+		// Creamos lblJugadores
+		lblJugadores = new JLabel("Jugadores");
+		lblJugadores.setForeground(Color.DARK_GRAY);
+		lblJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
+		lblJugadores.setBounds(396, 374, 135, 31);
+		panel_central.add(lblJugadores);
 		
+		btnAnyadirJugador = new JButton(">>");
+		btnAnyadirJugador.setForeground(Color.WHITE);
+		btnAnyadirJugador.setBackground(new Color(0, 102, 0));
+		btnAnyadirJugador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 16));
+		btnAnyadirJugador.setBounds(743, 468, 158, 29);
+		panel_central.add(btnAnyadirJugador);
 
 
-
+		// Creamos el Jlist1 y lo rellenamos con la lista de los
+		// jugadores (Hay que cambiar la lista por edad)
+		panel_scrollpane1 = new JPanel(new BorderLayout());
+		panel_scrollpane1.setLocation(554, 387);
+		panel_scrollpane1.setSize(180, 190);
+		ListaJugadores1 = new ArrayList<>();
+		scrollPane_Jugadores1 = new JScrollPane();
+		panel_scrollpane1.add(scrollPane_Jugadores1);
+		panel_central.add(panel_scrollpane1);
+		
+		
+		// Creamos Jlist2 en este caso vacio
+		panel_scrollpane2 = new JPanel(new BorderLayout());
+		panel_scrollpane2.setLocation(910, 387);
+		panel_scrollpane2.setSize(180, 190);
+		
+//		List<String> myList2 = new ArrayList<>();
+//		final JList<String> list2 = new JList<String>(myList2.toArray(new String[myList2.size()]));
+		scrollPane2 = new JScrollPane();
+		panel_scrollpane2.add(scrollPane2);
+		panel_central.add(panel_scrollpane2);
+		
 		// Con este boton se muestran los JList de jugadores
 		btnMostrarJugadores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Vaciamos la lista que utilizaremos más tarde
-				jugadores_lista2.clear();
+				// Vaciamos la lista que utilizaremos más tarde
+				jugadores_lista.clear();
+				MostrarJugadores();
 				
-				//Creamos lblJugadores
-				lblJugadores = new JLabel("Jugadores");
-				lblJugadores.setForeground(Color.DARK_GRAY);
-				lblJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-				lblJugadores.setBounds(396, 374, 135, 31);
-				panel_central.add(lblJugadores);
+
 
 				
-				//Creamos el Jlist1 y lo rellenamos con la lista de los jugadores (Hay que cambiar la lista por edad)
-				panel_scrollpane1 = new JPanel(new BorderLayout());
-				panel_scrollpane1.setLocation(554, 387);
-				panel_scrollpane1.setSize(180, 190);
-				List<String> myList = new ArrayList<>();
-				for (Jugador a : DAO.getInstance().getJugador()) {
-					if (a.getAsignado_equipo() == false) {
-						myList.add(a.getDNI());
-					}
-				}
-				final JList<String> list = new JList<String>(myList.toArray(new String[myList.size()]));
-				JScrollPane scrollPane = new JScrollPane();
-				scrollPane.setViewportView(list);
-				list.setLayoutOrientation(JList.VERTICAL);
-				panel_scrollpane1.add(scrollPane);
-				panel_central.add(panel_scrollpane1);
 
-				
-				//Creamos Jlist2 en este caso vacio
-				panel_scrollpane2 = new JPanel(new BorderLayout());
-				panel_scrollpane2.setLocation(910, 387);
-				panel_scrollpane2.setSize(180, 190);
-				List<String> myList2 = new ArrayList<>();
-				final JList<String> list2 = new JList<String>(myList2.toArray(new String[myList2.size()]));
-				JScrollPane scrollPane2 = new JScrollPane();
-				scrollPane2.setViewportView(list2);
-				list2.setLayoutOrientation(JList.VERTICAL);
-				panel_scrollpane2.add(scrollPane2);
-				panel_central.add(panel_scrollpane2);
-
-				btnAnyadirJugador = new JButton("Añadir jugador\r\n");
-				btnAnyadirJugador.setForeground(Color.WHITE);
-				btnAnyadirJugador.setBackground(new Color(0, 102, 0));
-				btnAnyadirJugador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 16));
-				btnAnyadirJugador.setBounds(743, 468, 158, 29);
-				panel_central.add(btnAnyadirJugador);
 				
 				panel_central.repaint();
-				
-				//Pasamos un jugador de una lista a otra
+
+//				 Pasamos un jugador de una lista a otra
 				btnAnyadirJugador.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						//Anyadimos a la lista para insertar en JList2 el valor seleccionado en JList1
-						String valor = list.getSelectedValue();
-						jugadores_lista2.add(valor);
-						
-						panel_scrollpane2.removeAll();
-						panel_scrollpane2 = new JPanel(new BorderLayout());
-						panel_scrollpane2.setLocation(910, 387);
-						panel_scrollpane2.setSize(180, 190);
-
-						final JList<String> list2 = new JList<String>(jugadores_lista2.toArray(new String[jugadores_lista2.size()]));
-
-						JScrollPane scrollPane2 = new JScrollPane();
-						scrollPane2.setViewportView(list2);
-						list2.setLayoutOrientation(JList.VERTICAL);
-						panel_scrollpane2.add(scrollPane2);
-						panel_central.add(panel_scrollpane2);
-
-						btnAnyadirJugador = new JButton("Añadir jugador\r\n");
-						btnAnyadirJugador.setForeground(Color.WHITE);
-						btnAnyadirJugador.setBackground(new Color(0, 102, 0));
-						btnAnyadirJugador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 16));
-						btnAnyadirJugador.setBounds(743, 468, 158, 29);
-						panel_central.add(btnAnyadirJugador);
-						panel_scrollpane1.repaint();
-						panel_central.repaint();
-						contentPane.repaint();
-
+						PasarJugadores();
+//						// Anyadimos a la lista para insertar en JList2 el valor
+//						// seleccionado en JList1
+//						String valor =  ListaJugadores1.getSelectedValue();
+//						jugadores_lista.add(valor);
+//
+//						panel_scrollpane2.removeAll();
+//						panel_scrollpane2 = new JPanel(new BorderLayout());
+//						panel_scrollpane2.setLocation(910, 387);
+//						panel_scrollpane2.setSize(180, 190);
+//
+//						final JList<String> list2 = new JList<String>(
+//								jugadores_lista.toArray(new String[jugadores_lista.size()]));
+//
+//						JScrollPane scrollPane2 = new JScrollPane();
+//						scrollPane2.setViewportView(list2);
+//						list2.setLayoutOrientation(JList.VERTICAL);
+//						panel_scrollpane2.add(scrollPane2);
+//						panel_central.add(panel_scrollpane2);
+//
+//						btnAnyadirJugador = new JButton("Añadir jugador\r\n");
+//						btnAnyadirJugador.setForeground(Color.WHITE);
+//						btnAnyadirJugador.setBackground(new Color(0, 102, 0));
+//						btnAnyadirJugador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 16));
+//						btnAnyadirJugador.setBounds(743, 468, 158, 29);
+//						panel_central.add(btnAnyadirJugador);
+//						panel_scrollpane1.repaint();
+//						panel_central.repaint();
+//						contentPane.repaint();
+//
 					}
 				});
 
@@ -299,7 +303,34 @@ public class RegistrarEquipo extends JFrame {
 			}
 		});
 	}
-
-
+	
+	public void MostrarJugadores()
+	{
+		System.out.println((Categoria)comboCategoria.getSelectedItem());
+		try {
+			ListaJugadores1=Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem());
+			JListaJugadores1 = new JList<String>(ListaJugadores1.toArray(new String[ListaJugadores1.size()]));
+			scrollPane_Jugadores1.setViewportView(JListaJugadores1);
+			JListaJugadores1.setLayoutOrientation(JList.VERTICAL);
+			scrollPane_Jugadores1.repaint();
+			System.out.println("El tamanyo de la lista: "+ListaJugadores1.size());
+			panel_central.repaint();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void PasarJugadores()
+	{
+		String valor =  JListaJugadores1.getSelectedValue();
+		jugadores_lista.add(valor);
+		JListaJugadores2 = new JList<String>(jugadores_lista.toArray(new String[jugadores_lista.size()]));
+		scrollPane2.setViewportView(JListaJugadores2);
+		JListaJugadores2.setLayoutOrientation(JList.VERTICAL);
+		scrollPane2.repaint();
+		panel_central.repaint();
+	}
 
 }
