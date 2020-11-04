@@ -216,9 +216,9 @@
                 </plugins>
             </build>
         </profile>
-          <!-- run as 'mvn exec:java -Pprueba' -->
+         <!-- run as 'mvn exec:java -PVisualizar_Jugadores' -->
         <profile>
-            <id>prueba</id>
+            <id>Visualizar_Jugadores</id>
             <build>
                 <plugins>
                     <plugin>
@@ -226,7 +226,27 @@
                         <artifactId>exec-maven-plugin</artifactId>
                         <version>1.2.1</version>
                         <configuration>
-                            <mainClass>prueba2</mainClass>
+                            <mainClass>Aprendices_de_Josuka.LP.Visualizar_Jugadores</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration> 
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+         <!-- run as 'mvn exec:java -PVisualizar_Entrenadores' -->
+        <profile>
+            <id>Visualizar_Entrenadores</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.Visualizar_Entrenadores</mainClass>
                             <arguments>
                                 <argument>${server.hostname}</argument>
                                 <argument>${server.port}</argument>
@@ -236,6 +256,47 @@
                 </plugins>
             </build>
         </profile>
+        <!-- run as 'mvn exec:java -PVisualizar_Equipos' -->
+        <profile>
+            <id>Visualizar_Equipos</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.Visualizar_Equipos</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+         <!-- run as 'mvn exec:java -PPrincipal_Administrador' -->
+        <profile>
+            <id>Principal_Administrador</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.Principal_Administrador</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+       
         
        
     </profiles>

@@ -93,7 +93,7 @@ public class RegistrarEntrenador extends JFrame {
 
 		JPanel panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 190, 1401, 658);
+		panel_central.setBounds(0, 190, 1335, 633);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 

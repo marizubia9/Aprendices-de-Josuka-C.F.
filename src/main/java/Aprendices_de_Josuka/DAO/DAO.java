@@ -23,13 +23,14 @@ public class DAO implements itfDAO {
 	private static final DAO INSTANCE = new DAO();
 
 	private DAO() {
-	}
-
-	public static DAO getInstance() {
 
 		persistentManagerFactory = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		persistentManager = persistentManagerFactory.getPersistenceManager();
 		transaction = persistentManager.currentTransaction();
+	}
+
+	public static DAO getInstance() {
+
 		return INSTANCE;
 	}
 

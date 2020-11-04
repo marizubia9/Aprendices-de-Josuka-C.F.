@@ -39,6 +39,7 @@ import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
 
 public class RegistrarEquipo extends JFrame {
 
@@ -52,8 +53,6 @@ public class RegistrarEquipo extends JFrame {
 	private JComboBox comboCategoria;
 	private List<Entrenador> ListaEntrenador;
 	private JComboBox comboEntrenador;
-	private JPanel panel;
-	private JButton button;
 	private JLabel lblJugadores;
 	private JList<String> listaJugadores1;
 	private JPanel panel_scrollpane;
@@ -73,6 +72,18 @@ public class RegistrarEquipo extends JFrame {
 	private Set<String> HashSet;
 
 	private boolean MostrarJugadores;
+	private JPanel panel_izquierdo;
+	private JButton button;
+	private JButton button_1;
+	private JButton button_2;
+	private JButton button_3;
+	private JButton button_4;
+	private JButton button_5;
+	private JLabel label;
+	private JLabel label_1;
+	private JLabel label_2;
+	private JLabel label_3;
+	private JLabel label_4;
 
 	/**
 	 * Launch the application.
@@ -125,14 +136,14 @@ public class RegistrarEquipo extends JFrame {
 
 		panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(-12, 190, 1401, 658);
+		panel_central.setBounds(0, 190, 1389, 633);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
 		lblNuevoEquipo = new JLabel("NUEVO EQUIPO\r\n");
 		lblNuevoEquipo.setForeground(Color.DARK_GRAY);
 		lblNuevoEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
-		lblNuevoEquipo.setBounds(309, 45, 338, 38);
+		lblNuevoEquipo.setBounds(385, 44, 338, 38);
 		panel_central.add(lblNuevoEquipo);
 
 		lblNombre = new JLabel("Nombre");
@@ -188,21 +199,6 @@ public class RegistrarEquipo extends JFrame {
 		}
 		panel_central.add(comboEntrenador);
 
-		panel = new JPanel();
-		panel.setLayout(null);
-		panel.setForeground(new Color(0, 102, 0));
-		panel.setBorder(null);
-		panel.setBackground(new Color(0, 102, 0));
-		panel.setBounds(0, -19, 288, 661);
-		panel_central.add(panel);
-
-		button = new JButton("ANYADIR EQUIPO");
-		button.setForeground(Color.WHITE);
-		button.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 25));
-		button.setBackground(new Color(0, 102, 0));
-		button.setBounds(0, 16, 288, 88);
-		panel.add(button);
-
 		btnMostrarJugadores = new JButton("Mostrar Jugadores");
 		btnMostrarJugadores.setBackground(new Color(0, 102, 0));
 		btnMostrarJugadores.setForeground(Color.WHITE);
@@ -246,6 +242,115 @@ public class RegistrarEquipo extends JFrame {
 		scrollPane2 = new JScrollPane();
 		panel_scrollpane2.add(scrollPane2);
 		panel_central.add(panel_scrollpane2);
+		
+		panel_izquierdo = new JPanel();
+		panel_izquierdo.setLayout(null);
+		panel_izquierdo.setForeground(new Color(0, 102, 0));
+		panel_izquierdo.setBorder(null);
+		panel_izquierdo.setBackground(new Color(0, 102, 0));
+		panel_izquierdo.setBounds(0, 0, 328, 638);
+		panel_central.add(panel_izquierdo);
+		
+		button = new JButton("HOME");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Principal_Administrador pa= new Principal_Administrador();
+				pa.setVisible(true);
+				setVisible(false);
+			}
+		});
+		button.setHorizontalAlignment(SwingConstants.LEFT);
+		button.setForeground(Color.WHITE);
+		button.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		button.setBackground(new Color(0, 102, 0));
+		button.setBounds(0, 0, 328, 58);
+		panel_izquierdo.add(button);
+		
+		button_1 = new JButton("AÑADIR EQUIPO");
+		button_1.setEnabled(false);
+		button_1.setHorizontalAlignment(SwingConstants.LEFT);
+		button_1.setForeground(Color.WHITE);
+		button_1.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		button_1.setBackground(new Color(0, 102, 0));
+		button_1.setBounds(0, 58, 328, 58);
+		panel_izquierdo.add(button_1);
+		
+		button_2 = new JButton("AÑADIR INVENTARIO");
+		button_2.setHorizontalAlignment(SwingConstants.LEFT);
+		button_2.setForeground(Color.WHITE);
+		button_2.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		button_2.setBackground(new Color(0, 102, 0));
+		button_2.setBounds(0, 116, 328, 58);
+		panel_izquierdo.add(button_2);
+		
+		button_3 = new JButton("VISUALIZAR  JUGADORES");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				Visualizar_Jugadores r = new Visualizar_Jugadores();
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		button_3.setHorizontalAlignment(SwingConstants.LEFT);
+		button_3.setForeground(Color.WHITE);
+		button_3.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		button_3.setBackground(new Color(0, 102, 0));
+		button_3.setBounds(0, 174, 328, 58);
+		panel_izquierdo.add(button_3);
+		
+		button_4 = new JButton("VISUALIZAR  ENTRENADORES");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				Visualizar_Entrenadores r = new Visualizar_Entrenadores();
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		button_4.setHorizontalAlignment(SwingConstants.LEFT);
+		button_4.setForeground(Color.WHITE);
+		button_4.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		button_4.setBackground(new Color(0, 102, 0));
+		button_4.setBounds(0, 232, 328, 58);
+		panel_izquierdo.add(button_4);
+		
+		button_5 = new JButton("VISUALIZAR  EQUIPOS");
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Visualizar_Equipos r = new Visualizar_Equipos();
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		button_5.setHorizontalAlignment(SwingConstants.LEFT);
+		button_5.setForeground(Color.WHITE);
+		button_5.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		button_5.setBackground(new Color(0, 102, 0));
+		button_5.setBounds(0, 290, 328, 58);
+		panel_izquierdo.add(button_5);
+		
+		label = new JLabel("");
+		label.setBounds(0, 348, 328, 58);
+		panel_izquierdo.add(label);
+		
+		label_1 = new JLabel("");
+		label_1.setBounds(0, 406, 328, 58);
+		panel_izquierdo.add(label_1);
+		
+		label_2 = new JLabel("");
+		label_2.setBounds(0, 464, 328, 58);
+		panel_izquierdo.add(label_2);
+		
+		label_3 = new JLabel("");
+		label_3.setBounds(0, 522, 328, 58);
+		panel_izquierdo.add(label_3);
+		
+		label_4 = new JLabel("");
+		label_4.setBounds(0, 580, 328, 58);
+		panel_izquierdo.add(label_4);
 		
 		// Con este boton se muestran los JList de jugadores
 		btnMostrarJugadores.addActionListener(new ActionListener() {
@@ -309,9 +414,12 @@ public class RegistrarEquipo extends JFrame {
 	
 	public void MostrarJugadores()
 	{
-		System.out.println((Categoria)comboCategoria.getSelectedItem());
+	
 		try {
-			ListaJugadores1=Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem());
+			for(Jugador a : Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem())){
+				String nombre_completo= a.getNombre()+" "+a.getApellido();
+				ListaJugadores1.add(nombre_completo);
+			}
 			JListaJugadores1 = new JList<String>(ListaJugadores1.toArray(new String[ListaJugadores1.size()]));
 			scrollPane_Jugadores1.setViewportView(JListaJugadores1);
 			JListaJugadores1.setLayoutOrientation(JList.VERTICAL);

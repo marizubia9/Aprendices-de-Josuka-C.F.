@@ -78,10 +78,10 @@ public class Gestor {
 		DAO.getInstance().guardarObjeto(e);
 	}
 
-	public List<String> MostrarJugadores(Categoria cat)
+	public List<Jugador> MostrarJugadores(Categoria cat)
 	{
 		int edad=0;
-		List<String> ListaJugadores1= new ArrayList<>();
+		List<Jugador> ListaJugadores1= new ArrayList<>();
 		for (Jugador a : DAO.getInstance().getJugador()) {
 			if (!a.isAsignado_equipo()) 
 			{
@@ -101,8 +101,8 @@ public class Gestor {
 						{
 						if (edad==10||edad==11)
 						{
-							String nombre_completo= a.getNombre()+" "+a.getApellido();
-							ListaJugadores1.add(nombre_completo);
+							
+							ListaJugadores1.add(a);
 						}
 							
 						}
@@ -111,7 +111,7 @@ public class Gestor {
 					if (edad==12||edad==13)
 					{
 						String nombre_completo= a.getNombre()+" "+a.getApellido();
-						ListaJugadores1.add(nombre_completo);
+						ListaJugadores1.add(a);
 					}
 						
 					}
@@ -120,7 +120,7 @@ public class Gestor {
 					if (edad==14||edad==15)
 					{
 						String nombre_completo= a.getNombre()+" "+a.getApellido();
-						ListaJugadores1.add(nombre_completo);
+						ListaJugadores1.add(a);
 					}
 						
 					}
@@ -129,7 +129,7 @@ public class Gestor {
 					if (edad==16||edad==17||edad==18)
 					{
 						String nombre_completo= a.getNombre()+" "+a.getApellido();
-						ListaJugadores1.add(nombre_completo);
+						ListaJugadores1.add(a);
 					}
 						
 					}
@@ -138,7 +138,7 @@ public class Gestor {
 					if (edad>18)
 					{
 						String nombre_completo= a.getNombre()+" "+a.getApellido();
-						ListaJugadores1.add(nombre_completo);
+						ListaJugadores1.add(a);
 					}
 						
 					}
@@ -149,14 +149,9 @@ public class Gestor {
 		return ListaJugadores1;
 	}
 	
-	public List<String> MostrarEntrenadores()
+	public List<Entrenador> MostrarEntrenadores()
 	{
-		List<String> ListaEntrenadores= new ArrayList<>();
-		for (Entrenador a : DAO.getInstance().getEntrenador()) {
-			String nombre_completo= a.getNombre()+" "+a.getApellido() + " DNI: " + a.getDNI();
-			ListaEntrenadores.add(nombre_completo);
-		}
-		return ListaEntrenadores;
+		return DAO.getInstance().getEntrenador();
 		
 	}
 	
