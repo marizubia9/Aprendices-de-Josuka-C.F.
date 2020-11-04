@@ -153,6 +153,8 @@ public class Principal_Administrador extends JFrame {
 		btnVisualizarJugadores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
+				VisualizarJugadores r = new VisualizarJugadores();
+				r.setVisible(true);
 				setVisible(false);
 				
 				
@@ -162,7 +164,9 @@ public class Principal_Administrador extends JFrame {
 		
 		btnVisualizarEntrenadores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				
+				VisualizarEntrenadores r = new VisualizarEntrenadores();
+				r.setVisible(true);
 				setVisible(false);
 				
 
@@ -172,6 +176,8 @@ public class Principal_Administrador extends JFrame {
 		btnVisualizarEquipos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
+				VisualizarEquipos r = new VisualizarEquipos();
+				r.setVisible(true);
 				setVisible(false);
 
 

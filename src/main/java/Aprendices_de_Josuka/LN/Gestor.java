@@ -12,6 +12,7 @@ import Aprendices_de_Josuka.DAO.DAO;
 import Aprendices_de_Josuka.LD.Administrador;
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
+import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LP.Pantalla_Principal;
 
@@ -147,4 +148,28 @@ public class Gestor {
 		}
 		return ListaJugadores1;
 	}
+	
+	public List<String> MostrarEntrenadores()
+	{
+		List<String> ListaEntrenadores= new ArrayList<>();
+		for (Entrenador a : DAO.getInstance().getEntrenador()) {
+			String nombre_completo= a.getNombre()+" "+a.getApellido() + " DNI: " + a.getDNI();
+			ListaEntrenadores.add(nombre_completo);
+		}
+		return ListaEntrenadores;
+		
+	}
+	
+	public List<String> MostrarEquipos()
+	{
+		List<String> ListaEquipos= new ArrayList<>();
+		for (Equipo a : DAO.getInstance().getEquipo()) {
+			String nombre_completo= a.getNombre();
+			ListaEquipos.add(nombre_completo);
+		}
+		return ListaEquipos;
+		
+	}
+	
+	
 }

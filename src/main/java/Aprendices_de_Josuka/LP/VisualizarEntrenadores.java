@@ -41,11 +41,11 @@ import javax.swing.JList;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 
-public class VisualizarEquipos extends JFrame {
+public class VisualizarEntrenadores extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtLosAprendicesDe;
-	private JLabel lblListaEquipos;
+	private JLabel lblListaEntrenadores;
 	private Date objDate;
 	private List<Entrenador> ListaEntrenador;
 	private JPanel panel;
@@ -54,12 +54,16 @@ public class VisualizarEquipos extends JFrame {
 	private JPanel panel_scrollpane;
 	private JPanel panel_central;
 	private JPanel panel_scrollpane1;
-	private List<String> ListaEquipos;
+	private List<String> ListaEntrenadores;
 	private Categoria cat;
-	private JScrollPane scrollPane_Equipos1;
-	private JList<String> JListaEquipos1;
+	private JScrollPane scrollPane_Jugadores1;
+	private JList<String> JListaEntrenadores1;
 
 
+	private List<String> jugadores_lista;
+	private Set<String> HashSet;
+
+	private boolean MostrarJugadores;
 
 	/**
 	 * Launch the application.
@@ -68,7 +72,7 @@ public class VisualizarEquipos extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VisualizarEquipos frame = new VisualizarEquipos();
+					VisualizarEntrenadores frame = new VisualizarEntrenadores();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -80,7 +84,7 @@ public class VisualizarEquipos extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VisualizarEquipos() {
+	public VisualizarEntrenadores() {
 		initComponents();
 		this.setVisible(true);
 	}
@@ -116,11 +120,11 @@ public class VisualizarEquipos extends JFrame {
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
-		lblListaEquipos = new JLabel("ENTRENADORES");
-		lblListaEquipos.setForeground(Color.DARK_GRAY);
-		lblListaEquipos.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
-		lblListaEquipos.setBounds(309, 45, 360, 38);
-		panel_central.add(lblListaEquipos);
+		lblListaEntrenadores = new JLabel("ENTRENADORES");
+		lblListaEntrenadores.setForeground(Color.DARK_GRAY);
+		lblListaEntrenadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
+		lblListaEntrenadores.setBounds(309, 45, 360, 38);
+		panel_central.add(lblListaEntrenadores);
 
 		panel = new JPanel();
 		panel.setLayout(null);
@@ -137,7 +141,7 @@ public class VisualizarEquipos extends JFrame {
 		button.setBounds(0, 16, 288, 88);
 		panel.add(button);
 
-		
+		jugadores_lista = new ArrayList<String>();
 
 
 		// Creamos el Jlist1 y lo rellenamos con la lista de los
@@ -147,25 +151,25 @@ public class VisualizarEquipos extends JFrame {
 		panel_scrollpane1.setBackground(Color.LIGHT_GRAY);
 		panel_scrollpane1.setLocation(600, 120);
 		panel_scrollpane1.setSize(450, 430);
-		ListaEquipos = new ArrayList<>();
-		scrollPane_Equipos1 = new JScrollPane();
-		panel_scrollpane1.add(scrollPane_Equipos1);
+		ListaEntrenadores = new ArrayList<>();
+		scrollPane_Jugadores1 = new JScrollPane();
+		panel_scrollpane1.add(scrollPane_Jugadores1);
 		panel_central.add(panel_scrollpane1);
 		
-		MostrarEquipos();
+		MostrarEntrenadores();
 		
 	}
 	
-	public void MostrarEquipos()
+	public void MostrarEntrenadores()
 	{
 		
 		try {
-			ListaEquipos=Gestor.getInstance().MostrarEquipos();
-			JListaEquipos1 = new JList<String>(ListaEquipos.toArray(new String[ListaEquipos.size()]));
-			scrollPane_Equipos1.setViewportView(JListaEquipos1);
-			JListaEquipos1.setLayoutOrientation(JList.VERTICAL);
-			scrollPane_Equipos1.repaint();
-			System.out.println("El tamanyo de la lista: "+ListaEquipos.size());
+			ListaEntrenadores=Gestor.getInstance().MostrarEntrenadores();
+			JListaEntrenadores1 = new JList<String>(ListaEntrenadores.toArray(new String[ListaEntrenadores.size()]));
+			scrollPane_Jugadores1.setViewportView(JListaEntrenadores1);
+			JListaEntrenadores1.setLayoutOrientation(JList.VERTICAL);
+			scrollPane_Jugadores1.repaint();
+			System.out.println("El tamanyo de la lista: "+ListaEntrenadores.size());
 			panel_central.repaint();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
