@@ -187,7 +187,7 @@ public class Visualizar_Equipos extends JFrame {
 				Visualizar_Jugadores r = new Visualizar_Jugadores();
 				r.setVisible(true);
 				setVisible(false);
-				repaint();
+				
 			}
 		});
 		button_3.setHorizontalAlignment(SwingConstants.LEFT);

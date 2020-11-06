@@ -34,7 +34,7 @@ public class Panel_Jugador extends JPanel {
 		System.out.println("entro al metodo");
 		setVisible(true);
 		setBackground(Color.WHITE);
-		setSize(1009, 130);
+		setSize(1005, 130);
 		setLayout(null);
 		
 		JPanel pFoto = new JPanel();
