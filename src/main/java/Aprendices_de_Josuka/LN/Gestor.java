@@ -81,7 +81,7 @@ public class Gestor {
 	}
 	
 	public static void RegistrarInventario(String nombre, Tipo_Material tipo,int cantidad,long precio ) {
-		System.out.println("entra en el gestor");
+	
 		Material m= new Material(nombre, tipo, cantidad, precio);
 		DAO.getInstance().guardarObjeto(m);
 	}

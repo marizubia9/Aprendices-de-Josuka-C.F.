@@ -291,7 +291,7 @@ public class RegistrarInventario extends JFrame {
 			return;
 		}
 		try {
-			System.out.println("entra aqui");
+			
 			Gestor.getInstance().RegistrarInventario(txtNombre.getText(), (Tipo_Material)comboBox.getSelectedItem(), cantidad, precio);
 			this.txtCantidad.setText("");
 			this.txtNombre.setText("");
