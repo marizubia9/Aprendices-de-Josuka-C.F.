@@ -172,7 +172,7 @@ public class Visualizar_Equipos extends JFrame {
 		btnAnyadirInventario = new JButton("AÑADIR INVENTARIO");
 		btnAnyadirInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				RegistrarInventario r= new RegistrarInventario();
+				RegistrarMaterial r= new RegistrarMaterial();
 				r.setVisible(true);
 				setVisible(false);
 			}

@@ -14,6 +14,7 @@ import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
+import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LN.Gestor;
 
 public class DAO implements itfDAO {
@@ -59,8 +60,7 @@ public class DAO implements itfDAO {
 				persistentManager.makePersistent(objeto);
 			}
 			if (objeto instanceof Material) {
-				objeto = new Material(((Material) objeto).getCod_material(), ((Material) objeto).getTipo(),
-						((Material) objeto).getCantidad(), ((Material) objeto).getPrecio());
+				objeto = new Material(((Material) objeto).getTipo(),((Material) objeto).getCantidad(), ((Material) objeto).getPrecio());
 			}
 				persistentManager.makePersistent(objeto);
 		} catch (Exception ex) {
@@ -76,6 +76,33 @@ public class DAO implements itfDAO {
 
 	}
 
+	public List<Material>getMaterial()
+	{
+		Extent<Material> extent = persistentManager.getExtent(Material.class, false);
+		List<Material> materiales = new ArrayList<Material>();
+		for (Material p : extent) {
+			materiales.add(p);
+		}
+		extent.closeAll();
+		return materiales;
+	}
+	public void ModificarMaterial(Tipo_Material tipo, int cantidad, long precio)
+	{
+		System.out.println(tipo);
+		try {
+		Material m= persistentManager.getObjectById(Material.class, tipo);
+		m.setCantidad(cantidad);
+		m.setPrecio(precio);
+		} catch (Exception ex) {
+
+			System.err.println("* Exception modifying data into db: " + ex.getMessage());
+		}
+		finally {
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
+		}
+	}
 	@Override
 	public List<Administrador> getAdmin() {
 		// TODO Auto-generated method stub

@@ -1,6 +1,5 @@
 package Aprendices_de_Josuka.LP;
 
-
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -15,15 +14,14 @@ import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
+import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LN.Gestor;
-
 
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 
 import java.awt.Font;
-import java.awt.GridBagConstraints;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,37 +41,22 @@ import javax.swing.JList;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
-import java.awt.GridBagLayout;
 
-public class Visualizar_Entrenadores extends JFrame {
+public class Anyadir_Inventario extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtLosAprendicesDe;
-	private JLabel lblListaEntrenadores;
-	private Date objDate;
-	private List<Entrenador> ListaEntrenador;
-	private JList<String> listaJugadores1;
-	private JPanel panel_scrollpane;
 	private JPanel panel_central;
-	private List<Entrenador> ListaEntrenadores;
-	private Categoria cat;
-	private JList<String> JListaEntrenadores1;
-
-
-	private List<String> jugadores_lista;
-	private Set<String> HashSet;
-
-	private boolean MostrarJugadores;
-	private JPanel panel;
+	private ArrayList<String>ComponentesCombo;
+	private JPanel panel_izquierdo;
 	private JButton btnHome;
 	private JButton btnAnyadirEquipo;
-	private JButton btnAnyadirInventario;
-	private JButton btnVisualizarJugadores;
+	private JButton AnyadirInventario;
+	private JButton btnVisualizaJugadores;
 	private JButton btnVisualizarEntrenadores;
 	private JButton btnVisualizarEquipos;
-	private JPanel PanelCentro;
-	private JPanel pScrollPane;
-	private JScrollPane scrollPane;
+	private JTextField txtCantidad;
+	private JComboBox comboMaterial;
 
 	/**
 	 * Launch the application.
@@ -82,7 +65,7 @@ public class Visualizar_Entrenadores extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Visualizar_Entrenadores frame = new Visualizar_Entrenadores();
+					Anyadir_Inventario frame = new Anyadir_Inventario();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -94,7 +77,7 @@ public class Visualizar_Entrenadores extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Visualizar_Entrenadores() {
+	public Anyadir_Inventario() {
 		initComponents();
 		this.setVisible(true);
 	}
@@ -129,28 +112,18 @@ public class Visualizar_Entrenadores extends JFrame {
 		panel_central.setBounds(0, 190, 1335, 633);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
-
-		lblListaEntrenadores = new JLabel("ENTRENADORES");
-		lblListaEntrenadores.setForeground(Color.DARK_GRAY);
-		lblListaEntrenadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
-		lblListaEntrenadores.setBounds(360, 39, 360, 38);
-		panel_central.add(lblListaEntrenadores);
-
-		jugadores_lista = new ArrayList<String>();
-		ListaEntrenadores = new ArrayList<>();
 		
-		panel = new JPanel();
-		panel.setLayout(null);
-		panel.setForeground(new Color(0, 102, 0));
-		panel.setBorder(null);
-		panel.setBackground(new Color(0, 102, 0));
-		panel.setBounds(0, 0, 328, 638);
-		panel_central.add(panel);
+		panel_izquierdo = new JPanel();
+		panel_izquierdo.setLayout(null);
+		panel_izquierdo.setForeground(new Color(0, 102, 0));
+		panel_izquierdo.setBorder(null);
+		panel_izquierdo.setBackground(new Color(0, 102, 0));
+		panel_izquierdo.setBounds(0, 0, 328, 638);
+		panel_central.add(panel_izquierdo);
 		
 		btnHome = new JButton("HOME");
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
 				
 				Principal_Administrador pa= new Principal_Administrador();
 				pa.setVisible(true);
@@ -162,63 +135,56 @@ public class Visualizar_Entrenadores extends JFrame {
 		btnHome.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnHome.setBackground(new Color(0, 102, 0));
 		btnHome.setBounds(0, 0, 328, 58);
-		panel.add(btnHome);
+		panel_izquierdo.add(btnHome);
 		
 		btnAnyadirEquipo = new JButton("AÑADIR EQUIPO");
-		btnAnyadirEquipo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				RegistrarEquipo r = new RegistrarEquipo();
-				r.setVisible(true);
-				setVisible(false);
-			}
-		});
+		btnAnyadirEquipo.setEnabled(false);
 		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAnyadirEquipo.setForeground(Color.WHITE);
 		btnAnyadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnAnyadirEquipo.setBackground(new Color(0, 102, 0));
 		btnAnyadirEquipo.setBounds(0, 58, 328, 58);
-		panel.add(btnAnyadirEquipo);
+		panel_izquierdo.add(btnAnyadirEquipo);
 		
-		btnAnyadirInventario = new JButton("AÑADIR INVENTARIO");
-		btnAnyadirInventario.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				RegistrarMaterial r= new RegistrarMaterial();
-				r.setVisible(true);
-				setVisible(false);
-			}
-		});
-		btnAnyadirInventario.setHorizontalAlignment(SwingConstants.LEFT);
-		btnAnyadirInventario.setForeground(Color.WHITE);
-		btnAnyadirInventario.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnAnyadirInventario.setBackground(new Color(0, 102, 0));
-		btnAnyadirInventario.setBounds(0, 116, 328, 58);
-		panel.add(btnAnyadirInventario);
+		AnyadirInventario = new JButton("AÑADIR INVENTARIO");
+		AnyadirInventario.setHorizontalAlignment(SwingConstants.LEFT);
+		AnyadirInventario.setForeground(Color.WHITE);
+		AnyadirInventario.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		AnyadirInventario.setBackground(new Color(0, 102, 0));
+		AnyadirInventario.setBounds(0, 116, 328, 58);
+		panel_izquierdo.add(AnyadirInventario);
 		
-		btnVisualizarJugadores = new JButton("VISUALIZAR  JUGADORES");
-		btnVisualizarJugadores.addActionListener(new ActionListener() {
+		btnVisualizaJugadores = new JButton("VISUALIZAR  JUGADORES");
+		btnVisualizaJugadores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+			
 				Visualizar_Jugadores r = new Visualizar_Jugadores();
 				r.setVisible(true);
 				setVisible(false);
 			}
 		});
-		btnVisualizarJugadores.setHorizontalAlignment(SwingConstants.LEFT);
-		btnVisualizarJugadores.setForeground(Color.WHITE);
-		btnVisualizarJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnVisualizarJugadores.setBackground(new Color(0, 102, 0));
-		btnVisualizarJugadores.setBounds(0, 174, 328, 58);
-		panel.add(btnVisualizarJugadores);
+		btnVisualizaJugadores.setHorizontalAlignment(SwingConstants.LEFT);
+		btnVisualizaJugadores.setForeground(Color.WHITE);
+		btnVisualizaJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnVisualizaJugadores.setBackground(new Color(0, 102, 0));
+		btnVisualizaJugadores.setBounds(0, 174, 328, 58);
+		panel_izquierdo.add(btnVisualizaJugadores);
 		
 		btnVisualizarEntrenadores = new JButton("VISUALIZAR  ENTRENADORES");
-		btnVisualizarEntrenadores.setEnabled(false);
+		btnVisualizarEntrenadores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				Visualizar_Entrenadores r = new Visualizar_Entrenadores();
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
 		btnVisualizarEntrenadores.setHorizontalAlignment(SwingConstants.LEFT);
 		btnVisualizarEntrenadores.setForeground(Color.WHITE);
 		btnVisualizarEntrenadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnVisualizarEntrenadores.setBackground(new Color(0, 102, 0));
 		btnVisualizarEntrenadores.setBounds(0, 232, 328, 58);
-		panel.add(btnVisualizarEntrenadores);
+		panel_izquierdo.add(btnVisualizarEntrenadores);
 		
 		btnVisualizarEquipos = new JButton("VISUALIZAR  EQUIPOS");
 		btnVisualizarEquipos.addActionListener(new ActionListener() {
@@ -234,74 +200,70 @@ public class Visualizar_Entrenadores extends JFrame {
 		btnVisualizarEquipos.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnVisualizarEquipos.setBackground(new Color(0, 102, 0));
 		btnVisualizarEquipos.setBounds(0, 290, 328, 58);
-		panel.add(btnVisualizarEquipos);
+		panel_izquierdo.add(btnVisualizarEquipos);
 		
-		PanelCentro = new JPanel();
-		PanelCentro.setBackground(Color.WHITE);
-		PanelCentro.setBounds(328, 83, 1007, 550);
-		panel_central.add(PanelCentro);
-		PanelCentro.setLayout(null);
+		comboMaterial = new JComboBox();
+		comboMaterial.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
+		comboMaterial.setBounds(813, 173, 180, 30);
+		panel_central.add(comboMaterial);
+		RellenarCombo();
 		
-		scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 0, 1007, 550);
-		PanelCentro.add(scrollPane);
+		JLabel lblMaterial = new JLabel("Material: ");
+		lblMaterial.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
+		lblMaterial.setBounds(645, 173, 130, 30);
+		panel_central.add(lblMaterial);
 		
-		pScrollPane = new JPanel();
-		pScrollPane.setBackground(Color.WHITE);
-		scrollPane.setViewportView(pScrollPane);
-		GridBagLayout gbl_pScrollPane = new GridBagLayout();
-		gbl_pScrollPane.columnWidths = new int[]{0};
-		gbl_pScrollPane.rowHeights = new int[]{0};
-		gbl_pScrollPane.columnWeights = new double[]{Double.MIN_VALUE};
-		gbl_pScrollPane.rowWeights = new double[]{Double.MIN_VALUE};
-		pScrollPane.setLayout(gbl_pScrollPane);
-		InsertarJPanel();
-
+		JLabel lblCantidad = new JLabel("Cantidad:");
+		lblCantidad.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
+		lblCantidad.setBounds(645, 263, 130, 30);
+		panel_central.add(lblCantidad);
 		
-//		MostrarEntrenadores();
+		txtCantidad = new JTextField();
+		txtCantidad.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
+		txtCantidad.setBounds(813, 263, 50, 30);
+		panel_central.add(txtCantidad);
+		txtCantidad.setColumns(10);
 		
+		JLabel lblUds = new JLabel("uds.");
+		lblUds.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
+		lblUds.setBounds(885, 263, 50, 30);
+		panel_central.add(lblUds);
+		
+		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.setForeground(new Color(255, 255, 255));
+		btnAceptar.setBackground(new Color(0, 128, 0));
+		btnAceptar.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
+		btnAceptar.setBounds(737, 380, 126, 30);
+		panel_central.add(btnAceptar);
+		
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+			}
+		});
+		btnSalir.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
+		btnSalir.setBounds(1143, 538, 106, 43);
+		panel_central.add(btnSalir);
 	}
 	
-//	public void MostrarEntrenadores()
-//	{
-//		
-//		try {
-//			ListaEntrenadores=Gestor.getInstance().MostrarEntrenadores();
-//			JListaEntrenadores1.setLayoutOrientation(JList.VERTICAL);
-//			System.out.println("El tamanyo de la lista: "+ListaEntrenadores.size());
-//			panel_central.repaint();
-//		} catch (RemoteException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
 	
-	public void InsertarJPanel() {
-		pScrollPane.removeAll();
-		int x = 0;
-		int y = 50;
+		
+	public void RellenarCombo()
+	{
+		List<Material>listaMat=null;
 		try {
-			ListaEntrenadores=Gestor.getInstance().MostrarEntrenadores();
-			System.out.println("El tamanyo de la lista de entrenadores es de: "+ListaEntrenadores.size());
+			listaMat=Gestor.getInstance().ObtenerMaterial();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		for (int i = 0; i < ListaEntrenadores.size(); i++) 
+		for(Material m: listaMat)
 		{
-			Panel_Entrenador panel = new Panel_Entrenador(ListaEntrenadores.get(i));
-			panel.setVisible(true);
-			GridBagConstraints gbc_lblFoto = new GridBagConstraints();
-			gbc_lblFoto.ipadx = 1005;
-			gbc_lblFoto.ipady = 130;
-			gbc_lblFoto.gridx = x;
-			gbc_lblFoto.gridy = y;
-			pScrollPane.add(panel,gbc_lblFoto);
-
-			y = y + 130;
+			comboMaterial.addItem(m.getTipo());
 		}
-		pScrollPane.repaint();
-		scrollPane.repaint();
-		repaint();
+		
 	}
+	
+	
 }

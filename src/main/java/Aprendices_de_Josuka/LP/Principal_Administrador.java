@@ -137,7 +137,7 @@ public class Principal_Administrador extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				
-				RegistrarInventario r = new RegistrarInventario();
+				RegistrarMaterial r = new RegistrarMaterial();
 				r.setVisible(true);
 				setVisible(false);
 			}

@@ -31,13 +31,12 @@ import com.toedter.calendar.JSpinnerDateEditor;
 import javax.swing.SwingConstants;
 import javax.swing.JComboBox;
 
-public class RegistrarInventario extends JFrame {
+public class RegistrarMaterial extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtLosAprendicesDe;
 	private JLabel lblNuevoInventario;
 	private Date objDate;
-	private JTextField txtNombre;
 	private JTextField txtPrecio;
 	private JTextField txtCantidad;
 	private JComboBox comboBox;
@@ -49,7 +48,7 @@ public class RegistrarInventario extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					RegistrarInventario frame = new RegistrarInventario();
+					RegistrarMaterial frame = new RegistrarMaterial();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -61,7 +60,7 @@ public class RegistrarInventario extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public RegistrarInventario() {
+	public RegistrarMaterial() {
 		initComponents();
 		this.setVisible(true);
 	}
@@ -202,54 +201,44 @@ public class RegistrarInventario extends JFrame {
 		btnVisualizarEquipos.setBounds(0, 290, 328, 58);
 		panel.add(btnVisualizarEquipos);
 		
-		JLabel lblNombre = new JLabel("Nombre: ");
-		lblNombre.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblNombre.setBounds(448, 136, 106, 38);
-		panel_central.add(lblNombre);
-		
-		txtNombre = new JTextField();
-		txtNombre.setBounds(564, 136, 216, 38);
-		panel_central.add(txtNombre);
-		txtNombre.setColumns(10);
-		
-		JLabel lblPrecio = new JLabel("Precio:");
+		JLabel lblPrecio = new JLabel("Precio total:");
 		lblPrecio.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblPrecio.setBounds(448, 324, 106, 38);
+		lblPrecio.setBounds(447, 318, 144, 38);
 		panel_central.add(lblPrecio);
 		
 		txtPrecio = new JTextField();
-		txtPrecio.setBounds(564, 324, 100, 38);
+		txtPrecio.setBounds(601, 318, 100, 38);
 		panel_central.add(txtPrecio);
 		txtPrecio.setColumns(10);
 		
 		JLabel lblCantidad = new JLabel("Cantidad:");
 		lblCantidad.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblCantidad.setBounds(448, 421, 106, 38);
+		lblCantidad.setBounds(447, 220, 106, 38);
 		panel_central.add(lblCantidad);
 		
 		txtCantidad = new JTextField();
-		txtCantidad.setBounds(564, 421, 100, 38);
+		txtCantidad.setBounds(563, 220, 100, 38);
 		panel_central.add(txtCantidad);
 		txtCantidad.setColumns(10);
 		
 		JLabel lblUds = new JLabel("uds.");
 		lblUds.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblUds.setBounds(674, 422, 61, 37);
+		lblUds.setBounds(673, 221, 61, 37);
 		panel_central.add(lblUds);
 		
 		JLabel lblEu = new JLabel("Eu");
 		lblEu.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblEu.setBounds(674, 325, 61, 37);
+		lblEu.setBounds(711, 319, 61, 37);
 		panel_central.add(lblEu);
 		
 		JLabel lblTipo = new JLabel("Tipo:");
 		lblTipo.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblTipo.setBounds(448, 225, 106, 38);
+		lblTipo.setBounds(447, 126, 106, 38);
 		panel_central.add(lblTipo);
 		
 		 comboBox = new JComboBox();
 		comboBox.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		comboBox.setBounds(564, 225, 216, 43);
+		comboBox.setBounds(563, 126, 216, 43);
 		panel_central.add(comboBox);
 		comboBox.addItem(Tipo_Material.Balones);
 		comboBox.addItem(Tipo_Material.Barreras);
@@ -292,9 +281,8 @@ public class RegistrarInventario extends JFrame {
 		}
 		try {
 			
-			Gestor.getInstance().RegistrarInventario(txtNombre.getText(), (Tipo_Material)comboBox.getSelectedItem(), cantidad, precio);
+			Gestor.getInstance().RegistrarInventario((Tipo_Material)comboBox.getSelectedItem(), cantidad, precio);
 			this.txtCantidad.setText("");
-			this.txtNombre.setText("");
 			this.txtPrecio.setText("");
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
