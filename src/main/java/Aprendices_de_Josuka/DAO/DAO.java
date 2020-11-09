@@ -13,6 +13,7 @@ import Aprendices_de_Josuka.LD.Administrador;
 import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
+import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LN.Gestor;
 
 public class DAO implements itfDAO {
@@ -57,6 +58,11 @@ public class DAO implements itfDAO {
 				objeto = new Equipo(((Equipo) objeto).getNombre(), ((Equipo) objeto).getCategoria());
 				persistentManager.makePersistent(objeto);
 			}
+			if (objeto instanceof Material) {
+				objeto = new Material(((Material) objeto).getCod_material(), ((Material) objeto).getTipo(),
+						((Material) objeto).getCantidad(), ((Material) objeto).getPrecio());
+			}
+				persistentManager.makePersistent(objeto);
 		} catch (Exception ex) {
 
 			System.err.println("* Exception inserting data into db: " + ex.getMessage());

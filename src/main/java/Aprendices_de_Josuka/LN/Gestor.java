@@ -14,6 +14,8 @@ import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
+import Aprendices_de_Josuka.LD.Material;
+import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LP.Pantalla_Principal;
 
 public class Gestor {
@@ -76,6 +78,12 @@ public class Gestor {
 			int telefono, String correo, String password, boolean asignado) {
 		Entrenador e = new Entrenador(nombre, apellido, fecha_nacimiento, DNI, telefono, correo, password, 0, asignado);
 		DAO.getInstance().guardarObjeto(e);
+	}
+	
+	public static void RegistrarInventario(String nombre, Tipo_Material tipo,int cantidad,long precio ) {
+		System.out.println("entra en el gestor");
+		Material m= new Material(nombre, tipo, cantidad, precio);
+		DAO.getInstance().guardarObjeto(m);
 	}
 
 	public List<Jugador> MostrarJugadores(Categoria cat)

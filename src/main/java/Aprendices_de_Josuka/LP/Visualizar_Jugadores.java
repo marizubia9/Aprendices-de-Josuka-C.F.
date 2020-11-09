@@ -65,18 +65,13 @@ public class Visualizar_Jugadores extends JFrame {
 
 	private boolean MostrarJugadores;
 	private JPanel panel;
-	private JButton button;
-	private JButton button_1;
-	private JButton button_2;
-	private JButton button_3;
-	private JButton button_4;
-	private JButton button_5;
+	private JButton btnHome;
+	private JButton btnAnyadirEquipo;
+	private JButton btnAnyadirInventario;
+	private JButton btnVisualizarJugadores;
+	private JButton btnVisualizarEntrenadores;
+	private JButton btnVisualizarEquipos;
 	private JButton btnGO;
-	private JLabel label;
-	private JLabel label_1;
-	private JLabel label_2;
-	private JLabel label_3;
-	private JLabel label_4;
 	private JPanel PanelCentro;
 	private JPanel pScrollPane;
 	private JScrollPane scrollPane;
@@ -157,8 +152,8 @@ public class Visualizar_Jugadores extends JFrame {
 		panel.setBounds(0, 0, 328, 638);
 		panel_central.add(panel);
 		
-		button = new JButton("HOME");
-		button.addActionListener(new ActionListener() {
+		btnHome = new JButton("HOME");
+		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				
@@ -167,15 +162,15 @@ public class Visualizar_Jugadores extends JFrame {
 				setVisible(false);
 			}
 		});
-		button.setHorizontalAlignment(SwingConstants.LEFT);
-		button.setForeground(Color.WHITE);
-		button.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		button.setBackground(new Color(0, 102, 0));
-		button.setBounds(0, 0, 328, 58);
-		panel.add(button);
+		btnHome.setHorizontalAlignment(SwingConstants.LEFT);
+		btnHome.setForeground(Color.WHITE);
+		btnHome.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnHome.setBackground(new Color(0, 102, 0));
+		btnHome.setBounds(0, 0, 328, 58);
+		panel.add(btnHome);
 		
-		button_1 = new JButton("AÑADIR EQUIPO");
-		button_1.addActionListener(new ActionListener() {
+		btnAnyadirEquipo = new JButton("AÑADIR EQUIPO");
+		btnAnyadirEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				RegistrarEquipo r = new RegistrarEquipo();
@@ -183,24 +178,31 @@ public class Visualizar_Jugadores extends JFrame {
 				setVisible(false);
 			}
 		});
-		button_1.setHorizontalAlignment(SwingConstants.LEFT);
-		button_1.setForeground(Color.WHITE);
-		button_1.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		button_1.setBackground(new Color(0, 102, 0));
-		button_1.setBounds(0, 58, 328, 58);
-		panel.add(button_1);
+		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
+		btnAnyadirEquipo.setForeground(Color.WHITE);
+		btnAnyadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnAnyadirEquipo.setBackground(new Color(0, 102, 0));
+		btnAnyadirEquipo.setBounds(0, 58, 328, 58);
+		panel.add(btnAnyadirEquipo);
 		
-		button_2 = new JButton("AÑADIR INVENTARIO");
-		button_2.setHorizontalAlignment(SwingConstants.LEFT);
-		button_2.setForeground(Color.WHITE);
-		button_2.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		button_2.setBackground(new Color(0, 102, 0));
-		button_2.setBounds(0, 116, 328, 58);
-		panel.add(button_2);
+		btnAnyadirInventario = new JButton("AÑADIR INVENTARIO");
+		btnAnyadirInventario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RegistrarInventario r= new RegistrarInventario();
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnAnyadirInventario.setHorizontalAlignment(SwingConstants.LEFT);
+		btnAnyadirInventario.setForeground(Color.WHITE);
+		btnAnyadirInventario.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnAnyadirInventario.setBackground(new Color(0, 102, 0));
+		btnAnyadirInventario.setBounds(0, 116, 328, 58);
+		panel.add(btnAnyadirInventario);
 		
-		button_3 = new JButton("VISUALIZAR  JUGADORES");
-		button_3.setEnabled(false);
-		button_3.addActionListener(new ActionListener() {
+		btnVisualizarJugadores = new JButton("VISUALIZAR  JUGADORES");
+		btnVisualizarJugadores.setEnabled(false);
+		btnVisualizarJugadores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				Visualizar_Jugadores r = new Visualizar_Jugadores();
@@ -208,22 +210,22 @@ public class Visualizar_Jugadores extends JFrame {
 				setVisible(false);
 			}
 		});
-		button_3.setHorizontalAlignment(SwingConstants.LEFT);
-		button_3.setForeground(Color.WHITE);
-		button_3.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		button_3.setBackground(new Color(0, 102, 0));
-		button_3.setBounds(0, 174, 328, 58);
-		panel.add(button_3);
+		btnVisualizarJugadores.setHorizontalAlignment(SwingConstants.LEFT);
+		btnVisualizarJugadores.setForeground(Color.WHITE);
+		btnVisualizarJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnVisualizarJugadores.setBackground(new Color(0, 102, 0));
+		btnVisualizarJugadores.setBounds(0, 174, 328, 58);
+		panel.add(btnVisualizarJugadores);
 		
-		button_4 = new JButton("VISUALIZAR ENTRENADORES");
-		button_4.setHorizontalAlignment(SwingConstants.LEFT);
-		button_4.setForeground(Color.WHITE);
-		button_4.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		button_4.setBackground(new Color(0, 102, 0));
-		button_4.setBounds(0, 232, 328, 58);
-		panel.add(button_4);
+		btnVisualizarEntrenadores = new JButton("VISUALIZAR ENTRENADORES");
+		btnVisualizarEntrenadores.setHorizontalAlignment(SwingConstants.LEFT);
+		btnVisualizarEntrenadores.setForeground(Color.WHITE);
+		btnVisualizarEntrenadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnVisualizarEntrenadores.setBackground(new Color(0, 102, 0));
+		btnVisualizarEntrenadores.setBounds(0, 232, 328, 58);
+		panel.add(btnVisualizarEntrenadores);
 		
-		button_4.addActionListener(new ActionListener() {
+		btnVisualizarEntrenadores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				Visualizar_Entrenadores r = new Visualizar_Entrenadores();
@@ -232,8 +234,8 @@ public class Visualizar_Jugadores extends JFrame {
 			}
 		});
 		
-		button_5 = new JButton("VISUALIZAR  EQUIPOS");
-		button_5.addActionListener(new ActionListener() {
+		btnVisualizarEquipos = new JButton("VISUALIZAR  EQUIPOS");
+		btnVisualizarEquipos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				Visualizar_Equipos r = new Visualizar_Equipos();
@@ -241,12 +243,12 @@ public class Visualizar_Jugadores extends JFrame {
 				setVisible(false);
 			}
 		});
-		button_5.setHorizontalAlignment(SwingConstants.LEFT);
-		button_5.setForeground(Color.WHITE);
-		button_5.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		button_5.setBackground(new Color(0, 102, 0));
-		button_5.setBounds(0, 290, 328, 58);
-		panel.add(button_5);
+		btnVisualizarEquipos.setHorizontalAlignment(SwingConstants.LEFT);
+		btnVisualizarEquipos.setForeground(Color.WHITE);
+		btnVisualizarEquipos.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnVisualizarEquipos.setBackground(new Color(0, 102, 0));
+		btnVisualizarEquipos.setBounds(0, 290, 328, 58);
+		panel.add(btnVisualizarEquipos);
 		
 		comboCategoria = new JComboBox();
 		comboCategoria.addItem(Categoria.ALEVIN);
@@ -257,26 +259,6 @@ public class Visualizar_Jugadores extends JFrame {
 		
 		comboCategoria.setBounds(1083, 45, 109, 26);
 		panel_central.add(comboCategoria);
-		
-		label = new JLabel("");
-		label.setBounds(0, 348, 328, 58);
-		panel.add(label);
-		
-		label_1 = new JLabel("");
-		label_1.setBounds(0, 406, 328, 58);
-		panel.add(label_1);
-		
-		label_2 = new JLabel("");
-		label_2.setBounds(0, 464, 328, 58);
-		panel.add(label_2);
-		
-		label_3 = new JLabel("");
-		label_3.setBounds(0, 522, 328, 58);
-		panel.add(label_3);
-		
-		label_4 = new JLabel("");
-		label_4.setBounds(0, 580, 328, 58);
-		panel.add(label_4);
 		
 		PanelCentro = new JPanel();
 		PanelCentro.setBackground(Color.WHITE);

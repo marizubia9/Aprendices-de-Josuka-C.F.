@@ -332,25 +332,7 @@ public class RegistrarEquipo extends JFrame {
 		button_5.setBounds(0, 290, 328, 58);
 		panel_izquierdo.add(button_5);
 		
-		label = new JLabel("");
-		label.setBounds(0, 348, 328, 58);
-		panel_izquierdo.add(label);
 		
-		label_1 = new JLabel("");
-		label_1.setBounds(0, 406, 328, 58);
-		panel_izquierdo.add(label_1);
-		
-		label_2 = new JLabel("");
-		label_2.setBounds(0, 464, 328, 58);
-		panel_izquierdo.add(label_2);
-		
-		label_3 = new JLabel("");
-		label_3.setBounds(0, 522, 328, 58);
-		panel_izquierdo.add(label_3);
-		
-		label_4 = new JLabel("");
-		label_4.setBounds(0, 580, 328, 58);
-		panel_izquierdo.add(label_4);
 		
 		// Con este boton se muestran los JList de jugadores
 		btnMostrarJugadores.addActionListener(new ActionListener() {
