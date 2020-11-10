@@ -56,7 +56,7 @@ public class DAO implements itfDAO {
 				persistentManager.makePersistent(objeto);
 			}
 			if (objeto instanceof Equipo) {
-				objeto = new Equipo(((Equipo) objeto).getNombre(), ((Equipo) objeto).getCategoria());
+				objeto = new Equipo(((Equipo) objeto).getNombre(), ((Equipo) objeto).getCategoria(),((Equipo) objeto).getEntrenador(),((Equipo) objeto).getLista_jugador(),((Equipo) objeto).getInventario());
 				persistentManager.makePersistent(objeto);
 			}
 			if (objeto instanceof Material) {

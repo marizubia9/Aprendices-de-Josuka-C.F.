@@ -4,8 +4,10 @@ import java.rmi.RemoteException;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 import Aprendices_de_Josuka.DAO.DAO;
@@ -69,8 +71,7 @@ public class Gestor {
 
 	public static void RegistrarJugador(String nombre, String apellido, String fecha_nacimiento, String DNI,
 			int telefono, String correo, String password, boolean Asignado_equipo) {
-		Jugador j = new Jugador(nombre, apellido, fecha_nacimiento, DNI, false, false, telefono, correo, password,
-				false, Asignado_equipo);
+		Jugador j = new Jugador(nombre, apellido, fecha_nacimiento, DNI, false, false, telefono, correo, password,false, Asignado_equipo);
 		DAO.getInstance().guardarObjeto(j);
 	}
 
@@ -79,7 +80,17 @@ public class Gestor {
 		Entrenador e = new Entrenador(nombre, apellido, fecha_nacimiento, DNI, telefono, correo, password, 0, asignado);
 		DAO.getInstance().guardarObjeto(e);
 	}
-	
+	public static void RegistrarEquipo(String nombre, Categoria cat, Entrenador entrenador, List<Jugador>lista_jugador, HashMap<Material, Integer> inventario)
+	{
+		Equipo e= new Equipo(nombre, cat, entrenador, lista_jugador, inventario);
+		inventario.forEach((m,c)->
+		{
+			int cantidad= m.getCantidad()-c;
+			m.setCantidad(cantidad);
+			AsignarInventario(m);
+		});
+		DAO.getInstance().guardarObjeto(e);
+	}
 	public static void RegistrarInventario( Tipo_Material tipo,int cantidad,long precio ) 
 	{
 		Material m= new Material(tipo, cantidad, precio);
@@ -95,6 +106,16 @@ public class Gestor {
 		}
 		
 		DAO.getInstance().guardarObjeto(m);
+	}
+	public static void AsignarInventario(Material m)
+	{
+		for(Material mat: ObtenerMaterial())
+		{
+			if(mat.getTipo().equals(m.getTipo()))
+			{
+				DAO.getInstance().ModificarMaterial(m.getTipo(), m.getCantidad(), m.getPrecio());
+			}
+		}
 	}
 
 	public static List<Material> ObtenerMaterial()

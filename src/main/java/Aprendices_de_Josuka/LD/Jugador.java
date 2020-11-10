@@ -22,6 +22,7 @@ public class Jugador {
 	private int telefono;
 	private String correo;
 	private String psw;
+	private Equipo equipo;
 	private boolean reconocimiento_medico;
 	private boolean estado; // Tiene lesiones o no
 	private boolean cuota_pagada;
@@ -43,6 +44,9 @@ public class Jugador {
 		this.cuota_pagada = cuota_pagada;
 		this.asignado_equipo = asignado_equipo;
 
+	}
+	public String toString() {
+		return  nombre + " " + apellido + " | "+DNI;
 	}
 
 }

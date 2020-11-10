@@ -1,6 +1,7 @@
 package Aprendices_de_Josuka.LD;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 
 import javax.jdo.annotations.Column;
@@ -21,15 +22,18 @@ public class Equipo {
 	private String nombre;
 	private Categoria categoria;
 	private Entrenador entrenador;
-	private Set<Jugador> lista_jugador;
+	@Join
+	private List<Jugador> lista_jugador;
 	@Join
 	private HashMap<Material, Integer> inventario ;
 
-	public Equipo(String nombre, Categoria categoria) {
+	public Equipo(String nombre, Categoria categoria,Entrenador entrenador, List<Jugador>lista_jugador, HashMap<Material, Integer> inventario) {
 		super();
 		this.nombre = nombre;
 		this.categoria = categoria;
-		this.inventario = new HashMap<Material, Integer>();
+		this.entrenador=entrenador;
+		this.lista_jugador=lista_jugador;
+		this.inventario = inventario;
 	}
 
 

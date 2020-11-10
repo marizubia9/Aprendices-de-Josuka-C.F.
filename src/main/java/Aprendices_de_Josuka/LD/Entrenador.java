@@ -6,13 +6,14 @@ import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-@Getter
-@Setter
+
 @PersistenceCapable
-public class Entrenador {
+public @Data class Entrenador {
 
 	@PrimaryKey
 	private String DNI;
@@ -38,6 +39,12 @@ public class Entrenador {
 		this.asignado_equipo = asignado_equipo;
 
 	}
+
+	@Override
+	public String toString() {
+		return  nombre + " " + apellido + " | "+DNI;
+	}
+
 
 
 }

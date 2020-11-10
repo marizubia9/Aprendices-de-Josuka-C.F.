@@ -29,6 +29,7 @@ import java.rmi.RemoteException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
@@ -38,6 +39,7 @@ import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JSpinnerDateEditor;
 import javax.swing.JComboBox;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
@@ -57,28 +59,18 @@ public class Anyadir_Inventario extends JFrame {
 	private JButton btnVisualizarEquipos;
 	private JTextField txtCantidad;
 	private JComboBox comboMaterial;
+	private RegistrarEquipo r;
+	private HashMap<Material, Integer> inventario;
+	private List<Material>listaMat;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Anyadir_Inventario frame = new Anyadir_Inventario();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
-	public Anyadir_Inventario() {
+	public Anyadir_Inventario(RegistrarEquipo r, HashMap<Material, Integer> inventario) {
 		initComponents();
+		this.r=r;
+		this.inventario=inventario;
 		this.setVisible(true);
 	}
 
@@ -230,6 +222,11 @@ public class Anyadir_Inventario extends JFrame {
 		panel_central.add(lblUds);
 		
 		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Anyadir();
+			}
+		});
 		btnAceptar.setForeground(new Color(255, 255, 255));
 		btnAceptar.setBackground(new Color(0, 128, 0));
 		btnAceptar.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
@@ -239,6 +236,7 @@ public class Anyadir_Inventario extends JFrame {
 		JButton btnSalir = new JButton("Salir");
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				r.setVisible(true);
 				setVisible(false);
 			}
 		});
@@ -251,7 +249,7 @@ public class Anyadir_Inventario extends JFrame {
 		
 	public void RellenarCombo()
 	{
-		List<Material>listaMat=null;
+
 		try {
 			listaMat=Gestor.getInstance().ObtenerMaterial();
 		} catch (RemoteException e) {
@@ -261,6 +259,39 @@ public class Anyadir_Inventario extends JFrame {
 		for(Material m: listaMat)
 		{
 			comboMaterial.addItem(m.getTipo());
+		}
+		
+	}
+	public void Anyadir()
+	{
+		int cantidad=0;
+		try{
+			cantidad=Integer.parseInt(txtCantidad.getText());
+		}catch(Exception e)
+		{
+			JOptionPane.showMessageDialog(null, "Vuelve a introducir la cantidad");
+			txtCantidad.setText("");
+			return;
+		}
+		
+		for(Material m:listaMat)
+		{
+			if(m.getTipo().equals(comboMaterial.getSelectedItem()))
+					{
+					
+						int cant= m.getCantidad() - cantidad;
+						if(cant<0) 
+						{
+							JOptionPane.showMessageDialog(null, "Vuelve a introducir la cantidad");
+							txtCantidad.setText("");
+							return;
+						}
+						m.setCantidad(cant);
+						inventario.put(m,cantidad);
+						txtCantidad.setText("");
+						
+						
+					}
 		}
 		
 	}
