@@ -25,5 +25,10 @@ public class Material {
 		this.precio = precio;
 	}
 
+	@Override
+	public String toString() {
+		return tipo + ": " + cantidad + "uds";
+	}
+
 
 }

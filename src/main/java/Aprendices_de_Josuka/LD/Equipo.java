@@ -36,5 +36,11 @@ public class Equipo {
 		this.inventario = inventario;
 	}
 
+	@Override
+	public String toString() {
+		return "Equipo [nombre=" + nombre + ", categoria=" + categoria + ", entrenador=" + entrenador
+				+ ", lista_jugador=" + lista_jugador + ", inventario=" + inventario + "]";
+	}
+
 
 }

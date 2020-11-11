@@ -140,43 +140,44 @@ public class RegistrarEquipo extends JFrame {
 
 		panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 173, 1278, 511);
+		panel_central.setBounds(0, 173, 1278, 528);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
 		lblNuevoEquipo = new JLabel("NUEVO EQUIPO\r\n");
 		lblNuevoEquipo.setForeground(Color.DARK_GRAY);
-		lblNuevoEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
+		lblNuevoEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 24));
 		lblNuevoEquipo.setBounds(385, 16, 338, 38);
 		panel_central.add(lblNuevoEquipo);
 
 		lblNombre = new JLabel("Nombre");
 		lblNombre.setForeground(Color.DARK_GRAY);
-		lblNombre.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
+		lblNombre.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblNombre.setBounds(395, 77, 115, 31);
 		panel_central.add(lblNombre);
 
 		lblCategoria = new JLabel("Categoria");
 		lblCategoria.setForeground(Color.DARK_GRAY);
-		lblCategoria.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
+		lblCategoria.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblCategoria.setBounds(395, 136, 115, 31);
 		panel_central.add(lblCategoria);
 
 		txtNombre = new JTextField();
-		txtNombre.setBounds(554, 80, 374, 32);
+		txtNombre.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		txtNombre.setBounds(554, 80, 189, 32);
 		panel_central.add(txtNombre);
 		txtNombre.setColumns(10);
 
 		JButton btnNuevoEquipo = new JButton("Anadir Inventario");
-		btnNuevoEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
+		btnNuevoEquipo.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		btnNuevoEquipo.setForeground(Color.WHITE);
 		btnNuevoEquipo.setBackground(new Color(0, 102, 0));
-		btnNuevoEquipo.setBounds(1025, 16, 238, 71);
+		btnNuevoEquipo.setBounds(1112, 39, 151, 48);
 		panel_central.add(btnNuevoEquipo);
 
 		comboCategoria = new JComboBox();
-		comboCategoria.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 17));
-		comboCategoria.setBounds(554, 138, 374, 32);
+		comboCategoria.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		comboCategoria.setBounds(554, 138, 189, 32);
 		comboCategoria.addItem(Categoria.ALEVIN);
 		comboCategoria.addItem(Categoria.INFANTIL);
 		comboCategoria.addItem(Categoria.CADETE);
@@ -187,13 +188,13 @@ public class RegistrarEquipo extends JFrame {
 
 		JLabel lblEntrenador = new JLabel("Entrenador");
 		lblEntrenador.setForeground(Color.DARK_GRAY);
-		lblEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
+		lblEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblEntrenador.setBounds(396, 199, 135, 31);
 		panel_central.add(lblEntrenador);
 
 		comboEntrenador = new JComboBox();
-		comboEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 17));
-		comboEntrenador.setBounds(554, 201, 374, 32);
+		comboEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		comboEntrenador.setBounds(554, 201, 189, 32);
 		RellenarEntrenadores();
 
 		panel_central.add(comboEntrenador);
@@ -201,13 +202,13 @@ public class RegistrarEquipo extends JFrame {
 		btnMostrarJugadores = new JButton("Mostrar Jugadores");
 		btnMostrarJugadores.setBackground(new Color(0, 102, 0));
 		btnMostrarJugadores.setForeground(Color.WHITE);
-		btnMostrarJugadores.setBounds(956, 141, 172, 29);
+		btnMostrarJugadores.setBounds(765, 140, 135, 29);
 		panel_central.add(btnMostrarJugadores);
 
 		jugadores_lista = new ArrayList<String>();
 		lblJugadores = new JLabel("Jugadores");
 		lblJugadores.setForeground(Color.DARK_GRAY);
-		lblJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
+		lblJugadores.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblJugadores.setBounds(395, 261, 135, 31);
 		panel_central.add(lblJugadores);
 		
@@ -224,7 +225,7 @@ public class RegistrarEquipo extends JFrame {
 		panel_izquierdo.setForeground(new Color(0, 102, 0));
 		panel_izquierdo.setBorder(null);
 		panel_izquierdo.setBackground(new Color(0, 102, 0));
-		panel_izquierdo.setBounds(0, 0, 328, 510);
+		panel_izquierdo.setBounds(0, 0, 328, 528);
 		panel_central.add(panel_izquierdo);
 		
 		btnHome = new JButton("HOME");
@@ -311,7 +312,7 @@ public class RegistrarEquipo extends JFrame {
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setBackground(new Color(0, 128, 0));
 		btnAceptar.setForeground(Color.WHITE);
-		btnAceptar.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
+		btnAceptar.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Anyadir_Equipo();
@@ -435,6 +436,8 @@ public class RegistrarEquipo extends JFrame {
 		}
 		try {
 			Gestor.getInstance().RegistrarEquipo(txtNombre.getText(),(Categoria)comboCategoria.getSelectedItem(),entrenador,lista_Jugadores ,inventario);
+			txtNombre.setText("");
+			HashSet.clear();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -449,4 +452,5 @@ public class RegistrarEquipo extends JFrame {
 			}
 		}
 	}
+
 }

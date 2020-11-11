@@ -47,7 +47,6 @@ public class Visualizar_Equipos extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtLosAprendicesDe;
-	private JLabel lblListaJugadores;
 	private JPanel panel_central;
 	private List<Jugador> ListaJugadores;
 	private JPanel panel;
@@ -61,11 +60,14 @@ public class Visualizar_Equipos extends JFrame {
 	private JComboBox comboCategoria;
 	private JLabel lblCategoria;
 	private JLabel lblCategoria_sel;
-	private JPanel pExterior;
-	private JScrollPane scrollPane;
-	private JPanel pScrollPane;
-
-
+	private JPanel pScrollPaneJ;
+	private JComboBox comboEquipos;
+	private List<Equipo>Lista_Equipos;
+	private JScrollPane scrollPaneJ;
+	private JScrollPane scrollPane_i;
+	private JPanel panel_i;
+	private JPanel pScrollPane_i ;
+	private JLabel lbl_Entrenador;
 
 	/**
 	 * Launch the application.
@@ -119,15 +121,9 @@ public class Visualizar_Equipos extends JFrame {
 
 		panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 190, 1278, 494);
+		panel_central.setBounds(0, 190, 1278, 511);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
-
-		lblListaJugadores = new JLabel("JUGADORES");
-		lblListaJugadores.setForeground(Color.DARK_GRAY);
-		lblListaJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
-		lblListaJugadores.setBounds(352, 27, 360, 38);
-		panel_central.add(lblListaJugadores);
 		ListaJugadores = new ArrayList<>();
 		
 		panel = new JPanel();
@@ -135,7 +131,7 @@ public class Visualizar_Equipos extends JFrame {
 		panel.setForeground(new Color(0, 102, 0));
 		panel.setBorder(null);
 		panel.setBackground(new Color(0, 102, 0));
-		panel.setBounds(0, 0, 328, 494);
+		panel.setBounds(0, 0, 328, 511);
 		panel_central.add(panel);
 		
 		btnHome = new JButton("HOME");
@@ -229,10 +225,10 @@ public class Visualizar_Equipos extends JFrame {
 		btnGO = new JButton("GO!");
 		btnGO.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MostrarJugadores();
+				RellenarCombo();
 			}
 		});
-		btnGO.setBounds(1172, 34, 68, 38);
+		btnGO.setBounds(669, 11, 68, 38);
 		panel_central.add(btnGO);
 		
 		comboCategoria = new JComboBox();
@@ -241,96 +237,137 @@ public class Visualizar_Equipos extends JFrame {
 		comboCategoria.addItem(Categoria.CADETE);
 		comboCategoria.addItem(Categoria.JUVENIL);
 		comboCategoria.addItem(Categoria.SENIOR);
-		comboCategoria.setBounds(1046, 40, 109, 26);
+		comboCategoria.setBounds(543, 17, 109, 26);
 		panel_central.add(comboCategoria);
 		
 		lblCategoria = new JLabel("Selecciona una categoria:");
 		lblCategoria.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblCategoria.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
-		lblCategoria.setBounds(841, 40, 185, 26);
+		lblCategoria.setBounds(338, 17, 185, 26);
 		panel_central.add(lblCategoria);
 		
-		pScrollPane = new JPanel();
-		pScrollPane.setBounds(684, 107, 298, 348);
-		panel_central.add(pScrollPane);
+		pScrollPaneJ = new JPanel();
+		pScrollPaneJ.setBounds(465, 239, 227, 241);
+		panel_central.add(pScrollPaneJ);
+		pScrollPaneJ.setLayout(new BorderLayout(0, 0));
 		
-		scrollPane = new JScrollPane();
-		pScrollPane.add(scrollPane);
+		scrollPaneJ = new JScrollPane();
+		pScrollPaneJ.add(scrollPaneJ, BorderLayout.CENTER);
 		
-		pExterior = new JPanel();
-		pScrollPane.add(pExterior);
-		pExterior.setLayout(null);
+		JPanel panel_J = new JPanel();
+		scrollPaneJ.setViewportView(panel_J);
+		
+		JLabel lblEquipo = new JLabel("Selecciona un equipo:");
+		lblEquipo.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblEquipo.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
+		lblEquipo.setBounds(338, 64, 185, 26);
+		panel_central.add(lblEquipo);
+		
+		comboEquipos = new JComboBox();
+		comboEquipos.setBounds(543, 66, 109, 26);
+		panel_central.add(comboEquipos);
 		
 		
+		JButton btnGO2 = new JButton("GO!");
+		btnGO2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MostrarJugadores();
+				MostrarInventario();
+			}
+		});
+		btnGO2.setBounds(669, 60, 68, 38);
+		panel_central.add(btnGO2);
 		
+
+
 		
+		JLabel lblEntrenador = new JLabel("Entrenador:");
+		lblEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
+		lblEntrenador.setBounds(371, 169, 109, 32);
+		panel_central.add(lblEntrenador);
 		
+		lbl_Entrenador = new JLabel();
+		lbl_Entrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
+		lbl_Entrenador.setBounds(465, 172, 299, 26);
+		panel_central.add(lbl_Entrenador);
+		
+		JLabel lblJugadores = new JLabel("Jugadores:");
+		lblJugadores.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
+		lblJugadores.setBounds(371, 212, 109, 32);
+		panel_central.add(lblJugadores);
+		
+		JLabel lblInventario = new JLabel("Inventario:");
+		lblInventario.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
+		lblInventario.setBounds(814, 215, 88, 26);
+		panel_central.add(lblInventario);
+		
+		pScrollPane_i = new JPanel();
+		pScrollPane_i.setBounds(895, 239, 227, 241);
+		panel_central.add(pScrollPane_i);
+		pScrollPane_i.setLayout(new BorderLayout(0, 0));
+		
+		scrollPane_i = new JScrollPane();
+		pScrollPane_i.add(scrollPane_i, BorderLayout.CENTER);
+		
+		panel_i = new JPanel();
+		scrollPane_i.setViewportView(panel_i);
+	
 	}
 	
-	public void MostrarJugadores()
+	public void RellenarCombo()
 	{
-		String cat=null;
-		if(((Categoria)comboCategoria.getSelectedItem()).equals(Categoria.ALEVIN)) cat="ALEVIN";
-		if(((Categoria)comboCategoria.getSelectedItem()).equals(Categoria.INFANTIL)) cat="INFANTIL";
-		if(((Categoria)comboCategoria.getSelectedItem()).equals(Categoria.CADETE)) cat="CADETE";
-		if(((Categoria)comboCategoria.getSelectedItem()).equals(Categoria.JUVENIL)) cat="JUVENIL";
-		if(((Categoria)comboCategoria.getSelectedItem()).equals(Categoria.SENIOR)) cat="SENIOR";
-		
-		lblCategoria_sel = new JLabel();
-		lblCategoria_sel.setBounds(654, 94, 228, 45);
-		panel_central.add(lblCategoria_sel);
-		
-		
 		
 		try {
-			ListaJugadores=Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem());
-			ArrayList <String> ListaNombres= new ArrayList();
-			
-			for(Jugador a: ListaJugadores)
-			{
-				String nombre_completo=a.getNombre()+" "+a.getApellido();
-				ListaNombres.add(nombre_completo);
-			}
-			JList JListaJugadores=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
-			scrollPane.setViewportView(JListaJugadores);
-			JListaJugadores.setLayoutOrientation(JList.VERTICAL);
-			scrollPane.repaint();
-			pExterior.repaint();
-//			
-//			ListaJugadores.clear();
-//			ListaJugadores=Gestor.getInstance().MostrarJugadores(Categoria.INFANTIL);
-//			JListaJugadoresInfantil = new JList<String>();
-//			scrollPane_JugadoresInfantil.setViewportView(JListaJugadoresInfantil);
-//			JListaJugadoresInfantil.setLayoutOrientation(JList.VERTICAL);
-//			scrollPane_JugadoresInfantil.repaint();
-//			panel_central.repaint();
-//			
-//			ListaJugadores.clear();
-//			ListaJugadores=Gestor.getInstance().MostrarJugadores(Categoria.CADETE);
-//			JListaJugadoresCadete = new JList<String>();
-//			scrollPane_JugadoresCadete.setViewportView(JListaJugadoresCadete);
-//			JListaJugadoresCadete.setLayoutOrientation(JList.VERTICAL);
-//			scrollPane_JugadoresCadete.repaint();
-//			panel_central.repaint();
-//			
-//			ListaJugadores.clear();
-//			ListaJugadores=Gestor.getInstance().MostrarJugadores(Categoria.JUVENIL);
-//			JListaJugadoresJuvenil = new JList<String>();
-//			scrollPane_JugadoresJuvenil.setViewportView(JListaJugadoresJuvenil);
-//			JListaJugadoresJuvenil.setLayoutOrientation(JList.VERTICAL);
-//			scrollPane_JugadoresJuvenil.repaint();
-//			panel_central.repaint();
-//			
-//			ListaJugadores.clear();
-//			ListaJugadores=Gestor.getInstance().MostrarJugadores(Categoria.SENIOR);
-//			JListaJugadoresSenior = new JList<String>();
-//			scrollPane_JugadoresSenior.setViewportView(JListaJugadoresSenior);
-//			JListaJugadoresSenior.setLayoutOrientation(JList.VERTICAL);
-//			scrollPane_JugadoresSenior.repaint();
-			panel_central.repaint();
+			Lista_Equipos=Gestor.getInstance().getEquipos();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		Lista_Equipos.forEach(e->
+		{
+			if(e.getCategoria().equals((Categoria)comboCategoria.getSelectedItem())) comboEquipos.addItem(e.getNombre());
+		});
+	}
+	
+	public void MostrarJugadores()
+	{
+		
+		Equipo e=null;
+		for(Equipo a:Lista_Equipos)
+		{
+			if(a.getNombre().equals(comboEquipos.getSelectedItem())) 
+				e=a; 
+		}
+		lbl_Entrenador.setText(e.getEntrenador().toString());
+		ArrayList <String> ListaNombres= new ArrayList();
+		e.getLista_jugador().forEach(a->ListaNombres.add(a.toString()));
+		JList JListaJugadores=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
+		scrollPaneJ.setViewportView(JListaJugadores);
+		JListaJugadores.setLayoutOrientation(JList.VERTICAL);
+		scrollPaneJ.repaint();
+		pScrollPaneJ.repaint();
+		panel_central.repaint();
+		
+	}
+	
+	public void MostrarInventario()
+	{
+		Equipo e=null;
+		for(Equipo a:Lista_Equipos)
+		{
+			if(a.getNombre().equals(comboEquipos.getSelectedItem())) 
+				e=a; 
+		}
+		ArrayList <String> ListaNombres= new ArrayList();
+		e.getInventario().forEach((m,c)->ListaNombres.add(c+" "+m.getTipo()));
+		JList JListaInventario=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
+		scrollPane_i.setViewportView(JListaInventario);
+		JListaInventario.setLayoutOrientation(JList.VERTICAL);
+		scrollPane_i.repaint();
+		pScrollPane_i.repaint();
+		panel_central.repaint();
+		
+		
+		
 	}
 }

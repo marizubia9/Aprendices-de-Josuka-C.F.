@@ -102,7 +102,7 @@ public class Anyadir_Inventario extends JFrame {
 
 		panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 190, 1278, 494);
+		panel_central.setBounds(0, 190, 1278, 511);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 		
@@ -111,7 +111,7 @@ public class Anyadir_Inventario extends JFrame {
 		panel_izquierdo.setForeground(new Color(0, 102, 0));
 		panel_izquierdo.setBorder(null);
 		panel_izquierdo.setBackground(new Color(0, 102, 0));
-		panel_izquierdo.setBounds(0, 0, 328, 494);
+		panel_izquierdo.setBounds(0, 0, 328, 511);
 		panel_central.add(panel_izquierdo);
 		
 		btnHome = new JButton("HOME");
@@ -196,29 +196,29 @@ public class Anyadir_Inventario extends JFrame {
 		panel_izquierdo.add(btnVisualizarEquipos);
 		
 		comboMaterial = new JComboBox();
-		comboMaterial.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
+		comboMaterial.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		comboMaterial.setBounds(813, 173, 180, 30);
 		panel_central.add(comboMaterial);
 		RellenarCombo();
 		
 		JLabel lblMaterial = new JLabel("Material: ");
-		lblMaterial.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblMaterial.setBounds(645, 173, 130, 30);
+		lblMaterial.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblMaterial.setBounds(696, 173, 77, 30);
 		panel_central.add(lblMaterial);
 		
 		JLabel lblCantidad = new JLabel("Cantidad:");
-		lblCantidad.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblCantidad.setBounds(645, 263, 130, 30);
+		lblCantidad.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblCantidad.setBounds(696, 263, 77, 30);
 		panel_central.add(lblCantidad);
 		
 		txtCantidad = new JTextField();
-		txtCantidad.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
+		txtCantidad.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		txtCantidad.setBounds(813, 263, 50, 30);
 		panel_central.add(txtCantidad);
 		txtCantidad.setColumns(10);
 		
 		JLabel lblUds = new JLabel("uds.");
-		lblUds.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
+		lblUds.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblUds.setBounds(885, 263, 50, 30);
 		panel_central.add(lblUds);
 		
@@ -230,7 +230,7 @@ public class Anyadir_Inventario extends JFrame {
 		});
 		btnAceptar.setForeground(new Color(255, 255, 255));
 		btnAceptar.setBackground(new Color(0, 128, 0));
-		btnAceptar.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
+		btnAceptar.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		btnAceptar.setBounds(737, 380, 126, 30);
 		panel_central.add(btnAceptar);
 		
@@ -241,8 +241,8 @@ public class Anyadir_Inventario extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnSalir.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		btnSalir.setBounds(1143, 538, 106, 43);
+		btnSalir.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		btnSalir.setBounds(1143, 437, 88, 30);
 		panel_central.add(btnSalir);
 	}
 	

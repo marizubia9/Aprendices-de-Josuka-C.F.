@@ -128,7 +128,7 @@ public class Visualizar_Jugadores extends JFrame {
 
 		panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 190, 1278, 494);
+		panel_central.setBounds(0, 190, 1278, 511);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
@@ -150,7 +150,7 @@ public class Visualizar_Jugadores extends JFrame {
 		panel.setForeground(new Color(0, 102, 0));
 		panel.setBorder(null);
 		panel.setBackground(new Color(0, 102, 0));
-		panel.setBounds(0, 0, 328, 494);
+		panel.setBounds(0, 0, 328, 512);
 		panel_central.add(panel);
 		
 		btnHome = new JButton("HOME");
@@ -263,7 +263,7 @@ public class Visualizar_Jugadores extends JFrame {
 		
 		PanelCentro = new JPanel();
 		PanelCentro.setBackground(Color.WHITE);
-		PanelCentro.setBounds(328, 83, 1007, 550);
+		PanelCentro.setBounds(328, 83, 950, 429);
 		panel_central.add(PanelCentro);
 		PanelCentro.setLayout(null);
 		

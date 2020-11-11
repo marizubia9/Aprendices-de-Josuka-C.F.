@@ -91,6 +91,7 @@ public class Gestor {
 		});
 		DAO.getInstance().guardarObjeto(e);
 	}
+	
 	public static void RegistrarInventario( Tipo_Material tipo,int cantidad,long precio ) 
 	{
 		Material m= new Material(tipo, cantidad, precio);
@@ -107,6 +108,7 @@ public class Gestor {
 		
 		DAO.getInstance().guardarObjeto(m);
 	}
+	
 	public static void AsignarInventario(Material m)
 	{
 		for(Material mat: ObtenerMaterial())
@@ -122,6 +124,12 @@ public class Gestor {
 	{
 		return DAO.getInstance().getMaterial();
 	}
+	
+	public static List<Equipo> getEquipos()
+	{
+		return DAO.getInstance().getEquipo();
+	}
+	
 	public static List<Jugador> MostrarJugadores(Categoria cat)
 	{
 		int edad=0;
