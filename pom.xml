@@ -357,26 +357,7 @@
                 </plugins>
             </build>
         </profile>
-        <!-- run as 'mvn exec:java -Pmain' -->
-        <profile>
-            <id>main</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.2.1</version>
-                        <configuration>
-                            <mainClass>main</mainClass>
-                            <arguments>
-                                <argument>${server.hostname}</argument>
-                                <argument>${server.port}</argument>
-                            </arguments>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+        
         
        
     </profiles>
