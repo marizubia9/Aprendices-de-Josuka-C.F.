@@ -68,14 +68,15 @@ public class RegistrarEntrenador extends JFrame {
 
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1351, 862);
+	    setBounds(100, 100, 1300, 740);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JPanel panel_superior = new JPanel();
-		panel_superior.setBounds(0, 0, 1401, 189);
+		panel_superior.setBounds(0, 0, 1278, 189);
 		panel_superior.setBackground(new Color(0, 102, 0));
 		contentPane.add(panel_superior);
 		panel_superior.setLayout(null);
@@ -93,97 +94,97 @@ public class RegistrarEntrenador extends JFrame {
 
 		JPanel panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 190, 1335, 633);
+		panel_central.setBounds(0, 190, 1278, 494);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
 		lblNuevoEntrenador = new JLabel("NUEVO ENTRENADOR");
 		lblNuevoEntrenador.setForeground(Color.DARK_GRAY);
 		lblNuevoEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
-		lblNuevoEntrenador.setBounds(68, 45, 338, 38);
+		lblNuevoEntrenador.setBounds(69, 16, 338, 38);
 		panel_central.add(lblNuevoEntrenador);
 
 		lblNombre = new JLabel("Nombre");
 		lblNombre.setForeground(Color.DARK_GRAY);
 		lblNombre.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblNombre.setBounds(113, 97, 115, 31);
+		lblNombre.setBounds(393, 59, 115, 31);
 		panel_central.add(lblNombre);
 
 		lblApellido = new JLabel("Apellido");
 		lblApellido.setForeground(Color.DARK_GRAY);
 		lblApellido.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblApellido.setBounds(113, 163, 115, 31);
+		lblApellido.setBounds(393, 106, 115, 31);
 		panel_central.add(lblApellido);
 
 		lblDni = new JLabel("DNI");
 		lblDni.setForeground(Color.DARK_GRAY);
 		lblDni.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblDni.setBounds(113, 235, 115, 31);
+		lblDni.setBounds(393, 153, 115, 31);
 		panel_central.add(lblDni);
 
 		lblFechaDeNacimiento = new JLabel("Fecha de nacimiento");
 		lblFechaDeNacimiento.setForeground(Color.DARK_GRAY);
 		lblFechaDeNacimiento.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblFechaDeNacimiento.setBounds(113, 307, 260, 31);
+		lblFechaDeNacimiento.setBounds(393, 200, 260, 31);
 		panel_central.add(lblFechaDeNacimiento);
 
 		txtNombre = new JTextField();
-		txtNombre.setBounds(271, 97, 260, 32);
+		txtNombre.setBounds(551, 59, 260, 32);
 		panel_central.add(txtNombre);
 		txtNombre.setColumns(10);
 
 		txtApellido = new JTextField();
 		txtApellido.setColumns(10);
-		txtApellido.setBounds(271, 166, 260, 32);
+		txtApellido.setBounds(551, 105, 260, 32);
 		panel_central.add(txtApellido);
 
 		txtDNI = new JTextField();
 		txtDNI.setColumns(10);
-		txtDNI.setBounds(271, 235, 260, 32);
+		txtDNI.setBounds(551, 152, 260, 32);
 		panel_central.add(txtDNI);
 
 		JLabel lblTelefono = new JLabel("Telefono");
 		lblTelefono.setForeground(Color.DARK_GRAY);
 		lblTelefono.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblTelefono.setBounds(113, 378, 260, 31);
+		lblTelefono.setBounds(393, 247, 146, 31);
 		panel_central.add(lblTelefono);
 
 		JLabel lblCorreo = new JLabel("Correo");
 		lblCorreo.setForeground(Color.DARK_GRAY);
 		lblCorreo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblCorreo.setBounds(113, 458, 260, 31);
+		lblCorreo.setBounds(393, 294, 260, 31);
 		panel_central.add(lblCorreo);
 
 		txtTelefono = new JTextField();
 		txtTelefono.setColumns(10);
-		txtTelefono.setBounds(271, 378, 260, 32);
+		txtTelefono.setBounds(551, 250, 260, 32);
 		panel_central.add(txtTelefono);
 
 		txtCorreo = new JTextField();
 		txtCorreo.setColumns(10);
-		txtCorreo.setBounds(271, 457, 260, 32);
+		txtCorreo.setBounds(551, 297, 260, 32);
 		panel_central.add(txtCorreo);
 
 		JButton btnRegistrarse = new JButton("Registrarse");
 		btnRegistrarse.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
 		btnRegistrarse.setForeground(Color.WHITE);
 		btnRegistrarse.setBackground(new Color(0, 102, 0));
-		btnRegistrarse.setBounds(745, 551, 178, 38);
+		btnRegistrarse.setBounds(591, 407, 178, 38);
 		panel_central.add(btnRegistrarse);
 
 		JLabel lblPsw = new JLabel("Password");
 		lblPsw.setForeground(Color.DARK_GRAY);
 		lblPsw.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblPsw.setBounds(113, 536, 260, 31);
+		lblPsw.setBounds(393, 341, 130, 31);
 		panel_central.add(lblPsw);
 
 		txtPsw = new JTextField();
 		txtPsw.setColumns(10);
-		txtPsw.setBounds(271, 535, 260, 32);
+		txtPsw.setBounds(551, 341, 260, 32);
 		panel_central.add(txtPsw);
 
 		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(394, 307, 137, 31);
+		dateChooser.setBounds(674, 200, 137, 31);
 		panel_central.add(dateChooser);
 
 		btnRegistrarse.addActionListener(new ActionListener() {

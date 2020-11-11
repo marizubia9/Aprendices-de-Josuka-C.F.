@@ -113,14 +113,16 @@ public class RegistrarEquipo extends JFrame {
 
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1351, 862);
+	    setBounds(100, 100, 1300, 740);
+		setLocationRelativeTo(null);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JPanel panel_superior = new JPanel();
-		panel_superior.setBounds(0, 0, 1401, 189);
+		panel_superior.setBounds(0, 0, 1278, 173);
 		panel_superior.setBackground(new Color(0, 102, 0));
 		contentPane.add(panel_superior);
 		panel_superior.setLayout(null);
@@ -132,36 +134,36 @@ public class RegistrarEquipo extends JFrame {
 		txtLosAprendicesDe.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 40));
 		txtLosAprendicesDe.setText("LOS APRENDICES DE JOSUKA C.F.");
 		txtLosAprendicesDe.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		txtLosAprendicesDe.setBounds(46, 57, 702, 89);
+		txtLosAprendicesDe.setBounds(45, 39, 702, 89);
 		panel_superior.add(txtLosAprendicesDe);
 		txtLosAprendicesDe.setColumns(10);
 
 		panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 190, 1335, 633);
+		panel_central.setBounds(0, 173, 1278, 511);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
 		lblNuevoEquipo = new JLabel("NUEVO EQUIPO\r\n");
 		lblNuevoEquipo.setForeground(Color.DARK_GRAY);
 		lblNuevoEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
-		lblNuevoEquipo.setBounds(385, 44, 338, 38);
+		lblNuevoEquipo.setBounds(385, 16, 338, 38);
 		panel_central.add(lblNuevoEquipo);
 
 		lblNombre = new JLabel("Nombre");
 		lblNombre.setForeground(Color.DARK_GRAY);
 		lblNombre.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblNombre.setBounds(396, 137, 115, 31);
+		lblNombre.setBounds(395, 77, 115, 31);
 		panel_central.add(lblNombre);
 
 		lblCategoria = new JLabel("Categoria");
 		lblCategoria.setForeground(Color.DARK_GRAY);
 		lblCategoria.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblCategoria.setBounds(396, 212, 115, 31);
+		lblCategoria.setBounds(395, 136, 115, 31);
 		panel_central.add(lblCategoria);
 
 		txtNombre = new JTextField();
-		txtNombre.setBounds(554, 137, 374, 32);
+		txtNombre.setBounds(554, 80, 374, 32);
 		panel_central.add(txtNombre);
 		txtNombre.setColumns(10);
 
@@ -169,12 +171,12 @@ public class RegistrarEquipo extends JFrame {
 		btnNuevoEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
 		btnNuevoEquipo.setForeground(Color.WHITE);
 		btnNuevoEquipo.setBackground(new Color(0, 102, 0));
-		btnNuevoEquipo.setBounds(1072, 76, 238, 71);
+		btnNuevoEquipo.setBounds(1025, 16, 238, 71);
 		panel_central.add(btnNuevoEquipo);
 
 		comboCategoria = new JComboBox();
 		comboCategoria.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 17));
-		comboCategoria.setBounds(554, 214, 374, 32);
+		comboCategoria.setBounds(554, 138, 374, 32);
 		comboCategoria.addItem(Categoria.ALEVIN);
 		comboCategoria.addItem(Categoria.INFANTIL);
 		comboCategoria.addItem(Categoria.CADETE);
@@ -186,12 +188,12 @@ public class RegistrarEquipo extends JFrame {
 		JLabel lblEntrenador = new JLabel("Entrenador");
 		lblEntrenador.setForeground(Color.DARK_GRAY);
 		lblEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblEntrenador.setBounds(396, 287, 135, 31);
+		lblEntrenador.setBounds(396, 199, 135, 31);
 		panel_central.add(lblEntrenador);
 
 		comboEntrenador = new JComboBox();
 		comboEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 17));
-		comboEntrenador.setBounds(554, 286, 374, 32);
+		comboEntrenador.setBounds(554, 201, 374, 32);
 		RellenarEntrenadores();
 
 		panel_central.add(comboEntrenador);
@@ -199,50 +201,30 @@ public class RegistrarEquipo extends JFrame {
 		btnMostrarJugadores = new JButton("Mostrar Jugadores");
 		btnMostrarJugadores.setBackground(new Color(0, 102, 0));
 		btnMostrarJugadores.setForeground(Color.WHITE);
-		btnMostrarJugadores.setBounds(962, 217, 172, 29);
+		btnMostrarJugadores.setBounds(956, 141, 172, 29);
 		panel_central.add(btnMostrarJugadores);
 
 		jugadores_lista = new ArrayList<String>();
 		lblJugadores = new JLabel("Jugadores");
 		lblJugadores.setForeground(Color.DARK_GRAY);
 		lblJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblJugadores.setBounds(396, 374, 135, 31);
+		lblJugadores.setBounds(395, 261, 135, 31);
 		panel_central.add(lblJugadores);
 		
 		btnAnyadirJugador = new JButton(">>");
 		btnAnyadirJugador.setForeground(Color.WHITE);
 		btnAnyadirJugador.setBackground(new Color(0, 102, 0));
 		btnAnyadirJugador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 16));
-		btnAnyadirJugador.setBounds(743, 468, 158, 29);
+		btnAnyadirJugador.setBounds(749, 334, 158, 29);
 		panel_central.add(btnAnyadirJugador);
-
-
-		panel_scrollpane1 = new JPanel(new BorderLayout());
-		panel_scrollpane1.setLocation(554, 387);
-		panel_scrollpane1.setSize(180, 190);
 		ListaJugadores1 = new ArrayList<>();
-		scrollPane_Jugadores1 = new JScrollPane();
-		panel_scrollpane1.add(scrollPane_Jugadores1);
-		panel_central.add(panel_scrollpane1);
-		
-		
-		// Creamos Jlist2 en este caso vacio
-		panel_scrollpane2 = new JPanel(new BorderLayout());
-		panel_scrollpane2.setLocation(910, 387);
-		panel_scrollpane2.setSize(180, 190);
-		
-//		List<String> myList2 = new ArrayList<>();
-//		final JList<String> list2 = new JList<String>(myList2.toArray(new String[myList2.size()]));
-		scrollPane2 = new JScrollPane();
-		panel_scrollpane2.add(scrollPane2);
-		panel_central.add(panel_scrollpane2);
 		
 		panel_izquierdo = new JPanel();
 		panel_izquierdo.setLayout(null);
 		panel_izquierdo.setForeground(new Color(0, 102, 0));
 		panel_izquierdo.setBorder(null);
 		panel_izquierdo.setBackground(new Color(0, 102, 0));
-		panel_izquierdo.setBounds(0, 0, 328, 638);
+		panel_izquierdo.setBounds(0, 0, 328, 510);
 		panel_central.add(panel_izquierdo);
 		
 		btnHome = new JButton("HOME");
@@ -335,8 +317,26 @@ public class RegistrarEquipo extends JFrame {
 				Anyadir_Equipo();
 			}
 		});
-		btnAceptar.setBounds(1190, 551, 125, 38);
+		btnAceptar.setBounds(1138, 457, 125, 38);
 		panel_central.add(btnAceptar);
+		scrollPane_Jugadores1 = new JScrollPane();
+		scrollPane_Jugadores1.setBounds(554, 261, 180, 190);
+		panel_central.add(scrollPane_Jugadores1);
+		
+		
+				panel_scrollpane1 = new JPanel(new BorderLayout());
+				scrollPane_Jugadores1.setColumnHeaderView(panel_scrollpane1);
+				
+//		List<String> myList2 = new ArrayList<>();
+//		final JList<String> list2 = new JList<String>(myList2.toArray(new String[myList2.size()]));
+				scrollPane2 = new JScrollPane();
+				scrollPane2.setBounds(922, 261, 180, 190);
+				panel_central.add(scrollPane2);
+				
+				
+				// Creamos Jlist2 en este caso vacio
+				panel_scrollpane2 = new JPanel(new BorderLayout());
+				scrollPane2.setColumnHeaderView(panel_scrollpane2);
 		
 		
 		

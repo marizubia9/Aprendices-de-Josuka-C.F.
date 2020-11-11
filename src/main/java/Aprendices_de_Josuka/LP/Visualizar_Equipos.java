@@ -93,14 +93,15 @@ public class Visualizar_Equipos extends JFrame {
 
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1351, 862);
+	    setBounds(100, 100, 1300, 740);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JPanel panel_superior = new JPanel();
-		panel_superior.setBounds(0, 0, 1335, 189);
+		panel_superior.setBounds(0, 0, 1278, 189);
 		panel_superior.setBackground(new Color(0, 102, 0));
 		contentPane.add(panel_superior);
 		panel_superior.setLayout(null);
@@ -118,14 +119,14 @@ public class Visualizar_Equipos extends JFrame {
 
 		panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 190, 1335, 633);
+		panel_central.setBounds(0, 190, 1278, 494);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
 		lblListaJugadores = new JLabel("JUGADORES");
 		lblListaJugadores.setForeground(Color.DARK_GRAY);
 		lblListaJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
-		lblListaJugadores.setBounds(348, 45, 360, 38);
+		lblListaJugadores.setBounds(352, 27, 360, 38);
 		panel_central.add(lblListaJugadores);
 		ListaJugadores = new ArrayList<>();
 		
@@ -134,7 +135,7 @@ public class Visualizar_Equipos extends JFrame {
 		panel.setForeground(new Color(0, 102, 0));
 		panel.setBorder(null);
 		panel.setBackground(new Color(0, 102, 0));
-		panel.setBounds(0, 0, 328, 638);
+		panel.setBounds(0, 0, 328, 494);
 		panel_central.add(panel);
 		
 		btnHome = new JButton("HOME");
@@ -231,7 +232,7 @@ public class Visualizar_Equipos extends JFrame {
 				MostrarJugadores();
 			}
 		});
-		btnGO.setBounds(1212, 33, 68, 38);
+		btnGO.setBounds(1172, 34, 68, 38);
 		panel_central.add(btnGO);
 		
 		comboCategoria = new JComboBox();
@@ -240,26 +241,25 @@ public class Visualizar_Equipos extends JFrame {
 		comboCategoria.addItem(Categoria.CADETE);
 		comboCategoria.addItem(Categoria.JUVENIL);
 		comboCategoria.addItem(Categoria.SENIOR);
-		comboCategoria.setBounds(1086, 39, 109, 26);
+		comboCategoria.setBounds(1046, 40, 109, 26);
 		panel_central.add(comboCategoria);
 		
 		lblCategoria = new JLabel("Selecciona una categoria:");
 		lblCategoria.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblCategoria.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
-		lblCategoria.setBounds(881, 39, 185, 26);
+		lblCategoria.setBounds(841, 40, 185, 26);
 		panel_central.add(lblCategoria);
 		
-		pExterior = new JPanel();
-		pExterior.setBounds(684, 209, 300, 394);
-		panel_central.add(pExterior);
-		pExterior.setLayout(null);
+		pScrollPane = new JPanel();
+		pScrollPane.setBounds(684, 107, 298, 348);
+		panel_central.add(pScrollPane);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 0, 300, 394);
-		pExterior.add(scrollPane);
+		pScrollPane.add(scrollPane);
 		
-		pScrollPane = new JPanel();
-		scrollPane.setViewportView(pScrollPane);
+		pExterior = new JPanel();
+		pScrollPane.add(pExterior);
+		pExterior.setLayout(null);
 		
 		
 		

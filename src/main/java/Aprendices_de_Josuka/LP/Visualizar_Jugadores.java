@@ -102,14 +102,15 @@ public class Visualizar_Jugadores extends JFrame {
 
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1351, 862);
+	    setBounds(100, 100, 1300, 740);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JPanel panel_superior = new JPanel();
-		panel_superior.setBounds(0, 0, 1401, 189);
+		panel_superior.setBounds(0, 0, 1278, 189);
 		panel_superior.setBackground(new Color(0, 102, 0));
 		contentPane.add(panel_superior);
 		panel_superior.setLayout(null);
@@ -127,7 +128,7 @@ public class Visualizar_Jugadores extends JFrame {
 
 		panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 190, 1335, 633);
+		panel_central.setBounds(0, 190, 1278, 494);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
@@ -138,7 +139,7 @@ public class Visualizar_Jugadores extends JFrame {
 		panel_central.add(lblListaJugadores);
 		
 		btnGO = new JButton("GO!");
-		btnGO.setBounds(1209, 39, 68, 38);
+		btnGO.setBounds(1173, 39, 68, 38);
 		panel_central.add(btnGO);
 		
 		jugadores_lista = new ArrayList<String>();
@@ -149,7 +150,7 @@ public class Visualizar_Jugadores extends JFrame {
 		panel.setForeground(new Color(0, 102, 0));
 		panel.setBorder(null);
 		panel.setBackground(new Color(0, 102, 0));
-		panel.setBounds(0, 0, 328, 638);
+		panel.setBounds(0, 0, 328, 494);
 		panel_central.add(panel);
 		
 		btnHome = new JButton("HOME");
@@ -257,7 +258,7 @@ public class Visualizar_Jugadores extends JFrame {
 		comboCategoria.addItem(Categoria.JUVENIL);
 		comboCategoria.addItem(Categoria.SENIOR);
 		
-		comboCategoria.setBounds(1083, 45, 109, 26);
+		comboCategoria.setBounds(1047, 45, 109, 26);
 		panel_central.add(comboCategoria);
 		
 		PanelCentro = new JPanel();
@@ -267,7 +268,7 @@ public class Visualizar_Jugadores extends JFrame {
 		PanelCentro.setLayout(null);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 0, 1007, 550);
+		scrollPane.setBounds(0, 0, 949, 409);
 		PanelCentro.add(scrollPane);
 		
 		pScrollPane = new JPanel();

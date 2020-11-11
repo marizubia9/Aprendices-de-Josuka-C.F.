@@ -62,14 +62,15 @@ public class Principal_Administrador extends JFrame {
 
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1351, 862);
+	    setBounds(100, 100, 1300, 740);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JPanel panel_superior = new JPanel();
-		panel_superior.setBounds(0, 0, 1401, 189);
+		panel_superior.setBounds(0, 0, 1278, 189);
 		panel_superior.setBackground(new Color(0, 102, 0));
 		contentPane.add(panel_superior);
 		panel_superior.setLayout(null);
@@ -85,7 +86,7 @@ public class Principal_Administrador extends JFrame {
 
 		JPanel panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 187, 1325, 636);
+		panel_central.setBounds(0, 187, 1278, 497);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
@@ -93,7 +94,7 @@ public class Principal_Administrador extends JFrame {
 		panel_izquierdo.setBorder(null);
 		panel_izquierdo.setForeground(new Color(0, 102, 0));
 		panel_izquierdo.setBackground(new Color(0, 102, 0));
-		panel_izquierdo.setBounds(0, 0, 328, 638);
+		panel_izquierdo.setBounds(0, 0, 328, 495);
 		panel_central.add(panel_izquierdo);
 		panel_izquierdo.setLayout(null);
 		
@@ -211,7 +212,7 @@ public class Principal_Administrador extends JFrame {
 		panel_izquierdo.add(label_1);
 		
 		JLabel label_2 = new JLabel("");
-		label_2.setBounds(0, 464, 328, 58);
+		label_2.setBounds(0, 464, 328, 31);
 		panel_izquierdo.add(label_2);
 		
 		JLabel label_3 = new JLabel("");
@@ -224,7 +225,7 @@ public class Principal_Administrador extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(328, 0, 997, 638);
+		panel.setBounds(328, 0, 997, 495);
 		panel_central.add(panel);
 
 	}

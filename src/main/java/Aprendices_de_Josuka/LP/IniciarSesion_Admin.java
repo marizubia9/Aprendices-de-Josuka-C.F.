@@ -56,14 +56,15 @@ public class IniciarSesion_Admin extends JFrame {
 
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1351, 862);
+	    setBounds(100, 100, 1300, 740);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JPanel panel_superior = new JPanel();
-		panel_superior.setBounds(0, 0, 1401, 189);
+		panel_superior.setBounds(0, 0, 1278, 189);
 		panel_superior.setBackground(new Color(0, 102, 0));
 		contentPane.add(panel_superior);
 		panel_superior.setLayout(null);
@@ -79,7 +80,7 @@ public class IniciarSesion_Admin extends JFrame {
 
 		JPanel panel_central = new JPanel();
 		panel_central.setBackground(new Color(0, 102, 0));
-		panel_central.setBounds(300, 276, 777, 455);
+		panel_central.setBounds(294, 232, 777, 408);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 

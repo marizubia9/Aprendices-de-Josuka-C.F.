@@ -67,14 +67,15 @@ public class RegistrarMaterial extends JFrame {
 
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1351, 862);
+	    setBounds(100, 100, 1300, 740);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JPanel panel_superior = new JPanel();
-		panel_superior.setBounds(0, 0, 1401, 189);
+		panel_superior.setBounds(0, 0, 1278, 189);
 		panel_superior.setBackground(new Color(0, 102, 0));
 		contentPane.add(panel_superior);
 		panel_superior.setLayout(null);
@@ -92,7 +93,7 @@ public class RegistrarMaterial extends JFrame {
 
 		JPanel panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 190, 1335, 633);
+		panel_central.setBounds(0, 190, 1278, 494);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
@@ -106,7 +107,7 @@ public class RegistrarMaterial extends JFrame {
 		btnRegistrarse.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
 		btnRegistrarse.setForeground(Color.WHITE);
 		btnRegistrarse.setBackground(new Color(0, 102, 0));
-		btnRegistrarse.setBounds(1115, 562, 154, 38);
+		btnRegistrarse.setBounds(686, 399, 154, 38);
 		panel_central.add(btnRegistrarse);
 		
 		JPanel panel = new JPanel();
@@ -114,7 +115,7 @@ public class RegistrarMaterial extends JFrame {
 		panel.setForeground(new Color(0, 102, 0));
 		panel.setBorder(null);
 		panel.setBackground(new Color(0, 102, 0));
-		panel.setBounds(0, 0, 328, 638);
+		panel.setBounds(0, 0, 328, 494);
 		panel_central.add(panel);
 		
 		JButton btnHome = new JButton("HOME");
@@ -203,42 +204,42 @@ public class RegistrarMaterial extends JFrame {
 		
 		JLabel lblPrecio = new JLabel("Precio total:");
 		lblPrecio.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblPrecio.setBounds(447, 318, 144, 38);
+		lblPrecio.setBounds(596, 304, 140, 38);
 		panel_central.add(lblPrecio);
 		
 		txtPrecio = new JTextField();
-		txtPrecio.setBounds(601, 318, 100, 38);
+		txtPrecio.setBounds(790, 310, 100, 38);
 		panel_central.add(txtPrecio);
 		txtPrecio.setColumns(10);
 		
 		JLabel lblCantidad = new JLabel("Cantidad:");
 		lblCantidad.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblCantidad.setBounds(447, 220, 106, 38);
+		lblCantidad.setBounds(596, 206, 126, 38);
 		panel_central.add(lblCantidad);
 		
 		txtCantidad = new JTextField();
-		txtCantidad.setBounds(563, 220, 100, 38);
+		txtCantidad.setBounds(790, 210, 100, 38);
 		panel_central.add(txtCantidad);
 		txtCantidad.setColumns(10);
 		
 		JLabel lblUds = new JLabel("uds.");
 		lblUds.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblUds.setBounds(673, 221, 61, 37);
+		lblUds.setBounds(905, 209, 61, 37);
 		panel_central.add(lblUds);
 		
 		JLabel lblEu = new JLabel("Eu");
 		lblEu.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblEu.setBounds(711, 319, 61, 37);
+		lblEu.setBounds(905, 307, 61, 37);
 		panel_central.add(lblEu);
 		
 		JLabel lblTipo = new JLabel("Tipo:");
 		lblTipo.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		lblTipo.setBounds(447, 126, 106, 38);
+		lblTipo.setBounds(596, 112, 98, 38);
 		panel_central.add(lblTipo);
 		
 		 comboBox = new JComboBox();
 		comboBox.setFont(new Font("Malgun Gothic", Font.PLAIN, 23));
-		comboBox.setBounds(563, 126, 216, 43);
+		comboBox.setBounds(680, 112, 216, 43);
 		panel_central.add(comboBox);
 		comboBox.addItem(Tipo_Material.Balones);
 		comboBox.addItem(Tipo_Material.Barreras);
