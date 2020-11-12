@@ -23,6 +23,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import com.toedter.calendar.JDayChooser;
 import com.toedter.calendar.JDateChooser;
 
@@ -189,7 +191,8 @@ public class RegistrarEntrenador extends JFrame {
 
 		btnRegistrarse.addActionListener(new ActionListener() {
 
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) 
+			{
 				String nombre = txtNombre.getText();
 				String apellido = txtApellido.getText();
 				Date fecha_date = dateChooser.getDate();
@@ -200,13 +203,47 @@ public class RegistrarEntrenador extends JFrame {
 				int telefono = Integer.parseInt(txtTelefono.getText());
 				String correo = txtCorreo.getText();
 				String psw = txtPsw.getText();
-
+				
+				if(nombre.equals(""))
+				{
+					JOptionPane.showMessageDialog(null, "Introduce correctamente el nombre");
+				}
+				else if(apellido.equals(""))
+				{
+					JOptionPane.showMessageDialog(null, "Introduce correctamente el apellido");
+				}
+				else if(DNI.equals("")|DNI.length()!=9)
+				{
+					JOptionPane.showMessageDialog(null, "Introduce correctamente el DNI");
+				}
+				else if (txtTelefono.getText().equals("")|txtTelefono.getText().length()!=9)
+				{
+					JOptionPane.showMessageDialog(null, "Introduce correctamente el telefono");
+				}
+				else if (correo.equals(""))
+				{
+					JOptionPane.showMessageDialog(null, "Introduce correctamente el correo");
+				}
+				else if (psw.equals(""))
+				{
+					JOptionPane.showMessageDialog(null, "Introduce correctamente la contrasenya");
+				}
+				
+				else
+				{
 				try {
 					Gestor.getInstance().RegistrarEntrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw,
 							false);
 				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+				}
+				txtNombre.setText("");
+				txtApellido.setText("");
+				txtDNI.setText("");
+				txtTelefono.setText("");
+				txtCorreo.setText("");
+				txtPsw.setText("");
 				}
 
 			}

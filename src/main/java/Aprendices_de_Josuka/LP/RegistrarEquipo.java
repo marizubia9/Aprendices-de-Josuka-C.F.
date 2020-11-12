@@ -39,6 +39,7 @@ import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JSpinnerDateEditor;
 import javax.swing.JComboBox;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
@@ -167,6 +168,7 @@ public class RegistrarEquipo extends JFrame {
 		txtNombre.setBounds(554, 80, 189, 32);
 		panel_central.add(txtNombre);
 		txtNombre.setColumns(10);
+		txtNombre.setText("");
 
 		JButton btnNuevoEquipo = new JButton("Anadir Inventario");
 		btnNuevoEquipo.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
@@ -314,8 +316,39 @@ public class RegistrarEquipo extends JFrame {
 		btnAceptar.setForeground(Color.WHITE);
 		btnAceptar.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		btnAceptar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) 
+			{
+				if(txtNombre.getText().equals(""))
+				{
+					System.out.println("entra");
+					JOptionPane.showMessageDialog(null, "Introduce el nombre del equipo");
+				}
+				else if(HashSet == null)
+				{
+					JOptionPane.showMessageDialog(null, "Introduce jugadores");
+				}
+				else if(inventario == null)
+				{
+					JOptionPane.showMessageDialog(null, "Asigna material al equipo");
+				}
+				
+				else
+				{
 				Anyadir_Equipo();
+				txtNombre.setText("");
+				//HashSet=null;
+				//jugadores_lista =null
+				//jugadores_lista.clear();
+
+				MostrarJugadores();
+				RellenarEntrenadores();
+				scrollPane2.repaint();
+				comboEntrenador.removeAllItems();
+				scrollPane2.repaint();
+				panel_central.repaint();
+				JListaJugadores1.removeAll();
+				}
+				
 			}
 		});
 		btnAceptar.setBounds(1138, 457, 125, 38);
@@ -368,8 +401,9 @@ public class RegistrarEquipo extends JFrame {
 	
 	public void MostrarJugadores()
 	{
-
+		ListaJugadores1.clear();
 		try {
+			
 			for(Jugador a : Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem())){
 				
 				ListaJugadores1.add(a.toString());
@@ -416,6 +450,9 @@ public class RegistrarEquipo extends JFrame {
 			if(i.toString().equals(comboEntrenador.getSelectedItem()))
 			{
 				entrenador=i;
+				entrenador.setAsignado_equipo(true);
+				
+				System.out.println(entrenador.isAsignado_equipo());
 			}
 		}
 		try {
@@ -425,7 +462,9 @@ public class RegistrarEquipo extends JFrame {
 				{
 					if(j.toString().equals(i))
 						{
+						j.setAsignado_equipo(true);
 						lista_Jugadores.add(j);
+						
 						}
 				}
 				
@@ -434,10 +473,12 @@ public class RegistrarEquipo extends JFrame {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		try {
+		try 
+		{
 			Gestor.getInstance().RegistrarEquipo(txtNombre.getText(),(Categoria)comboCategoria.getSelectedItem(),entrenador,lista_Jugadores ,inventario);
 			txtNombre.setText("");
 			HashSet.clear();
+			ListaJugadores1.clear();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
