@@ -434,6 +434,16 @@ public class RegistrarEquipo extends JFrame {
 		scrollPane2.repaint();
 		panel_central.repaint();
 	}
+	public void vaciarJList()
+	{
+		jugadores_lista.clear();
+		JListaJugadores2.removeAll();
+		JListaJugadores2 = new JList<String>(jugadores_lista.toArray(new String[jugadores_lista.size()]));
+		scrollPane2.setViewportView(JListaJugadores2);
+		JListaJugadores2.setLayoutOrientation(JList.VERTICAL);
+		scrollPane2.repaint();
+		panel_central.repaint();
+	}
 	public void Anyadir_Material()
 	{
 		inventario = new HashMap<Material, Integer>();
@@ -477,8 +487,7 @@ public class RegistrarEquipo extends JFrame {
 		{
 			Gestor.getInstance().RegistrarEquipo(txtNombre.getText(),(Categoria)comboCategoria.getSelectedItem(),entrenador,lista_Jugadores ,inventario);
 			txtNombre.setText("");
-			HashSet.clear();
-			ListaJugadores1.clear();
+			vaciarJList();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
