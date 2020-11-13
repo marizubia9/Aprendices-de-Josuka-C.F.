@@ -87,6 +87,7 @@ public class RegistrarEquipo extends JFrame {
 	private JLabel label_2;
 	private JLabel label_3;
 	private JLabel label_4;
+	private JButton btnEditarEntrenador;
 
 	/**
 	 * Launch the application.
@@ -311,6 +312,22 @@ public class RegistrarEquipo extends JFrame {
 		btnVisualziarEquipo.setBounds(0, 290, 328, 58);
 		panel_izquierdo.add(btnVisualziarEquipo);
 		
+		btnEditarEntrenador = new JButton("EDITAR ENTRENADOR");
+		btnEditarEntrenador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				EditarEntrenador r = new EditarEntrenador();
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnEditarEntrenador.setHorizontalAlignment(SwingConstants.LEFT);
+		btnEditarEntrenador.setForeground(Color.WHITE);
+		btnEditarEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnEditarEntrenador.setBackground(new Color(0, 102, 0));
+		btnEditarEntrenador.setBounds(0, 345, 328, 58);
+		panel_izquierdo.add(btnEditarEntrenador);
+		
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setBackground(new Color(0, 128, 0));
 		btnAceptar.setForeground(Color.WHITE);
@@ -404,6 +421,7 @@ public class RegistrarEquipo extends JFrame {
 	
 	public void MostrarJugadores()
 	{
+		vaciarJList();
 		ListaJugadores1.clear();
 		try {
 			
@@ -440,7 +458,6 @@ public class RegistrarEquipo extends JFrame {
 	public void vaciarJList()
 	{
 		jugadores_lista.clear();
-		JListaJugadores2.removeAll();
 		JListaJugadores2 = new JList<String>(jugadores_lista.toArray(new String[jugadores_lista.size()]));
 		scrollPane2.setViewportView(JListaJugadores2);
 		JListaJugadores2.setLayoutOrientation(JList.VERTICAL);
