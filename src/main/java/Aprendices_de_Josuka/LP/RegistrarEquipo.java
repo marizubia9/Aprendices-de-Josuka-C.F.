@@ -381,10 +381,13 @@ public class RegistrarEquipo extends JFrame {
 				jugadores_lista.clear();
 				MostrarJugadores();
 			
+				
+			
 				panel_central.repaint();
 			btnAnyadirJugador.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						PasarJugadores();
+						
 
 					}
 				});
