@@ -24,7 +24,7 @@ public class Jugador {
 	private String psw;
 	private Equipo equipo;
 	private boolean reconocimiento_medico;
-	private boolean estado; // Tiene lesiones o no
+	private boolean lesionado; // Tiene lesiones o no
 	private boolean cuota_pagada;
 	private boolean asignado_equipo;
 
@@ -40,7 +40,7 @@ public class Jugador {
 		this.correo = correo;
 		this.psw = password;
 		this.reconocimiento_medico = reconocimiento_medico;
-		this.estado = estado;
+		this.lesionado = estado;
 		this.cuota_pagada = cuota_pagada;
 		this.asignado_equipo = asignado_equipo;
 

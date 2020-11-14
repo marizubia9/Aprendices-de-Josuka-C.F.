@@ -158,41 +158,21 @@ public class Gestor {
 						}
 							
 						}
-					if(cat==Categoria.INFANTIL)
+					if(cat==Categoria.INFANTIL) 
 					{
-					if (edad==12||edad==13)
-					{
-						String nombre_completo= a.getNombre()+" "+a.getApellido();
-						ListaJugadores1.add(a);
-					}
-						
+						if (edad==12||edad==13)ListaJugadores1.add(a);
 					}
 					if(cat==Categoria.CADETE)
 					{
-					if (edad==14||edad==15)
-					{
-						String nombre_completo= a.getNombre()+" "+a.getApellido();
-						ListaJugadores1.add(a);
-					}
-						
+						if (edad==14||edad==15)ListaJugadores1.add(a);	
 					}
 					if(cat==Categoria.JUVENIL)
 					{
-					if (edad==16||edad==17||edad==18)
-					{
-						String nombre_completo= a.getNombre()+" "+a.getApellido();
-						ListaJugadores1.add(a);
-					}
-						
+						if (edad==16||edad==17||edad==18)ListaJugadores1.add(a);
 					}
 					if(cat==Categoria.SENIOR)
 					{
-					if (edad>18)
-					{
-						String nombre_completo= a.getNombre()+" "+a.getApellido();
-						ListaJugadores1.add(a);
-					}
-						
+						if (edad>18)ListaJugadores1.add(a);
 					}
 				
 			}
@@ -216,7 +196,7 @@ public class Gestor {
 		return ListaEquipos;
 		
 	}
-	public String ObtenerEquipo(Entrenador entrenador)
+	public String ObtenerEquipoEntrenador(Entrenador entrenador)
 	{
 
 		for(Equipo e: MostrarEquipos())
@@ -231,6 +211,73 @@ public class Gestor {
 	{
 		DAO.getInstance().ActualizarEntrenador(salario, e);
 	}
-	
-	
+	public void ActualizarJugador(Jugador e, boolean reconocimiento, boolean lesionado, boolean cuota)
+	{
+		DAO.getInstance().ActualizarJugador(e, reconocimiento, lesionado, cuota);
+	}
+	public String ObtenerEquipoJugador(Jugador jugador)
+	{
+
+		for(Equipo e: MostrarEquipos())
+		{
+			for(Jugador j: e.getLista_jugador())
+			{
+				if(j.equals(jugador))
+				{
+					return e.getNombre();
+				}
+			}
+		}
+		
+		return "No tiene ningun equipo asignado";
+	}
+	public  List<Jugador> getJugadores(Categoria cat)
+	{
+		int edad=0;
+		List<Jugador> ListaJugadores1= new ArrayList<>();
+		for (Jugador a : DAO.getInstance().getJugador()) {
+			
+				StringTokenizer st= new StringTokenizer(a.getFecha_nacimiento(),"/");
+				Integer[] fecha=new Integer[3];
+				int i=0;
+				while(st.hasMoreTokens()){
+		            String str=st.nextToken();
+		            fecha[i]=Integer.valueOf(str).intValue();
+		            i++;
+		        }
+				int anyo=fecha[2];
+				Calendar cal = Calendar.getInstance();
+				int anyo_actual=cal.get(Calendar.YEAR);
+				edad=anyo_actual-anyo;
+					if(cat==Categoria.ALEVIN)
+						{
+						if (edad==10||edad==11)
+						{
+							
+							ListaJugadores1.add(a);
+						}
+							
+						}
+					if(cat==Categoria.INFANTIL) 
+					{
+						if (edad==12||edad==13)ListaJugadores1.add(a);
+					}
+					if(cat==Categoria.CADETE)
+					{
+						if (edad==14||edad==15)ListaJugadores1.add(a);	
+					}
+					if(cat==Categoria.JUVENIL)
+					{
+						if (edad==16||edad==17||edad==18)ListaJugadores1.add(a);
+					}
+					if(cat==Categoria.SENIOR)
+					{
+						if (edad>18)ListaJugadores1.add(a);
+					}
+				
+			
+			
+		}
+		return ListaJugadores1;
+	}
 }

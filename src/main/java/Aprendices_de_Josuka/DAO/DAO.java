@@ -42,7 +42,7 @@ public class DAO implements itfDAO {
 			if (objeto instanceof Jugador) {
 				objeto = new Jugador(((Jugador) objeto).getNombre(), ((Jugador) objeto).getApellido(),
 						((Jugador) objeto).getFecha_nacimiento(), ((Jugador) objeto).getDNI(),
-						((Jugador) objeto).isReconocimiento_medico(), ((Jugador) objeto).isEstado(),
+						((Jugador) objeto).isReconocimiento_medico(), ((Jugador) objeto).isLesionado(),
 						((Jugador) objeto).getTelefono(), ((Jugador) objeto).getCorreo(), ((Jugador) objeto).getPsw(),
 						((Jugador) objeto).isCuota_pagada(), ((Jugador) objeto).isAsignado_equipo());
 				persistentManager.makePersistent(objeto);
@@ -163,6 +163,25 @@ public class DAO implements itfDAO {
 		try {
 		Entrenador e= persistentManager.getObjectById(Entrenador.class, entrenador.getDNI());
 		e.setSalario(salario);
+		
+		} catch (Exception ex) {
+
+			System.err.println("* Exception modifying data into db: " + ex.getMessage());
+		}
+		finally {
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
+		}
+	}
+	public void ActualizarJugador(Jugador jugador, boolean reconocimiento, boolean lesionado, boolean cuota)
+	{
+		
+		try {
+		Jugador j= persistentManager.getObjectById(Jugador.class, jugador.getDNI());
+		j.setReconocimiento_medico(reconocimiento);
+		j.setLesionado(lesionado);
+		j.setCuota_pagada(cuota);
 		
 		} catch (Exception ex) {
 
