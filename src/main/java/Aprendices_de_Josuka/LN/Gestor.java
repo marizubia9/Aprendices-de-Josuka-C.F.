@@ -33,7 +33,7 @@ public class Gestor {
 		return INSTANCE;
 	}
 
-	public static boolean Entrar_admin(String email, String psw) {
+	public  boolean Entrar_admin(String email, String psw) {
 		for (Administrador a : DAO.getInstance().getAdmin()) {
 			if (a.getEmail().equals(email) && a.getPsw().equals(psw)) {
 				return true;
@@ -44,7 +44,7 @@ public class Gestor {
 		return false;
 	}
 
-	public static boolean Entrar_Jugador(String email, String psw) {
+	public  boolean Entrar_Jugador(String email, String psw) {
 
 		for (Jugador a : DAO.getInstance().getJugador()) {
 			if (a.getCorreo().equals(email) && a.getPsw().equals(psw)) {
@@ -58,7 +58,7 @@ public class Gestor {
 		return false;
 	}
 
-	public static boolean Entrar_Entrenador(String email, String psw) {
+	public  boolean Entrar_Entrenador(String email, String psw) {
 		for (Entrenador a : DAO.getInstance().getEntrenador()) {
 			if (a.getCorreo().equals(email) && a.getPsw().equals(psw)) {
 				return true;
@@ -69,18 +69,18 @@ public class Gestor {
 		return false;
 	}
 
-	public static void RegistrarJugador(String nombre, String apellido, String fecha_nacimiento, String DNI,
+	public  void RegistrarJugador(String nombre, String apellido, String fecha_nacimiento, String DNI,
 			int telefono, String correo, String password, boolean Asignado_equipo) {
 		Jugador j = new Jugador(nombre, apellido, fecha_nacimiento, DNI, false, false, telefono, correo, password,false, Asignado_equipo);
 		DAO.getInstance().guardarObjeto(j);
 	}
 
-	public static void RegistrarEntrenador(String nombre, String apellido, String fecha_nacimiento, String DNI,
+	public  void RegistrarEntrenador(String nombre, String apellido, String fecha_nacimiento, String DNI,
 			int telefono, String correo, String password, boolean asignado) {
 		Entrenador e = new Entrenador(nombre, apellido, fecha_nacimiento, DNI, telefono, correo, password, 0, asignado);
 		DAO.getInstance().guardarObjeto(e);
 	}
-	public static void RegistrarEquipo(String nombre, Categoria cat, Entrenador entrenador, List<Jugador>lista_jugador, HashMap<Material, Integer> inventario)
+	public  void RegistrarEquipo(String nombre, Categoria cat, Entrenador entrenador, List<Jugador>lista_jugador, HashMap<Material, Integer> inventario)
 	{
 		Equipo e= new Equipo(nombre, cat, entrenador, lista_jugador, inventario);
 		inventario.forEach((m,c)->
@@ -92,7 +92,7 @@ public class Gestor {
 		DAO.getInstance().guardarObjeto(e);
 	}
 	
-	public static void RegistrarInventario( Tipo_Material tipo,int cantidad,long precio ) 
+	public  void RegistrarInventario( Tipo_Material tipo,int cantidad,long precio ) 
 	{
 		Material m= new Material(tipo, cantidad, precio);
 		for(Material mat: ObtenerMaterial())
@@ -109,7 +109,7 @@ public class Gestor {
 		DAO.getInstance().guardarObjeto(m);
 	}
 	
-	public static void AsignarInventario(Material m)
+	public  void AsignarInventario(Material m)
 	{
 		for(Material mat: ObtenerMaterial())
 		{
@@ -120,17 +120,17 @@ public class Gestor {
 		}
 	}
 
-	public static List<Material> ObtenerMaterial()
+	public  List<Material> ObtenerMaterial()
 	{
 		return DAO.getInstance().getMaterial();
 	}
 	
-	public static List<Equipo> getEquipos()
+	public  List<Equipo> getEquipos()
 	{
 		return DAO.getInstance().getEquipo();
 	}
 	
-	public static List<Jugador> MostrarJugadores(Categoria cat)
+	public  List<Jugador> MostrarJugadores(Categoria cat)
 	{
 		int edad=0;
 		List<Jugador> ListaJugadores1= new ArrayList<>();
@@ -207,15 +207,29 @@ public class Gestor {
 		
 	}
 	
-	public List<String> MostrarEquipos()
+	public List<Equipo> MostrarEquipos()
 	{
-		List<String> ListaEquipos= new ArrayList<>();
+		List<Equipo> ListaEquipos= new ArrayList<>();
 		for (Equipo a : DAO.getInstance().getEquipo()) {
-			String nombre_completo= a.getNombre();
-			ListaEquipos.add(nombre_completo);
+			ListaEquipos.add(a);
 		}
 		return ListaEquipos;
 		
+	}
+	public String ObtenerEquipo(Entrenador entrenador)
+	{
+
+		for(Equipo e: MostrarEquipos())
+		{
+			if(e.getEntrenador().equals(entrenador))
+				return e.getNombre();
+		}
+		
+		return "No tiene ningun equipo asignado";
+	}
+	public void ActualizarEntrenador(Entrenador e, long salario)
+	{
+		DAO.getInstance().ActualizarEntrenador(salario, e);
 	}
 	
 	

@@ -156,6 +156,26 @@ public class DAO implements itfDAO {
 		extent.closeAll();
 		return equipos;
 	}
+	
+	public void ActualizarEntrenador(Long salario, Entrenador entrenador)
+	{
+		
+		try {
+		Entrenador e= persistentManager.getObjectById(Entrenador.class, entrenador.getDNI());
+		e.setSalario(salario);
+		
+		} catch (Exception ex) {
+
+			System.err.println("* Exception modifying data into db: " + ex.getMessage());
+		}
+		finally {
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
+		}
+	}
+	
+	
 	// @Override
 	// public List<Usuario> getUsuarios() {
 	// // TODO Auto-generated method stub

@@ -70,20 +70,16 @@ public class EditarEntrenador extends JFrame {
 	private JButton btnVisualizarJugador;
 	private JButton btnVisualizarEntrenador;
 	private JButton btnVisualziarEquipo;
-	private JLabel label;
-	private JLabel label_1;
-	private JLabel label_2;
-	private JLabel label_3;
-	private JLabel label_4;
 	private JLabel lblNombreEntrenador;
 	private JLabel lblDni;
 	private JLabel lblDNIEntrenador;
 	private JLabel lblEquipo;
 	private JLabel lblSalario;
-	private JComboBox comboBox;
-	private JComboBox comboBox_1;
-	private JTextField textField;
+	private JComboBox comboEntrenador;
+	private JTextField txtSalario;
 	private Entrenador entrenador;
+	private JLabel lblApellidoEntrenador;
+	private JLabel lblEquipoEntrenador;
 
 	/**
 	 * Launch the application.
@@ -242,92 +238,99 @@ public class EditarEntrenador extends JFrame {
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				
+				Guardar();
 			}
 		});
 		btnAceptar.setBounds(1138, 457, 125, 38);
 		panel_central.add(btnAceptar);
 		
 		JLabel lblSeleccioneElEntrenador = new JLabel("Seleccione el entrenador");
+		lblSeleccioneElEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblSeleccioneElEntrenador.setBounds(343, 16, 182, 20);
 		panel_central.add(lblSeleccioneElEntrenador);
 		
-		comboBox = new JComboBox();
-		comboBox.setBounds(547, 13, 157, 26);
-		panel_central.add(comboBox);
+		comboEntrenador = new JComboBox();
+		comboEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		comboEntrenador.setBounds(547, 13, 246, 26);
+		panel_central.add(comboEntrenador);
 		IntroducirEntrenadores();
 		
 		JLabel lblNombre = new JLabel("Nombre");
+		lblNombre.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblNombre.setBounds(529, 147, 69, 20);
 		panel_central.add(lblNombre);
 		
-		JLabel lblNombreEntrenador = new JLabel(entrenador.getNombre());
+		lblNombreEntrenador = new JLabel(entrenador.getNombre());
+		lblNombreEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblNombreEntrenador.setBounds(632, 147, 182, 20);
 		panel_central.add(lblNombreEntrenador);
 		
 		JLabel lblApellido = new JLabel("Apellido");
+		lblApellido.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblApellido.setBounds(529, 198, 69, 20);
 		panel_central.add(lblApellido);
 		
-		JLabel lblApellidoEntrenador = new JLabel(entrenador.getApellido());
+		lblApellidoEntrenador = new JLabel(entrenador.getApellido());
+		lblApellidoEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblApellidoEntrenador.setBounds(632, 198, 182, 20);
 		panel_central.add(lblApellidoEntrenador);
 		
 		lblDni = new JLabel("DNI");
+		lblDni.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblDni.setBounds(529, 93, 69, 20);
 		panel_central.add(lblDni);
 		
 		lblDNIEntrenador = new JLabel(entrenador.getDNI());
-		lblDNIEntrenador.setBounds(632, 93, 69, 20);
+		lblDNIEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblDNIEntrenador.setBounds(632, 93, 161, 20);
 		panel_central.add(lblDNIEntrenador);
 		
 		lblSalario = new JLabel("Salario");
+		lblSalario.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblSalario.setBounds(529, 251, 69, 20);
 		panel_central.add(lblSalario);
 		
 		lblEquipo = new JLabel("Equipo");
+		lblEquipo.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblEquipo.setBounds(529, 302, 69, 20);
 		panel_central.add(lblEquipo);
 		
-		comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(632, 299, 138, 26);
-		panel_central.add(comboBox_1);
 		
-		
-		String salario;
-		salario=Integer.toString((int) entrenador.getSalario());
-		textField = new JTextField();
-		textField.setBounds(631, 248, 146, 26);
-		panel_central.add(textField);
-		textField.setColumns(10);
+		txtSalario = new JTextField();
+		txtSalario.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		txtSalario.setBounds(631, 248, 146, 26);
+		panel_central.add(txtSalario);
+		txtSalario.setColumns(10);
 		
 		JButton btnGo = new JButton("GO!");
+		btnGo.setFont(new Font("Malgun Gothic", Font.PLAIN, 11));
 		btnGo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				VisualizarEntrenadores();
 				panel_izquierdo.repaint();
 				VisualizarEntrenadores();
-				Prueba();
 			}
 		});
-		btnGo.setBounds(724, 12, 69, 29);
+		btnGo.setBounds(816, 14, 69, 29);
 		panel_central.add(btnGo);
+		
+		lblEquipoEntrenador = new JLabel("");
+		lblEquipoEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblEquipoEntrenador.setBounds(632, 308, 182, 20);
+		panel_central.add(lblEquipoEntrenador);
 		
 	}
 	
 	public void IntroducirEntrenadores()
 	{
 		ListaEntrenadores= new ArrayList();
-		String dniEntrenador;
+		
 		try 
 		{
 			ListaEntrenadores=Gestor.getInstance().MostrarEntrenadores();
-			for(int i=0; i<ListaEntrenadores.size();i++)
-			{
-				dniEntrenador=ListaEntrenadores.get(i).getDNI();
-				comboBox.addItem(dniEntrenador);
-			}
+			ListaEntrenadores.forEach(e->comboEntrenador.addItem(e.toString()));
+			
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -336,24 +339,51 @@ public class EditarEntrenador extends JFrame {
 	
 	public void VisualizarEntrenadores()
 	{
-		try {
-			ListaEntrenadores=Gestor.getInstance().MostrarEntrenadores();
-			for(int i=0; i<ListaEntrenadores.size();i++)
+			ListaEntrenadores.forEach(e->{
+			if(comboEntrenador.getSelectedItem().toString().equals(e.toString()))
 			{
-				String dni=comboBox.getSelectedItem().toString();
-				if(dni.equals(ListaEntrenadores.get(i).getDNI().toString()))
-				{
-					entrenador = new Entrenador (ListaEntrenadores.get(i).getNombre(), ListaEntrenadores.get(i).getApellido(), ListaEntrenadores.get(i).getFecha_nacimiento(),ListaEntrenadores.get(i).getDNI(),ListaEntrenadores.get(i).getTelefono(), ListaEntrenadores.get(i).getCorreo(), ListaEntrenadores.get(i).getPsw(), ListaEntrenadores.get(i).getSalario(),ListaEntrenadores.get(i).isAsignado_equipo());
+				lblDNIEntrenador.setText(e.getDNI());
+				lblNombreEntrenador.setText(e.getNombre());
+				lblApellidoEntrenador.setText(e.getApellido());
+				txtSalario.setText(String.valueOf(e.getSalario()));
+				try {
+					lblEquipoEntrenador.setText(Gestor.getInstance().ObtenerEquipo(e));
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 			}
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		});
 	}
-	public void Prueba()
+	
+	public void Guardar()
 	{
-		System.out.println(entrenador.getDNI());
+		for(Entrenador e:ListaEntrenadores){
+			if(comboEntrenador.getSelectedItem().toString().equals(e.toString()))
+			{ long salario=0;
+				try
+				{
+					 salario= Long.parseLong(txtSalario.getText());
+				}catch(Exception ex)
+				{
+					JOptionPane.showMessageDialog(null, "Vuelve a introducir el salario");
+					txtSalario.setText("");
+				}
+				
+						
+				try {
+					Gestor.getInstance().ActualizarEntrenador(e, salario);
+					lblApellidoEntrenador.setText("");
+					lblNombreEntrenador.setText("");
+					lblDNIEntrenador.setText("");
+					txtSalario.setText("");
+					lblEquipoEntrenador.setText("");
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 		
+			}
+			}
 	}
 }
