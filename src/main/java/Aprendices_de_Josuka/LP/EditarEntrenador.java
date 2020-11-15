@@ -51,18 +51,9 @@ public class EditarEntrenador extends JFrame {
 	private JTextField txtLosAprendicesDe;
 	private Date objDate;
 	private List<Entrenador> ListaEntrenadores;
-	private JList<String> listaJugadores1;
 	private JPanel panel_scrollpane;
 	private JPanel panel_central;
-	private List<String> ListaJugadores1;
-	private HashMap<Material,Integer> inventario;
-	private JList<String> JListaJugadores1;
-	private JList<String> JListaJugadores2;
-	private List<Jugador>lista_Jugadores;
-	private List<String> jugadores_lista;
-	private Set<String> HashSet;
 
-	private boolean MostrarJugadores;
 	private JPanel panel_izquierdo;
 	private JButton btnHome;
 	private JButton btnAnyadirEquipo;
@@ -77,7 +68,6 @@ public class EditarEntrenador extends JFrame {
 	private JLabel lblSalario;
 	private JComboBox comboEntrenador;
 	private JTextField txtSalario;
-	private Entrenador entrenador;
 	private JLabel lblApellidoEntrenador;
 	private JLabel lblEquipoEntrenador;
 
@@ -106,7 +96,7 @@ public class EditarEntrenador extends JFrame {
 	}
 
 	public void initComponents() {
-		entrenador = new Entrenador("", "", "", "", 0, "", "", 0, false);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
 		setLocationRelativeTo(null);
@@ -139,8 +129,6 @@ public class EditarEntrenador extends JFrame {
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
-		jugadores_lista = new ArrayList<String>();
-		ListaJugadores1 = new ArrayList<>();
 		
 		panel_izquierdo = new JPanel();
 		panel_izquierdo.setLayout(null);
@@ -260,7 +248,6 @@ public class EditarEntrenador extends JFrame {
 		lblNombre.setBounds(529, 147, 69, 20);
 		panel_central.add(lblNombre);
 		
-		lblNombreEntrenador = new JLabel(entrenador.getNombre());
 		lblNombreEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblNombreEntrenador.setBounds(632, 147, 182, 20);
 		panel_central.add(lblNombreEntrenador);
@@ -270,7 +257,6 @@ public class EditarEntrenador extends JFrame {
 		lblApellido.setBounds(529, 198, 69, 20);
 		panel_central.add(lblApellido);
 		
-		lblApellidoEntrenador = new JLabel(entrenador.getApellido());
 		lblApellidoEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblApellidoEntrenador.setBounds(632, 198, 182, 20);
 		panel_central.add(lblApellidoEntrenador);
@@ -280,7 +266,6 @@ public class EditarEntrenador extends JFrame {
 		lblDni.setBounds(529, 93, 69, 20);
 		panel_central.add(lblDni);
 		
-		lblDNIEntrenador = new JLabel(entrenador.getDNI());
 		lblDNIEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblDNIEntrenador.setBounds(632, 93, 161, 20);
 		panel_central.add(lblDNIEntrenador);
