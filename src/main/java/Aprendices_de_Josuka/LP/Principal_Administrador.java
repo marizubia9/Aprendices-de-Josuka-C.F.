@@ -30,11 +30,17 @@ public class Principal_Administrador extends JFrame {
 
 	private JPanel contentPane;
 	private JLabel txtLosAprendicesDe;
-	private JButton btnAnadirEquipo;
-	private JButton btnanyadirInventario;
-	private JButton btnVisualizarJugadores;
-	private JButton btnVisualizarEntrenadores;
-	private JButton btnVisualizarEquipos;
+	private JButton btnHome;
+	private JButton btnAnyadirEquipo;
+	private JButton btnAnyadirInventario;
+	private JButton btnVisualizarJugador;
+	private JButton btnVisualizarEntrenador;
+	private JButton btnVisualziarEquipo;
+	private JButton btnEditarEntrenador;
+	private JButton btnEditarEquipo;
+	private JButton btnEditarJugador;
+	private JPanel panel_izquierdo;
+	
 
 	/**
 	 * Launch the application.
@@ -90,51 +96,49 @@ public class Principal_Administrador extends JFrame {
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
-		JPanel panel_izquierdo = new JPanel();
-		panel_izquierdo.setBorder(null);
-		panel_izquierdo.setForeground(new Color(0, 102, 0));
-		panel_izquierdo.setBackground(new Color(0, 102, 0));
-		panel_izquierdo.setBounds(0, 0, 328, 495);
-		panel_central.add(panel_izquierdo);
+		panel_izquierdo = new JPanel();
 		panel_izquierdo.setLayout(null);
+		panel_izquierdo.setForeground(new Color(0, 102, 0));
+		panel_izquierdo.setBorder(null);
+		panel_izquierdo.setBackground(new Color(0, 102, 0));
+		panel_izquierdo.setBounds(0, 0, 328, 528);
+		panel_central.add(panel_izquierdo);
 		
-		JButton button = new JButton("HOME");
-		button.setEnabled(false);
-		button.setBounds(0, 0, 328, 58);
-		button.setHorizontalAlignment(SwingConstants.LEFT);
-		button.setForeground(Color.WHITE);
-		button.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		button.setBackground(new Color(0, 102, 0));
-		panel_izquierdo.add(button);
-		
-				btnAnadirEquipo = new JButton("AÑADIR EQUIPO");
-				btnAnadirEquipo.setBounds(0, 58, 328, 58);
-				btnAnadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
-				panel_izquierdo.add(btnAnadirEquipo);
-				btnAnadirEquipo.setForeground(Color.WHITE);
-				btnAnadirEquipo.setBackground(new Color(0, 102, 0));
-				btnAnadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnHome = new JButton("HOME");
+		btnHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				
-						btnAnadirEquipo.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent e) {
-				
-								
-								RegistrarEquipo r = new RegistrarEquipo();
-								r.setVisible(true);
-								setVisible(false);
-				
-							}
-						});
+				Principal_Administrador pa= new Principal_Administrador();
+				pa.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnHome.setHorizontalAlignment(SwingConstants.LEFT);
+		btnHome.setForeground(Color.WHITE);
+		btnHome.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnHome.setBackground(new Color(0, 102, 0));
+		btnHome.setBounds(0, 0, 328, 42);
+		panel_izquierdo.add(btnHome);
 		
-		btnanyadirInventario = new JButton("AÑADIR INVENTARIO");
-		btnanyadirInventario.setBounds(0, 116, 328, 58);
-		btnanyadirInventario.setHorizontalAlignment(SwingConstants.LEFT);
-		btnanyadirInventario.setForeground(Color.WHITE);
-		btnanyadirInventario.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnanyadirInventario.setBackground(new Color(0, 102, 0));
-		panel_izquierdo.add(btnanyadirInventario);
+		btnAnyadirEquipo = new JButton("AÑADIR EQUIPO");
+		btnAnyadirEquipo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				RegistrarEquipo r = new RegistrarEquipo();
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnAnyadirEquipo.setEnabled(false);
+		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
+		btnAnyadirEquipo.setForeground(Color.WHITE);
+		btnAnyadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnAnyadirEquipo.setBackground(new Color(0, 102, 0));
+		btnAnyadirEquipo.setBounds(0, 40, 328, 42);
+		panel_izquierdo.add(btnAnyadirEquipo);
 		
-		btnanyadirInventario.addActionListener(new ActionListener() {
+		btnAnyadirInventario = new JButton("AÑADIR INVENTARIO");
+		btnAnyadirInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				
@@ -143,65 +147,108 @@ public class Principal_Administrador extends JFrame {
 				setVisible(false);
 			}
 		});
+		btnAnyadirInventario.setHorizontalAlignment(SwingConstants.LEFT);
+		btnAnyadirInventario.setForeground(Color.WHITE);
+		btnAnyadirInventario.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnAnyadirInventario.setBackground(new Color(0, 102, 0));
+		btnAnyadirInventario.setBounds(0, 81, 328, 42);
+		panel_izquierdo.add(btnAnyadirInventario);
 		
-		btnVisualizarJugadores = new JButton("VISUALIZAR  JUGADORES");
-		btnVisualizarJugadores.setBounds(0, 174, 328, 58);
-		btnVisualizarJugadores.setHorizontalAlignment(SwingConstants.LEFT);
-		btnVisualizarJugadores.setForeground(Color.WHITE);
-		btnVisualizarJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnVisualizarJugadores.setBackground(new Color(0, 102, 0));
-		panel_izquierdo.add(btnVisualizarJugadores);
-		
-		btnVisualizarJugadores.addActionListener(new ActionListener() {
+		btnVisualizarJugador = new JButton("VISUALIZAR  JUGADORES");
+		btnVisualizarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+			
 				Visualizar_Jugadores r = new Visualizar_Jugadores();
 				r.setVisible(true);
 				setVisible(false);
-				
-				
-
 			}
 		});
+		btnVisualizarJugador.setHorizontalAlignment(SwingConstants.LEFT);
+		btnVisualizarJugador.setForeground(Color.WHITE);
+		btnVisualizarJugador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnVisualizarJugador.setBackground(new Color(0, 102, 0));
+		btnVisualizarJugador.setBounds(0, 202, 328, 42);
+		panel_izquierdo.add(btnVisualizarJugador);
 		
-		btnVisualizarEntrenadores = new JButton("VISUALIZAR  ENTRENADORES");
-		btnVisualizarEntrenadores.setBounds(0, 232, 328, 58);
-		btnVisualizarEntrenadores.setHorizontalAlignment(SwingConstants.LEFT);
-		btnVisualizarEntrenadores.setForeground(Color.WHITE);
-		btnVisualizarEntrenadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnVisualizarEntrenadores.setBackground(new Color(0, 102, 0));
-		panel_izquierdo.add(btnVisualizarEntrenadores);
-		
-		btnVisualizarEntrenadores.addActionListener(new ActionListener() {
+		btnVisualizarEntrenador = new JButton("VISUALIZAR  ENTRENADORES");
+		btnVisualizarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+			
 				Visualizar_Entrenadores r = new Visualizar_Entrenadores();
 				r.setVisible(true);
 				setVisible(false);
-				
-
 			}
 		});
+		btnVisualizarEntrenador.setHorizontalAlignment(SwingConstants.LEFT);
+		btnVisualizarEntrenador.setForeground(Color.WHITE);
+		btnVisualizarEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnVisualizarEntrenador.setBackground(new Color(0, 102, 0));
+		btnVisualizarEntrenador.setBounds(0, 121, 328, 42);
+		panel_izquierdo.add(btnVisualizarEntrenador);
 		
-		btnVisualizarEquipos = new JButton("VISUALIZAR  EQUIPOS");
-		btnVisualizarEquipos.setBounds(0, 290, 328, 58);
-		btnVisualizarEquipos.setHorizontalAlignment(SwingConstants.LEFT);
-		btnVisualizarEquipos.setForeground(Color.WHITE);
-		btnVisualizarEquipos.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnVisualizarEquipos.setBackground(new Color(0, 102, 0));
-		panel_izquierdo.add(btnVisualizarEquipos);
-		
-		btnVisualizarEquipos.addActionListener(new ActionListener() {
+		btnVisualziarEquipo = new JButton("VISUALIZAR  EQUIPOS");
+		btnVisualziarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				
 				Visualizar_Equipos r = new Visualizar_Equipos();
 				r.setVisible(true);
 				setVisible(false);
-
-
 			}
 		});
+		btnVisualziarEquipo.setHorizontalAlignment(SwingConstants.LEFT);
+		btnVisualziarEquipo.setForeground(Color.WHITE);
+		btnVisualziarEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnVisualziarEquipo.setBackground(new Color(0, 102, 0));
+		btnVisualziarEquipo.setBounds(0, 162, 328, 42);
+		panel_izquierdo.add(btnVisualziarEquipo);
+		
+		btnEditarEntrenador = new JButton("EDITAR ENTRENADOR");
+		btnEditarEntrenador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				EditarEntrenador r = new EditarEntrenador();
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnEditarEntrenador.setHorizontalAlignment(SwingConstants.LEFT);
+		btnEditarEntrenador.setForeground(Color.WHITE);
+		btnEditarEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnEditarEntrenador.setBackground(new Color(0, 102, 0));
+		btnEditarEntrenador.setBounds(0, 243, 328, 42);
+		panel_izquierdo.add(btnEditarEntrenador);
+		
+		btnEditarEquipo = new JButton("EDITAR EQUIPO");
+		btnEditarEquipo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				EditarEquipo r = new EditarEquipo();
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnEditarEquipo.setHorizontalAlignment(SwingConstants.LEFT);
+		btnEditarEquipo.setForeground(Color.WHITE);
+		btnEditarEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnEditarEquipo.setBackground(new Color(0, 102, 0));
+		btnEditarEquipo.setBounds(0, 281, 328, 42);
+		panel_izquierdo.add(btnEditarEquipo);
+		
+		btnEditarJugador = new JButton("EDITAR JUGADOR");
+		btnEditarJugador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				EditarJugador r = new EditarJugador();
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnEditarJugador.setHorizontalAlignment(SwingConstants.LEFT);
+		btnEditarJugador.setForeground(Color.WHITE);
+		btnEditarJugador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnEditarJugador.setBackground(new Color(0, 102, 0));
+		btnEditarJugador.setBounds(0, 322, 328, 42);
+		panel_izquierdo.add(btnEditarJugador);
 		
 		JLabel label = new JLabel("");
 		label.setBounds(0, 348, 328, 58);
