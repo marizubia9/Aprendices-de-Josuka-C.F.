@@ -32,7 +32,7 @@ public class EditarEquipo extends JFrame{
 	private JPanel contentPane;
 	private JLabel lblLosAprendicesDe;
 	private List<Equipo>Lista_Equipos;
-	private List<String> Lista_Jugadores;
+	private List<Jugador> Lista_Jugadores;
 	
 	private JPanel panel_central;
 
@@ -330,7 +330,7 @@ public class EditarEquipo extends JFrame{
 		btnGO2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MostrarInformacion();
-				VisualizarJugadoresCategoria();
+//				VisualizarJugadoresCategoria();
 			}
 		});
 		btnGO2.setFont(new Font("Malgun Gothic", Font.PLAIN, 11));
@@ -434,39 +434,47 @@ public class EditarEquipo extends JFrame{
 		}
 	}
 	
-	public void VisualizarJugadoresCategoria()
-	{
-		if (Lista_Jugadores.size()!=0)
-		{
-		Lista_Jugadores.clear();
-		}
-		
-		try 
-		{
-			
-			for(Jugador a : Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem()))
-			{
-				Lista_Jugadores.add(a.toString());
-			}
-		} catch (RemoteException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		if (Lista_Jugadores.size() == 0)return;
-		else
-		{
-		System.out.println("tamanyo de la lista" + Lista_Jugadores.size());
-		Lista_Jugadores.forEach(j->modelo2.addElement(j));
-		list_JugadoresAnyadir = new JList<String>(Lista_Jugadores.toArray(new String[Lista_Jugadores.size()]));
-		list_JugadoresAnyadir.setModel(modelo2);
-		pScrollPane_1.repaint();
-		}
-	}
+//	public void VisualizarJugadoresCategoria()
+//	{
+//		if (Lista_Jugadores.size()!=0)
+//		{
+//		Lista_Jugadores.clear();
+//		}
+//		
+//		try 
+//		{
+//			
+//			for(Jugador a : Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem()))
+//			{
+//				Lista_Jugadores.add(a.toString());
+//			}
+//		} catch (RemoteException e) 
+//		{
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		if (Lista_Jugadores.size() == 0)return;
+//		else
+//		{
+//		System.out.println("tamanyo de la lista" + Lista_Jugadores.size());
+//		Lista_Jugadores.forEach(j->modelo2.addElement(j));
+//		list_JugadoresAnyadir = new JList<String>(Lista_Jugadores.toArray(new String[Lista_Jugadores.size()]));
+//		list_JugadoresAnyadir.setModel(modelo2);
+//		pScrollPane_1.repaint();
+//		}
+//	}
 	public void MostrarInformacion()
 	{
 		if (Lista_Equipos.size()==0)return;
 		else{
+			Lista_Jugadores.clear();
+			Lista_Equipos.clear();
+			try {
+				Lista_Jugadores=Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem());
+			} catch (RemoteException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			for(Equipo e: Lista_Equipos)
 			{
 				if(e.toString().equals(comboEquipo.getSelectedItem().toString()))
@@ -476,9 +484,16 @@ public class EditarEquipo extends JFrame{
 					e.getLista_jugador().forEach(j->modelo.addElement(j));
 					list_JugadoresEquipo.setModel(modelo);
 					pScrollPane.repaint();
+					
 				}
 
 			}
+			for(Jugador j: Lista_Jugadores)
+			{
+				modelo2.addElement(j);
+			}
+			list_JugadoresAnyadir.setModel(modelo2);
+			pScrollPane_1.repaint();
 		}
 	}
 	
