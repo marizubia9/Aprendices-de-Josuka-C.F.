@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
 import Aprendices_de_Josuka.DAO.DAO;
 import Aprendices_de_Josuka.LD.Administrador;
@@ -129,7 +130,15 @@ public class Gestor {
 	{
 		return DAO.getInstance().getEquipo();
 	}
-	
+	public List<Equipo>getEquiposFilter(Categoria cat)
+	{
+		return getEquipos().stream().filter(e->e.getCategoria().equals(cat)).collect(Collectors.toList());
+	}
+	public List<Jugador>getJugador()
+	{
+		return DAO.getInstance().getJugador();
+	}
+
 	public  List<Jugador> MostrarJugadores(Categoria cat)
 	{
 		int edad=0;
@@ -187,19 +196,11 @@ public class Gestor {
 		
 	}
 	
-	public List<Equipo> MostrarEquipos()
-	{
-		List<Equipo> ListaEquipos= new ArrayList<>();
-		for (Equipo a : DAO.getInstance().getEquipo()) {
-			ListaEquipos.add(a);
-		}
-		return ListaEquipos;
-		
-	}
+
 	public String ObtenerEquipoEntrenador(Entrenador entrenador)
 	{
 
-		for(Equipo e: MostrarEquipos())
+		for(Equipo e: getEquipos())
 		{
 			if(e.getEntrenador().equals(entrenador))
 				return e.getNombre();
@@ -218,7 +219,7 @@ public class Gestor {
 	public String ObtenerEquipoJugador(Jugador jugador)
 	{
 
-		for(Equipo e: MostrarEquipos())
+		for(Equipo e: getEquipos())
 		{
 			for(Jugador j: e.getLista_jugador())
 			{
