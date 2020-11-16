@@ -214,7 +214,6 @@ public class DAO implements itfDAO {
 		}
 	}
 	
-	
 	// @Override
 	// public List<Usuario> getUsuarios() {
 	// // TODO Auto-generated method stub
