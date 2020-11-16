@@ -78,98 +78,82 @@ public class Gestor {
 		DAO.getInstance().guardarObjeto(e);
 	}
 
-	public List<String> MostrarJugadores(Categoria cat)
-	{
-		int edad=0;
-		List<String> ListaJugadores1= new ArrayList<>();
+	public List<String> MostrarJugadores(Categoria cat) {
+		int edad = 0;
+		List<String> ListaJugadores1 = new ArrayList<>();
 		for (Jugador a : DAO.getInstance().getJugador()) {
-			if (!a.isAsignado_equipo()) 
-			{
-				StringTokenizer st= new StringTokenizer(a.getFecha_nacimiento(),"/");
-				Integer[] fecha=new Integer[3];
-				int i=0;
-				while(st.hasMoreTokens()){
-		            String str=st.nextToken();
-		            fecha[i]=Integer.valueOf(str).intValue();
-		            i++;
-		        }
-				int anyo=fecha[2];
+			if (!a.isAsignado_equipo()) {
+				StringTokenizer st = new StringTokenizer(a.getFecha_nacimiento(), "/");
+				Integer[] fecha = new Integer[3];
+				int i = 0;
+				while (st.hasMoreTokens()) {
+					String str = st.nextToken();
+					fecha[i] = Integer.valueOf(str).intValue();
+					i++;
+				}
+				int anyo = fecha[2];
 				Calendar cal = Calendar.getInstance();
-				int anyo_actual=cal.get(Calendar.YEAR);
-				edad=anyo_actual-anyo;
-					if(cat==Categoria.ALEVIN)
-						{
-						if (edad==10||edad==11)
-						{
-							String nombre_completo= a.getNombre()+" "+a.getApellido();
-							ListaJugadores1.add(nombre_completo);
-						}
-							
-						}
-					if(cat==Categoria.INFANTIL)
-					{
-					if (edad==12||edad==13)
-					{
-						String nombre_completo= a.getNombre()+" "+a.getApellido();
+				int anyo_actual = cal.get(Calendar.YEAR);
+				edad = anyo_actual - anyo;
+				if (cat == Categoria.ALEVIN) {
+					if (edad == 10 || edad == 11) {
+						String nombre_completo = a.getNombre() + " " + a.getApellido();
 						ListaJugadores1.add(nombre_completo);
 					}
-						
-					}
-					if(cat==Categoria.CADETE)
-					{
-					if (edad==14||edad==15)
-					{
-						String nombre_completo= a.getNombre()+" "+a.getApellido();
+
+				}
+				if (cat == Categoria.INFANTIL) {
+					if (edad == 12 || edad == 13) {
+						String nombre_completo = a.getNombre() + " " + a.getApellido();
 						ListaJugadores1.add(nombre_completo);
 					}
-						
-					}
-					if(cat==Categoria.JUVENIL)
-					{
-					if (edad==16||edad==17||edad==18)
-					{
-						String nombre_completo= a.getNombre()+" "+a.getApellido();
+
+				}
+				if (cat == Categoria.CADETE) {
+					if (edad == 14 || edad == 15) {
+						String nombre_completo = a.getNombre() + " " + a.getApellido();
 						ListaJugadores1.add(nombre_completo);
 					}
-						
-					}
-					if(cat==Categoria.SENIOR)
-					{
-					if (edad>18)
-					{
-						String nombre_completo= a.getNombre()+" "+a.getApellido();
+
+				}
+				if (cat == Categoria.JUVENIL) {
+					if (edad == 16 || edad == 17 || edad == 18) {
+						String nombre_completo = a.getNombre() + " " + a.getApellido();
 						ListaJugadores1.add(nombre_completo);
 					}
-						
+
+				}
+				if (cat == Categoria.SENIOR) {
+					if (edad > 18) {
+						String nombre_completo = a.getNombre() + " " + a.getApellido();
+						ListaJugadores1.add(nombre_completo);
 					}
-				
+
+				}
+
 			}
-			
+
 		}
 		return ListaJugadores1;
 	}
-	
-	public List<String> MostrarEntrenadores()
-	{
-		List<String> ListaEntrenadores= new ArrayList<>();
+
+	public List<String> MostrarEntrenadores() {
+		List<String> ListaEntrenadores = new ArrayList<>();
 		for (Entrenador a : DAO.getInstance().getEntrenador()) {
-			String nombre_completo= a.getNombre()+" "+a.getApellido() + " DNI: " + a.getDNI();
+			String nombre_completo = a.getNombre() + " " + a.getApellido() + " DNI: " + a.getDNI();
 			ListaEntrenadores.add(nombre_completo);
 		}
 		return ListaEntrenadores;
-		
+
 	}
-	
-	public List<String> MostrarEquipos()
-	{
-		List<String> ListaEquipos= new ArrayList<>();
+
+	public List<String> MostrarEquipos() {
+		List<String> ListaEquipos = new ArrayList<>();
 		for (Equipo a : DAO.getInstance().getEquipo()) {
-			String nombre_completo= a.getNombre();
+			String nombre_completo = a.getNombre();
 			ListaEquipos.add(nombre_completo);
 		}
 		return ListaEquipos;
-		
+
 	}
-	
-	
 }

@@ -1,6 +1,5 @@
 package Aprendices_de_Josuka.LP;
 
-
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -58,8 +57,6 @@ public class VisualizarEquipos extends JFrame {
 	private Categoria cat;
 	private JScrollPane scrollPane_Equipos1;
 	private JList<String> JListaEquipos1;
-
-
 
 	/**
 	 * Launch the application.
@@ -137,9 +134,6 @@ public class VisualizarEquipos extends JFrame {
 		button.setBounds(0, 16, 288, 88);
 		panel.add(button);
 
-		
-
-
 		// Creamos el Jlist1 y lo rellenamos con la lista de los
 		// jugadores
 		panel_scrollpane1 = new JPanel(new BorderLayout());
@@ -151,30 +145,25 @@ public class VisualizarEquipos extends JFrame {
 		scrollPane_Equipos1 = new JScrollPane();
 		panel_scrollpane1.add(scrollPane_Equipos1);
 		panel_central.add(panel_scrollpane1);
-		
+
 		MostrarEquipos();
-		
+
 	}
-	
-	public void MostrarEquipos()
-	{
-		
+
+	public void MostrarEquipos() {
+
 		try {
-			ListaEquipos=Gestor.getInstance().MostrarEquipos();
+			ListaEquipos = Gestor.getInstance().MostrarEquipos();
 			JListaEquipos1 = new JList<String>(ListaEquipos.toArray(new String[ListaEquipos.size()]));
 			scrollPane_Equipos1.setViewportView(JListaEquipos1);
 			JListaEquipos1.setLayoutOrientation(JList.VERTICAL);
 			scrollPane_Equipos1.repaint();
-			System.out.println("El tamanyo de la lista: "+ListaEquipos.size());
+			System.out.println("El tamanyo de la lista: " + ListaEquipos.size());
 			panel_central.repaint();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-
-	
-
 
 }
