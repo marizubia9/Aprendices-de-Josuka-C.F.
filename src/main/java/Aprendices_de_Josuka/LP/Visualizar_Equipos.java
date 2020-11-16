@@ -162,7 +162,6 @@ public class Visualizar_Equipos extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnAnyadirEquipo.setEnabled(false);
 		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAnyadirEquipo.setForeground(Color.WHITE);
 		btnAnyadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -220,14 +219,7 @@ public class Visualizar_Equipos extends JFrame {
 		panel_izquierdo.add(btnVisualizarEntrenador);
 		
 		btnVisualziarEquipo = new JButton("VISUALIZAR  EQUIPOS");
-		btnVisualziarEquipo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				Visualizar_Equipos r = new Visualizar_Equipos();
-				r.setVisible(true);
-				setVisible(false);
-			}
-		});
+		btnVisualziarEquipo.setEnabled(false);
 		btnVisualziarEquipo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnVisualziarEquipo.setForeground(Color.WHITE);
 		btnVisualziarEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));

@@ -140,6 +140,14 @@ public class Anyadir_Inventario extends JFrame {
 		panel_izquierdo.add(btnAnyadirEquipo);
 		
 		AnyadirInventario = new JButton("AÑADIR INVENTARIO");
+		AnyadirInventario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				RegistrarMaterial r = new RegistrarMaterial();
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
 		AnyadirInventario.setHorizontalAlignment(SwingConstants.LEFT);
 		AnyadirInventario.setForeground(Color.WHITE);
 		AnyadirInventario.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));

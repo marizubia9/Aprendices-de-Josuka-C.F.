@@ -153,7 +153,6 @@ public class RegistrarMaterial extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnAnyadirEquipo.setEnabled(false);
 		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAnyadirEquipo.setForeground(Color.WHITE);
 		btnAnyadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -162,15 +161,7 @@ public class RegistrarMaterial extends JFrame {
 		panel_izquierdo.add(btnAnyadirEquipo);
 		
 		btnAnyadirInventario = new JButton("AÑADIR INVENTARIO");
-		btnAnyadirInventario.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				
-				RegistrarMaterial r = new RegistrarMaterial();
-				r.setVisible(true);
-				setVisible(false);
-			}
-		});
+		btnAnyadirInventario.setEnabled(false);
 		btnAnyadirInventario.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAnyadirInventario.setForeground(Color.WHITE);
 		btnAnyadirInventario.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));

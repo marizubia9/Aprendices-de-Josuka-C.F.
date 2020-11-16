@@ -156,7 +156,6 @@ public class EditarJugador  extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnAnyadirEquipo.setEnabled(false);
 		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAnyadirEquipo.setForeground(Color.WHITE);
 		btnAnyadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -262,14 +261,7 @@ public class EditarJugador  extends JFrame {
 		panel_izquierdo.add(btnEditarEquipo);
 		
 		btnEditarJugador = new JButton("EDITAR JUGADOR");
-		btnEditarJugador.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-				EditarJugador r = new EditarJugador();
-				r.setVisible(true);
-				setVisible(false);
-			}
-		});
+		btnEditarJugador.setEnabled(false);
 		btnEditarJugador.setHorizontalAlignment(SwingConstants.LEFT);
 		btnEditarJugador.setForeground(Color.WHITE);
 		btnEditarJugador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));

@@ -105,14 +105,7 @@ public class Principal_Administrador extends JFrame {
 		panel_central.add(panel_izquierdo);
 		
 		btnHome = new JButton("HOME");
-		btnHome.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				Principal_Administrador pa= new Principal_Administrador();
-				pa.setVisible(true);
-				setVisible(false);
-			}
-		});
+		btnHome.setEnabled(false);
 		btnHome.setHorizontalAlignment(SwingConstants.LEFT);
 		btnHome.setForeground(Color.WHITE);
 		btnHome.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -129,7 +122,6 @@ public class Principal_Administrador extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnAnyadirEquipo.setEnabled(false);
 		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAnyadirEquipo.setForeground(Color.WHITE);
 		btnAnyadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));

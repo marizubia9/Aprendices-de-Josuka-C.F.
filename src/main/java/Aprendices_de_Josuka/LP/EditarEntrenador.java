@@ -166,7 +166,6 @@ public class EditarEntrenador extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnAnyadirEquipo.setEnabled(false);
 		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAnyadirEquipo.setForeground(Color.WHITE);
 		btnAnyadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -240,14 +239,7 @@ public class EditarEntrenador extends JFrame {
 		panel_izquierdo.add(btnVisualziarEquipo);
 		
 		btnEditarEntrenador = new JButton("EDITAR ENTRENADOR");
-		btnEditarEntrenador.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				EditarEntrenador r = new EditarEntrenador();
-				r.setVisible(true);
-				setVisible(false);
-			}
-		});
+		btnEditarEntrenador.setEnabled(false);
 		btnEditarEntrenador.setHorizontalAlignment(SwingConstants.LEFT);
 		btnEditarEntrenador.setForeground(Color.WHITE);
 		btnEditarEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));

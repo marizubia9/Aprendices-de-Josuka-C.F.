@@ -176,7 +176,6 @@ public class Visualizar_Entrenadores extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnAnyadirEquipo.setEnabled(false);
 		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAnyadirEquipo.setForeground(Color.WHITE);
 		btnAnyadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -218,14 +217,7 @@ public class Visualizar_Entrenadores extends JFrame {
 		panel_izquierdo.add(btnVisualizarJugador);
 		
 		btnVisualizarEntrenador = new JButton("VISUALIZAR  ENTRENADORES");
-		btnVisualizarEntrenador.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			
-				Visualizar_Entrenadores r = new Visualizar_Entrenadores();
-				r.setVisible(true);
-				setVisible(false);
-			}
-		});
+		btnVisualizarEntrenador.setEnabled(false);
 		btnVisualizarEntrenador.setHorizontalAlignment(SwingConstants.LEFT);
 		btnVisualizarEntrenador.setForeground(Color.WHITE);
 		btnVisualizarEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));

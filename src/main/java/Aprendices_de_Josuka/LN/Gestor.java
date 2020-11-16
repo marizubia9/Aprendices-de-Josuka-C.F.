@@ -281,4 +281,13 @@ public class Gestor {
 		}
 		return ListaJugadores1;
 	}
+	public void ActualizarMaterial(Tipo_Material tipo, int cantidad, long precio)
+	{
+		DAO.getInstance().ModificarMaterial(tipo, cantidad, precio);
+	}
+	@SuppressWarnings("rawtypes")
+	public void ActualizarEquipo(Equipo equipo, HashMap inventario, List<Jugador> jugadores)
+	{
+		DAO.getInstance().ActualizarEquipo(equipo, inventario, jugadores);
+	}
 }

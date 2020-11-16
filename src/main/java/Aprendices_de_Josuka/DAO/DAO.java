@@ -1,6 +1,7 @@
 package Aprendices_de_Josuka.DAO;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.jdo.Extent;
@@ -184,6 +185,25 @@ public class DAO implements itfDAO {
 		j.setCuota_pagada(cuota);
 		
 		} catch (Exception ex) {
+
+			System.err.println("* Exception modifying data into db: " + ex.getMessage());
+		}
+		finally {
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
+		}
+	}
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public void ActualizarEquipo(Equipo equipo, HashMap inventario, List<Jugador> jugadores)
+	{
+		try
+		{
+		Equipo e= persistentManager.getObjectById(Equipo.class, equipo.getNombre());
+		e.setInventario(inventario);
+		e.setLista_jugador(jugadores);
+		}
+		catch (Exception ex) {
 
 			System.err.println("* Exception modifying data into db: " + ex.getMessage());
 		}

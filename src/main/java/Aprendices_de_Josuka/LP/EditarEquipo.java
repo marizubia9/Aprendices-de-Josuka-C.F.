@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.ButtonGroup;
@@ -23,16 +24,21 @@ import javax.swing.border.EmptyBorder;
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
+import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LN.Gestor;
 import java.awt.BorderLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 public class EditarEquipo extends JFrame{
 	private JPanel contentPane;
 	private JLabel lblLosAprendicesDe;
 	private List<Equipo>Lista_Equipos;
 	private List<Jugador> Lista_Jugadores;
+	private List<Material> Lista_Material;
+	private HashMap inventario;
 	
 	private JPanel panel_central;
 
@@ -61,6 +67,20 @@ public class EditarEquipo extends JFrame{
 	private JButton btnEditarJugador;
 	private JButton btnEliminar;
 	private JButton btnAnyadir;
+	private JLabel lblBalones;
+	private JLabel lblConos;
+	private JLabel lblBarreras;
+	private JLabel lblPicas;
+	private JLabel lblBotellas;
+	private JLabel lblPetos;
+	private JLabel lblVallas;
+	private JTextField textFieldBalones;
+	private JTextField textFieldBarreras;
+	private JTextField textFieldBotellas;
+	private JTextField textFieldConos;
+	private JTextField textFieldPetos;
+	private JTextField textFieldPicas;
+	private JTextField textFieldVallas;
 
 
 	/**
@@ -90,6 +110,7 @@ public class EditarEquipo extends JFrame{
 	public void initComponents() {
 		Lista_Equipos= new ArrayList<>();
 		Lista_Jugadores= new ArrayList<>();
+		Lista_Material = new ArrayList<>();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
 		setLocationRelativeTo(null);
@@ -115,7 +136,7 @@ public class EditarEquipo extends JFrame{
 
 		panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 173, 1278, 528);
+		panel_central.setBounds(0, 173, 1278, 511);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
@@ -152,7 +173,6 @@ public class EditarEquipo extends JFrame{
 				setVisible(false);
 			}
 		});
-		btnAnyadirEquipo.setEnabled(false);
 		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAnyadirEquipo.setForeground(Color.WHITE);
 		btnAnyadirEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -242,14 +262,7 @@ public class EditarEquipo extends JFrame{
 		panel_izquierdo.add(btnEditarEntrenador);
 		
 		btnEditarEquipo = new JButton("EDITAR EQUIPO");
-		btnEditarEquipo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-				EditarEquipo r = new EditarEquipo();
-				r.setVisible(true);
-				setVisible(false);
-			}
-		});
+		btnEditarEquipo.setEnabled(false);
 		btnEditarEquipo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnEditarEquipo.setForeground(Color.WHITE);
 		btnEditarEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -283,7 +296,7 @@ public class EditarEquipo extends JFrame{
 				Guardar();
 			}
 		});
-		btnAceptar.setBounds(1138, 457, 125, 38);
+		btnAceptar.setBounds(1138, 437, 125, 38);
 		panel_central.add(btnAceptar);
 		
 		JLabel lblSeleccioneCategoria = new JLabel("Seleccione la categoria");
@@ -303,8 +316,8 @@ public class EditarEquipo extends JFrame{
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNombre.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
-		lblNombre.setBounds(495, 107, 69, 20);
+		lblNombre.setFont(new Font("Malgun Gothic", Font.BOLD, 16));
+		lblNombre.setBounds(944, 28, 69, 20);
 		panel_central.add(lblNombre);
 		
 		JButton btnGo = new JButton("GO!");
@@ -330,7 +343,6 @@ public class EditarEquipo extends JFrame{
 		btnGO2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MostrarInformacion();
-//				VisualizarJugadoresCategoria();
 			}
 		});
 		btnGO2.setFont(new Font("Malgun Gothic", Font.PLAIN, 11));
@@ -343,22 +355,22 @@ public class EditarEquipo extends JFrame{
 		panel_central.add(comboEquipo);
 		
 		lblNombreEquipo = new JLabel("");
-		lblNombreEquipo.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
-		lblNombreEquipo.setBounds(613, 122, 220, 26);
+		lblNombreEquipo.setFont(new Font("Malgun Gothic", Font.BOLD, 15));
+		lblNombreEquipo.setBounds(1043, 28, 220, 26);
 		panel_central.add(lblNombreEquipo);
 		
 		JLabel lblJugadores = new JLabel("Jugadores:");
 		lblJugadores.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
-		lblJugadores.setBounds(509, 143, 88, 26);
+		lblJugadores.setBounds(509, 92, 88, 26);
 		panel_central.add(lblJugadores);
 		
 		JLabel lblInventario = new JLabel("Inventario:");
 		lblInventario.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
-		lblInventario.setBounds(509, 363, 88, 20);
+		lblInventario.setBounds(509, 313, 88, 20);
 		panel_central.add(lblInventario);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(597, 185, 266, 162);
+		panel.setBounds(597, 124, 266, 162);
 		panel_central.add(panel);
 		panel.setLayout(new BorderLayout(0, 0));
 		
@@ -376,7 +388,7 @@ public class EditarEquipo extends JFrame{
 		modelo = new DefaultListModel(); 
 		
 		panel_1 = new JPanel();
-		panel_1.setBounds(971, 185, 266, 162);
+		panel_1.setBounds(968, 124, 266, 162);
 		panel_central.add(panel_1);
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
@@ -395,32 +407,111 @@ public class EditarEquipo extends JFrame{
 		
 		btnEliminar = new JButton(">>");
 		btnEliminar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) 
+			{
+				EliminarJugadores();
 			}
 		});
 		btnEliminar.setForeground(Color.WHITE);
 		btnEliminar.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		btnEliminar.setBackground(new Color(0, 128, 0));
-		btnEliminar.setBounds(878, 213, 69, 38);
+		btnEliminar.setBounds(878, 151, 69, 38);
 		panel_central.add(btnEliminar);
 		
 		btnAnyadir = new JButton("<<");
+		btnAnyadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				AnyadirJugadores();
+			}
+		});
 		btnAnyadir.setForeground(Color.WHITE);
 		btnAnyadir.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		btnAnyadir.setBackground(new Color(0, 128, 0));
-		btnAnyadir.setBounds(878, 289, 69, 38);
+		btnAnyadir.setBounds(878, 222, 69, 38);
 		panel_central.add(btnAnyadir);
 		
 		JLabel lblSeleccioneLosJugadores = new JLabel("Seleccione los jugadores que quiera anyadir:");
 		lblSeleccioneLosJugadores.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
-		lblSeleccioneLosJugadores.setBounds(958, 146, 320, 26);
+		lblSeleccioneLosJugadores.setBounds(958, 92, 320, 26);
 		panel_central.add(lblSeleccioneLosJugadores);
+		
+		lblBalones = new JLabel("Balones");
+		lblBalones.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblBalones.setBounds(612, 313, 69, 20);
+		panel_central.add(lblBalones);
+		
+		lblConos = new JLabel("Conos");
+		lblConos.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblConos.setBounds(612, 457, 69, 20);
+		panel_central.add(lblConos);
+		
+		lblBarreras = new JLabel("Barreras");
+		lblBarreras.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblBarreras.setBounds(612, 364, 69, 20);
+		panel_central.add(lblBarreras);
+		
+		lblPicas = new JLabel("Picas");
+		lblPicas.setFont(new Font("Malgun Gothic", Font.PLAIN, 16));
+		lblPicas.setBounds(878, 364, 69, 20);
+		panel_central.add(lblPicas);
+		
+		lblBotellas = new JLabel("Botellas");
+		lblBotellas.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblBotellas.setBounds(612, 411, 69, 20);
+		panel_central.add(lblBotellas);
+		
+		lblPetos = new JLabel("Petos");
+		lblPetos.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblPetos.setBounds(878, 313, 69, 20);
+		panel_central.add(lblPetos);
+		
+		lblVallas = new JLabel("Vallas");
+		lblVallas.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblVallas.setBounds(878, 411, 69, 20);
+		panel_central.add(lblVallas);
+		
+		textFieldBalones = new JTextField();
+		textFieldBalones.setBounds(719, 311, 109, 26);
+		panel_central.add(textFieldBalones);
+		textFieldBalones.setColumns(10);
+		
+		textFieldBarreras = new JTextField();
+		textFieldBarreras.setBounds(719, 362, 109, 26);
+		panel_central.add(textFieldBarreras);
+		textFieldBarreras.setColumns(10);
+		
+		textFieldBotellas = new JTextField();
+		textFieldBotellas.setBounds(719, 409, 109, 26);
+		panel_central.add(textFieldBotellas);
+		textFieldBotellas.setColumns(10);
+		
+		textFieldConos = new JTextField();
+		textFieldConos.setBounds(719, 455, 109, 26);
+		panel_central.add(textFieldConos);
+		textFieldConos.setColumns(10);
+		
+		textFieldPetos = new JTextField();
+		textFieldPetos.setBounds(968, 311, 109, 26);
+		panel_central.add(textFieldPetos);
+		textFieldPetos.setColumns(10);
+		
+		textFieldPicas = new JTextField();
+		textFieldPicas.setBounds(968, 362, 109, 26);
+		panel_central.add(textFieldPicas);
+		textFieldPicas.setColumns(10);
+		
+		textFieldVallas = new JTextField();
+		textFieldVallas.setBounds(968, 409, 109, 26);
+		panel_central.add(textFieldVallas);
+		textFieldVallas.setColumns(10);
 		modelo_categoria=new DefaultListModel(); 
 
 	}
 	
 	public void VisualizarEquipos()
 	{
+		comboEquipo.removeAllItems();
 		Lista_Equipos.clear();
 		try {
 			Lista_Equipos=Gestor.getInstance().getEquiposFilter((Categoria)comboCategoria.getSelectedItem());
@@ -434,42 +525,25 @@ public class EditarEquipo extends JFrame{
 		}
 	}
 	
-//	public void VisualizarJugadoresCategoria()
-//	{
-//		if (Lista_Jugadores.size()!=0)
-//		{
-//		Lista_Jugadores.clear();
-//		}
-//		
-//		try 
-//		{
-//			
-//			for(Jugador a : Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem()))
-//			{
-//				Lista_Jugadores.add(a.toString());
-//			}
-//		} catch (RemoteException e) 
-//		{
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		if (Lista_Jugadores.size() == 0)return;
-//		else
-//		{
-//		System.out.println("tamanyo de la lista" + Lista_Jugadores.size());
-//		Lista_Jugadores.forEach(j->modelo2.addElement(j));
-//		list_JugadoresAnyadir = new JList<String>(Lista_Jugadores.toArray(new String[Lista_Jugadores.size()]));
-//		list_JugadoresAnyadir.setModel(modelo2);
-//		pScrollPane_1.repaint();
-//		}
-//	}
 	public void MostrarInformacion()
 	{
+		textFieldBalones.setText("");
+		textFieldBarreras.setText("");
+		textFieldBotellas.setText("");
+		textFieldConos.setText("");
+		textFieldPetos.setText("");
+		textFieldPicas.setText("");
+		textFieldVallas.setText("");
+		list_JugadoresEquipo.removeAll();
+		list_JugadoresAnyadir.removeAll();
+		modelo.removeAllElements();
+		modelo2.removeAllElements();
 		if (Lista_Equipos.size()==0)return;
-		else{
+		else
+		{
 			Lista_Jugadores.clear();
-			Lista_Equipos.clear();
-			try {
+			try 
+			{
 				Lista_Jugadores=Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem());
 			} catch (RemoteException e1) {
 				// TODO Auto-generated catch block
@@ -480,7 +554,48 @@ public class EditarEquipo extends JFrame{
 				if(e.toString().equals(comboEquipo.getSelectedItem().toString()))
 				{
 					lblNombreEquipo.setText(e.getNombre());
-					
+					inventario=e.getInventario();
+					try 
+					{
+						Lista_Material=Gestor.getInstance().ObtenerMaterial();
+					} catch (RemoteException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					for(Material m:Lista_Material)
+					{
+					if(inventario.containsKey(m))
+					{
+						if(m.getTipo().toString().equals("Balones"))
+						{
+							textFieldBalones.setText(inventario.get(m).toString());
+						}
+						if(m.getTipo().toString().equals("Barreras"))
+						{
+							textFieldBarreras.setText(inventario.get(m).toString());
+						}
+						if(m.getTipo().toString().equals("Botellas"))
+						{
+							textFieldBotellas.setText(inventario.get(m).toString());
+						}
+						if(m.getTipo().toString().equals("Conos"))
+						{
+							textFieldConos.setText(inventario.get(m).toString());
+						}
+						if(m.getTipo().toString().equals("Petos"))
+						{
+							textFieldPetos.setText(inventario.get(m).toString());
+						}
+						if(m.getTipo().toString().equals("Picas"))
+						{
+							textFieldPicas.setText(inventario.get(m).toString());
+						}
+						if(m.getTipo().toString().equals("Vallas"))
+						{
+							textFieldVallas.setText(inventario.get(m).toString());
+						}
+					}
+					}
 					e.getLista_jugador().forEach(j->modelo.addElement(j));
 					list_JugadoresEquipo.setModel(modelo);
 					pScrollPane.repaint();
@@ -496,9 +611,289 @@ public class EditarEquipo extends JFrame{
 			pScrollPane_1.repaint();
 		}
 	}
+		
+	public void AnyadirJugadores()
+	{
+		//falta joptionpane si no hay ninguno seleccionado o por defecto que se seleccione uno
+		Jugador anyadido = (Jugador) list_JugadoresAnyadir.getSelectedValue();
+		modelo2.remove(list_JugadoresAnyadir.getSelectedIndex());
+		list_JugadoresAnyadir.removeAll();
+		list_JugadoresAnyadir.setModel(modelo2);
+		pScrollPane_1.repaint();
+
+		modelo.addElement(anyadido);
+		list_JugadoresEquipo.setModel(modelo);
+		pScrollPane.repaint();			
+	}
 	
+	public void EliminarJugadores()
+	{
+		//falta joptionpane si no hay ninguno seleccionado o por defecto que se seleccione uno
+		Jugador eliminado = (Jugador) list_JugadoresEquipo.getSelectedValue();
+		modelo.remove(list_JugadoresEquipo.getSelectedIndex());
+		list_JugadoresEquipo.removeAll();
+		list_JugadoresEquipo.setModel(modelo);
+		pScrollPane.repaint();
+
+		modelo2.addElement(eliminado);
+		list_JugadoresAnyadir.setModel(modelo2);
+		pScrollPane_1.repaint();
+	}
 	public void Guardar()
 	{
-	
+		for(Equipo equipo: Lista_Equipos)
+		{
+		if(comboEquipo.getSelectedItem().toString().equals(equipo.toString()))
+		{
+
+		for(int i = 0 ; i < modelo2.size();i++)
+		{
+			Lista_Jugadores.add((Jugador) (list_JugadoresAnyadir.getModel().getElementAt(i)));
+		}
+		for(Jugador j: Lista_Jugadores )
+		{
+			j.setAsignado_equipo(false);
+		}
+
+		Lista_Jugadores.clear();
+		for(int i = 0 ; i < modelo.size();i++)
+		{
+			Lista_Jugadores.add((Jugador) (list_JugadoresEquipo.getModel().getElementAt(i)));
+		}
+		for(Jugador j: Lista_Jugadores )
+		{
+			j.setAsignado_equipo(true);
+		}
+		if(textFieldBalones.getText().equals(""))
+		{
+			textFieldBalones.setText(String.valueOf(0));
+		}
+		if(textFieldBarreras.getText().equals(""))
+		{
+			textFieldBarreras.setText(String.valueOf(0));
+		}
+		if(textFieldBotellas.getText().equals(""))
+		{
+			textFieldBotellas.setText(String.valueOf(0));
+		}
+		if(textFieldConos.getText().equals(""))
+		{
+			textFieldConos.setText(String.valueOf(0));
+		}
+		if(textFieldPetos.getText().equals(""))
+		{
+			textFieldPetos.setText(String.valueOf(0));
+		}
+		if(textFieldPicas.getText().equals(""))
+		{
+			textFieldPicas.setText(String.valueOf(0));
+		}
+		if(textFieldVallas.getText().equals(""))
+		{
+			textFieldVallas.setText(String.valueOf(0));
+		}
+		System.out.println(Lista_Jugadores.toString());
+		for(Material m:Lista_Material)
+		{
+			
+			if(m.getTipo().toString().equals("Balones"))
+			{
+				int totalBalones=m.getCantidad();
+				long precio=0;
+				int balones=Integer.parseInt(textFieldBalones.getText());
+				if(balones<=totalBalones)
+				{
+				inventario.put(m, balones);
+				totalBalones=totalBalones-balones;
+				precio=(totalBalones*m.getPrecio())/m.getCantidad();
+				try {
+					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalBalones, precio);
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de balones");
+				}
+			}
+			if(m.getTipo().toString().equals("Barreras"))
+			{
+				int totalBarreras=m.getCantidad();
+				long precio=0;
+				int barreras=Integer.parseInt(textFieldBarreras.getText());
+				if(barreras<=totalBarreras)
+				{
+				inventario.put(m, barreras);
+				totalBarreras=totalBarreras-barreras;
+				precio=(totalBarreras*m.getPrecio())/m.getCantidad();
+				try {
+					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalBarreras, precio);
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de barreras");
+				}
+			}
+			if(m.getTipo().toString().equals("Botellas"))
+			{
+				int totalBotellas=m.getCantidad();
+				long precio=0;
+				int botellas=Integer.parseInt(textFieldBotellas.getText());
+				if(botellas<=totalBotellas)
+				{
+				inventario.put(m, botellas);
+				totalBotellas=totalBotellas-botellas;
+				precio=(totalBotellas*m.getPrecio())/m.getCantidad();
+				try {
+					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalBotellas, precio);
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de botellas");
+				}
+			}
+			if(m.getTipo().toString().equals("Conos"))
+			{
+				int totalConos=m.getCantidad();
+				long precio=0;
+				int conos=Integer.parseInt(textFieldConos.getText());
+				if(conos<=totalConos)
+				{
+				inventario.put(m, conos);
+				totalConos=totalConos-conos;
+				precio=(totalConos*m.getPrecio())/m.getCantidad();
+				try {
+					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalConos, precio);
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de conos");
+				}
+			}
+			if(m.getTipo().toString().equals("Petos"))
+			{
+				int totalPetos=m.getCantidad();
+				long precio=0;
+				int petos=Integer.parseInt(textFieldPetos.getText());
+				if(petos<=totalPetos)
+				{
+				inventario.put(m, petos);
+				totalPetos=totalPetos-petos;
+				precio=(totalPetos*m.getPrecio())/m.getCantidad();
+				try {
+					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalPetos, precio);
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de petos");
+				}
+			}
+			if(m.getTipo().toString().equals("Picas"))
+			{
+				int totalPicas=m.getCantidad();
+				long precio=0;
+				int picas=Integer.parseInt(textFieldPicas.getText());
+				if(picas<=totalPicas)
+				{
+				inventario.put(m, picas);
+				totalPicas=totalPicas-picas;
+				precio=(totalPicas*m.getPrecio())/m.getCantidad();
+				try {
+					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalPicas, precio);
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de picas");
+				}
+			}
+			if(m.getTipo().toString().equals("Vallas"))
+			{
+				int totalVallas=m.getCantidad();
+				long precio=0;
+				int vallas=Integer.parseInt(textFieldVallas.getText());
+				if(vallas<=totalVallas)
+				{
+				inventario.put(m, vallas);
+				totalVallas=totalVallas-vallas;
+				precio=(totalVallas*m.getPrecio())/m.getCantidad();
+				try {
+					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalVallas, precio);
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de vallas");
+				}
+			}
+			
+		}
+		try 
+		{
+			for(Material m:Lista_Material)
+			{
+			System.out.println(inventario.get(m));
+			}
+			Gestor.getInstance().ActualizarEquipo(equipo, inventario, Lista_Jugadores);
+		} 
+		catch (RemoteException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+		}
 	}
+//	public void EliminarJugadores2()
+//	{
+//		System.out.println("e modelo1: " + modelo.size());
+//		System.out.println("e modelo2: " + modelo2.size());
+//		Jugador eliminado = null;
+//		for(Equipo e: Lista_Equipos)
+//		{
+//			if(e.toString().equals(comboEquipo.getSelectedItem().toString()))
+//			{
+//				for(int i = 0; i<modelo.size();i++)
+//				{
+//				if(modelo.get(list_JugadoresEquipo.getSelectedIndex()).equals(e.getLista_jugador().get(i)))
+//				{
+//				eliminado =e.getLista_jugador().get(i);
+//				}
+//				}
+//			}
+//		}
+//		modelo.remove(list_JugadoresEquipo.getSelectedIndex());
+//		list_JugadoresEquipo.removeAll();
+//		list_JugadoresEquipo.setModel(modelo);
+//		pScrollPane.repaint();
+//
+//		modelo2.addElement(eliminado);
+//		list_JugadoresAnyadir.setModel(modelo2);
+//		pScrollPane_1.repaint();
+//	}
+
 }
