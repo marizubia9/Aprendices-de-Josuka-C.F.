@@ -692,7 +692,6 @@ public class EditarEquipo extends JFrame{
 		{
 			textFieldVallas.setText(String.valueOf(0));
 		}
-		System.out.println(Lista_Jugadores.toString());
 		for(Material m:Lista_Material)
 		{
 			

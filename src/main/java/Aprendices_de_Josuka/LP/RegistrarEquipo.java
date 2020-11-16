@@ -56,7 +56,6 @@ public class RegistrarEquipo extends JFrame {
 	private JLabel lblNombre;
 	private JLabel lblCategoria;
 	private JTextField txtNombre;
-	private Date objDate;
 	private JComboBox comboCategoria;
 	private List<Entrenador> ListaEntrenador;
 	private JComboBox comboEntrenador;
@@ -86,11 +85,6 @@ public class RegistrarEquipo extends JFrame {
 	private JButton btnVisualizarJugador;
 	private JButton btnVisualizarEntrenador;
 	private JButton btnVisualziarEquipo;
-	private JLabel label;
-	private JLabel label_1;
-	private JLabel label_2;
-	private JLabel label_3;
-	private JLabel label_4;
 	private JButton btnEditarEntrenador;
 	private JButton buttonEliminar;
 	private JButton btnEditarEquipo;

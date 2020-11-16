@@ -43,6 +43,7 @@ public class Jugador {
 		this.lesionado = estado;
 		this.cuota_pagada = cuota_pagada;
 		this.asignado_equipo = asignado_equipo;
+		
 
 	}
 	public String toString() {
