@@ -331,26 +331,8 @@ public class Visualizar_Jugadores extends JFrame {
 				InsertarJPanel();
 			}
 		});
-		
-
-		
-//		MostrarEntrenadores();
-		
 	}
-	
-//	public void MostrarEntrenadores()
-//	{
-//		
-//		try {
-//			ListaJugadores=Gestor.getInstance().MostrarEntrenadores();
-//			JListaJugadores1.setLayoutOrientation(JList.VERTICAL);
-//			System.out.println("El tamanyo de la lista: "+ListaJugadores.size());
-//			panel_central.repaint();
-//		} catch (RemoteException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
+
 	
 	public void InsertarJPanel() {
 		pScrollPane.removeAll();

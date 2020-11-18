@@ -230,7 +230,7 @@ public class RegistrarJugador extends JFrame {
 				else
 				{
 				try {
-					Gestor.getInstance().RegistrarJugador(nombre, apellido, fecha_S, DNI, telefono, correo, psw, false);
+					Gestor.getInstance().RegistrarJugador(nombre, apellido, fecha_S, DNI, telefono, correo, psw);
 				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

@@ -557,7 +557,7 @@ public class RegistrarEquipo extends JFrame {
 				{
 					if(j.toString().equals(i))
 						{
-						j.setAsignado_equipo(true);
+//						j.setAsignado_equipo(true);
 						lista_Jugadores.add(j);
 						
 						}

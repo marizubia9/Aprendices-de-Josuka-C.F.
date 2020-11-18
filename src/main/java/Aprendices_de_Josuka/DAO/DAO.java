@@ -45,7 +45,7 @@ public class DAO implements itfDAO {
 						((Jugador) objeto).getFecha_nacimiento(), ((Jugador) objeto).getDNI(),
 						((Jugador) objeto).isReconocimiento_medico(), ((Jugador) objeto).isLesionado(),
 						((Jugador) objeto).getTelefono(), ((Jugador) objeto).getCorreo(), ((Jugador) objeto).getPsw(),
-						((Jugador) objeto).isCuota_pagada(), ((Jugador) objeto).isAsignado_equipo());
+						((Jugador) objeto).isCuota_pagada());
 				persistentManager.makePersistent(objeto);
 			}
 			if (objeto instanceof Entrenador) {

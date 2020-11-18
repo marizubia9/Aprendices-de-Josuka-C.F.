@@ -899,20 +899,20 @@ public class EditarEquipo extends JFrame{
 		{
 			Lista_Jugadores.add((Jugador) (list_JugadoresAnyadir.getModel().getElementAt(i)));
 		}
-		for(Jugador j: Lista_Jugadores )
-		{
-			j.setAsignado_equipo(false);
-		}
+//		for(Jugador j: Lista_Jugadores )
+//		{
+//			j.setAsignado_equipo(false);
+//		}
 
 		Lista_Jugadores.clear();
 		for(int i = 0 ; i < modelo.size();i++)
 		{
 			Lista_Jugadores.add((Jugador) (list_JugadoresEquipo.getModel().getElementAt(i)));
 		}
-		for(Jugador j: Lista_Jugadores )
-		{
-			j.setAsignado_equipo(true);
-		}
+//		for(Jugador j: Lista_Jugadores )
+//		{
+//			j.setAsignado_equipo(true);
+//		}
 		try 
 		{
 			for(Material m:Lista_Material)

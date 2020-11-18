@@ -13,29 +13,18 @@ public class Sancion {
 
 	@PrimaryKey
 	private String codigo;
-	private Jugador jugador;
+	private Persona persona;
 	private Tipo_Sancion tipo;
 	private String comentarios;
-	private Entrenador entrenador;
 
-	public Sancion() {
 
-	}
-
-	public Sancion(String codigo, Tipo_Sancion tipo, String comentarios, Entrenador entrenador) {
+	public Sancion(String codigo, Tipo_Sancion tipo, String comentarios, Persona persona) {
 		super();
 		this.codigo = codigo;
 		this.tipo = tipo;
 		this.comentarios = comentarios;
-		this.entrenador = entrenador;
+		this.persona = persona;
 	}
 
-	public Sancion(String codigo, Jugador jugador, Tipo_Sancion tipo, String comentarios) {
-		super();
-		this.codigo = codigo;
-		this.jugador = jugador;
-		this.tipo = tipo;
-		this.comentarios = comentarios;
-	}
 
 }

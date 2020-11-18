@@ -82,8 +82,8 @@ public class Gestor {
 	}
 
 	public  void RegistrarJugador(String nombre, String apellido, String fecha_nacimiento, String DNI,
-			int telefono, String correo, String password, boolean Asignado_equipo) {
-		Jugador j = new Jugador(nombre, apellido, fecha_nacimiento, DNI, false, false, telefono, correo, password,false, Asignado_equipo);
+			int telefono, String correo, String password) {
+		Jugador j = new Jugador(nombre, apellido, fecha_nacimiento, DNI, false, false, telefono, correo, password,false);
 		DAO.getInstance().guardarObjeto(j);
 	}
 
@@ -155,7 +155,7 @@ public class Gestor {
 		int edad=0;
 		List<Jugador> ListaJugadores1= new ArrayList<>();
 		for (Jugador a : DAO.getInstance().getJugador()) {
-			if (!a.isAsignado_equipo()) 
+			if (!a.getEquipo().equals(null)) 
 			{
 				StringTokenizer st= new StringTokenizer(a.getFecha_nacimiento(),"/");
 				Integer[] fecha=new Integer[3];

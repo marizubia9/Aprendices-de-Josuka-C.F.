@@ -53,8 +53,8 @@ public class Panel_Jugador extends JPanel {
 		lblDNI.setFont(new Font("Malgun Gothic", Font.PLAIN, 12));
 		lblDNI.setBounds(168, 55, 164, 20);
 		add(lblDNI);
-		String asignado="LIBRE";
-		if(jugador.isAsignado_equipo()) asignado= "ASIGNADO";
+		String asignado="SIN ASIGNAR";
+		if(!jugador.getEquipo().equals(null)) asignado= jugador.getEquipo().getNombre();
 		JLabel lblAsignado = new JLabel(asignado);
 		lblAsignado.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblAsignado.setFont(new Font("Malgun Gothic", Font.PLAIN, 12));

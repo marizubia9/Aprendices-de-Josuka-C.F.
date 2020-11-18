@@ -12,17 +12,14 @@ import lombok.Getter;
 import lombok.Setter;
 @Getter
 @Setter
-@PersistenceCapable
 public class Partido {
 
-	@PrimaryKey
+
 	private String cod_partido;
 	private LocalDateTime fecha;
 	private long resultado_e1;
 	private long resultado_e2;
-	@Column(name = "equipo_1")
 	private Equipos_Ext equipo_1;
-	@Column(name = "equipo_2")
 	private Equipos_Ext equipo_2;
 	private Set<Sancion> sanciones;
 	// private Equipo equipo_2;
@@ -38,7 +35,7 @@ public class Partido {
 		this.resultado_e2 = resultado_e2;
 		this.equipo_1 = equipo_1;
 		this.equipo_2 = equipo_2;
-		Sancion s= new Sancion();
+
 		
 		
 	}
