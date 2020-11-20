@@ -642,15 +642,14 @@ public class EditarEquipo extends JFrame{
 	}
 	public void Guardar()
 	{
-		Equipo equipo=new Equipo("", null, null, null, null);
-		for(int i=0;i<Lista_Equipos.size();i++)
+		Equipo equipo= null;
+		for(Equipo e: Lista_Equipos)
 		{
-		if(comboEquipo.getSelectedItem().toString().equals(Lista_Equipos.get(i).getNombre()))
+		if(comboEquipo.getSelectedItem().toString().equals(e.toString()))
 		{
-			equipo= Lista_Equipos.get(i);
+			equipo= e;
 		}
 		}
-		System.out.println(equipo.toString());
 		for(Material m:Lista_Material)
 		{
 			if(equipo.getInventario().containsKey(m))
