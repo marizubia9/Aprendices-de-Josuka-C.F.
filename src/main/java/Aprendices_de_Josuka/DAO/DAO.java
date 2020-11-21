@@ -214,6 +214,25 @@ public class DAO implements itfDAO {
 		}
 	}
 	
+	public void ActualizarMaterial (List<Material> lista_material)
+	{
+		try 
+		{
+			for (Material m: lista_material)
+			{
+			m= persistentManager.getObjectById(Material.class, m.getTipo());
+			m.setCantidad(m.getCantidad());
+			}
+		} catch (Exception ex) {
+
+				System.err.println("* Exception modifying data into db: " + ex.getMessage());
+			}
+			finally {
+				if (transaction.isActive()) {
+					transaction.rollback();
+				}
+			}
+	}
 	// @Override
 	// public List<Usuario> getUsuarios() {
 	// // TODO Auto-generated method stub

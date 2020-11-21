@@ -374,4 +374,9 @@ public class Gestor {
 		
 		
 	}
+
+	public void ModificarMaterial(List<Material> lista_material)
+	{
+		
+	}
 }
