@@ -84,14 +84,14 @@ public class Partido_JSON
     public LocalDateTime getDate(boolean withHours )
     {
         DateTimeFormatter formatter = new DateTimeFormatterBuilder()
-                .appendPattern("yyyy-MM-dd'T'[[HH][:mm][:ss]]")
+                .appendPattern("yyyy-MM-dd [[HH][:mm][:ss]]")
                 .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
                 .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
                 .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
                 .parseDefaulting(ChronoField.MILLI_OF_SECOND, 0)
                 .toFormatter();
 
-        return LocalDateTime.parse(getDate().split("\\.")[0], formatter); // get rid of milliseconds
+        return LocalDateTime.parse(getDate(), formatter); // get rid of milliseconds
 
         // with hours -> change print format -> departure_date.format(formatter_new);
     }

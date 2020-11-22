@@ -20,6 +20,7 @@ from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
 
 from src.main.python.Partidos.ADJPartidos.AprendicesDeJosukaPartidos import AprendicesDeJosukaPartidos
+from src.main.python.Partidos.ADJPartidos.AprendicesDeJosukaSanciones import AprendicesDeJosukaSanciones
 from src.main.python.Partido.Partido import Partido
 from src.main.python.Partido.Equipo import Equipo
 
@@ -39,69 +40,11 @@ print("Python version: {} \n"
 print("Settinp-up Partidos")
 print("...")
 adj_partidos = AprendicesDeJosukaPartidos()
+adj_sanciones = AprendicesDeJosukaSanciones()
 
     # Create sample data
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
-adj_partidos.generate_random_partido()
+adj_partidos.generate_partido()
+adj_sanciones.generate_sancion()
 
 
 print("Settinp-up ADJ Partidos [ OK ] ")
@@ -116,6 +59,13 @@ partido_parser.add_argument('equipo2_name', type=str, help= "Equipo 2 name", req
 partido_parser.add_argument('res_e1', type=int, help= "Res e1", required=False)
 partido_parser.add_argument('res_e2', type=int, help= "Res e2", required=False)
 partido_parser.add_argument('date', type=str, help= "Date %Y/%m/%d %H:%M:%S format", required=False)
+
+
+sancion_parser = reqparse.RequestParser()
+sancion_parser.add_argument('code', type=str, help= "Code", required=False)
+sancion_parser.add_argument('tipo', type=str, help= "Tipo", required=False)
+sancion_parser.add_argument('dni', type=str, help= "Dni", required=False)
+sancion_parser.add_argument('cod_partido', type=str, help= "cod_partido", required=False)
 
 class MicroServices(Resource):
 
@@ -146,10 +96,32 @@ class Partidos_MicroService_Search_Partidos (Resource):
         print(json_result)
         return json.loads(json_result) , 201
 
+class Partidos_MicroService_Search_Sanciones (Resource):
+
+    # curl http://127.0.0.1:5000/Partidos/Search_Partidos
+    def get(self):
+        message = "Microservice working correctly"
+        return { 'Message' : message } , 201
+
+
+    def post(self):
+        sancion_args = sancion_parser.parse_args()
+
+        result = adj_sanciones.search_sanciones(
+            code = sancion_args.code,
+            tipo = sancion_args.tipo,
+            dni       = sancion_args.dni,
+            cod_partido       = sancion_args.cod_partido)
+
+        json_result = adj_sanciones.toJSON(result)
+        print(json_result)
+        return json.loads(json_result) , 201
+
 
 
 api.add_resource(MicroServices, '/')
 api.add_resource(Partidos_MicroService_Search_Partidos, '/Partidos/Search_Partidos')
+api.add_resource(Partidos_MicroService_Search_Sanciones, '/Sanciones/Search_Sanciones')
 
 
 if __name__ == '__main__':
