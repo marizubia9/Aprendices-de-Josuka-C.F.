@@ -83,7 +83,7 @@ public class Gestor {
 
 	public  void RegistrarJugador(String nombre, String apellido, String fecha_nacimiento, String DNI,
 			int telefono, String correo, String password) {
-		Jugador j = new Jugador(nombre, apellido, fecha_nacimiento, DNI, false, false, telefono, correo, password,false);
+		Jugador j = new Jugador(nombre, apellido, fecha_nacimiento, DNI, false, false, telefono, correo, password,false,false);
 		DAO.getInstance().guardarObjeto(j);
 	}
 
@@ -156,14 +156,9 @@ public class Gestor {
 		List<Jugador> ListaJugadores1= new ArrayList<>();
 		for (Jugador a : DAO.getInstance().getJugador()) 
 		{
-			try
+
+			if (!a.isAsignado()) 
 			{
-				a.getEquipo().equals(null);
-			}
-			catch (NullPointerException e)
-			{
-//			if (!a.getEquipo().equals(null)) 
-//			{
 				StringTokenizer st= new StringTokenizer(a.getFecha_nacimiento(),"/");
 				Integer[] fecha=new Integer[3];
 				int i=0;
@@ -201,8 +196,7 @@ public class Gestor {
 					{
 						if (edad>18)ListaJugadores1.add(a);
 					}
-				
-			//}
+
 			
 			}
 			

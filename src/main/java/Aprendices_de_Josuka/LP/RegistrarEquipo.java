@@ -453,13 +453,7 @@ public class RegistrarEquipo extends JFrame {
 		ListaJugadores1.clear();
 		try {
 			for (Jugador a : Gestor.getInstance().MostrarJugadores((Categoria) comboCategoria.getSelectedItem())) {
-				try {
-					a.getEquipo().getNombre().equals(null);
-				}
-
-				catch (NullPointerException n) {
-					ListaJugadores1.add(a.toString());
-				}
+				ListaJugadores1.add(a.toString());
 			}
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
@@ -538,10 +532,6 @@ public class RegistrarEquipo extends JFrame {
 			Equipo e = new Equipo(txtNombre.getText(), (Categoria) comboCategoria.getSelectedItem(), entrenador,
 					lista_Jugadores, inventario);
 			Gestor.getInstance().RegistrarEquipo(e);
-			for(Jugador j: lista_Jugadores)
-			{
-				j.setEquipo(e);
-			}
 			Gestor.getInstance().ActualizarJugadorEquipo(lista_Jugadores);
 			txtNombre.setText("");
 			vaciarJList();

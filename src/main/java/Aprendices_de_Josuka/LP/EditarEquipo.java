@@ -682,270 +682,24 @@ public class EditarEquipo extends JFrame{
 				inventario.put(m, cantidadMaterial.get(0));
 			}
 			
-//			if(equipo.getInventario().containsKey(m))
-//			{
-//			if(m.getTipo().toString().equals("Balones"))
-//			{
-//				int totalBalones=m.getCantidad();
-//				long precio=0;
-//				int balones=Integer.parseInt(textFieldBalones.getText());
-//				System.out.println(equipo.getInventario().get(m));
-//				System.out.println(balones);
-//				if(balones<=totalBalones ||equipo.getInventario().get(m)==balones||balones==0)
-//				{
-//					System.out.println(equipo.getInventario().get(m));
-//					inventario.put(m, equipo.getInventario().get(m));
-//					precio=m.getPrecio();
-//					try 
-//					{
-//						Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalBalones, precio);
-//					} catch (RemoteException e) 
-//					{
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//				}
-//				else if(equipo.getInventario().get(m)!=balones)
-//				{
-//				totalBalones=totalBalones-balones;
-//				precio=(totalBalones*m.getPrecio())/m.getCantidad();
-//				try 
-//				{
-//					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalBalones, precio);
-//				} catch (RemoteException e) 
-//				{
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//				}
-//				
-//				
-//				else 
-//				{
-//					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de balones");
-//					MostrarInformacion();
-//					return;
-//				}
-//			}
-//			
-//			if(m.getTipo().toString().equals("Barreras"))
-//			{
-//				int totalBarreras=m.getCantidad();
-//				long precio=0;
-//				int barreras=Integer.parseInt(textFieldBarreras.getText());
-//				if(barreras<=totalBarreras ||equipo.getInventario().get(m)==barreras||barreras==0)
-//				{
-//					inventario.put(m, equipo.getInventario().get(m));
-//					precio=m.getPrecio();
-//				
-//				if(equipo.getInventario().get(m)!=barreras)
-//				{
-//				totalBarreras=totalBarreras-barreras;
-//				precio=(totalBarreras*m.getPrecio())/m.getCantidad();
-//				}
-//				
-//				try 
-//				{
-//					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalBarreras, precio);
-//				} catch (RemoteException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//				}
-//				
-//				else
-//				{
-//					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de barreras");
-//					MostrarInformacion();
-//					return;
-//				}
-//			}
-//			if(m.getTipo().toString().equals("Botellas"))
-//			{
-//				int totalBotellas=m.getCantidad();
-//				long precio=0;
-//				int botellas=Integer.parseInt(textFieldBotellas.getText());
-//				if(botellas<=totalBotellas ||equipo.getInventario().get(m)==botellas||botellas==0)
-//				{
-//					inventario.put(m, equipo.getInventario().get(m));
-//					precio=m.getPrecio();
-//				
-//				if(equipo.getInventario().get(m)!=botellas)
-//				{
-//					totalBotellas=totalBotellas-botellas;
-//					precio=(totalBotellas*m.getPrecio())/m.getCantidad();
-//				}
-//				
-//				try 
-//				{
-//					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalBotellas, precio);
-//				} catch (RemoteException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//				}
-//				
-//				else
-//				{
-//					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de botellas");
-//					MostrarInformacion();
-//					return;
-//				}
-//			}
-//			if(m.getTipo().toString().equals("Conos"))
-//			{
-//				int totalConos=m.getCantidad();
-//				long precio=0;
-//				int conos=Integer.parseInt(textFieldConos.getText());
-//				if(conos<=totalConos ||equipo.getInventario().get(m)==conos||conos==0)
-//				{
-//					inventario.put(m, equipo.getInventario().get(m));
-//					precio=m.getPrecio();
-//				
-//				if(equipo.getInventario().get(m)!= conos)
-//				{
-//					totalConos=totalConos-conos;
-//				precio=(totalConos*m.getPrecio())/m.getCantidad();
-//				}
-//				
-//				try 
-//				{
-//					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalConos, precio);
-//				} catch (RemoteException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//				}
-//				
-//				else
-//				{
-//					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de botellas");
-//					MostrarInformacion();
-//					return;
-//				}
-//			}
-//			if(m.getTipo().toString().equals("Petos"))
-//			{
-//				int totalPetos=m.getCantidad();
-//				long precio=0;
-//				int petos=Integer.parseInt(textFieldPetos.getText());
-//				if(petos<=totalPetos ||equipo.getInventario().get(m)==petos||petos==0)
-//				{
-//					inventario.put(m, equipo.getInventario().get(m));
-//					precio=m.getPrecio();
-//				
-//				if(equipo.getInventario().get(m)!=petos)
-//				{
-//					totalPetos=totalPetos-petos;
-//				precio=(totalPetos*m.getPrecio())/m.getCantidad();
-//				}
-//				
-//				try 
-//				{
-//					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalPetos, precio);
-//				} catch (RemoteException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//				}
-//				
-//				else
-//				{
-//					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de petos");
-//					MostrarInformacion();
-//					return;
-//				}
-//			}
-//			if(m.getTipo().toString().equals("Picas"))
-//			{
-//				int totalPicas=m.getCantidad();
-//				long precio=0;
-//				int picas=Integer.parseInt(textFieldPicas.getText());
-//				if(picas<=totalPicas ||equipo.getInventario().get(m)==picas||picas==0)
-//				{
-//					inventario.put(m, equipo.getInventario().get(m));
-//					precio=m.getPrecio();
-//				
-//				if(equipo.getInventario().get(m)!=picas)
-//				{
-//					totalPicas=totalPicas-picas;
-//				precio=(totalPicas*m.getPrecio())/m.getCantidad();
-//				}
-//				
-//				try 
-//				{
-//					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalPicas, precio);
-//				} catch (RemoteException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//				}
-//				
-//				else
-//				{
-//					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de picas");
-//					MostrarInformacion();
-//					return;
-//				}
-//			}
-//			if(m.getTipo().toString().equals("Vallas"))
-//			{
-//				int totalVallas=m.getCantidad();
-//				long precio=0;
-//				int vallas=Integer.parseInt(textFieldVallas.getText());
-//				if(vallas<=totalVallas ||equipo.getInventario().get(m)==vallas||vallas==0)
-//				{
-//					inventario.put(m, equipo.getInventario().get(m));
-//					precio=m.getPrecio();
-//				
-//				if(equipo.getInventario().get(m)!=vallas)
-//				{
-//					totalVallas=totalVallas-vallas;
-//				precio=(totalVallas*m.getPrecio())/m.getCantidad();
-//				}
-//				
-//				try 
-//				{
-//					Gestor.getInstance().ActualizarMaterial(m.getTipo(), totalVallas, precio);
-//				} catch (RemoteException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//				}
-//				
-//				else
-//				{
-//					JOptionPane.showMessageDialog(null, "Introduce una cantidad menor de vallas");
-//					MostrarInformacion();
-//					return;
-//				}
-//			}
-//			}
-//			
+		
 		}
 			
 		for(int i = 0 ; i < modelo2.size();i++)
 		{
 			Lista_Jugadores.add((Jugador) (list_JugadoresAnyadir.getModel().getElementAt(i)));
-			Lista_Jugadores.get(i).setEquipo(null);
+			
 		}
-		try 
-		{
-			Gestor.getInstance().ActualizarJugadorEquipo(Lista_Jugadores);
-		} catch (RemoteException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		
 
 		Lista_Jugadores.clear();
 		for(int i = 0 ; i < modelo.size();i++)
 		{
 			Lista_Jugadores.add((Jugador) (list_JugadoresEquipo.getModel().getElementAt(i)));
-			Lista_Jugadores.get(i).setEquipo(equipo);
+			
 		}
 		try 
 		{
-			Gestor.getInstance().ActualizarJugadorEquipo(Lista_Jugadores);
 			Gestor.getInstance().ActualizarEquipo(equipo, inventario, Lista_Jugadores);
 			MostrarInformacion();
 		} 
@@ -982,12 +736,12 @@ public class EditarEquipo extends JFrame{
 				if(balones != 0 || balones <= m.getCantidad())
 				{
 					balones = m.getCantidad()-balones;
-					Lista_Material.set(balones, m);
+					m.setCantidad(balones);
 				}
 				else if (balones ==0)
 				{
 					balones = m.getCantidad();
-					Lista_Material.set(balones, m);
+					m.setCantidad(balones);
 				}
 				else if(balones>m.getCantidad())
 				{
@@ -1000,12 +754,12 @@ public class EditarEquipo extends JFrame{
 				if(barreras != 0 || barreras <= m.getCantidad())
 				{
 					barreras = m.getCantidad()-barreras;
-					Lista_Material.set(barreras, m);
+					m.setCantidad(barreras);
 				}
 				else if(barreras == 0)
 				{
 					barreras = m.getCantidad();
-					Lista_Material.set(barreras, m);
+					m.setCantidad(barreras);
 				}
 				else if(barreras>m.getCantidad())
 				{
@@ -1019,12 +773,12 @@ public class EditarEquipo extends JFrame{
 				if(botellas != 0 || botellas <= m.getCantidad())
 				{
 					botellas = m.getCantidad()-botellas;
-					Lista_Material.set(botellas, m);
+					m.setCantidad(botellas);
 				}
 				else if(botellas == 0)
 				{
 					botellas = m.getCantidad();
-					Lista_Material.set(botellas, m);
+					m.setCantidad(botellas);
 				}
 				else if(botellas>m.getCantidad())
 				{
@@ -1038,12 +792,12 @@ public class EditarEquipo extends JFrame{
 				if(conos != 0 || conos <= m.getCantidad())
 				{
 					conos = m.getCantidad()-conos;
-					Lista_Material.set(conos, m);
+					m.setCantidad(conos);
 				}
 				else if(conos == 0)
 				{
 					conos = m.getCantidad();
-					Lista_Material.set(conos, m);
+					m.setCantidad(conos);
 				}
 				else if(conos>m.getCantidad())
 				{
@@ -1055,12 +809,12 @@ public class EditarEquipo extends JFrame{
 				if(petos != 0 || petos <= m.getCantidad())
 				{
 					petos = m.getCantidad()-petos;
-					Lista_Material.set(petos, m);
+					m.setCantidad(petos);
 				}
 				else if(petos == 0)
 				{
 					petos = m.getCantidad();
-					Lista_Material.set(petos, m);
+					m.setCantidad(petos);
 				}
 				else if(petos>m.getCantidad())
 				{
@@ -1072,12 +826,12 @@ public class EditarEquipo extends JFrame{
 				if(picas != 0 || picas <= m.getCantidad())
 				{
 					picas = m.getCantidad()-picas;
-					Lista_Material.set(picas, m);
+					m.setCantidad(picas);
 				}
 				else if(picas == 0)
 				{
 					picas = m.getCantidad();
-					Lista_Material.set(picas, m);
+					m.setCantidad(picas);
 				}
 				else if(picas>m.getCantidad())
 				{
@@ -1091,12 +845,12 @@ public class EditarEquipo extends JFrame{
 				if(vallas != 0 || vallas <= m.getCantidad())
 				{
 					vallas = m.getCantidad()-vallas;
-					Lista_Material.set(vallas, m);
+					m.setCantidad(vallas);
 				}
 				else if(vallas == 0)
 				{
 					vallas = m.getCantidad();
-					Lista_Material.set(vallas, m);
+					m.setCantidad(vallas);
 				}
 				else if(vallas>m.getCantidad())
 				{
