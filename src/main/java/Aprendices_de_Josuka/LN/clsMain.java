@@ -22,6 +22,7 @@ public class clsMain {
 
 		}
 		Gestor.getInstance().clasificacion();
+		Gestor.getInstance().getSanciones();
 	}
 
 }

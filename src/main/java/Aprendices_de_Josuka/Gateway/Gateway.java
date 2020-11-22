@@ -13,9 +13,12 @@ import org.json.simple.parser.ParseException;
 
 import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Partido;
+import Aprendices_de_Josuka.LD.Sancion;
+import Aprendices_de_Josuka.LD.Tipo_Sancion;
 import Aprendices_de_Josuka.ServiciosExternos.Partido_JSON;
 import Aprendices_de_Josuka.ServiciosExternos.Partidos_parameters;
 import Aprendices_de_Josuka.ServiciosExternos.RestClient;
+import Aprendices_de_Josuka.ServiciosExternos.Sancion_JSON;
 
 public class Gateway implements itfGateway {
 	private static String port = "5000";
@@ -72,7 +75,7 @@ public class Gateway implements itfGateway {
 
 	}
 	@Override
-	public ArrayList<Partido> convertir(List<Partido_JSON> json) {
+	public ArrayList<Partido> convertir_partidos(List<Partido_JSON> json) {
 		ArrayList<Partido> Lista_partidos= new ArrayList<Partido>();
 		json.stream().forEach(element -> {
 			Equipos_Ext equipo1 = new Equipos_Ext(element.getEquipo1Code(), element.getEquipo1Nombre(), element.getEquipo1Puntuacion(), element.getEquipo1Categoria());
@@ -89,7 +92,7 @@ public class Gateway implements itfGateway {
 	public List<Partido> getPartidos() throws ParseException {
 
 		List<Partido_JSON> lista_json = search_partidos();
-		List<Partido> partidos = convertir(lista_json);
+		List<Partido> partidos = convertir_partidos(lista_json);
 		
 		return  partidos;
 	}
@@ -98,14 +101,87 @@ public class Gateway implements itfGateway {
 	public HashSet<Equipos_Ext> getEquipos() throws ParseException {
 
 		HashSet<Equipos_Ext> Lista_equipos = new HashSet<Equipos_Ext>();
-		List<Partido_JSON> lista_json = search_partidos();
-		List<Partido> partidos = convertir(lista_json);
+		List<Partido> partidos = getPartidos();
 		partidos.stream().forEach(element -> {
 			Lista_equipos.add(element.getEquipo_1());
 			Lista_equipos.add(element.getEquipo_2());
 		});
 
 		return Lista_equipos;
+	}
+	
+	@Override
+	public List<Sancion_JSON> search_sanciones() throws ParseException {
+		path = "/Sanciones/Search_Sanciones";
+        System.out.println("Trying POST at " + path + " (Search All sanciones message)");
+        client = new RestClient<Partidos_parameters>(hostname, port);
+        response = null;
+        try {
+            response = 
+                    client.makePostRequest(
+                            client.createInvocationBuilder(path) , new Partidos_parameters()
+                    
+            );
+        }
+        catch (Exception e) { e.printStackTrace(); e.toString(); }
+
+        // JSON SIMPLE PARSER STUFF...
+        List<Sancion_JSON> mySancionesArray;
+
+        String json_string = response.readEntity(String.class);
+        JSONParser myParser = new JSONParser();
+        JSONArray sancionesArray = (JSONArray) myParser.parse( json_string );
+
+        // Lambda expression to print array
+        sancionesArray.stream().forEach(
+                element -> System.out.println(element)
+        );
+
+        // Lambda expression to map JSONObjects inside JSONArray to flight objects
+        mySancionesArray = (List) sancionesArray.stream()
+                .map( element -> new Sancion_JSON( element))
+                .collect(Collectors.toList()
+        );
+
+        System.out.println("Number of partidos collected:");
+
+
+        return mySancionesArray;
+
+	}
+	
+	@Override
+	public List<Sancion> getSanciones() throws ParseException {
+
+		List<Sancion_JSON> lista_json = search_sanciones();
+		List<Sancion> sanciones = convertir_sanciones(lista_json);
+		
+		return  sanciones;
+	}
+	
+	@Override
+	public ArrayList<Sancion> convertir_sanciones(List<Sancion_JSON> json) {
+		ArrayList<Sancion> Lista_sanciones= new ArrayList<Sancion>();
+		json.stream().forEach(element -> {
+			if(element.getTipo().equals("FALTA"))
+			{
+				Sancion v = new Sancion(element.getCode(), Tipo_Sancion.FALTA, element.getDNI(), element.getCodPartido());
+				Lista_sanciones.add(v);
+			}
+			else if(element.getTipo().equals("INSULTO"))
+			{
+				Sancion v = new Sancion(element.getCode(), Tipo_Sancion.INSULTO, element.getDNI(), element.getCodPartido());
+				Lista_sanciones.add(v);
+			}
+			else if(element.getTipo().equals("AGRESION"))
+			{
+				Sancion v = new Sancion(element.getCode(), Tipo_Sancion.AGRESION, element.getDNI(), element.getCodPartido());
+				Lista_sanciones.add(v);
+			}
+			
+		});
+
+		return Lista_sanciones;
 	}
 
 }

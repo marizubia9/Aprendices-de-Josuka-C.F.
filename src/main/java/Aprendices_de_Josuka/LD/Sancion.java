@@ -13,17 +13,17 @@ public class Sancion {
 
 	@PrimaryKey
 	private String codigo;
-	private Persona persona;
+	private String persona;
 	private Tipo_Sancion tipo;
-	private String comentarios;
+	private String cod_partido;
 
 
-	public Sancion(String codigo, Tipo_Sancion tipo, String comentarios, Persona persona) {
+	public Sancion(String codigo, Tipo_Sancion tipo,String persona, String cod_partido) {
 		super();
 		this.codigo = codigo;
 		this.tipo = tipo;
-		this.comentarios = comentarios;
 		this.persona = persona;
+		this.cod_partido = cod_partido;
 	}
 
 

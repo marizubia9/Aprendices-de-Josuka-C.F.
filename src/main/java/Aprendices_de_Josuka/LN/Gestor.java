@@ -29,6 +29,7 @@ import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Partido;
+import Aprendices_de_Josuka.LD.Sancion;
 import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LP.Pantalla_Principal;
 
@@ -380,6 +381,15 @@ public class Gestor {
 		}
 		
 		
+	}
+	
+	public List<Sancion> getSanciones() throws ParseException{
+		List<Sancion> lista = Gateway.getInstance().getSanciones();
+		for(Sancion a: lista)
+		{
+			System.out.println(a.getCodigo() + " " +a.getPersona() + " " +a.getTipo() + " "+ a.getCod_partido());
+		}
+		return lista;
 	}
 
 	public void ModificarMaterial(List<Material> lista_material)
