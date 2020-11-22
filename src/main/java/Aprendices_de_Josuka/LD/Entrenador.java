@@ -30,6 +30,12 @@ public @Data class Entrenador extends Persona{
 		this.asignado_equipo = asignado_equipo;
 
 	}
+	
+	public String toString()
+	{
+		return this.getDNI() + " | " + this.getNombre() + " " + this.getApellido() ;
+		
+	}
 
 
 

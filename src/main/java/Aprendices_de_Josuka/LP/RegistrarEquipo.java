@@ -479,10 +479,18 @@ public class RegistrarEquipo extends JFrame {
 		vaciarJList();
 		ListaJugadores1.clear();
 		try {
-			
-			for(Jugador a : Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem())){
+			System.out.println(ListaJugadores1);
+			for(Jugador a : Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem()))
+			{
+				try
+				{
+				a.getEquipo().getNombre().equals(null);
+				}
 				
-				ListaJugadores1.add(a.toString());
+				catch (NullPointerException n)
+				{
+					ListaJugadores1.add(a.toString());
+				}
 			}
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
@@ -557,9 +565,8 @@ public class RegistrarEquipo extends JFrame {
 				{
 					if(j.toString().equals(i))
 						{
-//						j.setAsignado_equipo(true);
 						lista_Jugadores.add(j);
-						
+						//lista_Jugadores.get(0).setEquipo(equipo);
 						}
 				}
 				
@@ -571,6 +578,12 @@ public class RegistrarEquipo extends JFrame {
 		try 
 		{
 			Gestor.getInstance().RegistrarEquipo(txtNombre.getText(),(Categoria)comboCategoria.getSelectedItem(),entrenador,lista_Jugadores ,inventario);
+			Equipo e = new Equipo(txtNombre.getText(),(Categoria)comboCategoria.getSelectedItem(),entrenador,lista_Jugadores ,inventario);
+			for (Jugador j: lista_Jugadores)
+			{
+				j.setEquipo(e);
+			}
+			Gestor.getInstance().ActualizarJugadorEquipo(lista_Jugadores);
 			txtNombre.setText("");
 			vaciarJList();
 		} catch (RemoteException e) {

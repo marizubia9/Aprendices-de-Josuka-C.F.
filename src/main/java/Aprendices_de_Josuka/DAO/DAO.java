@@ -194,6 +194,17 @@ public class DAO implements itfDAO {
 			}
 		}
 	}
+	
+	public void ActualizarEquipoJugador(List<Jugador> jugadores)
+	{
+		int i=0;
+		for (Jugador j: jugadores)
+		{
+		 j= persistentManager.getObjectById(Jugador.class, j.getDNI());
+		 j.setEquipo(jugadores.get(i).getEquipo());
+		 i++;
+		}
+	}
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void ActualizarEquipo(Equipo equipo, HashMap inventario, List<Jugador> jugadores)
 	{

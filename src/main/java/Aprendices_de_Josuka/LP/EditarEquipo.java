@@ -927,15 +927,25 @@ public class EditarEquipo extends JFrame{
 		for(int i = 0 ; i < modelo2.size();i++)
 		{
 			Lista_Jugadores.add((Jugador) (list_JugadoresAnyadir.getModel().getElementAt(i)));
+			Lista_Jugadores.get(i).setEquipo(null);
+		}
+		try 
+		{
+			Gestor.getInstance().ActualizarJugadorEquipo(Lista_Jugadores);
+		} catch (RemoteException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 
 		Lista_Jugadores.clear();
 		for(int i = 0 ; i < modelo.size();i++)
 		{
 			Lista_Jugadores.add((Jugador) (list_JugadoresEquipo.getModel().getElementAt(i)));
+			Lista_Jugadores.get(i).setEquipo(equipo);
 		}
 		try 
 		{
+			Gestor.getInstance().ActualizarJugadorEquipo(Lista_Jugadores);
 			Gestor.getInstance().ActualizarEquipo(equipo, inventario, Lista_Jugadores);
 			MostrarInformacion();
 		} 

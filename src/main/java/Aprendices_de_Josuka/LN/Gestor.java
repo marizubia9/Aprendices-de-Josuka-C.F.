@@ -154,9 +154,16 @@ public class Gestor {
 	{
 		int edad=0;
 		List<Jugador> ListaJugadores1= new ArrayList<>();
-		for (Jugador a : DAO.getInstance().getJugador()) {
-			if (!a.getEquipo().equals(null)) 
+		for (Jugador a : DAO.getInstance().getJugador()) 
+		{
+			try
 			{
+				a.getEquipo().equals(null);
+			}
+			catch (NullPointerException e)
+			{
+//			if (!a.getEquipo().equals(null)) 
+//			{
 				StringTokenizer st= new StringTokenizer(a.getFecha_nacimiento(),"/");
 				Integer[] fecha=new Integer[3];
 				int i=0;
@@ -195,6 +202,8 @@ public class Gestor {
 						if (edad>18)ListaJugadores1.add(a);
 					}
 				
+			//}
+			
 			}
 			
 		}
@@ -226,6 +235,10 @@ public class Gestor {
 	public void ActualizarJugador(Jugador e, boolean reconocimiento, boolean lesionado, boolean cuota)
 	{
 		DAO.getInstance().ActualizarJugador(e, reconocimiento, lesionado, cuota);
+	}
+	public void ActualizarJugadorEquipo(List<Jugador> lista_Jugadores)
+	{
+		DAO.getInstance().ActualizarEquipoJugador(lista_Jugadores);
 	}
 	public String ObtenerEquipoJugador(Jugador jugador)
 	{
