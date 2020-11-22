@@ -396,4 +396,16 @@ public class Gestor {
 	{
 		
 	}
+	public boolean comprobarDNI (String dni)
+	{
+		boolean bool;
+		if (dni.length() != 9)
+		{
+			bool = false;
+		}
+		else{
+			bool = true;
+		}
+		return bool;
+	}
 }
