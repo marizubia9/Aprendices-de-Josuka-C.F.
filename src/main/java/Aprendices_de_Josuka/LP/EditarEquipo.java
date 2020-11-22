@@ -873,32 +873,6 @@ public class EditarEquipo extends JFrame{
 	}
 
 }
-//	public void EliminarJugadores2()
-//	{
-//		System.out.println("e modelo1: " + modelo.size());
-//		System.out.println("e modelo2: " + modelo2.size());
-//		Jugador eliminado = null;
-//		for(Equipo e: Lista_Equipos)
-//		{
-//			if(e.toString().equals(comboEquipo.getSelectedItem().toString()))
-//			{
-//				for(int i = 0; i<modelo.size();i++)
-//				{
-//				if(modelo.get(list_JugadoresEquipo.getSelectedIndex()).equals(e.getLista_jugador().get(i)))
-//				{
-//				eliminado =e.getLista_jugador().get(i);
-//				}
-//				}
-//			}
-//		}
-//		modelo.remove(list_JugadoresEquipo.getSelectedIndex());
-//		list_JugadoresEquipo.removeAll();
-//		list_JugadoresEquipo.setModel(modelo);
-//		pScrollPane.repaint();
-//
-//		modelo2.addElement(eliminado);
-//		list_JugadoresAnyadir.setModel(modelo2);
-//		pScrollPane_1.repaint();
-//	}
+
 
 
