@@ -68,12 +68,12 @@ public class RegistrarEquipo extends JFrame {
 	private JPanel panel_scrollpane2;
 	private JPanel panel_scrollpane1;
 	private List<String> ListaJugadores1;
-	private HashMap<Material,Integer> inventario;
+	private HashMap<Material, Integer> inventario;
 	private JScrollPane scrollPane_Jugadores1;
 	private JList<String> JListaJugadores1;
 	private JList<String> JListaJugadores2;
 	private JScrollPane scrollPane2;
-	private List<Jugador>lista_Jugadores;
+	private List<Jugador> lista_Jugadores;
 	private List<String> jugadores_lista;
 	private Set<String> HashSet;
 
@@ -114,11 +114,14 @@ public class RegistrarEquipo extends JFrame {
 		this.setVisible(true);
 	}
 
+	/**
+	 * Creacion de todos los objetos visuales de la pantalla.
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    setBounds(100, 100, 1300, 740);
+		setBounds(100, 100, 1300, 740);
 		setLocationRelativeTo(null);
-		
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -172,12 +175,12 @@ public class RegistrarEquipo extends JFrame {
 		txtNombre.setColumns(10);
 		txtNombre.setText("");
 
-		JButton btnNuevoEquipo = new JButton("Anadir Inventario");
-		btnNuevoEquipo.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
-		btnNuevoEquipo.setForeground(Color.WHITE);
-		btnNuevoEquipo.setBackground(new Color(0, 102, 0));
-		btnNuevoEquipo.setBounds(1112, 39, 151, 48);
-		panel_central.add(btnNuevoEquipo);
+		JButton btnAnyadir = new JButton("Anadir Inventario");
+		btnAnyadir.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		btnAnyadir.setForeground(Color.WHITE);
+		btnAnyadir.setBackground(new Color(0, 102, 0));
+		btnAnyadir.setBounds(1112, 39, 151, 48);
+		panel_central.add(btnAnyadir);
 
 		comboCategoria = new JComboBox();
 		comboCategoria.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
@@ -215,7 +218,7 @@ public class RegistrarEquipo extends JFrame {
 		lblJugadores.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		lblJugadores.setBounds(395, 261, 135, 31);
 		panel_central.add(lblJugadores);
-		
+
 		btnAnyadirJugador = new JButton(">>");
 		btnAnyadirJugador.setForeground(Color.WHITE);
 		btnAnyadirJugador.setBackground(new Color(0, 102, 0));
@@ -223,7 +226,7 @@ public class RegistrarEquipo extends JFrame {
 		btnAnyadirJugador.setBounds(749, 303, 158, 29);
 		panel_central.add(btnAnyadirJugador);
 		ListaJugadores1 = new ArrayList<>();
-		
+
 		panel_izquierdo = new JPanel();
 		panel_izquierdo.setLayout(null);
 		panel_izquierdo.setForeground(new Color(0, 102, 0));
@@ -231,12 +234,12 @@ public class RegistrarEquipo extends JFrame {
 		panel_izquierdo.setBackground(new Color(0, 102, 0));
 		panel_izquierdo.setBounds(0, 0, 328, 528);
 		panel_central.add(panel_izquierdo);
-		
+
 		btnHome = new JButton("HOME");
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				Principal_Administrador pa= new Principal_Administrador();
+
+				Principal_Administrador pa = new Principal_Administrador();
 				pa.setVisible(true);
 				setVisible(false);
 			}
@@ -247,7 +250,7 @@ public class RegistrarEquipo extends JFrame {
 		btnHome.setBackground(new Color(0, 102, 0));
 		btnHome.setBounds(0, 0, 328, 42);
 		panel_izquierdo.add(btnHome);
-		
+
 		btnAnyadirEquipo = new JButton("AÑADIR EQUIPO");
 		btnAnyadirEquipo.setEnabled(false);
 		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
@@ -256,12 +259,11 @@ public class RegistrarEquipo extends JFrame {
 		btnAnyadirEquipo.setBackground(new Color(0, 102, 0));
 		btnAnyadirEquipo.setBounds(0, 40, 328, 42);
 		panel_izquierdo.add(btnAnyadirEquipo);
-		
+
 		btnAnyadirInventario = new JButton("AÑADIR INVENTARIO");
 		btnAnyadirInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				
 				RegistrarMaterial r = new RegistrarMaterial();
 				r.setVisible(true);
 				setVisible(false);
@@ -273,11 +275,11 @@ public class RegistrarEquipo extends JFrame {
 		btnAnyadirInventario.setBackground(new Color(0, 102, 0));
 		btnAnyadirInventario.setBounds(0, 81, 328, 42);
 		panel_izquierdo.add(btnAnyadirInventario);
-		
+
 		btnVisualizarJugador = new JButton("VISUALIZAR  JUGADORES");
 		btnVisualizarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+
 				Visualizar_Jugadores r = new Visualizar_Jugadores();
 				r.setVisible(true);
 				setVisible(false);
@@ -289,11 +291,11 @@ public class RegistrarEquipo extends JFrame {
 		btnVisualizarJugador.setBackground(new Color(0, 102, 0));
 		btnVisualizarJugador.setBounds(0, 202, 328, 42);
 		panel_izquierdo.add(btnVisualizarJugador);
-		
+
 		btnVisualizarEntrenador = new JButton("VISUALIZAR  ENTRENADORES");
 		btnVisualizarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+
 				Visualizar_Entrenadores r = new Visualizar_Entrenadores();
 				r.setVisible(true);
 				setVisible(false);
@@ -305,11 +307,11 @@ public class RegistrarEquipo extends JFrame {
 		btnVisualizarEntrenador.setBackground(new Color(0, 102, 0));
 		btnVisualizarEntrenador.setBounds(0, 121, 328, 42);
 		panel_izquierdo.add(btnVisualizarEntrenador);
-		
+
 		btnVisualziarEquipo = new JButton("VISUALIZAR  EQUIPOS");
 		btnVisualziarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				Visualizar_Equipos r = new Visualizar_Equipos();
 				r.setVisible(true);
 				setVisible(false);
@@ -321,11 +323,11 @@ public class RegistrarEquipo extends JFrame {
 		btnVisualziarEquipo.setBackground(new Color(0, 102, 0));
 		btnVisualziarEquipo.setBounds(0, 162, 328, 42);
 		panel_izquierdo.add(btnVisualziarEquipo);
-		
+
 		btnEditarEntrenador = new JButton("EDITAR ENTRENADOR");
 		btnEditarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				EditarEntrenador r = new EditarEntrenador();
 				r.setVisible(true);
 				setVisible(false);
@@ -337,11 +339,10 @@ public class RegistrarEquipo extends JFrame {
 		btnEditarEntrenador.setBackground(new Color(0, 102, 0));
 		btnEditarEntrenador.setBounds(0, 243, 328, 42);
 		panel_izquierdo.add(btnEditarEntrenador);
-		
+
 		btnEditarEquipo = new JButton("EDITAR EQUIPO");
 		btnEditarEquipo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
+			public void actionPerformed(ActionEvent e) {
 				EditarEquipo r = new EditarEquipo();
 				r.setVisible(true);
 				setVisible(false);
@@ -353,11 +354,10 @@ public class RegistrarEquipo extends JFrame {
 		btnEditarEquipo.setBackground(new Color(0, 102, 0));
 		btnEditarEquipo.setBounds(0, 281, 328, 42);
 		panel_izquierdo.add(btnEditarEquipo);
-		
+
 		btnEditarJugador = new JButton("EDITAR JUGADOR");
 		btnEditarJugador.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
+			public void actionPerformed(ActionEvent e) {
 				EditarJugador r = new EditarJugador();
 				r.setVisible(true);
 				setVisible(false);
@@ -369,45 +369,33 @@ public class RegistrarEquipo extends JFrame {
 		btnEditarJugador.setBackground(new Color(0, 102, 0));
 		btnEditarJugador.setBounds(0, 322, 328, 42);
 		panel_izquierdo.add(btnEditarJugador);
-		
+
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setBackground(new Color(0, 128, 0));
 		btnAceptar.setForeground(Color.WHITE);
 		btnAceptar.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		btnAceptar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-				if(txtNombre.getText().equals(""))
-				{
-					System.out.println("entra");
+			public void actionPerformed(ActionEvent e) {
+				if (txtNombre.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "Introduce el nombre del equipo");
-				}
-				else if(HashSet == null)
-				{
+				} else if (HashSet == null) {
 					JOptionPane.showMessageDialog(null, "Introduce jugadores");
-				}
-				else if(inventario == null)
-				{
+				} else if (inventario == null) {
 					JOptionPane.showMessageDialog(null, "Asigna material al equipo");
 				}
-				
-				else
-				{
-				Anyadir_Equipo();
-				txtNombre.setText("");
-				//HashSet=null;
-				//jugadores_lista =null
-				//jugadores_lista.clear();
 
-				MostrarJugadores();
-				RellenarEntrenadores();
-				scrollPane2.repaint();
-				comboEntrenador.removeAllItems();
-				scrollPane2.repaint();
-				panel_central.repaint();
-				JListaJugadores1.removeAll();
+				else {
+					Anyadir_Equipo();
+					txtNombre.setText("");
+					MostrarJugadores();
+					RellenarEntrenadores();
+					scrollPane2.repaint();
+					comboEntrenador.removeAllItems();
+					scrollPane2.repaint();
+					panel_central.repaint();
+					JListaJugadores1.removeAll();
 				}
-				
+
 			}
 		});
 		btnAceptar.setBounds(1138, 457, 125, 38);
@@ -415,80 +403,61 @@ public class RegistrarEquipo extends JFrame {
 		scrollPane_Jugadores1 = new JScrollPane();
 		scrollPane_Jugadores1.setBounds(554, 261, 180, 190);
 		panel_central.add(scrollPane_Jugadores1);
-		
-		
-				panel_scrollpane1 = new JPanel(new BorderLayout());
-				scrollPane_Jugadores1.setColumnHeaderView(panel_scrollpane1);
-				
-//		List<String> myList2 = new ArrayList<>();
-//		final JList<String> list2 = new JList<String>(myList2.toArray(new String[myList2.size()]));
-				scrollPane2 = new JScrollPane();
-				scrollPane2.setBounds(922, 261, 180, 190);
-				panel_central.add(scrollPane2);
-				
-				
-				// Creamos Jlist2 en este caso vacio
-				panel_scrollpane2 = new JPanel(new BorderLayout());
-				scrollPane2.setColumnHeaderView(panel_scrollpane2);
-				
-				buttonEliminar = new JButton("<<");
-				buttonEliminar.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) 
-					{
-						EliminarJugadores();
-					}
-				});
-				buttonEliminar.setForeground(Color.WHITE);
-				buttonEliminar.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 16));
-				buttonEliminar.setBackground(new Color(0, 102, 0));
-				buttonEliminar.setBounds(749, 375, 158, 29);
-				panel_central.add(buttonEliminar);
-		
-		
-		
+
+		panel_scrollpane1 = new JPanel(new BorderLayout());
+		scrollPane_Jugadores1.setColumnHeaderView(panel_scrollpane1);
+		scrollPane2 = new JScrollPane();
+		scrollPane2.setBounds(922, 261, 180, 190);
+		panel_central.add(scrollPane2);
+
+		// Creamos Jlist2 en este caso vacio
+		panel_scrollpane2 = new JPanel(new BorderLayout());
+		scrollPane2.setColumnHeaderView(panel_scrollpane2);
+
+		buttonEliminar = new JButton("<<");
+		buttonEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EliminarJugadores();
+			}
+		});
+		buttonEliminar.setForeground(Color.WHITE);
+		buttonEliminar.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 16));
+		buttonEliminar.setBackground(new Color(0, 102, 0));
+		buttonEliminar.setBounds(749, 375, 158, 29);
+		panel_central.add(buttonEliminar);
+
 		// Con este boton se muestran los JList de jugadores
 		btnMostrarJugadores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Vaciamos la lista que utilizaremos más tarde
+				// Vaciamos la lista que utilizaremos mas tarde
 				jugadores_lista.clear();
 				MostrarJugadores();
-			
-				
-			
 				panel_central.repaint();
-			btnAnyadirJugador.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						PasarJugadores();
-						
-
-					}
-				});
-
 			}
 		});
-
-		btnNuevoEquipo.addActionListener(new ActionListener() {
+		
+		btnAnyadirJugador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PasarJugadores();
+			}
+		});
+		btnAnyadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Anyadir_Material();
 			}
 		});
 	}
-	
-	public void MostrarJugadores()
-	{
+
+	public void MostrarJugadores() {
 		vaciarJList();
 		ListaJugadores1.clear();
 		try {
-			System.out.println(ListaJugadores1);
-			for(Jugador a : Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem()))
-			{
-				try
-				{
-				a.getEquipo().getNombre().equals(null);
+			for (Jugador a : Gestor.getInstance().MostrarJugadores((Categoria) comboCategoria.getSelectedItem())) {
+				try {
+					a.getEquipo().getNombre().equals(null);
 				}
-				
-				catch (NullPointerException n)
-				{
+
+				catch (NullPointerException n) {
 					ListaJugadores1.add(a.toString());
 				}
 			}
@@ -500,16 +469,14 @@ public class RegistrarEquipo extends JFrame {
 		scrollPane_Jugadores1.setViewportView(JListaJugadores1);
 		JListaJugadores1.setLayoutOrientation(JList.VERTICAL);
 		scrollPane_Jugadores1.repaint();
-		System.out.println("El tamanyo de la lista: "+ListaJugadores1.size());
 		panel_central.repaint();
-		
+
 	}
-	
-	public void PasarJugadores()
-	{
-		String valor =  JListaJugadores1.getSelectedValue();
+
+	public void PasarJugadores() {
+		String valor = JListaJugadores1.getSelectedValue();
 		jugadores_lista.add(valor);
-		HashSet= new HashSet<String>(jugadores_lista);
+		HashSet = new HashSet<String>(jugadores_lista);
 		jugadores_lista.clear();
 		jugadores_lista.addAll(HashSet);
 		JListaJugadores2 = new JList<String>(jugadores_lista.toArray(new String[jugadores_lista.size()]));
@@ -518,9 +485,8 @@ public class RegistrarEquipo extends JFrame {
 		scrollPane2.repaint();
 		panel_central.repaint();
 	}
-	
-	public void EliminarJugadores()
-	{
+
+	public void EliminarJugadores() {
 		jugadores_lista.remove(JListaJugadores2.getSelectedIndex());
 		JListaJugadores2 = new JList<String>(jugadores_lista.toArray(new String[jugadores_lista.size()]));
 		scrollPane2.setViewportView(JListaJugadores2);
@@ -528,8 +494,8 @@ public class RegistrarEquipo extends JFrame {
 		scrollPane2.repaint();
 		panel_central.repaint();
 	}
-	public void vaciarJList()
-	{
+
+	public void vaciarJList() {
 		jugadores_lista.clear();
 		JListaJugadores2 = new JList<String>(jugadores_lista.toArray(new String[jugadores_lista.size()]));
 		scrollPane2.setViewportView(JListaJugadores2);
@@ -537,49 +503,42 @@ public class RegistrarEquipo extends JFrame {
 		scrollPane2.repaint();
 		panel_central.repaint();
 	}
-	public void Anyadir_Material()
-	{
+
+	public void Anyadir_Material() {
 		inventario = new HashMap<Material, Integer>();
-		Anyadir_Inventario a = new Anyadir_Inventario(this,inventario);
+		Anyadir_Inventario a = new Anyadir_Inventario(this, inventario);
 		a.setVisible(true);
 		setVisible(false);
 	}
-	public void Anyadir_Equipo()
+
+	public void Anyadir_Equipo() 
 	{
-		Entrenador entrenador=null;
-		lista_Jugadores= new ArrayList<Jugador>();
-		for(Entrenador i: ListaEntrenador)
-		{
-			if(i.toString().equals(comboEntrenador.getSelectedItem()))
-			{
-				entrenador=i;
+		Entrenador entrenador = null;
+		lista_Jugadores = new ArrayList<Jugador>();
+		for (Entrenador i : ListaEntrenador) {
+			if (i.toString().equals(comboEntrenador.getSelectedItem())) {
+				entrenador = i;
 				entrenador.setAsignado_equipo(true);
-				
-				System.out.println(entrenador.isAsignado_equipo());
 			}
 		}
 		try {
-			for(Jugador j:Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem()))
-			{
-				for(String i:jugadores_lista)
-				{
-					if(j.toString().equals(i))
-						{
+			for (Jugador j : Gestor.getInstance().MostrarJugadores((Categoria) comboCategoria.getSelectedItem())) {
+				for (String i : jugadores_lista) {
+					if (j.toString().equals(i)) {
 						lista_Jugadores.add(j);
-						//lista_Jugadores.get(0).setEquipo(equipo);
-						}
+					}
 				}
-				
 			}
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		try 
-		{
-			Gestor.getInstance().RegistrarEquipo(txtNombre.getText(),(Categoria)comboCategoria.getSelectedItem(),entrenador,lista_Jugadores ,inventario);
-			Equipo e = new Equipo(txtNombre.getText(),(Categoria)comboCategoria.getSelectedItem(),entrenador,lista_Jugadores ,inventario);
-			for (Jugador j: lista_Jugadores)
+		try {
+			
+			Equipo e = new Equipo(txtNombre.getText(), (Categoria) comboCategoria.getSelectedItem(), entrenador,
+					lista_Jugadores, inventario);
+			Gestor.getInstance().RegistrarEquipo(e);
+			for(Jugador j: lista_Jugadores)
 			{
 				j.setEquipo(e);
 			}
@@ -591,10 +550,10 @@ public class RegistrarEquipo extends JFrame {
 			e.printStackTrace();
 		}
 	}
-	public void RellenarEntrenadores()
-	{
-		ListaEntrenador=  DAO.getInstance().getEntrenador();
-		for (Entrenador a :ListaEntrenador) {
+
+	public void RellenarEntrenadores() {
+		ListaEntrenador = DAO.getInstance().getEntrenador();
+		for (Entrenador a : ListaEntrenador) {
 			if (!a.isAsignado_equipo()) {
 				comboEntrenador.addItem(a.toString());
 			}

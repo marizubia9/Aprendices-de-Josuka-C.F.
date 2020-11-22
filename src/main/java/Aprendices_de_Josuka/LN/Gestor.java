@@ -92,10 +92,10 @@ public class Gestor {
 		Entrenador e = new Entrenador(nombre, apellido, fecha_nacimiento, DNI, telefono, correo, password, 0, asignado);
 		DAO.getInstance().guardarObjeto(e);
 	}
-	public  void RegistrarEquipo(String nombre, Categoria cat, Entrenador entrenador, List<Jugador>lista_jugador, HashMap<Material, Integer> inventario)
+	public  void RegistrarEquipo(Equipo e)
 	{
-		Equipo e= new Equipo(nombre, cat, entrenador, lista_jugador, inventario);
-		inventario.forEach((m,c)->
+		
+		e.getInventario().forEach((m,c)->
 		{
 			int cantidad= m.getCantidad()-c;
 			m.setCantidad(cantidad);

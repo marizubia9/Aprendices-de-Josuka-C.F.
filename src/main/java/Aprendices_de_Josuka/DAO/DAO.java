@@ -197,12 +197,22 @@ public class DAO implements itfDAO {
 	
 	public void ActualizarEquipoJugador(List<Jugador> jugadores)
 	{
-		int i=0;
-		for (Jugador j: jugadores)
-		{
-		 j= persistentManager.getObjectById(Jugador.class, j.getDNI());
-		 j.setEquipo(jugadores.get(i).getEquipo());
-		 i++;
+		try {
+			for (Jugador j: jugadores)
+			{
+				System.out.println(j.getDNI());
+				Jugador jugador= persistentManager.getObjectById(Jugador.class, j.getDNI());
+				System.out.println("llego aqui");
+				jugador.setEquipo(j.getEquipo());
+			}
+		} catch (Exception ex) {
+
+			System.err.println("* Exception modifying data into db: " + ex.getMessage());
+		}
+		finally {
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
 		}
 	}
 	@SuppressWarnings({ "unchecked", "rawtypes" })
