@@ -7,12 +7,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Controller.Controller;
+
 import java.awt.Color;
 import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
 
 public class Pantalla_Principal extends JFrame {
 
@@ -37,27 +41,27 @@ public class Pantalla_Principal extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Pantalla_Principal frame = new Pantalla_Principal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		Controller c = null;
+		try {
+			c = new Controller();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+		}
+		new Pantalla_Principal(c);
 	}
 
 	/**
 	 * Create the frame.
+	 * @param c 
 	 */
-	public Pantalla_Principal() {
-		initComponents();
+	public Pantalla_Principal(Controller c) {
+		initComponents(c);
 		this.setVisible(true);
 	}
 
-	public void initComponents() {
+	public void initComponents(Controller c) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
 		setLocationRelativeTo(null);
@@ -218,7 +222,7 @@ public class Pantalla_Principal extends JFrame {
 
 		txtEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				IniciarSesion iniciar = new IniciarSesion();
+				IniciarSesion iniciar = new IniciarSesion(c);
 				setVisible(false);
 				iniciar.setVisible(true);
 

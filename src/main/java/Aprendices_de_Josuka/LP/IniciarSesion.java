@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Aprendices_de_Josuka.LN.Gestor;
+import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -29,27 +30,30 @@ public class IniciarSesion extends JFrame {
 	private JLabel txtLosAprendicesDe;
 	private JTextField txtEmail;
 	private JTextField txtPassword;
+	private Controller controller;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					IniciarSesion frame = new IniciarSesion();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		Controller c = null;
+		try {
+			c = new Controller();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+		}
+		new IniciarSesion(c);
 	}
 
 	/**
 	 * Create the frame.
+	 * @param c 
 	 */
-	public IniciarSesion() {
+	public IniciarSesion(Controller c) 
+	{
+		this.controller=c;
 		initComponents();
 		this.setVisible(true);
 	}
@@ -182,13 +186,13 @@ public class IniciarSesion extends JFrame {
 
 	public void Entrar(String email, String psw) {
 		try {
-			if (Gestor.getInstance().Entrar_Jugador(email, psw)) {
+			if (controller.EntrarJugador(email, psw)) {
 				setVisible(false);
 				Principal_Jugador a = new Principal_Jugador();
 				a.setVisible(true);
 			} else {
 				try {
-					if (Gestor.getInstance().Entrar_Entrenador(email, psw)) {
+					if (controller.EntrarEntrenador(email, psw)) {
 						Principal_Entrenador a = new Principal_Entrenador();
 						a.setVisible(true);
 					} else {
