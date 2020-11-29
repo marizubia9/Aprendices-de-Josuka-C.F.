@@ -281,7 +281,7 @@ public class Visualizar_Entrenadores extends JFrame {
 		btnEditarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				EditarJugador r = new EditarJugador();
+				EditarJugador r = new EditarJugador(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}

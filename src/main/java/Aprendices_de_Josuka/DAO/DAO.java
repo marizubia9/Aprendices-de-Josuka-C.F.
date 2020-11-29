@@ -1,5 +1,6 @@
 package Aprendices_de_Josuka.DAO;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +24,7 @@ public class DAO implements itfDAO {
 	private static Transaction transaction;
 	private static PersistenceManagerFactory persistentManagerFactory;
 	private static Gestor g;
-	private static final DAO INSTANCE = new DAO();
+	private static DAO INSTANCE ;
 
 	private DAO() {
 
@@ -32,8 +33,12 @@ public class DAO implements itfDAO {
 		transaction = persistentManager.currentTransaction();
 	}
 
-	public static DAO getInstance() {
-
+	public static DAO getInstance() throws RemoteException {
+		synchronized (Gestor.class) {
+			if (INSTANCE == null) {
+				INSTANCE = new DAO();
+			}
+		}
 		return INSTANCE;
 	}
 

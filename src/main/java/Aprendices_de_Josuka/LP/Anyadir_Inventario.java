@@ -264,7 +264,7 @@ public class Anyadir_Inventario extends JFrame {
 	{
 
 		try {
-			listaMat=Gestor.getInstance().ObtenerMaterial();
+			listaMat=controller.getMaterial();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

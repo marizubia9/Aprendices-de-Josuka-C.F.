@@ -6,8 +6,7 @@ import java.rmi.registry.Registry;
 
 import Fachada.itfFachada;
 
-public class ServiceLocator 
-{
+public class ServiceLocator {
 	private itfFachada fachada;
 
 	public void setService() throws RemoteException {

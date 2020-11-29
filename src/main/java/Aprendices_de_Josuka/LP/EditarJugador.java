@@ -78,7 +78,8 @@ public class EditarJugador  extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EditarJugador frame = new EditarJugador();
+					Controller c= new Controller();
+					EditarJugador frame = new EditarJugador(c);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -90,7 +91,8 @@ public class EditarJugador  extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public EditarJugador() {
+	public EditarJugador(Controller controller) {
+		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
 	}
@@ -435,7 +437,7 @@ public class EditarJugador  extends JFrame {
 	{
 		ListaJugadores.clear();
 		try {
-			ListaJugadores=Gestor.getInstance().getJugadores((Categoria)comboCategoria.getSelectedItem());
+			ListaJugadores=controller.MostrarJugadores((Categoria)comboCategoria.getSelectedItem());
 			for(Jugador j:ListaJugadores)
 			{
 				comboJugadores.addItem(j.toString());
@@ -456,7 +458,7 @@ public class EditarJugador  extends JFrame {
 					lblDNIJugador.setText(j.getDNI());
 					lblNombreJugador.setText(j.getNombre()+" "+j.getApellido());
 					try {
-						lblEquipoJugador.setText(Gestor.getInstance().ObtenerEquipoJugador(j));
+						lblEquipoJugador.setText(controller.ObtenerEquipoJugador(j));
 					} catch (RemoteException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -476,7 +478,7 @@ public class EditarJugador  extends JFrame {
 			if(j.toString().equals(comboJugadores.getSelectedItem().toString()))
 					{
 						try {
-							Gestor.getInstance().ActualizarJugador(j, rdbtnAprobado.isSelected(), rdbtnLesionado.isSelected(), rdbtnPagada.isSelected());
+							controller.ActualizarJugador(j, rdbtnAprobado.isSelected(), rdbtnLesionado.isSelected(), rdbtnPagada.isSelected());
 							lblDNIJugador.setText("");
 							lblEquipoJugador.setText("");
 							lblNombreJugador.setText("");

@@ -270,7 +270,7 @@ public class EditarEntrenador extends JFrame {
 		btnEditarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				EditarJugador r = new EditarJugador();
+				EditarJugador r = new EditarJugador(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -376,7 +376,7 @@ public class EditarEntrenador extends JFrame {
 		
 		try 
 		{
-			ListaEntrenadores=Gestor.getInstance().getEntrenador();
+			ListaEntrenadores=controller.getEntrenador();
 			ListaEntrenadores.forEach(e->comboEntrenador.addItem(e.toString()));
 			
 		} catch (RemoteException e) {
@@ -395,7 +395,7 @@ public class EditarEntrenador extends JFrame {
 				lblApellidoEntrenador.setText(e.getApellido());
 				txtSalario.setText(String.valueOf(e.getSalario()));
 				try {
-					lblEquipoEntrenador.setText(Gestor.getInstance().ObtenerEquipoEntrenador(e));
+					lblEquipoEntrenador.setText(controller.ObtenerEquipoEntrenador(e));
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -420,7 +420,7 @@ public class EditarEntrenador extends JFrame {
 				
 						
 				try {
-					Gestor.getInstance().ActualizarEntrenador(e, salario);
+					controller.ActualizarEntrenador(e, salario);
 					lblApellidoEntrenador.setText("");
 					lblNombreEntrenador.setText("");
 					lblDNIEntrenador.setText("");

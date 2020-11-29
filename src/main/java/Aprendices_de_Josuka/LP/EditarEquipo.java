@@ -277,7 +277,7 @@ public class EditarEquipo extends JFrame{
 		btnEditarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				EditarJugador r = new EditarJugador();
+				EditarJugador r = new EditarJugador(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -518,7 +518,7 @@ public class EditarEquipo extends JFrame{
 		comboEquipo.removeAllItems();
 		Lista_Equipos.clear();
 		try {
-			Lista_Equipos=Gestor.getInstance().getEquiposFilter((Categoria)comboCategoria.getSelectedItem());
+			Lista_Equipos=controller.getEquiposFilter((Categoria)comboCategoria.getSelectedItem());
 			for(Equipo e:Lista_Equipos)
 			{
 				comboEquipo.addItem(e.toString());
@@ -548,7 +548,7 @@ public class EditarEquipo extends JFrame{
 			Lista_Jugadores.clear();
 			try 
 			{
-				Lista_Jugadores=Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem());
+				Lista_Jugadores=controller.MostrarJugadores((Categoria)comboCategoria.getSelectedItem());
 			} catch (RemoteException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -561,7 +561,7 @@ public class EditarEquipo extends JFrame{
 					inventario=e.getInventario();
 					try 
 					{
-						Lista_Material=Gestor.getInstance().ObtenerMaterial();
+						Lista_Material=controller.getMaterial();
 					} catch (RemoteException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -703,7 +703,7 @@ public class EditarEquipo extends JFrame{
 		}
 		try 
 		{
-			Gestor.getInstance().ActualizarEquipo(equipo, inventario, Lista_Jugadores);
+			controller.ActualizarEquipo(equipo, inventario, Lista_Jugadores);
 			MostrarInformacion();
 		} 
 		catch (RemoteException e) 
@@ -862,12 +862,14 @@ public class EditarEquipo extends JFrame{
 				}
 			}	
 		}
-		try 
+		for(Material mat: Lista_Material )
 		{
-			Gestor.getInstance().ModificarMaterial(Lista_Material);
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				controller.AsignarInventario(mat);
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return material;
 		
