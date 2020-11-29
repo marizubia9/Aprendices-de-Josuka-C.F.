@@ -86,7 +86,7 @@ public class IniciarSesion extends JFrame {
 		btnEntrar_admin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				IniciarSesion_Admin a = new IniciarSesion_Admin();
+				IniciarSesion_Admin a = new IniciarSesion_Admin(controller);
 			}
 		});
 		btnEntrar_admin.setForeground(Color.BLACK);
@@ -166,7 +166,7 @@ public class IniciarSesion extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				setVisible(false);
-				RegistrarJugador r = new RegistrarJugador();
+				RegistrarJugador r = new RegistrarJugador(controller);
 				r.setVisible(true);
 
 			}
@@ -176,7 +176,7 @@ public class IniciarSesion extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				setVisible(false);
-				RegistrarEntrenador r = new RegistrarEntrenador();
+				RegistrarEntrenador r = new RegistrarEntrenador(controller);
 				r.setVisible(true);
 
 			}

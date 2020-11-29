@@ -16,6 +16,7 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LN.Gestor;
+import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -62,12 +63,15 @@ public class Anyadir_Inventario extends JFrame {
 	private RegistrarEquipo r;
 	private HashMap<Material, Integer> inventario;
 	private List<Material>listaMat;
+	private Controller controller;
 
 
 	/**
 	 * Create the frame.
 	 */
-	public Anyadir_Inventario(RegistrarEquipo r, HashMap<Material, Integer> inventario) {
+	public Anyadir_Inventario(RegistrarEquipo r, HashMap<Material, Integer> inventario) 
+	{
+		this.controller=controller;
 		initComponents();
 		this.r=r;
 		this.inventario=inventario;
@@ -118,7 +122,7 @@ public class Anyadir_Inventario extends JFrame {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Principal_Administrador pa= new Principal_Administrador();
+				Principal_Administrador pa= new Principal_Administrador(controller);
 				pa.setVisible(true);
 				setVisible(false);
 			}
@@ -143,7 +147,7 @@ public class Anyadir_Inventario extends JFrame {
 		AnyadirInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-				RegistrarMaterial r = new RegistrarMaterial();
+				RegistrarMaterial r = new RegistrarMaterial(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -159,7 +163,7 @@ public class Anyadir_Inventario extends JFrame {
 		btnVisualizaJugadores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-				Visualizar_Jugadores r = new Visualizar_Jugadores();
+				Visualizar_Jugadores r = new Visualizar_Jugadores(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -175,7 +179,7 @@ public class Anyadir_Inventario extends JFrame {
 		btnVisualizarEntrenadores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-				Visualizar_Entrenadores r = new Visualizar_Entrenadores();
+				Visualizar_Entrenadores r = new Visualizar_Entrenadores(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -191,7 +195,7 @@ public class Anyadir_Inventario extends JFrame {
 		btnVisualizarEquipos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Visualizar_Equipos r = new Visualizar_Equipos();
+				Visualizar_Equipos r = new Visualizar_Equipos(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}

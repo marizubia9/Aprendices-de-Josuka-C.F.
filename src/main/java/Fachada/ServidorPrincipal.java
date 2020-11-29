@@ -4,7 +4,13 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
+import Aprendices_de_Josuka.LD.Categoria;
+import Aprendices_de_Josuka.LD.Entrenador;
+import Aprendices_de_Josuka.LD.Equipo;
+import Aprendices_de_Josuka.LD.Jugador;
+import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LN.Gestor;
 
 public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
@@ -64,8 +70,43 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	}
 	public boolean EntrarEntrenador(String email, String psw) throws RemoteException
 	{
-		return Gestor.getInstance().Entrar_Entrenador(email, psw);
-		
+		return Gestor.getInstance().Entrar_Entrenador(email, psw);	
 	}
-
+	public boolean EntrarAdministrador (String email, String psw)throws RemoteException
+	{
+		return Gestor.getInstance().Entrar_admin(email, psw);
+	}
+	public void RegistrarJugador (String nombre, String apellido, String fecha_S, String DNI, int telefono, String correo, String psw) throws RemoteException
+	{
+		Gestor.getInstance().RegistrarJugador(nombre, apellido, fecha_S, DNI, telefono, correo, psw);
+	}
+	public void RegistrarEntrenador (String nombre, String apellido, String fecha_S, String DNI, int telefono, String correo, String psw, boolean isAsignado) throws RemoteException
+	{
+		Gestor.getInstance().RegistrarEntrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw,
+			isAsignado);
+	}
+	public List<Jugador> MostrarJugadores(Categoria c) throws RemoteException
+	{
+		return Gestor.getInstance().MostrarJugadores(c);
+	}
+	public void RegistrarEquipo(Equipo e) throws RemoteException
+	{
+		Gestor.getInstance().RegistrarEquipo(e);
+	}
+	public void ActualizarJugadorEquipo(List<Jugador> lista_Jugadores) throws RemoteException
+	{
+		Gestor.getInstance().ActualizarJugadorEquipo(lista_Jugadores);
+	}
+	public List<Entrenador> getEntrenador() throws RemoteException
+	{
+		return Gestor.getInstance().getEntrenador();
+	}
+	public List<Equipo> getEquipos() throws RemoteException
+	{
+		return Gestor.getInstance().getEquipos();
+	}
+	public void RegistrarInventario(Tipo_Material mat, int cantidad, long precio ) throws RemoteException
+	{
+		Gestor.getInstance().RegistrarInventario(mat, cantidad, precio);
+	}
 }

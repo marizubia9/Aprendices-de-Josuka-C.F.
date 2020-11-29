@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LN.Gestor;
+import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -43,27 +44,31 @@ public class RegistrarEntrenador extends JFrame {
 	private JTextField txtTelefono;
 	private JTextField txtCorreo;
 	private JTextField txtPsw;
+	private Controller controller;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RegistrarEntrenador frame = new RegistrarEntrenador();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					RegistrarEntrenador frame = new RegistrarEntrenador();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
+	 * @param controller 
 	 */
-	public RegistrarEntrenador() {
+	public RegistrarEntrenador(Controller controller) 
+	{
+		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
 	}
@@ -232,8 +237,7 @@ public class RegistrarEntrenador extends JFrame {
 				else
 				{
 				try {
-					Gestor.getInstance().RegistrarEntrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw,
-							false);
+					controller.RegistrarEntrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw, false);
 				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

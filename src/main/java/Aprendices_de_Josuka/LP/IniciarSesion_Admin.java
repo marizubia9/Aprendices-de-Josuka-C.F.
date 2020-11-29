@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Aprendices_de_Josuka.LN.Gestor;
+import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -29,27 +30,31 @@ public class IniciarSesion_Admin extends JFrame {
 	private JLabel txtLosAprendicesDe;
 	private JTextField txtEmail;
 	private JTextField txtPsw;
+	private Controller controller;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					IniciarSesion_Admin frame = new IniciarSesion_Admin();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					IniciarSesion_Admin frame = new IniciarSesion_Admin();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
+	 * @param controller 
 	 */
-	public IniciarSesion_Admin() {
+	public IniciarSesion_Admin(Controller controller) 
+	{
+		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
 	}
@@ -123,9 +128,9 @@ public class IniciarSesion_Admin extends JFrame {
 
 	public void Entrar(String email, String psw) {
 		try {
-			if (Gestor.getInstance().Entrar_admin(email, psw)) {
+			if (controller.EntrarAdministrador(email, psw)) {
 				this.setVisible(false);
-				Principal_Administrador a = new Principal_Administrador();
+				Principal_Administrador a = new Principal_Administrador(controller);
 				a.setVisible(true);
 			} else {
 				JOptionPane error = new JOptionPane();

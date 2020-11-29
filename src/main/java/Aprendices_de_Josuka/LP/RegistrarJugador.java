@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LN.Gestor;
+import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -45,27 +46,31 @@ public class RegistrarJugador extends JFrame {
 	private JTextField txtPsw;
 	private JDateChooser dateChooser;
 	private Date objDate;
+	private Controller controller;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RegistrarJugador frame = new RegistrarJugador();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					RegistrarJugador frame = new RegistrarJugador();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
+	 * @param controller 
 	 */
-	public RegistrarJugador() {
+	public RegistrarJugador(Controller controller) 
+	{
+		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
 	}

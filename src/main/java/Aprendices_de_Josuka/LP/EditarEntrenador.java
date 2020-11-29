@@ -16,6 +16,7 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LN.Gestor;
+import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -73,6 +74,7 @@ public class EditarEntrenador extends JFrame {
 	private JButton btnEditarEntrenador;
 	private JButton btnEditarEquipo;
 	private JButton btnEditarJugador;
+	private Controller controller;
 	
 
 	/**
@@ -94,7 +96,8 @@ public class EditarEntrenador extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public EditarEntrenador() {
+	public EditarEntrenador() 
+	{
 		initComponents();
 		this.setVisible(true);
 	}
@@ -145,7 +148,7 @@ public class EditarEntrenador extends JFrame {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Principal_Administrador pa= new Principal_Administrador();
+				Principal_Administrador pa= new Principal_Administrador(controller);
 				pa.setVisible(true);
 				setVisible(false);
 			}
@@ -161,7 +164,7 @@ public class EditarEntrenador extends JFrame {
 		btnAnyadirEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				RegistrarEquipo r = new RegistrarEquipo();
+				RegistrarEquipo r = new RegistrarEquipo(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -178,7 +181,7 @@ public class EditarEntrenador extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				
-				RegistrarMaterial r = new RegistrarMaterial();
+				RegistrarMaterial r = new RegistrarMaterial(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -194,7 +197,7 @@ public class EditarEntrenador extends JFrame {
 		btnVisualizarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-				Visualizar_Jugadores r = new Visualizar_Jugadores();
+				Visualizar_Jugadores r = new Visualizar_Jugadores(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -210,7 +213,7 @@ public class EditarEntrenador extends JFrame {
 		btnVisualizarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-				Visualizar_Entrenadores r = new Visualizar_Entrenadores();
+				Visualizar_Entrenadores r = new Visualizar_Entrenadores(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -226,7 +229,7 @@ public class EditarEntrenador extends JFrame {
 		btnVisualziarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Visualizar_Equipos r = new Visualizar_Equipos();
+				Visualizar_Equipos r = new Visualizar_Equipos(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -373,7 +376,7 @@ public class EditarEntrenador extends JFrame {
 		
 		try 
 		{
-			ListaEntrenadores=Gestor.getInstance().MostrarEntrenadores();
+			ListaEntrenadores=Gestor.getInstance().getEntrenador();
 			ListaEntrenadores.forEach(e->comboEntrenador.addItem(e.toString()));
 			
 		} catch (RemoteException e) {

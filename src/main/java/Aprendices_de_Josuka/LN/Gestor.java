@@ -150,7 +150,10 @@ public class Gestor {
 	{
 		return DAO.getInstance().getJugador();
 	}
-
+	public List<Entrenador> getEntrenador()
+	{
+		return DAO.getInstance().getEntrenador();
+	}
 	public  List<Jugador> MostrarJugadores(Categoria cat)
 	{
 		int edad=0;
@@ -204,13 +207,6 @@ public class Gestor {
 		}
 		return ListaJugadores1;
 	}
-	
-	public List<Entrenador> MostrarEntrenadores()
-	{
-		return DAO.getInstance().getEntrenador();
-		
-	}
-	
 
 	public String ObtenerEquipoEntrenador(Entrenador entrenador)
 	{

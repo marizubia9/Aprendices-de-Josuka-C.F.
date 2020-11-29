@@ -18,6 +18,7 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LN.Gestor;
+import Controller.Controller;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -76,6 +77,7 @@ public class RegistrarEquipo extends JFrame {
 	private List<Jugador> lista_Jugadores;
 	private List<String> jugadores_lista;
 	private Set<String> HashSet;
+	private Controller controller;
 
 	private boolean MostrarJugadores;
 	private JPanel panel_izquierdo;
@@ -93,23 +95,26 @@ public class RegistrarEquipo extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RegistrarEquipo frame = new RegistrarEquipo();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					RegistrarEquipo frame = new RegistrarEquipo();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
+	 * @param controller 
 	 */
-	public RegistrarEquipo() {
+	public RegistrarEquipo(Controller controller) 
+	{
+		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
 	}
@@ -239,7 +244,7 @@ public class RegistrarEquipo extends JFrame {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Principal_Administrador pa = new Principal_Administrador();
+				Principal_Administrador pa = new Principal_Administrador(controller);
 				pa.setVisible(true);
 				setVisible(false);
 			}
@@ -264,7 +269,7 @@ public class RegistrarEquipo extends JFrame {
 		btnAnyadirInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				RegistrarMaterial r = new RegistrarMaterial();
+				RegistrarMaterial r = new RegistrarMaterial(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -280,7 +285,7 @@ public class RegistrarEquipo extends JFrame {
 		btnVisualizarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Visualizar_Jugadores r = new Visualizar_Jugadores();
+				Visualizar_Jugadores r = new Visualizar_Jugadores(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -296,7 +301,7 @@ public class RegistrarEquipo extends JFrame {
 		btnVisualizarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Visualizar_Entrenadores r = new Visualizar_Entrenadores();
+				Visualizar_Entrenadores r = new Visualizar_Entrenadores(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -312,7 +317,7 @@ public class RegistrarEquipo extends JFrame {
 		btnVisualziarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Visualizar_Equipos r = new Visualizar_Equipos();
+				Visualizar_Equipos r = new Visualizar_Equipos(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -452,7 +457,7 @@ public class RegistrarEquipo extends JFrame {
 		vaciarJList();
 		ListaJugadores1.clear();
 		try {
-			for (Jugador a : Gestor.getInstance().MostrarJugadores((Categoria) comboCategoria.getSelectedItem())) {
+			for (Jugador a : controller.MostrarJugadores((Categoria) comboCategoria.getSelectedItem())) {
 				ListaJugadores1.add(a.toString());
 			}
 		} catch (RemoteException e) {
@@ -516,7 +521,7 @@ public class RegistrarEquipo extends JFrame {
 			}
 		}
 		try {
-			for (Jugador j : Gestor.getInstance().MostrarJugadores((Categoria) comboCategoria.getSelectedItem())) {
+			for (Jugador j : controller.MostrarJugadores((Categoria) comboCategoria.getSelectedItem())) {
 				for (String i : jugadores_lista) {
 					if (j.toString().equals(i)) {
 						lista_Jugadores.add(j);
@@ -531,8 +536,8 @@ public class RegistrarEquipo extends JFrame {
 			
 			Equipo e = new Equipo(txtNombre.getText(), (Categoria) comboCategoria.getSelectedItem(), entrenador,
 					lista_Jugadores, inventario);
-			Gestor.getInstance().RegistrarEquipo(e);
-			Gestor.getInstance().ActualizarJugadorEquipo(lista_Jugadores);
+			controller.RegistrarEquipo(e);
+			controller.ActualizarJugadorEquipo(lista_Jugadores);
 			txtNombre.setText("");
 			vaciarJList();
 		} catch (RemoteException e) {
@@ -542,7 +547,12 @@ public class RegistrarEquipo extends JFrame {
 	}
 
 	public void RellenarEntrenadores() {
-		ListaEntrenador = DAO.getInstance().getEntrenador();
+		try {
+			ListaEntrenador = controller.getEntrenador();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		for (Entrenador a : ListaEntrenador) {
 			if (!a.isAsignado_equipo()) {
 				comboEntrenador.addItem(a.toString());

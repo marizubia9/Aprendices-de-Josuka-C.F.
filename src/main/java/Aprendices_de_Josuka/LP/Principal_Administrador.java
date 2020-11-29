@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Aprendices_de_Josuka.LN.Gestor;
+import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -40,28 +41,32 @@ public class Principal_Administrador extends JFrame {
 	private JButton btnEditarEquipo;
 	private JButton btnEditarJugador;
 	private JPanel panel_izquierdo;
+	private Controller controller; 
 	
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Principal_Administrador frame = new Principal_Administrador();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Principal_Administrador frame = new Principal_Administrador();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
+	 * @param controller 
 	 */
-	public Principal_Administrador() {
+	public Principal_Administrador(Controller controller) 
+	{
+		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
 	}
@@ -117,7 +122,7 @@ public class Principal_Administrador extends JFrame {
 		btnAnyadirEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				RegistrarEquipo r = new RegistrarEquipo();
+				RegistrarEquipo r = new RegistrarEquipo(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -134,7 +139,7 @@ public class Principal_Administrador extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				
-				RegistrarMaterial r = new RegistrarMaterial();
+				RegistrarMaterial r = new RegistrarMaterial(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -150,7 +155,7 @@ public class Principal_Administrador extends JFrame {
 		btnVisualizarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-				Visualizar_Jugadores r = new Visualizar_Jugadores();
+				Visualizar_Jugadores r = new Visualizar_Jugadores(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -166,7 +171,7 @@ public class Principal_Administrador extends JFrame {
 		btnVisualizarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-				Visualizar_Entrenadores r = new Visualizar_Entrenadores();
+				Visualizar_Entrenadores r = new Visualizar_Entrenadores(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -182,7 +187,7 @@ public class Principal_Administrador extends JFrame {
 		btnVisualziarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Visualizar_Equipos r = new Visualizar_Equipos();
+				Visualizar_Equipos r = new Visualizar_Equipos(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}

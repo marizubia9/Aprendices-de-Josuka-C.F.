@@ -16,7 +16,7 @@ import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LN.Gestor;
-
+import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -59,6 +59,7 @@ public class Visualizar_Jugadores extends JFrame {
 	private Categoria cat;
 	private JList<String> JListaJugadores1;
 	private JComboBox comboCategoria;
+	private Controller controller;
 
 	private List<String> jugadores_lista;
 	private Set<String> HashSet;
@@ -82,23 +83,26 @@ public class Visualizar_Jugadores extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Visualizar_Jugadores frame = new Visualizar_Jugadores();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Visualizar_Jugadores frame = new Visualizar_Jugadores();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
+	 * @param controller 
 	 */
-	public Visualizar_Jugadores() {
+	public Visualizar_Jugadores(Controller controller) 
+	{
+		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
 	}
@@ -160,7 +164,7 @@ public class Visualizar_Jugadores extends JFrame {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Principal_Administrador pa= new Principal_Administrador();
+				Principal_Administrador pa= new Principal_Administrador(controller);
 				pa.setVisible(true);
 				setVisible(false);
 			}
@@ -176,7 +180,7 @@ public class Visualizar_Jugadores extends JFrame {
 		btnAnyadirEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				RegistrarEquipo r = new RegistrarEquipo();
+				RegistrarEquipo r = new RegistrarEquipo(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -193,7 +197,7 @@ public class Visualizar_Jugadores extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				
-				RegistrarMaterial r = new RegistrarMaterial();
+				RegistrarMaterial r = new RegistrarMaterial(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -218,7 +222,7 @@ public class Visualizar_Jugadores extends JFrame {
 		btnVisualizarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-				Visualizar_Entrenadores r = new Visualizar_Entrenadores();
+				Visualizar_Entrenadores r = new Visualizar_Entrenadores(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -234,7 +238,7 @@ public class Visualizar_Jugadores extends JFrame {
 		btnVisualziarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Visualizar_Equipos r = new Visualizar_Equipos();
+				Visualizar_Equipos r = new Visualizar_Equipos(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -339,7 +343,7 @@ public class Visualizar_Jugadores extends JFrame {
 		int x = 0;
 		int y = 50;
 		try {
-			ListaJugadores=Gestor.getInstance().MostrarJugadores((Categoria)comboCategoria.getSelectedItem());
+			ListaJugadores=controller.MostrarJugadores((Categoria)comboCategoria.getSelectedItem());
 			System.out.println("El tamanyo de la lista de jugadores es de: "+ListaJugadores.size());
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block

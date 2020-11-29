@@ -12,6 +12,7 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LN.Gestor;
+import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -50,27 +51,31 @@ public class RegistrarMaterial extends JFrame {
 	private JButton btnEditarEquipo;
 	private JButton btnEditarJugador;
 	private JPanel panel_izquierdo;
+	private Controller controller;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RegistrarMaterial frame = new RegistrarMaterial();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					RegistrarMaterial frame = new RegistrarMaterial();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
+	 * @param controller 
 	 */
-	public RegistrarMaterial() {
+	public RegistrarMaterial(Controller controller) 
+	{
+		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
 	}
@@ -132,7 +137,7 @@ public class RegistrarMaterial extends JFrame {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Principal_Administrador pa= new Principal_Administrador();
+				Principal_Administrador pa= new Principal_Administrador(controller);
 				pa.setVisible(true);
 				setVisible(false);
 			}
@@ -148,7 +153,7 @@ public class RegistrarMaterial extends JFrame {
 		btnAnyadirEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				RegistrarEquipo r = new RegistrarEquipo();
+				RegistrarEquipo r = new RegistrarEquipo(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -173,7 +178,7 @@ public class RegistrarMaterial extends JFrame {
 		btnVisualizarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-				Visualizar_Jugadores r = new Visualizar_Jugadores();
+				Visualizar_Jugadores r = new Visualizar_Jugadores(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -189,7 +194,7 @@ public class RegistrarMaterial extends JFrame {
 		btnVisualizarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-				Visualizar_Entrenadores r = new Visualizar_Entrenadores();
+				Visualizar_Entrenadores r = new Visualizar_Entrenadores(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -205,7 +210,7 @@ public class RegistrarMaterial extends JFrame {
 		btnVisualziarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Visualizar_Equipos r = new Visualizar_Equipos();
+				Visualizar_Equipos r = new Visualizar_Equipos(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -345,7 +350,7 @@ public class RegistrarMaterial extends JFrame {
 		}
 		try {
 			
-			Gestor.getInstance().RegistrarInventario((Tipo_Material)comboBox.getSelectedItem(), cantidad, precio);
+			controller.RegistrarInventario((Tipo_Material)comboBox.getSelectedItem(), cantidad, precio);
 			this.txtCantidad.setText("");
 			this.txtPrecio.setText("");
 		} catch (RemoteException e) {
