@@ -1,10 +1,10 @@
-package Remote;
+package Aprendices_de_Josuka.Remote;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-import Fachada.itfFachada;
+import Aprendices_de_Josuka.Fachada.itfFachada;
 
 public class ServiceLocator {
 	private itfFachada fachada;

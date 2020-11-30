@@ -29,7 +29,7 @@ import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LN.Gestor;
-import Controller.Controller;
+import Aprendices_de_Josuka.Controller.Controller;
 
 import javax.swing.JRadioButton;
 

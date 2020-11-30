@@ -1,4 +1,4 @@
-package Fachada;
+package Aprendices_de_Josuka.Fachada;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;

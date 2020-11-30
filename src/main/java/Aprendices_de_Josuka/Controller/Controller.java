@@ -1,4 +1,4 @@
-package Controller;
+package Aprendices_de_Josuka.Controller;
 
 import java.rmi.RemoteException;
 import java.util.HashMap;
@@ -10,9 +10,8 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Tipo_Material;
-import Aprendices_de_Josuka.LN.Gestor;
 import Aprendices_de_Josuka.LP.Pantalla_Principal;
-import Remote.ServiceLocator;
+import Aprendices_de_Josuka.Remote.ServiceLocator;
 
 public class Controller {
 	private ServiceLocator rsl = null;

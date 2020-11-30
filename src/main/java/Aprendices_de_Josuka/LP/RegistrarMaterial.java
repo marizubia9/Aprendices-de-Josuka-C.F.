@@ -12,7 +12,7 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LN.Gestor;
-import Controller.Controller;
+import Aprendices_de_Josuka.Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JTextField;
