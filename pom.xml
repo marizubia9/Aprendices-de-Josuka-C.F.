@@ -152,17 +152,21 @@
    	 		<version>0.8.6</version>
 		</dependency>
 		
-		   <dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-jdk14</artifactId>
-    <version>1.7.25</version>
-</dependency>
+		<dependency>
+    		<groupId>org.slf4j</groupId>
+    		<artifactId>slf4j-jdk14</artifactId>
+    		<version>1.7.25</version>
+		</dependency>
+		<dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.25</version>
+    </dependency>
         
   </dependencies>
  <build>
-<sourceDirectory>src/main/java</sourceDirectory>
+		<sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>src/test/java</testSourceDirectory>
-
         <resources>
             <resource>
                 <directory>${config.files.dir}</directory>
@@ -170,7 +174,6 @@
                     <include>**/*.jdo</include>
                     <include>**/*.orm</include>
                     <include>**/*.properties</include>
-                     <include>**/*.policy</include>
                 </includes>
             </resource>
           </resources>
@@ -191,9 +194,6 @@
                   <target>
                      <ant antfile="${basedir}/build.xml">
                         <target name="server"/>
-                     </ant>
-                     <ant antfile="${basedir}/build.xml">
-                        <target name="admin"/>
                      </ant>
                   </target>
                </configuration>

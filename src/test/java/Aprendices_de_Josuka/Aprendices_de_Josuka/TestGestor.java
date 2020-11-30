@@ -1,18 +1,18 @@
-package Aprendices_de_Josuka.Aprendices_de_Josuka;
-
-import static org.junit.Assert.assertEquals;
-
-import java.rmi.RemoteException;
-
-import org.databene.contiperf.PerfTest;
-import org.databene.contiperf.Required;
-import org.databene.contiperf.junit.ContiPerfRule;
-import org.junit.Rule;
-import org.junit.Test;
-
-import Aprendices_de_Josuka.LN.Gestor;
-
-public class TestGestor {
+//package Aprendices_de_Josuka.Aprendices_de_Josuka;
+//
+//import static org.junit.Assert.assertEquals;
+//
+//import java.rmi.RemoteException;
+//
+//import org.databene.contiperf.PerfTest;
+//import org.databene.contiperf.Required;
+//import org.databene.contiperf.junit.ContiPerfRule;
+//import org.junit.Rule;
+//import org.junit.Test;
+//
+//import Aprendices_de_Josuka.LN.Gestor;
+//
+//public class TestGestor {
 //	
 //	@Rule
 //	public ContiPerfRule i = new ContiPerfRule();
@@ -26,4 +26,4 @@ public class TestGestor {
 //		assertEquals(expected, Gestor.getInstance().comprobarDNI("123123123"));
 //
 //	}
-}
+//}
