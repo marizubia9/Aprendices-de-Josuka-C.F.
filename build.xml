@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." name="Aprendices-de-Josuka">    
+	<property environment="env"/>
+	<property name="source.dir" location="src/main/java"/>
+   	<property name="build.dir" location="target/classes"/>
+	<property name="mvn.source.dir" location="/Users/Alumno/.m2/repository"/>
+	<property name="server.IP" value="127.0.0.1"/> 
+	<property name="server.Name" value="EB"/>
+	<property name="server.port" value="1099"/> 
+	<property name="policy.file.server" location="src/main/java/securityServer/java.policy"/>	
+	<property name="log4j.file" location = "src/main/resources/log4j.properties" />
+	
+	<path id="full.classpath" >
+	      <fileset dir="${mvn.source.dir}">
+	      <include name="**/*.jar"/>
+	      <exclude name="**/5.2.3/**/*.jar" />
+	      <exclude name="**/5.2.1/**/*.jar" />
+	    </fileset>
+	        <pathelement location="${build.dir}"/>
+	  </path>
+
+	<target name="admin" description="Runs the Admin client">
+		<java classname="Aprendices_de_Josuka.LN.IniciarSesion_Admin" classpathref="full.classpath" fork="true">
+			<jvmarg value="-Djava.security.policy=${policy.file.server}"/>	
+			<jvmarg value="-Dlog4j.configuration=${log4j.file}"/>
+          	<arg value="${server.IP}"/> 
+	 		<arg value="${server.port}"/> 
+			<arg value="${server.Name}"/> 
+        </java>
+    </target>
+	<target name="server" description="Runs the Server">
+		<java classname="Fachada.ServidorPrincipal" classpathref="full.classpath" fork="true">
+		<jvmarg value="-Djava.rmi.server.codebase=file:${build.dir}"/> 
+			<jvmarg value="-Djava.security.policy=${policy.file.server}"/>	
+		    <jvmarg value="-Dlog4j.configuration=${log4j.file}"/>
+        	<arg value="${server.IP}"/> 
+	 		<arg value="${server.port}"/> 
+			<arg value="${server.Name}"/> 
+        </java>
+    </target>
+	
+
+</project>

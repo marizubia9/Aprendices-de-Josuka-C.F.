@@ -41,7 +41,7 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	public static void main(String[] args) {
 		String ip = "127.0.0.1";
 		String port = "1099";
-		String serviceName = "AprendicesDeJosuka";
+		String serviceName = "Aprendices-de-Josuka";
 		itfFachada objServer = null;
 		try {
 			objServer = ServidorPrincipal.getInstance();

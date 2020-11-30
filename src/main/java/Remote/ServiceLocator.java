@@ -12,7 +12,7 @@ public class ServiceLocator {
 	public void setService() throws RemoteException {
 		String ip = "127.0.0.1";
 		String port = "1099";
-		String serviceName = "AprendicesDeJosuka";
+		String serviceName = "Aprendices-de-Josuka";
 
 		if (System.getSecurityManager() == null) {
 
