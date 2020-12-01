@@ -36,10 +36,17 @@ import Aprendices_de_Josuka.LP.Pantalla_Principal;
 public class Gestor {
 
 	private static Gestor INSTANCE = null;
-
 	
+	public static Gestor getInstance() throws RemoteException {
+		synchronized (Gestor.class) {
+			if (INSTANCE == null) {
+				INSTANCE = new Gestor();
+			}
+		}
+		return INSTANCE;
+	}
 
-	public  boolean Entrar_admin(String email, String psw) throws RemoteException {
+	public boolean Entrar_admin(String email, String psw) throws RemoteException {
 		for (Administrador a : DAO.getInstance().getAdmin()) {
 			if (a.getEmail().equals(email) && a.getPsw().equals(psw)) {
 				return true;
@@ -50,22 +57,17 @@ public class Gestor {
 		return false;
 	}
 
-
-	
-	
-	public List<Partido> getPartidos() throws ParseException{
+	public List<Partido> getPartidos() throws ParseException {
 		List<Partido> lista = Gateway.getInstance().getPartidos();
-		HashSet <Equipos_Ext> equipos = Gateway.getInstance().getEquipos();
-		for(Equipos_Ext a: equipos)
-		{
-			System.out.println(a.getCod() + " " +a.getNombre() + " " +a.getCategoria() + " "+ a.getPuntuacion());
+		HashSet<Equipos_Ext> equipos = Gateway.getInstance().getEquipos();
+		for (Equipos_Ext a : equipos) {
+			System.out.println(a.getCod() + " " + a.getNombre() + " " + a.getCategoria() + " " + a.getPuntuacion());
 		}
 		return lista;
 	}
-	
-	public void clasificacion() throws ParseException
-	{
-		HashSet <Equipos_Ext> equipos = Gateway.getInstance().getEquipos();
+
+	public void clasificacion() throws ParseException {
+		HashSet<Equipos_Ext> equipos = Gateway.getInstance().getEquipos();
 		List<Equipos_Ext> list = new ArrayList<Equipos_Ext>(equipos);
 		Collections.sort(list, new Comparator<Equipos_Ext>() {
 			@Override
@@ -76,94 +78,61 @@ public class Gestor {
 		});
 		System.out.println("----------------------------------------------------");
 		System.out.println("CLASIFICACION ALEVIN");
-		for(Equipos_Ext b: list)
-		{
-			if(b.getCategoria().toUpperCase().equals("ALEVIN"))
-			{
+		for (Equipos_Ext b : list) {
+			if (b.getCategoria().toUpperCase().equals("ALEVIN")) {
 				System.out.println(b.getCod() + " " + b.getNombre() + " " + b.getPuntuacion());
 			}
 		}
 		System.out.println("----------------------------------------------------");
 		System.out.println("CLASIFICACION CADETE");
-		for(Equipos_Ext b: list)
-		{
-			if(b.getCategoria().toUpperCase().equals("CADETE"))
-			{
+		for (Equipos_Ext b : list) {
+			if (b.getCategoria().toUpperCase().equals("CADETE")) {
 				System.out.println(b.getCod() + " " + b.getNombre() + " " + b.getPuntuacion());
 			}
 		}
 		System.out.println("----------------------------------------------------");
 		System.out.println("CLASIFICACION INFANTIL");
-		for(Equipos_Ext b: list)
-		{
+		for (Equipos_Ext b : list) {
 
-			if(b.getCategoria().toUpperCase().equals("INFANTIL"))
-			{
+			if (b.getCategoria().toUpperCase().equals("INFANTIL")) {
 				System.out.println(b.getCod() + " " + b.getNombre() + " " + b.getPuntuacion());
 			}
 		}
 		System.out.println("----------------------------------------------------");
 		System.out.println("CLASIFICACION SENIOR");
-		for(Equipos_Ext b: list)
-		{
+		for (Equipos_Ext b : list) {
 
-			if(b.getCategoria().toUpperCase().equals("SENIOR"))
-			{
+			if (b.getCategoria().toUpperCase().equals("SENIOR")) {
 				System.out.println(b.getCod() + " " + b.getNombre() + " " + b.getPuntuacion());
 			}
 		}
 		System.out.println("----------------------------------------------------");
 		System.out.println("CLASIFICACION JUVENIL");
-		for(Equipos_Ext b: list)
-		{
+		for (Equipos_Ext b : list) {
 
-			if(b.getCategoria().toUpperCase().equals("JUVENIL"))
-			{
+			if (b.getCategoria().toUpperCase().equals("JUVENIL")) {
 				System.out.println(b.getCod() + " " + b.getNombre() + " " + b.getPuntuacion());
 			}
 		}
-		
-		
+
 	}
-	
-	public List<Sancion> getSanciones() throws ParseException{
+
+	public List<Sancion> getSanciones() throws ParseException {
 		List<Sancion> lista = Gateway.getInstance().getSanciones();
-		for(Sancion a: lista)
-		{
-			System.out.println(a.getCodigo() + " " +a.getPersona() + " " +a.getTipo() + " "+ a.getCod_partido());
+		for (Sancion a : lista) {
+			System.out.println(a.getCodigo() + " " + a.getPersona() + " " + a.getTipo() + " " + a.getCod_partido());
 		}
 		return lista;
 	}
 
-	public boolean comprobarDNI (String dni)
-	{
+	public boolean comprobarDNI(String dni) {
 		boolean bool;
-		if (dni.length() != 9)
-		{
+		if (dni.length() != 9) {
 			bool = false;
-		}
-		else{
+		} else {
 			bool = true;
 		}
 		return bool;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

@@ -7,7 +7,7 @@
 	<property name="server.IP" value="127.0.0.1"/> 
 	<property name="server.Name" value="AJ"/>
 	<property name="server.port" value="1099"/> 
-	<property name="policy.file.server" location="src/main/java/securityServer/java.policy"/>	
+	<property name="policy.file" location="src/main/java/security/java.policy"/>	
 	<property name="log4j.file" location = "src/main/resources/log4j.properties" />
 	
 	<path id="full.classpath" >
@@ -22,13 +22,23 @@
 	<target name="server" description="Runs the Server">
 		<java classname="Fachada.ServidorPrincipal" classpathref="full.classpath" fork="true">
 		<jvmarg value="-Djava.rmi.server.codebase=file:${build.dir}"/> 
-			<jvmarg value="-Djava.security.policy=${policy.file.server}"/>	
+			<jvmarg value="-Djava.security.policy=${policy.file}"/>	
 		    <jvmarg value="-Dlog4j.configuration=${log4j.file}"/>
         	<arg value="${server.IP}"/> 
 	 		<arg value="${server.port}"/> 
 			<arg value="${server.Name}"/> 
         </java>
     </target>
+	
+	<target name="admin" description="Runs the Admin">
+			<java classname="Aprendices_de_Josuka.LP.IniciarSesion" classpathref="full.classpath" fork="true">
+				<jvmarg value="-Djava.security.policy=${policy.file}"/>	
+			    <jvmarg value="-Dlog4j.configuration=${log4j.file}"/>
+	        	<arg value="${server.IP}"/> 
+		 		<arg value="${server.port}"/> 
+				<arg value="${server.Name}"/> 
+	        </java>
+	    </target>
 	
 
 </project>

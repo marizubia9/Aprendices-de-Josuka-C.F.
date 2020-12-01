@@ -17,53 +17,64 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
- <dependency>
+    	<dependency>
+      		<groupId>junit</groupId>
+      		<artifactId>junit</artifactId>
+      		<version>4.11</version>
+      		<scope>test</scope>
+   		</dependency>
+   		
+ 		<dependency>
             <groupId>org.databene</groupId>
             <artifactId>contiperf</artifactId>
             <version>2.3.4</version>
             <scope>test</scope>
         </dependency>
  
-  <dependency>
+		<dependency>
+    		<groupId>org.mockito</groupId>
+    		<artifactId>mockito-all</artifactId>
+    		<version>1.10.19</version>
+    		<scope>test</scope>
+		</dependency>
+ 
+  		<dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-core</artifactId>
             <version>[5.1.6, 5.9)</version>
         </dependency>
         
-        	<dependency>
-    <groupId>com.toedter</groupId>
-    <artifactId>jcalendar</artifactId>
-    <version>1.4</version>
-	</dependency>
+        <dependency>
+    		<groupId>com.toedter</groupId>
+   			<artifactId>jcalendar</artifactId>
+    		<version>1.4</version>
+		</dependency>
         
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-api-jdo</artifactId>
             <version>[5.1.4, 5.9)</version>
         </dependency>
+        
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.16</version>
 			<scope>provided</scope>
-	</dependency>
+		</dependency>
 
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>
             <version>[5.1.6, 5.9)</version>
         </dependency>
-                <dependency>
+        
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.45</version>
         </dependency>
+        
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>javax.jdo</artifactId>
@@ -76,13 +87,13 @@
         	<version>[1.2.17, )</version>
         </dependency>
         
-                <dependency>
+        <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
             <version>2.10.1</version>
         </dependency>
         
-                <dependency>
+        <dependency>
             <groupId>javax.activation</groupId>
             <artifactId>activation</artifactId>
             <version>1.1.1</version>
@@ -93,16 +104,19 @@
             <artifactId>jaxb-api</artifactId>
             <version>2.3.0</version>
         </dependency>
+        
         <dependency>
             <groupId>org.glassfish.jersey.core</groupId>
             <artifactId>jersey-server</artifactId>
             <version>2.29</version>
         </dependency>
+        
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-core</artifactId>
             <version>2.3.0</version>
         </dependency>
+        
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
@@ -132,20 +146,18 @@
             <version>2.1.1</version>
         </dependency>
         
-        
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
             <version>1.1</version>
         </dependency>
-        
 
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
             <version>2.3.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+        
 		<dependency>
    	 		<groupId>org.jacoco</groupId>
    	 		<artifactId>jacoco-maven-plugin</artifactId>
@@ -157,13 +169,14 @@
     		<artifactId>slf4j-jdk14</artifactId>
     		<version>1.7.25</version>
 		</dependency>
+		
 		<dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.7.25</version>
-    </dependency>
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-api</artifactId>
+        	<version>1.7.25</version>
+   		</dependency>
         
-  </dependencies>
+ </dependencies>
  <build>
 		<sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>src/test/java</testSourceDirectory>
@@ -178,43 +191,7 @@
             </resource>
           </resources>
         <plugins>
-        <plugin>
-           <groupId>org.apache.maven.plugins</groupId>
-           <artifactId>maven-antrun-plugin</artifactId>
-           <version>1.8</version>
-
-            <executions>
-               <execution>
-                <id>run-ant</id>
-                <phase>package</phase>
-                <goals>
-                    <goal>run</goal>
-                </goals>
-               <configuration>
-                  <target>
-                     <ant antfile="${basedir}/build.xml">
-                        <target name="server"/>
-                     </ant>
-                  </target>
-               </configuration>
-              </execution>
-              </executions>
-
-           <dependencies>
-              <dependency>
-                 <groupId>commons-net</groupId>
-                 <artifactId>commons-net</artifactId>
-                 <version>1.4.1</version>
-              </dependency>
-
-              <dependency>
-                <groupId>org.apache.ant</groupId>
-                <artifactId>ant-commons-net</artifactId>
-                <version>1.8.1</version>
-               </dependency>
-
-            </dependencies>
-        </plugin>
+       
         <plugin>
             <artifactId>maven-clean-plugin</artifactId>
             <version>3.0.0</version>
@@ -231,15 +208,13 @@
             </configuration>
         </plugin>
         
-
         <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.7.0</version>
             <configuration>
                 <source>1.8</source>
                 <target>1.8</target>
-                <encoding>UTF-8</encoding>
-                
+                <encoding>UTF-8</encoding>             
             </configuration>
         </plugin>
         
@@ -281,7 +256,7 @@
 						<jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
 					</systemPropertyVariables>
 				</configuration>
-			</plugin>
+		</plugin>
 
         <plugin>
             <groupId>org.datanucleus</groupId>
@@ -309,8 +284,8 @@
                     </goals>
                 </execution>
             </executions>
-        </plugin>
-     </plugins>
+		</plugin>
+</plugins>
  
 </build>
  <profiles>
@@ -334,6 +309,7 @@
                 </plugins>
             </build>
         </profile>
+        
         <!-- run as 'mvn exec:java -PRegistrarEquipo' -->
         <profile>
             <id>RegistrarEquipo</id>
@@ -374,6 +350,7 @@
                 </plugins>
             </build>
         </profile>
+        
          <!-- run as 'mvn exec:java -PVisualizar_Jugadores' -->
         <profile>
             <id>Visualizar_Jugadores</id>
@@ -394,6 +371,7 @@
                 </plugins>
             </build>
         </profile>
+        
          <!-- run as 'mvn exec:java -PVisualizar_Entrenadores' -->
         <profile>
             <id>Visualizar_Entrenadores</id>
@@ -414,6 +392,7 @@
                 </plugins>
             </build>
         </profile>
+        
         <!-- run as 'mvn exec:java -PVisualizar_Equipos' -->
         <profile>
             <id>Visualizar_Equipos</id>
@@ -434,6 +413,7 @@
                 </plugins>
             </build>
         </profile>
+        
          <!-- run as 'mvn exec:java -PPrincipal_Administrador' -->
         <profile>
             <id>Principal_Administrador</id>
@@ -454,6 +434,7 @@
                 </plugins>
             </build>
         </profile>
+        
          <!-- run as 'mvn exec:java -PRegistrarMaterial' -->
         <profile>
             <id>RegistrarMaterial</id>
@@ -495,6 +476,7 @@
                 </plugins>
             </build>
         </profile>
+        
         <!-- run as 'mvn exec:java -PRegistrarEntrenador' -->
         <profile>
             <id>RegistrarEntrenador</id>
@@ -515,6 +497,7 @@
                 </plugins>
             </build>
         </profile>
+        
      <!-- run as 'mvn exec:java -PEditarEntrenador' -->
         <profile>
             <id>EditarEntrenador</id>
@@ -535,6 +518,7 @@
                 </plugins>
             </build>
         </profile>
+        
         <!-- run as 'mvn exec:java -PEditarJugador' -->
         <profile>
             <id>EditarJugador</id>
@@ -555,6 +539,7 @@
                 </plugins>
             </build>
         </profile>
+        
         <!-- run as 'mvn exec:java -PEditarEquipo' -->
         <profile>
             <id>EditarEquipo</id>
@@ -575,6 +560,7 @@
                 </plugins>
             </build>
         </profile>
+        
           <!-- run as 'mvn exec:java -PServer' -->
         <profile>
             <id>Server</id>
@@ -596,7 +582,5 @@
                 </plugins>
             </build>
         </profile>
-        
-       
     </profiles>
 </project>
