@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import Aprendices_de_Josuka.Controller.Controller;
+import Controller.Controller;
 
 public class Principal_Administrador extends JFrame {
 

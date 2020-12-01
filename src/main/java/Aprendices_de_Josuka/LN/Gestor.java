@@ -19,8 +19,8 @@ import org.json.simple.parser.ParseException;
 
 import com.mysql.fabric.xmlrpc.base.Array;
 
-import Aprendices_de_Josuka.DAO.DAO;
-import Aprendices_de_Josuka.Gateway.Gateway;
+import DAO.DAO;
+import Gateway.Gateway;
 import Aprendices_de_Josuka.LD.Administrador;
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;

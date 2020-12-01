@@ -9,14 +9,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Aprendices_de_Josuka.DAO.DAO;
+import DAO.DAO;
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LN.Gestor;
-import Aprendices_de_Josuka.Controller.Controller;
+import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JTextField;

@@ -2,7 +2,7 @@ package Aprendices_de_Josuka.LP;
 
 import javax.swing.JPanel;
 
-import Aprendices_de_Josuka.DAO.DAO;
+import DAO.DAO;
 import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Jugador;
 

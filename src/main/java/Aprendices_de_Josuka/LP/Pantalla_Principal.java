@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Aprendices_de_Josuka.Controller.Controller;
+import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JTextField;
