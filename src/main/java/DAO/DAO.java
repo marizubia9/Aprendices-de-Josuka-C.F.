@@ -1,6 +1,7 @@
 package DAO;
 
 import java.rmi.RemoteException;
+import java.security.KeyFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +11,8 @@ import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
+
+import com.google.inject.Key;
 
 import Aprendices_de_Josuka.LD.Administrador;
 import Aprendices_de_Josuka.LD.Entrenador;
@@ -24,7 +27,7 @@ public class DAO implements itfDAO {
 	private static Transaction transaction;
 	private static PersistenceManagerFactory persistentManagerFactory;
 	private static Gestor g;
-	private static DAO INSTANCE ;
+	private static DAO INSTANCE = new DAO();
 
 	private DAO() {
 
@@ -34,16 +37,12 @@ public class DAO implements itfDAO {
 	}
 
 	public static DAO getInstance() throws RemoteException {
-		synchronized (Gestor.class) {
-			if (INSTANCE == null) {
-				INSTANCE = new DAO();
-			}
-		}
+
 		return INSTANCE;
 	}
 
 	@SuppressWarnings("unchecked")
-	public void guardarObjeto(Object objeto) {
+	public boolean guardarObjeto(Object objeto) {
 		try {
 			if (objeto instanceof Jugador) {
 				objeto = new Jugador(((Jugador) objeto).getNombre(), ((Jugador) objeto).getApellido(),
@@ -52,6 +51,7 @@ public class DAO implements itfDAO {
 						((Jugador) objeto).getTelefono(), ((Jugador) objeto).getCorreo(), ((Jugador) objeto).getPsw(),
 						((Jugador) objeto).isCuota_pagada(),((Jugador) objeto).isAsignado());
 				persistentManager.makePersistent(objeto);
+				return true;
 			}
 			if (objeto instanceof Entrenador) {
 				objeto = new Entrenador(((Entrenador) objeto).getNombre(), ((Entrenador) objeto).getApellido(),
@@ -60,18 +60,23 @@ public class DAO implements itfDAO {
 						((Entrenador) objeto).getPsw(), ((Entrenador) objeto).getSalario(),
 						((Entrenador) objeto).isAsignado_equipo());
 				persistentManager.makePersistent(objeto);
+				return true;
 			}
 			if (objeto instanceof Equipo) {
 				objeto = new Equipo(((Equipo) objeto).getNombre(), ((Equipo) objeto).getCategoria(),((Equipo) objeto).getEntrenador(),((Equipo) objeto).getLista_jugador(),((Equipo) objeto).getInventario());
 				persistentManager.makePersistent(objeto);
+				return true;
 			}
 			if (objeto instanceof Material) {
 				objeto = new Material(((Material) objeto).getTipo(),((Material) objeto).getCantidad(), ((Material) objeto).getPrecio());
-			}
 				persistentManager.makePersistent(objeto);
+				return true;
+			}
+				
 		} catch (Exception ex) {
-
+			
 			System.err.println("* Exception inserting data into db: " + ex.getMessage());
+			return false;
 		}
 
 		finally {
@@ -79,7 +84,7 @@ public class DAO implements itfDAO {
 				transaction.rollback();
 			}
 		}
-
+		return false;
 	}
 
 	public List<Material>getMaterial()
@@ -251,6 +256,90 @@ public class DAO implements itfDAO {
 		} catch (Exception ex) {
 
 				System.err.println("* Exception modifying data into db: " + ex.getMessage());
+			}
+			finally {
+				if (transaction.isActive()) {
+					transaction.rollback();
+				}
+			}
+	}
+	public void EliminarAdmin (Administrador a)
+	{
+		Extent<Administrador> extent = persistentManager.getExtent(Administrador.class, false);
+		List <Administrador> admins = new ArrayList <Administrador>();
+		for (Administrador ad: extent){
+			admins.add(ad);
+		}
+		extent.closeAll();
+		
+		try{
+			for (Administrador ad : admins){
+				if(ad.getEmail().equals(a.getEmail()))
+				{ 
+					Administrador eliminar = persistentManager.getObjectById(Administrador.class, a.getEmail());
+					persistentManager.deletePersistent(eliminar);
+				}	
+			}
+			
+		} catch (Exception ex) {
+
+				System.err.println("* Exception deleting data into db: " + ex.getMessage());
+			}
+			finally {
+				if (transaction.isActive()) {
+					transaction.rollback();
+				}
+			}
+	}
+	public void EliminarJugador (Jugador j)
+	{
+		Extent<Jugador> extent = persistentManager.getExtent(Jugador.class, false);
+		List <Jugador> jugadores = new ArrayList <Jugador>();
+		for (Jugador ad: extent){
+			jugadores.add(ad);
+		}
+		extent.closeAll();
+		
+		try{
+			for (Jugador ad : jugadores){
+				if(ad.getDNI().equals(j.getDNI()))
+				{ 
+					Jugador eliminar = persistentManager.getObjectById(Jugador.class, j.getDNI());
+					persistentManager.deletePersistent(eliminar);
+				}	
+			}
+			
+		} catch (Exception ex) {
+
+				System.err.println("* Exception deleting data into db: " + ex.getMessage());
+			}
+			finally {
+				if (transaction.isActive()) {
+					transaction.rollback();
+				}
+			}
+	}
+	public void EliminarEntrenador (Entrenador e)
+	{
+		Extent<Entrenador> extent = persistentManager.getExtent(Entrenador.class, false);
+		List <Entrenador> enrenadores = new ArrayList <Entrenador>();
+		for (Entrenador ad: extent){
+			enrenadores.add(ad);
+		}
+		extent.closeAll();
+		
+		try{
+			for (Entrenador ad : enrenadores){
+				if(ad.getDNI().equals(e.getDNI()))
+				{ 
+					Entrenador eliminar = persistentManager.getObjectById(Entrenador.class, e.getDNI());
+					persistentManager.deletePersistent(eliminar);
+				}	
+			}
+			
+		} catch (Exception ex) {
+
+				System.err.println("* Exception deleting data into db: " + ex.getMessage());
 			}
 			finally {
 				if (transaction.isActive()) {

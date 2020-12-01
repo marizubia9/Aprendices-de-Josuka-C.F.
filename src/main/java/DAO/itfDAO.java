@@ -8,7 +8,7 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 
 public interface itfDAO {
-	public void guardarObjeto(Object objeto);
+	public boolean guardarObjeto(Object objeto);
 
 	public void cerrarConexion();
 

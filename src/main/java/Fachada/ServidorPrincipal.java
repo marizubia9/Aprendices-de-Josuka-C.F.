@@ -39,14 +39,13 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	}
 
 	public static void main(String[] args) {
-		System.out.println("0");
 		String ip = "127.0.0.1";
 		String port = "1099";
 		String serviceName = "Aprendices-de-Josuka";
 		itfFachada objServer = null;
 		try {
 			objServer = ServidorPrincipal.getInstance();
-			System.out.println("1");
+		
 		} catch (RemoteException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
