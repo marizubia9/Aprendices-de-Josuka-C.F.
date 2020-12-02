@@ -10,6 +10,7 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Tipo_Material;
+import Aprendices_de_Josuka.LN.Gestor;
 import Aprendices_de_Josuka.LP.Pantalla_Principal;
 import Remote.ServiceLocator;
 
@@ -20,7 +21,7 @@ public class Controller {
 
 		rsl = new ServiceLocator();
 		rsl.setService();
-		new Pantalla_Principal(this);
+//		new Pantalla_Principal(this);
 	}
 
 	public boolean EntrarJugador(String email, String psw) throws RemoteException {
@@ -35,9 +36,17 @@ public class Controller {
 		return rsl.getService().EntrarAdministrador(email, psw);
 	}
 
-	public void RegistrarJugador(String nombre, String apellido, String fecha_S, String DNI, int telefono,
+	public boolean RegistrarJugador(String nombre, String apellido, String fecha_S, String DNI, int telefono,
 			String correo, String psw) throws RemoteException {
-		rsl.getService().RegistrarJugador(nombre, apellido, fecha_S, DNI, telefono, correo, psw);
+		if(Gestor.getInstance().comprobarDNI(DNI) == false)
+		{
+			return false;
+		}
+		else
+		{
+		return rsl.getService().RegistrarJugador(nombre, apellido, fecha_S, DNI, telefono, correo, psw);
+
+		}
 	}
 
 	public void RegistrarEntrenador(String nombre, String apellido, String fecha_S, String DNI, int telefono,

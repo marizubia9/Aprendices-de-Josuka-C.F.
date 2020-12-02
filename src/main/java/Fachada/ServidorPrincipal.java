@@ -94,9 +94,9 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	}
 
 
-	public void RegistrarJugador(String nombre, String apellido, String fecha_S, String DNI, int telefono,
+	public boolean RegistrarJugador(String nombre, String apellido, String fecha_S, String DNI, int telefono,
 			String correo, String psw) throws RemoteException {
-		DAO.getInstance().guardarObjeto(new Jugador(nombre, apellido, fecha_S, DNI, false, false, telefono, correo, psw,false,false));
+		return DAO.getInstance().guardarObjeto(new Jugador(nombre, apellido, fecha_S, DNI, false, false, telefono, correo, psw,false,false));
 	}
 
 	public void RegistrarEntrenador(String nombre, String apellido, String fecha_S, String DNI, int telefono,

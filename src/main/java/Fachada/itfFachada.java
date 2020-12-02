@@ -18,7 +18,7 @@ public interface itfFachada extends Remote
 	public boolean EntrarJugador(String email, String psw) throws RemoteException;
 	public boolean EntrarEntrenador(String email, String psw) throws RemoteException;
 	public boolean EntrarAdministrador(String email, String psw) throws RemoteException;
-	public void RegistrarJugador (String nombre, String apellido, String fecha_S, String DNI, int telefono, String correo, String psw) throws RemoteException;
+	public boolean RegistrarJugador (String nombre, String apellido, String fecha_S, String DNI, int telefono, String correo, String psw) throws RemoteException;
 	public void RegistrarEntrenador (String nombre, String apellido, String fecha_S, String DNI, int telefono, String correo, String psw) throws RemoteException;
 	public void RegistrarEquipo(Equipo e) throws RemoteException;
 	public void RegistrarInventario(Tipo_Material mat, int cantidad, long precio ) throws RemoteException;

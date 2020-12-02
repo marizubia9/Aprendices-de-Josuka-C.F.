@@ -8,17 +8,17 @@ import Fachada.ServidorPrincipal;
 public class testConexion {
 	
 	
-	
-	@Before
-	public void inicializar()
-	{
-		ServidorPrincipal.main(null);
-	}
-	
-	@Test
-	public void testRMI()
-	{
-		
-	}
+//	
+//	@Before
+//	public void inicializar()
+//	{
+//		//ServidorPrincipal.main(null);
+//	}
+//	
+//	@Test
+//	public void testRMI()
+//	{
+//		
+//	}
 
 }

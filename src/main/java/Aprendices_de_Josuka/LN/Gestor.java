@@ -35,14 +35,10 @@ import Aprendices_de_Josuka.LP.Pantalla_Principal;
 
 public class Gestor {
 
-	private static Gestor INSTANCE = null;
+	private static Gestor INSTANCE = new Gestor();
 	
-	public static Gestor getInstance() throws RemoteException {
-		synchronized (Gestor.class) {
-			if (INSTANCE == null) {
-				INSTANCE = new Gestor();
-			}
-		}
+	public static Gestor getInstance()  {
+
 		return INSTANCE;
 	}
 

@@ -43,26 +43,23 @@ public class RegistrarJugador extends JFrame {
 	private JTextField txtDNI;
 	private JTextField txtTelefono;
 	private JTextField txtCorreo;
+	private JButton btnRegistrarse;
 	private JTextField txtPsw;
 	private JDateChooser dateChooser;
 	private Date objDate;
 	private Controller controller;
 
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					RegistrarJugador frame = new RegistrarJugador();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public static void main(String[] args) {
+		Controller c = null;
+		try {
+			c = new Controller();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+		}
+		new RegistrarJugador(c);
+	}
 
 	/**
 	 * Create the frame.
@@ -77,7 +74,8 @@ public class RegistrarJugador extends JFrame {
 
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    setBounds(100, 100, 1300, 740);
+//	    setBounds(100, 100, 1300, 740);
+	    setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -174,11 +172,11 @@ public class RegistrarJugador extends JFrame {
 		txtCorreo.setBounds(551, 297, 260, 32);
 		panel_central.add(txtCorreo);
 
-		JButton btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse = new JButton("Registrarse");
 		btnRegistrarse.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
 		btnRegistrarse.setForeground(Color.WHITE);
 		btnRegistrarse.setBackground(new Color(0, 102, 0));
-		btnRegistrarse.setBounds(591, 407, 178, 38);
+		btnRegistrarse.setBounds(591, 402, 178, 38);
 		panel_central.add(btnRegistrarse);
 
 		JLabel lblPsw = new JLabel("Password");
@@ -195,60 +193,75 @@ public class RegistrarJugador extends JFrame {
 		JDateChooser dateChooser = new JDateChooser();
 		dateChooser.setBounds(674, 200, 137, 31);
 		panel_central.add(dateChooser);
+		
+		txtNombre.setName("nombre");
+		txtApellido.setName("apellido");
+		txtDNI.setName("DNI");
+		txtTelefono.setName("telefono");
+		txtCorreo.setName("correo");
+		txtPsw.setName("psw");
+		btnRegistrarse.setName("registrar");
+		
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				String nombre = txtNombre.getText();
-				String apellido = txtApellido.getText();
-				Date fecha_date = dateChooser.getDate();
-				String DATE_FORMAT = "dd/MM/yyyy";
-				SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-				String fecha_S = sdf.format(fecha_date);
-				String DNI = txtDNI.getText();
-				int telefono = Integer.parseInt(txtTelefono.getText());
-				String correo = txtCorreo.getText();
-				String psw = txtPsw.getText();
-				if(nombre.equals(""))
-				{
-					JOptionPane.showMessageDialog(null, "Introduce correctamente el nombre");
-				}
-				else if(apellido.equals(""))
-				{
-					JOptionPane.showMessageDialog(null, "Introduce correctamente el apellido");
-				}
-				else if(DNI.equals("")|DNI.length()!=9)
-				{
-					JOptionPane.showMessageDialog(null, "Introduce correctamente el DNI");
-				}
-				else if (txtTelefono.getText().equals("")|txtTelefono.getText().length()!=9)
-				{
-					JOptionPane.showMessageDialog(null, "Introduce correctamente el telefono");
-				}
-				else if (correo.equals(""))
-				{
-					JOptionPane.showMessageDialog(null, "Introduce correctamente el correo");
-				}
-				else if (psw.equals(""))
-				{
-					JOptionPane.showMessageDialog(null, "Introduce correctamente la contrasenya");
-				}
-				else
-				{
-				try {
-					controller.RegistrarJugador(nombre, apellido, fecha_S, DNI, telefono, correo, psw);
-				} catch (RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				txtNombre.setText("");
-				txtApellido.setText("");
-				txtDNI.setText("");
-				txtTelefono.setText("");
-				txtCorreo.setText("");
-				txtPsw.setText("");
-				}
-
+				guardar();
 			}
 		});
 	}
+	public boolean guardar()
+	{
+		String nombre = txtNombre.getText();
+		String apellido = txtApellido.getText();
+		Date fecha_date = dateChooser.getDate();
+		String DATE_FORMAT = "dd/MM/yyyy";
+		SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+		String fecha_S = sdf.format(fecha_date);
+		String DNI = txtDNI.getText();
+		int telefono = Integer.parseInt(txtTelefono.getText());
+		String correo = txtCorreo.getText();
+		String psw = txtPsw.getText();
+		if(nombre.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "Introduce correctamente el nombre");
+		}
+		else if(apellido.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "Introduce correctamente el apellido");
+		}
+		else if(Gestor.getInstance().comprobarDNI(DNI))
+		{
+			JOptionPane.showMessageDialog(null, "Introduce correctamente el DNI");
+		}
+		else if (txtTelefono.getText().equals("")|txtTelefono.getText().length()!=9)
+		{
+			JOptionPane.showMessageDialog(null, "Introduce correctamente el telefono");
+		}
+		else if (correo.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "Introduce correctamente el correo");
+		}
+		else if (psw.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "Introduce correctamente la contrasenya");
+		}
+		else
+		{
+		try {
+			return controller.RegistrarJugador(nombre, apellido, fecha_S, DNI, telefono, correo, psw);
+		} catch (RemoteException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		txtNombre.setText("");
+		txtApellido.setText("");
+		txtDNI.setText("");
+		txtTelefono.setText("");
+		txtCorreo.setText("");
+		txtPsw.setText("");
+		}
+		return false;
+
+	}
+	
 }

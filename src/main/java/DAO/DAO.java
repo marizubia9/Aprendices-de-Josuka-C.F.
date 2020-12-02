@@ -36,7 +36,7 @@ public class DAO {
 		transaction = persistentManager.currentTransaction();
 	}
 
-	public static DAO getInstance() throws RemoteException {
+	public static DAO getInstance() {
 
 		return INSTANCE;
 	}
@@ -268,7 +268,7 @@ public class DAO {
 				}
 			}
 	}
-	public void EliminarAdmin (Administrador a)
+	public boolean EliminarAdmin (Administrador a)
 	{
 		Extent<Administrador> extent = persistentManager.getExtent(Administrador.class, false);
 		List <Administrador> admins = new ArrayList <Administrador>();
@@ -283,6 +283,7 @@ public class DAO {
 				{ 
 					Administrador eliminar = persistentManager.getObjectById(Administrador.class, a.getEmail());
 					persistentManager.deletePersistent(eliminar);
+					return true;
 				}	
 			}
 			
@@ -295,8 +296,9 @@ public class DAO {
 					transaction.rollback();
 				}
 			}
+		return false;
 	}
-	public void EliminarJugador (Jugador j)
+	public boolean EliminarJugador (Jugador j)
 	{
 		Extent<Jugador> extent = persistentManager.getExtent(Jugador.class, false);
 		List <Jugador> jugadores = new ArrayList <Jugador>();
@@ -311,20 +313,23 @@ public class DAO {
 				{ 
 					Jugador eliminar = persistentManager.getObjectById(Jugador.class, j.getDNI());
 					persistentManager.deletePersistent(eliminar);
+					return true;
 				}	
 			}
 			
 		} catch (Exception ex) {
 
 				System.err.println("* Exception deleting data into db: " + ex.getMessage());
+				return false;
 			}
 			finally {
 				if (transaction.isActive()) {
 					transaction.rollback();
 				}
 			}
+		return false;
 	}
-	public void EliminarEntrenador (Entrenador e)
+	public boolean EliminarEntrenador (Entrenador e)
 	{
 		Extent<Entrenador> extent = persistentManager.getExtent(Entrenador.class, false);
 		List <Entrenador> enrenadores = new ArrayList <Entrenador>();
@@ -339,6 +344,7 @@ public class DAO {
 				{ 
 					Entrenador eliminar = persistentManager.getObjectById(Entrenador.class, e.getDNI());
 					persistentManager.deletePersistent(eliminar);
+					return true;
 				}	
 			}
 			
@@ -351,6 +357,7 @@ public class DAO {
 					transaction.rollback();
 				}
 			}
+		return false;
 	}
 	// @Override
 	// public List<Usuario> getUsuarios() {
