@@ -22,7 +22,7 @@ import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LN.Gestor;
 
-public class DAO implements itfDAO {
+public class DAO {
 	private static PersistenceManager persistentManager;
 	private static Transaction transaction;
 	private static PersistenceManagerFactory persistentManagerFactory;
@@ -72,6 +72,11 @@ public class DAO implements itfDAO {
 				persistentManager.makePersistent(objeto);
 				return true;
 			}
+			if (objeto instanceof Administrador) {
+				objeto = new Administrador(((Administrador) objeto).getEmail(),((Administrador) objeto).getPsw());
+				persistentManager.makePersistent(objeto);
+				return true;
+			}
 				
 		} catch (Exception ex) {
 			
@@ -114,7 +119,7 @@ public class DAO implements itfDAO {
 			}
 		}
 	}
-	@Override
+
 	public List<Administrador> getAdmin() {
 		// TODO Auto-generated method stub
 		Extent<Administrador> extent = persistentManager.getExtent(Administrador.class, false);
@@ -127,7 +132,7 @@ public class DAO implements itfDAO {
 		return administradores;
 	}
 
-	@Override
+	
 	public List<Jugador> getJugador() {
 
 		// TODO Auto-generated method stub
@@ -142,7 +147,7 @@ public class DAO implements itfDAO {
 		return jugadores;
 	}
 
-	@Override
+	
 	public List<Entrenador> getEntrenador() {
 		// TODO Auto-generated method stub
 		Extent<Entrenador> extent = persistentManager.getExtent(Entrenador.class, false);
@@ -155,7 +160,7 @@ public class DAO implements itfDAO {
 		return entrenadores;
 	}
 	
-	@Override
+
 	public List<Equipo> getEquipo() {
 		// TODO Auto-generated method stub
 		Extent<Equipo> extent = persistentManager.getExtent(Equipo.class, false);
@@ -374,7 +379,7 @@ public class DAO implements itfDAO {
 	// return reservas;
 	// }
 
-	@Override
+	
 	public void cerrarConexion() {
 		persistentManager.close();
 
