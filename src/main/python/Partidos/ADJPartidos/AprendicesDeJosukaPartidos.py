@@ -13,16 +13,13 @@ from json import JSONEncoder
 from datetime import *
 
 class AprendicesDeJosukaPartidos (Interface_Partidos):
-    """"
-    Class to handle Airlines queries using Deusto Airlines Service
-    """
+   
     def __init__(self):
         """
         Constructor
         """
 
         self.__partidos = dict( )
-        # flight_code -> [ Flight_object ]
 
         # Create some data
         # todo: improve
@@ -47,28 +44,6 @@ class AprendicesDeJosukaPartidos (Interface_Partidos):
                     res_e2 is None and
                     date is None):
                 return list(self.__partidos.values())
-
-            elif ( equipo1_name is not None and
-                    equipo2_name is not None and
-                    res_e1 is not None and
-                    res_e2 is not None and
-                    date is not None):
-                return self.search_flights_by_5(kwparams)
-
-            elif ( equipo1_name is not None and
-                   equipo2_name is not None and
-                   res_e1 is not None and
-                   res_e2 is not None):
-                return self.search_flights_by_4(kwparams)
-
-            elif ( equipo1_name is not None and
-                   equipo2_name is not None and
-                   res_e1 is not None ):
-                return self.search_flights_by_3(kwparams)
-
-            elif ( equipo1_name is not None and
-                   equipo2_name is not None ):
-                return self.search_flights_by_2(kwparams)
             
             else:
                 # if we are here OMG!
@@ -86,50 +61,11 @@ class AprendicesDeJosukaPartidos (Interface_Partidos):
 
         return parsed_time <= partido.get_date() <= parsed_time + timedelta(days=10)
 
-    def search_partidos_by_5(self, kwparams):
-        return [partido for partido in self.__partidos.values() if self.with_same_equipos(partido, kwparams) and self.with_res_e1(partido, kwparams) and self.with_res_e2(partido, kwparams) and self.with_time(partido, kwparams)]
-
-    def search_partidos_by_4(self, kwparams):
-        return [partido for partido in self.__partidos.values() if self.with_same_equipos(partido, kwparams) and self.with_res_e1(partido, kwparams) and self.with_res_e2(partido, kwparams) ]
-
-    def search_partidos_by_3(self, kwparams):
-        return [partido for partido in self.__partidos.values() if self.with_same_equipos(partido, kwparams) and self.with_res_e1(partido, kwparams) ]
-
-    def search_partidos_by_2(self, kwparams):
-        return [partido for partido in self.__partidos.values() if self.with_same_equipos(partido, kwparams) ]
-
-
-    def with_res_e1(self, partido, kwparams):
-        return partido.get_resultado_e1() <= kwparams['res_e1']
-
-    def with_res_e2(self, partido, kwparams):
-        return partido.get_resultado_e2() <= kwparams['res_e2']
-
-
-    def with_same_equipos(self, partido, kwparams):
-        return (partido.get_equipo1().get_nombre() == kwparams['equipo1_name']) and (partido.get_equipo2().get_nombre() == kwparams['equipo2_name'])
-
-
-
     def toJSON(self, partido_array):
         result = jsonpickle.encode(partido_array, unpicklable=False)
         return result
     
 
-    """Flight related private methods"""
-    def partido_exists(self, code):
-        if code != None and code.strip() != "" and code in self.__partidos.keys():
-            return True
-        else:
-            return False
-
-
-    """Airport related private methods"""
-    def equipo_exists(self, code):
-        if code != None and code.strip() != "" and code in self.__partidos.keys():
-            return True
-        else:
-            return False
 
 
     """Sample code generation related"""
@@ -252,36 +188,4 @@ class AprendicesDeJosukaPartidos (Interface_Partidos):
 
 
 
-
-    """Generic private methods"""
-    def debug(self):
-        print("Printing content...")
-
-        for entry in self.__partidos.keys():
-
-            print("Entry Key: {}\n"
-                  "Entry values: {}".format(entry, self.__partidos[entry]))
-
-            self.__partidos[entry].print()
-
-
-
-if __name__ == '__main__':
-
-
-    # Create DeustoAirlines system
-    adj_partidos = AprendicesDeJosukaPartidos()
-
-    # Create sample data
-    adj_partidos.generate_partido()
-
-    print("Searching all partidos")
-    partidos = adj_partidos.search_partidos()
-
-
-    print("JSON related tests")
-    result_array = adj_partidos.search_partidos()
-    type(result_array)
-    print()
-    print(adj_partidos.toJSON(result_array))
 

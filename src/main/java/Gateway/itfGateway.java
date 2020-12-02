@@ -14,11 +14,9 @@ import ServiciosExternos.Sancion_JSON;
 
 public interface itfGateway
 {
-	public List<Partido_JSON> search_partidos() throws ParseException;
-	public List<Sancion_JSON> search_sanciones() throws ParseException;
+	public List<Partido> search_partidos() throws ParseException;
+	public List<Sancion> search_sanciones() throws ParseException;
 	public ArrayList<Partido> convertir_partidos(List<Partido_JSON> json);
 	public ArrayList<Sancion> convertir_sanciones(List<Sancion_JSON> json);
-	public List<Partido> getPartidos()throws ParseException;
-	public List<Sancion> getSanciones()throws ParseException;
 	public HashSet<Equipos_Ext> getEquipos()  throws ParseException;
 }

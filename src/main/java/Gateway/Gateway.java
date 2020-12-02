@@ -35,7 +35,7 @@ public class Gateway implements itfGateway {
 		return INSTANCE;
 	}
 	@Override
-	public List<Partido_JSON> search_partidos() throws ParseException {
+	public List<Partido> search_partidos() throws ParseException {
 		path = "/Partidos/Search_Partidos";
         System.out.println("Trying POST at " + path + " (Search All partido message)");
         System.out.println("CURL call: curl http://127.0.0.1:5000//Partidos/Search_Partidos -d '{ }' -X POST -H \"Content-Type: application/json\" -v");
@@ -57,12 +57,10 @@ public class Gateway implements itfGateway {
         JSONParser myParser = new JSONParser();
         JSONArray partidosArray = (JSONArray) myParser.parse( json_string );
 
-        // Lambda expression to print array
         partidosArray.stream().forEach(
                 element -> System.out.println(element)
         );
 
-        // Lambda expression to map JSONObjects inside JSONArray to flight objects
         myPartidosArray = (List) partidosArray.stream()
                 .map( element -> new Partido_JSON( element))
                 .collect(Collectors.toList()
@@ -71,7 +69,7 @@ public class Gateway implements itfGateway {
         System.out.println("Number of partidos collected:");
 
 
-        return myPartidosArray;
+        return convertir_partidos(myPartidosArray);
 
 	}
 	@Override
@@ -88,20 +86,12 @@ public class Gateway implements itfGateway {
 
 		return Lista_partidos;
 	}
-	@Override
-	public List<Partido> getPartidos() throws ParseException {
-
-		List<Partido_JSON> lista_json = search_partidos();
-		List<Partido> partidos = convertir_partidos(lista_json);
-		
-		return  partidos;
-	}
 	
 	@Override
 	public HashSet<Equipos_Ext> getEquipos() throws ParseException {
 
 		HashSet<Equipos_Ext> Lista_equipos = new HashSet<Equipos_Ext>();
-		List<Partido> partidos = getPartidos();
+		List<Partido> partidos = search_partidos();
 		partidos.stream().forEach(element -> {
 			Lista_equipos.add(element.getEquipo_1());
 			Lista_equipos.add(element.getEquipo_2());
@@ -111,7 +101,7 @@ public class Gateway implements itfGateway {
 	}
 	
 	@Override
-	public List<Sancion_JSON> search_sanciones() throws ParseException {
+	public List<Sancion> search_sanciones() throws ParseException {
 		path = "/Sanciones/Search_Sanciones";
         System.out.println("Trying POST at " + path + " (Search All sanciones message)");
         client = new RestClient<Partidos_parameters>(hostname, port);
@@ -137,7 +127,6 @@ public class Gateway implements itfGateway {
                 element -> System.out.println(element)
         );
 
-        // Lambda expression to map JSONObjects inside JSONArray to flight objects
         mySancionesArray = (List) sancionesArray.stream()
                 .map( element -> new Sancion_JSON( element))
                 .collect(Collectors.toList()
@@ -146,18 +135,10 @@ public class Gateway implements itfGateway {
         System.out.println("Number of partidos collected:");
 
 
-        return mySancionesArray;
+        return  convertir_sanciones(mySancionesArray);
 
 	}
-	
-	@Override
-	public List<Sancion> getSanciones() throws ParseException {
 
-		List<Sancion_JSON> lista_json = search_sanciones();
-		List<Sancion> sanciones = convertir_sanciones(lista_json);
-		
-		return  sanciones;
-	}
 	
 	@Override
 	public ArrayList<Sancion> convertir_sanciones(List<Sancion_JSON> json) {

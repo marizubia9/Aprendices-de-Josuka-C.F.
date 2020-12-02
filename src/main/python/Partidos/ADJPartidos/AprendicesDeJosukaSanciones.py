@@ -91,35 +91,4 @@ class AprendicesDeJosukaSanciones (Interface_Sanciones):
         self.__sanciones[s20.get_code()] = s20
 
 
-    """Generic private methods"""
-    def debug(self):
-        print("Printing content...")
-
-        for entry in self.__sanciones.keys():
-
-            print("Entry Key: {}\n"
-                  "Entry values: {}".format(entry, self.__sanciones[entry]))
-
-            self.__sanciones[entry].print()
-
-
-
-if __name__ == '__main__':
-
-
-    # Create DeustoAirlines system
-    adj_sanciones = AprendicesDeJosukaSanciones()
-
-    # Create sample data
-    adj_sanciones.generate_sancion()
-
-    print("Searching all partidos")
-    sanciones = adj_sanciones.search_sanciones()
-
-
-    print("JSON related tests")
-    result_array = adj_sanciones.search_sanciones()
-    type(result_array)
-    print()
-    print(adj_sanciones.toJSON(result_array))
 

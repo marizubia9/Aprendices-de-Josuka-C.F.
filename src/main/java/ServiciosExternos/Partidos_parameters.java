@@ -14,31 +14,6 @@ public class Partidos_parameters implements DF_Printable
     public Partidos_parameters() {
     }
 
-    public Partidos_parameters(String equipo1_name, String equipo2_name) {
-        this.equipo1_name = equipo1_name;
-        this.equipo2_name = equipo2_name;
-    }
-
-    public Partidos_parameters(String equipo1_name, String equipo2_name, int res_e1) {
-        this.equipo1_name = equipo1_name;
-        this.equipo2_name = equipo2_name;
-        this.res_e1 = res_e1;
-    }
-
-    public Partidos_parameters(String equipo1_name, String equipo2_name, int res_e1, int res_e2) {
-        this.equipo1_name = equipo1_name;
-        this.equipo2_name = equipo2_name;
-        this.res_e1 = res_e1;
-        this.res_e2 = res_e2;
-    }
-
-    public Partidos_parameters(String equipo1_name, String equipo2_name, int res_e1, int res_e2, String date) {
-        this.equipo1_name = equipo1_name;
-        this.equipo2_name = equipo2_name;
-        this.res_e1 = res_e1;
-        this.res_e2 = res_e2;
-        this.date = date;
-    }
 
     public String getEquipo1_name() {
         return equipo1_name;

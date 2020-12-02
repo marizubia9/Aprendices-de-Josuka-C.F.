@@ -40,5 +40,16 @@
 	        </java>
 	    </target>
 	
+	
+	<target name="registrar_jugador" description="Runs the Admin">
+			<java classname="Aprendices_de_Josuka.LP.RegistrarJugador" classpathref="full.classpath" fork="true">
+				<jvmarg value="-Djava.security.policy=${policy.file}"/>	
+			    <jvmarg value="-Dlog4j.configuration=${log4j.file}"/>
+	        	<arg value="${server.IP}"/> 
+		 		<arg value="${server.port}"/> 
+				<arg value="${server.Name}"/> 
+	        </java>
+	    </target>
+	
 
 </project>

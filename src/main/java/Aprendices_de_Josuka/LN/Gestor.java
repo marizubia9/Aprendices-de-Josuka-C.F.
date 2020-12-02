@@ -54,7 +54,7 @@ public class Gestor {
 	}
 
 	public List<Partido> getPartidos() throws ParseException {
-		List<Partido> lista = Gateway.getInstance().getPartidos();
+		List<Partido> lista = Gateway.getInstance().search_partidos();
 		HashSet<Equipos_Ext> equipos = Gateway.getInstance().getEquipos();
 		for (Equipos_Ext a : equipos) {
 			System.out.println(a.getCod() + " " + a.getNombre() + " " + a.getCategoria() + " " + a.getPuntuacion());
@@ -114,7 +114,7 @@ public class Gestor {
 	}
 
 	public List<Sancion> getSanciones() throws ParseException {
-		List<Sancion> lista = Gateway.getInstance().getSanciones();
+		List<Sancion> lista = Gateway.getInstance().search_sanciones();
 		for (Sancion a : lista) {
 			System.out.println(a.getCodigo() + " " + a.getPersona() + " " + a.getTipo() + " " + a.getCod_partido());
 		}
