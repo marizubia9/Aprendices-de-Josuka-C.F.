@@ -41,18 +41,24 @@ public class testRegistrarJugador {
 //	    public void setUp() throws IOException, NotBoundException {
 //	    	Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
 //			itfFachada fachada = (itfFachada) registry.lookup("ADJ");
-//	        frame = GuiActionRunner.execute(() -> new RegistrarJugador(null));
+//			c= new Controller();
+//			frame = GuiActionRunner.execute(() -> new RegistrarJugador(c));
 //	        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//	        frame.setVisible(true);
+//	      
 //	        window = new FrameFixture(frame);
 //	        window.resizeTo(frame.getSize());
+//	        window.maximize();
 //	        window.show();
 //	    }
 //
 //	    @Test
-//	    public void RegistrarJugador() {                
+//	    public void RegistrarJugador() 
+//	    {      
 //	        window.textBox("nombre").enterText("Maider");
 //	        window.textBox("apellido").enterText("Dorron");
 //	        window.textBox("DNI").enterText("3123");
+//	        //window.textBox("fecha").enterText("12/12/2012");
 //	        window.textBox("telefono").enterText("908790980");
 //	        window.textBox("correo").enterText("Maider@gmail.com");
 //	        window.textBox("psw").enterText("uapa");        

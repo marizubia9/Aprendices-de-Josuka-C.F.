@@ -1,6 +1,6 @@
 package Aprendices_de_Josuka.Aprendices_de_Josuka;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -35,15 +35,15 @@ public class testDAO {
 	@Before
 	public void inicializar()
 	{
-		j=new Jugador("Nerea","Solabarrieta","29/11/1998","hg4oj5045",false, false, 665874596,"nerea@gmail.com","nerea", false, false);
-		a= new Administrador("maiderd@gmail.com","4545");
-		e= new Entrenador("inigo","esteban","25/04/1980","74njjjig74",654789652,"inigo@gmail.com", "ini",0,false);
+		j=new Jugador("Nerea","Solabarrieta","29/11/1998","749839000",false, false, 665874596,"nerea@gmail.com","nerea", false, false);
+		a= new Administrador("culi@gmail.com","4545");
+		e= new Entrenador("inigo","esteban","25/04/1980","609000000",654789652,"inigo@gmail.com", "ini",0,false);
 		List<Jugador> lista = new ArrayList<Jugador>();
 		lista.add(j);
-		m= new Material(Tipo_Material.Vallas,23,23);
+		m= new Material(Tipo_Material.Barreras,23,23);
 //		HashMap<Material, Integer> hm = new HashMap<Material,Integer>();
 //		hm.put(m, 2);
-//		eq= new Equipo("antiguoko",Categoria.ALEVIN,e,lista,hm);
+//		eq= new Equipo("ardoi",Categoria.ALEVIN,null,null,null);
 	}
 	
 	
@@ -160,6 +160,44 @@ public class testDAO {
 		}
 		assertTrue(esta);
 	}
+	
+	@Test
+	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
+	@Required ( max = 1200, average = 250)
+	public void modificarEntrenador() throws RemoteException
+	{
+		long salario = 200;
+		Entrenador entMod = null;
+		DAO.getInstance().ActualizarEntrenador(salario, e);
+		for(Entrenador entre:DAO.getInstance().getEntrenador())
+		{
+			if(entre.getDNI().equals(e.getDNI()))
+			{
+				 entMod=entre;
+			}
+		}
+		assertNotEquals(entMod.getSalario(), e.getSalario());
+		
+	}
+	@Test
+	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
+	@Required ( max = 1200, average = 250)
+	public void modificarJugador() throws RemoteException
+	{
+		Jugador jugMod = null;
+		DAO.getInstance().ActualizarJugador(j, false, false, true);
+		for(Jugador jug:DAO.getInstance().getJugador())
+		{
+			if(jug.getDNI().equals(j.getDNI()))
+			{
+				 jugMod=jug;
+				 jug.isAsignado();
+			}
+		}
+		assertNotEquals(jugMod.isCuota_pagada(), j.isCuota_pagada());
+		
+	}
+
 	@Test
 	public void v_eliminar() throws RemoteException
 	{

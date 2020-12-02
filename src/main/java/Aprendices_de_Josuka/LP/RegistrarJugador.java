@@ -213,10 +213,10 @@ public class RegistrarJugador extends JFrame {
 	{
 		String nombre = txtNombre.getText();
 		String apellido = txtApellido.getText();
-		Date fecha_date = dateChooser.getDate();
-		String DATE_FORMAT = "dd/MM/yyyy";
-		SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-		String fecha_S = sdf.format(fecha_date);
+//		Date fecha_date = dateChooser.getDate();
+//		String DATE_FORMAT = "dd/MM/yyyy";
+//		SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+//		String fecha_S = sdf.format(fecha_date);
 		String DNI = txtDNI.getText();
 		int telefono = Integer.parseInt(txtTelefono.getText());
 		String correo = txtCorreo.getText();
@@ -248,7 +248,7 @@ public class RegistrarJugador extends JFrame {
 		else
 		{
 		try {
-			return controller.RegistrarJugador(nombre, apellido, fecha_S, DNI, telefono, correo, psw);
+			return controller.RegistrarJugador(nombre, apellido, "12/12/2012", DNI, telefono, correo, psw);
 		} catch (RemoteException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
