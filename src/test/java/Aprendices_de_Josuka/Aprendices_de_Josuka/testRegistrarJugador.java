@@ -27,40 +27,41 @@ import Fachada.itfFachada;
 import Remote.ServiceLocator;
 public class testRegistrarJugador {
 	
-	private FrameFixture window;
-	private RegistrarJugador frame;
-	private Controller c;
-	 	@BeforeClass
-	    public static void setUpOnce() throws RemoteException, AlreadyBoundException {
-	        FailOnThreadViolationRepaintManager.install();
-
-	        Registry registry = LocateRegistry.createRegistry(1099);
-	        registry.bind("ADJ", ServidorPrincipal.getInstance());
-	    }
-	    @Before
-	    public void setUp() throws IOException, NotBoundException {
-	    	Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
-			itfFachada fachada = (itfFachada) registry.lookup("ADJ");
-	        frame = GuiActionRunner.execute(() -> new RegistrarJugador(null));
-	        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-	        window = new FrameFixture(frame);
-	        window.resizeTo(frame.getSize());
-	        window.show();
-	    }
-	    @After
-	    public void tearDown() {
-	        window.cleanUp();
-	    }
-	    @Test
-	    public void RegistrarJugador() {                
-	        window.textBox("nombre").enterText("Maider");
-	        window.textBox("apellido").enterText("Dorron");
-	        window.textBox("DNI").enterText("3123");
-	        window.textBox("telefono").enterText("908790980");
-	        window.textBox("correo").enterText("Maider@gmail.com");
-	        window.textBox("psw").enterText("uapa");        
-	        window.button(withName("registrar")).click();       
-	        //realiza la comparación de resultados
-	        assertFalse(frame.guardar());       
-	    }
+//	private FrameFixture window;
+//	private RegistrarJugador frame;
+//	private Controller c;
+//	 	@BeforeClass
+//	    public static void setUpOnce() throws RemoteException, AlreadyBoundException {
+//	        FailOnThreadViolationRepaintManager.install();
+//
+//	        Registry registry = LocateRegistry.createRegistry(1099);
+//	        registry.bind("ADJ", ServidorPrincipal.getInstance());
+//	    }
+//	    @Before
+//	    public void setUp() throws IOException, NotBoundException {
+//	    	Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
+//			itfFachada fachada = (itfFachada) registry.lookup("ADJ");
+//	        frame = GuiActionRunner.execute(() -> new RegistrarJugador(null));
+//	        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//	        window = new FrameFixture(frame);
+//	        window.resizeTo(frame.getSize());
+//	        window.show();
+//	    }
+//
+//	    @Test
+//	    public void RegistrarJugador() {                
+//	        window.textBox("nombre").enterText("Maider");
+//	        window.textBox("apellido").enterText("Dorron");
+//	        window.textBox("DNI").enterText("3123");
+//	        window.textBox("telefono").enterText("908790980");
+//	        window.textBox("correo").enterText("Maider@gmail.com");
+//	        window.textBox("psw").enterText("uapa");        
+//	        window.button(withName("registrar")).click();       
+//	        //realiza la comparación de resultados
+//	        assertFalse(frame.guardar());       
+//	    }
+//	    @After
+//	    public void tearDown() {
+//	        window.cleanUp();
+//	    }
 }

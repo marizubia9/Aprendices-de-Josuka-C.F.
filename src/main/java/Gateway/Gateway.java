@@ -72,6 +72,24 @@ public class Gateway implements itfGateway {
         return convertir_partidos(myPartidosArray);
 
 	}
+	public boolean partidos() throws ParseException
+	{
+		List <Partido> partidos = search_partidos();
+		if(partidos.size() != 0)
+		{
+			return true;
+		}
+		return false;
+	}
+	public boolean sanciones() throws ParseException
+	{
+		List <Sancion> sanciones = search_sanciones();
+		if(sanciones.size() != 0)
+		{
+			return true;
+		}
+		return false;
+	}
 	@Override
 	public ArrayList<Partido> convertir_partidos(List<Partido_JSON> json) {
 		ArrayList<Partido> Lista_partidos= new ArrayList<Partido>();

@@ -176,11 +176,12 @@
         	<version>1.7.25</version>
    		</dependency>
    		
-   		<dependency>
+
+
+<dependency>
   <groupId>org.assertj</groupId>
   <artifactId>assertj-swing-junit</artifactId>
-  <version>3.9.2</version>
-  <scope>test</scope>
+  <version>3.8.0</version>
 </dependency>
         
  </dependencies>

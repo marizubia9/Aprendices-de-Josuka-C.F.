@@ -359,51 +359,68 @@ public class DAO {
 			}
 		return false;
 	}
-	// @Override
-	// public List<Usuario> getUsuarios() {
-	// // TODO Auto-generated method stub
-	// Extent<Usuario> extent = persistentManager.getExtent(Usuario.class,
-	// false);
-	// List<Usuario> usuarios= new ArrayList<Usuario>();
-	//
-	// for (Usuario p : extent) {
-	// usuarios.add(p);
-	// }
-	// extent.closeAll();
-	// return usuarios;
-	// }
-	// @Override
-	// public List<Reserva> getReservas() {
-	// // TODO Auto-generated method stub
-	// Extent<Reserva> extent = persistentManager.getExtent(Reserva.class,
-	// false);
-	// List<Reserva> reservas = new ArrayList<Reserva>();
-	//
-	// for (Reserva p : extent) {
-	// reservas.add(p);
-	// }
-	// extent.closeAll();
-	// return reservas;
-	// }
+	public boolean EliminarEquipo(Equipo e)
+	{
+		Extent<Equipo> extent = persistentManager.getExtent(Equipo.class, false);
+		List <Equipo> equipos = new ArrayList <Equipo>();
+		for (Equipo ad: extent){
+			equipos.add(ad);
+		}
+		extent.closeAll();
+		
+		try{
+			for (Equipo ad : equipos){
+				if(ad.getNombre().equals(e.getNombre()))
+				{ 
+					Equipo eliminar = persistentManager.getObjectById(Equipo.class, e.getNombre());
+					persistentManager.deletePersistent(eliminar);
+					return true;
+				}	
+			}
+			
+		} catch (Exception ex) {
 
-	
+				System.err.println("* Exception deleting data into db: " + ex.getMessage());
+			}
+			finally {
+				if (transaction.isActive()) {
+					transaction.rollback();
+				}
+			}
+		return false;
+	}
+	public boolean EliminarMaterial(Material e)
+	{
+		Extent<Material> extent = persistentManager.getExtent(Material.class, false);
+		List <Material> materiales = new ArrayList <Material>();
+		for (Material ad: extent){
+			materiales.add(ad);
+		}
+		extent.closeAll();
+		
+		try{
+			for (Material ad : materiales){
+				if(ad.getTipo().equals(e.getTipo()))
+				{ 
+					Material eliminar = persistentManager.getObjectById(Material.class, e.getTipo());
+					persistentManager.deletePersistent(eliminar);
+					return true;
+				}	
+			}
+			
+		} catch (Exception ex) {
+
+				System.err.println("* Exception deleting data into db: " + ex.getMessage());
+			}
+			finally {
+				if (transaction.isActive()) {
+					transaction.rollback();
+				}
+			}
+		return false;
+	}
 	public void cerrarConexion() {
 		persistentManager.close();
 
 	}
-
-	// public Usuario BuscarUsuario(String email)
-	// {
-	// List <Usuario> usuarios = getUsuarios();
-	// Usuario usuario=null;
-	// for (Usuario u: usuarios){
-	// if (u.getEmail().equals(email))
-	// {
-	// usuario = new Usuario(u.getNomUsuario(), u.getApe(), u.getEmail(),
-	// u.getPassword(), u.getAeropuerto());
-	// }
-	// }
-	// return usuario;
-	// }
-
 }
