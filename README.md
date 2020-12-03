@@ -19,15 +19,15 @@ Para poder ejecutar correctamente este microservicio, requiere:
 
 Al ser una arquitectura cliente-servidor, será necesario ejecutar el servidor y que el cliente se conecte a él. Conexión que se realizará mediante RMI.
 Para ello:
-"mvn clean" elimina la carpeta destino
-"mvn compile" compila el proyecto
-"ant -f build.xml server" ejecuta el servidor en el localhost
+`mvn clean` elimina la carpeta destino
+`mvn compile` compila el proyecto
+`ant -f build.xml server` ejecuta el servidor en el localhost
 
 ### Step 3 - Cliente de Aprendices de Josuka C.F
 
 Para lanzar las ventanas, y poder ejecutar el proyecto con normalidad.
-"ant -f build.xml admin" ejecuta el cliente, conectándose al servidor anterior
+`ant -f build.xml admin` ejecuta el cliente, conectándose al servidor anterior
 
 ### Step 4 - Testing
 
-Mediante "mvn test" se ejecutarán todos los test unitarios realizados en el proyecto. Además, debido a que se han integrado JaCoCo y Contiperf, se generarán los reports correspondientes. 
+Mediante `mvn test` se ejecutarán todos los test unitarios realizados en el proyecto. Además, debido a que se han integrado JaCoCo y Contiperf, se generarán los reports correspondientes. 
