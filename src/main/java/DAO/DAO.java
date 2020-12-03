@@ -102,13 +102,14 @@ public class DAO {
 		extent.closeAll();
 		return materiales;
 	}
-	public void ModificarMaterial(Tipo_Material tipo, int cantidad, long precio)
+	public boolean ModificarMaterial(Tipo_Material tipo, int cantidad, long precio)
 	{
 		System.out.println(tipo);
 		try {
 		Material m= persistentManager.getObjectById(Material.class, tipo);
 		m.setCantidad(cantidad);
 		m.setPrecio(precio);
+		return true;
 		} catch (Exception ex) {
 
 			System.err.println("* Exception modifying data into db: " + ex.getMessage());
@@ -118,6 +119,7 @@ public class DAO {
 				transaction.rollback();
 			}
 		}
+		return false;
 	}
 
 	public List<Administrador> getAdmin() {

@@ -35,7 +35,7 @@ public class testDAO {
 	@Before
 	public void inicializar()
 	{
-		j=new Jugador("Nerea","Solabarrieta","29/11/1998","749839000",false, false, 665874596,"nerea@gmail.com","nerea", false, false);
+		j=new Jugador("Nerea","Solabarrieta","29/11/1998","749839990",false, false, 665874596,"nerea@gmail.com","nerea", false, false);
 		a= new Administrador("culi@gmail.com","4545");
 		e= new Entrenador("inigo","esteban","25/04/1980","609000000",654789652,"inigo@gmail.com", "ini",0,false);
 		List<Jugador> lista = new ArrayList<Jugador>();

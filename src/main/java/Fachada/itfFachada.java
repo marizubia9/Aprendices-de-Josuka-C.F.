@@ -19,9 +19,9 @@ public interface itfFachada extends Remote
 	public boolean EntrarEntrenador(String email, String psw) throws RemoteException;
 	public boolean EntrarAdministrador(String email, String psw) throws RemoteException;
 	public boolean RegistrarJugador (String nombre, String apellido, String fecha_S, String DNI, int telefono, String correo, String psw) throws RemoteException;
-	public void RegistrarEntrenador (String nombre, String apellido, String fecha_S, String DNI, int telefono, String correo, String psw) throws RemoteException;
-	public void RegistrarEquipo(Equipo e) throws RemoteException;
-	public void RegistrarInventario(Tipo_Material mat, int cantidad, long precio ) throws RemoteException;
+	public boolean RegistrarEntrenador (String nombre, String apellido, String fecha_S, String DNI, int telefono, String correo, String psw) throws RemoteException;
+	public boolean RegistrarEquipo(Equipo e) throws RemoteException;
+	public boolean RegistrarInventario(Tipo_Material mat, int cantidad, long precio ) throws RemoteException;
 	public List<Jugador>getJugador() throws RemoteException;
 	public List<Jugador> MostrarJugadores(Categoria c) throws RemoteException;
 	public List<Entrenador> getEntrenador() throws RemoteException;
@@ -29,6 +29,7 @@ public interface itfFachada extends Remote
 	public List<Equipo>getEquiposFilter(Categoria cat) throws RemoteException;
 	public  List<Material> getMaterial() throws RemoteException;
 	public String ObtenerEquipoEntrenador(Entrenador entrenador)throws RemoteException;
+	public int getEdad(String date)throws RemoteException;
 	public String ObtenerEquipoJugador(Jugador jugador)throws RemoteException;
 	public void ActualizarJugador(Jugador e, boolean reconocimiento, boolean lesionado, boolean cuota) throws RemoteException;
 	public void ActualizarEntrenador(Entrenador e, long salario) throws RemoteException;

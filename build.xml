@@ -51,5 +51,25 @@
 	        </java>
 	    </target>
 	
+	<target name="principal" description="Runs the Admin">
+			<java classname="Aprendices_de_Josuka.LP.Pantalla_Principal" classpathref="full.classpath" fork="true">
+				<jvmarg value="-Djava.security.policy=${policy.file}"/>	
+			    <jvmarg value="-Dlog4j.configuration=${log4j.file}"/>
+	        	<arg value="${server.IP}"/> 
+		 		<arg value="${server.port}"/> 
+				<arg value="${server.Name}"/> 
+	        </java>
+	    </target>
+	
+	<target name="visualizar_jugadores" description="Runs the Admin">
+			<java classname="Aprendices_de_Josuka.LP.Visualizar_Jugadores" classpathref="full.classpath" fork="true">
+				<jvmarg value="-Djava.security.policy=${policy.file}"/>	
+			    <jvmarg value="-Dlog4j.configuration=${log4j.file}"/>
+	        	<arg value="${server.IP}"/> 
+		 		<arg value="${server.port}"/> 
+				<arg value="${server.Name}"/> 
+	        </java>
+	    </target>
+	
 
 </project>

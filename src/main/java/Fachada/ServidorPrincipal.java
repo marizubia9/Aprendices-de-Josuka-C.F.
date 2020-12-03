@@ -58,7 +58,6 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		String name = "//" + ip + ":" + port + "/" + serviceName;
 
 		try {
-			System.out.println("2");
 			Registry registry = LocateRegistry.createRegistry((Integer.valueOf(port)));
 			registry.rebind(name, objServer);
 			System.out.println("* Server '" + name + "' active and waiting...");
@@ -99,12 +98,12 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		return DAO.getInstance().guardarObjeto(new Jugador(nombre, apellido, fecha_S, DNI, false, false, telefono, correo, psw,false,false));
 	}
 
-	public void RegistrarEntrenador(String nombre, String apellido, String fecha_S, String DNI, int telefono,
+	public boolean RegistrarEntrenador(String nombre, String apellido, String fecha_S, String DNI, int telefono,
 			String correo, String psw) throws RemoteException {
-		DAO.getInstance().guardarObjeto(new Entrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw, 0, false));
+		return DAO.getInstance().guardarObjeto(new Entrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw, 0, false));
 	}
 
-	public void RegistrarEquipo(Equipo e) throws RemoteException {
+	public boolean RegistrarEquipo(Equipo e) throws RemoteException {
 		e.getInventario().forEach((m,c)->
 		{
 			int cantidad= m.getCantidad()-c;
@@ -115,22 +114,22 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 				e1.printStackTrace();
 			}
 		});
-		DAO.getInstance().guardarObjeto(e);
+		return DAO.getInstance().guardarObjeto(e);
 	}
 
-	public void RegistrarInventario(Tipo_Material tipo, int cantidad, long precio) throws RemoteException {
+	public boolean RegistrarInventario(Tipo_Material tipo, int cantidad, long precio) throws RemoteException {
 		for(Material m: getMaterial())
 		{
 			if(m.getTipo().equals(tipo))
 			{
 				int cant= m.getCantidad()+cantidad;
 				long p= (m.getPrecio()*m.getCantidad())+(precio)/cant;
-				DAO.getInstance().ModificarMaterial(tipo, cant, p);
-				return;
+				return DAO.getInstance().ModificarMaterial(tipo, cant, p);
+				
 			}
 		}
 		
-		DAO.getInstance().guardarObjeto(new Material(tipo, cantidad, precio));
+		return DAO.getInstance().guardarObjeto(new Material(tipo, cantidad, precio));
 	}
 
 	public  void AsignarInventario(Material m) throws RemoteException
