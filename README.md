@@ -18,15 +18,15 @@ Para poder ejecutar correctamente este microservicio, requiere:
 ### Step 2 - Servidor de Aprendices de Josuka C.F
 
 Al ser una arquitectura cliente-servidor, será necesario ejecutar el servidor y que el cliente se conecte a él. Conexión que se realizará mediante RMI.
-Para ello:
-`mvn clean` elimina la carpeta destino
-`mvn compile` compila el proyecto
-`ant -f build.xml server` ejecuta el servidor en el localhost
+Para ello:  
+`mvn clean` elimina la carpeta destino  
+`mvn compile` compila el proyecto  
+`ant -f build.xml server` ejecuta el servidor en el localhost  
 
 ### Step 3 - Cliente de Aprendices de Josuka C.F
 
-Para lanzar las ventanas, y poder ejecutar el proyecto con normalidad.
-`ant -f build.xml admin` ejecuta el cliente, conectándose al servidor anterior
+Para lanzar las ventanas, y poder ejecutar el proyecto con normalidad.  
+`ant -f build.xml admin` ejecuta el cliente, conectándose al servidor anterior  
 
 ### Step 4 - Testing
 
