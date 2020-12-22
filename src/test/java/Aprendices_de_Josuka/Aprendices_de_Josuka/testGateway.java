@@ -10,6 +10,8 @@ import org.json.simple.parser.ParseException;
 import org.junit.Before;
 import org.junit.Test;
 
+import Aprendices_de_Josuka.LN.Gestor;
+
 public class testGateway {
 	
 //	@Before
@@ -21,11 +23,11 @@ public class testGateway {
 	@Test
 	public void partidos() throws ParseException
 	{
-		assertTrue(Gateway.Gateway.getInstance().partidos());
+		assertTrue(Gestor.getInstance().getPartidos());
 	}
 	@Test
 	public void sanciones() throws ParseException
 	{
-		assertTrue(Gateway.Gateway.getInstance().sanciones());
+		assertTrue(Gestor.getInstance().getSanciones());
 	}
 }

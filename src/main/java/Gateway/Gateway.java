@@ -72,6 +72,7 @@ public class Gateway implements itfGateway {
         return convertir_partidos(myPartidosArray);
 
 	}
+	@Override
 	public boolean partidos() throws ParseException
 	{
 		List <Partido> partidos = search_partidos();
@@ -81,6 +82,7 @@ public class Gateway implements itfGateway {
 		}
 		return false;
 	}
+	@Override
 	public boolean sanciones() throws ParseException
 	{
 		List <Sancion> sanciones = search_sanciones();

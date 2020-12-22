@@ -19,4 +19,6 @@ public interface itfGateway
 	public ArrayList<Partido> convertir_partidos(List<Partido_JSON> json);
 	public ArrayList<Sancion> convertir_sanciones(List<Sancion_JSON> json);
 	public HashSet<Equipos_Ext> getEquipos()  throws ParseException;
+	public boolean partidos() throws ParseException;
+	public boolean sanciones() throws ParseException;
 }
