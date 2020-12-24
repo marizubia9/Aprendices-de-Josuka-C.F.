@@ -2,12 +2,14 @@ package Fachada;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
 
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
+import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Tipo_Material;
@@ -31,11 +33,12 @@ public interface itfFachada extends Remote
 	public String ObtenerEquipoEntrenador(Entrenador entrenador)throws RemoteException;
 	public int getEdad(String date)throws RemoteException;
 	public String ObtenerEquipoJugador(Jugador jugador)throws RemoteException;
-	public void ActualizarJugador(Jugador e, boolean reconocimiento, boolean lesionado, boolean cuota) throws RemoteException;
-	public void ActualizarEntrenador(Entrenador e, long salario) throws RemoteException;
+	public boolean ActualizarJugador(Jugador e, boolean reconocimiento, boolean lesionado, boolean cuota) throws RemoteException;
+	public boolean ActualizarEntrenador(Entrenador e, long salario) throws RemoteException;
 	public void ActualizarJugadorEquipo(List<Jugador> lista_Jugadores) throws RemoteException;
 	public void ActualizarEquipo(Equipo equipo, HashMap inventario, List<Jugador> jugadores) throws RemoteException;
 	public void ActualizarMaterial(Tipo_Material tipo, int cantidad, long precio)throws RemoteException;
 	public void ModificarMaterial(List<Material> lista_material)throws RemoteException;;
 	public  void AsignarInventario(Material m) throws RemoteException;
+	public List <Equipos_Ext> clasificacion (Categoria cat)throws RemoteException, org.json.simple.parser.ParseException;
 }

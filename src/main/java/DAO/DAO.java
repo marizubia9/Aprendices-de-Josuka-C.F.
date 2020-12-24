@@ -175,12 +175,13 @@ public class DAO {
 		return equipos;
 	}
 	
-	public void ActualizarEntrenador(Long salario, Entrenador entrenador)
+	public boolean ActualizarEntrenador(Long salario, Entrenador entrenador)
 	{
 		
 		try {
 		Entrenador e= persistentManager.getObjectById(Entrenador.class, entrenador.getDNI());
 		e.setSalario(salario);
+		return true;
 		
 		} catch (Exception ex) {
 
@@ -191,8 +192,9 @@ public class DAO {
 				transaction.rollback();
 			}
 		}
+		return false;
 	}
-	public void ActualizarJugador(Jugador jugador, boolean reconocimiento, boolean lesionado, boolean cuota)
+	public boolean ActualizarJugador(Jugador jugador, boolean reconocimiento, boolean lesionado, boolean cuota)
 	{
 		
 		try {
@@ -200,6 +202,7 @@ public class DAO {
 		j.setReconocimiento_medico(reconocimiento);
 		j.setLesionado(lesionado);
 		j.setCuota_pagada(cuota);
+		return true;
 		
 		} catch (Exception ex) {
 
@@ -210,6 +213,7 @@ public class DAO {
 				transaction.rollback();
 			}
 		}
+		return false;
 	}
 	
 	public void ActualizarEquipoJugador(List<Jugador> jugadores)

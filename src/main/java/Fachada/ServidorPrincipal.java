@@ -6,16 +6,23 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
+import org.json.simple.parser.ParseException;
+
 import DAO.DAO;
+import Gateway.Gateway;
 import Aprendices_de_Josuka.LD.Administrador;
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
+import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Tipo_Material;
@@ -87,7 +94,7 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	public  boolean EntrarAdministrador(String email, String psw) throws RemoteException {
 		for (Administrador a : DAO.getInstance().getAdmin()) {
 			if (a.getEmail().equals(email) && a.getPsw().equals(psw)) return true;
-			 else return false;
+		
 			}
 		return false;
 	}
@@ -194,13 +201,13 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	{
 		return DAO.getInstance().getMaterial();
 	}
-	public void ActualizarJugador(Jugador e, boolean reconocimiento, boolean lesionado, boolean cuota) throws RemoteException
+	public boolean ActualizarJugador(Jugador e, boolean reconocimiento, boolean lesionado, boolean cuota) throws RemoteException
 	{
-		DAO.getInstance().ActualizarJugador(e, reconocimiento, lesionado, cuota);
+		return DAO.getInstance().ActualizarJugador(e, reconocimiento, lesionado, cuota);
 	}
-	public void ActualizarEntrenador(Entrenador e, long salario) throws RemoteException
+	public boolean ActualizarEntrenador(Entrenador e, long salario) throws RemoteException
 	{
-		DAO.getInstance().ActualizarEntrenador(salario, e);
+		return DAO.getInstance().ActualizarEntrenador(salario, e);
 	}
 	public void ActualizarJugadorEquipo(List<Jugador> lista_Jugadores)throws RemoteException
 	{
@@ -235,4 +242,26 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		
 		
 	}
+	public List<Equipos_Ext> clasificacion(Categoria cat) throws ParseException
+	{
+		HashSet<Equipos_Ext> equipos = Gateway.getInstance().getEquipos();
+		List<Equipos_Ext> list = new ArrayList<Equipos_Ext>(equipos);
+		List<Equipos_Ext> listaClasificacion = new ArrayList<Equipos_Ext>();
+		Collections.sort(list, new Comparator<Equipos_Ext>() {
+			@Override
+			public int compare(Equipos_Ext p1, Equipos_Ext p2) {
+				return new Integer((int) p2.getPuntuacion()).compareTo(new Integer((int) p1.getPuntuacion()));
+			}
+
+		});
+
+		for (Equipos_Ext b : list) {
+			if (b.getCategoria().toUpperCase().equals(cat.name())) {
+				listaClasificacion.add(b);
+			}
+		}
+		return listaClasificacion;
+	}
+		
+	
 }

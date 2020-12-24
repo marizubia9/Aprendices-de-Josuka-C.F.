@@ -2,7 +2,11 @@ package Aprendices_de_Josuka.Aprendices_de_Josuka;
 
 import static org.junit.Assert.*;
 
+import java.rmi.AlreadyBoundException;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +14,7 @@ import java.util.List;
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.Required;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -22,6 +27,8 @@ import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Tipo_Material;
 import DAO.DAO;
+import Fachada.ServidorPrincipal;
+import Fachada.itfFachada;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class testDAO {
@@ -29,8 +36,17 @@ public class testDAO {
 	private Jugador j;
 	private Administrador a;
 	private Entrenador e;
+	private itfFachada fachada;
+	private static String name = "//127.0.0.1:1099/ADJ";
 	private Equipo eq;
 	private Material m;
+	
+	  @BeforeClass
+	    public static void setupClass() throws RemoteException, AlreadyBoundException {
+		   	Registry registry = LocateRegistry.createRegistry((Integer.valueOf(1099)));
+			registry.rebind(name, ServidorPrincipal.getInstance());
+
+	    }
 	
 	@Before
 	public void inicializar()
@@ -50,9 +66,12 @@ public class testDAO {
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
-	public void a_escribirJugadores() throws RemoteException
+	public void a_escribirJugadores() throws RemoteException, NotBoundException
 	{
 		assertTrue(DAO.getInstance().guardarObjeto(j));
+		Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
+		fachada = (itfFachada) registry.lookup(name);
+		assertTrue(fachada.EntrarJugador(j.getCorreo(),j.getPsw()));
 	}
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
@@ -71,17 +90,24 @@ public class testDAO {
 //	}
 		
 	@Test
-	public void a_escribirAdmin() throws RemoteException
+	public void a_escribirAdmin() throws RemoteException, NotBoundException
 	{
 		assertTrue(DAO.getInstance().guardarObjeto(a));
+		Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
+		fachada = (itfFachada) registry.lookup(name);
+		assertTrue(fachada.EntrarAdministrador(a.getEmail(), a.getPsw()));
+
 	}
 	
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
-	public void a_escribirEntrenador() throws RemoteException
+	public void a_escribirEntrenador() throws RemoteException, NotBoundException
 	{
 		assertTrue(DAO.getInstance().guardarObjeto(e));
+		Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
+		fachada = (itfFachada) registry.lookup(name);
+		assertTrue(fachada.EntrarEntrenador(e.getCorreo(), e.getPsw()));
 	}
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
@@ -164,12 +190,15 @@ public class testDAO {
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
-	public void modificarEntrenador() throws RemoteException
+	public void modificarEntrenador() throws RemoteException, AlreadyBoundException, NotBoundException
 	{
 		long salario = 200;
 		Entrenador entMod = null;
-		DAO.getInstance().ActualizarEntrenador(salario, e);
-		for(Entrenador entre:DAO.getInstance().getEntrenador())
+		Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
+		fachada = (itfFachada) registry.lookup(name);
+		fachada.ActualizarEntrenador(e, salario);
+//		DAO.getInstance().ActualizarEntrenador(salario, e);
+		for(Entrenador entre:fachada.getEntrenador())
 		{
 			if(entre.getDNI().equals(e.getDNI()))
 			{
@@ -182,11 +211,13 @@ public class testDAO {
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
-	public void modificarJugador() throws RemoteException
+	public void modificarJugador() throws RemoteException, AlreadyBoundException, NotBoundException
 	{
 		Jugador jugMod = null;
-		DAO.getInstance().ActualizarJugador(j, false, false, true);
-		for(Jugador jug:DAO.getInstance().getJugador())
+		Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
+		fachada = (itfFachada) registry.lookup(name);
+		fachada.ActualizarJugador(j, false, false, true);
+		for(Jugador jug:fachada.getJugador())
 		{
 			if(jug.getDNI().equals(j.getDNI()))
 			{

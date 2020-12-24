@@ -4,9 +4,12 @@ import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.List;
 
+import org.json.simple.parser.ParseException;
+
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
+import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Tipo_Material;
@@ -26,6 +29,10 @@ public class Controller {
 
 	public boolean EntrarJugador(String email, String psw) throws RemoteException {
 		return rsl.getService().EntrarJugador(email, psw);
+	}
+	
+	public List<Equipos_Ext> Clasificacion(Categoria cat) throws RemoteException, ParseException {
+		return rsl.getService().clasificacion(cat);
 	}
 
 	public boolean EntrarEntrenador(String email, String psw) throws RemoteException {
