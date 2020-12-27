@@ -2,5 +2,14 @@ language: java
 sudo: false
 script: mvn clean verify
 branches:
-    only:
-      - testeo
+  except:
+    - Administrador
+    - creacion_objetos
+    - estructura
+    - develop
+    - servicios_externos
+
+# Ramas del repositorio a tener en cuenta
+branches:
+  only:
+    - testeo
