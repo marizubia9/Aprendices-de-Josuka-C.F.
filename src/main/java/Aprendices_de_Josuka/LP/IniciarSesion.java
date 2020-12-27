@@ -176,7 +176,6 @@ public class IniciarSesion extends JFrame {
 		});
 
 	}
-
 	public void Entrar(String email, String psw) throws ParseException {
 		try {
 			if (controller.EntrarJugador(email, psw)) {
