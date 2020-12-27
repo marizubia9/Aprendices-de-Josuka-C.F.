@@ -1,18 +1,14 @@
 package Aprendices_de_Josuka.LD;
 
-import java.sql.Date;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
-
-import javax.jdo.annotations.Column;
-import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.PrimaryKey;
 
 import lombok.Getter;
 import lombok.Setter;
 @Getter
 @Setter
-public class Partido {
+public class Partido implements Serializable{
 
 
 	private String cod_partido;
@@ -22,10 +18,7 @@ public class Partido {
 	private Equipos_Ext equipo_1;
 	private Equipos_Ext equipo_2;
 	private Set<Sancion> sanciones;
-	// private Equipo equipo_2;
-	// private Entrenador entrenador_sancionado_equipo1;
-	// private Entrenador entrenador_sancionado_equipo2;
-	// private Set<Jugador> jugador_sancionado;
+
 
 	public Partido(String cod_partido, LocalDateTime fecha, long resultado_e1, long resultado_e2, Equipos_Ext equipo_1, Equipos_Ext equipo_2) {
 		super();

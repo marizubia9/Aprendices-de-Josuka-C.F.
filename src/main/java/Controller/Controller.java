@@ -12,6 +12,7 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
+import Aprendices_de_Josuka.LD.Partido;
 import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LN.Gestor;
 import Aprendices_de_Josuka.LP.Pantalla_Principal;
@@ -24,9 +25,12 @@ public class Controller {
 
 		rsl = new ServiceLocator();
 		rsl.setService();
-//		new Pantalla_Principal(this);
-	}
 
+	}
+	public List <Partido> getPartidos()throws RemoteException, ParseException
+	{
+		return rsl.getService().getPartidos();
+	}
 	public boolean EntrarJugador(String email, String psw) throws RemoteException {
 		return rsl.getService().EntrarJugador(email, psw);
 	}
@@ -45,20 +49,17 @@ public class Controller {
 
 	public boolean RegistrarJugador(String nombre, String apellido, String fecha_S, String DNI, int telefono,
 			String correo, String psw) throws RemoteException {
-		if(Gestor.getInstance().comprobarDNI(DNI) == false)
-		{
-			return false;
-		}
-		else
-		{
+		
 		return rsl.getService().RegistrarJugador(nombre, apellido, fecha_S, DNI, telefono, correo, psw);
 
-		}
 	}
 
 	public void RegistrarEntrenador(String nombre, String apellido, String fecha_S, String DNI, int telefono,
 			String correo, String psw, boolean isAsignado) throws RemoteException {
 		rsl.getService().RegistrarEntrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw);
+	}
+	public void RegistrarAdmin(String correo, String psw) throws RemoteException {
+		rsl.getService().RegistrarAdmin(correo, psw);
 	}
 
 	public void RegistrarEquipo(Equipo e) throws RemoteException {
@@ -67,6 +68,11 @@ public class Controller {
 
 	public void RegistrarInventario(Tipo_Material mat, int cantidad, long precio) throws RemoteException {
 		rsl.getService().RegistrarInventario(mat, cantidad, precio);
+	}
+	
+	public Jugador getJugador(String correo, String psw) throws RemoteException
+	{
+		return rsl.getService().getJug(correo,psw);
 	}
 
 	public List<Jugador> MostrarJugadores(Categoria c) throws RemoteException {

@@ -9,6 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.json.simple.parser.ParseException;
+
 import DAO.DAO;
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
@@ -122,7 +124,13 @@ public class Anyadir_Inventario extends JFrame {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Principal_Administrador pa= new Principal_Administrador(controller);
+				Principal_Administrador pa = null;
+				try {
+					pa = new Principal_Administrador(controller);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				pa.setVisible(true);
 				setVisible(false);
 			}

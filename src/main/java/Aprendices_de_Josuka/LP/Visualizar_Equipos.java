@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.json.simple.parser.ParseException;
+
 import DAO.DAO;
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
@@ -61,11 +63,11 @@ public class Visualizar_Equipos extends JFrame {
 	private JButton btnEditarEquipo;
 	private JButton btnEditarJugador;
 	private JButton btnGO;
-	private JComboBox comboCategoria;
+	private JComboBox<Categoria> comboCategoria;
 	private JLabel lblCategoria;
 	private JLabel lblCategoria_sel;
 	private JPanel pScrollPaneJ;
-	private JComboBox comboEquipos;
+	private JComboBox<String> comboEquipos;
 	private List<Equipo>Lista_Equipos;
 	private JScrollPane scrollPaneJ;
 	private JScrollPane scrollPane_i;
@@ -74,21 +76,6 @@ public class Visualizar_Equipos extends JFrame {
 	private JLabel lbl_Entrenador;
 	private Controller controller;
 
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Visualizar_Equipos frame = new Visualizar_Equipos();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
 
 	/**
 	 * Create the frame.
@@ -146,7 +133,13 @@ public class Visualizar_Equipos extends JFrame {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Principal_Administrador pa= new Principal_Administrador(controller);
+				Principal_Administrador pa = null;
+				try {
+					pa = new Principal_Administrador(controller);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				pa.setVisible(true);
 				setVisible(false);
 			}
@@ -236,7 +229,7 @@ public class Visualizar_Equipos extends JFrame {
 		btnEditarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				EditarEntrenador r = new EditarEntrenador();
+				EditarEntrenador r = new EditarEntrenador(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -252,7 +245,7 @@ public class Visualizar_Equipos extends JFrame {
 		btnEditarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				EditarEquipo r = new EditarEquipo();
+				EditarEquipo r = new EditarEquipo(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -321,7 +314,7 @@ public class Visualizar_Equipos extends JFrame {
 		lblEquipo.setBounds(338, 64, 185, 26);
 		panel_central.add(lblEquipo);
 		
-		comboEquipos = new JComboBox();
+		comboEquipos = new JComboBox<String>();
 		comboEquipos.setBounds(543, 66, 109, 26);
 		panel_central.add(comboEquipos);
 		
@@ -393,13 +386,13 @@ public class Visualizar_Equipos extends JFrame {
 		Equipo e=null;
 		for(Equipo a:Lista_Equipos)
 		{
-			if(a.getNombre().equals(comboEquipos.getSelectedItem())) 
+			if(a.getNombre().equals(comboEquipos.getSelectedItem().toString())) 
 				e=a; 
 		}
 		lbl_Entrenador.setText(e.getEntrenador().toString());
-		ArrayList <String> ListaNombres= new ArrayList();
+		ArrayList <String> ListaNombres= new ArrayList<String>();
 		e.getLista_jugador().forEach(a->ListaNombres.add(a.toString()));
-		JList JListaJugadores=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
+		JList<String> JListaJugadores=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
 		scrollPaneJ.setViewportView(JListaJugadores);
 		JListaJugadores.setLayoutOrientation(JList.VERTICAL);
 		scrollPaneJ.repaint();
@@ -416,9 +409,9 @@ public class Visualizar_Equipos extends JFrame {
 			if(a.getNombre().equals(comboEquipos.getSelectedItem())) 
 				e=a; 
 		}
-		ArrayList <String> ListaNombres= new ArrayList();
+		ArrayList <String> ListaNombres= new ArrayList<String>();
 		e.getInventario().forEach((m,c)->ListaNombres.add(c+" "+m.getTipo()));
-		JList JListaInventario=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
+		JList<String> JListaInventario=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
 		scrollPane_i.setViewportView(JListaInventario);
 		JListaInventario.setLayoutOrientation(JList.VERTICAL);
 		scrollPane_i.repaint();

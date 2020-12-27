@@ -238,6 +238,12 @@ public class RegistrarEntrenador extends JFrame {
 				{
 				try {
 					controller.RegistrarEntrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw, false);
+					if (controller.EntrarEntrenador(correo, psw))
+					{
+						Principal_Entrenador p = new Principal_Entrenador();
+						setVisible(false);
+						p.setVisible(true);
+					}
 				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

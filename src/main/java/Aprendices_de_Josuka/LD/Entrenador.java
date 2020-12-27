@@ -1,5 +1,6 @@
 package Aprendices_de_Josuka.LD;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.jdo.annotations.Column;
@@ -16,7 +17,8 @@ import lombok.ToString;
 
 @PersistenceCapable
 @Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
-public @Data class Entrenador extends Persona{
+@Data
+public class Entrenador extends Persona implements Serializable{
 
 
 	private long salario; // Bruto anual

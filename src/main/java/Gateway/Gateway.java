@@ -34,6 +34,7 @@ public class Gateway implements itfGateway {
 	public static Gateway getInstance() {
 		return INSTANCE;
 	}
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Partido> search_partidos() throws ParseException {
 		path = "/Partidos/Search_Partidos";
@@ -66,7 +67,7 @@ public class Gateway implements itfGateway {
                 .collect(Collectors.toList()
         );
 
-        System.out.println("Number of partidos collected:");
+        System.out.println("Number of partidos collected:" + myPartidosArray.size());
 
 
         return convertir_partidos(myPartidosArray);

@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.json.simple.parser.ParseException;
+
 import DAO.DAO;
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
@@ -164,7 +166,13 @@ public class Visualizar_Jugadores extends JFrame {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Principal_Administrador pa= new Principal_Administrador(controller);
+				Principal_Administrador pa = null;
+				try {
+					pa = new Principal_Administrador(controller);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				pa.setVisible(true);
 				setVisible(false);
 			}
@@ -254,7 +262,7 @@ public class Visualizar_Jugadores extends JFrame {
 		btnEditarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				EditarEntrenador r = new EditarEntrenador();
+				EditarEntrenador r = new EditarEntrenador(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -270,7 +278,7 @@ public class Visualizar_Jugadores extends JFrame {
 		btnEditarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				EditarEquipo r = new EditarEquipo();
+				EditarEquipo r = new EditarEquipo(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -310,12 +318,12 @@ public class Visualizar_Jugadores extends JFrame {
 		
 		PanelCentro = new JPanel();
 		PanelCentro.setBackground(Color.WHITE);
-		PanelCentro.setBounds(328, 83, 950, 429);
+		PanelCentro.setBounds(328, 83, 1007, 550);
 		panel_central.add(PanelCentro);
 		PanelCentro.setLayout(null);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 0, 949, 409);
+		scrollPane.setBounds(0, 0, 951, 411);
 		PanelCentro.add(scrollPane);
 		
 		pScrollPane = new JPanel();
@@ -327,7 +335,7 @@ public class Visualizar_Jugadores extends JFrame {
 		gbl_pScrollPane.columnWeights = new double[]{Double.MIN_VALUE};
 		gbl_pScrollPane.rowWeights = new double[]{Double.MIN_VALUE};
 		pScrollPane.setLayout(gbl_pScrollPane);
-		
+		InsertarJPanel();
 
 		btnGO.addActionListener(new ActionListener() 
 		{
@@ -335,6 +343,7 @@ public class Visualizar_Jugadores extends JFrame {
 				InsertarJPanel();
 			}
 		});
+		
 	}
 
 	
@@ -343,8 +352,7 @@ public class Visualizar_Jugadores extends JFrame {
 		int x = 0;
 		int y = 50;
 		try {
-			ListaJugadores=controller.MostrarJugadores((Categoria)comboCategoria.getSelectedItem());
-			System.out.println("El tamanyo de la lista de jugadores es de: "+ListaJugadores.size());
+			ListaJugadores=controller.MostrarJugadores((Categoria) comboCategoria.getSelectedItem());
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -360,7 +368,7 @@ public class Visualizar_Jugadores extends JFrame {
 			gbc_lblFoto.gridy = y;
 			pScrollPane.add(panel,gbc_lblFoto);
 
-			y = y + 130;
+			y = y + 100;
 		}
 		pScrollPane.repaint();
 		scrollPane.repaint();

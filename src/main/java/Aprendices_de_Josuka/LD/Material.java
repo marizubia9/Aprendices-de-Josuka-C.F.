@@ -1,5 +1,7 @@
 package Aprendices_de_Josuka.LD;
 
+import java.io.Serializable;
+
 import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
@@ -10,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @PersistenceCapable
-public class Material {
+public class Material implements Serializable {
 
 	@PrimaryKey
 	private Tipo_Material tipo;

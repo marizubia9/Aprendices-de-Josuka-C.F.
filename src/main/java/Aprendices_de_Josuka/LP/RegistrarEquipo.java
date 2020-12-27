@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import org.apache.maven.model.Model;
+import org.json.simple.parser.ParseException;
 
 import DAO.DAO;
 import Aprendices_de_Josuka.LD.Categoria;
@@ -244,7 +245,16 @@ public class RegistrarEquipo extends JFrame {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Principal_Administrador pa = new Principal_Administrador(controller);
+				Principal_Administrador pa = null;
+				try {
+					pa = new Principal_Administrador(controller);
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				pa.setVisible(true);
 				setVisible(false);
 			}
@@ -333,7 +343,7 @@ public class RegistrarEquipo extends JFrame {
 		btnEditarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				EditarEntrenador r = new EditarEntrenador();
+				EditarEntrenador r = new EditarEntrenador(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -348,7 +358,7 @@ public class RegistrarEquipo extends JFrame {
 		btnEditarEquipo = new JButton("EDITAR EQUIPO");
 		btnEditarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EditarEquipo r = new EditarEquipo();
+				EditarEquipo r = new EditarEquipo(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}

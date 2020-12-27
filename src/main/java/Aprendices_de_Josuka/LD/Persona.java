@@ -1,5 +1,7 @@
 package Aprendices_de_Josuka.LD;
 
+import java.io.Serializable;
+
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
@@ -8,7 +10,8 @@ import javax.jdo.annotations.PrimaryKey;
 import lombok.Data;
 @PersistenceCapable
 @Inheritance(strategy=InheritanceStrategy.SUBCLASS_TABLE)
-public @Data class Persona {
+@Data 
+public class Persona implements Serializable{
 	
 	@PrimaryKey
 	private String DNI;

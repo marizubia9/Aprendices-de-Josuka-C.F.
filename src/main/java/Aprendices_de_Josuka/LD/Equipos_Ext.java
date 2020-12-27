@@ -1,11 +1,13 @@
 package Aprendices_de_Josuka.LD;
 
+import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Equipos_Ext {
+public class Equipos_Ext implements Serializable{
 	private String nombre;
 	private String cod;
 	private long puntuacion;

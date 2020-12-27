@@ -2,9 +2,10 @@ package Fachada;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
+
+import org.json.simple.parser.ParseException;
 
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
@@ -12,6 +13,7 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
+import Aprendices_de_Josuka.LD.Partido;
 import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LN.Gestor;
 
@@ -21,10 +23,13 @@ public interface itfFachada extends Remote
 	public boolean EntrarEntrenador(String email, String psw) throws RemoteException;
 	public boolean EntrarAdministrador(String email, String psw) throws RemoteException;
 	public boolean RegistrarJugador (String nombre, String apellido, String fecha_S, String DNI, int telefono, String correo, String psw) throws RemoteException;
+	public boolean RegistrarAdmin(String correo, String psw) throws RemoteException;
 	public boolean RegistrarEntrenador (String nombre, String apellido, String fecha_S, String DNI, int telefono, String correo, String psw) throws RemoteException;
 	public boolean RegistrarEquipo(Equipo e) throws RemoteException;
 	public boolean RegistrarInventario(Tipo_Material mat, int cantidad, long precio ) throws RemoteException;
 	public List<Jugador>getJugador() throws RemoteException;
+	public Jugador getJug(String correo, String psw) throws RemoteException;
+	public List<Partido>getPartidos() throws RemoteException, ParseException;
 	public List<Jugador> MostrarJugadores(Categoria c) throws RemoteException;
 	public List<Entrenador> getEntrenador() throws RemoteException;
 	public List<Equipo> getEquipos() throws RemoteException;

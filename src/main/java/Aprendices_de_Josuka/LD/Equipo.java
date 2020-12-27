@@ -1,5 +1,6 @@
 package Aprendices_de_Josuka.LD;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
@@ -16,7 +17,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @PersistenceCapable
-public class Equipo {
+public class Equipo implements Serializable{
 
 	@PrimaryKey
 	private String nombre;

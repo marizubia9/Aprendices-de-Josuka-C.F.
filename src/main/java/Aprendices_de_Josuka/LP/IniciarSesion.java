@@ -8,6 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.json.simple.parser.ParseException;
+
+import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LN.Gestor;
 import Controller.Controller;
 
@@ -82,21 +85,6 @@ public class IniciarSesion extends JFrame {
 		txtLosAprendicesDe.setBounds(46, 57, 702, 89);
 		panel_superior.add(txtLosAprendicesDe);
 
-		JButton btnEntrar_admin = new JButton();
-		btnEntrar_admin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				IniciarSesion_Admin a = new IniciarSesion_Admin(controller);
-			}
-		});
-		btnEntrar_admin.setForeground(Color.BLACK);
-		btnEntrar_admin.setBackground(Color.WHITE);
-		btnEntrar_admin.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnEntrar_admin.setText("Entrar como administradora");
-		btnEntrar_admin.setBounds(951, 89, 286, 41);
-		btnEntrar_admin.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		panel_superior.add(btnEntrar_admin);
-
 		JPanel panel_central = new JPanel();
 		panel_central.setBackground(new Color(0, 102, 0));
 		panel_central.setBounds(249, 213, 804, 455);
@@ -138,7 +126,7 @@ public class IniciarSesion extends JFrame {
 		btnEntrar.setBounds(367, 325, 180, 34);
 		panel_central.add(btnEntrar);
 
-		JButton btnRegistrarseComoEntrenador = new JButton("Registrarse como entrenador...");
+		JButton btnRegistrarseComoEntrenador = new JButton("Registrarse como entrenador");
 		btnRegistrarseComoEntrenador.setForeground(Color.WHITE);
 		btnRegistrarseComoEntrenador.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnRegistrarseComoEntrenador.setBackground(new Color(0, 102, 0));
@@ -146,7 +134,7 @@ public class IniciarSesion extends JFrame {
 		btnRegistrarseComoEntrenador.setBorder(null);
 		panel_central.add(btnRegistrarseComoEntrenador);
 
-		JButton btnRegistrarseComoJugador = new JButton("Registrarse como jugador...");
+		JButton btnRegistrarseComoJugador = new JButton("Registrarse como jugador");
 		btnRegistrarseComoJugador.setBounds(331, 418, 261, 21);
 		panel_central.add(btnRegistrarseComoJugador);
 		btnRegistrarseComoJugador.setForeground(Color.WHITE);
@@ -157,7 +145,12 @@ public class IniciarSesion extends JFrame {
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Entrar(txtEmail.getText(), txtPassword.getText());
+				try {
+					Entrar(txtEmail.getText(), txtPassword.getText());
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 
 			}
 		});
@@ -184,11 +177,12 @@ public class IniciarSesion extends JFrame {
 
 	}
 
-	public void Entrar(String email, String psw) {
+	public void Entrar(String email, String psw) throws ParseException {
 		try {
 			if (controller.EntrarJugador(email, psw)) {
 				setVisible(false);
-				Principal_Jugador a = new Principal_Jugador();
+				Jugador j = controller.getJugador(email,psw);
+				Principal_Jugador a = new Principal_Jugador(controller,j);
 				a.setVisible(true);
 			} else {
 				try {
@@ -196,8 +190,8 @@ public class IniciarSesion extends JFrame {
 						Principal_Entrenador a = new Principal_Entrenador();
 						a.setVisible(true);
 					} else {
-						JOptionPane error = new JOptionPane("ERROR");
-						error.setVisible(true);
+						JOptionPane.showMessageDialog(null,"ERROR");
+						
 					}
 				} catch (RemoteException e) {
 					// TODO Auto-generated catch block

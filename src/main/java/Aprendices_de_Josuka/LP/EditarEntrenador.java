@@ -9,6 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.json.simple.parser.ParseException;
+
 import DAO.DAO;
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
@@ -62,12 +64,13 @@ public class EditarEntrenador extends JFrame {
 	private JButton btnVisualizarJugador;
 	private JButton btnVisualizarEntrenador;
 	private JButton btnVisualziarEquipo;
+	private JButton btnClasificacion;
 	private JLabel lblNombreEntrenador;
 	private JLabel lblDni;
 	private JLabel lblDNIEntrenador;
 	private JLabel lblEquipo;
 	private JLabel lblSalario;
-	private JComboBox comboEntrenador;
+	private JComboBox<String> comboEntrenador;
 	private JTextField txtSalario;
 	private JLabel lblApellidoEntrenador;
 	private JLabel lblEquipoEntrenador;
@@ -77,27 +80,13 @@ public class EditarEntrenador extends JFrame {
 	private Controller controller;
 	
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					EditarEntrenador frame = new EditarEntrenador();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
-	public EditarEntrenador() 
+	public EditarEntrenador(Controller c) 
 	{
+		this.controller = c;
 		initComponents();
 		this.setVisible(true);
 	}
@@ -148,7 +137,13 @@ public class EditarEntrenador extends JFrame {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Principal_Administrador pa= new Principal_Administrador(controller);
+				Principal_Administrador pa = null;
+				try {
+					pa = new Principal_Administrador(controller);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				pa.setVisible(true);
 				setVisible(false);
 			}
@@ -254,7 +249,7 @@ public class EditarEntrenador extends JFrame {
 		btnEditarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				EditarEquipo r = new EditarEquipo();
+				EditarEquipo r = new EditarEquipo(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -282,6 +277,29 @@ public class EditarEntrenador extends JFrame {
 		btnEditarJugador.setBounds(0, 322, 328, 42);
 		panel_izquierdo.add(btnEditarJugador);
 		
+		btnClasificacion = new JButton("VER CLASIFICACION");
+		btnClasificacion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				
+				Clasificacion r = null;
+				try {
+					r = new Clasificacion(controller);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnClasificacion.setHorizontalAlignment(SwingConstants.LEFT);
+		btnClasificacion.setForeground(Color.WHITE);
+		btnClasificacion.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnClasificacion.setBackground(new Color(0, 102, 0));
+		btnClasificacion.setBounds(0, 364, 328, 42);
+		panel_izquierdo.add(btnClasificacion);
+		
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setBackground(new Color(0, 128, 0));
 		btnAceptar.setForeground(Color.WHITE);
@@ -300,7 +318,7 @@ public class EditarEntrenador extends JFrame {
 		lblSeleccioneElEntrenador.setBounds(343, 16, 182, 20);
 		panel_central.add(lblSeleccioneElEntrenador);
 		
-		comboEntrenador = new JComboBox();
+		comboEntrenador = new JComboBox<String>();
 		comboEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		comboEntrenador.setBounds(547, 13, 246, 26);
 		panel_central.add(comboEntrenador);
@@ -372,7 +390,7 @@ public class EditarEntrenador extends JFrame {
 	
 	public void IntroducirEntrenadores()
 	{
-		ListaEntrenadores= new ArrayList();
+		ListaEntrenadores= new ArrayList<Entrenador>();
 		
 		try 
 		{

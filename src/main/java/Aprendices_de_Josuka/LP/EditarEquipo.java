@@ -21,6 +21,8 @@ import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import org.json.simple.parser.ParseException;
+
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
@@ -86,26 +88,13 @@ public class EditarEquipo extends JFrame{
 	private Controller controller;
 
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					EditarEquipo frame = new EditarEquipo();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
 	 */
-	public EditarEquipo() {
+	public EditarEquipo(Controller c) {
+		this.controller = c;
 		initComponents();
 		this.setVisible(true);
 	}
@@ -155,7 +144,13 @@ public class EditarEquipo extends JFrame{
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Principal_Administrador pa= new Principal_Administrador(controller);
+				Principal_Administrador pa = null;
+				try {
+					pa = new Principal_Administrador(controller);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				pa.setVisible(true);
 				setVisible(false);
 			}
@@ -252,7 +247,7 @@ public class EditarEquipo extends JFrame{
 		btnEditarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				EditarEntrenador r = new EditarEntrenador();
+				EditarEntrenador r = new EditarEntrenador(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}

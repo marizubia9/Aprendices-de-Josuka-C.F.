@@ -1,5 +1,7 @@
 package Aprendices_de_Josuka.LD;
 
+import java.io.Serializable;
+
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
@@ -9,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @PersistenceCapable
-public class Sancion {
+public class Sancion implements Serializable{
 
 	@PrimaryKey
 	private String codigo;

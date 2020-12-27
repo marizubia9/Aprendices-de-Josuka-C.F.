@@ -2,16 +2,27 @@ package Aprendices_de_Josuka.LP;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import org.json.simple.parser.ParseException;
+
+import Aprendices_de_Josuka.LD.Categoria;
+import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
 
 public class Principal_Administrador extends JFrame {
@@ -27,33 +38,28 @@ public class Principal_Administrador extends JFrame {
 	private JButton btnEditarEntrenador;
 	private JButton btnEditarEquipo;
 	private JButton btnEditarJugador;
+	private JButton btnClasificacion;
 	private JPanel panel_izquierdo;
 	private Controller controller; 
+	private List <Partido> partidos;
+	private JPanel PanelCentro;
+	private JPanel pScrollPane;
+	private JScrollPane scrollPane;
+	private JComboBox<Categoria> comboCategoria;
+	private JLabel lblCategoria;
+	private JButton btnGO;
 	
 
 	/**
 	 * Launch the application.
+	 * @throws ParseException 
+	 * @throws RemoteException 
 	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Principal_Administrador frame = new Principal_Administrador();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
 
-	/**
-	 * Create the frame.
-	 * @param controller 
-	 */
-	public Principal_Administrador(Controller controller) 
+	public Principal_Administrador(Controller controller) throws RemoteException, ParseException 
 	{
 		this.controller=controller;
+		this.partidos = controller.getPartidos();
 		initComponents();
 		this.setVisible(true);
 	}
@@ -95,6 +101,30 @@ public class Principal_Administrador extends JFrame {
 		panel_izquierdo.setBackground(new Color(0, 102, 0));
 		panel_izquierdo.setBounds(0, 0, 328, 528);
 		panel_central.add(panel_izquierdo);
+		
+		comboCategoria = new JComboBox<Categoria>();
+		comboCategoria.addItem(Categoria.ALEVIN);
+		comboCategoria.addItem(Categoria.INFANTIL);
+		comboCategoria.addItem(Categoria.CADETE);
+		comboCategoria.addItem(Categoria.JUVENIL);
+		comboCategoria.addItem(Categoria.SENIOR);
+		comboCategoria.setBounds(543, 17, 109, 26);
+		panel_central.add(comboCategoria);
+		
+		lblCategoria = new JLabel("Selecciona una categoria:");
+		lblCategoria.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblCategoria.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
+		lblCategoria.setBounds(338, 17, 185, 26);
+		panel_central.add(lblCategoria);
+		
+		btnGO = new JButton("GO!");
+		btnGO.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InsertarJPanel();
+			}
+		});
+		btnGO.setBounds(669, 11, 68, 38);
+		panel_central.add(btnGO);
 		
 		btnHome = new JButton("HOME");
 		btnHome.setEnabled(false);
@@ -190,7 +220,7 @@ public class Principal_Administrador extends JFrame {
 		btnEditarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				EditarEntrenador r = new EditarEntrenador();
+				EditarEntrenador r = new EditarEntrenador(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -206,7 +236,7 @@ public class Principal_Administrador extends JFrame {
 		btnEditarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				EditarEquipo r = new EditarEquipo();
+				EditarEquipo r = new EditarEquipo(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -234,6 +264,30 @@ public class Principal_Administrador extends JFrame {
 		btnEditarJugador.setBounds(0, 322, 328, 42);
 		panel_izquierdo.add(btnEditarJugador);
 		
+		btnClasificacion = new JButton("VER CLASIFICACION");
+		btnClasificacion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				
+				Clasificacion r = null;
+				try {
+					r = new Clasificacion(controller);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnClasificacion.setHorizontalAlignment(SwingConstants.LEFT);
+		btnClasificacion.setForeground(Color.WHITE);
+		btnClasificacion.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnClasificacion.setBackground(new Color(0, 102, 0));
+		btnClasificacion.setBounds(0, 364, 328, 42);
+		panel_izquierdo.add(btnClasificacion);
+		
+		
 		JLabel label = new JLabel("");
 		label.setBounds(0, 348, 328, 58);
 		panel_izquierdo.add(label);
@@ -254,10 +308,59 @@ public class Principal_Administrador extends JFrame {
 		label_4.setBounds(0, 580, 328, 58);
 		panel_izquierdo.add(label_4);
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
-		panel.setBounds(328, 0, 997, 495);
-		panel_central.add(panel);
+		
+		PanelCentro = new JPanel();
+		PanelCentro.setBackground(Color.WHITE);
+		PanelCentro.setBounds(328, 83, 1007, 550);
+		panel_central.add(PanelCentro);
+		PanelCentro.setLayout(null);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 0, 951, 411);
+		PanelCentro.add(scrollPane);
+		
+		pScrollPane = new JPanel();
+		pScrollPane.setBackground(Color.WHITE);
+		scrollPane.setViewportView(pScrollPane);
+		GridBagLayout gbl_pScrollPane = new GridBagLayout();
+		gbl_pScrollPane.columnWidths = new int[]{0};
+		gbl_pScrollPane.rowHeights = new int[]{0};
+		gbl_pScrollPane.columnWeights = new double[]{Double.MIN_VALUE};
+		gbl_pScrollPane.rowWeights = new double[]{Double.MIN_VALUE};
+		pScrollPane.setLayout(gbl_pScrollPane);
+		InsertarJPanel();
 
+	}
+	public void InsertarJPanel() {
+		pScrollPane.removeAll();
+		int x = 0;
+		int y = 50;
+		
+		List<Partido> partidosPorCategoria = new ArrayList<Partido>();
+		for (Partido pa : partidos)
+		{
+			System.out.println(comboCategoria.getSelectedItem().toString());
+			if (pa.getEquipo_1().getCategoria().toUpperCase().equals(comboCategoria.getSelectedItem().toString()))
+			{
+				partidosPorCategoria.add(pa);
+			}
+		}
+		
+		for (int i = 0; i < partidosPorCategoria.size(); i++) 
+		{
+			Panel_Partidos panel = new Panel_Partidos(partidosPorCategoria.get(i));
+			panel.setVisible(true);
+			GridBagConstraints gbc_lblFoto = new GridBagConstraints();
+			gbc_lblFoto.ipadx = 1005;
+			gbc_lblFoto.ipady = 130;
+			gbc_lblFoto.gridx = x;
+			gbc_lblFoto.gridy = y;
+			pScrollPane.add(panel,gbc_lblFoto);
+
+			y = y + 130;
+		}
+		pScrollPane.repaint();
+		scrollPane.repaint();
+		repaint();
 	}
 }

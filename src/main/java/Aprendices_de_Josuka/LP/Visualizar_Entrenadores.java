@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.json.simple.parser.ParseException;
+
 import DAO.DAO;
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
@@ -50,21 +52,12 @@ public class Visualizar_Entrenadores extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtLosAprendicesDe;
 	private JLabel lblListaEntrenadores;
-	private Date objDate;
-	private List<Entrenador> ListaEntrenador;
-	private JList<String> listaJugadores1;
-	private JPanel panel_scrollpane;
 	private JPanel panel_central;
 	private List<Entrenador> ListaEntrenadores;
-	private Categoria cat;
-	private JList<String> JListaEntrenadores1;
 	private Controller controller;
 
 
 	private List<String> jugadores_lista;
-	private Set<String> HashSet;
-
-	private boolean MostrarJugadores;
 	private JPanel panel_izquierdo;
 	private JButton btnHome;
 	private JButton btnAnyadirEquipo;
@@ -159,7 +152,13 @@ public class Visualizar_Entrenadores extends JFrame {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Principal_Administrador pa= new Principal_Administrador(controller);
+				Principal_Administrador pa = null;
+				try {
+					pa = new Principal_Administrador(controller);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				pa.setVisible(true);
 				setVisible(false);
 			}
@@ -249,7 +248,7 @@ public class Visualizar_Entrenadores extends JFrame {
 		btnEditarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				EditarEntrenador r = new EditarEntrenador();
+				EditarEntrenador r = new EditarEntrenador(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -265,7 +264,7 @@ public class Visualizar_Entrenadores extends JFrame {
 		btnEditarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				EditarEquipo r = new EditarEquipo();
+				EditarEquipo r = new EditarEquipo(controller);
 				r.setVisible(true);
 				setVisible(false);
 			}

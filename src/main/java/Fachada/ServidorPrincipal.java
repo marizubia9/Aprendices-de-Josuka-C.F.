@@ -25,6 +25,7 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
+import Aprendices_de_Josuka.LD.Partido;
 import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LN.Gestor;
 
@@ -78,7 +79,7 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	public boolean EntrarJugador(String email, String psw) throws RemoteException {
 		for (Jugador a : DAO.getInstance().getJugador()) {
 			if (a.getCorreo().equals(email) && a.getPsw().equals(psw)) return true;
-			 else return false;
+			 
 		}
 		return false;
 	}
@@ -86,7 +87,6 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	public boolean EntrarEntrenador(String email, String psw) throws RemoteException {
 		for (Entrenador a : DAO.getInstance().getEntrenador()) {
 			if (a.getCorreo().equals(email) && a.getPsw().equals(psw))return true;
-			else return false;
 		}
 		return false;
 	}
@@ -109,7 +109,14 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 			String correo, String psw) throws RemoteException {
 		return DAO.getInstance().guardarObjeto(new Entrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw, 0, false));
 	}
-
+	
+	public boolean RegistrarAdmin(String correo, String psw) throws RemoteException {
+		return DAO.getInstance().guardarObjeto(new Administrador(correo, psw));
+	}
+	public List<Partido> getPartidos() throws ParseException, RemoteException
+	{
+		return Gateway.getInstance().search_partidos();
+	}
 	public boolean RegistrarEquipo(Equipo e) throws RemoteException {
 		e.getInventario().forEach((m,c)->
 		{
@@ -147,25 +154,36 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	{
 		return DAO.getInstance().getJugador();
 	}
+	public Jugador getJug(String correo, String psw) throws RemoteException
+	{
+		for (Jugador a: DAO.getInstance().getJugador())
+		{
+			if(a.getCorreo().equals(correo) && a.getPsw().equals(psw))
+			{
+				return a;
+			}
+		}	
+		return null;
+	}
 	public List<Jugador> MostrarJugadores(Categoria c)throws RemoteException {
 		int edad=0;
 		List<Jugador> ListaJugadores1= new ArrayList<>();
 		for (Jugador a : DAO.getInstance().getJugador()) {
 			edad=getEdad(a.getFecha_nacimiento());
 			
-					if(c==Categoria.ALEVIN){
+					if(c.equals(Categoria.ALEVIN)){
 						if (edad==10||edad==11)ListaJugadores1.add(a);						
 					}
-					if(c==Categoria.INFANTIL){
+					if(c.equals(Categoria.INFANTIL)){
 						if (edad==12||edad==13)ListaJugadores1.add(a);
 					}
-					if(c==Categoria.CADETE){
+					if(c.equals(Categoria.CADETE)){
 						if (edad==14||edad==15)ListaJugadores1.add(a);	
 					}
-					if(c==Categoria.JUVENIL){
+					if(c.equals(Categoria.JUVENIL)){
 						if (edad==16||edad==17||edad==18)ListaJugadores1.add(a);
 					}
-					if(c==Categoria.SENIOR){
+					if(c.equals(Categoria.SENIOR)){
 						if (edad>18)ListaJugadores1.add(a);
 					}
 		}

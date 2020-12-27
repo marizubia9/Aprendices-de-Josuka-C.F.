@@ -8,7 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Aprendices_de_Josuka.LN.Gestor;
+import org.json.simple.parser.ParseException;
+
 import Controller.Controller;
 
 import java.awt.Color;
@@ -32,21 +33,17 @@ public class IniciarSesion_Admin extends JFrame {
 	private JTextField txtPsw;
 	private Controller controller;
 
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					IniciarSesion_Admin frame = new IniciarSesion_Admin();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public static void main(String[] args) {
+		Controller c = null;
+		try {
+			c = new Controller();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+		}
+		new IniciarSesion_Admin(c);
+	}
 
 	/**
 	 * Create the frame.
@@ -92,13 +89,13 @@ public class IniciarSesion_Admin extends JFrame {
 		JLabel lblEmail = new JLabel("Email");
 		lblEmail.setForeground(Color.WHITE);
 		lblEmail.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 25));
-		lblEmail.setBounds(110, 171, 92, 27);
+		lblEmail.setBounds(90, 171, 102, 27);
 		panel_central.add(lblEmail);
 
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setForeground(Color.WHITE);
 		lblPassword.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 25));
-		lblPassword.setBounds(110, 250, 155, 34);
+		lblPassword.setBounds(90, 250, 155, 34);
 		panel_central.add(lblPassword);
 
 		txtEmail = new JTextField();
@@ -110,12 +107,43 @@ public class IniciarSesion_Admin extends JFrame {
 		txtPsw.setColumns(10);
 		txtPsw.setBounds(298, 250, 320, 31);
 		panel_central.add(txtPsw);
+		
+		JButton btnRegistrar = new JButton();
+		btnRegistrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				RegistrarAdmin a = new RegistrarAdmin(controller);
+			}
+		});
+		btnRegistrar.setForeground(Color.BLACK);
+		btnRegistrar.setBackground(Color.WHITE);
+		btnRegistrar.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnRegistrar.setText("Registrarse");
+		btnRegistrar.setBounds(951, 89, 286, 41);
+		btnRegistrar.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		panel_superior.add(btnRegistrar);
 
 		JButton btnEntrar = new JButton("Entrar\r\n");
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Entrar(txtEmail.getText(), txtPsw.getText());
+				try {
+					if (controller.EntrarAdministrador(txtEmail.getText(), txtPsw.getText())) {
+						setVisible(false);
+						Principal_Administrador a = new Principal_Administrador(controller);
+						a.setVisible(true);
+}
+					else
+					{
+						JOptionPane.showMessageDialog(null,"No existe ningun Administrador con esos datos");
+					}
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnEntrar.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -126,19 +154,6 @@ public class IniciarSesion_Admin extends JFrame {
 
 	}
 
-	public void Entrar(String email, String psw) {
-		try {
-			if (controller.EntrarAdministrador(email, psw)) {
-				this.setVisible(false);
-				Principal_Administrador a = new Principal_Administrador(controller);
-				a.setVisible(true);
-			} else {
-				JOptionPane error = new JOptionPane();
-			}
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 
 }

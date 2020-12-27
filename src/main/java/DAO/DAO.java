@@ -137,7 +137,6 @@ public class DAO {
 	
 	public List<Jugador> getJugador() {
 
-		// TODO Auto-generated method stub
 		Extent<Jugador> extent = persistentManager.getExtent(Jugador.class, false);
 		List<Jugador> jugadores = new ArrayList<Jugador>();
 

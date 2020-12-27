@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.json.simple.parser.ParseException;
+
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LN.Gestor;
@@ -49,17 +51,6 @@ public class RegistrarJugador extends JFrame {
 	private Date objDate;
 	private Controller controller;
 
-	public static void main(String[] args) {
-		Controller c = null;
-		try {
-			c = new Controller();
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-
-			e.printStackTrace();
-		}
-		new RegistrarJugador(c);
-	}
 
 	/**
 	 * Create the frame.
@@ -205,18 +196,23 @@ public class RegistrarJugador extends JFrame {
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				guardar();
+				try {
+					guardar();
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 	}
-	public boolean guardar()
+	public void guardar() throws ParseException
 	{
 		String nombre = txtNombre.getText();
 		String apellido = txtApellido.getText();
-//		Date fecha_date = dateChooser.getDate();
-//		String DATE_FORMAT = "dd/MM/yyyy";
-//		SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-//		String fecha_S = sdf.format(fecha_date);
+		
+		SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
+	 //   String date = dcn.format(dateChooser.getDate() );
+		
 		String DNI = txtDNI.getText();
 		int telefono = Integer.parseInt(txtTelefono.getText());
 		String correo = txtCorreo.getText();
@@ -248,19 +244,23 @@ public class RegistrarJugador extends JFrame {
 		else
 		{
 		try {
-			return controller.RegistrarJugador(nombre, apellido, "12/12/2012", DNI, telefono, correo, psw);
+			if(controller.RegistrarJugador(nombre, apellido, "2000-10-20", DNI, telefono, correo, psw) == true)
+			{
+				if(controller.EntrarJugador(correo, psw)==true)
+				{
+					System.out.println();
+					Principal_Jugador a = new Principal_Jugador(controller, new Jugador(nombre, apellido, "2000-10-20", DNI, false, false, telefono, correo, psw, false, false));
+					a.setVisible(true);
+					setVisible(false);
+				}
+			}
+					
 		} catch (RemoteException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		txtNombre.setText("");
-		txtApellido.setText("");
-		txtDNI.setText("");
-		txtTelefono.setText("");
-		txtCorreo.setText("");
-		txtPsw.setText("");
+
 		}
-		return false;
 
 	}
 	

@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @PersistenceCapable
-public class Administrador {
+public class Administrador  {
 
 	@PrimaryKey
 	private String email;

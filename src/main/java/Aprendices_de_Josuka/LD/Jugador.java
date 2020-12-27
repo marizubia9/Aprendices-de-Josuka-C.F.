@@ -1,5 +1,6 @@
 package Aprendices_de_Josuka.LD;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.jdo.annotations.Column;
@@ -15,7 +16,7 @@ import lombok.Setter;
 @Setter
 @PersistenceCapable
 @Inheritance
-public class Jugador extends Persona {
+public class Jugador extends Persona implements Serializable{
 
 
 	private boolean asignado;
