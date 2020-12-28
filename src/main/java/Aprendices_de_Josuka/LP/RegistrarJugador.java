@@ -211,7 +211,7 @@ public class RegistrarJugador extends JFrame {
 		String apellido = txtApellido.getText();
 		
 		SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
-	 //   String date = dcn.format(dateChooser.getDate() );
+	    String date = dcn.format(dateChooser.getDate() );
 		
 		String DNI = txtDNI.getText();
 		int telefono = Integer.parseInt(txtTelefono.getText());
@@ -244,7 +244,7 @@ public class RegistrarJugador extends JFrame {
 		else
 		{
 		try {
-			if(controller.RegistrarJugador(nombre, apellido, "2000-10-20", DNI, telefono, correo, psw) == true)
+			if(controller.RegistrarJugador(nombre, apellido, date, DNI, telefono, correo, psw) == true)
 			{
 				if(controller.EntrarJugador(correo, psw)==true)
 				{
