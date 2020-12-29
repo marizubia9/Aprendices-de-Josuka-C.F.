@@ -312,25 +312,9 @@ public class Visualizar_Entrenadores extends JFrame {
 		gbl_pScrollPane.rowWeights = new double[]{Double.MIN_VALUE};
 		pScrollPane.setLayout(gbl_pScrollPane);
 		InsertarJPanel();
-
-		
-//		MostrarEntrenadores();
 		
 	}
-	
-//	public void MostrarEntrenadores()
-//	{
-//		
-//		try {
-//			ListaEntrenadores=Gestor.getInstance().MostrarEntrenadores();
-//			JListaEntrenadores1.setLayoutOrientation(JList.VERTICAL);
-//			System.out.println("El tamanyo de la lista: "+ListaEntrenadores.size());
-//			panel_central.repaint();
-//		} catch (RemoteException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
+
 	
 	public void InsertarJPanel() {
 		pScrollPane.removeAll();
@@ -338,7 +322,6 @@ public class Visualizar_Entrenadores extends JFrame {
 		int y = 50;
 		try {
 			ListaEntrenadores=controller.getEntrenador();
-			System.out.println("El tamanyo de la lista de entrenadores es de: "+ListaEntrenadores.size());
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

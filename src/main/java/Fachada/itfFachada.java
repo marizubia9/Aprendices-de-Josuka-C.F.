@@ -14,6 +14,7 @@ import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Partido;
+import Aprendices_de_Josuka.LD.Sancion;
 import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LN.Gestor;
 
@@ -29,6 +30,11 @@ public interface itfFachada extends Remote
 	public boolean RegistrarInventario(Tipo_Material mat, int cantidad, long precio ) throws RemoteException;
 	public List<Jugador>getJugador() throws RemoteException;
 	public Jugador getJug(String correo, String psw) throws RemoteException;
+	public Entrenador getEnt(String correo, String psw) throws RemoteException;
+	public Partido sancionPartido(String codPartido) throws ParseException, RemoteException;
+	public int partidosGanados(String DNI) throws RemoteException, ParseException;
+	public boolean modificarCorreo(Jugador j, String correo, String psw) throws RemoteException ;
+	public List<Sancion> sancionesJugador(String DNI) throws RemoteException, ParseException;
 	public List<Partido>getPartidos() throws RemoteException, ParseException;
 	public List<Jugador> MostrarJugadores(Categoria c) throws RemoteException;
 	public List<Entrenador> getEntrenador() throws RemoteException;

@@ -53,19 +53,18 @@ public class EditarEquipo extends JFrame{
 	private JButton btnVisualizarJugador;
 	private JButton btnVisualizarEntrenador;
 	private JButton btnVisualziarEquipo;
-	private JComboBox comboCategoria;
-	private JComboBox comboEquipo;
+	private JComboBox<Categoria> comboCategoria;
+	private JComboBox<String> comboEquipo;
 	private JLabel lblNombreEquipo;
 	private JScrollPane scrollPane;
 	private JPanel pScrollPane;
-	private JList list_JugadoresEquipo;
-	private JList list_JugadoresAnyadir;
-	private DefaultListModel modelo;
-	private DefaultListModel modelo2;
+	private JList<Jugador> list_JugadoresEquipo;
+	private JList<Jugador> list_JugadoresAnyadir;
+	private DefaultListModel<Jugador> modelo;
+	private DefaultListModel<Jugador> modelo2;
 	private JPanel panel_1;
 	private JScrollPane scrollPane_1;
 	private JPanel pScrollPane_1;
-	private DefaultListModel modelo_categoria;
 	private JButton btnEditarEntrenador;
 	private JButton btnEditarEquipo;
 	private JButton btnEditarJugador;
@@ -302,8 +301,8 @@ public class EditarEquipo extends JFrame{
 		lblSeleccioneCategoria.setBounds(343, 16, 182, 20);
 		panel_central.add(lblSeleccioneCategoria);
 		
-		comboCategoria = new JComboBox();
-		comboCategoria.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		comboCategoria = new JComboBox<Categoria>();
+		comboCategoria.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		comboCategoria.setBounds(547, 13, 246, 26);
 		panel_central.add(comboCategoria);
 		comboCategoria.addItem(Categoria.ALEVIN);
@@ -314,12 +313,12 @@ public class EditarEquipo extends JFrame{
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNombre.setFont(new Font("Malgun Gothic", Font.BOLD, 16));
+		lblNombre.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 16));
 		lblNombre.setBounds(944, 28, 69, 20);
 		panel_central.add(lblNombre);
 		
 		JButton btnGo = new JButton("GO!");
-		btnGo.setFont(new Font("Malgun Gothic", Font.PLAIN, 11));
+		btnGo.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 11));
 		btnGo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -348,7 +347,7 @@ public class EditarEquipo extends JFrame{
 		btnGO2.setBounds(816, 48, 69, 29);
 		panel_central.add(btnGO2);
 		
-		comboEquipo = new JComboBox();
+		comboEquipo = new JComboBox<String>();
 		comboEquipo.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		comboEquipo.setBounds(547, 50, 246, 26);
 		panel_central.add(comboEquipo);
@@ -504,7 +503,7 @@ public class EditarEquipo extends JFrame{
 		textFieldVallas.setBounds(968, 409, 109, 26);
 		panel_central.add(textFieldVallas);
 		textFieldVallas.setColumns(10);
-		modelo_categoria=new DefaultListModel(); 
+		new DefaultListModel(); 
 
 	}
 	

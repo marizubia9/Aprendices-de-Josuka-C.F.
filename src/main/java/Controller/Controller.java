@@ -13,6 +13,7 @@ import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Partido;
+import Aprendices_de_Josuka.LD.Sancion;
 import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LN.Gestor;
 import Aprendices_de_Josuka.LP.Pantalla_Principal;
@@ -70,13 +71,33 @@ public class Controller {
 		rsl.getService().RegistrarInventario(mat, cantidad, precio);
 	}
 	
+	public int partidosGanados(String DNI) throws RemoteException, ParseException {
+		return rsl.getService().partidosGanados(DNI);
+	}
+	
+	public List<Sancion> sancionesJugador(String DNI) throws RemoteException, ParseException {
+		return rsl.getService().sancionesJugador(DNI);
+	}
+	public boolean modificarCorreo(Jugador j, String correo, String psw) throws RemoteException
+	{
+		return rsl.getService().modificarCorreo(j, correo, psw);
+	}
+	
 	public Jugador getJugador(String correo, String psw) throws RemoteException
 	{
 		return rsl.getService().getJug(correo,psw);
 	}
+	
+	public Entrenador getEntrenador(String correo, String psw) throws RemoteException
+	{
+		return rsl.getService().getEnt(correo,psw);
+	}
 
 	public List<Jugador> MostrarJugadores(Categoria c) throws RemoteException {
 		return rsl.getService().MostrarJugadores(c);
+	}
+	public Partido sancionPartido(String cod) throws RemoteException, ParseException {
+		return rsl.getService().sancionPartido(cod);
 	}
 
 	public List<Entrenador> getEntrenador() throws RemoteException {

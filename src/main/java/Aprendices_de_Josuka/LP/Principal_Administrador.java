@@ -339,7 +339,6 @@ public class Principal_Administrador extends JFrame {
 		List<Partido> partidosPorCategoria = new ArrayList<Partido>();
 		for (Partido pa : partidos)
 		{
-			System.out.println(comboCategoria.getSelectedItem().toString());
 			if (pa.getEquipo_1().getCategoria().toUpperCase().equals(comboCategoria.getSelectedItem().toString()))
 			{
 				partidosPorCategoria.add(pa);

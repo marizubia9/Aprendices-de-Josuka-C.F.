@@ -303,7 +303,7 @@ public class EditarEntrenador extends JFrame {
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setBackground(new Color(0, 128, 0));
 		btnAceptar.setForeground(Color.WHITE);
-		btnAceptar.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		btnAceptar.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -314,62 +314,65 @@ public class EditarEntrenador extends JFrame {
 		panel_central.add(btnAceptar);
 		
 		JLabel lblSeleccioneElEntrenador = new JLabel("Seleccione el entrenador");
-		lblSeleccioneElEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblSeleccioneElEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		lblSeleccioneElEntrenador.setBounds(343, 16, 182, 20);
 		panel_central.add(lblSeleccioneElEntrenador);
 		
 		comboEntrenador = new JComboBox<String>();
-		comboEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		comboEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		comboEntrenador.setBounds(547, 13, 246, 26);
 		panel_central.add(comboEntrenador);
 		IntroducirEntrenadores();
 		
 		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblNombre.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		lblNombre.setBounds(529, 147, 69, 20);
 		panel_central.add(lblNombre);
 		
-		lblNombreEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblNombreEntrenador = new JLabel("");
+		lblNombreEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		lblNombreEntrenador.setBounds(632, 147, 182, 20);
 		panel_central.add(lblNombreEntrenador);
 		
 		JLabel lblApellido = new JLabel("Apellido");
-		lblApellido.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblApellido.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		lblApellido.setBounds(529, 198, 69, 20);
 		panel_central.add(lblApellido);
 		
-		lblApellidoEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblApellidoEntrenador = new JLabel("");
+		lblApellidoEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		lblApellidoEntrenador.setBounds(632, 198, 182, 20);
 		panel_central.add(lblApellidoEntrenador);
 		
 		lblDni = new JLabel("DNI");
-		lblDni.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblDni.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		lblDni.setBounds(529, 93, 69, 20);
 		panel_central.add(lblDni);
 		
-		lblDNIEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblDNIEntrenador = new JLabel("");
+		lblDNIEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		lblDNIEntrenador.setBounds(632, 93, 161, 20);
 		panel_central.add(lblDNIEntrenador);
 		
 		lblSalario = new JLabel("Salario");
-		lblSalario.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblSalario.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		lblSalario.setBounds(529, 251, 69, 20);
 		panel_central.add(lblSalario);
 		
 		lblEquipo = new JLabel("Equipo");
-		lblEquipo.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblEquipo.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		lblEquipo.setBounds(529, 302, 69, 20);
 		panel_central.add(lblEquipo);
 		
 		
 		txtSalario = new JTextField();
-		txtSalario.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		txtSalario.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		txtSalario.setBounds(631, 248, 146, 26);
 		panel_central.add(txtSalario);
 		txtSalario.setColumns(10);
 		
 		JButton btnGo = new JButton("GO!");
-		btnGo.setFont(new Font("Malgun Gothic", Font.PLAIN, 11));
+		btnGo.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 11));
 		btnGo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -382,9 +385,10 @@ public class EditarEntrenador extends JFrame {
 		panel_central.add(btnGo);
 		
 		lblEquipoEntrenador = new JLabel("");
-		lblEquipoEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
+		lblEquipoEntrenador.setFont(new Font("Malgun Gothic Semilight", Font.PLAIN, 15));
 		lblEquipoEntrenador.setBounds(632, 308, 182, 20);
 		panel_central.add(lblEquipoEntrenador);
+		VisualizarEntrenadores();
 		
 	}
 	

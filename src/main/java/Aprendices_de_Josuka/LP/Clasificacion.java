@@ -385,7 +385,7 @@ public class Clasificacion  extends JFrame {
 			gbc_lblFoto.gridy = y;
 			pScrollPane.add(panel,gbc_lblFoto);
 
-			y = y + 80;
+			y = y + 40;
 		}
 		pScrollPane.repaint();
 		scrollPane.repaint();

@@ -215,6 +215,27 @@ public class DAO {
 		return false;
 	}
 	
+	public boolean modificarCorreo(Jugador jugador, String correo, String psw)
+	{
+		
+		try {
+		Jugador j= persistentManager.getObjectById(Jugador.class, jugador.getDNI());
+		j.setCorreo(correo);
+		j.setPsw(psw);
+		return true;
+		
+		} catch (Exception ex) {
+
+			System.err.println("* Exception modifying data into db: " + ex.getMessage());
+		}
+		finally {
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
+		}
+		return false;
+	}
+	
 	public void ActualizarEquipoJugador(List<Jugador> jugadores)
 	{
 		try {

@@ -28,6 +28,7 @@ import java.util.Date;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JSpinnerDateEditor;
 
@@ -181,27 +182,24 @@ public class RegistrarJugador extends JFrame {
 		txtPsw.setBounds(551, 341, 260, 32);
 		panel_central.add(txtPsw);
 
-		JDateChooser dateChooser = new JDateChooser();
+		dateChooser = new JDateChooser(null, null, null, new JSpinnerDateEditor());
+		objDate = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		sdf.format(objDate);
+		dateChooser.setDate(objDate);
 		dateChooser.setBounds(674, 200, 137, 31);
 		panel_central.add(dateChooser);
 		
-		txtNombre.setName("nombre");
-		txtApellido.setName("apellido");
-		txtDNI.setName("DNI");
-		txtTelefono.setName("telefono");
-		txtCorreo.setName("correo");
-		txtPsw.setName("psw");
-		btnRegistrarse.setName("registrar");
 		
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				try {
-					guardar();
-				} catch (ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+			try {
+				guardar();
+			} catch (ParseException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			}
 		});
 	}
@@ -209,9 +207,9 @@ public class RegistrarJugador extends JFrame {
 	{
 		String nombre = txtNombre.getText();
 		String apellido = txtApellido.getText();
-		
-		SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
-	    String date = dcn.format(dateChooser.getDate() );
+		objDate = dateChooser.getDate();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+	    String date = dateFormat.format(objDate);
 		
 		String DNI = txtDNI.getText();
 		int telefono = Integer.parseInt(txtTelefono.getText());
@@ -225,7 +223,7 @@ public class RegistrarJugador extends JFrame {
 		{
 			JOptionPane.showMessageDialog(null, "Introduce correctamente el apellido");
 		}
-		else if(Gestor.getInstance().comprobarDNI(DNI))
+		else if(DNI.equals(""))
 		{
 			JOptionPane.showMessageDialog(null, "Introduce correctamente el DNI");
 		}
@@ -248,8 +246,8 @@ public class RegistrarJugador extends JFrame {
 			{
 				if(controller.EntrarJugador(correo, psw)==true)
 				{
-					System.out.println();
-					Principal_Jugador a = new Principal_Jugador(controller, new Jugador(nombre, apellido, "2000-10-20", DNI, false, false, telefono, correo, psw, false, false));
+					System.out.println("HOLA");
+					Principal_Jugador a = new Principal_Jugador(controller, new Jugador(nombre, apellido, date, DNI, false, false, telefono, correo, psw, false, false));
 					a.setVisible(true);
 					setVisible(false);
 				}

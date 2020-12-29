@@ -8,6 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.json.simple.parser.ParseException;
+
+import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LN.Gestor;
@@ -240,11 +243,14 @@ public class RegistrarEntrenador extends JFrame {
 					controller.RegistrarEntrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw, false);
 					if (controller.EntrarEntrenador(correo, psw))
 					{
-						Principal_Entrenador p = new Principal_Entrenador();
+						Principal_Entrenador p = new Principal_Entrenador(controller, new Entrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw, 0, false));
 						setVisible(false);
 						p.setVisible(true);
 					}
 				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}

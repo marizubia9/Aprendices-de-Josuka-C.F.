@@ -70,7 +70,7 @@ public class Panel_Jugador extends JPanel {
 			fecha[i]=Integer.valueOf(str).intValue();
 			i++;
 		       }
-		int anyo=fecha[2];
+		int anyo=fecha[0];
 		Calendar cal = Calendar.getInstance();
 		int anyo_actual=cal.get(Calendar.YEAR);
 		edad=anyo_actual-anyo;

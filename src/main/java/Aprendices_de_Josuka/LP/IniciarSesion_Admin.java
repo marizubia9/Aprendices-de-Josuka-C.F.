@@ -129,8 +129,8 @@ public class IniciarSesion_Admin extends JFrame {
 
 				try {
 					if (controller.EntrarAdministrador(txtEmail.getText(), txtPsw.getText())) {
-						setVisible(false);
 						Principal_Administrador a = new Principal_Administrador(controller);
+						setVisible(false);
 						a.setVisible(true);
 }
 					else

@@ -111,7 +111,15 @@ public class Principal_Jugador extends JFrame {
 		btnVerEstadisticas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-
+				Estadisticas es = null;
+				try {
+					es = new Estadisticas(controller, j);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				es.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnVerEstadisticas.setHorizontalAlignment(SwingConstants.LEFT);
@@ -126,10 +134,13 @@ public class Principal_Jugador extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				
-				Clasificacion r = null;
+				Clasificacion_Jugador r = null;
 				try {
-					r = new Clasificacion(controller);
+					r = new Clasificacion_Jugador(controller, j);
 				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
@@ -147,7 +158,15 @@ public class Principal_Jugador extends JFrame {
 		btnVisualizarJugador = new JButton("VER FICHA");
 		btnVisualizarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-	
+				FichaJugador f = null;
+				try {
+					f = new FichaJugador(controller, j);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				f.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnVisualizarJugador.setHorizontalAlignment(SwingConstants.LEFT);
@@ -161,7 +180,13 @@ public class Principal_Jugador extends JFrame {
 		btnVisualziarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Visualizar_Equipos r = new Visualizar_Equipos(controller);
+				Visualizar_Equipos_Jugador r = null;
+				try {
+					r = new Visualizar_Equipos_Jugador(controller, j);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				r.setVisible(true);
 				setVisible(false);
 			}
@@ -174,11 +199,19 @@ public class Principal_Jugador extends JFrame {
 		panel_izquierdo.add(btnVisualziarEquipo);
 		
 		
-		btnEditarJugador = new JButton("EDITAR JUGADOR");
+		btnEditarJugador = new JButton("EDITAR DATOS");
 		btnEditarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-
+				EditarDatos ed = null;
+				try {
+					ed = new EditarDatos(controller, j);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				ed.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnEditarJugador.setHorizontalAlignment(SwingConstants.LEFT);
@@ -263,7 +296,6 @@ public class Principal_Jugador extends JFrame {
 		List<Partido> partidosPorCategoria = new ArrayList<Partido>();
 		for (Partido pa : partidos)
 		{
-			System.out.println(comboCategoria.getSelectedItem().toString());
 			if (pa.getEquipo_1().getCategoria().toUpperCase().equals(comboCategoria.getSelectedItem().toString()))
 			{
 				partidosPorCategoria.add(pa);

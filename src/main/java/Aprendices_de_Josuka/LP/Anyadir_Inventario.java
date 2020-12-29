@@ -17,6 +17,7 @@ import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
+import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LN.Gestor;
 import Controller.Controller;
 
@@ -61,7 +62,7 @@ public class Anyadir_Inventario extends JFrame {
 	private JButton btnVisualizarEntrenadores;
 	private JButton btnVisualizarEquipos;
 	private JTextField txtCantidad;
-	private JComboBox comboMaterial;
+	private JComboBox<Tipo_Material> comboMaterial;
 	private RegistrarEquipo r;
 	private HashMap<Material, Integer> inventario;
 	private List<Material>listaMat;
@@ -71,7 +72,7 @@ public class Anyadir_Inventario extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Anyadir_Inventario(RegistrarEquipo r, HashMap<Material, Integer> inventario) 
+	public Anyadir_Inventario(Controller controller,RegistrarEquipo r, HashMap<Material, Integer> inventario) 
 	{
 		this.controller=controller;
 		initComponents();

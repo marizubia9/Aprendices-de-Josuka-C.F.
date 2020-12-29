@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 import org.json.simple.parser.ParseException;
 
+import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LN.Gestor;
 import Controller.Controller;
@@ -179,14 +180,18 @@ public class IniciarSesion extends JFrame {
 	public void Entrar(String email, String psw) throws ParseException {
 		try {
 			if (controller.EntrarJugador(email, psw)) {
-				setVisible(false);
+			
 				Jugador j = controller.getJugador(email,psw);
+				System.out.println(j.getCorreo());
 				Principal_Jugador a = new Principal_Jugador(controller,j);
 				a.setVisible(true);
+				setVisible(false);
 			} else {
 				try {
 					if (controller.EntrarEntrenador(email, psw)) {
-						Principal_Entrenador a = new Principal_Entrenador();
+						Entrenador e = controller.getEntrenador(email,psw);
+						Principal_Entrenador a = new Principal_Entrenador(controller, e);
+						setVisible(false);
 						a.setVisible(true);
 					} else {
 						JOptionPane.showMessageDialog(null,"ERROR");

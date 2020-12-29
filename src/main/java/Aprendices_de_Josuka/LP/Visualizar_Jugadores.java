@@ -52,21 +52,11 @@ public class Visualizar_Jugadores extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtLosAprendicesDe;
 	private JLabel lblListaJugadores;
-	private Date objDate;
-	private List<Jugador> ListaJugador;
-	private JList<String> listaJugadores1;
-	private JPanel panel_scrollpane;
 	private JPanel panel_central;
 	private List<Jugador> ListaJugadores;
-	private Categoria cat;
-	private JList<String> JListaJugadores1;
-	private JComboBox comboCategoria;
+	private JComboBox<Categoria> comboCategoria;
 	private Controller controller;
 
-	private List<String> jugadores_lista;
-	private Set<String> HashSet;
-
-	private boolean MostrarJugadores;
 	private JPanel panel_izquierdo;
 	private JButton btnHome;
 	private JButton btnAnyadirEquipo;
@@ -151,7 +141,7 @@ public class Visualizar_Jugadores extends JFrame {
 		btnGO.setBounds(1173, 39, 68, 38);
 		panel_central.add(btnGO);
 		
-		jugadores_lista = new ArrayList<String>();
+		new ArrayList<String>();
 		ListaJugadores = new ArrayList<>();
 		
 		panel_izquierdo = new JPanel();
@@ -306,7 +296,7 @@ public class Visualizar_Jugadores extends JFrame {
 		btnEditarJugador.setBounds(0, 322, 328, 42);
 		panel_izquierdo.add(btnEditarJugador);
 		
-		comboCategoria = new JComboBox();
+		comboCategoria = new JComboBox<Categoria>();
 		comboCategoria.addItem(Categoria.ALEVIN);
 		comboCategoria.addItem(Categoria.INFANTIL);
 		comboCategoria.addItem(Categoria.CADETE);
@@ -368,7 +358,7 @@ public class Visualizar_Jugadores extends JFrame {
 			gbc_lblFoto.gridy = y;
 			pScrollPane.add(panel,gbc_lblFoto);
 
-			y = y + 100;
+			y = y + 70;
 		}
 		pScrollPane.repaint();
 		scrollPane.repaint();

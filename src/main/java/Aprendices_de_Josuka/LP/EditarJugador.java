@@ -53,7 +53,7 @@ public class EditarJugador  extends JFrame {
 	private JLabel lblNombreJugador;
 	private JLabel lblDni;
 	private JLabel lblDNIJugador;
-	private JComboBox comboCategoria;
+	private JComboBox<Categoria> comboCategoria;
 	private JLabel lblEquipoJugador;
 	private JLabel lblReconocimientoMdico;
 	private JLabel lblEstado;
@@ -64,7 +64,7 @@ public class EditarJugador  extends JFrame {
 	private JRadioButton rdbtnNoPagada;
 	private JRadioButton rbtnSuspendido;
 	private JRadioButton rdbtnAprobado;
-	private JComboBox comboJugadores ;
+	private JComboBox<String> comboJugadores ;
 	private ButtonGroup estado;
 	private ButtonGroup Cuota;
 	private ButtonGroup Reconocimiento;
@@ -300,7 +300,7 @@ public class EditarJugador  extends JFrame {
 		lblSeleccioneCategoria.setBounds(343, 16, 182, 20);
 		panel_central.add(lblSeleccioneCategoria);
 		
-		comboCategoria = new JComboBox();
+		comboCategoria = new JComboBox<Categoria>();
 		comboCategoria.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		comboCategoria.setBounds(547, 13, 246, 26);
 		panel_central.add(comboCategoria);

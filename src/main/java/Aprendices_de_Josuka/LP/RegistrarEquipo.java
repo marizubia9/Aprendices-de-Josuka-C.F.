@@ -515,7 +515,7 @@ public class RegistrarEquipo extends JFrame {
 
 	public void Anyadir_Material() {
 		inventario = new HashMap<Material, Integer>();
-		Anyadir_Inventario a = new Anyadir_Inventario(this, inventario);
+		Anyadir_Inventario a = new Anyadir_Inventario(controller, this, inventario);
 		a.setVisible(true);
 		setVisible(false);
 	}

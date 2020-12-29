@@ -26,6 +26,7 @@ import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Partido;
+import Aprendices_de_Josuka.LD.Sancion;
 import Aprendices_de_Josuka.LD.Tipo_Material;
 import Aprendices_de_Josuka.LN.Gestor;
 
@@ -110,6 +111,10 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		return DAO.getInstance().guardarObjeto(new Entrenador(nombre, apellido, fecha_S, DNI, telefono, correo, psw, 0, false));
 	}
 	
+	public boolean modificarCorreo(Jugador j, String correo, String psw) throws RemoteException {
+		return DAO.getInstance().modificarCorreo(j, correo, psw);
+	}
+	
 	public boolean RegistrarAdmin(String correo, String psw) throws RemoteException {
 		return DAO.getInstance().guardarObjeto(new Administrador(correo, psw));
 	}
@@ -154,16 +159,85 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	{
 		return DAO.getInstance().getJugador();
 	}
+	public int partidosGanados(String DNI) throws RemoteException, ParseException
+	{
+		int i=0;
+		Equipo equipo = null;
+		for (Equipo e:DAO.getInstance().getEquipo())
+		{
+			for (Jugador j:e.getLista_jugador())
+			{
+				if (j.getDNI().equals(DNI))
+				{
+					equipo = e;
+				}
+			}
+		}
+		for (Partido p :Gateway.getInstance().search_partidos())
+		{
+			if(p.getEquipo_1().getNombre().toUpperCase().equals(equipo.getNombre().toUpperCase()))
+			{
+				if(p.getResultado_e1() > p.getResultado_e2())
+				{
+					i++;
+				}
+			}
+			else if(p.getEquipo_2().getNombre().toUpperCase().equals(equipo.getNombre().toUpperCase()))
+			{
+				if(p.getResultado_e1() < p.getResultado_e2())
+				{
+					i++;
+				}
+			}
+		}
+		
+		return i;
+	}
+	public List<Sancion> sancionesJugador(String DNI) throws RemoteException, ParseException
+	{
+		List <Sancion> sanciones = new ArrayList<Sancion>();
+	
+		for (Sancion s:Gateway.getInstance().search_sanciones())
+		{
+			if(s.getPersona().equals(DNI))
+			{
+				sanciones.add(s);
+			}
+			
+		}
+		return sanciones;
+	}
 	public Jugador getJug(String correo, String psw) throws RemoteException
 	{
+		Jugador j = null;
 		for (Jugador a: DAO.getInstance().getJugador())
 		{
-			if(a.getCorreo().equals(correo) && a.getPsw().equals(psw))
+			if(a.getCorreo().equals(correo))
 			{
-				return a;
+				if(a.getPsw().equals(psw))
+			{
+				j = new Jugador(a.getNombre(),a.getApellido(), a.getFecha_nacimiento(), a.getDNI(), a.isReconocimiento_medico(), a.isLesionado(), a.getTelefono(), a.getCorreo(), a.getPsw(), a.isCuota_pagada(), a.isAsignado() );
 			}
-		}	
-		return null;
+			}
+		}
+		return j;	
+		
+	}
+	public Entrenador getEnt(String correo, String psw) throws RemoteException
+	{
+		Entrenador j = null;
+		for (Entrenador a: DAO.getInstance().getEntrenador())
+		{
+			if(a.getCorreo().equals(correo))
+			{
+				if(a.getPsw().equals(psw))
+			{
+				j = new Entrenador(a.getNombre(),a.getApellido(), a.getFecha_nacimiento(), a.getDNI(), a.getTelefono(), a.getCorreo(), a.getPsw(), a.getSalario(), a.isAsignado_equipo() );
+			}
+			}
+		}
+		return j;	
+		
 	}
 	public List<Jugador> MostrarJugadores(Categoria c)throws RemoteException {
 		int edad=0;
@@ -199,11 +273,27 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
             fecha[i]=Integer.valueOf(str).intValue();
             i++;
         }
-		int anyo=fecha[2];
+		int anyo=fecha[0];
 		Calendar cal = Calendar.getInstance();
 		int anyo_actual=cal.get(Calendar.YEAR);
+
 		 return (anyo_actual-anyo);
 	}
+	public Partido sancionPartido(String codPartido) throws ParseException, RemoteException
+	{
+		Partido p = null;
+		List <Partido> partidos = Gateway.getInstance().search_partidos();
+		for(Partido partido: partidos)
+		{
+			if(partido.getCod_partido().equals(codPartido))
+			{
+				return p;
+			}
+		}
+		return null;
+		
+	}
+
 	public List<Entrenador> getEntrenador() throws RemoteException {
 		return DAO.getInstance().getEntrenador();
 	}
