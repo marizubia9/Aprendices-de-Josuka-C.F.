@@ -62,7 +62,8 @@ public class DAO {
 				persistentManager.makePersistent(objeto);
 				return true;
 			}
-			if (objeto instanceof Equipo) {
+			if (objeto instanceof Equipo) 
+			{
 				objeto = new Equipo(((Equipo) objeto).getNombre(), ((Equipo) objeto).getCategoria(),((Equipo) objeto).getEntrenador(),((Equipo) objeto).getLista_jugador(),((Equipo) objeto).getInventario());
 				persistentManager.makePersistent(objeto);
 				return true;

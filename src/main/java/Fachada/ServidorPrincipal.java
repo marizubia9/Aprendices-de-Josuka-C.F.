@@ -265,7 +265,7 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	}
 	public int getEdad(String date)
 	{
-		StringTokenizer st= new StringTokenizer(date,"/");
+		StringTokenizer st= new StringTokenizer(date,"-");
 		Integer[] fecha=new Integer[3];
 		int i=0;
 		while(st.hasMoreTokens()){
