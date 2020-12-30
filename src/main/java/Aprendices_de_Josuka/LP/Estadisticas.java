@@ -135,10 +135,13 @@ public class Estadisticas extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				
-				Clasificacion r = null;
+				Clasificacion_Jugador r = null;
 				try {
-					r = new Clasificacion(controller);
+					r = new Clasificacion_Jugador(controller, j);
 				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
@@ -201,6 +204,15 @@ public class Estadisticas extends JFrame {
 		btnEditarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
+				EditarDatos p = null;
+				try {
+					p = new EditarDatos(controller, j);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				p.setVisible(true);
+				setVisible(false);
 
 			}
 		});
@@ -275,7 +287,7 @@ public class Estadisticas extends JFrame {
 			gbc_lblFoto.gridy = y;
 			pScrollPane.add(panel,gbc_lblFoto);
 
-			y = y + 80;
+			y = y + 130;
 		}
 		pScrollPane.repaint();
 		scrollPane.repaint();

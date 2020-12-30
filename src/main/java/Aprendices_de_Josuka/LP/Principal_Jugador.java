@@ -36,6 +36,7 @@ public class Principal_Jugador extends JFrame {
 	private JPanel contentPane;
 	private JLabel txtLosAprendicesDe;
 	private JButton btnHome;
+	private JButton btnMisPartidos;
 	private JButton btnVerEstadisticas;
 	private JButton btnClasificacion;
 	private JButton btnVisualizarJugador;
@@ -245,6 +246,21 @@ public class Principal_Jugador extends JFrame {
 		btnGO.setBounds(669, 11, 68, 38);
 		panel_central.add(btnGO);
 		
+		btnMisPartidos = new JButton("Mis partidos");
+		btnMisPartidos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				try {
+					InsertarMisPartidos();
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnMisPartidos.setBounds(900, 11, 100, 42);
+		panel_central.add(btnMisPartidos);
+		
 		JLabel label = new JLabel("");
 		label.setBounds(0, 348, 328, 58);
 		panel_izquierdo.add(label);
@@ -319,5 +335,30 @@ public class Principal_Jugador extends JFrame {
 		scrollPane.repaint();
 		repaint();
 	}
+	public void InsertarMisPartidos() throws RemoteException, ParseException {
+		pScrollPane.removeAll();
+		int x = 0;
+		int y = 50;
+		
+		List<Partido> misPartidos = controller.jugadorPartido(partidos, j.getDNI());
+		
+		for (int i = 0; i < misPartidos.size(); i++) 
+		{
+			Panel_Partidos panel = new Panel_Partidos(misPartidos.get(i));
+			panel.setVisible(true);
+			GridBagConstraints gbc_lblFoto = new GridBagConstraints();
+			gbc_lblFoto.ipadx = 1005;
+			gbc_lblFoto.ipady = 130;
+			gbc_lblFoto.gridx = x;
+			gbc_lblFoto.gridy = y;
+			pScrollPane.add(panel,gbc_lblFoto);
+
+			y = y + 130;
+		}
+		pScrollPane.repaint();
+		scrollPane.repaint();
+		repaint();
+	}
+	
 	}
 

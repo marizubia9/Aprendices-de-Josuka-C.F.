@@ -1,14 +1,12 @@
 package Aprendices_de_Josuka.LP;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -24,17 +22,13 @@ import org.json.simple.parser.ParseException;
 
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Entrenador;
+import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
 
-import java.awt.Color;
+public class Clasificacion_Entrenador extends JFrame {
 
-public class Principal_Entrenador extends JFrame {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel txtLosAprendicesDe;
@@ -46,25 +40,22 @@ public class Principal_Entrenador extends JFrame {
 	private JButton btnEditarJugador;
 	private JComboBox<Categoria> comboCategoria;
 	private JLabel lblCategoria;
-	private JButton btnGO;
 	private JPanel panel_izquierdo;
 	private Controller controller; 
-	private List <Partido> partidos;
 	private JPanel PanelCentro;
 	private JPanel pScrollPane;
 	private JScrollPane scrollPane;
 	private Entrenador j;
-	
-	public Principal_Entrenador(Controller controller, Entrenador j) throws RemoteException, ParseException 
+	private List <Equipos_Ext> listaEquipos;
+	public Clasificacion_Entrenador(Controller controller, Entrenador j) throws RemoteException, ParseException 
 	{
 		this.j = j;
-		this.partidos = controller.getPartidos();
 		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
 	}
 
-	public void initComponents() {
+	public void initComponents() throws ParseException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
 		setLocationRelativeTo(null);
@@ -103,19 +94,33 @@ public class Principal_Entrenador extends JFrame {
 		panel_central.add(panel_izquierdo);
 		
 		btnHome = new JButton("HOME");
-		btnHome.setEnabled(false);
 		btnHome.setHorizontalAlignment(SwingConstants.LEFT);
 		btnHome.setForeground(Color.WHITE);
 		btnHome.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnHome.setBackground(new Color(0, 102, 0));
 		btnHome.setBounds(0, 0, 328, 42);
+		btnHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				Principal_Entrenador a = null;
+				try {
+					a = new Principal_Entrenador(controller, j);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				setVisible(false);
+				a.setVisible(true);
+			}
+		});
 		panel_izquierdo.add(btnHome);
 		
 		btnVerEstadisticas = new JButton("VER ESTADISTICAS");
 		btnVerEstadisticas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				
+			
+
 			}
 		});
 		btnVerEstadisticas.setHorizontalAlignment(SwingConstants.LEFT);
@@ -126,21 +131,7 @@ public class Principal_Entrenador extends JFrame {
 		panel_izquierdo.add(btnVerEstadisticas);
 		
 		btnClasificacion = new JButton("VER CLASIFICACION");
-		btnClasificacion.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				Clasificacion_Entrenador c = null;
-				try {
-					c = new Clasificacion_Entrenador(controller, j);
-				} catch (RemoteException | ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				c.setVisible(true);
-				setVisible(false);
-				
-			}
-		});
+		btnClasificacion.setEnabled(false);
 		btnClasificacion.setHorizontalAlignment(SwingConstants.LEFT);
 		btnClasificacion.setForeground(Color.WHITE);
 		btnClasificacion.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -151,14 +142,17 @@ public class Principal_Entrenador extends JFrame {
 		btnVisualizarJugador = new JButton("VER FICHA");
 		btnVisualizarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FichaEntrenador c = null;
+				FichaEntrenador r = null;
 				try {
-					c = new FichaEntrenador(controller, j);
-				} catch (RemoteException | ParseException e1) {
+					r = new FichaEntrenador(controller, j);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				c.setVisible(true);
+				r.setVisible(true);
 				setVisible(false);
 			}
 		});
@@ -172,6 +166,7 @@ public class Principal_Entrenador extends JFrame {
 		btnVisualziarEquipo = new JButton("VISUALIZAR  EQUIPOS");
 		btnVisualziarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				
 			}
 		});
@@ -187,16 +182,16 @@ public class Principal_Entrenador extends JFrame {
 		btnEditarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				EditarDatosEntrenador c = null;
+				EditarDatosEntrenador ed = null;
 				try {
-					c = new EditarDatosEntrenador(controller, j);
+					ed = new EditarDatosEntrenador(controller, j);
 				} catch (RemoteException | ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				c.setVisible(true);
+				ed.setVisible(true);
 				setVisible(false);
-				
+
 			}
 		});
 		btnEditarJugador.setHorizontalAlignment(SwingConstants.LEFT);
@@ -206,6 +201,12 @@ public class Principal_Entrenador extends JFrame {
 		btnEditarJugador.setBounds(0, 120, 328, 42);
 		panel_izquierdo.add(btnEditarJugador);
 		
+		lblCategoria = new JLabel("Selecciona una categoria:");
+		lblCategoria.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblCategoria.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
+		lblCategoria.setBounds(338, 17, 185, 26);
+		panel_central.add(lblCategoria);
+			
 		comboCategoria = new JComboBox<Categoria>();
 		comboCategoria.addItem(Categoria.ALEVIN);
 		comboCategoria.addItem(Categoria.INFANTIL);
@@ -215,42 +216,6 @@ public class Principal_Entrenador extends JFrame {
 		comboCategoria.setBounds(543, 17, 109, 26);
 		panel_central.add(comboCategoria);
 		
-		lblCategoria = new JLabel("Selecciona una categoria:");
-		lblCategoria.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblCategoria.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
-		lblCategoria.setBounds(338, 17, 185, 26);
-		panel_central.add(lblCategoria);
-		
-		btnGO = new JButton("GO!");
-		btnGO.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				InsertarJPanel();
-			}
-		});
-		btnGO.setBounds(669, 11, 68, 38);
-		panel_central.add(btnGO);
-		
-		JLabel label = new JLabel("");
-		label.setBounds(0, 348, 328, 58);
-		panel_izquierdo.add(label);
-		
-		JLabel label_1 = new JLabel("");
-		label_1.setBounds(0, 406, 328, 58);
-		panel_izquierdo.add(label_1);
-		
-		JLabel label_2 = new JLabel("");
-		label_2.setBounds(0, 464, 328, 31);
-		panel_izquierdo.add(label_2);
-		
-		JLabel label_3 = new JLabel("");
-		label_3.setBounds(0, 522, 328, 58);
-		panel_izquierdo.add(label_3);
-		
-		JLabel label_4 = new JLabel("");
-		label_4.setBounds(0, 580, 328, 58);
-		panel_izquierdo.add(label_4);
-		
-				
 		PanelCentro = new JPanel();
 		PanelCentro.setBackground(Color.WHITE);
 		PanelCentro.setBounds(328, 83, 1007, 550);
@@ -271,25 +236,22 @@ public class Principal_Entrenador extends JFrame {
 		gbl_pScrollPane.rowWeights = new double[]{Double.MIN_VALUE};
 		pScrollPane.setLayout(gbl_pScrollPane);
 		InsertarJPanel();
-
 	}
-	public void InsertarJPanel() {
+
+	
+	public void InsertarJPanel() throws ParseException {
 		pScrollPane.removeAll();
 		int x = 0;
 		int y = 50;
-		
-		List<Partido> partidosPorCategoria = new ArrayList<Partido>();
-		for (Partido pa : partidos)
-		{
-			if (pa.getEquipo_1().getCategoria().toUpperCase().equals(comboCategoria.getSelectedItem().toString()))
-			{
-				partidosPorCategoria.add(pa);
-			}
+		try {
+			listaEquipos=controller.Clasificacion( (Categoria) comboCategoria.getSelectedItem());
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
-		for (int i = 0; i < partidosPorCategoria.size(); i++) 
+		for (int i = 0; i < listaEquipos.size(); i++) 
 		{
-			Panel_Partidos panel = new Panel_Partidos(partidosPorCategoria.get(i));
+			Panel_Equipos panel = new Panel_Equipos(listaEquipos.get(i));
 			panel.setVisible(true);
 			GridBagConstraints gbc_lblFoto = new GridBagConstraints();
 			gbc_lblFoto.ipadx = 1005;
@@ -298,10 +260,10 @@ public class Principal_Entrenador extends JFrame {
 			gbc_lblFoto.gridy = y;
 			pScrollPane.add(panel,gbc_lblFoto);
 
-			y = y + 130;
+			y = y + 40;
 		}
 		pScrollPane.repaint();
 		scrollPane.repaint();
 		repaint();
 	}
-	}
+}

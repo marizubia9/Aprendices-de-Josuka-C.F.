@@ -114,6 +114,9 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	public boolean modificarCorreo(Jugador j, String correo, String psw) throws RemoteException {
 		return DAO.getInstance().modificarCorreo(j, correo, psw);
 	}
+	public boolean modificarCorreoEntrenador(Entrenador j, String correo, String psw) throws RemoteException {
+		return DAO.getInstance().modificarCorreoEntrenador(j, correo, psw);
+	}
 	
 	public boolean RegistrarAdmin(String correo, String psw) throws RemoteException {
 		return DAO.getInstance().guardarObjeto(new Administrador(correo, psw));
@@ -217,6 +220,30 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		}
 		
 		return i;
+	}
+	public List<Partido> jugadorPartido(List<Partido> partidos, String DNI) throws RemoteException, ParseException
+	{
+		Equipo equipo = null;
+		List <Partido> misPartidos = new ArrayList <Partido>();
+		for (Equipo eq : DAO.getInstance().getEquipo())
+		{
+			for(String s : eq.getLista_jugador())
+			{
+				if(s.equals(DNI))
+				{
+					equipo = eq;
+				}
+			}
+		}
+		for (Partido e: partidos)
+		{
+			if(e.getEquipo_1().getNombre().equals(equipo.getNombre()) ||e.getEquipo_2().getNombre().equals(equipo.getNombre()))
+			{
+				misPartidos.add(e);
+			}
+		}
+		
+		return misPartidos;
 	}
 	public List<Sancion> sancionesJugador(String DNI) throws RemoteException, ParseException
 	{

@@ -50,22 +50,6 @@ public class RegistrarEntrenador extends JFrame {
 	private Controller controller;
 
 	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					RegistrarEntrenador frame = new RegistrarEntrenador();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-
-	/**
 	 * Create the frame.
 	 * @param controller 
 	 */

@@ -182,13 +182,10 @@ public class IniciarSesion extends JFrame {
 			if (controller.EntrarJugador(email, psw)) {
 			
 				Jugador j = controller.getJugador(email,psw);
-				System.out.println(j.getCorreo());
 				Principal_Jugador a = new Principal_Jugador(controller,j);
 				a.setVisible(true);
 				setVisible(false);
-			} else {
-				try {
-					if (controller.EntrarEntrenador(email, psw)) {
+			} else if (controller.EntrarEntrenador(email, psw)) {
 						Entrenador e = controller.getEntrenador(email,psw);
 						Principal_Entrenador a = new Principal_Entrenador(controller, e);
 						setVisible(false);
@@ -201,11 +198,8 @@ public class IniciarSesion extends JFrame {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			
+		
 
 	}
 

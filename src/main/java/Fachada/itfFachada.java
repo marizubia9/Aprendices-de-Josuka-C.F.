@@ -40,6 +40,8 @@ public interface itfFachada extends Remote
 	public List<Jugador> MostrarJugadores(Categoria c) throws RemoteException;
 	public List<Entrenador> getEntrenador() throws RemoteException;
 	public List<Equipo> getEquipos() throws RemoteException;
+	public boolean modificarCorreoEntrenador(Entrenador j, String correo, String psw) throws RemoteException ;
+	public List<Partido> jugadorPartido(List<Partido> partidos, String DNI) throws RemoteException, ParseException;
 	public void ActualizarEquipoEntrenador(Entrenador ent)throws RemoteException;
 	public List<Equipo>getEquiposFilter(Categoria cat) throws RemoteException;
 	public  List<Material> getMaterial() throws RemoteException;

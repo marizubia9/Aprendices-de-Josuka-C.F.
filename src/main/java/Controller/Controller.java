@@ -86,6 +86,10 @@ public class Controller {
 	{
 		return rsl.getService().modificarCorreo(j, correo, psw);
 	}
+	public boolean modificarCorreoEntrenador(Entrenador j, String correo, String psw) throws RemoteException
+	{
+		return rsl.getService().modificarCorreoEntrenador(j, correo, psw);
+	}
 	
 	public Jugador getJugador(String correo, String psw) throws RemoteException
 	{
@@ -109,7 +113,9 @@ public class Controller {
 	public Partido sancionPartido(String cod) throws RemoteException, ParseException {
 		return rsl.getService().sancionPartido(cod);
 	}
-
+	public List<Partido> jugadorPartido(List <Partido> partidos, String DNI) throws RemoteException, ParseException {
+		return rsl.getService().jugadorPartido(partidos, DNI);
+	}
 	public List<Entrenador> getEntrenador() throws RemoteException {
 		return rsl.getService().getEntrenador();
 	}

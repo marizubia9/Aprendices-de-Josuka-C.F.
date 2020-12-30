@@ -290,7 +290,12 @@ public class EditarEquipo extends JFrame{
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				Guardar();
+				try {
+					Guardar();
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnAceptar.setBounds(1138, 437, 125, 38);
@@ -339,7 +344,12 @@ public class EditarEquipo extends JFrame{
 		JButton btnGO2 = new JButton("GO!");
 		btnGO2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MostrarInformacion();
+				try {
+					MostrarInformacion();
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				panel_izquierdo.repaint();
 			}
 		});
@@ -523,7 +533,7 @@ public class EditarEquipo extends JFrame{
 		}
 	}
 	
-	public void MostrarInformacion()
+	public void MostrarInformacion() throws RemoteException
 	{
 		textFieldBalones.setText("0");
 		textFieldBarreras.setText("0");
@@ -594,8 +604,8 @@ public class EditarEquipo extends JFrame{
 						}
 					}
 					}
-					
-//					e.getLista_jugador().forEach(q->modelo.addElement(q));
+					List <Jugador> jugadores = controller.equipoJugadores(e);
+					jugadores.forEach(q->modelo.addElement(q));
 					list_JugadoresEquipo.setModel(modelo);
 					pScrollPane.repaint();
 					
@@ -638,7 +648,7 @@ public class EditarEquipo extends JFrame{
 		list_JugadoresAnyadir.setModel(modelo2);
 		pScrollPane_1.repaint();
 	}
-	public void Guardar()
+	public void Guardar() throws RemoteException
 	{
 		Equipo equipo= null;
 		List<Integer> cantidadMaterial=ActualizarMaterial();
@@ -708,7 +718,7 @@ public class EditarEquipo extends JFrame{
 		}
 	}
 	
-	public List<Integer> ActualizarMaterial()
+	public List<Integer> ActualizarMaterial() throws RemoteException
 	{
 		int balones=Integer.parseInt(textFieldBalones.getText());
 		int barreras=Integer.parseInt(textFieldBarreras.getText());

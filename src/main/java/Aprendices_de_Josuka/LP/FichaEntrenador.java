@@ -1,14 +1,10 @@
 package Aprendices_de_Josuka.LP;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
 import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -28,9 +24,7 @@ import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
 
-import java.awt.Color;
-
-public class Principal_Entrenador extends JFrame {
+public class FichaEntrenador extends JFrame {
 
 	/**
 	 * 
@@ -44,21 +38,14 @@ public class Principal_Entrenador extends JFrame {
 	private JButton btnVisualizarJugador;
 	private JButton btnVisualziarEquipo;
 	private JButton btnEditarJugador;
-	private JComboBox<Categoria> comboCategoria;
-	private JLabel lblCategoria;
-	private JButton btnGO;
 	private JPanel panel_izquierdo;
 	private Controller controller; 
-	private List <Partido> partidos;
-	private JPanel PanelCentro;
-	private JPanel pScrollPane;
-	private JScrollPane scrollPane;
 	private Entrenador j;
 	
-	public Principal_Entrenador(Controller controller, Entrenador j) throws RemoteException, ParseException 
+	
+	public FichaEntrenador(Controller controller, Entrenador j) throws RemoteException, ParseException 
 	{
 		this.j = j;
-		this.partidos = controller.getPartidos();
 		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
@@ -103,12 +90,25 @@ public class Principal_Entrenador extends JFrame {
 		panel_central.add(panel_izquierdo);
 		
 		btnHome = new JButton("HOME");
-		btnHome.setEnabled(false);
 		btnHome.setHorizontalAlignment(SwingConstants.LEFT);
 		btnHome.setForeground(Color.WHITE);
 		btnHome.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnHome.setBackground(new Color(0, 102, 0));
 		btnHome.setBounds(0, 0, 328, 42);
+		btnHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				Principal_Entrenador a = null;
+				try {
+					a = new Principal_Entrenador(controller, j);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				setVisible(false);
+				a.setVisible(true);
+			}
+		});
 		panel_izquierdo.add(btnHome);
 		
 		btnVerEstadisticas = new JButton("VER ESTADISTICAS");
@@ -116,6 +116,7 @@ public class Principal_Entrenador extends JFrame {
 			public void actionPerformed(ActionEvent e) 
 			{
 				
+
 			}
 		});
 		btnVerEstadisticas.setHorizontalAlignment(SwingConstants.LEFT);
@@ -129,16 +130,19 @@ public class Principal_Entrenador extends JFrame {
 		btnClasificacion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Clasificacion_Entrenador c = null;
+				
+				Clasificacion_Entrenador r = null;
 				try {
-					c = new Clasificacion_Entrenador(controller, j);
-				} catch (RemoteException | ParseException e1) {
+					r = new Clasificacion_Entrenador(controller, j);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				c.setVisible(true);
+				r.setVisible(true);
 				setVisible(false);
-				
 			}
 		});
 		btnClasificacion.setHorizontalAlignment(SwingConstants.LEFT);
@@ -149,19 +153,7 @@ public class Principal_Entrenador extends JFrame {
 		panel_izquierdo.add(btnClasificacion);
 		
 		btnVisualizarJugador = new JButton("VER FICHA");
-		btnVisualizarJugador.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				FichaEntrenador c = null;
-				try {
-					c = new FichaEntrenador(controller, j);
-				} catch (RemoteException | ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				c.setVisible(true);
-				setVisible(false);
-			}
-		});
+		btnVisualizarJugador.setEnabled(false);
 		btnVisualizarJugador.setHorizontalAlignment(SwingConstants.LEFT);
 		btnVisualizarJugador.setForeground(Color.WHITE);
 		btnVisualizarJugador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -173,6 +165,7 @@ public class Principal_Entrenador extends JFrame {
 		btnVisualziarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+			
 			}
 		});
 		btnVisualziarEquipo.setHorizontalAlignment(SwingConstants.LEFT);
@@ -187,16 +180,16 @@ public class Principal_Entrenador extends JFrame {
 		btnEditarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				EditarDatosEntrenador c = null;
+				EditarDatosEntrenador v = null;
 				try {
-					c = new EditarDatosEntrenador(controller, j);
+					v = new EditarDatosEntrenador(controller, j);
 				} catch (RemoteException | ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				c.setVisible(true);
+				v.setVisible(true);
 				setVisible(false);
-				
+
 			}
 		});
 		btnEditarJugador.setHorizontalAlignment(SwingConstants.LEFT);
@@ -206,102 +199,68 @@ public class Principal_Entrenador extends JFrame {
 		btnEditarJugador.setBounds(0, 120, 328, 42);
 		panel_izquierdo.add(btnEditarJugador);
 		
-		comboCategoria = new JComboBox<Categoria>();
-		comboCategoria.addItem(Categoria.ALEVIN);
-		comboCategoria.addItem(Categoria.INFANTIL);
-		comboCategoria.addItem(Categoria.CADETE);
-		comboCategoria.addItem(Categoria.JUVENIL);
-		comboCategoria.addItem(Categoria.SENIOR);
-		comboCategoria.setBounds(543, 17, 109, 26);
-		panel_central.add(comboCategoria);
+		JLabel lblNombre = new JLabel("Nombre");
+		lblNombre.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
+		lblNombre.setBounds(450, 28,250, 26);
+		panel_central.add(lblNombre);
 		
-		lblCategoria = new JLabel("Selecciona una categoria:");
-		lblCategoria.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblCategoria.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
-		lblCategoria.setBounds(338, 17, 185, 26);
-		panel_central.add(lblCategoria);
+		JLabel lblNombre2 = new JLabel(j.getNombre());
+		lblNombre2.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
+		lblNombre2.setBounds(710, 28, 250, 26);
+		panel_central.add(lblNombre2);
 		
-		btnGO = new JButton("GO!");
-		btnGO.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				InsertarJPanel();
-			}
-		});
-		btnGO.setBounds(669, 11, 68, 38);
-		panel_central.add(btnGO);
+		JLabel lblApellido = new JLabel("Apellido");
+		lblApellido.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
+		lblApellido.setBounds(450, 60, 250, 26);
+		panel_central.add(lblApellido);
 		
-		JLabel label = new JLabel("");
-		label.setBounds(0, 348, 328, 58);
-		panel_izquierdo.add(label);
+		JLabel lblApellido2 = new JLabel(j.getApellido());
+		lblApellido2.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
+		lblApellido2.setBounds(710, 60, 250, 26);
+		panel_central.add(lblApellido2);
 		
-		JLabel label_1 = new JLabel("");
-		label_1.setBounds(0, 406, 328, 58);
-		panel_izquierdo.add(label_1);
+		JLabel lblDNI = new JLabel("DNI");
+		lblDNI.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
+		lblDNI.setBounds(450, 90, 250, 26);
+		panel_central.add(lblDNI);
 		
-		JLabel label_2 = new JLabel("");
-		label_2.setBounds(0, 464, 328, 31);
-		panel_izquierdo.add(label_2);
+		JLabel lblDNI2 = new JLabel(j.getDNI());
+		lblDNI2.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
+		lblDNI2.setBounds(710, 90, 250, 26);
+		panel_central.add(lblDNI2);
 		
-		JLabel label_3 = new JLabel("");
-		label_3.setBounds(0, 522, 328, 58);
-		panel_izquierdo.add(label_3);
+		JLabel lblFechaNcto = new JLabel("Fecha de nacimiento");
+		lblFechaNcto.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
+		lblFechaNcto.setBounds(450, 120, 250, 26);
+		panel_central.add(lblFechaNcto);
 		
-		JLabel label_4 = new JLabel("");
-		label_4.setBounds(0, 580, 328, 58);
-		panel_izquierdo.add(label_4);
+		JLabel lblFecha = new JLabel(j.getFecha_nacimiento());
+		lblFecha.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
+		lblFecha.setBounds(710, 120, 250, 26);
+		panel_central.add(lblFecha);
 		
-				
-		PanelCentro = new JPanel();
-		PanelCentro.setBackground(Color.WHITE);
-		PanelCentro.setBounds(328, 83, 1007, 550);
-		panel_central.add(PanelCentro);
-		PanelCentro.setLayout(null);
+		JLabel lblCorreo = new JLabel("Correo");
+		lblCorreo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
+		lblCorreo.setBounds(450, 150, 250, 26);
+		panel_central.add(lblCorreo);
 		
-		scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 0, 951, 411);
-		PanelCentro.add(scrollPane);
+		JLabel lblCorreo2 = new JLabel(j.getCorreo());
+		lblCorreo2.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
+		lblCorreo2.setBounds(710, 150, 250, 26);
+		panel_central.add(lblCorreo2);
 		
-		pScrollPane = new JPanel();
-		pScrollPane.setBackground(Color.WHITE);
-		scrollPane.setViewportView(pScrollPane);
-		GridBagLayout gbl_pScrollPane = new GridBagLayout();
-		gbl_pScrollPane.columnWidths = new int[]{0};
-		gbl_pScrollPane.rowHeights = new int[]{0};
-		gbl_pScrollPane.columnWeights = new double[]{Double.MIN_VALUE};
-		gbl_pScrollPane.rowWeights = new double[]{Double.MIN_VALUE};
-		pScrollPane.setLayout(gbl_pScrollPane);
-		InsertarJPanel();
-
+		JLabel lblTelef = new JLabel("Telefono");
+		lblTelef.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
+		lblTelef.setBounds(450, 180, 250, 26);
+		panel_central.add(lblTelef);
+		
+		JLabel lblTelef2 = new JLabel(String.valueOf(j.getTelefono()));
+		lblTelef2.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
+		lblTelef2.setBounds(710, 180, 250, 26);
+		panel_central.add(lblTelef2);
+	
+		
+		
+	
 	}
-	public void InsertarJPanel() {
-		pScrollPane.removeAll();
-		int x = 0;
-		int y = 50;
-		
-		List<Partido> partidosPorCategoria = new ArrayList<Partido>();
-		for (Partido pa : partidos)
-		{
-			if (pa.getEquipo_1().getCategoria().toUpperCase().equals(comboCategoria.getSelectedItem().toString()))
-			{
-				partidosPorCategoria.add(pa);
-			}
-		}
-		
-		for (int i = 0; i < partidosPorCategoria.size(); i++) 
-		{
-			Panel_Partidos panel = new Panel_Partidos(partidosPorCategoria.get(i));
-			panel.setVisible(true);
-			GridBagConstraints gbc_lblFoto = new GridBagConstraints();
-			gbc_lblFoto.ipadx = 1005;
-			gbc_lblFoto.ipady = 130;
-			gbc_lblFoto.gridx = x;
-			gbc_lblFoto.gridy = y;
-			pScrollPane.add(panel,gbc_lblFoto);
-
-			y = y + 130;
-		}
-		pScrollPane.repaint();
-		scrollPane.repaint();
-		repaint();
-	}
-	}
+}
