@@ -122,8 +122,22 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	{
 		return Gateway.getInstance().search_partidos();
 	}
-	public boolean RegistrarEquipo(Equipo e) throws RemoteException {
-		e.getInventario().forEach((m,c)->
+//	public boolean RegistrarEquipo(Equipo e) throws RemoteException {
+//		e.getInventario().forEach((m,c)->
+//		{
+//			int cantidad= m.getCantidad()-c;
+//			m.setCantidad(cantidad);
+//			try {
+//				AsignarInventario(m);
+//			} catch (RemoteException e1) {
+//				e1.printStackTrace();
+//			}
+//		});
+//		return DAO.getInstance().guardarObjeto(e);
+//	}
+	public boolean RegistrarEquipo2(String nombre, Categoria cat, Entrenador entrenador, List<Jugador>lista_Jugadores, HashMap<Material, Integer> inventario)throws RemoteException
+	{
+		inventario.forEach((m,c)->
 		{
 			int cantidad= m.getCantidad()-c;
 			m.setCantidad(cantidad);
@@ -133,7 +147,7 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 				e1.printStackTrace();
 			}
 		});
-		return DAO.getInstance().guardarObjeto(e);
+		return DAO.getInstance().guardarObjeto(new Equipo (nombre, cat, entrenador, lista_Jugadores, inventario));
 	}
 
 	public boolean RegistrarInventario(Tipo_Material tipo, int cantidad, long precio) throws RemoteException {
@@ -370,6 +384,7 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		}
 		return listaClasificacion;
 	}
-		
+
+
 	
 }

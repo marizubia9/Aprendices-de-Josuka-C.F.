@@ -522,12 +522,12 @@ public class RegistrarEquipo extends JFrame {
 
 	public void Anyadir_Equipo() 
 	{
+		boolean registrado =false;
 		Entrenador entrenador = null;
 		lista_Jugadores = new ArrayList<Jugador>();
 		for (Entrenador i : ListaEntrenador) {
 			if (i.toString().equals(comboEntrenador.getSelectedItem())) {
 				entrenador = i;
-				entrenador.setAsignado_equipo(true);
 			}
 		}
 		try {
@@ -544,12 +544,22 @@ public class RegistrarEquipo extends JFrame {
 		}
 		try {
 			
-			Equipo e = new Equipo(txtNombre.getText(), (Categoria) comboCategoria.getSelectedItem(), entrenador,
-					lista_Jugadores, inventario);
-			controller.RegistrarEquipo(e);
+			//Equipo e = new Equipo(txtNombre.getText(), (Categoria) comboCategoria.getSelectedItem(), entrenador,
+				//	lista_Jugadores, inventario);
+			
+			//controller.RegistrarEquipo(e);
+			if(controller.RegistrarEquipo2(txtNombre.getText(), (Categoria) comboCategoria.getSelectedItem(), entrenador,
+					lista_Jugadores, inventario)==true)
+			{
 			controller.ActualizarJugadorEquipo(lista_Jugadores);
+			entrenador.setAsignado_equipo(true);
 			txtNombre.setText("");
 			vaciarJList();
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "No se ha registrado correctamente el equipo");
+			}
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

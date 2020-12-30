@@ -63,8 +63,12 @@ public class Controller {
 		rsl.getService().RegistrarAdmin(correo, psw);
 	}
 
-	public void RegistrarEquipo(Equipo e) throws RemoteException {
-		rsl.getService().RegistrarEquipo(e);
+//	public boolean RegistrarEquipo(Equipo e) throws RemoteException {
+//		return rsl.getService().RegistrarEquipo(e);
+//	}
+	public boolean RegistrarEquipo2(String nombre, Categoria cat, Entrenador entrenador, List<Jugador>lista_Jugadores, HashMap<Material, Integer> inventario) throws RemoteException{
+		
+		return rsl.getService().RegistrarEquipo2(nombre, cat, entrenador, lista_Jugadores, inventario);
 	}
 
 	public void RegistrarInventario(Tipo_Material mat, int cantidad, long precio) throws RemoteException {
