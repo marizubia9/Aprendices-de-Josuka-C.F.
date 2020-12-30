@@ -1,9 +1,11 @@
 package Aprendices_de_Josuka.LD;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 import lombok.Getter;
@@ -18,6 +20,7 @@ public class Material implements Serializable {
 	private Tipo_Material tipo;
 	private int cantidad;
 	private long precio;
+
 
 	public Material( Tipo_Material tipo, int cantidad, long precio) {
 		super();

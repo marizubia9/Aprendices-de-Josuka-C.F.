@@ -417,7 +417,7 @@ public class EditarEntrenador extends JFrame {
 				lblApellidoEntrenador.setText(e.getApellido());
 				txtSalario.setText(String.valueOf(e.getSalario()));
 				try {
-					lblEquipoEntrenador.setText(controller.ObtenerEquipoEntrenador(e));
+					lblEquipoEntrenador.setText(controller.ObtenerEquipoEntrenador(e.getDNI()));
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

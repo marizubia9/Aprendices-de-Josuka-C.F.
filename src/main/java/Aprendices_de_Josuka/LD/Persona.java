@@ -2,14 +2,14 @@ package Aprendices_de_Josuka.LD;
 
 import java.io.Serializable;
 
+import javax.jdo.annotations.Discriminator;
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
 import lombok.Data;
-@PersistenceCapable
-@Inheritance(strategy=InheritanceStrategy.SUBCLASS_TABLE)
+
 @Data 
 public class Persona implements Serializable{
 	

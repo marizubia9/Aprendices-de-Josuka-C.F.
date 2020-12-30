@@ -100,6 +100,12 @@ public class Controller {
 	public List<Jugador> MostrarJugadores(Categoria c) throws RemoteException {
 		return rsl.getService().MostrarJugadores(c);
 	}
+	public List<Jugador> equipoJugadores(Equipo e) throws RemoteException {
+		return rsl.getService().equipoJugadores(e);
+	}
+	public Entrenador equipoEntrenador(Equipo e) throws RemoteException {
+		return rsl.getService().equipoEntrenador(e);
+	}
 	public Partido sancionPartido(String cod) throws RemoteException, ParseException {
 		return rsl.getService().sancionPartido(cod);
 	}
@@ -123,7 +129,7 @@ public class Controller {
 	{
 		return rsl.getService().getEquiposFilter(cat);
 	}
-	public String ObtenerEquipoEntrenador(Entrenador entrenador)throws RemoteException
+	public String ObtenerEquipoEntrenador(String entrenador)throws RemoteException
 	{
 		return rsl.getService().ObtenerEquipoEntrenador(entrenador);
 	}
@@ -139,9 +145,13 @@ public class Controller {
 	{
 		rsl.getService().ActualizarEntrenador(e, salario);
 	}
-	public void ActualizarEquipo(Equipo equipo, HashMap inventario, List<Jugador> jugadores) throws RemoteException
+	public void ActualizarEquipo(Equipo equipo, HashMap<Material, Integer> inventario, List<Jugador> jugadores) throws RemoteException
 	{
 		rsl.getService().ActualizarEquipo(equipo, inventario, jugadores);
+	}
+	public void ActualizarEquipoEntrenador(Entrenador e) throws RemoteException
+	{
+		rsl.getService().ActualizarEquipoEntrenador(e);
 	}
 	public  void AsignarInventario(Material m) throws RemoteException
 	{

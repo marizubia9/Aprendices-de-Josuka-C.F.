@@ -58,9 +58,9 @@ public class RegistrarEquipo extends JFrame {
 	private JLabel lblNombre;
 	private JLabel lblCategoria;
 	private JTextField txtNombre;
-	private JComboBox comboCategoria;
+	private JComboBox<Categoria> comboCategoria;
 	private List<Entrenador> ListaEntrenador;
-	private JComboBox comboEntrenador;
+	private JComboBox<String> comboEntrenador;
 	private JLabel lblJugadores;
 	private JList<String> listaJugadores1;
 	private JPanel panel_scrollpane;
@@ -80,7 +80,6 @@ public class RegistrarEquipo extends JFrame {
 	private Set<String> HashSet;
 	private Controller controller;
 
-	private boolean MostrarJugadores;
 	private JPanel panel_izquierdo;
 	private JButton btnHome;
 	private JButton btnAnyadirEquipo;
@@ -92,23 +91,7 @@ public class RegistrarEquipo extends JFrame {
 	private JButton buttonEliminar;
 	private JButton btnEditarEquipo;
 	private JButton btnEditarJugador;
-
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					RegistrarEquipo frame = new RegistrarEquipo();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-
+	
 	/**
 	 * Create the frame.
 	 * @param controller 
@@ -185,10 +168,10 @@ public class RegistrarEquipo extends JFrame {
 		btnAnyadir.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		btnAnyadir.setForeground(Color.WHITE);
 		btnAnyadir.setBackground(new Color(0, 102, 0));
-		btnAnyadir.setBounds(1112, 39, 151, 48);
+		btnAnyadir.setBounds(1082, 39, 171, 48);
 		panel_central.add(btnAnyadir);
 
-		comboCategoria = new JComboBox();
+		comboCategoria = new JComboBox<Categoria>();
 		comboCategoria.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		comboCategoria.setBounds(554, 138, 189, 32);
 		comboCategoria.addItem(Categoria.ALEVIN);
@@ -205,7 +188,7 @@ public class RegistrarEquipo extends JFrame {
 		lblEntrenador.setBounds(396, 199, 135, 31);
 		panel_central.add(lblEntrenador);
 
-		comboEntrenador = new JComboBox();
+		comboEntrenador = new JComboBox<String>();
 		comboEntrenador.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		comboEntrenador.setBounds(554, 201, 189, 32);
 		RellenarEntrenadores();
@@ -215,7 +198,7 @@ public class RegistrarEquipo extends JFrame {
 		btnMostrarJugadores = new JButton("Mostrar Jugadores");
 		btnMostrarJugadores.setBackground(new Color(0, 102, 0));
 		btnMostrarJugadores.setForeground(Color.WHITE);
-		btnMostrarJugadores.setBounds(765, 140, 135, 29);
+		btnMostrarJugadores.setBounds(765, 140, 155, 29);
 		panel_central.add(btnMostrarJugadores);
 
 		jugadores_lista = new ArrayList<String>();
@@ -395,17 +378,24 @@ public class RegistrarEquipo extends JFrame {
 					JOptionPane.showMessageDialog(null, "Introduce el nombre del equipo");
 				} else if (HashSet == null) {
 					JOptionPane.showMessageDialog(null, "Introduce jugadores");
+				}
+				else if (HashSet.size() > 11) {
+						JOptionPane.showMessageDialog(null, "Un equipo debe tener maximo 11 jugadores");
 				} else if (inventario == null) {
 					JOptionPane.showMessageDialog(null, "Asigna material al equipo");
 				}
 
 				else {
-					Anyadir_Equipo();
+					try {
+						Anyadir_Equipo();
+					} catch (RemoteException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					txtNombre.setText("");
 					MostrarJugadores();
 					RellenarEntrenadores();
 					scrollPane2.repaint();
-					comboEntrenador.removeAllItems();
 					scrollPane2.repaint();
 					panel_central.repaint();
 					JListaJugadores1.removeAll();
@@ -468,7 +458,10 @@ public class RegistrarEquipo extends JFrame {
 		ListaJugadores1.clear();
 		try {
 			for (Jugador a : controller.MostrarJugadores((Categoria) comboCategoria.getSelectedItem())) {
-				ListaJugadores1.add(a.toString());
+				if(a.isAsignado() == false)
+				{
+					ListaJugadores1.add(a.toString());
+				}
 			}
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
@@ -520,14 +513,14 @@ public class RegistrarEquipo extends JFrame {
 		setVisible(false);
 	}
 
-	public void Anyadir_Equipo() 
+	public void Anyadir_Equipo() throws RemoteException 
 	{
-		boolean registrado =false;
 		Entrenador entrenador = null;
 		lista_Jugadores = new ArrayList<Jugador>();
 		for (Entrenador i : ListaEntrenador) {
 			if (i.toString().equals(comboEntrenador.getSelectedItem())) {
 				entrenador = i;
+				controller.ActualizarEquipoEntrenador(entrenador);
 			}
 		}
 		try {
@@ -544,15 +537,11 @@ public class RegistrarEquipo extends JFrame {
 		}
 		try {
 			
-			//Equipo e = new Equipo(txtNombre.getText(), (Categoria) comboCategoria.getSelectedItem(), entrenador,
-				//	lista_Jugadores, inventario);
-			
-			//controller.RegistrarEquipo(e);
 			if(controller.RegistrarEquipo2(txtNombre.getText(), (Categoria) comboCategoria.getSelectedItem(), entrenador,
 					lista_Jugadores, inventario)==true)
 			{
+			
 			controller.ActualizarJugadorEquipo(lista_Jugadores);
-			entrenador.setAsignado_equipo(true);
 			txtNombre.setText("");
 			vaciarJList();
 			}
@@ -578,5 +567,11 @@ public class RegistrarEquipo extends JFrame {
 				comboEntrenador.addItem(a.toString());
 			}
 		}
+	}
+	public void AsignarMaterial(Material m, int i)
+	{
+		inventario.put(m, i);
+		System.out.println(inventario.toString());
+		
 	}
 }

@@ -62,7 +62,7 @@ public class Panel_Jugador extends JPanel {
 		add(lblAsignado);
 		
 		int edad=0;
-		StringTokenizer st= new StringTokenizer(jugador.getFecha_nacimiento(),"/");
+		StringTokenizer st= new StringTokenizer(jugador.getFecha_nacimiento(),"-");
 		Integer[] fecha=new Integer[3];
 		int i=0;
 		while(st.hasMoreTokens()){

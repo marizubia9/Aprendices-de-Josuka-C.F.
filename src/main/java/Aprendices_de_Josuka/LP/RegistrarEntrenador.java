@@ -204,7 +204,7 @@ public class RegistrarEntrenador extends JFrame {
 				String nombre = txtNombre.getText();
 				String apellido = txtApellido.getText();
 				Date fecha_date = dateChooser.getDate();
-				String DATE_FORMAT = "dd/MM/yyyy";
+				String DATE_FORMAT = "yyyy-MM-dd";
 				SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
 				String fecha_S = sdf.format(fecha_date);
 				String DNI = txtDNI.getText();

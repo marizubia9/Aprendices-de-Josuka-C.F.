@@ -99,6 +99,20 @@ public class Anyadir_Inventario extends JFrame {
 		panel_superior.setBackground(new Color(0, 102, 0));
 		contentPane.add(panel_superior);
 		panel_superior.setLayout(null);
+		
+		panel_central = new JPanel();
+		panel_central.setBackground(Color.WHITE);
+		panel_central.setBounds(0, 187, 1278, 497);
+		contentPane.add(panel_central);
+		panel_central.setLayout(null);
+		
+		panel_izquierdo = new JPanel();
+		panel_izquierdo.setLayout(null);
+		panel_izquierdo.setForeground(new Color(0, 102, 0));
+		panel_izquierdo.setBorder(null);
+		panel_izquierdo.setBackground(new Color(0, 102, 0));
+		panel_izquierdo.setBounds(0, 0, 328, 528);
+		panel_central.add(panel_izquierdo);
 
 		txtLosAprendicesDe = new JTextField();
 		txtLosAprendicesDe.setEditable(false);
@@ -111,11 +125,6 @@ public class Anyadir_Inventario extends JFrame {
 		panel_superior.add(txtLosAprendicesDe);
 		txtLosAprendicesDe.setColumns(10);
 
-		panel_central = new JPanel();
-		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 173, 1278, 528);
-		contentPane.add(panel_central);
-		panel_central.setLayout(null);
 		
 		btnHome = new JButton("HOME");
 		btnHome.addActionListener(new ActionListener() {
@@ -291,7 +300,12 @@ public class Anyadir_Inventario extends JFrame {
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Anyadir();
+				try {
+					Anyadir();
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnAceptar.setForeground(new Color(255, 255, 255));
@@ -300,16 +314,7 @@ public class Anyadir_Inventario extends JFrame {
 		btnAceptar.setBounds(737, 380, 126, 30);
 		panel_central.add(btnAceptar);
 		
-		JButton btnSalir = new JButton("Salir");
-		btnSalir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				r.setVisible(true);
-				setVisible(false);
-			}
-		});
-		btnSalir.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
-		btnSalir.setBounds(1143, 437, 88, 30);
-		panel_central.add(btnSalir);
+	
 	}
 	
 	
@@ -329,7 +334,7 @@ public class Anyadir_Inventario extends JFrame {
 		}
 		
 	}
-	public void Anyadir()
+	public void Anyadir() throws RemoteException
 	{
 		int cantidad=0;
 		try{
@@ -356,7 +361,11 @@ public class Anyadir_Inventario extends JFrame {
 						m.setCantidad(cant);
 						inventario.put(m,cantidad);
 						txtCantidad.setText("");
-						
+						System.out.println(m.getTipo());
+						System.out.println(cantidad);
+						r.AsignarMaterial(m, cantidad);
+						r.setVisible(true);
+						setVisible(false);
 						
 					}
 		}

@@ -10,7 +10,6 @@ import lombok.Getter;
 import lombok.Setter;
 @Getter
 @Setter
-@PersistenceCapable
 public class Sancion implements Serializable{
 
 	@PrimaryKey

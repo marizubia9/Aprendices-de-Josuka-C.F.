@@ -22,17 +22,17 @@ public class Equipo implements Serializable{
 	@PrimaryKey
 	private String nombre;
 	private Categoria categoria;
-	private Entrenador entrenador;
+	private String dni_entrenador;
 	@Join
-	private List<Jugador> lista_jugador;
+	private List<String> lista_jugador;
 	@Join
-	private HashMap<Material, Integer> inventario ;
+	private HashMap<String, Integer> inventario ;
 
-	public Equipo(String nombre, Categoria categoria,Entrenador entrenador, List<Jugador>lista_jugador, HashMap<Material, Integer> inventario) {
+	public Equipo(String nombre, Categoria categoria,String entrenador, List<String>lista_jugador, HashMap<String, Integer> inventario) {
 		super();
 		this.nombre = nombre;
 		this.categoria = categoria;
-		this.entrenador=entrenador;
+		this.dni_entrenador=entrenador;
 		this.lista_jugador=lista_jugador;
 		this.inventario = inventario;
 	}

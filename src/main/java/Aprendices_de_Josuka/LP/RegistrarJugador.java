@@ -208,7 +208,7 @@ public class RegistrarJugador extends JFrame {
 		String nombre = txtNombre.getText();
 		String apellido = txtApellido.getText();
 		objDate = dateChooser.getDate();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	    String date = dateFormat.format(objDate);
 		
 		String DNI = txtDNI.getText();
@@ -246,7 +246,6 @@ public class RegistrarJugador extends JFrame {
 			{
 				if(controller.EntrarJugador(correo, psw)==true)
 				{
-					System.out.println("HOLA");
 					Principal_Jugador a = new Principal_Jugador(controller, new Jugador(nombre, apellido, date, DNI, false, false, telefono, correo, psw, false, false));
 					a.setVisible(true);
 					setVisible(false);

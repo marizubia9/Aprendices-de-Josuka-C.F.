@@ -362,7 +362,7 @@ public class Visualizar_Equipos_Jugador extends JFrame {
 			if(a.getNombre().equals(comboEquipos.getSelectedItem().toString())) 
 				e=a; 
 		}
-		lbl_Entrenador.setText(e.getEntrenador().toString());
+		lbl_Entrenador.setText(e.getDni_entrenador());
 		ArrayList <String> ListaNombres= new ArrayList<String>();
 		e.getLista_jugador().forEach(a->ListaNombres.add(a.toString()));
 		JList<String> JListaJugadores=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
@@ -383,7 +383,7 @@ public class Visualizar_Equipos_Jugador extends JFrame {
 				e=a; 
 		}
 		ArrayList <String> ListaNombres= new ArrayList<String>();
-		e.getInventario().forEach((m,c)->ListaNombres.add(c+" "+m.getTipo()));
+		e.getInventario().forEach((m,c)->ListaNombres.add(c+" "+m));
 		JList<String> JListaInventario=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
 		scrollPane_i.setViewportView(JListaInventario);
 		JListaInventario.setLayoutOrientation(JList.VERTICAL);

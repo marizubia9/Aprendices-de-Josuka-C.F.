@@ -27,7 +27,7 @@ public class testPartidos {
 	@Mock
 	Equipo e;
 	@Mock
-	HashMap <Material, Integer> inventario;
+	HashMap <String, Integer> inventario;
 	
 	@Before
     public void setUp() {

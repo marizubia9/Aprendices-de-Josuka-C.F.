@@ -137,17 +137,27 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 //	}
 	public boolean RegistrarEquipo2(String nombre, Categoria cat, Entrenador entrenador, List<Jugador>lista_Jugadores, HashMap<Material, Integer> inventario)throws RemoteException
 	{
+		HashMap <String, Integer> lista = new HashMap<String, Integer>();
 		inventario.forEach((m,c)->
 		{
 			int cantidad= m.getCantidad()-c;
 			m.setCantidad(cantidad);
+			lista.put(m.getTipo().name(), c);
 			try {
 				AsignarInventario(m);
 			} catch (RemoteException e1) {
 				e1.printStackTrace();
 			}
 		});
-		return DAO.getInstance().guardarObjeto(new Equipo (nombre, cat, entrenador, lista_Jugadores, inventario));
+		
+		List <String> j = new ArrayList<String>();
+		lista_Jugadores.forEach(e->
+		{
+			j.add(e.getDNI());
+		});
+		
+	
+		return DAO.getInstance().guardarObjeto(new Equipo (nombre, cat, entrenador.getDNI(), j, lista));
 	}
 
 	public boolean RegistrarInventario(Tipo_Material tipo, int cantidad, long precio) throws RemoteException {
@@ -161,6 +171,7 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 				
 			}
 		}
+
 		
 		return DAO.getInstance().guardarObjeto(new Material(tipo, cantidad, precio));
 	}
@@ -179,9 +190,9 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		Equipo equipo = null;
 		for (Equipo e:DAO.getInstance().getEquipo())
 		{
-			for (Jugador j:e.getLista_jugador())
+			for (String j:e.getLista_jugador())
 			{
-				if (j.getDNI().equals(DNI))
+				if (j.equals(DNI))
 				{
 					equipo = e;
 				}
@@ -274,10 +285,39 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 					if(c.equals(Categoria.SENIOR)){
 						if (edad>18)ListaJugadores1.add(a);
 					}
+			
 		}
 		return ListaJugadores1;
 	}
-	public int getEdad(String date)
+	public Entrenador equipoEntrenador (Equipo e)throws RemoteException
+	{
+		List<Entrenador> entrenadores = DAO.getInstance().getEntrenador();
+		for (Entrenador en: entrenadores)
+		{
+			if(en.getDNI().equals(e.getDni_entrenador()))
+			{
+				return en;
+			}
+		}
+		return null;
+	}
+	public List<Jugador> equipoJugadores (Equipo e)throws RemoteException
+	{
+		List<Jugador> jugadores = DAO.getInstance().getJugador();
+		List<Jugador> lista = new ArrayList<Jugador>();
+		for (Jugador j: jugadores)
+		{
+			for (String a: e.getLista_jugador())
+			{
+				if(j.getDNI().equals(a))
+				{
+					lista.add(j);
+				}
+			}
+		}
+		return lista;
+	}
+	public int getEdad(String date)throws RemoteException
 	{
 		StringTokenizer st= new StringTokenizer(date,"-");
 		Integer[] fecha=new Integer[3];
@@ -307,7 +347,10 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		return null;
 		
 	}
-
+	public void ActualizarEquipoEntrenador(Entrenador ent)throws RemoteException
+	{
+		DAO.getInstance().ActualizarEquipoEntrenador(ent);
+	}
 	public List<Entrenador> getEntrenador() throws RemoteException {
 		return DAO.getInstance().getEntrenador();
 	}
@@ -335,26 +378,36 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	{
 		DAO.getInstance().ActualizarEquipoJugador(lista_Jugadores);
 	}
-	public void ActualizarEquipo(Equipo equipo, HashMap inventario, List<Jugador> jugadores) throws RemoteException
+	public void ActualizarEquipo(Equipo equipo, HashMap<Material, Integer> inventario, List<Jugador> jugadores) throws RemoteException
 	{
-		DAO.getInstance().ActualizarEquipo(equipo, inventario, jugadores);
+		HashMap <String, Integer> lista = new HashMap<String, Integer>();
+		inventario.forEach((m,c)->
+		{
+			lista.put(m.getTipo().name(), c);
+		});
+		List <String> j = new ArrayList<String>();
+		jugadores.forEach(e->
+		{
+			j.add(e.getDNI());
+		});
+		DAO.getInstance().ActualizarEquipo(equipo, lista, j);
 	}
 	public void ActualizarMaterial(Tipo_Material tipo, int cantidad, long precio)throws RemoteException
 	{
 		DAO.getInstance().ModificarMaterial(tipo, cantidad, precio);
 	}
-	public String ObtenerEquipoEntrenador(Entrenador entrenador)throws RemoteException
+	public String ObtenerEquipoEntrenador(String entrenador)throws RemoteException
 	{
 		for(Equipo e: getEquipos()){
-			if(e.getEntrenador().equals(entrenador))return e.getNombre();
+			if(e.getDni_entrenador().equals(entrenador))return e.getNombre();
 		}
 		return "No tiene ningun equipo asignado";
 	}
 	public String ObtenerEquipoJugador(Jugador jugador)throws RemoteException
 	{
 		for(Equipo e: getEquipos()){
-			for(Jugador j: e.getLista_jugador()){
-				if(j.equals(jugador))return e.getNombre();
+			for(String j: e.getLista_jugador()){
+				if(j.equals(jugador.getDNI()))return e.getNombre();
 			}
 		}
 		return "No tiene ningun equipo asignado";

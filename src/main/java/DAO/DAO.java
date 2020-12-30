@@ -65,12 +65,14 @@ public class DAO {
 			}
 			if (objeto instanceof Equipo) 
 			{
-				objeto = new Equipo(((Equipo) objeto).getNombre(), ((Equipo) objeto).getCategoria(),((Equipo) objeto).getEntrenador(),((Equipo) objeto).getLista_jugador(),((Equipo) objeto).getInventario());
+				objeto = new Equipo(((Equipo) objeto).getNombre(), ((Equipo) objeto).getCategoria(),
+						((Equipo) objeto).getDni_entrenador(),((Equipo) objeto).getLista_jugador(),
+						((Equipo) objeto).getInventario());
 				persistentManager.makePersistent(objeto);
 				return true;
 			}
 			if (objeto instanceof Material) {
-				objeto = new Material(((Material) objeto).getTipo(),((Material) objeto).getCantidad(), ((Material) objeto).getPrecio());
+				objeto = new Material(((Material)(Material) objeto).getTipo(),((Material) objeto).getCantidad(), ((Material) objeto).getPrecio());
 				persistentManager.makePersistent(objeto);
 				return true;
 			}
@@ -257,8 +259,25 @@ public class DAO {
 			}
 		}
 	}
+	public void ActualizarEquipoEntrenador(Entrenador ent)
+	{
+		try {
+		
+				Entrenador e= persistentManager.getObjectById(Entrenador.class, ent.getDNI());
+				e.setAsignado_equipo(true);
+			
+		} catch (Exception ex) {
+
+			System.err.println("* Exception modifying data into db: " + ex.getMessage());
+		}
+		finally {
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
+		}
+	}
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public void ActualizarEquipo(Equipo equipo, HashMap inventario, List<Jugador> jugadores)
+	public void ActualizarEquipo(Equipo equipo, HashMap inventario, List<String> jugadores)
 	{
 		try
 		{

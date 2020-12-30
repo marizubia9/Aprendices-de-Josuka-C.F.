@@ -322,7 +322,12 @@ public class Visualizar_Equipos extends JFrame {
 		JButton btnGO2 = new JButton("GO!");
 		btnGO2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MostrarJugadores();
+				try {
+					MostrarJugadores();
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				MostrarInventario();
 			}
 		});
@@ -380,7 +385,7 @@ public class Visualizar_Equipos extends JFrame {
 		});
 	}
 	
-	public void MostrarJugadores()
+	public void MostrarJugadores() throws RemoteException
 	{
 		
 		Equipo e=null;
@@ -389,9 +394,11 @@ public class Visualizar_Equipos extends JFrame {
 			if(a.getNombre().equals(comboEquipos.getSelectedItem().toString())) 
 				e=a; 
 		}
-		lbl_Entrenador.setText(e.getEntrenador().toString());
+		Entrenador en = controller.equipoEntrenador(e);
+		lbl_Entrenador.setText(en.toString());
 		ArrayList <String> ListaNombres= new ArrayList<String>();
-		e.getLista_jugador().forEach(a->ListaNombres.add(a.toString()));
+		List <Jugador> jugadores = controller.equipoJugadores(e);
+		jugadores.forEach(a->ListaNombres.add(a.toString()));
 		JList<String> JListaJugadores=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
 		scrollPaneJ.setViewportView(JListaJugadores);
 		JListaJugadores.setLayoutOrientation(JList.VERTICAL);
@@ -410,7 +417,7 @@ public class Visualizar_Equipos extends JFrame {
 				e=a; 
 		}
 		ArrayList <String> ListaNombres= new ArrayList<String>();
-		e.getInventario().forEach((m,c)->ListaNombres.add(c+" "+m.getTipo()));
+		e.getInventario().forEach((m,c)->ListaNombres.add(c+" "+m));
 		JList<String> JListaInventario=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
 		scrollPane_i.setViewportView(JListaInventario);
 		JListaInventario.setLayoutOrientation(JList.VERTICAL);

@@ -594,7 +594,8 @@ public class EditarEquipo extends JFrame{
 						}
 					}
 					}
-					e.getLista_jugador().forEach(j->modelo.addElement(j));
+					
+//					e.getLista_jugador().forEach(q->modelo.addElement(q));
 					list_JugadoresEquipo.setModel(modelo);
 					pScrollPane.repaint();
 					

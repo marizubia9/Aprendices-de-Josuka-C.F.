@@ -101,25 +101,25 @@ public class RegistrarAdmin extends JFrame {
 		lblNombre = new JLabel("Correo");
 		lblNombre.setForeground(Color.DARK_GRAY);
 		lblNombre.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblNombre.setBounds(373, 59, 115, 31);
+		lblNombre.setBounds(353, 150, 135, 31);
 		panel_central.add(lblNombre);
 
 		lblApellido = new JLabel("Contraseña");
 		lblApellido.setForeground(Color.DARK_GRAY);
 		lblApellido.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblApellido.setBounds(373, 106, 115, 31);
+		lblApellido.setBounds(353, 206, 135, 31);
 		panel_central.add(lblApellido);
 
 		
 
 		txtNombre = new JTextField();
-		txtNombre.setBounds(551, 59, 260, 32);
+		txtNombre.setBounds(551, 150, 260, 32);
 		panel_central.add(txtNombre);
 		txtNombre.setColumns(10);
 
 		txtApellido = new JTextField();
 		txtApellido.setColumns(10);
-		txtApellido.setBounds(551, 105, 260, 32);
+		txtApellido.setBounds(551, 206, 260, 32);
 		panel_central.add(txtApellido);
 
 		
