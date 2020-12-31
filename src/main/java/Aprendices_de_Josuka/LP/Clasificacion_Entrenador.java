@@ -284,7 +284,23 @@ public class Clasificacion_Entrenador extends JFrame {
 		gbl_pScrollPane.columnWeights = new double[]{Double.MIN_VALUE};
 		gbl_pScrollPane.rowWeights = new double[]{Double.MIN_VALUE};
 		pScrollPane.setLayout(gbl_pScrollPane);
+		
+		JButton btnGo = new JButton("GO!");
+		btnGo.setBounds(674, 16, 115, 29);
+		panel_central.add(btnGo);
+		btnGo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try 
+				{
+					InsertarJPanel();
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		InsertarJPanel();
+		
 	}
 
 	

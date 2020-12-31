@@ -40,12 +40,12 @@ public class FichaEntrenador extends JFrame {
 	private JButton btnEditarJugador;
 	private JPanel panel_izquierdo;
 	private Controller controller; 
-	private Entrenador j;
+	private Entrenador ent;
 	
 	
-	public FichaEntrenador(Controller controller, Entrenador j) throws RemoteException, ParseException 
+	public FichaEntrenador(Controller controller, Entrenador ent) throws RemoteException, ParseException 
 	{
-		this.j = j;
+		this.ent = ent;
 		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
@@ -100,7 +100,7 @@ public class FichaEntrenador extends JFrame {
 			{
 				Principal_Entrenador a = null;
 				try {
-					a = new Principal_Entrenador(controller, j);
+					a = new Principal_Entrenador(controller, ent);
 				} catch (RemoteException | ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -118,7 +118,7 @@ public class FichaEntrenador extends JFrame {
 				
 				EstadisticasEntrenador r = null;
 				try {
-					r = new EstadisticasEntrenador(controller, j);
+					r = new EstadisticasEntrenador(controller, ent);
 				} catch (ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -145,7 +145,7 @@ public class FichaEntrenador extends JFrame {
 				
 				Clasificacion_Entrenador r = null;
 				try {
-					r = new Clasificacion_Entrenador(controller, j);
+					r = new Clasificacion_Entrenador(controller, ent);
 				} catch (ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -179,7 +179,7 @@ public class FichaEntrenador extends JFrame {
 				
 				Visualizar_Equipos_Entrenador v = null;
 				try {
-					v = new Visualizar_Equipos_Entrenador(controller,j);
+					v = new Visualizar_Equipos_Entrenador(controller,ent);
 				} catch (RemoteException | ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -202,7 +202,7 @@ public class FichaEntrenador extends JFrame {
 			{
 				EditarDatosEntrenador v = null;
 				try {
-					v = new EditarDatosEntrenador(controller, j);
+					v = new EditarDatosEntrenador(controller, ent);
 				} catch (RemoteException | ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -224,7 +224,7 @@ public class FichaEntrenador extends JFrame {
 			{
 				Visualizar_Mis_Jugadores ed = null;
 				try {
-					ed = new Visualizar_Mis_Jugadores(controller, j);
+					ed = new Visualizar_Mis_Jugadores(controller, ent);
 				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -246,7 +246,7 @@ public class FichaEntrenador extends JFrame {
 		lblNombre.setBounds(450, 28,250, 26);
 		panel_central.add(lblNombre);
 		
-		JLabel lblNombre2 = new JLabel(j.getNombre());
+		JLabel lblNombre2 = new JLabel(ent.getNombre());
 		lblNombre2.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
 		lblNombre2.setBounds(710, 28, 250, 26);
 		panel_central.add(lblNombre2);
@@ -256,7 +256,7 @@ public class FichaEntrenador extends JFrame {
 		lblApellido.setBounds(450, 60, 250, 26);
 		panel_central.add(lblApellido);
 		
-		JLabel lblApellido2 = new JLabel(j.getApellido());
+		JLabel lblApellido2 = new JLabel(ent.getApellido());
 		lblApellido2.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
 		lblApellido2.setBounds(710, 60, 250, 26);
 		panel_central.add(lblApellido2);
@@ -266,7 +266,7 @@ public class FichaEntrenador extends JFrame {
 		lblDNI.setBounds(450, 90, 250, 26);
 		panel_central.add(lblDNI);
 		
-		JLabel lblDNI2 = new JLabel(j.getDNI());
+		JLabel lblDNI2 = new JLabel(ent.getDNI());
 		lblDNI2.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
 		lblDNI2.setBounds(710, 90, 250, 26);
 		panel_central.add(lblDNI2);
@@ -276,7 +276,7 @@ public class FichaEntrenador extends JFrame {
 		lblFechaNcto.setBounds(450, 120, 250, 26);
 		panel_central.add(lblFechaNcto);
 		
-		JLabel lblFecha = new JLabel(j.getFecha_nacimiento());
+		JLabel lblFecha = new JLabel(ent.getFecha_nacimiento());
 		lblFecha.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
 		lblFecha.setBounds(710, 120, 250, 26);
 		panel_central.add(lblFecha);
@@ -286,7 +286,7 @@ public class FichaEntrenador extends JFrame {
 		lblCorreo.setBounds(450, 150, 250, 26);
 		panel_central.add(lblCorreo);
 		
-		JLabel lblCorreo2 = new JLabel(j.getCorreo());
+		JLabel lblCorreo2 = new JLabel(ent.getCorreo());
 		lblCorreo2.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
 		lblCorreo2.setBounds(710, 150, 250, 26);
 		panel_central.add(lblCorreo2);
@@ -296,7 +296,7 @@ public class FichaEntrenador extends JFrame {
 		lblTelef.setBounds(450, 180, 250, 26);
 		panel_central.add(lblTelef);
 		
-		JLabel lblTelef2 = new JLabel(String.valueOf(j.getTelefono()));
+		JLabel lblTelef2 = new JLabel(String.valueOf(ent.getTelefono()));
 		lblTelef2.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
 		lblTelef2.setBounds(710, 180, 250, 26);
 		panel_central.add(lblTelef2);

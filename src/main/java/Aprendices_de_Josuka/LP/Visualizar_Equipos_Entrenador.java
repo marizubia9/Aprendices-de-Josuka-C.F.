@@ -46,9 +46,6 @@ public class Visualizar_Equipos_Entrenador extends JFrame {
 	private JComboBox<String> comboEquipos;
 	private List<Equipo>Lista_Equipos;
 	private JScrollPane scrollPaneJ;
-	private JScrollPane scrollPane_i;
-	private JPanel panel_i;
-	private JPanel pScrollPane_i ;
 	private JLabel lbl_Entrenador;
 	private JButton btnVerEstadisticas;
 	private JButton btnClasificacion;
@@ -307,7 +304,7 @@ public class Visualizar_Equipos_Entrenador extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				MostrarInventario();
+				//MostrarInventario();
 			}
 		});
 		btnGO2.setBounds(669, 60, 68, 38);
@@ -330,22 +327,6 @@ public class Visualizar_Equipos_Entrenador extends JFrame {
 		lblJugadores.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
 		lblJugadores.setBounds(371, 212, 109, 32);
 		panel_central.add(lblJugadores);
-		
-		JLabel lblInventario = new JLabel("Inventario:");
-		lblInventario.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
-		lblInventario.setBounds(814, 215, 88, 26);
-		panel_central.add(lblInventario);
-		
-		pScrollPane_i = new JPanel();
-		pScrollPane_i.setBounds(895, 239, 227, 241);
-		panel_central.add(pScrollPane_i);
-		pScrollPane_i.setLayout(new BorderLayout(0, 0));
-		
-		scrollPane_i = new JScrollPane();
-		pScrollPane_i.add(scrollPane_i, BorderLayout.CENTER);
-		
-		panel_i = new JPanel();
-		scrollPane_i.setViewportView(panel_i);
 	
 	}
 	
@@ -386,25 +367,25 @@ public class Visualizar_Equipos_Entrenador extends JFrame {
 		panel_central.repaint();
 		
 	}
-	
-	public void MostrarInventario()
-	{
-		Equipo e=null;
-		for(Equipo a:Lista_Equipos)
-		{
-			if(a.getNombre().equals(comboEquipos.getSelectedItem())) 
-				e=a; 
-		}
-		ArrayList <String> ListaNombres= new ArrayList<String>();
-		e.getInventario().forEach((m,c)->ListaNombres.add(c+" "+m));
-		JList<String> JListaInventario=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
-		scrollPane_i.setViewportView(JListaInventario);
-		JListaInventario.setLayoutOrientation(JList.VERTICAL);
-		scrollPane_i.repaint();
-		pScrollPane_i.repaint();
-		panel_central.repaint();
-		
-		
-		
-	}
+//	
+//	public void MostrarInventario()
+//	{
+//		Equipo e=null;
+//		for(Equipo a:Lista_Equipos)
+//		{
+//			if(a.getNombre().equals(comboEquipos.getSelectedItem())) 
+//				e=a; 
+//		}
+//		ArrayList <String> ListaNombres= new ArrayList<String>();
+//		e.getInventario().forEach((m,c)->ListaNombres.add(c+" "+m));
+//		JList<String> JListaInventario=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
+//		scrollPane_i.setViewportView(JListaInventario);
+//		JListaInventario.setLayoutOrientation(JList.VERTICAL);
+//		scrollPane_i.repaint();
+//		pScrollPane_i.repaint();
+//		panel_central.repaint();
+//		
+//		
+//		
+//	}
 }

@@ -48,6 +48,7 @@ public class Clasificacion_Jugador extends JFrame {
 	private JScrollPane scrollPane;
 	private Jugador j;
 	private List <Equipos_Ext> listaEquipos;
+	private JButton btnGo;
 	public Clasificacion_Jugador(Controller controller, Jugador j) throws RemoteException, ParseException 
 	{
 		this.j = j;
@@ -253,6 +254,22 @@ public class Clasificacion_Jugador extends JFrame {
 		gbl_pScrollPane.columnWeights = new double[]{Double.MIN_VALUE};
 		gbl_pScrollPane.rowWeights = new double[]{Double.MIN_VALUE};
 		pScrollPane.setLayout(gbl_pScrollPane);
+		
+		btnGo = new JButton("GO!");
+		btnGo.setBounds(667, 16, 115, 29);
+		panel_central.add(btnGo);
+		btnGo.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) {
+				try 
+				{
+					InsertarJPanel();
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		InsertarJPanel();
 	}
 

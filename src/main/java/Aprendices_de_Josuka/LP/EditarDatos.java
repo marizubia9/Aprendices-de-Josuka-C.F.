@@ -231,7 +231,7 @@ public class EditarDatos extends JFrame {
 		lblNombre.setBounds(450, 160, 250, 26);
 		panel_central.add(lblNombre);
 		
-		txtCorreo = new JTextField();
+		txtCorreo = new JTextField(j.getCorreo());
 		txtCorreo.setColumns(10);
 		txtCorreo.setBounds(700, 160, 260, 32);
 		panel_central.add(txtCorreo);

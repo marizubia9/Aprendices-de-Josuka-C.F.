@@ -42,7 +42,7 @@ public class EditarDatosEntrenador extends JFrame {
 	private JButton btnEditarJugador;
 	private JPanel panel_izquierdo;
 	private Controller controller; 
-	private Entrenador j;
+	private Entrenador ent;
 	private JTextField txtCorreo;
 	private JTextField txtPsw;
 	private JButton btnModificar;
@@ -50,9 +50,9 @@ public class EditarDatosEntrenador extends JFrame {
 	
 	
 	
-	public EditarDatosEntrenador(Controller controller, Entrenador j) throws RemoteException, ParseException 
+	public EditarDatosEntrenador(Controller controller, Entrenador e) throws RemoteException, ParseException 
 	{
-		this.j = j;
+		this.ent = e;
 		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
@@ -110,7 +110,7 @@ public class EditarDatosEntrenador extends JFrame {
 			{
 				EstadisticasEntrenador c = null;
 				try {
-					c = new EstadisticasEntrenador(controller, j);
+					c = new EstadisticasEntrenador(controller, ent);
 				} catch (RemoteException | ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -132,7 +132,7 @@ public class EditarDatosEntrenador extends JFrame {
 
 				Clasificacion_Entrenador c = null;
 				try {
-					c = new Clasificacion_Entrenador(controller, j);
+					c = new Clasificacion_Entrenador(controller, ent);
 				} catch (RemoteException | ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -154,7 +154,7 @@ public class EditarDatosEntrenador extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				FichaEntrenador c = null;
 				try {
-					c = new FichaEntrenador(controller, j);
+					c = new FichaEntrenador(controller, ent);
 				} catch (RemoteException | ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -175,7 +175,7 @@ public class EditarDatosEntrenador extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Visualizar_Equipos_Entrenador v = null;
 				try {
-					v = new Visualizar_Equipos_Entrenador(controller, j);
+					v = new Visualizar_Equipos_Entrenador(controller, ent);
 				} catch (RemoteException | ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -207,7 +207,7 @@ public class EditarDatosEntrenador extends JFrame {
 			{
 				Visualizar_Mis_Jugadores ed = null;
 				try {
-					ed = new Visualizar_Mis_Jugadores(controller, j);
+					ed = new Visualizar_Mis_Jugadores(controller, ent);
 				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -286,10 +286,10 @@ public class EditarDatosEntrenador extends JFrame {
 		}
 		else
 		{
-			if (controller.modificarCorreoEntrenador(j, correo, psw))
+			if (controller.modificarCorreoEntrenador(ent, correo, psw))
 			{
 				JOptionPane.showMessageDialog(null, "Cambios guardados");
-				Principal_Entrenador p= new Principal_Entrenador(controller, j);
+				Principal_Entrenador p= new Principal_Entrenador(controller, ent);
 				p.setVisible(true);
 				setVisible(false);
 			}

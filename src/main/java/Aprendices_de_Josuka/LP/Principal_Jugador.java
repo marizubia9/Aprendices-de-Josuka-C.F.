@@ -317,7 +317,7 @@ public class Principal_Jugador extends JFrame {
 				partidosPorCategoria.add(pa);
 			}
 		}
-		
+		System.out.println("partidos "+ partidosPorCategoria.size());
 		for (int i = 0; i < partidosPorCategoria.size(); i++) 
 		{
 			Panel_Partidos panel = new Panel_Partidos(partidosPorCategoria.get(i));
