@@ -16,7 +16,6 @@ import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Partido;
 import Aprendices_de_Josuka.LD.Sancion;
 import Aprendices_de_Josuka.LD.Tipo_Material;
-import Aprendices_de_Josuka.LN.Gestor;
 
 public interface itfFachada extends Remote
 {
@@ -26,7 +25,6 @@ public interface itfFachada extends Remote
 	public boolean RegistrarJugador (String nombre, String apellido, String fecha_S, String DNI, int telefono, String correo, String psw) throws RemoteException;
 	public boolean RegistrarAdmin(String correo, String psw) throws RemoteException;
 	public boolean RegistrarEntrenador (String nombre, String apellido, String fecha_S, String DNI, int telefono, String correo, String psw) throws RemoteException;
-	//public boolean RegistrarEquipo(Equipo e) throws RemoteException;
 	public boolean RegistrarEquipo2(String nombre, Categoria cat, Entrenador entrenador, List<Jugador>lista_Jugadores, HashMap<Material, Integer> inventario) throws RemoteException;
 	public boolean RegistrarInventario(Tipo_Material mat, int cantidad, long precio ) throws RemoteException;
 	public List<Jugador>getJugador() throws RemoteException;
@@ -35,11 +33,13 @@ public interface itfFachada extends Remote
 	public Partido sancionPartido(String codPartido) throws ParseException, RemoteException;
 	public int partidosGanados(String DNI) throws RemoteException, ParseException;
 	public boolean modificarCorreo(Jugador j, String correo, String psw) throws RemoteException ;
-	public List<Sancion> sancionesJugador(String DNI) throws RemoteException, ParseException;
+	public List<Sancion> sancionesPersona(String DNI) throws RemoteException, ParseException;
+	public List<Jugador> misJugadores(String ent)throws RemoteException;
 	public List<Partido>getPartidos() throws RemoteException, ParseException;
 	public List<Jugador> MostrarJugadores(Categoria c) throws RemoteException;
 	public List<Entrenador> getEntrenador() throws RemoteException;
 	public List<Equipo> getEquipos() throws RemoteException;
+	public int getRanking(String dni) throws ParseException, RemoteException;
 	public boolean modificarCorreoEntrenador(Entrenador j, String correo, String psw) throws RemoteException ;
 	public List<Partido> jugadorPartido(List<Partido> partidos, String DNI) throws RemoteException, ParseException;
 	public void ActualizarEquipoEntrenador(Entrenador ent)throws RemoteException;
@@ -53,7 +53,6 @@ public interface itfFachada extends Remote
 	public void ActualizarJugadorEquipo(List<Jugador> lista_Jugadores) throws RemoteException;
 	public void ActualizarEquipo(Equipo equipo, HashMap<Material, Integer> inventario, List<Jugador> jugadores) throws RemoteException;
 	public void ActualizarMaterial(Tipo_Material tipo, int cantidad, long precio)throws RemoteException;
-	public void ModificarMaterial(List<Material> lista_material)throws RemoteException;;
 	public  void AsignarInventario(Material m) throws RemoteException;
 	public Entrenador equipoEntrenador (Equipo e) throws RemoteException;
 	public List<Jugador> equipoJugadores (Equipo e)throws RemoteException;

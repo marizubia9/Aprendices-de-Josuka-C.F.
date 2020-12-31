@@ -15,7 +15,6 @@ import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Partido;
 import Aprendices_de_Josuka.LD.Sancion;
 import Aprendices_de_Josuka.LD.Tipo_Material;
-import Aprendices_de_Josuka.LN.Gestor;
 import Aprendices_de_Josuka.LP.Pantalla_Principal;
 import Remote.ServiceLocator;
 
@@ -79,8 +78,12 @@ public class Controller {
 		return rsl.getService().partidosGanados(DNI);
 	}
 	
-	public List<Sancion> sancionesJugador(String DNI) throws RemoteException, ParseException {
-		return rsl.getService().sancionesJugador(DNI);
+	public List<Sancion> sancionesPersona(String DNI) throws RemoteException, ParseException {
+		return rsl.getService().sancionesPersona(DNI);
+	}
+	public List<Jugador> misJugadores(String ent)throws RemoteException
+	{
+		return rsl.getService().misJugadores(ent);
 	}
 	public boolean modificarCorreo(Jugador j, String correo, String psw) throws RemoteException
 	{
@@ -103,6 +106,10 @@ public class Controller {
 
 	public List<Jugador> MostrarJugadores(Categoria c) throws RemoteException {
 		return rsl.getService().MostrarJugadores(c);
+	}
+	public int getRanking(String dni)throws RemoteException, ParseException 
+	{
+		return rsl.getService().getRanking(dni);
 	}
 	public List<Jugador> equipoJugadores(Equipo e) throws RemoteException {
 		return rsl.getService().equipoJugadores(e);

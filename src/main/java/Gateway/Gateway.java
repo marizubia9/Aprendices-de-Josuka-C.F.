@@ -58,18 +58,11 @@ public class Gateway implements itfGateway {
         JSONParser myParser = new JSONParser();
         JSONArray partidosArray = (JSONArray) myParser.parse( json_string );
 
-        partidosArray.stream().forEach(
-                element -> System.out.println(element)
-        );
-
+       
         myPartidosArray = (List) partidosArray.stream()
                 .map( element -> new Partido_JSON( element))
                 .collect(Collectors.toList()
         );
-
-        System.out.println("Number of partidos collected:" + myPartidosArray.size());
-
-
         return convertir_partidos(myPartidosArray);
 
 	}
@@ -144,18 +137,12 @@ public class Gateway implements itfGateway {
         JSONArray sancionesArray = (JSONArray) myParser.parse( json_string );
 
         // Lambda expression to print array
-        sancionesArray.stream().forEach(
-                element -> System.out.println(element)
-        );
+       
 
         mySancionesArray = (List) sancionesArray.stream()
                 .map( element -> new Sancion_JSON( element))
                 .collect(Collectors.toList()
         );
-
-        System.out.println("Number of partidos collected:");
-
-
         return  convertir_sanciones(mySancionesArray);
 
 	}

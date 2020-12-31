@@ -258,7 +258,7 @@ public class Principal_Jugador extends JFrame {
 				}
 			}
 		});
-		btnMisPartidos.setBounds(900, 11, 100, 42);
+		btnMisPartidos.setBounds(900, 11, 150, 42);
 		panel_central.add(btnMisPartidos);
 		
 		JLabel label = new JLabel("");

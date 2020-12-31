@@ -20,13 +20,11 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Tipo_Material;
-import Aprendices_de_Josuka.LN.Gestor;
 
 public class DAO {
 	private static PersistenceManager persistentManager;
 	private static Transaction transaction;
 	private static PersistenceManagerFactory persistentManagerFactory;
-	private static Gestor g;
 	private static DAO INSTANCE = new DAO();
 
 	private DAO() {
@@ -108,7 +106,6 @@ public class DAO {
 	}
 	public boolean ModificarMaterial(Tipo_Material tipo, int cantidad, long precio)
 	{
-		System.out.println(tipo);
 		try {
 		Material m= persistentManager.getObjectById(Material.class, tipo);
 		m.setCantidad(cantidad);

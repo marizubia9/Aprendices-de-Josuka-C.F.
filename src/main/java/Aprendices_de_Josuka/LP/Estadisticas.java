@@ -40,6 +40,8 @@ public class Estadisticas extends JFrame {
 	private JButton btnEditarJugador;
 	private JLabel lblPartidosGanados;
 	private JLabel lblCategoria;
+	private JLabel lblPuesto;
+	private JLabel lblPuesto2;
 	private JPanel panel_izquierdo;
 	private Controller controller; 
 	private JPanel PanelCentro;
@@ -50,12 +52,14 @@ public class Estadisticas extends JFrame {
 	private int partidosGanados;
 	private JLabel lblSanciones;
 	private JLabel lblNumSanciones;
+	private int ranking;
 	
 	public Estadisticas(Controller controller, Jugador j) throws RemoteException, ParseException 
 	{
+		this.ranking = controller.getRanking(j.getDNI());
 		this.j = j;
 		this.partidosGanados = controller.partidosGanados(j.getDNI());
-		this.sanciones = controller.sancionesJugador(j.getDNI());
+		this.sanciones = controller.sancionesPersona(j.getDNI());
 		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
@@ -247,6 +251,17 @@ public class Estadisticas extends JFrame {
 		lblSanciones.setBounds(543, 30, 109, 26);
 		panel_central.add(lblSanciones);
 		
+		lblPuesto = new JLabel("Puesto:");
+		lblPuesto.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPuesto.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
+		lblPuesto.setBounds(600, 30, 105, 26);
+		panel_central.add(lblPuesto);
+		
+		lblPuesto2 = new JLabel(String.valueOf(ranking));
+		lblPuesto2.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
+		lblPuesto2.setBounds(710, 30, 109, 26);
+		panel_central.add(lblPuesto2);
+		
 		PanelCentro = new JPanel();
 		PanelCentro.setBackground(Color.WHITE);
 		PanelCentro.setBounds(328, 83, 1007, 550);
@@ -287,7 +302,7 @@ public class Estadisticas extends JFrame {
 			gbc_lblFoto.gridy = y;
 			pScrollPane.add(panel,gbc_lblFoto);
 
-			y = y + 130;
+			y = y + 50;
 		}
 		pScrollPane.repaint();
 		scrollPane.repaint();

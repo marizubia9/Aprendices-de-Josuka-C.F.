@@ -95,32 +95,39 @@ public class Clasificacion_Entrenador extends JFrame {
 		
 		btnHome = new JButton("HOME");
 		btnHome.setHorizontalAlignment(SwingConstants.LEFT);
-		btnHome.setForeground(Color.WHITE);
-		btnHome.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnHome.setBackground(new Color(0, 102, 0));
-		btnHome.setBounds(0, 0, 328, 42);
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				Principal_Entrenador a = null;
+				Principal_Entrenador c = null;
 				try {
-					a = new Principal_Entrenador(controller, j);
+					c = new Principal_Entrenador(controller, j);
 				} catch (RemoteException | ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				c.setVisible(true);
 				setVisible(false);
-				a.setVisible(true);
 			}
 		});
+		btnHome.setForeground(Color.WHITE);
+		btnHome.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnHome.setBackground(new Color(0, 102, 0));
+		btnHome.setBounds(0, 0, 328, 42);
 		panel_izquierdo.add(btnHome);
 		
 		btnVerEstadisticas = new JButton("VER ESTADISTICAS");
 		btnVerEstadisticas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-			
-
+				EstadisticasEntrenador c = null;
+				try {
+					c = new EstadisticasEntrenador(controller, j);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				c.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnVerEstadisticas.setHorizontalAlignment(SwingConstants.LEFT);
@@ -132,6 +139,21 @@ public class Clasificacion_Entrenador extends JFrame {
 		
 		btnClasificacion = new JButton("VER CLASIFICACION");
 		btnClasificacion.setEnabled(false);
+		btnClasificacion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				Clasificacion_Entrenador c = null;
+				try {
+					c = new Clasificacion_Entrenador(controller, j);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				c.setVisible(true);
+				setVisible(false);
+				
+			}
+		});
 		btnClasificacion.setHorizontalAlignment(SwingConstants.LEFT);
 		btnClasificacion.setForeground(Color.WHITE);
 		btnClasificacion.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -142,17 +164,14 @@ public class Clasificacion_Entrenador extends JFrame {
 		btnVisualizarJugador = new JButton("VER FICHA");
 		btnVisualizarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FichaEntrenador r = null;
+				FichaEntrenador c = null;
 				try {
-					r = new FichaEntrenador(controller, j);
-				} catch (ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (RemoteException e1) {
+					c = new FichaEntrenador(controller, j);
+				} catch (RemoteException | ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				r.setVisible(true);
+				c.setVisible(true);
 				setVisible(false);
 			}
 		});
@@ -166,8 +185,15 @@ public class Clasificacion_Entrenador extends JFrame {
 		btnVisualziarEquipo = new JButton("VISUALIZAR  EQUIPOS");
 		btnVisualziarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				
+				Visualizar_Equipos_Entrenador v = null;
+				try {
+					v = new Visualizar_Equipos_Entrenador(controller, j);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				v.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnVisualziarEquipo.setHorizontalAlignment(SwingConstants.LEFT);
@@ -182,16 +208,16 @@ public class Clasificacion_Entrenador extends JFrame {
 		btnEditarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				EditarDatosEntrenador ed = null;
+				EditarDatosEntrenador c = null;
 				try {
-					ed = new EditarDatosEntrenador(controller, j);
+					c = new EditarDatosEntrenador(controller, j);
 				} catch (RemoteException | ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				ed.setVisible(true);
+				c.setVisible(true);
 				setVisible(false);
-
+				
 			}
 		});
 		btnEditarJugador.setHorizontalAlignment(SwingConstants.LEFT);
@@ -200,6 +226,29 @@ public class Clasificacion_Entrenador extends JFrame {
 		btnEditarJugador.setBackground(new Color(0, 102, 0));
 		btnEditarJugador.setBounds(0, 120, 328, 42);
 		panel_izquierdo.add(btnEditarJugador);
+		
+		JButton btnVerMisJugadores = new JButton("VER MIS JUGADORES");
+		btnVerMisJugadores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				Visualizar_Mis_Jugadores ed = null;
+				try {
+					ed = new Visualizar_Mis_Jugadores(controller, j);
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				ed.setVisible(true);
+				setVisible(false);
+
+			}
+		});
+		btnVerMisJugadores.setHorizontalAlignment(SwingConstants.LEFT);
+		btnVerMisJugadores.setForeground(Color.WHITE);
+		btnVerMisJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnVerMisJugadores.setBackground(new Color(0, 102, 0));
+		btnVerMisJugadores.setBounds(0, 244, 328, 42);
+		panel_izquierdo.add(btnVerMisJugadores);
 		
 		lblCategoria = new JLabel("Selecciona una categoria:");
 		lblCategoria.setHorizontalAlignment(SwingConstants.RIGHT);

@@ -1,8 +1,5 @@
 package Aprendices_de_Josuka.LP;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,7 +9,6 @@ import org.json.simple.parser.ParseException;
 
 import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Jugador;
-import Aprendices_de_Josuka.LN.Gestor;
 import Controller.Controller;
 
 import java.awt.Color;
@@ -20,12 +16,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
 
-import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class IniciarSesion extends JFrame {

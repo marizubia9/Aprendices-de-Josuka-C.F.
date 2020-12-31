@@ -28,7 +28,6 @@ import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Partido;
 import Aprendices_de_Josuka.LD.Sancion;
 import Aprendices_de_Josuka.LD.Tipo_Material;
-import Aprendices_de_Josuka.LN.Gestor;
 
 public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada {
 	private static final long serialVersionUID = 1L;
@@ -200,6 +199,10 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 					equipo = e;
 				}
 			}
+			if(e.getDni_entrenador().equals(DNI))
+			{
+				equipo = e;
+			}
 		}
 		for (Partido p :Gateway.getInstance().search_partidos())
 		{
@@ -245,7 +248,7 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		
 		return misPartidos;
 	}
-	public List<Sancion> sancionesJugador(String DNI) throws RemoteException, ParseException
+	public List<Sancion> sancionesPersona(String DNI) throws RemoteException, ParseException
 	{
 		List <Sancion> sanciones = new ArrayList<Sancion>();
 	
@@ -258,6 +261,27 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 			
 		}
 		return sanciones;
+	}
+	public List<Jugador> misJugadores(String ent)throws RemoteException
+	{
+		Equipo equipo = null;
+		List<Jugador> jugadores = new ArrayList<Jugador>();
+		for(Equipo e: DAO.getInstance().getEquipo())
+		{
+			if(e.getDni_entrenador().equals(ent))
+			{
+				equipo = e;
+			}
+		}
+		for (String s: equipo.getLista_jugador())
+		{
+			for (Jugador j: DAO.getInstance().getJugador())
+			{
+				if (j.getDNI().equals(s)) jugadores.add(j);
+			}
+		}
+		return jugadores;
+			
 	}
 	public Jugador getJug(String correo, String psw) throws RemoteException
 	{
@@ -368,11 +392,45 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		{
 			if(partido.getCod_partido().equals(codPartido))
 			{
-				return p;
+				p = new Partido(partido.getCod_partido(), partido.getFecha(), partido.getResultado_e1(), partido.getResultado_e2(), partido.getEquipo_1(), partido.getEquipo_2());
 			}
 		}
-		return null;
+		return p;
 		
+	}
+	public int getRanking(String dni) throws ParseException, RemoteException
+	{
+		int ranking = 0;
+		List <Equipos_Ext> lista = null;
+		Equipo eq = null;
+		for(Equipo e: DAO.getInstance().getEquipo())
+		{
+			if(e.getDni_entrenador().equals(dni))
+			{
+				eq = e;
+				lista = clasificacion(e.getCategoria());
+			}
+			else
+			{
+				for (String jugadores: e.getLista_jugador())
+				{
+					if (jugadores.equals(dni))
+					{
+						eq = e;
+						lista = clasificacion(e.getCategoria());
+					}
+				}
+			}
+		}
+		for (int i = 0; i<lista.size(); i++)
+		{
+			if(lista.get(i).getNombre().equals(eq.getNombre()))
+					{
+						ranking = i+1;
+					}
+			
+		}
+		return ranking;
 	}
 	public void ActualizarEquipoEntrenador(Entrenador ent)throws RemoteException
 	{
@@ -440,10 +498,7 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		return "No tiene ningun equipo asignado";
 	}
 
-	public void ModificarMaterial(List<Material> lista_material) throws RemoteException {
-		
-		
-	}
+
 	public List<Equipos_Ext> clasificacion(Categoria cat) throws ParseException
 	{
 		HashSet<Equipos_Ext> equipos = Gateway.getInstance().getEquipos();

@@ -1,48 +1,35 @@
 package Aprendices_de_Josuka.LP;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
+import java.util.Date;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import org.json.simple.parser.ParseException;
 
-import Aprendices_de_Josuka.LD.Equipo;
-import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Tipo_Material;
-import Aprendices_de_Josuka.LN.Gestor;
 import Controller.Controller;
-
-import java.awt.Color;
-import javax.swing.JTextField;
-import java.awt.Font;
-import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.rmi.RemoteException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import com.toedter.calendar.JDateChooser;
-import com.toedter.calendar.JSpinnerDateEditor;
-import javax.swing.SwingConstants;
-import javax.swing.JComboBox;
 
 public class RegistrarMaterial extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtLosAprendicesDe;
 	private JLabel lblNuevoInventario;
-	private Date objDate;
 	private JTextField txtPrecio;
 	private JTextField txtCantidad;
-	private JComboBox comboBox;
+	private JComboBox<Tipo_Material> comboBox;
 	private JButton btnHome;
 	private JButton btnAnyadirEquipo;
 	private JButton btnAnyadirInventario;

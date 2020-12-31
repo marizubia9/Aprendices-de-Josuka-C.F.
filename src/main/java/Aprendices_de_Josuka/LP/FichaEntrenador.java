@@ -116,6 +116,18 @@ public class FichaEntrenador extends JFrame {
 			public void actionPerformed(ActionEvent e) 
 			{
 				
+				EstadisticasEntrenador r = null;
+				try {
+					r = new EstadisticasEntrenador(controller, j);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				r.setVisible(true);
+				setVisible(false);
 
 			}
 		});
@@ -165,7 +177,15 @@ public class FichaEntrenador extends JFrame {
 		btnVisualziarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-			
+				Visualizar_Equipos_Entrenador v = null;
+				try {
+					v = new Visualizar_Equipos_Entrenador(controller,j);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				v.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnVisualziarEquipo.setHorizontalAlignment(SwingConstants.LEFT);
@@ -198,6 +218,28 @@ public class FichaEntrenador extends JFrame {
 		btnEditarJugador.setBackground(new Color(0, 102, 0));
 		btnEditarJugador.setBounds(0, 120, 328, 42);
 		panel_izquierdo.add(btnEditarJugador);
+		JButton btnVerMisJugadores = new JButton("VER MIS JUGADORES");
+		btnVerMisJugadores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				Visualizar_Mis_Jugadores ed = null;
+				try {
+					ed = new Visualizar_Mis_Jugadores(controller, j);
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				ed.setVisible(true);
+				setVisible(false);
+
+			}
+		});
+		btnVerMisJugadores.setHorizontalAlignment(SwingConstants.LEFT);
+		btnVerMisJugadores.setForeground(Color.WHITE);
+		btnVerMisJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnVerMisJugadores.setBackground(new Color(0, 102, 0));
+		btnVerMisJugadores.setBounds(0, 244, 328, 42);
+		panel_izquierdo.add(btnVerMisJugadores);
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));

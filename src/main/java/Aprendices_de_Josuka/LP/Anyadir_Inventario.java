@@ -1,9 +1,5 @@
 package Aprendices_de_Josuka.LP;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -11,41 +7,22 @@ import javax.swing.border.EmptyBorder;
 
 import org.json.simple.parser.ParseException;
 
-import DAO.DAO;
-import Aprendices_de_Josuka.LD.Categoria;
-import Aprendices_de_Josuka.LD.Entrenador;
-import Aprendices_de_Josuka.LD.Equipo;
-import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Tipo_Material;
-import Aprendices_de_Josuka.LN.Gestor;
 import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
-
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
-
 import javax.swing.JLabel;
-import com.toedter.calendar.JDateChooser;
-import com.toedter.calendar.JSpinnerDateEditor;
 import javax.swing.JComboBox;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollBar;
-import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 
 public class Anyadir_Inventario extends JFrame {
