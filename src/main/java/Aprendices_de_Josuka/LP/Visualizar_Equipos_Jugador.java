@@ -344,24 +344,5 @@ public class Visualizar_Equipos_Jugador extends JFrame {
 		
 	}
 	
-//	public void MostrarInventario()
-//	{
-//		Equipo e=null;
-//		for(Equipo a:Lista_Equipos)
-//		{
-//			if(a.getNombre().equals(comboEquipos.getSelectedItem())) 
-//				e=a; 
-//		}
-//		ArrayList <String> ListaNombres= new ArrayList<String>();
-//		e.getInventario().forEach((m,c)->ListaNombres.add(c+" "+m));
-//		JList<String> JListaInventario=new JList<String>(ListaNombres.toArray(new String[ListaNombres.size()]));
-//		scrollPane_i.setViewportView(JListaInventario);
-//		JListaInventario.setLayoutOrientation(JList.VERTICAL);
-//		scrollPane_i.repaint();
-//		pScrollPane_i.repaint();
-//		panel_central.repaint();
-//		
-//		
-//		
-//	}
+
 }

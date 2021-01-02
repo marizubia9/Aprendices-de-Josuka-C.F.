@@ -286,7 +286,7 @@ public class EditarEntrenador extends JFrame {
 				Guardar();
 			}
 		});
-		btnAceptar.setBounds(1138, 457, 125, 38);
+		btnAceptar.setBounds(1138, 427, 125, 38);
 		panel_central.add(btnAceptar);
 		
 		JLabel lblSeleccioneElEntrenador = new JLabel("Seleccione el entrenador");

@@ -386,11 +386,34 @@ public class RegistrarEquipo extends JFrame {
 
 			}
 		});
-		btnAceptar.setBounds(1138, 457, 125, 38);
+		btnAceptar.setBounds(1138, 437, 125, 38);
 		panel_central.add(btnAceptar);
 		scrollPane_Jugadores1 = new JScrollPane();
 		scrollPane_Jugadores1.setBounds(554, 261, 180, 190);
 		panel_central.add(scrollPane_Jugadores1);
+		
+		JButton btnClasificacion = new JButton("VER CLASIFICACION");
+		btnClasificacion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				
+				Clasificacion r = null;
+				try {
+					r = new Clasificacion(controller);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnClasificacion.setHorizontalAlignment(SwingConstants.LEFT);
+		btnClasificacion.setForeground(Color.WHITE);
+		btnClasificacion.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnClasificacion.setBackground(new Color(0, 102, 0));
+		btnClasificacion.setBounds(0, 364, 328, 42);
+		panel_izquierdo.add(btnClasificacion);
 
 		panel_scrollpane1 = new JPanel(new BorderLayout());
 		scrollPane_Jugadores1.setColumnHeaderView(panel_scrollpane1);
@@ -450,10 +473,12 @@ public class RegistrarEquipo extends JFrame {
 					JOptionPane.showMessageDialog(null,"No hay jugadores sin asignar");
 				}
 			}
+			
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		JListaJugadores1 = new JList<String>(ListaJugadores1.toArray(new String[ListaJugadores1.size()]));
 		scrollPane_Jugadores1.setViewportView(JListaJugadores1);
 		JListaJugadores1.setLayoutOrientation(JList.VERTICAL);

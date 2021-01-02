@@ -118,19 +118,19 @@ public class IniciarSesion extends JFrame {
 		btnEntrar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnEntrar.setForeground(Color.BLACK);
 		btnEntrar.setBackground(Color.WHITE);
-		btnEntrar.setBounds(367, 325, 180, 34);
+		btnEntrar.setBounds(367, 315, 180, 30);
 		panel_central.add(btnEntrar);
 
 		JButton btnRegistrarseComoEntrenador = new JButton("Registrarse como entrenador");
 		btnRegistrarseComoEntrenador.setForeground(Color.WHITE);
 		btnRegistrarseComoEntrenador.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnRegistrarseComoEntrenador.setBackground(new Color(0, 102, 0));
-		btnRegistrarseComoEntrenador.setBounds(331, 375, 261, 27);
+		btnRegistrarseComoEntrenador.setBounds(331, 355, 261, 27);
 		btnRegistrarseComoEntrenador.setBorder(null);
 		panel_central.add(btnRegistrarseComoEntrenador);
 
 		JButton btnRegistrarseComoJugador = new JButton("Registrarse como jugador");
-		btnRegistrarseComoJugador.setBounds(331, 418, 261, 21);
+		btnRegistrarseComoJugador.setBounds(331, 385, 261, 21);
 		panel_central.add(btnRegistrarseComoJugador);
 		btnRegistrarseComoJugador.setForeground(Color.WHITE);
 		btnRegistrarseComoJugador.setFont(new Font("Tahoma", Font.PLAIN, 17));

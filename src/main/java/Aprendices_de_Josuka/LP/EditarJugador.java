@@ -271,7 +271,28 @@ public class EditarJugador  extends JFrame {
 		btnEditarJugador.setBackground(new Color(0, 102, 0));
 		btnEditarJugador.setBounds(0, 322, 328, 42);
 		panel_izquierdo.add(btnEditarJugador);
-		
+		JButton btnClasificacion = new JButton("VER CLASIFICACION");
+		btnClasificacion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				
+				Clasificacion r = null;
+				try {
+					r = new Clasificacion(controller);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnClasificacion.setHorizontalAlignment(SwingConstants.LEFT);
+		btnClasificacion.setForeground(Color.WHITE);
+		btnClasificacion.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnClasificacion.setBackground(new Color(0, 102, 0));
+		btnClasificacion.setBounds(0, 364, 328, 42);
+		panel_izquierdo.add(btnClasificacion);
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setBackground(new Color(0, 128, 0));
 		btnAceptar.setForeground(Color.WHITE);
@@ -282,7 +303,7 @@ public class EditarJugador  extends JFrame {
 				Guardar();
 			}
 		});
-		btnAceptar.setBounds(1138, 457, 125, 38);
+		btnAceptar.setBounds(1138, 427, 125, 38);
 		panel_central.add(btnAceptar);
 		
 		JLabel lblSeleccioneCategoria = new JLabel("Seleccione la categoria");

@@ -63,9 +63,9 @@ public class Anyadir_Inventario extends JFrame {
 
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1300, 740);
+	    setBounds(100, 100, 1300, 740);
 		setLocationRelativeTo(null);
-
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -76,20 +76,6 @@ public class Anyadir_Inventario extends JFrame {
 		panel_superior.setBackground(new Color(0, 102, 0));
 		contentPane.add(panel_superior);
 		panel_superior.setLayout(null);
-		
-		panel_central = new JPanel();
-		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 187, 1278, 497);
-		contentPane.add(panel_central);
-		panel_central.setLayout(null);
-		
-		panel_izquierdo = new JPanel();
-		panel_izquierdo.setLayout(null);
-		panel_izquierdo.setForeground(new Color(0, 102, 0));
-		panel_izquierdo.setBorder(null);
-		panel_izquierdo.setBackground(new Color(0, 102, 0));
-		panel_izquierdo.setBounds(0, 0, 328, 528);
-		panel_central.add(panel_izquierdo);
 
 		txtLosAprendicesDe = new JTextField();
 		txtLosAprendicesDe.setEditable(false);
@@ -102,7 +88,20 @@ public class Anyadir_Inventario extends JFrame {
 		panel_superior.add(txtLosAprendicesDe);
 		txtLosAprendicesDe.setColumns(10);
 
-		
+		panel_central = new JPanel();
+		panel_central.setBackground(Color.WHITE);
+		panel_central.setBounds(0, 173, 1278, 528);
+		contentPane.add(panel_central);
+		panel_central.setLayout(null);
+
+		panel_izquierdo = new JPanel();
+		panel_izquierdo.setLayout(null);
+		panel_izquierdo.setForeground(new Color(0, 102, 0));
+		panel_izquierdo.setBorder(null);
+		panel_izquierdo.setBackground(new Color(0, 102, 0));
+		panel_izquierdo.setBounds(0, 0, 328, 528);
+		panel_central.add(panel_izquierdo);
+				
 		btnHome = new JButton("HOME");
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -200,7 +199,28 @@ public class Anyadir_Inventario extends JFrame {
 		btnVisualziarEquipo.setBackground(new Color(0, 102, 0));
 		btnVisualziarEquipo.setBounds(0, 162, 328, 42);
 		panel_izquierdo.add(btnVisualziarEquipo);
+		JButton btnClasificacion = new JButton("VER CLASIFICACION");
+		btnClasificacion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 
+				
+				Clasificacion r = null;
+				try {
+					r = new Clasificacion(controller);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnClasificacion.setHorizontalAlignment(SwingConstants.LEFT);
+		btnClasificacion.setForeground(Color.WHITE);
+		btnClasificacion.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnClasificacion.setBackground(new Color(0, 102, 0));
+		btnClasificacion.setBounds(0, 364, 328, 42);
+		panel_izquierdo.add(btnClasificacion);
 		btnEditarEntrenador = new JButton("EDITAR ENTRENADOR");
 		btnEditarEntrenador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

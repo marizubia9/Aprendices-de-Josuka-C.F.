@@ -160,6 +160,29 @@ public class RegistrarMaterial extends JFrame {
 		btnAnyadirEquipo.setBounds(0, 40, 328, 42);
 		panel_izquierdo.add(btnAnyadirEquipo);
 		
+		JButton btnClasificacion = new JButton("VER CLASIFICACION");
+		btnClasificacion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				
+				Clasificacion r = null;
+				try {
+					r = new Clasificacion(controller);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnClasificacion.setHorizontalAlignment(SwingConstants.LEFT);
+		btnClasificacion.setForeground(Color.WHITE);
+		btnClasificacion.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
+		btnClasificacion.setBackground(new Color(0, 102, 0));
+		btnClasificacion.setBounds(0, 364, 328, 42);
+		panel_izquierdo.add(btnClasificacion);
+		
 		btnAnyadirInventario = new JButton("AÑADIR INVENTARIO");
 		btnAnyadirInventario.setEnabled(false);
 		btnAnyadirInventario.setHorizontalAlignment(SwingConstants.LEFT);
