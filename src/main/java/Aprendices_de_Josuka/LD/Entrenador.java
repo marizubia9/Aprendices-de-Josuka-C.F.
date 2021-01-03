@@ -15,7 +15,11 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-
+/**
+ * Esta clase define objetos de tipo Entrenador
+ * @author Alumno
+ *
+ */
 @PersistenceCapable
 //@Inheritance(strategy=InheritanceStrategy.SUPERCLASS_TABLE)
 //@Discriminator(value="ENTRENADOR")

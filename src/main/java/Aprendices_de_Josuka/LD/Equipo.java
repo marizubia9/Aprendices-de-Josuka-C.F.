@@ -14,6 +14,11 @@ import javax.jdo.annotations.PrimaryKey;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Esta clase define objetos de tipo equipo
+ * @author Alumno
+ *
+ */
 @Getter
 @Setter
 @PersistenceCapable

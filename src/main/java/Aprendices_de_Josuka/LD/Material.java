@@ -11,6 +11,11 @@ import javax.jdo.annotations.PrimaryKey;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Esta clase define los objetos de tipo material, es decir, del inventario.
+ * @author Alumno
+ *
+ */
 @Getter
 @Setter
 @PersistenceCapable

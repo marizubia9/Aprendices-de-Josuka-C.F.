@@ -1,6 +1,10 @@
 package Aprendices_de_Josuka.LD;
 
 import java.io.Serializable;
+/**
+ * Esta clase define objetos de tipo partido que no están guardados en la base de datos 
+ * y se obtienen de la raspberry.
+ */
 import java.time.LocalDateTime;
 import java.util.Set;
 

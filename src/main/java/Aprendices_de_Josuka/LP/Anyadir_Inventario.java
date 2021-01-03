@@ -24,7 +24,11 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
-
+/**
+ * Esta clase define la GUI de la ventana de anyadir inventario del administrador 
+ * @author Alumno
+ *
+ */
 public class Anyadir_Inventario extends JFrame {
 
 	private JPanel contentPane;

@@ -13,7 +13,11 @@ import javax.jdo.annotations.PrimaryKey;
 
 import lombok.Getter;
 import lombok.Setter;
-
+/**
+ * Esta clase define los objetos de tipo jugador
+ * @author Alumno
+ *
+ */
 @Getter
 @Setter
 @PersistenceCapable
