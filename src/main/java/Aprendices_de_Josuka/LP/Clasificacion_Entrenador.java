@@ -26,7 +26,11 @@ import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
-
+/**
+ * Se le muestra la clasificacion al entrenador
+ * @author Alumno
+ *
+ */
 public class Clasificacion_Entrenador extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -47,6 +51,14 @@ public class Clasificacion_Entrenador extends JFrame {
 	private JScrollPane scrollPane;
 	private Entrenador j;
 	private List <Equipos_Ext> listaEquipos;
+	
+	/**
+	 * Constructor
+	 * @param controller
+	 * @param j entrenador dentro de la aplicación
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public Clasificacion_Entrenador(Controller controller, Entrenador j) throws RemoteException, ParseException 
 	{
 		this.j = j;
@@ -54,7 +66,10 @@ public class Clasificacion_Entrenador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Inicia los componentes
+	 * @throws ParseException
+	 */
 	public void initComponents() throws ParseException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -182,26 +197,7 @@ public class Clasificacion_Entrenador extends JFrame {
 		btnVisualizarJugador.setBounds(0, 202, 328, 42);
 		panel_izquierdo.add(btnVisualizarJugador);
 				
-		btnVisualziarEquipo = new JButton("VISUALIZAR  EQUIPOS");
-		btnVisualziarEquipo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Visualizar_Equipos_Entrenador v = null;
-				try {
-					v = new Visualizar_Equipos_Entrenador(controller, j);
-				} catch (RemoteException | ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				v.setVisible(true);
-				setVisible(false);
-			}
-		});
-		btnVisualziarEquipo.setHorizontalAlignment(SwingConstants.LEFT);
-		btnVisualziarEquipo.setForeground(Color.WHITE);
-		btnVisualziarEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnVisualziarEquipo.setBackground(new Color(0, 102, 0));
-		btnVisualziarEquipo.setBounds(0, 162, 328, 42);
-		panel_izquierdo.add(btnVisualziarEquipo);
+		
 		
 		
 		btnEditarJugador = new JButton("EDITAR DATOS");
@@ -247,7 +243,7 @@ public class Clasificacion_Entrenador extends JFrame {
 		btnVerMisJugadores.setForeground(Color.WHITE);
 		btnVerMisJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnVerMisJugadores.setBackground(new Color(0, 102, 0));
-		btnVerMisJugadores.setBounds(0, 244, 328, 42);
+		btnVerMisJugadores.setBounds(0, 162, 328, 42);
 		panel_izquierdo.add(btnVerMisJugadores);
 		
 		lblCategoria = new JLabel("Selecciona una categoria:");
@@ -303,7 +299,10 @@ public class Clasificacion_Entrenador extends JFrame {
 		
 	}
 
-	
+	/**
+	 * Introduce un panel con los equipos externos ordenados segun el ranking
+	 * @throws ParseException
+	 */
 	public void InsertarJPanel() throws ParseException {
 		pScrollPane.removeAll();
 		int x = 0;
@@ -316,7 +315,7 @@ public class Clasificacion_Entrenador extends JFrame {
 		}
 		for (int i = 0; i < listaEquipos.size(); i++) 
 		{
-			Panel_Equipos panel = new Panel_Equipos(listaEquipos.get(i));
+			Panel_Equipos panel = new Panel_Equipos(listaEquipos.get(i),i);
 			panel.setVisible(true);
 			GridBagConstraints gbc_lblFoto = new GridBagConstraints();
 			gbc_lblFoto.ipadx = 1005;

@@ -147,7 +147,7 @@ public class RegistrarEquipo extends JFrame {
 		txtNombre.setColumns(10);
 		txtNombre.setText("");
 
-		JButton btnAnyadir = new JButton("Anadir Inventario");
+		JButton btnAnyadir = new JButton("Asignar Inventario");
 		btnAnyadir.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
 		btnAnyadir.setForeground(Color.WHITE);
 		btnAnyadir.setBackground(new Color(0, 102, 0));
@@ -232,7 +232,7 @@ public class RegistrarEquipo extends JFrame {
 		btnHome.setBounds(0, 0, 328, 42);
 		panel_izquierdo.add(btnHome);
 
-		btnAnyadirEquipo = new JButton("AÑADIR EQUIPO");
+		btnAnyadirEquipo = new JButton("ANADIR EQUIPO");
 		btnAnyadirEquipo.setEnabled(false);
 		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAnyadirEquipo.setForeground(Color.WHITE);
@@ -241,7 +241,7 @@ public class RegistrarEquipo extends JFrame {
 		btnAnyadirEquipo.setBounds(0, 40, 328, 42);
 		panel_izquierdo.add(btnAnyadirEquipo);
 
-		btnAnyadirInventario = new JButton("AÑADIR INVENTARIO");
+		btnAnyadirInventario = new JButton("ANADIR INVENTARIO");
 		btnAnyadirInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 

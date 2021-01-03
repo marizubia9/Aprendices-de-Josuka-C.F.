@@ -1,6 +1,7 @@
 package Aprendices_de_Josuka.LD;
 /**
- * Esta clase define objetos de tipo Categoria mediante un enumerado
+ * @class Categoria
+ * @brief Esta clase define objetos de tipo Categoria mediante un enumerado
  * @author Alumno
  *
  */

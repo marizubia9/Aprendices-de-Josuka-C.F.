@@ -25,7 +25,11 @@ import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
-
+/**
+ * Se muestra la clasificacion al jugador
+ * @author Alumno
+ *
+ */
 public class Clasificacion_Jugador extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -49,6 +53,14 @@ public class Clasificacion_Jugador extends JFrame {
 	private Jugador j;
 	private List <Equipos_Ext> listaEquipos;
 	private JButton btnGo;
+	
+	/**
+	 * Constructor
+	 * @param controller
+	 * @param j jugador que esta dentro de la aplicacion
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public Clasificacion_Jugador(Controller controller, Jugador j) throws RemoteException, ParseException 
 	{
 		this.j = j;
@@ -57,7 +69,10 @@ public class Clasificacion_Jugador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Inicia los componentes
+	 * @throws ParseException
+	 */
 	public void initComponents() throws ParseException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -273,7 +288,10 @@ public class Clasificacion_Jugador extends JFrame {
 		InsertarJPanel();
 	}
 
-	
+	/**
+	 * Inserta los equipos ordenados por ranking segun clasificacion
+	 * @throws ParseException
+	 */
 	public void InsertarJPanel() throws ParseException {
 		pScrollPane.removeAll();
 		int x = 0;
@@ -286,7 +304,7 @@ public class Clasificacion_Jugador extends JFrame {
 		}
 		for (int i = 0; i < listaEquipos.size(); i++) 
 		{
-			Panel_Equipos panel = new Panel_Equipos(listaEquipos.get(i));
+			Panel_Equipos panel = new Panel_Equipos(listaEquipos.get(i), i);
 			panel.setVisible(true);
 			GridBagConstraints gbc_lblFoto = new GridBagConstraints();
 			gbc_lblFoto.ipadx = 1005;

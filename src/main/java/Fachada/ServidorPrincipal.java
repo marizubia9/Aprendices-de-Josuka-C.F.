@@ -1,3 +1,7 @@
+/**
+ * @package Fachada
+ * @brief Necesario para incorporar el patrón de diseño de fachada. El servidor de la aplicación
+ */
 package Fachada;
 
 import java.rmi.RemoteException;
@@ -28,7 +32,11 @@ import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Partido;
 import Aprendices_de_Josuka.LD.Sancion;
 import Aprendices_de_Josuka.LD.Tipo_Material;
-
+/**
+ * En esta clase se ejecutarán o delegarán todas las funciones de la aplicación
+ * @author Alumno
+ *
+ */
 public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada {
 	private static final long serialVersionUID = 1L;
 	private static ServidorPrincipal INSTANCE = null;
@@ -45,7 +53,10 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		}
 		return INSTANCE;
 	}
-
+/**
+ * Pone el servidor en marcha
+ * @param args
+ */
 	public static void main(String[] args) {
 		String ip = "127.0.0.1";
 		String port = "1099";
@@ -497,7 +508,6 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		}
 		return "No tiene ningun equipo asignado";
 	}
-
 
 	public List<Equipos_Ext> clasificacion(Categoria cat) throws ParseException
 	{

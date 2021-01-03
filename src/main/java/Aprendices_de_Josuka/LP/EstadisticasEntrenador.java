@@ -27,7 +27,11 @@ import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Aprendices_de_Josuka.LD.Sancion;
 import Controller.Controller;
-
+/**
+ * Muestra las estadisticas del entrenador
+ * @author Alumno
+ *
+ */
 public class EstadisticasEntrenador extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -54,7 +58,13 @@ public class EstadisticasEntrenador extends JFrame {
 	private JLabel lblSanciones;
 	private JLabel lblNumSanciones;
 	private int ranking;
-	
+	/**
+	 * Constructor
+	 * @param controller
+	 * @param j entrenador que esta dentro de la aplicacion
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public EstadisticasEntrenador(Controller controller, Entrenador j) throws RemoteException, ParseException 
 	{
 		this.ranking = controller.getRanking(j.getDNI());
@@ -65,7 +75,11 @@ public class EstadisticasEntrenador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Inicia componentes
+	 * @throws ParseException
+	 * @throws RemoteException
+	 */
 	public void initComponents() throws ParseException, RemoteException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -182,27 +196,6 @@ public class EstadisticasEntrenador extends JFrame {
 		btnVisualizarJugador.setBounds(0, 202, 328, 42);
 		panel_izquierdo.add(btnVisualizarJugador);
 				
-		btnVisualziarEquipo = new JButton("VISUALIZAR  EQUIPOS");
-		btnVisualziarEquipo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				Visualizar_Equipos_Entrenador r = null;
-				try {
-					r = new Visualizar_Equipos_Entrenador(controller, j);
-				} catch (RemoteException | ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				r.setVisible(true);
-				setVisible(false);
-			}
-		});
-		btnVisualziarEquipo.setHorizontalAlignment(SwingConstants.LEFT);
-		btnVisualziarEquipo.setForeground(Color.WHITE);
-		btnVisualziarEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnVisualziarEquipo.setBackground(new Color(0, 102, 0));
-		btnVisualziarEquipo.setBounds(0, 162, 328, 42);
-		panel_izquierdo.add(btnVisualziarEquipo);
 		
 		
 		btnEditarJugador = new JButton("EDITAR DATOS");
@@ -248,7 +241,7 @@ public class EstadisticasEntrenador extends JFrame {
 		btnVerMisJugadores.setForeground(Color.WHITE);
 		btnVerMisJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnVerMisJugadores.setBackground(new Color(0, 102, 0));
-		btnVerMisJugadores.setBounds(0, 244, 328, 42);
+		btnVerMisJugadores.setBounds(0, 162, 328, 42);
 		panel_izquierdo.add(btnVerMisJugadores);
 		
 		lblCategoria = new JLabel("Partidos Ganados:");
@@ -308,7 +301,11 @@ public class EstadisticasEntrenador extends JFrame {
 		InsertarJPanel();
 	}
 
-	
+	/**
+	 * Inserta todas las sanciones en un JPanel
+	 * @throws ParseException
+	 * @throws RemoteException
+	 */
 	public void InsertarJPanel() throws ParseException, RemoteException {
 		pScrollPane.removeAll();
 		int x = 0;

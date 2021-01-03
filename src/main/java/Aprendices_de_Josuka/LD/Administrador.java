@@ -10,7 +10,8 @@ import javax.jdo.annotations.PrimaryKey;
 import lombok.Getter;
 import lombok.Setter;
 /**
- * Esta clase define objetos de tipo administrador.
+ * @class Administrador
+ * @brief Esta clase define objetos de tipo administrador.
  * @author Alumno
  *
  */

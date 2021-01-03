@@ -23,7 +23,11 @@ import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
-
+/**
+ * Enseña al entrenador su ficha
+ * @author Alumno
+ *
+ */
 public class FichaEntrenador extends JFrame {
 
 	/**
@@ -42,7 +46,13 @@ public class FichaEntrenador extends JFrame {
 	private Controller controller; 
 	private Entrenador ent;
 	
-	
+	/**
+	 * Constructor de la clase
+	 * @param controller
+	 * @param ent entrenador que se encuentra dentro de la aplicación
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public FichaEntrenador(Controller controller, Entrenador ent) throws RemoteException, ParseException 
 	{
 		this.ent = ent;
@@ -50,7 +60,9 @@ public class FichaEntrenador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Inicia componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -173,27 +185,6 @@ public class FichaEntrenador extends JFrame {
 		btnVisualizarJugador.setBounds(0, 202, 328, 42);
 		panel_izquierdo.add(btnVisualizarJugador);
 				
-		btnVisualziarEquipo = new JButton("VISUALIZAR  EQUIPOS");
-		btnVisualziarEquipo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				Visualizar_Equipos_Entrenador v = null;
-				try {
-					v = new Visualizar_Equipos_Entrenador(controller,ent);
-				} catch (RemoteException | ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				v.setVisible(true);
-				setVisible(false);
-			}
-		});
-		btnVisualziarEquipo.setHorizontalAlignment(SwingConstants.LEFT);
-		btnVisualziarEquipo.setForeground(Color.WHITE);
-		btnVisualziarEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnVisualziarEquipo.setBackground(new Color(0, 102, 0));
-		btnVisualziarEquipo.setBounds(0, 162, 328, 42);
-		panel_izquierdo.add(btnVisualziarEquipo);
 		
 		
 		btnEditarJugador = new JButton("EDITAR DATOS");
@@ -238,7 +229,7 @@ public class FichaEntrenador extends JFrame {
 		btnVerMisJugadores.setForeground(Color.WHITE);
 		btnVerMisJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnVerMisJugadores.setBackground(new Color(0, 102, 0));
-		btnVerMisJugadores.setBounds(0, 244, 328, 42);
+		btnVerMisJugadores.setBounds(0, 162, 328, 42);
 		panel_izquierdo.add(btnVerMisJugadores);
 		
 		JLabel lblNombre = new JLabel("Nombre");

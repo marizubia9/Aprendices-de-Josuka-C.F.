@@ -75,7 +75,7 @@ public class Panel_Jugador extends JPanel {
 		int anyo_actual=cal.get(Calendar.YEAR);
 		edad=anyo_actual-anyo;
 		
-		JLabel lblEdad = new JLabel(edad +" urte");
+		JLabel lblEdad = new JLabel(edad +" anios");
 		lblEdad.setFont(new Font("Malgun Gothic", Font.PLAIN, 14));
 		lblEdad.setBounds(508, 11, 104, 31);
 		add(lblEdad);

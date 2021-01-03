@@ -143,7 +143,7 @@ public class Clasificacion  extends JFrame {
 		btnHome.setBounds(0, 0, 328, 42);
 		panel_izquierdo.add(btnHome);
 		
-		btnAnyadirEquipo = new JButton("AÑADIR EQUIPO");
+		btnAnyadirEquipo = new JButton("ANADIR EQUIPO");
 		btnAnyadirEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -159,7 +159,7 @@ public class Clasificacion  extends JFrame {
 		btnAnyadirEquipo.setBounds(0, 40, 328, 42);
 		panel_izquierdo.add(btnAnyadirEquipo);
 		
-		btnAnyadirInventario = new JButton("AÑADIR INVENTARIO");
+		btnAnyadirInventario = new JButton("ANADIR INVENTARIO");
 		btnAnyadirInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -352,7 +352,7 @@ public class Clasificacion  extends JFrame {
 		}
 		for (int i = 0; i < ListaEquipos.size(); i++) 
 		{
-			Panel_Equipos panel = new Panel_Equipos(ListaEquipos.get(i));
+			Panel_Equipos panel = new Panel_Equipos(ListaEquipos.get(i), i);
 			panel.setVisible(true);
 			GridBagConstraints gbc_lblFoto = new GridBagConstraints();
 			gbc_lblFoto.ipadx = 1005;

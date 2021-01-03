@@ -22,7 +22,11 @@ import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
-
+/**
+ * Enseña al jugador su ficha
+ * @author Alumno
+ *
+ */
 public class FichaJugador extends JFrame {
 
 	/**
@@ -41,7 +45,13 @@ public class FichaJugador extends JFrame {
 	private Controller controller; 
 	private Jugador j;
 	
-	
+	/**
+	 * Constructor
+	 * @param controller
+	 * @param j el jugador que esta dentro de la aplicación
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public FichaJugador(Controller controller, Jugador j) throws RemoteException, ParseException 
 	{
 		this.j = j;
@@ -49,7 +59,9 @@ public class FichaJugador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Inicia componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);

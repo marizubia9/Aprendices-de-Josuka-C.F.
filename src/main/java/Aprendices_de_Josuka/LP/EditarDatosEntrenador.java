@@ -25,7 +25,11 @@ import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
-
+/**
+ * Mediante esta clase el entrenador puede modificar su correo y su contraseña
+ * @author Alumno
+ *
+ */
 public class EditarDatosEntrenador extends JFrame {
 
 	/**
@@ -49,7 +53,13 @@ public class EditarDatosEntrenador extends JFrame {
 
 	
 	
-	
+	/**
+	 * Constructor
+	 * @param controller
+	 * @param e entrenador que esta dentro de la aplicacion
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public EditarDatosEntrenador(Controller controller, Entrenador e) throws RemoteException, ParseException 
 	{
 		this.ent = e;
@@ -57,7 +67,9 @@ public class EditarDatosEntrenador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Inicia los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -170,26 +182,6 @@ public class EditarDatosEntrenador extends JFrame {
 		btnVisualizarJugador.setBounds(0, 202, 328, 42);
 		panel_izquierdo.add(btnVisualizarJugador);
 				
-		btnVisualziarEquipo = new JButton("VISUALIZAR  EQUIPOS");
-		btnVisualziarEquipo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Visualizar_Equipos_Entrenador v = null;
-				try {
-					v = new Visualizar_Equipos_Entrenador(controller, ent);
-				} catch (RemoteException | ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				v.setVisible(true);
-				setVisible(false);
-			}
-		});
-		btnVisualziarEquipo.setHorizontalAlignment(SwingConstants.LEFT);
-		btnVisualziarEquipo.setForeground(Color.WHITE);
-		btnVisualziarEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnVisualziarEquipo.setBackground(new Color(0, 102, 0));
-		btnVisualziarEquipo.setBounds(0, 162, 328, 42);
-		panel_izquierdo.add(btnVisualziarEquipo);
 		
 		
 		btnEditarJugador = new JButton("EDITAR DATOS");
@@ -221,7 +213,7 @@ public class EditarDatosEntrenador extends JFrame {
 		btnVerMisJugadores.setForeground(Color.WHITE);
 		btnVerMisJugadores.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnVerMisJugadores.setBackground(new Color(0, 102, 0));
-		btnVerMisJugadores.setBounds(0, 244, 328, 42);
+		btnVerMisJugadores.setBounds(0, 162, 328, 42);
 		panel_izquierdo.add(btnVerMisJugadores);
 		
 		JLabel lblTit = new JLabel("MODIFICAR DATOS");
@@ -241,7 +233,7 @@ public class EditarDatosEntrenador extends JFrame {
 		panel_central.add(txtCorreo);
 		
 		
-		JLabel lblPsw = new JLabel("Nueva Contraseña");
+		JLabel lblPsw = new JLabel("Nueva Contrasena");
 		lblPsw.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
 		lblPsw.setBounds(450, 190, 250, 26);
 		panel_central.add(lblPsw);
@@ -276,6 +268,11 @@ public class EditarDatosEntrenador extends JFrame {
 		
 	
 	}
+	/**
+	 * Se guardar los datos a modificar
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public void modificar() throws RemoteException, ParseException
 	{
 		String correo = txtCorreo.getText();

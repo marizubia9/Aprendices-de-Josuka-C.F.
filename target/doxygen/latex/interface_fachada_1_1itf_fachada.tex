@@ -171,6 +171,21 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a3a2e2aacc
 \doxysubsubsection{\texorpdfstring{clasificacion()}{clasificacion()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext}{Equipos\+\_\+\+Ext}}$>$ Fachada.\+itf\+Fachada.\+clasificacion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}}}]{cat }\end{DoxyParamCaption}) throws Remote\+Exception, org.\+json.\+simple.\+parser.\+Parse\+Exception}
 
+Devuelve una lista ordenada de los equipos de la liga según la categoria para hacer clasificación 
+\begin{DoxyParams}{Parámetros}
+{\em cat} & categoria \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+lista ordenada 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em org.\+json.\+simple.\+parser.\+Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a5da870d76bf03c50eaafa4a73c524ef2}{Fachada.\+Servidor\+Principal}}.
@@ -181,6 +196,21 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a5da870d76
 \doxysubsubsection{\texorpdfstring{EntrarAdministrador()}{EntrarAdministrador()}}
 {\footnotesize\ttfamily boolean Fachada.\+itf\+Fachada.\+Entrar\+Administrador (\begin{DoxyParamCaption}\item[{String}]{email,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Verifica si el administrador existe en la base de datos para permitir el acceso a la aplicación 
+\begin{DoxyParams}{Parámetros}
+{\em email} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si existe 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a86e6798e0ebc55cd80ae85560146bc82}{Fachada.\+Servidor\+Principal}}.
@@ -191,6 +221,21 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a86e6798e0
 \doxysubsubsection{\texorpdfstring{EntrarEntrenador()}{EntrarEntrenador()}}
 {\footnotesize\ttfamily boolean Fachada.\+itf\+Fachada.\+Entrar\+Entrenador (\begin{DoxyParamCaption}\item[{String}]{email,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Verifica si el entrenador existe en la base de datos para permitir el acceso a la aplicación 
+\begin{DoxyParams}{Parámetros}
+{\em email} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si existe 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a01fc50abd3628f80596dc0a678c28cb2}{Fachada.\+Servidor\+Principal}}.
@@ -201,6 +246,21 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a01fc50abd
 \doxysubsubsection{\texorpdfstring{EntrarJugador()}{EntrarJugador()}}
 {\footnotesize\ttfamily boolean Fachada.\+itf\+Fachada.\+Entrar\+Jugador (\begin{DoxyParamCaption}\item[{String}]{email,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Verifica si el jugador existe en la base de datos para permitir el acceso a la aplicación 
+\begin{DoxyParams}{Parámetros}
+{\em email} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si existe 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a6571549798f56e3f67b1910bec022fc3}{Fachada.\+Servidor\+Principal}}.
@@ -241,6 +301,21 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a2019264d3
 \doxysubsubsection{\texorpdfstring{getEnt()}{getEnt()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}} Fachada.\+itf\+Fachada.\+get\+Ent (\begin{DoxyParamCaption}\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Devuelve todos los datos de un entrenador segun correo y contraseña 
+\begin{DoxyParams}{Parámetros}
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+entrenador 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a4c11a8cff61e1ee77637ab980f5839f5}{Fachada.\+Servidor\+Principal}}.
@@ -281,6 +356,21 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_abff93110e
 \doxysubsubsection{\texorpdfstring{getJug()}{getJug()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} Fachada.\+itf\+Fachada.\+get\+Jug (\begin{DoxyParamCaption}\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Obtiene todos los datos del jugador segun su correo y contraseña 
+\begin{DoxyParams}{Parámetros}
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+jugador 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a8781bbf498b511481ba04f02d7736ac9}{Fachada.\+Servidor\+Principal}}.
@@ -291,6 +381,14 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a8781bbf49
 \doxysubsubsection{\texorpdfstring{getJugador()}{getJugador()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}$>$ Fachada.\+itf\+Fachada.\+get\+Jugador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Devuelve la lista de todos los jugadores de la base de datos \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a1f88dce9ecb1ef3b79ebb2d7f565ca08}{Fachada.\+Servidor\+Principal}}.
@@ -311,6 +409,16 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a5170c3dba
 \doxysubsubsection{\texorpdfstring{getPartidos()}{getPartidos()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}}$>$ Fachada.\+itf\+Fachada.\+get\+Partidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception, Parse\+Exception}
 
+Coge todos los partidos de la raspberry \begin{DoxyReturn}{Devuelve}
+lista de partidos 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_aefe03a8162eb7a2214e9128edae72203}{Fachada.\+Servidor\+Principal}}.
@@ -341,6 +449,19 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_ada94310d5
 \doxysubsubsection{\texorpdfstring{misJugadores()}{misJugadores()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}$>$ Fachada.\+itf\+Fachada.\+mis\+Jugadores (\begin{DoxyParamCaption}\item[{String}]{ent }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Método para obtener los jugadores relacionados con un entrenador 
+\begin{DoxyParams}{Parámetros}
+{\em ent} & DNI del entrenador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+lista de jugadores 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a79e350bd1193772c3be188cb94f93d34}{Fachada.\+Servidor\+Principal}}.
@@ -351,6 +472,23 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a79e350bd1
 \doxysubsubsection{\texorpdfstring{modificarCorreo()}{modificarCorreo()}}
 {\footnotesize\ttfamily boolean Fachada.\+itf\+Fachada.\+modificar\+Correo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}}]{j,  }\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Modifica el correo y la contraseña de un jugador 
+\begin{DoxyParams}{Parámetros}
+{\em j} & jugador del cual los datos se modificaran \\
+\hline
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se ha realizado la modificación con existo 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_ac260e5d79c655a373d685dd7330bb976}{Fachada.\+Servidor\+Principal}}.
@@ -371,6 +509,19 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a65d914846
 \doxysubsubsection{\texorpdfstring{MostrarJugadores()}{MostrarJugadores()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}$>$ Fachada.\+itf\+Fachada.\+Mostrar\+Jugadores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}}}]{c }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Este método sirve para mostrar los jugadores segun categoria 
+\begin{DoxyParams}{Parámetros}
+{\em c} & categoria \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+lista de jugadores 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a99b4645aecb598d593b5195c46ddd174}{Fachada.\+Servidor\+Principal}}.
@@ -401,6 +552,21 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a8cd85c379
 \doxysubsubsection{\texorpdfstring{partidosGanados()}{partidosGanados()}}
 {\footnotesize\ttfamily int Fachada.\+itf\+Fachada.\+partidos\+Ganados (\begin{DoxyParamCaption}\item[{String}]{DNI }\end{DoxyParamCaption}) throws Remote\+Exception, Parse\+Exception}
 
+Calcula el número total de partidos ganados del equipo de un jugador o entrenador 
+\begin{DoxyParams}{Parámetros}
+{\em DNI} & del jugador o del entrenador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+suma de todos los partidos ganados 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a472eb81d64fd1f39e6101cd0170286fc}{Fachada.\+Servidor\+Principal}}.
@@ -411,6 +577,21 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a472eb81d6
 \doxysubsubsection{\texorpdfstring{RegistrarAdmin()}{RegistrarAdmin()}}
 {\footnotesize\ttfamily boolean Fachada.\+itf\+Fachada.\+Registrar\+Admin (\begin{DoxyParamCaption}\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Registra un administrador en la base de datos 
+\begin{DoxyParams}{Parámetros}
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se registra bien 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_aaecab2f511fc50586e90cbe5cde1707b}{Fachada.\+Servidor\+Principal}}.
@@ -421,6 +602,31 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_aaecab2f51
 \doxysubsubsection{\texorpdfstring{RegistrarEntrenador()}{RegistrarEntrenador()}}
 {\footnotesize\ttfamily boolean Fachada.\+itf\+Fachada.\+Registrar\+Entrenador (\begin{DoxyParamCaption}\item[{String}]{nombre,  }\item[{String}]{apellido,  }\item[{String}]{fecha\+\_\+S,  }\item[{String}]{DNI,  }\item[{int}]{telefono,  }\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Registra un entrenador 
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & \\
+\hline
+{\em apellido} & \\
+\hline
+{\em fecha\+\_\+S} & \\
+\hline
+{\em DNI} & \\
+\hline
+{\em telefono} & \\
+\hline
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se registra bien 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a80f964de333cccac4ad9ca55229fc3be}{Fachada.\+Servidor\+Principal}}.
@@ -431,6 +637,27 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a80f964de3
 \doxysubsubsection{\texorpdfstring{RegistrarEquipo2()}{RegistrarEquipo2()}}
 {\footnotesize\ttfamily boolean Fachada.\+itf\+Fachada.\+Registrar\+Equipo2 (\begin{DoxyParamCaption}\item[{String}]{nombre,  }\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}}}]{cat,  }\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}}]{entrenador,  }\item[{List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$}]{lista\+\_\+\+Jugadores,  }\item[{Hash\+Map$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}}, Integer $>$}]{inventario }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Registra un nuevo equipo en la base de datos 
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & \\
+\hline
+{\em cat} & \\
+\hline
+{\em entrenador} & \\
+\hline
+{\em lista\+\_\+\+Jugadores} & \\
+\hline
+{\em inventario} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se registra bien 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a1a9ca879b277aad00f225a20c627eba7}{Fachada.\+Servidor\+Principal}}.
@@ -441,6 +668,23 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a1a9ca879b
 \doxysubsubsection{\texorpdfstring{RegistrarInventario()}{RegistrarInventario()}}
 {\footnotesize\ttfamily boolean Fachada.\+itf\+Fachada.\+Registrar\+Inventario (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material}{Tipo\+\_\+\+Material}}}]{mat,  }\item[{int}]{cantidad,  }\item[{long}]{precio }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Registro de un nuevo inventario 
+\begin{DoxyParams}{Parámetros}
+{\em mat} & tipo material \\
+\hline
+{\em cantidad} & \\
+\hline
+{\em precio} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se registra bien 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a3791a760924961a65248f7fdff44cfac}{Fachada.\+Servidor\+Principal}}.
@@ -451,6 +695,31 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a3791a7609
 \doxysubsubsection{\texorpdfstring{RegistrarJugador()}{RegistrarJugador()}}
 {\footnotesize\ttfamily boolean Fachada.\+itf\+Fachada.\+Registrar\+Jugador (\begin{DoxyParamCaption}\item[{String}]{nombre,  }\item[{String}]{apellido,  }\item[{String}]{fecha\+\_\+S,  }\item[{String}]{DNI,  }\item[{int}]{telefono,  }\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Crea un nuevo jugador en la base de datos 
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & \\
+\hline
+{\em apellido} & \\
+\hline
+{\em fecha\+\_\+S} & \\
+\hline
+{\em DNI} & \\
+\hline
+{\em telefono} & \\
+\hline
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se crea correctamente 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a9dccea50ec3848014860ce45c192bbcb}{Fachada.\+Servidor\+Principal}}.
@@ -461,6 +730,21 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a9dccea50e
 \doxysubsubsection{\texorpdfstring{sancionesPersona()}{sancionesPersona()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_sancion}{Sancion}}$>$ Fachada.\+itf\+Fachada.\+sanciones\+Persona (\begin{DoxyParamCaption}\item[{String}]{DNI }\end{DoxyParamCaption}) throws Remote\+Exception, Parse\+Exception}
 
+Mediante este método se obtiene una lista de todas las sanciones de una persona 
+\begin{DoxyParams}{Parámetros}
+{\em DNI} & del jugador o entrenador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+lista de sanciones 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_aff19d6d3ac6b4e8ae289799735e4436c}{Fachada.\+Servidor\+Principal}}.
@@ -471,6 +755,21 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_aff19d6d3a
 \doxysubsubsection{\texorpdfstring{sancionPartido()}{sancionPartido()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}} Fachada.\+itf\+Fachada.\+sancion\+Partido (\begin{DoxyParamCaption}\item[{String}]{cod\+Partido }\end{DoxyParamCaption}) throws Parse\+Exception, Remote\+Exception}
 
+Para obtener los datos del partido en el cual se cometieron una sanción 
+\begin{DoxyParams}{Parámetros}
+{\em cod\+Partido} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+partido 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Parse\+Exception} & \\
+\hline
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a63ab701d84f5a82cc196dc5b7a76cccb}{Fachada.\+Servidor\+Principal}}.

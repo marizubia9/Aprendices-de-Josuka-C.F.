@@ -85,13 +85,13 @@ public class RegistrarAdmin extends JFrame {
 		lblNuevoEntrenador.setBounds(69, 16, 338, 38);
 		panel_central.add(lblNuevoEntrenador);
 
-		lblNombre = new JLabel("Correo");
+		lblNombre = new JLabel("Email");
 		lblNombre.setForeground(Color.DARK_GRAY);
 		lblNombre.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
 		lblNombre.setBounds(353, 150, 135, 31);
 		panel_central.add(lblNombre);
 
-		lblApellido = new JLabel("Contraseña");
+		lblApellido = new JLabel("Password");
 		lblApellido.setForeground(Color.DARK_GRAY);
 		lblApellido.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
 		lblApellido.setBounds(353, 206, 135, 31);

@@ -26,7 +26,11 @@ import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Aprendices_de_Josuka.LD.Sancion;
 import Controller.Controller;
-
+/**
+ * Muestra las estadisticas del jugador
+ * @author Alumno
+ *
+ */
 public class Estadisticas extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -53,7 +57,13 @@ public class Estadisticas extends JFrame {
 	private JLabel lblSanciones;
 	private JLabel lblNumSanciones;
 	private int ranking;
-	
+	/**
+	 * Constructor
+	 * @param controller
+	 * @param j jugador que esta dentro de la aplicación
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public Estadisticas(Controller controller, Jugador j) throws RemoteException, ParseException 
 	{
 		this.ranking = controller.getRanking(j.getDNI());
@@ -64,7 +74,11 @@ public class Estadisticas extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Inicia componentes
+	 * @throws ParseException
+	 * @throws RemoteException
+	 */
 	public void initComponents() throws ParseException, RemoteException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -284,7 +298,11 @@ public class Estadisticas extends JFrame {
 		InsertarJPanel();
 	}
 
-	
+	/**
+	 * Muestra las sanciones en un JPanel
+	 * @throws ParseException
+	 * @throws RemoteException
+	 */
 	public void InsertarJPanel() throws ParseException, RemoteException {
 		pScrollPane.removeAll();
 		int x = 0;

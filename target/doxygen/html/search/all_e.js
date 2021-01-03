@@ -5,7 +5,7 @@ var searchData=
   ['interface_5fsanciones_188',['Interface_Sanciones',['../namespacepython_1_1_partidos_1_1_interface___sanciones.html',1,'python::Partidos']]],
   ['panel_5fentrenador_189',['Panel_Entrenador',['../class_aprendices__de___josuka_1_1_l_p_1_1_panel___entrenador.html',1,'Aprendices_de_Josuka.LP.Panel_Entrenador'],['../class_aprendices__de___josuka_1_1_l_p_1_1_panel___entrenador.html#a668e19a8e113dbecdfb81e72f27478df',1,'Aprendices_de_Josuka.LP.Panel_Entrenador.Panel_Entrenador()']]],
   ['panel_5fentrenador_2ejava_190',['Panel_Entrenador.java',['../_panel___entrenador_8java.html',1,'']]],
-  ['panel_5fequipos_191',['Panel_Equipos',['../class_aprendices__de___josuka_1_1_l_p_1_1_panel___equipos.html',1,'Aprendices_de_Josuka.LP.Panel_Equipos'],['../class_aprendices__de___josuka_1_1_l_p_1_1_panel___equipos.html#a021d8b59bb7793cf14d893eecb75f1c9',1,'Aprendices_de_Josuka.LP.Panel_Equipos.Panel_Equipos()']]],
+  ['panel_5fequipos_191',['Panel_Equipos',['../class_aprendices__de___josuka_1_1_l_p_1_1_panel___equipos.html',1,'Aprendices_de_Josuka.LP.Panel_Equipos'],['../class_aprendices__de___josuka_1_1_l_p_1_1_panel___equipos.html#a9fc0cb047a3ab6ef062b93895e51fb27',1,'Aprendices_de_Josuka.LP.Panel_Equipos.Panel_Equipos()']]],
   ['panel_5fequipos_2ejava_192',['Panel_Equipos.java',['../_panel___equipos_8java.html',1,'']]],
   ['panel_5fjugador_193',['Panel_Jugador',['../class_aprendices__de___josuka_1_1_l_p_1_1_panel___jugador.html',1,'Aprendices_de_Josuka.LP.Panel_Jugador'],['../class_aprendices__de___josuka_1_1_l_p_1_1_panel___jugador.html#ae4bf687c5223496aed769bde8b362aca',1,'Aprendices_de_Josuka.LP.Panel_Jugador.Panel_Jugador()']]],
   ['panel_5fjugador_2ejava_194',['Panel_Jugador.java',['../_panel___jugador_8java.html',1,'']]],

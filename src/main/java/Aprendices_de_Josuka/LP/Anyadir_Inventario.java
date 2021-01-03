@@ -135,7 +135,7 @@ public class Anyadir_Inventario extends JFrame {
 		btnHome.setBounds(0, 0, 328, 42);
 		panel_izquierdo.add(btnHome);
 
-		btnAnyadirEquipo = new JButton("AÑADIR EQUIPO");
+		btnAnyadirEquipo = new JButton("ANADIR EQUIPO");
 		btnAnyadirEquipo.setEnabled(false);
 		btnAnyadirEquipo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAnyadirEquipo.setForeground(Color.WHITE);
@@ -144,7 +144,7 @@ public class Anyadir_Inventario extends JFrame {
 		btnAnyadirEquipo.setBounds(0, 40, 328, 42);
 		panel_izquierdo.add(btnAnyadirEquipo);
 
-		btnAnyadirInventario = new JButton("AÑADIR INVENTARIO");
+		btnAnyadirInventario = new JButton("ANADIR INVENTARIO");
 		btnAnyadirInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 

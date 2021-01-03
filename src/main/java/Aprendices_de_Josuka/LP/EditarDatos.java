@@ -24,7 +24,11 @@ import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
-
+/**
+ * El jugador modifica su correo o su contraseña
+ * @author Alumno
+ *
+ */
 public class EditarDatos extends JFrame {
 
 	/**
@@ -48,7 +52,13 @@ public class EditarDatos extends JFrame {
 
 	
 	
-	
+	/**
+	 * Constructor
+	 * @param controller
+	 * @param j jugador que esta dentro de la aplicacion
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public EditarDatos(Controller controller, Jugador j) throws RemoteException, ParseException 
 	{
 		this.j = j;
@@ -56,7 +66,9 @@ public class EditarDatos extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Inicia los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -237,7 +249,7 @@ public class EditarDatos extends JFrame {
 		panel_central.add(txtCorreo);
 		
 		
-		JLabel lblPsw = new JLabel("Nueva Contraseña");
+		JLabel lblPsw = new JLabel("Nueva Contrasena");
 		lblPsw.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 15));
 		lblPsw.setBounds(450, 190, 250, 26);
 		panel_central.add(lblPsw);
@@ -272,6 +284,11 @@ public class EditarDatos extends JFrame {
 		
 	
 	}
+	/**
+	 * Método para guardar los cambios
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public void modificar() throws RemoteException, ParseException
 	{
 		String correo = txtCorreo.getText();
