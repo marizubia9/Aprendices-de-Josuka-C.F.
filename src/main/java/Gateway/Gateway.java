@@ -19,7 +19,11 @@ import ServiciosExternos.Partido_JSON;
 import ServiciosExternos.Partidos_parameters;
 import ServiciosExternos.RestClient;
 import ServiciosExternos.Sancion_JSON;
-
+/**
+ * Clase Gateway, se conectara con la raspberry de partidos y sanciones. Además, implementará la interfaz del gateway
+ * @author Alumno
+ *
+ */
 public class Gateway implements itfGateway {
 	private static String port = "5000";
 	private static String hostname = "127.0.0.1";
@@ -27,19 +31,22 @@ public class Gateway implements itfGateway {
 	private RestClient<Partidos_parameters> client;
 	private Response response;
 	private static final Gateway INSTANCE = new Gateway();
-
+	/**
+	 * Constructor vacio para crear el Gateway
+	 */
 	private Gateway() {
 	}
-
+	/**
+	 * Mediante este método se incorpora el patrón Singleton, para instanciar el objeto una unica vez
+	 * @return devolverá el objeto Gateway
+	 */
 	public static Gateway getInstance() {
 		return INSTANCE;
 	}
-	@SuppressWarnings("unchecked")
+
 	@Override
 	public List<Partido> search_partidos() throws ParseException {
 		path = "/Partidos/Search_Partidos";
-        System.out.println("Trying POST at " + path + " (Search All partido message)");
-        System.out.println("CURL call: curl http://127.0.0.1:5000//Partidos/Search_Partidos -d '{ }' -X POST -H \"Content-Type: application/json\" -v");
         client = new RestClient<Partidos_parameters>(hostname, port);
         response = null;
         try {
@@ -57,7 +64,6 @@ public class Gateway implements itfGateway {
         String json_string = response.readEntity(String.class);
         JSONParser myParser = new JSONParser();
         JSONArray partidosArray = (JSONArray) myParser.parse( json_string );
-        System.out.println("holaAAAAAAAAAAA");
        
         myPartidosArray = (List) partidosArray.stream()
                 .map( element -> new Partido_JSON( element))
@@ -66,6 +72,7 @@ public class Gateway implements itfGateway {
         return convertir_partidos(myPartidosArray);
 
 	}
+
 	@Override
 	public boolean partidos() throws ParseException
 	{
@@ -76,6 +83,7 @@ public class Gateway implements itfGateway {
 		}
 		return false;
 	}
+
 	@Override
 	public boolean sanciones() throws ParseException
 	{

@@ -1,12 +1,12 @@
-\hypertarget{class_gateway_1_1_gateway}{}\doxysection{Gateway.\+Gateway Class Reference}
+\hypertarget{class_gateway_1_1_gateway}{}\doxysection{Referencia de la Clase Gateway.\+Gateway}
 \label{class_gateway_1_1_gateway}\index{Gateway.Gateway@{Gateway.Gateway}}
-Inheritance diagram for Gateway.\+Gateway\+:\begin{figure}[H]
+Diagrama de herencias de Gateway.\+Gateway\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_gateway_1_1_gateway}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Member Functions}
+\doxysubsection*{Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
 List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}} $>$ \mbox{\hyperlink{class_gateway_1_1_gateway_aa92dded848bc1261e08b21f63c48a4e6}{search\+\_\+partidos}} ()  throws Parse\+Exception 
@@ -23,23 +23,45 @@ List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_sancion}{Sanc
 \item 
 Array\+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_sancion}{Sancion}} $>$ \mbox{\hyperlink{class_gateway_1_1_gateway_a534aa7130c05177a3e1cdf1dca0990c0}{convertir\+\_\+sanciones}} (List$<$ \mbox{\hyperlink{class_servicios_externos_1_1_sancion___j_s_o_n}{Sancion\+\_\+\+JSON}} $>$ json)
 \end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
+\doxysubsection*{Métodos públicos estáticos}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_gateway_1_1_gateway}{Gateway}} \mbox{\hyperlink{class_gateway_1_1_gateway_a022b2bc6d0c16902652f24e23028e0f9}{get\+Instance}} ()
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Descripción detallada}
+Clase \mbox{\hyperlink{class_gateway_1_1_gateway}{Gateway}}, se conectara con la raspberry de partidos y sanciones. Además, implementará la interfaz del gateway \begin{DoxyAuthor}{Autor}
+Alumno 
+\end{DoxyAuthor}
+
+
+Definición en la línea 27 del archivo Gateway.\+java.
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
 \mbox{\Hypertarget{class_gateway_1_1_gateway_ad8a80869ada2bb8e077dc34a69e40f01}\label{class_gateway_1_1_gateway_ad8a80869ada2bb8e077dc34a69e40f01}} 
 \index{Gateway.Gateway@{Gateway.Gateway}!convertir\_partidos@{convertir\_partidos}}
 \index{convertir\_partidos@{convertir\_partidos}!Gateway.Gateway@{Gateway.Gateway}}
 \doxysubsubsection{\texorpdfstring{convertir\_partidos()}{convertir\_partidos()}}
 {\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}}$>$ Gateway.\+Gateway.\+convertir\+\_\+partidos (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_servicios_externos_1_1_partido___j_s_o_n}{Partido\+\_\+\+JSON}} $>$}]{json }\end{DoxyParamCaption})}
 
+Parsea el contenido de la raspberry (Partido\+\_\+\+JSON) al objeto Partido de la aplicación 
+\begin{DoxyParams}{Parámetros}
+{\em json} & lista de partidos a parsear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+lista de partidos parseado 
+\end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a266084585e62cde44e6ea016563206e2}{Gateway.\+itf\+Gateway}}.
+Implementa \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a266084585e62cde44e6ea016563206e2}{Gateway.\+itf\+Gateway}}.
+
+
+
+Definición en la línea 98 del archivo Gateway.\+java.
 
 \mbox{\Hypertarget{class_gateway_1_1_gateway_a534aa7130c05177a3e1cdf1dca0990c0}\label{class_gateway_1_1_gateway_a534aa7130c05177a3e1cdf1dca0990c0}} 
 \index{Gateway.Gateway@{Gateway.Gateway}!convertir\_sanciones@{convertir\_sanciones}}
@@ -47,9 +69,21 @@ Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a266084585e62cde44e
 \doxysubsubsection{\texorpdfstring{convertir\_sanciones()}{convertir\_sanciones()}}
 {\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_sancion}{Sancion}}$>$ Gateway.\+Gateway.\+convertir\+\_\+sanciones (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_servicios_externos_1_1_sancion___j_s_o_n}{Sancion\+\_\+\+JSON}} $>$}]{json }\end{DoxyParamCaption})}
 
+Parsea el contenido de la raspberry (Sancion\+\_\+\+JSON) al objeto Sancion de la aplicación 
+\begin{DoxyParams}{Parámetros}
+{\em json} & lista de sanciones a parsear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+lista de sanciones parseado 
+\end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a67cbf057c6f7e4a01e4cd051b24edbb7}{Gateway.\+itf\+Gateway}}.
+Implementa \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a67cbf057c6f7e4a01e4cd051b24edbb7}{Gateway.\+itf\+Gateway}}.
+
+
+
+Definición en la línea 160 del archivo Gateway.\+java.
 
 \mbox{\Hypertarget{class_gateway_1_1_gateway_a8f3a20a4733e7f7ac94b9aba23526b5d}\label{class_gateway_1_1_gateway_a8f3a20a4733e7f7ac94b9aba23526b5d}} 
 \index{Gateway.Gateway@{Gateway.Gateway}!getEquipos@{getEquipos}}
@@ -57,9 +91,21 @@ Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a67cbf057c6f7e4a01e
 \doxysubsubsection{\texorpdfstring{getEquipos()}{getEquipos()}}
 {\footnotesize\ttfamily Hash\+Set$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext}{Equipos\+\_\+\+Ext}}$>$ Gateway.\+Gateway.\+get\+Equipos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Parse\+Exception}
 
+Los partidos tienen dos equipos, mediante este método se obtiene la lista de todos los equipos externos. Donde algunos corresponderán con los equipos del club de futbol. Así, se podrá calcular la clasificación \begin{DoxyReturn}{Devuelve}
+devuelve una lista de los equipos 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
-Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a2b96ea0fc2a7b2a31bf40953b5e14483}{Gateway.\+itf\+Gateway}}.
+Implementa \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a2b96ea0fc2a7b2a31bf40953b5e14483}{Gateway.\+itf\+Gateway}}.
+
+
+
+Definición en la línea 113 del archivo Gateway.\+java.
 
 \mbox{\Hypertarget{class_gateway_1_1_gateway_a022b2bc6d0c16902652f24e23028e0f9}\label{class_gateway_1_1_gateway_a022b2bc6d0c16902652f24e23028e0f9}} 
 \index{Gateway.Gateway@{Gateway.Gateway}!getInstance@{getInstance}}
@@ -67,15 +113,34 @@ Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a2b96ea0fc2a7b2a31b
 \doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{class_gateway_1_1_gateway}{Gateway}} Gateway.\+Gateway.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Mediante este método se incorpora el patrón Singleton, para instanciar el objeto una unica vez \begin{DoxyReturn}{Devuelve}
+devolverá el objeto \mbox{\hyperlink{class_gateway_1_1_gateway}{Gateway}} 
+\end{DoxyReturn}
+
+
+Definición en la línea 43 del archivo Gateway.\+java.
+
 \mbox{\Hypertarget{class_gateway_1_1_gateway_ac30184a7af821093d059116048ae9a70}\label{class_gateway_1_1_gateway_ac30184a7af821093d059116048ae9a70}} 
 \index{Gateway.Gateway@{Gateway.Gateway}!partidos@{partidos}}
 \index{partidos@{partidos}!Gateway.Gateway@{Gateway.Gateway}}
 \doxysubsubsection{\texorpdfstring{partidos()}{partidos()}}
 {\footnotesize\ttfamily boolean Gateway.\+Gateway.\+partidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Parse\+Exception}
 
+Método para ver si las listas de partidos de la raspberry está vacía o no \begin{DoxyReturn}{Devuelve}
+true si la lista está llena, false si no 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
-Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a1f62dd0eb72a9532fd5d0c9d83e8a6bb}{Gateway.\+itf\+Gateway}}.
+Implementa \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a1f62dd0eb72a9532fd5d0c9d83e8a6bb}{Gateway.\+itf\+Gateway}}.
+
+
+
+Definición en la línea 77 del archivo Gateway.\+java.
 
 \mbox{\Hypertarget{class_gateway_1_1_gateway_a3f4e76b1204790f1931014e34c17ffff}\label{class_gateway_1_1_gateway_a3f4e76b1204790f1931014e34c17ffff}} 
 \index{Gateway.Gateway@{Gateway.Gateway}!sanciones@{sanciones}}
@@ -83,9 +148,21 @@ Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a1f62dd0eb72a9532fd
 \doxysubsubsection{\texorpdfstring{sanciones()}{sanciones()}}
 {\footnotesize\ttfamily boolean Gateway.\+Gateway.\+sanciones (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Parse\+Exception}
 
+Método para ver si las listas de sanciones de la raspberry está vacía o no \begin{DoxyReturn}{Devuelve}
+true si la lista está llena, false si no 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
-Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_aa2b054674ca24884aa9a81bee3b02fb4}{Gateway.\+itf\+Gateway}}.
+Implementa \mbox{\hyperlink{interface_gateway_1_1itf_gateway_aa2b054674ca24884aa9a81bee3b02fb4}{Gateway.\+itf\+Gateway}}.
+
+
+
+Definición en la línea 88 del archivo Gateway.\+java.
 
 \mbox{\Hypertarget{class_gateway_1_1_gateway_aa92dded848bc1261e08b21f63c48a4e6}\label{class_gateway_1_1_gateway_aa92dded848bc1261e08b21f63c48a4e6}} 
 \index{Gateway.Gateway@{Gateway.Gateway}!search\_partidos@{search\_partidos}}
@@ -93,9 +170,21 @@ Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_aa2b054674ca24884aa
 \doxysubsubsection{\texorpdfstring{search\_partidos()}{search\_partidos()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}}$>$ Gateway.\+Gateway.\+search\+\_\+partidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Parse\+Exception}
 
+Método para obtener la lista de partidos de la raspberry \begin{DoxyReturn}{Devuelve}
+devuelve la lista 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
-Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a5c0947f7cc0ea0c79ba6ef0c1a8ff2ac}{Gateway.\+itf\+Gateway}}.
+Implementa \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a5c0947f7cc0ea0c79ba6ef0c1a8ff2ac}{Gateway.\+itf\+Gateway}}.
+
+
+
+Definición en la línea 48 del archivo Gateway.\+java.
 
 \mbox{\Hypertarget{class_gateway_1_1_gateway_a4d5b01fe7639632f515c434ab01153c6}\label{class_gateway_1_1_gateway_a4d5b01fe7639632f515c434ab01153c6}} 
 \index{Gateway.Gateway@{Gateway.Gateway}!search\_sanciones@{search\_sanciones}}
@@ -103,12 +192,24 @@ Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_a5c0947f7cc0ea0c79b
 \doxysubsubsection{\texorpdfstring{search\_sanciones()}{search\_sanciones()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_sancion}{Sancion}}$>$ Gateway.\+Gateway.\+search\+\_\+sanciones (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Parse\+Exception}
 
+Método para obtener la lista de sanciones de la raspberry \begin{DoxyReturn}{Devuelve}
+devuelve la lista 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
-Implements \mbox{\hyperlink{interface_gateway_1_1itf_gateway_ab7371e0131674f1e0b7d084bf4653bf0}{Gateway.\+itf\+Gateway}}.
+Implementa \mbox{\hyperlink{interface_gateway_1_1itf_gateway_ab7371e0131674f1e0b7d084bf4653bf0}{Gateway.\+itf\+Gateway}}.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+Definición en la línea 126 del archivo Gateway.\+java.
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
 \item 
 src/main/java/\+Gateway/\mbox{\hyperlink{_gateway_8java}{Gateway.\+java}}\end{DoxyCompactItemize}

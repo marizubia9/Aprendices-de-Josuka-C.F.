@@ -1,8 +1,12 @@
 package ServiciosExternos;
 
-import java.time.*;
-import java.time.format.DateTimeFormatter;
-
+import lombok.Data;
+/**
+ * Clase que contiene los atributos de las sanciones, con sus getters y setters mediante el plugin de Lombok.
+ * Implementa DF_Printable para imprimir el contenido de cada sancion
+ * @author Alumno
+ */
+@Data
 public class Sanciones_parameters implements DF_Printable
 {
     private String codigo;
@@ -10,43 +14,9 @@ public class Sanciones_parameters implements DF_Printable
     private String dni;
     private String cod_partido;
 
-    public Sanciones_parameters() {
-    }
-
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public String getCodPartido() {
-        return cod_partido;
-    }
-
-    public void setCodPartido(String cod_partido) {
-        this.cod_partido = cod_partido;
-    }
-
-
+ /**
+  * Imprime el contenido de las sanciones de la raspberry
+  */
     @Override
     public void print()
     {
@@ -55,7 +25,7 @@ public class Sanciones_parameters implements DF_Printable
                  "cod: " + getCodigo() + "\n" +
                  "Tipo: " + getTipo() + "\n" +
                  "Dni: " + getDni()+ "\n" +
-                 "Cod partido: " + getCodPartido() + "\n"
+                 "Cod partido: " + getCod_partido() + "\n"
         );
     }
 }

@@ -23,11 +23,11 @@
  @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var menudata={children:[
-{text:"Main Page",url:"index.html"},
-{text:"Packages",url:"namespaces.html",children:[
-{text:"Packages",url:"namespaces.html"},
-{text:"Package Functions",url:"namespacemembers.html",children:[
-{text:"All",url:"namespacemembers.html",children:[
+{text:"Página principal",url:"index.html"},
+{text:"Paquetes",url:"namespaces.html",children:[
+{text:"Paquetes",url:"namespaces.html"},
+{text:"Funciones del 'package'",url:"namespacemembers.html",children:[
+{text:"Todo",url:"namespacemembers.html",children:[
 {text:"a",url:"namespacemembers.html#index_a"},
 {text:"f",url:"namespacemembers.html#index_f"},
 {text:"j",url:"namespacemembers.html#index_j"}]},
@@ -35,12 +35,12 @@ var menudata={children:[
 {text:"a",url:"namespacemembers_vars.html#index_a"},
 {text:"f",url:"namespacemembers_vars.html#index_f"},
 {text:"j",url:"namespacemembers_vars.html#index_j"}]}]}]},
-{text:"Classes",url:"annotated.html",children:[
-{text:"Class List",url:"annotated.html"},
-{text:"Class Index",url:"classes.html"},
-{text:"Class Hierarchy",url:"hierarchy.html"},
-{text:"Class Members",url:"functions.html",children:[
-{text:"All",url:"functions.html",children:[
+{text:"Clases",url:"annotated.html",children:[
+{text:"Lista de clases",url:"annotated.html"},
+{text:"Índice de clases",url:"classes.html"},
+{text:"Jerarquía de la clase",url:"hierarchy.html"},
+{text:"Miembros de las clases",url:"functions.html",children:[
+{text:"Todo",url:"functions.html",children:[
 {text:"_",url:"functions.html#index__5F"},
 {text:"a",url:"functions_a.html#index_a"},
 {text:"b",url:"functions_b.html#index_b"},
@@ -60,7 +60,7 @@ var menudata={children:[
 {text:"t",url:"functions_t.html#index_t"},
 {text:"v",url:"functions_v.html#index_v"},
 {text:"w",url:"functions_w.html#index_w"}]},
-{text:"Functions",url:"functions_func.html",children:[
+{text:"Funciones",url:"functions_func.html",children:[
 {text:"_",url:"functions_func.html#index__5F"},
 {text:"a",url:"functions_func_a.html#index_a"},
 {text:"c",url:"functions_func_c.html#index_c"},
@@ -80,5 +80,5 @@ var menudata={children:[
 {text:"v",url:"functions_func_v.html#index_v"},
 {text:"w",url:"functions_func_w.html#index_w"}]},
 {text:"Variables",url:"functions_vars.html"}]}]},
-{text:"Files",url:"files.html",children:[
-{text:"File List",url:"files.html"}]}]}
+{text:"Archivos",url:"files.html",children:[
+{text:"Lista de archivos",url:"files.html"}]}]}

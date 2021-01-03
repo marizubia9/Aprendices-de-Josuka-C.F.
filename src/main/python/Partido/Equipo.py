@@ -1,13 +1,16 @@
-#!/usr/bin/python3                                                                                                                                                                                                                           # -*- coding: utf-8 -*-
-# -*- coding: utf-8 -*-
-
 import json
 import jsonpickle
 from json import JSONEncoder
-
+"""clase donde se establecen los atributos de los equpos que se guardaran con los partidos en la raspberry
+"""
 class Equipo():
-    """"
-    Class to handle Airports
+   
+    """constructor del equipo
+    :param self el objeto equipo
+    :param code codigo del equipo externo
+    :param nombre nombre del equipo
+    :param puntuacion puntuacion del equipo para realizar clasificacion
+    :param categoria ALEVIN, SENIOR, INFANTIL, CADETE o JUVENIL
     """
 
     def __init__(self, code: str, nombre: str, puntuacion: int, categoria: str):
@@ -20,7 +23,7 @@ class Equipo():
         self.__categoria = categoria
 
 
-
+        
     def get_code(self) -> str:
         return self.__code
 

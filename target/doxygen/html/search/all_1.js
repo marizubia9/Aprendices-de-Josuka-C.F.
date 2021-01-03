@@ -29,14 +29,13 @@ var searchData=
   ['anyadir_5finventario_2ejava_28',['Anyadir_Inventario.java',['../_anyadir___inventario_8java.html',1,'']]],
   ['anyadir_5fmaterial_29',['Anyadir_Material',['../class_aprendices__de___josuka_1_1_l_p_1_1_registrar_equipo.html#a473229843771accb2a30326e08a83b30',1,'Aprendices_de_Josuka::LP::RegistrarEquipo']]],
   ['anyadirjugadores_30',['AnyadirJugadores',['../class_aprendices__de___josuka_1_1_l_p_1_1_editar_equipo.html#a0820af10dcb9e3e0c19346d66ea8e797',1,'Aprendices_de_Josuka::LP::EditarEquipo']]],
-  ['apptest_2ejava_31',['AppTest.java',['../_app_test_8java.html',1,'']]],
-  ['aprendices_5fde_5fjosuka_32',['Aprendices_de_Josuka',['../namespace_aprendices__de___josuka_1_1_aprendices__de___josuka.html',1,'Aprendices_de_Josuka']]],
-  ['aprendicesdejosukapartidos_33',['AprendicesDeJosukaPartidos',['../class_aprendices_de_josuka_partidos_1_1_aprendices_de_josuka_partidos.html',1,'AprendicesDeJosukaPartidos.AprendicesDeJosukaPartidos'],['../namespace_aprendices_de_josuka_partidos.html',1,'AprendicesDeJosukaPartidos']]],
-  ['aprendicesdejosukapartidos_2epy_34',['AprendicesDeJosukaPartidos.py',['../_aprendices_de_josuka_partidos_8py.html',1,'']]],
-  ['aprendicesdejosukasanciones_35',['AprendicesDeJosukaSanciones',['../class_aprendices_de_josuka_sanciones_1_1_aprendices_de_josuka_sanciones.html',1,'AprendicesDeJosukaSanciones.AprendicesDeJosukaSanciones'],['../namespace_aprendices_de_josuka_sanciones.html',1,'AprendicesDeJosukaSanciones']]],
-  ['aprendicesdejosukasanciones_2epy_36',['AprendicesDeJosukaSanciones.py',['../_aprendices_de_josuka_sanciones_8py.html',1,'']]],
-  ['asignarinventario_37',['AsignarInventario',['../class_controller_1_1_controller.html#a3a30c99a72ccef82ed6224df0cbf6dc9',1,'Controller.Controller.AsignarInventario()'],['../interface_fachada_1_1itf_fachada.html#a25bd0decc4d950b30db80ab6de5bbef2',1,'Fachada.itfFachada.AsignarInventario()'],['../class_fachada_1_1_servidor_principal.html#a3a2e2aaccb0e87c9a2a2914934070698',1,'Fachada.ServidorPrincipal.AsignarInventario()']]],
-  ['asignarmaterial_38',['AsignarMaterial',['../class_aprendices__de___josuka_1_1_l_p_1_1_registrar_equipo.html#a28cadb5e73a1823dcaea6529e6038671',1,'Aprendices_de_Josuka::LP::RegistrarEquipo']]],
-  ['ld_39',['LD',['../namespace_aprendices__de___josuka_1_1_l_d.html',1,'Aprendices_de_Josuka']]],
-  ['lp_40',['LP',['../namespace_aprendices__de___josuka_1_1_l_p.html',1,'Aprendices_de_Josuka']]]
+  ['aprendices_5fde_5fjosuka_31',['Aprendices_de_Josuka',['../namespace_aprendices__de___josuka_1_1_aprendices__de___josuka.html',1,'Aprendices_de_Josuka']]],
+  ['aprendicesdejosukapartidos_32',['AprendicesDeJosukaPartidos',['../class_aprendices_de_josuka_partidos_1_1_aprendices_de_josuka_partidos.html',1,'AprendicesDeJosukaPartidos.AprendicesDeJosukaPartidos'],['../namespace_aprendices_de_josuka_partidos.html',1,'AprendicesDeJosukaPartidos']]],
+  ['aprendicesdejosukapartidos_2epy_33',['AprendicesDeJosukaPartidos.py',['../_aprendices_de_josuka_partidos_8py.html',1,'']]],
+  ['aprendicesdejosukasanciones_34',['AprendicesDeJosukaSanciones',['../class_aprendices_de_josuka_sanciones_1_1_aprendices_de_josuka_sanciones.html',1,'AprendicesDeJosukaSanciones.AprendicesDeJosukaSanciones'],['../namespace_aprendices_de_josuka_sanciones.html',1,'AprendicesDeJosukaSanciones']]],
+  ['aprendicesdejosukasanciones_2epy_35',['AprendicesDeJosukaSanciones.py',['../_aprendices_de_josuka_sanciones_8py.html',1,'']]],
+  ['asignarinventario_36',['AsignarInventario',['../class_controller_1_1_controller.html#a3a30c99a72ccef82ed6224df0cbf6dc9',1,'Controller.Controller.AsignarInventario()'],['../interface_fachada_1_1itf_fachada.html#a25bd0decc4d950b30db80ab6de5bbef2',1,'Fachada.itfFachada.AsignarInventario()'],['../class_fachada_1_1_servidor_principal.html#a3a2e2aaccb0e87c9a2a2914934070698',1,'Fachada.ServidorPrincipal.AsignarInventario()']]],
+  ['asignarmaterial_37',['AsignarMaterial',['../class_aprendices__de___josuka_1_1_l_p_1_1_registrar_equipo.html#a28cadb5e73a1823dcaea6529e6038671',1,'Aprendices_de_Josuka::LP::RegistrarEquipo']]],
+  ['ld_38',['LD',['../namespace_aprendices__de___josuka_1_1_l_d.html',1,'Aprendices_de_Josuka']]],
+  ['lp_39',['LP',['../namespace_aprendices__de___josuka_1_1_l_p.html',1,'Aprendices_de_Josuka']]]
 ];
