@@ -21,7 +21,10 @@ import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
 
 import javax.swing.JTextField;
-
+/**
+ * En caso de que los jugadores o entrenadores ya esten registrados, iniciarán sesión mediante esta pantalla
+ * @author Alumno
+ */
 public class IniciarSesion extends JFrame {
 
 	private JPanel contentPane;
@@ -31,7 +34,7 @@ public class IniciarSesion extends JFrame {
 	private Controller controller;
 
 	/**
-	 * Launch the application.
+	 * La primera ventana en lanzar, establece la conexión con el servidor.
 	 */
 	public static void main(String[] args) {
 		Controller c = null;
@@ -46,8 +49,8 @@ public class IniciarSesion extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
-	 * @param c 
+	 * Constructor de la ventana
+	 * @param c el controller para utilizar el mismo todo el rato
 	 */
 	public IniciarSesion(Controller c) 
 	{
@@ -55,7 +58,9 @@ public class IniciarSesion extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+/**
+ * Inicia los componentes
+ */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -171,6 +176,12 @@ public class IniciarSesion extends JFrame {
 		});
 
 	}
+	/**
+	 * Cuando pulsa "Entrar" se ejecuta este método. Verifica la existencia de esos datos en la base de datos, y en caso de existir, le da paso a la aplicación
+	 * @param email 
+	 * @param psw
+	 * @throws ParseException
+	 */
 	public void Entrar(String email, String psw) throws ParseException {
 		try {
 			if (controller.EntrarJugador(email, psw)) {

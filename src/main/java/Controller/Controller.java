@@ -1,3 +1,7 @@
+/**
+ * @package Controller
+ * @brief Necesario para incorporar el patrón de diseño del controller
+ */
 package Controller;
 
 import java.rmi.RemoteException;
@@ -15,7 +19,6 @@ import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Partido;
 import Aprendices_de_Josuka.LD.Sancion;
 import Aprendices_de_Josuka.LD.Tipo_Material;
-import Aprendices_de_Josuka.LP.Pantalla_Principal;
 import Remote.ServiceLocator;
 
 public class Controller {

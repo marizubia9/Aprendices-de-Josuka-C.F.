@@ -1,5 +1,8 @@
+/**
+ * @package Gateway
+ * @brief La aplicación se conectará al servicio externo de la liga, de la cual obtendrá los partidos y las sanciones
+ */
 package Gateway;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

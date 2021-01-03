@@ -1,3 +1,7 @@
+/**
+ * @package Aprendices_de_Josuka.LD
+ * @brief Todos los objetos que tendrá la aplicación
+ */
 package Aprendices_de_Josuka.LD;
 
 import javax.jdo.annotations.PersistenceCapable;

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Aprendices de Josuka C.F: Referencia de la Clase Aprendices_de_Josuka.LP.IniciarSesion</title>
+<title>APRENDICES DE JOSUKA C.F: Referencia de la Clase Aprendices_de_Josuka.LP.IniciarSesion</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Aprendices de Josuka C.F
+   <div id="projectname">APRENDICES DE JOSUKA C.F
    </div>
   </td>
  </tr>
@@ -111,8 +112,9 @@ Métodos públicos estáticos</h2></td></tr>
 <tr class="separator:a1f1a7081b6c7108ed20c4d4efefaad8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock">
-<p class="definition">Definición en la línea <a class="el" href="_iniciar_sesion_8java_source.html#l00025">25</a> del archivo <a class="el" href="_iniciar_sesion_8java_source.html">IniciarSesion.java</a>.</p>
+<div class="textblock"><p>En caso de que los jugadores o entrenadores ya esten registrados, iniciarán sesión mediante esta pantalla </p><dl class="section author"><dt>Autor</dt><dd>Alumno </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_iniciar_sesion_8java_source.html#l00028">28</a> del archivo <a class="el" href="_iniciar_sesion_8java_source.html">IniciarSesion.java</a>.</p>
 </div><h2 class="groupheader">Documentación del constructor y destructor</h2>
 <a id="a4d854625e89e1e0bb9cff2a88be87e30"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d854625e89e1e0bb9cff2a88be87e30">&#9670;&nbsp;</a></span>IniciarSesion()</h2>
@@ -129,14 +131,14 @@ Métodos públicos estáticos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create the frame. </p><dl class="params"><dt>Parámetros</dt><dd>
+<p>Constructor de la ventana </p><dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td></td></tr>
+    <tr><td class="paramname">c</td><td>el controller para utilizar el mismo todo el rato </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_iniciar_sesion_8java_source.html#l00052">52</a> del archivo <a class="el" href="_iniciar_sesion_8java_source.html">IniciarSesion.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_iniciar_sesion_8java_source.html#l00055">55</a> del archivo <a class="el" href="_iniciar_sesion_8java_source.html">IniciarSesion.java</a>.</p>
 
 </div>
 </div>
@@ -166,8 +168,21 @@ Métodos públicos estáticos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Cuando pulsa "Entrar" se ejecuta este método. Verifica la existencia de esos datos en la base de datos, y en caso de existir, le da paso a la aplicación </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td></td></tr>
+    <tr><td class="paramname">psw</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ParseException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_iniciar_sesion_8java_source.html#l00174">174</a> del archivo <a class="el" href="_iniciar_sesion_8java_source.html">IniciarSesion.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_iniciar_sesion_8java_source.html#l00185">185</a> del archivo <a class="el" href="_iniciar_sesion_8java_source.html">IniciarSesion.java</a>.</p>
 
 </div>
 </div>
@@ -185,8 +200,9 @@ Métodos públicos estáticos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Inicia los componentes </p>
 
-<p class="definition">Definición en la línea <a class="el" href="_iniciar_sesion_8java_source.html#l00059">59</a> del archivo <a class="el" href="_iniciar_sesion_8java_source.html">IniciarSesion.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_iniciar_sesion_8java_source.html#l00064">64</a> del archivo <a class="el" href="_iniciar_sesion_8java_source.html">IniciarSesion.java</a>.</p>
 
 </div>
 </div>
@@ -213,9 +229,9 @@ Métodos públicos estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Launch the application. </p>
+<p>La primera ventana en lanzar, establece la conexión con el servidor. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="_iniciar_sesion_8java_source.html#l00036">36</a> del archivo <a class="el" href="_iniciar_sesion_8java_source.html">IniciarSesion.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_iniciar_sesion_8java_source.html#l00039">39</a> del archivo <a class="el" href="_iniciar_sesion_8java_source.html">IniciarSesion.java</a>.</p>
 
 </div>
 </div>

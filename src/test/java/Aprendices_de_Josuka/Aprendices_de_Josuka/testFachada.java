@@ -33,7 +33,11 @@ import Aprendices_de_Josuka.LD.Tipo_Material;
 import DAO.DAO;
 import Fachada.ServidorPrincipal;
 import Fachada.itfFachada;
-
+/**
+ * Clase donde se hara el testeo de la fachada (gestor)
+ * @author Alumno
+ *
+ */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class testFachada {
 	
@@ -46,13 +50,20 @@ public class testFachada {
 	private List<String> jugadores;
 	private Material m;
 	private	HashMap<String,Integer> inventario;
-	
+		/**
+		 * Método que permite establecer la conexión con el servidor
+		 * @throws RemoteException
+		 * @throws AlreadyBoundException
+		 */
 	   @BeforeClass
 	    public static void setupClass() throws RemoteException, AlreadyBoundException {
 		   	Registry registry = LocateRegistry.createRegistry((Integer.valueOf(1099)));
 			registry.rebind(name, ServidorPrincipal.getInstance());
 
 	    }
+	   /**
+	    * Inicializa los objetos
+	    */
 	   @Before
 	    public void setup()  {
 			j=new Jugador("Nerea","Solabarrieta","29/11/1998","74000000",false, false, 665874596,"nerea@gmail.com","nerea", false, false);
@@ -65,6 +76,12 @@ public class testFachada {
 			inventario.put(m.getTipo().name(), 3);
 			equipo = new Equipo("Antiguoko", Categoria.ALEVIN,"609000000",jugadores,inventario);
 	   }
+	   /**
+	    * Hace pruebas con los partidos del servicio externo
+	    * @throws ParseException
+	    * @throws RemoteException
+	    * @throws NotBoundException
+	    */
 	   @Test
 		public void partidos() throws ParseException, RemoteException, NotBoundException
 		{
@@ -77,6 +94,11 @@ public class testFachada {
 		  
 			
 		}
+	   /**
+	    * Testea el registro de nuevo material
+	    * @throws RemoteException
+	    * @throws NotBoundException
+	    */
 	   @Test
 	   public void material() throws RemoteException, NotBoundException
 	   {
@@ -85,6 +107,12 @@ public class testFachada {
 		   assertTrue(fachada.RegistrarInventario(m.getTipo(), 5, 5));
 		   
 	   }
+	   /**
+	    * Hace pruebas con las sanciones del servicio externo
+	    * @throws ParseException
+	    * @throws RemoteException
+	    * @throws NotBoundException
+	    */
 		@Test
 		public void sanciones() throws ParseException, RemoteException, NotBoundException
 		{
@@ -93,12 +121,24 @@ public class testFachada {
 			List <Sancion> sanciones = fachada.sancionesPersona("123123123");
 			assertEquals(sanciones.size(), 1);
 		}
+		/**
+		 * Simula el registro de un jugador
+		 * @throws RemoteException
+		 * @throws AlreadyBoundException
+		 * @throws NotBoundException
+		 */
 	    @Test
 	    public void a_jugador() throws RemoteException, AlreadyBoundException, NotBoundException {
 	    	Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
 			fachada = (itfFachada) registry.lookup(name);
 	        assertTrue(fachada.RegistrarJugador(j.getNombre(),j.getApellido(), j.getFecha_nacimiento(), j.getDNI(), j.getTelefono(), j.getCorreo(), j.getPsw()));
 	    }
+	    /**
+	     * Prueba si el jugador creado puede entrar bien a la aplicación
+	     * @throws RemoteException
+	     * @throws AlreadyBoundException
+	     * @throws NotBoundException
+	     */
 	    @Test
 	    public void entrarJugador() throws RemoteException, AlreadyBoundException, NotBoundException
 	    {
@@ -107,25 +147,48 @@ public class testFachada {
 	        assertTrue(fachada.EntrarJugador(j.getCorreo(), j.getPsw()));
 	        assertEquals(fachada.getJug(j.getCorreo(), j.getPsw()).getNombre(), j.getNombre());
 	    }
+	    /**
+	     * Elimina el jugador de la base de datos
+	     * @throws RemoteException
+	     */
 		@Test
 		public void v_eliminar() throws RemoteException
 		{
 			assertTrue(DAO.getInstance().EliminarJugador(j));
 
 		}
+		/**
+		 * Comprueba que el método devuelva la edad correctamente
+		 * @throws RemoteException
+		 * @throws NotBoundException
+		 * @throws AlreadyBoundException
+		 */
 		@Test
 		public void getEdad() throws RemoteException, NotBoundException,AlreadyBoundException
 		{
 			Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
 			fachada = (itfFachada) registry.lookup(name);
-			assertEquals(fachada.getEdad("1998-11-29"), 22);
+			assertEquals(fachada.getEdad("1998-11-29"), 23);
 
 		}
+		/**
+		 * Registra un administrador
+		 * @throws RemoteException
+		 * @throws NotBoundException
+		 */
 		
 	    @Test
-	    public void a_admin()  {
-	        assertTrue(DAO.getInstance().guardarObjeto(a));
+	    public void a_admin() throws RemoteException, NotBoundException  {
+	    	Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
+			fachada = (itfFachada) registry.lookup(name);
+	        assertTrue(fachada.RegistrarAdmin(a.getEmail(), a.getPsw()));
 	    }
+	    /**
+	     * Simula la entrada del admin registrado en la aplicación
+	     * @throws RemoteException
+	     * @throws AlreadyBoundException
+	     * @throws NotBoundException
+	     */
 	    @Test
 	    public void entrarAdministrador() throws RemoteException, AlreadyBoundException, NotBoundException
 	    {
@@ -133,25 +196,44 @@ public class testFachada {
 			fachada = (itfFachada) registry.lookup(name);
 	        assertTrue(fachada.EntrarAdministrador(a.getEmail(), a.getPsw()));
 	    }
+	    /**
+	     * Elimina el admin de la base de datos
+	     * @throws RemoteException
+	     */
 		@Test
 		public void v_eliminarAdmin() throws RemoteException
 		{
 			assertTrue(DAO.getInstance().EliminarAdmin(a));
 
 		}
+		/**
+		 * Elimina el material creado
+		 * @throws RemoteException
+		 */
 		@Test
 		public void v_eliminarMaterial() throws RemoteException
 		{
 			assertTrue(DAO.getInstance().EliminarMaterial(m));
 
 		}
-		
+		/**
+		 * Registra un nuevo entrenador
+		 * @throws RemoteException
+		 * @throws AlreadyBoundException
+		 * @throws NotBoundException
+		 */
 	    @Test
 	    public void a_entrenador() throws RemoteException, AlreadyBoundException, NotBoundException {
 	    	Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
 			fachada = (itfFachada) registry.lookup(name);
 	        assertTrue(fachada.RegistrarEntrenador(e.getNombre(),e.getApellido(), e.getFecha_nacimiento(), e.getDNI(), e.getTelefono(), e.getCorreo(), e.getPsw()));
 	    }
+	    /**
+	     * El entrenador nuevo entra a la aplicación
+	     * @throws RemoteException
+	     * @throws AlreadyBoundException
+	     * @throws NotBoundException
+	     */
 	    @Test
 	    public void entrarEntrenador() throws RemoteException, AlreadyBoundException, NotBoundException
 	    {
@@ -161,6 +243,10 @@ public class testFachada {
 	        assertEquals(fachada.getEnt(e.getCorreo(), e.getPsw()), e);
 
 	    }
+	    /**
+	     * Se elimina el entrenador de la base de datos
+	     * @throws RemoteException
+	     */
 		@Test
 		public void v_eliminarEntrenador() throws RemoteException
 		{
@@ -168,7 +254,11 @@ public class testFachada {
 
 		}
 		
-
+		/**
+		 * Se actualizan los datos del entrenador
+		 * @throws RemoteException
+		 * @throws NotBoundException
+		 */
 		@Test
 		public void v_actualizarEntrenador() throws RemoteException, NotBoundException
 		{
@@ -180,7 +270,11 @@ public class testFachada {
 			e.setPsw("ertu");
 			assertTrue(fachada.modificarCorreoEntrenador(e, "eee@gmail.com", "ertu"));
 		}
-		
+		/**
+		 * Se actualizan los datos del jugador
+		 * @throws RemoteException
+		 * @throws NotBoundException
+		 */
 		@Test
 		public void v_actualizarJugador() throws RemoteException, NotBoundException
 		{

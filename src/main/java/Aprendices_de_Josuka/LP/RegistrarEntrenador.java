@@ -23,7 +23,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import com.toedter.calendar.JDateChooser;
-
+/**
+ * Ventana que se ejecutará en el caso de que un entrenador se quiera dar de alta
+ * @author Alumno
+ *
+ */
 public class RegistrarEntrenador extends JFrame {
 
 	private JPanel contentPane;
@@ -42,7 +46,7 @@ public class RegistrarEntrenador extends JFrame {
 	private Controller controller;
 
 	/**
-	 * Create the frame.
+	 * Constructor de la ventana
 	 * @param controller 
 	 */
 	public RegistrarEntrenador(Controller controller) 
@@ -51,7 +55,9 @@ public class RegistrarEntrenador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Inicia los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);

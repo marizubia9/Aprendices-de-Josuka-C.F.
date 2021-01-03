@@ -23,7 +23,11 @@ import org.json.simple.parser.ParseException;
 import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Jugador;
 import Controller.Controller;
-
+/**
+ * Es la ventana que se encarga de mostrar a cada entrenador sus jugadores
+ * @author Alumno
+ *
+ */
 public class Visualizar_Mis_Jugadores extends JFrame {
 
 	private JPanel contentPane;
@@ -43,8 +47,9 @@ public class Visualizar_Mis_Jugadores extends JFrame {
 
 	
 	/**
-	 * Create the frame.
-	 * @param controller 
+	 * Constructor de la clase
+	 * @param controller para la conexión RMI con el servidor
+	 * @param j el entrenador que está utilizando la aplicación
 	 * @throws RemoteException 
 	 */
 	public Visualizar_Mis_Jugadores(Controller controller, Entrenador j) throws RemoteException 
@@ -55,7 +60,9 @@ public class Visualizar_Mis_Jugadores extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Inicia los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -266,7 +273,9 @@ public class Visualizar_Mis_Jugadores extends JFrame {
 		
 	}
 
-	
+	/**
+	 * Inserta un panel para mostrar todos los jugadores relacionados al entrenador en cuestión
+	 */
 	public void InsertarJPanel() {
 		pScrollPane.removeAll();
 		int x = 0;

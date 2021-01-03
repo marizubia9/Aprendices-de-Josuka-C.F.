@@ -24,7 +24,10 @@ import javax.swing.JOptionPane;
 
 import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JSpinnerDateEditor;
-
+/**
+ * Clase que se ejecuta si un jugador quiere registrarse
+ * @author Alumno
+ */
 public class RegistrarJugador extends JFrame {
 
 	private JPanel contentPane;
@@ -47,7 +50,7 @@ public class RegistrarJugador extends JFrame {
 
 
 	/**
-	 * Create the frame.
+	 *Constructor
 	 * @param controller 
 	 */
 	public RegistrarJugador(Controller controller) 
@@ -56,7 +59,9 @@ public class RegistrarJugador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+/**
+ * Inicia los componentes
+ */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //	    setBounds(100, 100, 1300, 740);
@@ -196,6 +201,10 @@ public class RegistrarJugador extends JFrame {
 			}
 		});
 	}
+	/**
+	 * Guarda los datos del jugador en la base de datos y entra en la aplicación
+	 * @throws ParseException
+	 */
 	public void guardar() throws ParseException
 	{
 		String nombre = txtNombre.getText();

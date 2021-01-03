@@ -1,3 +1,7 @@
+/**
+ * @package Aprendices_de_Josuka.LP
+ * @brief Todas las ventanas de la aplicación, tanto de la parte de administrador como la correspondiente a entrenadores y jugadores
+ */
 package Aprendices_de_Josuka.LP;
 
 import javax.swing.JButton;

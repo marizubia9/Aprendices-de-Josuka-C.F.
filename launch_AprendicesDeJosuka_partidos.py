@@ -68,14 +68,18 @@ sancion_parser.add_argument('dni', type=str, help= "Dni", required=False)
 sancion_parser.add_argument('cod_partido', type=str, help= "cod_partido", required=False)
 
 class MicroServices(Resource):
-
+"""
+clase que se lanza como servicio externo
+"""  
     # curl http://127.0.0.1:5000/
     def get(self):
         message = "Aprendices de Josuka partidos working correctly"
         return { 'Message' : message } , 201
 
 class Partidos_MicroService_Search_Partidos (Resource):
-
+"""
+clase que se lanza como servicio externo donde están todos los partidos. Se puede hacer GET y POST
+"""  
     # curl http://127.0.0.1:5000/Partidos/Search_Partidos
     def get(self):
         message = "Microservice working correctly"
@@ -97,6 +101,9 @@ class Partidos_MicroService_Search_Partidos (Resource):
         return json.loads(json_result) , 201
 
 class Partidos_MicroService_Search_Sanciones (Resource):
+"""
+clase que se lanza como servicio externo donde están todas las sanciones. Se puede hacer GET y POST
+"""  
 
     # curl http://127.0.0.1:5000/Partidos/Search_Partidos
     def get(self):

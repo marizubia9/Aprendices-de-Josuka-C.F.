@@ -13,7 +13,9 @@ from json import JSONEncoder
 from datetime import *
 
 class AprendicesDeJosukaPartidos (Interface_Partidos):
-   
+"""
+clase donde se implementa la interfaz de partidos, donde se establecerá los partidos que se almacenaran en la raspberry
+"""  
     def __init__(self):
         """
         Constructor
@@ -29,7 +31,9 @@ class AprendicesDeJosukaPartidos (Interface_Partidos):
     """ Override Interface Authentication"""
 
     def search_partidos(self, **kwparams) -> [Partido]:
-        
+    """
+    para obtener los partidos de la raspberry
+    """   
     
         if kwparams:
             equipo1_name = kwparams.get('equipo1_name')
@@ -68,12 +72,10 @@ class AprendicesDeJosukaPartidos (Interface_Partidos):
 
 
 
-    """Sample code generation related"""
-
-
-
     def generate_partido(self):
-
+"""
+genera los partidos a almacenar
+"""  
         a1 = Equipo("E1", "Zumaiako",54, "Alevin")
         a2 = Equipo("E2", "Aurrera KE",32, "Infantil")
         a3 = Equipo("E3", "Hamaikak bat",40, "Cadete")

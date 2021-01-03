@@ -9,14 +9,18 @@ from json import JSONEncoder
 from datetime import *
 
 class AprendicesDeJosukaSanciones (Interface_Sanciones):
-
+"""
+clase donde se implementa la interfaz de sanciones
+"""  
     def __init__(self):
 
         self.__sanciones = dict( )
 
 
     def search_sanciones(self, **kwparams) -> [Sancion]:
-        
+    """
+    método para obtener todas las sanciones
+    """  
     
         if kwparams:
             code = kwparams.get('code')
@@ -45,7 +49,9 @@ class AprendicesDeJosukaSanciones (Interface_Sanciones):
 
 
     def generate_sancion(self):
-        
+    """
+    genera las sanciones
+    """  
         s1 = Sancion("S1", "INSULTO", "123123123", "P1")
         s2 = Sancion("S2", "AGRESION","869458659", "P2")
         s3 = Sancion("S3", "FALTA", "243574569", "P3")

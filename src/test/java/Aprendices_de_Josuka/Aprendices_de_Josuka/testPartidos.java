@@ -1,6 +1,7 @@
 package Aprendices_de_Josuka.Aprendices_de_Josuka;
 
 import org.junit.Before;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -15,6 +16,12 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Partido;
+
+/**
+ * Clase donde se hara el testeo con mockito
+ * @author Alumno
+ *
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class testPartidos {
 	
@@ -28,7 +35,9 @@ public class testPartidos {
 	Equipo e;
 	@Mock
 	HashMap <String, Integer> inventario;
-	
+	/**
+	 * Primer método en ejecutar, inicializa los objetos
+	 */
 	@Before
     public void setUp() {
 		when(e.getInventario()).thenReturn(inventario);
@@ -37,6 +46,9 @@ public class testPartidos {
         when(p.getCod_partido()).thenReturn("P01");
         
 	}
+	/**
+	 * Comprueba si los objetos se han creado bien con Mockito
+	 */
 	@Test
 	public void test()
 	{

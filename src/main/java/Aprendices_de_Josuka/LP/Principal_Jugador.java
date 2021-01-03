@@ -26,7 +26,10 @@ import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
 
 import java.awt.Color;
-
+/**
+ * Clase para la ventana principal del Jugador. Mostrará todas las tareas que pueda desarrollar este
+ * @author Alumno
+ */
 public class Principal_Jugador extends JFrame {
 
 	/**
@@ -52,6 +55,14 @@ public class Principal_Jugador extends JFrame {
 	private JPanel pScrollPane;
 	private JScrollPane scrollPane;
 	private Jugador j;
+	
+	/**
+	 * Constructor de la ventana
+	 * @param controller el objeto controller que está contectado al servidor
+	 * @param j el jugador que está usando la aplicación
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public Principal_Jugador(Controller controller, Jugador j) throws RemoteException, ParseException 
 	{
 		this.j = j;
@@ -60,7 +71,9 @@ public class Principal_Jugador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Inicia los componentes de la ventana
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -304,6 +317,9 @@ public class Principal_Jugador extends JFrame {
 		InsertarJPanel();
 
 	}
+	/**
+	 * Muestra todos los partidos según la categoria
+	 */
 	public void InsertarJPanel() {
 		pScrollPane.removeAll();
 		int x = 0;
@@ -335,6 +351,11 @@ public class Principal_Jugador extends JFrame {
 		scrollPane.repaint();
 		repaint();
 	}
+	/**
+	 * En caso de pulsar el botón MIS PARTIDOS, se ejecutará este método donde se muestran los partidos del jugador en particular
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public void InsertarMisPartidos() throws RemoteException, ParseException {
 		pScrollPane.removeAll();
 		int x = 0;

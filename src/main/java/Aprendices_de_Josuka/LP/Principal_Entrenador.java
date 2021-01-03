@@ -29,7 +29,10 @@ import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
 
 import java.awt.Color;
-
+/**
+ * Clase para la ventana principal del Entrenador. Mostrará todas las tareas que pueda desarrollar este
+ * @author Alumno
+ */
 public class Principal_Entrenador extends JFrame {
 
 	/**
@@ -54,7 +57,13 @@ public class Principal_Entrenador extends JFrame {
 	private JPanel pScrollPane;
 	private JScrollPane scrollPane;
 	private Entrenador j;
-	
+	/**
+	 * Constructor de la ventana
+	 * @param controller el objeto controller que está contectado al servidor
+	 * @param j el entrenador que está usando la aplicación
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public Principal_Entrenador(Controller controller, Entrenador j) throws RemoteException, ParseException 
 	{
 		this.j = j;
@@ -63,7 +72,9 @@ public class Principal_Entrenador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+/**
+ * Inicia los componentes de la ventana
+ */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -312,6 +323,9 @@ public class Principal_Entrenador extends JFrame {
 		InsertarJPanel();
 
 	}
+	/**
+	 * Incorpora un JPanel donde se visualizan los partidos según la categoria
+	 */
 	public void InsertarJPanel() {
 		pScrollPane.removeAll();
 		int x = 0;

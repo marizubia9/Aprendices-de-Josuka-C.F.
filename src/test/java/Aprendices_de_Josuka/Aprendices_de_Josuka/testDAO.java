@@ -1,3 +1,7 @@
+/**
+ * @package Aprendices_de_Josuka.Aprendices_de_Josuka
+ * @brief Clases para testear
+ */
 package Aprendices_de_Josuka.Aprendices_de_Josuka;
 
 import static org.junit.Assert.*;
@@ -29,16 +33,22 @@ import Aprendices_de_Josuka.LD.Tipo_Material;
 import DAO.DAO;
 import Fachada.ServidorPrincipal;
 import Fachada.itfFachada;
-
+/**
+ * Clase donde se hara el testeo de la base de datos
+ * @author Alumno
+ *
+ */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class testDAO {
-
+	
 	private Jugador j;
 	private Administrador a;
 	private Entrenador e;
 	private Material m;
 	
-	
+	/**
+	 * El primer método que se va a ejecutar, inicializa los objetos
+	 */
 	@Before
 	public void inicializar()
 	{
@@ -51,16 +61,24 @@ public class testDAO {
 
 	}
 	
-	
+	/**
+	 * Registra un jugador
+	 * @throws RemoteException
+	 * @throws NotBoundException
+	 */
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
 	public void a_escribirJugadores() throws RemoteException, NotBoundException
 	{
 		assertTrue(DAO.getInstance().guardarObjeto(j));
-		Registry registry = LocateRegistry.getRegistry(((Integer.valueOf(1099))));
 	
 	}
+	/**
+	 * Registra una compra de material
+	 * @throws RemoteException
+	 * @throws NotBoundException
+	 */
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
@@ -69,7 +87,11 @@ public class testDAO {
 		assertTrue(DAO.getInstance().guardarObjeto(m));
 	}
 
-		
+	/**
+	 * Registra un administrador
+	 * @throws RemoteException
+	 * @throws NotBoundException
+	 */	
 	@Test
 	public void a_escribirAdmin() throws RemoteException, NotBoundException
 	{
@@ -77,7 +99,11 @@ public class testDAO {
 	
 
 	}
-	
+	/**
+	 * Registra un entrenador
+	 * @throws RemoteException
+	 * @throws NotBoundException
+	 */
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
@@ -86,6 +112,11 @@ public class testDAO {
 		assertTrue(DAO.getInstance().guardarObjeto(e));
 		
 	}
+	/**
+	 * Lee los jugadores
+	 * @throws RemoteException
+	 * @throws NotBoundException
+	 */
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
@@ -101,6 +132,11 @@ public class testDAO {
 		}
 		assertTrue(esta);
 	}
+	/**
+	 * Lee los administradores
+	 * @throws RemoteException
+	 * @throws NotBoundException
+	 */
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
@@ -116,6 +152,11 @@ public class testDAO {
 		}
 		assertTrue(esta);
 	}
+	/**
+	 * Lee los entrenadores
+	 * @throws RemoteException
+	 * @throws NotBoundException
+	 */
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
@@ -131,23 +172,12 @@ public class testDAO {
 		}
 		assertTrue(esta);
 	}
-	
-//	@Test
-//	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
-//	@Required ( max = 1200, average = 250)
-//	public void leerEquipo() throws RemoteException
-//	{
-//		boolean esta= false;
-//		for(Equipo e: DAO.getInstance().getEquipo())
-//		{
-//			if(e.getNombre().equals(eq.getNombre()))
-//			{
-//				esta=true;
-//			}
-//		}
-//		assertTrue(esta);
-//	}
-	
+
+	/**
+	 * Lee el inventario
+	 * @throws RemoteException
+	 * @throws NotBoundException
+	 */
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
@@ -163,7 +193,11 @@ public class testDAO {
 		}
 		assertTrue(esta);
 	}
-	
+	/**
+	 * Modifica el salario de un entrenador
+	 * @throws RemoteException
+	 * @throws NotBoundException
+	 */
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
@@ -183,6 +217,11 @@ public class testDAO {
 		assertNotEquals(entMod.getSalario(), e.getSalario());
 		
 	}
+	/**
+	 * Modifica el estado de un jugador
+	 * @throws RemoteException
+	 * @throws NotBoundException
+	 */
 	@Test
 	@PerfTest (invocations = 1000, threads = 20) // La anotación @PerfTest especifica los datos de ejecución, en el ejemplo 1000 veces con 20 hilos concurrentes.
 	@Required ( max = 1200, average = 250)
@@ -202,7 +241,11 @@ public class testDAO {
 		assertNotEquals(jugMod.isCuota_pagada(), j.isCuota_pagada());
 		
 	}
-
+	/**
+	 * Elimina todos los objetos creados
+	 * @throws RemoteException
+	 * @throws NotBoundException
+	 */
 	@Test
 	public void v_eliminar() throws RemoteException
 	{
@@ -210,7 +253,6 @@ public class testDAO {
 		assertTrue(DAO.getInstance().EliminarEntrenador(e));
 		assertTrue(DAO.getInstance().EliminarJugador(j));
 		assertTrue(DAO.getInstance().EliminarMaterial(m));
-//		assertTrue(DAO.getInstance().EliminarEquipo(eq));
 	}
 	
 
