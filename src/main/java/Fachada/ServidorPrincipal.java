@@ -503,6 +503,7 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	{
 		HashSet<Equipos_Ext> equipos = Gateway.getInstance().getEquipos();
 		List<Equipos_Ext> list = new ArrayList<Equipos_Ext>(equipos);
+		System.out.println("prueba");
 		List<Equipos_Ext> listaClasificacion = new ArrayList<Equipos_Ext>();
 		Collections.sort(list, new Comparator<Equipos_Ext>() {
 			@Override
