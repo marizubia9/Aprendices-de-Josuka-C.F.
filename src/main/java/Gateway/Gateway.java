@@ -57,7 +57,7 @@ public class Gateway implements itfGateway {
         String json_string = response.readEntity(String.class);
         JSONParser myParser = new JSONParser();
         JSONArray partidosArray = (JSONArray) myParser.parse( json_string );
-
+        System.out.println("holaAAAAAAAAAAA");
        
         myPartidosArray = (List) partidosArray.stream()
                 .map( element -> new Partido_JSON( element))
