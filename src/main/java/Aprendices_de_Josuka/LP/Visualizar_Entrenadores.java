@@ -24,7 +24,12 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import java.awt.GridBagLayout;
-
+/**
+ * @class Visualizar_Entrenadores
+ * @brief En esta clase se desarrolla la GUI para que el administrador pueda visualizar los entrenadores
+ * @author Alumno
+ *
+ */
 public class Visualizar_Entrenadores extends JFrame {
 
 	private JPanel contentPane;
@@ -51,24 +56,8 @@ public class Visualizar_Entrenadores extends JFrame {
 	private JScrollPane scrollPane;
 
 	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Visualizar_Entrenadores frame = new Visualizar_Entrenadores();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-
-	/**
-	 * Create the frame.
-	 * @param controller 
+	 * Constructor
+	 * @param controller
 	 */
 	public Visualizar_Entrenadores(Controller controller) 
 	{
@@ -76,7 +65,9 @@ public class Visualizar_Entrenadores extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -316,7 +307,9 @@ public class Visualizar_Entrenadores extends JFrame {
 		
 	}
 
-	
+	/**
+	 * Se insertan JPanels con la informacion de cada entrenador
+	 */
 	public void InsertarJPanel() {
 		pScrollPane.removeAll();
 		int x = 0;

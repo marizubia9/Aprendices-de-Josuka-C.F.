@@ -25,7 +25,8 @@ import javax.swing.JOptionPane;
 import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JSpinnerDateEditor;
 /**
- * Clase que se ejecuta si un jugador quiere registrarse
+ * @class RegistrarJugador
+ * @brief En esta clase se desarrolla la GUI para el registro del jugador
  * @author Alumno
  */
 public class RegistrarJugador extends JFrame {
@@ -50,7 +51,7 @@ public class RegistrarJugador extends JFrame {
 
 
 	/**
-	 *Constructor
+	 * Constructor
 	 * @param controller 
 	 */
 	public RegistrarJugador(Controller controller) 
@@ -59,9 +60,9 @@ public class RegistrarJugador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-/**
- * Inicia los componentes
- */
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //	    setBounds(100, 100, 1300, 740);

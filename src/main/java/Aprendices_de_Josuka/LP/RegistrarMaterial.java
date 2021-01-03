@@ -21,7 +21,12 @@ import org.json.simple.parser.ParseException;
 
 import Aprendices_de_Josuka.LD.Tipo_Material;
 import Controller.Controller;
-
+/**
+ * @class RegistrarMaterial
+ * @brief En esta clase se desarrolla la GUI para que el administrador pueda registrar el material
+ * @author Alumno
+ *
+ */
 public class RegistrarMaterial extends JFrame {
 
 	private JPanel contentPane;
@@ -59,8 +64,8 @@ public class RegistrarMaterial extends JFrame {
 //	}
 
 	/**
-	 * Create the frame.
-	 * @param controller 
+	 * Constructor
+	 * @param controller
 	 */
 	public RegistrarMaterial(Controller controller) 
 	{
@@ -68,7 +73,9 @@ public class RegistrarMaterial extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -341,7 +348,9 @@ public class RegistrarMaterial extends JFrame {
 			}
 		});
 	}
-	
+	/**
+	 * Metodo para guardar el material introducido
+	 */
 	public void crear_Material()
 	{
 		int cantidad=0;

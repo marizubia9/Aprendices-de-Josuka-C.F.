@@ -27,7 +27,12 @@ import org.json.simple.parser.ParseException;
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Jugador;
 import Controller.Controller;
-
+/**
+ * @class Visualizar_Jugadores
+ * @brief En esta clase se desarrolla la GUI para que los administradores puedan ver los jugadores
+ * @author Alumno
+ *
+ */
 public class Visualizar_Jugadores extends JFrame {
 
 	private JPanel contentPane;
@@ -53,25 +58,22 @@ public class Visualizar_Jugadores extends JFrame {
 	private JPanel pScrollPane;
 	private JScrollPane scrollPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Visualizar_Jugadores frame = new Visualizar_Jugadores(null);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Visualizar_Jugadores frame = new Visualizar_Jugadores(null);
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
-	 * Create the frame.
-	 * @param controller 
+	 * Constructor
+	 * @param controller
 	 */
 	public Visualizar_Jugadores(Controller controller) 
 	{
@@ -79,7 +81,9 @@ public class Visualizar_Jugadores extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -340,7 +344,9 @@ public class Visualizar_Jugadores extends JFrame {
 		
 	}
 
-	
+	/**
+	 * Metodo para insertar JPanels con la informacion de cada jugador
+	 */
 	public void InsertarJPanel() {
 		pScrollPane.removeAll();
 		int x = 0;

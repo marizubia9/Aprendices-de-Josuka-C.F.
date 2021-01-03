@@ -27,7 +27,12 @@ import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Controller.Controller;
-
+/**
+ * @class Visualizar_Equipos_Jugador
+ * @brief En esta clase se desarrolla la GUI para que los jugadores puedan visualizar los equipos
+ * @author Alumno
+ *
+ */
 public class Visualizar_Equipos_Jugador extends JFrame {
 
 	private JPanel contentPane;
@@ -51,7 +56,13 @@ public class Visualizar_Equipos_Jugador extends JFrame {
 	private Controller controller; 
 	private Jugador j;
 	
-	
+	/**
+	 * Constructor
+	 * @param controller
+	 * @param j
+	 * @throws RemoteException
+	 * @throws ParseException
+	 */
 	public Visualizar_Equipos_Jugador(Controller controller, Jugador j) throws RemoteException, ParseException 
 	{
 		this.j = j;
@@ -59,7 +70,9 @@ public class Visualizar_Equipos_Jugador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -305,7 +318,9 @@ public class Visualizar_Equipos_Jugador extends JFrame {
 		panel_central.add(lblJugadores);
 	
 	}
-	
+	/**
+	 * Metodo para introducir los equipos en el ComboBox
+	 */
 	public void RellenarCombo()
 	{
 		
@@ -320,7 +335,10 @@ public class Visualizar_Equipos_Jugador extends JFrame {
 			if(e.getCategoria().equals((Categoria)comboCategoria.getSelectedItem())) comboEquipos.addItem(e.getNombre());
 		});
 	}
-	
+	/**
+	 * Metodo para mostrar los jugadores de cada equipo
+	 * @throws RemoteException
+	 */
 	public void MostrarJugadores() throws RemoteException
 	{
 		

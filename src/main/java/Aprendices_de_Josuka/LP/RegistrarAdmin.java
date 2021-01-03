@@ -17,7 +17,12 @@ import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
+/**
+ * @class RegistrarAdmin
+ * @brief En esta clase se desarrolla la GUI para el registro del administrador
+ * @author Alumno
+ *
+ */
 public class RegistrarAdmin extends JFrame {
 
 	private JPanel contentPane;
@@ -37,7 +42,7 @@ public class RegistrarAdmin extends JFrame {
 
 
 	/**
-	 * Create the frame.
+	 * Constructor
 	 * @param controller 
 	 */
 	public RegistrarAdmin(Controller controller) 
@@ -46,7 +51,9 @@ public class RegistrarAdmin extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);

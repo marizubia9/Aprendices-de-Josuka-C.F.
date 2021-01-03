@@ -24,7 +24,8 @@ import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Jugador;
 import Controller.Controller;
 /**
- * Es la ventana que se encarga de mostrar a cada entrenador sus jugadores
+ * @class Visualizar_Mis_Jugadores
+ * @brief En esta clase se desarrolla la GUI que se encarga de mostrar a cada entrenador sus jugadores
  * @author Alumno
  *
  */
@@ -61,7 +62,7 @@ public class Visualizar_Mis_Jugadores extends JFrame {
 		this.setVisible(true);
 	}
 	/**
-	 * Inicia los componentes
+	 * Se inicializan los componentes
 	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -254,7 +255,7 @@ public class Visualizar_Mis_Jugadores extends JFrame {
 	}
 
 	/**
-	 * Inserta un panel para mostrar todos los jugadores relacionados al entrenador en cuestión
+	 * Inserta un panel para mostrar todos los jugadores relacionados al entrenador en cuestion
 	 */
 	public void InsertarJPanel() {
 		pScrollPane.removeAll();

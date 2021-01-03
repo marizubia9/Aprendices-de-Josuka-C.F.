@@ -32,7 +32,12 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
-
+/**
+ * @class RegistrarEquipo
+ * @brief En esta clase se desarrolla la GUI para cuando un administrador quiera registrar un equipo
+ * @author Alumno
+ *
+ */
 public class RegistrarEquipo extends JFrame {
 
 	private JPanel contentPane;
@@ -76,8 +81,8 @@ public class RegistrarEquipo extends JFrame {
 	private JButton btnEditarJugador;
 	
 	/**
-	 * Create the frame.
-	 * @param controller 
+	 * Constructor
+	 * @param controller
 	 */
 	public RegistrarEquipo(Controller controller) 
 	{
@@ -87,7 +92,7 @@ public class RegistrarEquipo extends JFrame {
 	}
 
 	/**
-	 * Creacion de todos los objetos visuales de la pantalla.
+	 * Se inicializan los componentes
 	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -458,7 +463,9 @@ public class RegistrarEquipo extends JFrame {
 			}
 		});
 	}
-
+	/**
+	 * Se muestran los jugadores disponibles
+	 */
 	public void MostrarJugadores() {
 		vaciarJList();
 		ListaJugadores1.clear();
@@ -486,7 +493,9 @@ public class RegistrarEquipo extends JFrame {
 		panel_central.repaint();
 
 	}
-
+	/**
+	 * Metodo para pasar los jugadores seleccionados al nuevo equipo
+	 */
 	public void PasarJugadores() {
 		String valor = JListaJugadores1.getSelectedValue();
 		jugadores_lista.add(valor);
@@ -499,7 +508,9 @@ public class RegistrarEquipo extends JFrame {
 		scrollPane2.repaint();
 		panel_central.repaint();
 	}
-
+	/**
+	 * Metodo para eliminar alguno de los jugadores seleccionados, en caso de que no se haya seleccionado el adecuado
+	 */
 	public void EliminarJugadores() {
 		jugadores_lista.remove(JListaJugadores2.getSelectedIndex());
 		JListaJugadores2 = new JList<String>(jugadores_lista.toArray(new String[jugadores_lista.size()]));
@@ -508,7 +519,9 @@ public class RegistrarEquipo extends JFrame {
 		scrollPane2.repaint();
 		panel_central.repaint();
 	}
-
+	/**
+	 * Metodo para vaciar la lista de los jugadores
+	 */
 	public void vaciarJList() {
 		jugadores_lista.clear();
 		JListaJugadores2 = new JList<String>(jugadores_lista.toArray(new String[jugadores_lista.size()]));
@@ -517,14 +530,19 @@ public class RegistrarEquipo extends JFrame {
 		scrollPane2.repaint();
 		panel_central.repaint();
 	}
-
+	/**
+	 * Metodo para que se habra la ventana de anyadir inventario
+	 */
 	public void Anyadir_Material() {
 		inventario = new HashMap<Material, Integer>();
 		Anyadir_Inventario a = new Anyadir_Inventario(controller, this, inventario);
 		a.setVisible(true);
 		setVisible(false);
 	}
-
+	/**
+	 * Metodo para guardar el equipo introducido
+	 * @throws RemoteException
+	 */
 	public void Anyadir_Equipo() throws RemoteException 
 	{
 		Entrenador entrenador = null;
@@ -566,7 +584,9 @@ public class RegistrarEquipo extends JFrame {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * Metodo para rellenar el ComboBox de los entrenadores
+	 */
 	public void RellenarEntrenadores() {
 		try {
 			ListaEntrenador = controller.getEntrenador();
@@ -580,6 +600,11 @@ public class RegistrarEquipo extends JFrame {
 			}
 		}
 	}
+	/**
+	 * Metodo para asignar el material seleccionado al equipo
+	 * @param m
+	 * @param i
+	 */
 	public void AsignarMaterial(Material m, int i)
 	{
 		inventario.put(m, i);

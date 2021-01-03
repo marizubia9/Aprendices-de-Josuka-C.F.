@@ -24,7 +24,11 @@ import org.json.simple.parser.ParseException;
 import Aprendices_de_Josuka.LD.Categoria;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
-
+/**
+ * @class Principal_Administrador
+ * @brief En esta clase se desarrolla la GUI que visualiza el administrador cuando abre la aplicacion despues de haber iniciado sesion
+ * @author Alumno
+ */
 public class Principal_Administrador extends JFrame {
 
 	private JPanel contentPane;
@@ -48,14 +52,13 @@ public class Principal_Administrador extends JFrame {
 	private JComboBox<Categoria> comboCategoria;
 	private JLabel lblCategoria;
 	private JButton btnGO;
-	
 
 	/**
-	 * Launch the application.
-	 * @throws ParseException 
-	 * @throws RemoteException 
+	 * Constructor
+	 * @param controller
+	 * @throws RemoteException
+	 * @throws ParseException
 	 */
-
 	public Principal_Administrador(Controller controller) throws RemoteException, ParseException 
 	{
 		this.controller=controller;
@@ -63,7 +66,9 @@ public class Principal_Administrador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -331,6 +336,10 @@ public class Principal_Administrador extends JFrame {
 		InsertarJPanel();
 
 	}
+	
+	/**
+	 * Se inserta un JPanel donde se visualizan los partidos segun la categoria
+	 */
 	public void InsertarJPanel() {
 		pScrollPane.removeAll();
 		int x = 0;

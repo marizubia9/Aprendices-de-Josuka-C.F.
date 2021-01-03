@@ -24,7 +24,8 @@ import javax.swing.JOptionPane;
 
 import com.toedter.calendar.JDateChooser;
 /**
- * Ventana que se ejecutará en el caso de que un entrenador se quiera dar de alta
+ * @class RegistrarEntrenador
+ * @brief En esta clase se desarrolla la GUI para el registro del entrenador
  * @author Alumno
  *
  */
@@ -46,7 +47,7 @@ public class RegistrarEntrenador extends JFrame {
 	private Controller controller;
 
 	/**
-	 * Constructor de la ventana
+	 * Constructor
 	 * @param controller 
 	 */
 	public RegistrarEntrenador(Controller controller) 
@@ -56,7 +57,7 @@ public class RegistrarEntrenador extends JFrame {
 		this.setVisible(true);
 	}
 	/**
-	 * Inicia los componentes
+	 * Se inicializan los componentes
 	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

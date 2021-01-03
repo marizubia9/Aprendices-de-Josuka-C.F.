@@ -17,7 +17,12 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
-
+/**
+ * @class Pantalla_Principal
+ * @brief En esta clase se desarrolla la GUI para la pantalla principal de la aplicacion.  
+ * @author Alumno
+ *
+ */
 public class Pantalla_Principal extends JFrame {
 
 	private JPanel contentPane;
@@ -38,7 +43,8 @@ public class Pantalla_Principal extends JFrame {
 	private JTextField txtJuvenilCadeteDe;
 
 	/**
-	 * Launch the application.
+	 * Se ejecuta la aplicacion
+	 * @param args
 	 */
 	public static void main(String[] args) {
 		Controller c = null;
@@ -53,14 +59,17 @@ public class Pantalla_Principal extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Constructor
 	 * @param c 
 	 */
 	public Pantalla_Principal(Controller c) {
 		initComponents(c);
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 * @param c
+	 */
 	public void initComponents(Controller c) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);

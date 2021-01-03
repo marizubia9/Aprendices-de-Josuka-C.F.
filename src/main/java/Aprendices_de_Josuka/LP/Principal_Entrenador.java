@@ -30,14 +30,12 @@ import Controller.Controller;
 
 import java.awt.Color;
 /**
- * Clase para la ventana principal del Entrenador. Mostrará todas las tareas que pueda desarrollar este
+ * @class Principal_Entrenador
+ * @brief En esta clase se desarrolla la GUI que visualiza el entrenador cuando abre la aplicacion despues de haber iniciado sesion
  * @author Alumno
  */
 public class Principal_Entrenador extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel txtLosAprendicesDe;
@@ -58,7 +56,7 @@ public class Principal_Entrenador extends JFrame {
 	private JScrollPane scrollPane;
 	private Entrenador j;
 	/**
-	 * Constructor de la ventana
+	 * Constructor
 	 * @param controller el objeto controller que está contectado al servidor
 	 * @param j el entrenador que está usando la aplicación
 	 * @throws RemoteException
@@ -72,9 +70,9 @@ public class Principal_Entrenador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-/**
- * Inicia los componentes de la ventana
- */
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -304,7 +302,7 @@ public class Principal_Entrenador extends JFrame {
 
 	}
 	/**
-	 * Incorpora un JPanel donde se visualizan los partidos según la categoria
+	 * Se inserta un JPanel donde se visualizan los partidos segun la categoria
 	 */
 	public void InsertarJPanel() {
 		pScrollPane.removeAll();

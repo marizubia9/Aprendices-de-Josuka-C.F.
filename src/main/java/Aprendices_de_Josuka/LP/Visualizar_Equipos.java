@@ -28,7 +28,12 @@ import Aprendices_de_Josuka.LD.Entrenador;
 import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Controller.Controller;
-
+/**
+ * @class Visualizar_Equipos
+ * @brief En esta clase se desarrolla la GUI para que el administrador pueda visualizar los equipos
+ * @author Alumno
+ *
+ */
 public class Visualizar_Equipos extends JFrame {
 
 	private JPanel contentPane;
@@ -59,8 +64,8 @@ public class Visualizar_Equipos extends JFrame {
 
 
 	/**
-	 * Create the frame.
-	 * @param controller 
+	 * Constructor
+	 * @param controller
 	 */
 	public Visualizar_Equipos(Controller controller) 
 	{
@@ -68,7 +73,9 @@ public class Visualizar_Equipos extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -373,7 +380,9 @@ public class Visualizar_Equipos extends JFrame {
 		scrollPane_i.setViewportView(panel_i);
 	
 	}
-	
+	/**
+	 * Metodo para introducir los equipos en el ComboBox
+	 */
 	public void RellenarCombo()
 	{
 		
@@ -388,7 +397,10 @@ public class Visualizar_Equipos extends JFrame {
 			if(e.getCategoria().equals((Categoria)comboCategoria.getSelectedItem())) comboEquipos.addItem(e.getNombre());
 		});
 	}
-	
+	/**
+	 * Metodo para mostrar los jugadores del equipo seleccionado
+	 * @throws RemoteException
+	 */
 	public void MostrarJugadores() throws RemoteException
 	{
 		
@@ -411,7 +423,9 @@ public class Visualizar_Equipos extends JFrame {
 		panel_central.repaint();
 		
 	}
-	
+	/**
+	 * Metodo para mostrar el inventario del equipo
+	 */
 	public void MostrarInventario()
 	{
 		Equipo e=null;

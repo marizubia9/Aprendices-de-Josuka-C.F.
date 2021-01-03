@@ -27,7 +27,8 @@ import Controller.Controller;
 
 import java.awt.Color;
 /**
- * Clase para la ventana principal del Jugador. Mostrará todas las tareas que pueda desarrollar este
+ * @class Principal_Jugador
+ * @brief En esta clase se desarrolla la GUI que visualiza el jugador cuando abre la aplicacion despues de haber iniciado sesion
  * @author Alumno
  */
 public class Principal_Jugador extends JFrame {
@@ -57,7 +58,7 @@ public class Principal_Jugador extends JFrame {
 	private Jugador j;
 	
 	/**
-	 * Constructor de la ventana
+	 * Constructor
 	 * @param controller el objeto controller que está contectado al servidor
 	 * @param j el jugador que está usando la aplicación
 	 * @throws RemoteException
@@ -72,7 +73,7 @@ public class Principal_Jugador extends JFrame {
 		this.setVisible(true);
 	}
 	/**
-	 * Inicia los componentes de la ventana
+	 * Se inicializan los componentes
 	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -318,7 +319,7 @@ public class Principal_Jugador extends JFrame {
 
 	}
 	/**
-	 * Muestra todos los partidos según la categoria
+	 * Se inserta un JPanel donde se visualizan los partidos segun la categoria
 	 */
 	public void InsertarJPanel() {
 		pScrollPane.removeAll();
@@ -352,7 +353,7 @@ public class Principal_Jugador extends JFrame {
 		repaint();
 	}
 	/**
-	 * En caso de pulsar el botón MIS PARTIDOS, se ejecutará este método donde se muestran los partidos del jugador en particular
+	 * En caso de pulsar el botón MIS PARTIDOS, se ejecutara este metodo donde se muestran los partidos del jugador en particular
 	 * @throws RemoteException
 	 * @throws ParseException
 	 */

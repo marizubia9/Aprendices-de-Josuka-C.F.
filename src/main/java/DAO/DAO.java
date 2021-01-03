@@ -1,3 +1,8 @@
+/**
+ * @brief En este paquete estan incluidas todas las clases que tienen relacion con la base de datos
+ * @author Alumno
+ * @package DAO
+ */
 package DAO;
 
 import java.rmi.RemoteException;
@@ -20,25 +25,39 @@ import Aprendices_de_Josuka.LD.Equipo;
 import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Tipo_Material;
-
+/**
+ * @class DAO
+ * @brief en esta clase se desarrollan todos los metodos para hacer transacciones con la base de datos
+ * @author Alumno
+ *
+ */
 public class DAO {
 	private static PersistenceManager persistentManager;
 	private static Transaction transaction;
 	private static PersistenceManagerFactory persistentManagerFactory;
 	private static DAO INSTANCE = new DAO();
-
+	/**
+	 * Constructor. Se inicia la conexion.
+	 */
 	private DAO() {
 
 		persistentManagerFactory = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		persistentManager = persistentManagerFactory.getPersistenceManager();
 		transaction = persistentManager.currentTransaction();
 	}
-
+	/**
+	 * Constructor
+	 * @return un new del DAO
+	 */
 	public static DAO getInstance() {
 
 		return INSTANCE;
 	}
-
+	/**
+	 * Se guardan los objetos en la base de datos en funcion de su tipo
+	 * @param objeto
+	 * @return un boolean que informa sobre si el objeto se ha guardado correctamente (true) o no (false)
+	 */
 	@SuppressWarnings("unchecked")
 	public boolean guardarObjeto(Object objeto) {
 		try {
@@ -93,7 +112,10 @@ public class DAO {
 		}
 		return false;
 	}
-
+	/**
+	 * Metodo para obtener la lista completa del inventario registrada
+	 * @return el inventario registrado en la base de datos
+	 */
 	public List<Material>getMaterial()
 	{
 		Extent<Material> extent = persistentManager.getExtent(Material.class, false);
@@ -104,6 +126,13 @@ public class DAO {
 		extent.closeAll();
 		return materiales;
 	}
+	/**
+	 * Metodo para modificar el inventario
+	 * @param tipo
+	 * @param cantidad
+	 * @param precio
+	 * @return un boolean que informa sobre si el material se ha modificado correctamente (true) o no (false)
+	 */
 	public boolean ModificarMaterial(Tipo_Material tipo, int cantidad, long precio)
 	{
 		try {
@@ -122,7 +151,10 @@ public class DAO {
 		}
 		return false;
 	}
-
+	/**
+	 * Metodo para leer los administradores registrados
+	 * @return la lista de administradores
+	 */
 	public List<Administrador> getAdmin() {
 		// TODO Auto-generated method stub
 		Extent<Administrador> extent = persistentManager.getExtent(Administrador.class, false);
@@ -135,7 +167,10 @@ public class DAO {
 		return administradores;
 	}
 
-	
+	/**
+	 * Metodo para leer los jugadores registrados
+	 * @return la lista de jugadores
+	 */
 	public List<Jugador> getJugador() {
 
 		Extent<Jugador> extent = persistentManager.getExtent(Jugador.class, false);
@@ -148,8 +183,11 @@ public class DAO {
 
 		return jugadores;
 	}
-
 	
+	/**
+	 * Metodo para leer los entrenadores registrados
+	 * @return la lista de entrenadores
+	 */
 	public List<Entrenador> getEntrenador() {
 		// TODO Auto-generated method stub
 		Extent<Entrenador> extent = persistentManager.getExtent(Entrenador.class, false);
@@ -162,7 +200,10 @@ public class DAO {
 		return entrenadores;
 	}
 	
-
+	/**
+	 * Metodo para leer los equipos registrados
+	 * @return la lista de equipos
+	 */
 	public List<Equipo> getEquipo() {
 		// TODO Auto-generated method stub
 		Extent<Equipo> extent = persistentManager.getExtent(Equipo.class, false);
@@ -174,7 +215,12 @@ public class DAO {
 		extent.closeAll();
 		return equipos;
 	}
-	
+	/**
+	 * Metodo para modificar los entrenadores (de la parte de administrador)
+	 * @param salario
+	 * @param entrenador
+	 * @return un boolean que informa sobre si el entrenador se ha modificado correctamente (true) o no (false)
+	 */
 	public boolean ActualizarEntrenador(Long salario, Entrenador entrenador)
 	{
 		
@@ -194,6 +240,14 @@ public class DAO {
 		}
 		return false;
 	}
+	/**
+	 * Metodo para modificar los jugadores (de la parte de administrador)
+	 * @param jugador
+	 * @param reconocimiento
+	 * @param lesionado
+	 * @param cuota
+	 * @return un boolean que informa sobre si el jugador se ha modificado correctamente (true) o no (false)
+	 */
 	public boolean ActualizarJugador(Jugador jugador, boolean reconocimiento, boolean lesionado, boolean cuota)
 	{
 		
@@ -215,7 +269,13 @@ public class DAO {
 		}
 		return false;
 	}
-	
+	/**
+	 * Metodo para modificar los jugadores (parte jugador)
+	 * @param jugador
+	 * @param correo
+	 * @param psw
+	 * @return un boolean que informa sobre si el jugador se ha modificado correctamente (true) o no (false)
+	 */
 	public boolean modificarCorreo(Jugador jugador, String correo, String psw)
 	{
 		
@@ -236,6 +296,13 @@ public class DAO {
 		}
 		return false;
 	}
+	/**
+	 * Metodo para modificar los entrenadores (parte entrenador)
+	 * @param e
+	 * @param correo
+	 * @param psw
+	 * @return un boolean que informa sobre si el entrenador se ha modificado correctamente (true) o no (false)
+	 */
 	public boolean modificarCorreoEntrenador(Entrenador e, String correo, String psw)
 	{
 		
@@ -256,7 +323,10 @@ public class DAO {
 		}
 		return false;
 	}
-	
+	/**
+	 * Metodo para modificar los jugadores de un equipo
+	 * @param jugadores
+	 */
 	public void ActualizarEquipoJugador(List<Jugador> jugadores)
 	{
 		try {
@@ -276,6 +346,10 @@ public class DAO {
 			}
 		}
 	}
+	/**
+	 * Metodo para modificar el boolean asignado a un entrenador
+	 * @param ent
+	 */
 	public void ActualizarEquipoEntrenador(Entrenador ent)
 	{
 		try {
@@ -293,6 +367,12 @@ public class DAO {
 			}
 		}
 	}
+	/**
+	 * Metodo para modificar un equipo
+	 * @param equipo
+	 * @param inventario
+	 * @param jugadores
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void ActualizarEquipo(Equipo equipo, HashMap inventario, List<String> jugadores)
 	{
@@ -312,7 +392,10 @@ public class DAO {
 			}
 		}
 	}
-	
+	/**
+	 * Metodo para modificar el inventario
+	 * @param lista_material
+	 */
 	public void ActualizarMaterial (List<Material> lista_material)
 	{
 		try 
@@ -332,6 +415,11 @@ public class DAO {
 				}
 			}
 	}
+	/**
+	 * Metodo para eliminar un administrador registrado
+	 * @param a
+	 * @return un boolean que informa sobre si el administrador se ha eliminado correctamente (true) o no (false)
+	 */
 	public boolean EliminarAdmin (Administrador a)
 	{
 		Extent<Administrador> extent = persistentManager.getExtent(Administrador.class, false);
@@ -362,6 +450,11 @@ public class DAO {
 			}
 		return false;
 	}
+	/**
+	 * Metodo para eliminar un jugador registrado
+	 * @param j
+	 * @return un boolean que informa sobre si el jugador se ha eliminado correctamente (true) o no (false)
+	 */
 	public boolean EliminarJugador (Jugador j)
 	{
 		Extent<Jugador> extent = persistentManager.getExtent(Jugador.class, false);
@@ -393,6 +486,11 @@ public class DAO {
 			}
 		return false;
 	}
+	/**
+	 * Metodo para eliminar un entrenador registrado
+	 * @param e
+	 * @return un boolean que informa sobre si el entrenador se ha eliminado correctamente (true) o no (false)
+	 */
 	public boolean EliminarEntrenador (Entrenador e)
 	{
 		Extent<Entrenador> extent = persistentManager.getExtent(Entrenador.class, false);
@@ -423,6 +521,11 @@ public class DAO {
 			}
 		return false;
 	}
+	/**
+	 * Metodo para eliminar un equipo
+	 * @param e
+	 * @return un boolean que informa sobre si el equipo se ha eliminado correctamente (true) o no (false)
+	 */
 	public boolean EliminarEquipo(Equipo e)
 	{
 		Extent<Equipo> extent = persistentManager.getExtent(Equipo.class, false);
@@ -453,6 +556,11 @@ public class DAO {
 			}
 		return false;
 	}
+	/**
+	 * Metodo para eliminar el material registrado
+	 * @param e
+	 * @return un boolean que informa sobre si el material se ha eliminado correctamente (true) o no (false)
+	 */
 	public boolean EliminarMaterial(Material e)
 	{
 		Extent<Material> extent = persistentManager.getExtent(Material.class, false);
@@ -483,6 +591,9 @@ public class DAO {
 			}
 		return false;
 	}
+	/**
+	 * Metodo para cerrar la conexion con la base de datos
+	 */
 	public void cerrarConexion() {
 		persistentManager.close();
 
