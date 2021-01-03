@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>APRENDICES DE JOSUKA C.F: Fichero Fuente src/main/java/ServiciosExternos/RestClient.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">APRENDICES DE JOSUKA C.F
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_rest_client_8java_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">RestClient.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_rest_client_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>ServiciosExternos;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> javax.ws.rs.client.*;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> javax.ws.rs.core.MediaType;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> javax.ws.rs.core.Response;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> javax.ws.rs.core.Response.Status;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_servicios_externos_1_1_rest_client.html">   13</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_servicios_externos_1_1_rest_client.html">RestClient</a> &lt; T <span class="keyword">extends</span> <a class="code" href="interface_servicios_externos_1_1_d_f___printable.html">DF_Printable</a> &gt;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// These attributes will be necessary to access the resource in the URL</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_servicios_externos_1_1_rest_client.html#a4275a317b0780aa547f144e71b01ab58">   16</a></span>&#160;    <span class="keyword">protected</span> Client <a class="code" href="class_servicios_externos_1_1_rest_client.html#a4275a317b0780aa547f144e71b01ab58">client</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_servicios_externos_1_1_rest_client.html#a8842962693f924ae73a3f1284b2efee9">   17</a></span>&#160;    <span class="keyword">protected</span> WebTarget <a class="code" href="class_servicios_externos_1_1_rest_client.html#a8842962693f924ae73a3f1284b2efee9">webTarget</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_servicios_externos_1_1_rest_client.html#aecc64d98c23cb904ead269149cebce5c">   23</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code" href="class_servicios_externos_1_1_rest_client.html#aecc64d98c23cb904ead269149cebce5c">request_OK</a>(<span class="keywordtype">int</span> response_status)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span>  response_status == Status.OK.getStatusCode()           ||     <span class="comment">// Code: 200</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                response_status == Status.CREATED.getStatusCode()      ||     <span class="comment">// Code: 201</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                response_status == Status.ACCEPTED.getStatusCode();           <span class="comment">// Code: 202</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_servicios_externos_1_1_rest_client.html#a2618a3a808ca3859ec7915c5da7a4f17">   34</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="class_servicios_externos_1_1_rest_client.html#a2618a3a808ca3859ec7915c5da7a4f17">RestClient</a>(String hostname, String port)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        this.client = ClientBuilder.newClient();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        this.webTarget = <a class="code" href="class_servicios_externos_1_1_rest_client.html#a4275a317b0780aa547f144e71b01ab58">client</a>.target(String.format(<span class="stringliteral">&quot;http://%s:%s&quot;</span>, hostname, port));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_servicios_externos_1_1_rest_client.html#a7f90064e86f296c35c0c1636270980ed">   41</a></span>&#160;    <span class="keyword">public</span> Invocation.Builder <a class="code" href="class_servicios_externos_1_1_rest_client.html#a7f90064e86f296c35c0c1636270980ed">createInvocationBuilder</a>(String resource_URL) <span class="keywordflow">throws</span> Exception</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        WebTarget requestController = this.webTarget.path(resource_URL);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        Invocation.Builder invocationBuilder = requestController</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                .request(MediaType.APPLICATION_JSON)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                .accept(MediaType.APPLICATION_JSON);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        System.out.println(<span class="stringliteral">&quot;Java Client preparing Jersey request call to &quot;</span> +</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                String.format(<span class="stringliteral">&quot;http://%s:%s%s&quot;</span>,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <a class="code" href="class_servicios_externos_1_1_rest_client.html#a8842962693f924ae73a3f1284b2efee9">webTarget</a>.getUri().getHost(),</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        <a class="code" href="class_servicios_externos_1_1_rest_client.html#a8842962693f924ae73a3f1284b2efee9">webTarget</a>.getUri().getPort(),</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        <a class="code" href="class_servicios_externos_1_1_rest_client.html#a8842962693f924ae73a3f1284b2efee9">webTarget</a>.getUri().getRawPath()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                ));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> invocationBuilder;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_servicios_externos_1_1_rest_client.html#ada4dc4fd681e05a41eeccd8cea63975d">   63</a></span>&#160;    <span class="keyword">public</span> Response <a class="code" href="class_servicios_externos_1_1_rest_client.html#ada4dc4fd681e05a41eeccd8cea63975d">makeGetRequest</a>(Invocation.Builder invocationBuilder) <span class="keywordflow">throws</span> Exception</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        System.out.println(<span class="stringliteral">&quot;Sending GET Request&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> invocationBuilder.get();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_servicios_externos_1_1_rest_client.html#a73bbf5abec4dbac74b3d84124740caad">   75</a></span>&#160;    <span class="keyword">public</span> Response <a class="code" href="class_servicios_externos_1_1_rest_client.html#a73bbf5abec4dbac74b3d84124740caad">makePostRequest</a>(Invocation.Builder invocationBuilder, T objectToSend) <span class="keywordflow">throws</span> Exception</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        System.out.println(<span class="stringliteral">&quot;Content of message to send in POST Request&quot;</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        objectToSend.print();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> invocationBuilder.post(Entity.entity(objectToSend, MediaType.APPLICATION_JSON));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_servicios_externos_1_1_rest_client.html#a7f95d6cf6d00030532c13148e7456d63">   88</a></span>&#160;    <span class="keyword">public</span> Response <a class="code" href="class_servicios_externos_1_1_rest_client.html#a7f95d6cf6d00030532c13148e7456d63">makePutRequest</a>(Invocation.Builder invocationBuilder, T objectToSend) <span class="keywordflow">throws</span> Exception</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        System.out.println(<span class="stringliteral">&quot;Content of message to send in PUT Request&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        objectToSend.print();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> invocationBuilder.put(Entity.entity(objectToSend, MediaType.APPLICATION_JSON));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_servicios_externos_1_1_rest_client.html#aba754cb270d9bd524dfc7df871d2198c">   98</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_servicios_externos_1_1_rest_client.html#aba754cb270d9bd524dfc7df871d2198c">simplePrint</a>(Response response)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        System.out.println(<span class="stringliteral">&quot;Java Jersey Client received the following output:&quot;</span>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        System.out.println(response.toString());</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="class_servicios_externos_1_1_rest_client.html#aecc64d98c23cb904ead269149cebce5c">request_OK</a>( response.getStatus() ) ) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            System.out.println(<span class="stringliteral">&quot;Successfully made Rest request... &quot;</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            System.out.println(<span class="stringliteral">&quot;Goint to print response content as string&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            System.out.println( response.readEntity(String.class) );</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            System.out.println(<span class="stringliteral">&quot;BadAss error happened. Can&#39;t print result.&quot;</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="ttc" id="aclass_servicios_externos_1_1_rest_client_html"><div class="ttname"><a href="class_servicios_externos_1_1_rest_client.html">ServiciosExternos.RestClient</a></div><div class="ttdef"><b>Definition:</b> <a href="_rest_client_8java_source.html#l00013">RestClient.java:14</a></div></div>
+<div class="ttc" id="aclass_servicios_externos_1_1_rest_client_html_a2618a3a808ca3859ec7915c5da7a4f17"><div class="ttname"><a href="class_servicios_externos_1_1_rest_client.html#a2618a3a808ca3859ec7915c5da7a4f17">ServiciosExternos.RestClient.RestClient</a></div><div class="ttdeci">RestClient(String hostname, String port)</div><div class="ttdef"><b>Definition:</b> <a href="_rest_client_8java_source.html#l00034">RestClient.java:34</a></div></div>
+<div class="ttc" id="aclass_servicios_externos_1_1_rest_client_html_a4275a317b0780aa547f144e71b01ab58"><div class="ttname"><a href="class_servicios_externos_1_1_rest_client.html#a4275a317b0780aa547f144e71b01ab58">ServiciosExternos.RestClient.client</a></div><div class="ttdeci">Client client</div><div class="ttdef"><b>Definition:</b> <a href="_rest_client_8java_source.html#l00016">RestClient.java:16</a></div></div>
+<div class="ttc" id="aclass_servicios_externos_1_1_rest_client_html_a73bbf5abec4dbac74b3d84124740caad"><div class="ttname"><a href="class_servicios_externos_1_1_rest_client.html#a73bbf5abec4dbac74b3d84124740caad">ServiciosExternos.RestClient.makePostRequest</a></div><div class="ttdeci">Response makePostRequest(Invocation.Builder invocationBuilder, T objectToSend)</div><div class="ttdef"><b>Definition:</b> <a href="_rest_client_8java_source.html#l00075">RestClient.java:75</a></div></div>
+<div class="ttc" id="aclass_servicios_externos_1_1_rest_client_html_a7f90064e86f296c35c0c1636270980ed"><div class="ttname"><a href="class_servicios_externos_1_1_rest_client.html#a7f90064e86f296c35c0c1636270980ed">ServiciosExternos.RestClient.createInvocationBuilder</a></div><div class="ttdeci">Invocation.Builder createInvocationBuilder(String resource_URL)</div><div class="ttdef"><b>Definition:</b> <a href="_rest_client_8java_source.html#l00041">RestClient.java:41</a></div></div>
+<div class="ttc" id="aclass_servicios_externos_1_1_rest_client_html_a7f95d6cf6d00030532c13148e7456d63"><div class="ttname"><a href="class_servicios_externos_1_1_rest_client.html#a7f95d6cf6d00030532c13148e7456d63">ServiciosExternos.RestClient.makePutRequest</a></div><div class="ttdeci">Response makePutRequest(Invocation.Builder invocationBuilder, T objectToSend)</div><div class="ttdef"><b>Definition:</b> <a href="_rest_client_8java_source.html#l00088">RestClient.java:88</a></div></div>
+<div class="ttc" id="aclass_servicios_externos_1_1_rest_client_html_a8842962693f924ae73a3f1284b2efee9"><div class="ttname"><a href="class_servicios_externos_1_1_rest_client.html#a8842962693f924ae73a3f1284b2efee9">ServiciosExternos.RestClient.webTarget</a></div><div class="ttdeci">WebTarget webTarget</div><div class="ttdef"><b>Definition:</b> <a href="_rest_client_8java_source.html#l00017">RestClient.java:17</a></div></div>
+<div class="ttc" id="aclass_servicios_externos_1_1_rest_client_html_aba754cb270d9bd524dfc7df871d2198c"><div class="ttname"><a href="class_servicios_externos_1_1_rest_client.html#aba754cb270d9bd524dfc7df871d2198c">ServiciosExternos.RestClient.simplePrint</a></div><div class="ttdeci">void simplePrint(Response response)</div><div class="ttdef"><b>Definition:</b> <a href="_rest_client_8java_source.html#l00098">RestClient.java:98</a></div></div>
+<div class="ttc" id="aclass_servicios_externos_1_1_rest_client_html_ada4dc4fd681e05a41eeccd8cea63975d"><div class="ttname"><a href="class_servicios_externos_1_1_rest_client.html#ada4dc4fd681e05a41eeccd8cea63975d">ServiciosExternos.RestClient.makeGetRequest</a></div><div class="ttdeci">Response makeGetRequest(Invocation.Builder invocationBuilder)</div><div class="ttdef"><b>Definition:</b> <a href="_rest_client_8java_source.html#l00063">RestClient.java:63</a></div></div>
+<div class="ttc" id="aclass_servicios_externos_1_1_rest_client_html_aecc64d98c23cb904ead269149cebce5c"><div class="ttname"><a href="class_servicios_externos_1_1_rest_client.html#aecc64d98c23cb904ead269149cebce5c">ServiciosExternos.RestClient.request_OK</a></div><div class="ttdeci">boolean request_OK(int response_status)</div><div class="ttdef"><b>Definition:</b> <a href="_rest_client_8java_source.html#l00023">RestClient.java:23</a></div></div>
+<div class="ttc" id="ainterface_servicios_externos_1_1_d_f___printable_html"><div class="ttname"><a href="interface_servicios_externos_1_1_d_f___printable.html">ServiciosExternos.DF_Printable</a></div><div class="ttdef"><b>Definition:</b> <a href="_d_f___printable_8java_source.html#l00011">DF_Printable.java:12</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_9fff6a92722088df2895745c4088067f.html">ServiciosExternos</a></li><li class="navelem"><a class="el" href="_rest_client_8java.html">RestClient.java</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
+  </ul>
+</div>
+</body>
+</html>
