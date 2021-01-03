@@ -25,7 +25,6 @@ import Aprendices_de_Josuka.LD.Partido;
  */
 @RunWith(MockitoJUnitRunner.class)
 public class testPartidos {
-	
 	@Mock
 	Equipos_Ext eq1;
 	@Mock

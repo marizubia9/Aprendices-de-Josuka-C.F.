@@ -41,7 +41,6 @@ import Fachada.itfFachada;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class testFachada {
-	
 	private Jugador j;
 	private Entrenador e;
 	private Administrador a;

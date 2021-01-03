@@ -5,8 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 import lombok.Data;
 /**
- *  @class Partidos_parameters
- *  @brief Clase que contiene los parametros de los partidos y sus getters y setters
+ * @class Partidos_parameters
+ * @brief Clase que contiene los parametros de los partidos y sus getters y setters
  * @author Alumno
  */
 @Data

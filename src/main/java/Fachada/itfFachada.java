@@ -323,5 +323,5 @@ public interface itfFachada extends Remote
 	 * @throws RemoteException
 	 * @throws org.json.simple.parser.ParseException
 	 */
-	public List <Equipos_Ext> clasificacion (Categoria cat)throws RemoteException, org.json.simple.parser.ParseException;
+	public List <Equipos_Ext> clasificacion (Categoria cat)throws RemoteException, ParseException;
 }

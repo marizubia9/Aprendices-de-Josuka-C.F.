@@ -5,7 +5,6 @@ import org.json.simple.JSONObject;
  * @class Sancion_JSON
  * @brief Clase para parsear las sanciones de la raspberry
  * @author Alumno
- *
  */
 public class Sancion_JSON
 {

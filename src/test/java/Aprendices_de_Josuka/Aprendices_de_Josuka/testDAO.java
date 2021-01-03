@@ -41,7 +41,6 @@ import Fachada.itfFachada;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class testDAO {
-	
 	private Jugador j;
 	private Administrador a;
 	private Entrenador e;

@@ -109,16 +109,12 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 		}
 		return false;
 	}
-
 	public  boolean EntrarAdministrador(String email, String psw) throws RemoteException {
 		for (Administrador a : DAO.getInstance().getAdmin()) {
 			if (a.getEmail().equals(email) && a.getPsw().equals(psw)) return true;
-		
 			}
 		return false;
 	}
-
-
 	public boolean RegistrarJugador(String nombre, String apellido, String fecha_S, String DNI, int telefono,
 			String correo, String psw) throws RemoteException {
 		return DAO.getInstance().guardarObjeto(new Jugador(nombre, apellido, fecha_S, DNI, false, false, telefono, correo, psw,false,false));

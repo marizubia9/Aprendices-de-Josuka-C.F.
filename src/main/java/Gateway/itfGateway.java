@@ -54,6 +54,7 @@ public interface itfGateway
 	 * @throws ParseException
 	 */
 	public boolean partidos() throws ParseException;
+	
 	/**
 	 * Método para ver si las listas de sanciones de la raspberry está vacía o no
 	 * @return true si la lista está llena, false si no

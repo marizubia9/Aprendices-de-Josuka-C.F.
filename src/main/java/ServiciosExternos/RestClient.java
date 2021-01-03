@@ -13,7 +13,6 @@ import javax.ws.rs.core.Response.Status;
  */
 public class RestClient < T extends DF_Printable >
 {
-	// These attributes will be necessary to access the resource in the URL
 	protected Client client;
 	protected WebTarget webTarget;
 	/**

@@ -26,7 +26,6 @@ import ServiciosExternos.Sancion_JSON;
  * @class Gateway
  * @brief Se conectara con la raspberry de partidos y sanciones. Además, implementará la interfaz del gateway
  * @author Alumno
- *
  */
 public class Gateway implements itfGateway {
 	private static String port = "5000";

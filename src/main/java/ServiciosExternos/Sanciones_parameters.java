@@ -13,7 +13,6 @@ public class Sanciones_parameters implements DF_Printable
     private String tipo;
     private String dni;
     private String cod_partido;
-
  /**
   * Imprime el contenido de las sanciones de la raspberry
   */

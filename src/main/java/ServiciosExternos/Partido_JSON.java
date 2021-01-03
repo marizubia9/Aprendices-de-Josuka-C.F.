@@ -9,7 +9,6 @@ import org.json.simple.JSONObject;
  * @class Partido_JSON
  * @brief Clase para parsear los partidos de la raspberry
  * @author Alumno
- *
  */
 public class Partido_JSON
 {
