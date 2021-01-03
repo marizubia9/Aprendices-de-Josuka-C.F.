@@ -22,7 +22,7 @@ import java.rmi.RemoteException;
 
 import javax.swing.JTextField;
 /**
- * En caso de que los jugadores o entrenadores ya esten registrados, iniciarán sesión mediante esta pantalla
+ * @brief En esta clase se desarrolla la GUI para el inicio de sesion de los jugadores y entrenadores ya registrados
  * @author Alumno
  */
 public class IniciarSesion extends JFrame {
@@ -58,9 +58,9 @@ public class IniciarSesion extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-/**
- * Inicia los componentes
- */
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);

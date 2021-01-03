@@ -25,15 +25,15 @@ import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
 /**
- * El jugador modifica su correo o su contraseña
+ * @class EditarDatos
+ * @brief En esta clase se desarrolla la GUI para que el jugador pueda modificar su correo o su contrasenya
  * @author Alumno
  *
  */
-public class EditarDatos extends JFrame {
 
-	/**
-	 * 
-	 */
+public class EditarDatos extends JFrame 
+{
+
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel txtLosAprendicesDe;

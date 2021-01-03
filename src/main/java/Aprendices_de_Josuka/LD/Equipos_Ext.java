@@ -6,8 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Esta clase define objetos de tipo equipo que no están guardados en la base de datos 
- * y se obtienen de la raspberry.
+ * @class Equipos_Ext
+ * @brief Esta clase define objetos de tipo equipo que no están guardados en la base de datos y se obtienen de la raspberry.
  * @author Alumno
  *
  */

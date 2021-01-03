@@ -26,7 +26,8 @@ import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
 /**
- * Se muestra la clasificacion al jugador
+ * @class Clasificacion_Jugador
+ * @brief En esta clase se desarrolla la GUI donde se muestra la clasificacion al jugador
  * @author Alumno
  *
  */
@@ -70,7 +71,7 @@ public class Clasificacion_Jugador extends JFrame {
 		this.setVisible(true);
 	}
 	/**
-	 * Inicia los componentes
+	 * Se inicializan los componentes
 	 * @throws ParseException
 	 */
 	public void initComponents() throws ParseException {

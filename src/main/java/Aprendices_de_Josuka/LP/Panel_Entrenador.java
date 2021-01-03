@@ -9,22 +9,30 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.border.CompoundBorder;
-
+/**
+ * @class Panel_Entrenador
+ * @brief En esta clase se crea un panel con la informacion del entrenador, para luego poder introducirlo en otras ventanas
+ * @author Alumno
+ *
+ */
 public class Panel_Entrenador extends JPanel {
 
 	private Entrenador entrenador;
+
 	/**
-	 * Create the panel.
+	 * Constructor
+	 * @param e
 	 */
 	public Panel_Entrenador(Entrenador e) {
 		System.out.println("entro al constructor");
 		entrenador=e;
 		Introducir_Datos();
 	}
-	
+	/**
+	 * Se inicializan los componentes del panel y se introducen los datos correspondientes
+	 */
 	public void Introducir_Datos()
 	{
-		System.out.println("Entro al metodo");
 		setVisible(true);
 		setBackground(Color.WHITE);
 		setSize(1005, 130);

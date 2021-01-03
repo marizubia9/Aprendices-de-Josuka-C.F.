@@ -24,7 +24,12 @@ import java.rmi.RemoteException;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-
+/**
+ * @class IniciarSesion_Admin
+ * @brief En esta clase se desarrolla la GUI para el inicio de sesion del administrador
+ * @author Alumno
+ *
+ */
 public class IniciarSesion_Admin extends JFrame {
 
 	private JPanel contentPane;
@@ -46,7 +51,7 @@ public class IniciarSesion_Admin extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Constructor
 	 * @param controller 
 	 */
 	public IniciarSesion_Admin(Controller controller) 
@@ -55,7 +60,9 @@ public class IniciarSesion_Admin extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);

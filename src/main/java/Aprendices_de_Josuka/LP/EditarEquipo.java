@@ -31,7 +31,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
+/**
+ * @class EditarEquipo
+ * @brief En esta clase se desarrolla la GUI para que el administrador pueda parte de la informacion del equipo
+ * @author Alumno
+ *
+ */
 public class EditarEquipo extends JFrame{
 	private JPanel contentPane;
 	private JLabel lblLosAprendicesDe;
@@ -86,14 +91,17 @@ public class EditarEquipo extends JFrame{
 
 
 	/**
-	 * Create the frame.
+	 * Constructor
+	 * @param c
 	 */
 	public EditarEquipo(Controller c) {
 		this.controller = c;
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		Lista_Equipos= new ArrayList<>();
 		Lista_Jugadores= new ArrayList<>();
@@ -535,7 +543,9 @@ public class EditarEquipo extends JFrame{
 		new DefaultListModel(); 
 
 	}
-	
+	/**
+	 * Se visualizan los equipos disponibles
+	 */
 	public void VisualizarEquipos()
 	{
 		comboEquipo.removeAllItems();
@@ -551,7 +561,10 @@ public class EditarEquipo extends JFrame{
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Se muestra la informacion del equipo
+	 * @throws RemoteException
+	 */
 	public void MostrarInformacion() throws RemoteException
 	{
 		textFieldBalones.setText("0");
@@ -639,7 +652,9 @@ public class EditarEquipo extends JFrame{
 			pScrollPane_1.repaint();
 		}
 	}
-		
+	/**
+	 * Se anyaden los jugadores seleccionados
+	 */
 	public void AnyadirJugadores()
 	{
 		//falta joptionpane si no hay ninguno seleccionado o por defecto que se seleccione uno
@@ -653,7 +668,9 @@ public class EditarEquipo extends JFrame{
 		list_JugadoresEquipo.setModel(modelo);
 		pScrollPane.repaint();			
 	}
-	
+	/**
+	 * Se eliminan los jugadores seleccionados
+	 */
 	public void EliminarJugadores()
 	{
 		//falta joptionpane si no hay ninguno seleccionado o por defecto que se seleccione uno
@@ -667,6 +684,10 @@ public class EditarEquipo extends JFrame{
 		list_JugadoresAnyadir.setModel(modelo2);
 		pScrollPane_1.repaint();
 	}
+	/**
+	 * Se guardan los cambios efectuados
+	 * @throws RemoteException
+	 */
 	public void Guardar() throws RemoteException
 	{
 		Equipo equipo= null;
@@ -736,7 +757,11 @@ public class EditarEquipo extends JFrame{
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Se actualiza el material del equipo con los cambios efectuados
+	 * @return la lista del material actualizada
+	 * @throws RemoteException
+	 */
 	public List<Integer> ActualizarMaterial() throws RemoteException
 	{
 		int balones=Integer.parseInt(textFieldBalones.getText());

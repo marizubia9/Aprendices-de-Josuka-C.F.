@@ -19,17 +19,26 @@ import java.util.StringTokenizer;
 
 import javax.swing.SwingConstants;
 import javax.swing.border.CompoundBorder;
-
+/**
+ * @class Panel_Partidos
+ * @brief En esta clase se crea un panel para mostrar por pantalla cada partido, para luego poder introducirlo en otras ventanas
+ * @author Alumno
+ *
+ */
 public class Panel_Partidos extends JPanel {
 	private Partido partido;
 	/**
-	 * Create the panel.
+	 * Constructor
+	 * @param p
 	 */
 	public Panel_Partidos(Partido p) {
 		
 		partido=p;
 		Introducir_Datos();
 	}
+	/**
+	 * Se inicializan los componentes del panel y se introducen los datos correspondientes
+	 */
 	public void Introducir_Datos()
 	{
 		setVisible(true);
