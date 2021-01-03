@@ -29,7 +29,8 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 /**
- * Esta clase define la GUI de la ventana de anyadir inventario del administrador 
+ * @brief Esta clase define la GUI de la ventana de anyadir inventario del administrador 
+ * @class Anyadir_Inventario
  * @author Alumno
  *
  */
@@ -58,7 +59,10 @@ public class Anyadir_Inventario extends JFrame {
 
 
 	/**
-	 * Create the frame.
+	 * Constructor
+	 * @param controller
+	 * @param r
+	 * @param inventario
 	 */
 	public Anyadir_Inventario(Controller controller,RegistrarEquipo r, HashMap<Material, Integer> inventario) 
 	{
@@ -68,7 +72,9 @@ public class Anyadir_Inventario extends JFrame {
 		this.inventario=inventario;
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -321,9 +327,9 @@ public class Anyadir_Inventario extends JFrame {
 		
 	
 	}
-	
-	
-		
+	/**
+	 * Se introduce la lista de materiales disponibles en el comboBox	
+	 */
 	public void RellenarCombo()
 	{
 
@@ -339,6 +345,10 @@ public class Anyadir_Inventario extends JFrame {
 		}
 		
 	}
+	/**
+	 * Se asigna el material seleccionado al equipo
+	 * @throws RemoteException
+	 */
 	public void Anyadir() throws RemoteException
 	{
 		int cantidad=0;

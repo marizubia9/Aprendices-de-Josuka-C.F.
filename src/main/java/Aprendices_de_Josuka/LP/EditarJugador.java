@@ -24,7 +24,12 @@ import Aprendices_de_Josuka.LD.Jugador;
 import Controller.Controller;
 
 import javax.swing.JRadioButton;
-
+/**
+ * @class EditarJugador
+ * @brief En esta clase se desarrolla la GUI para que el administrador pueda editar parte de la informacion del jugador
+ * @author Alumno
+ *
+ */
 public class EditarJugador  extends JFrame {
 
 	private JPanel contentPane;
@@ -81,7 +86,8 @@ public class EditarJugador  extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Constructor
+	 * @param controller
 	 */
 	public EditarJugador(Controller controller) {
 		this.controller=controller;
@@ -451,7 +457,9 @@ public class EditarJugador  extends JFrame {
 		Cuota.add(rdbtnNoPagada);
 		Cuota.add(rdbtnPagada);
 	}
-	
+	/**
+	 * Se visualizan los jugadores disponibles por categoria
+	 */
 	public void VisualizarJugadores()
 	{
 		ListaJugadores.clear();
@@ -466,6 +474,9 @@ public class EditarJugador  extends JFrame {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * Se muestra la informacion del jugador seleccionado
+	 */
 	public void MostrarInformacion()
 	{
 		if (ListaJugadores.size()==0)return;
@@ -489,7 +500,9 @@ public class EditarJugador  extends JFrame {
 			}
 		}
 	}
-
+	/**
+	 * Se guardan los cambios efectuados del jugador 
+	 */
 	public void Guardar()
 	{
 		for(Jugador j:ListaJugadores)

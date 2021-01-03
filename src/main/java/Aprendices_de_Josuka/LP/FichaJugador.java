@@ -23,7 +23,8 @@ import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
 /**
- * Enseña al jugador su ficha
+ * @class FichaJugador
+ * @brief En esta clase se desarrolla la GUI donde se muestra al jugador su ficha
  * @author Alumno
  *
  */
@@ -60,7 +61,7 @@ public class FichaJugador extends JFrame {
 		this.setVisible(true);
 	}
 	/**
-	 * Inicia componentes
+	 * Se inicializan los componentes
 	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

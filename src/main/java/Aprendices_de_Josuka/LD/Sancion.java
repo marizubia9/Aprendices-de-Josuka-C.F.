@@ -11,8 +11,8 @@ import lombok.Setter;
 @Getter
 @Setter
 /**
- * Esta clase define objetos de tipo sancion que no están guardados en la base de datos 
- * y se obtienen de la raspberry.
+ * @class Sancion
+ * @brief Esta clase define objetos de tipo sancion que no están guardados en la base de datos y se obtienen de la raspberry.
  * @author Alumno
  *
  */

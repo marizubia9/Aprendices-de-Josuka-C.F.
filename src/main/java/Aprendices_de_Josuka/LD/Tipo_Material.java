@@ -1,7 +1,8 @@
 package Aprendices_de_Josuka.LD;
 
 /**
- * Esta clase define un enumerado para el atributo tipo de la clase Material
+ * @class Tipo_Material
+ * @brief Esta clase define un enumerado para el atributo tipo de la clase Material
  * @author Alumno
  *
  */

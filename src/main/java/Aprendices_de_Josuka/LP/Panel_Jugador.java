@@ -16,22 +16,29 @@ import java.util.StringTokenizer;
 
 import javax.swing.SwingConstants;
 import javax.swing.border.CompoundBorder;
-
+/**
+ * @class Panel_Jugador
+ * @brief En esta clase se crea un panel para mostrar por pantalla cada jugador, para luego poder introducirlo en otras ventanas
+ * @author Alumno
+ *
+ */
 public class Panel_Jugador extends JPanel {
 
 	private Jugador jugador;
 	/**
-	 * Create the panel.
+	 * Constructor
+	 * @param j
 	 */
 	public Panel_Jugador(Jugador j) {
 		
 		jugador=j;
 		Introducir_Datos();
 	}
-	
+	/**
+	 * Se inicializan los componentes del panel y se introducen los datos correspondientes
+	 */
 	public void Introducir_Datos()
 	{
-		System.out.println("entro al metodo");
 		setVisible(true);
 		setBackground(Color.WHITE);
 		setSize(1005, 130);

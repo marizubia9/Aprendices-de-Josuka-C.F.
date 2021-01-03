@@ -13,16 +13,21 @@ import javax.swing.SwingConstants;
 import Aprendices_de_Josuka.LD.Equipos_Ext;
 import Aprendices_de_Josuka.LD.Jugador;
 /**
- * Clase para mostrar por pantalla cada equipo
+ * @class Panel_Equipos
+ * @brief En esta clase se crea un panel para mostrar por pantalla cada equipo, para luego poder introducirlo en otras ventanas
  * @author Alumno
  *
  */
+
 public class Panel_Equipos extends JPanel {
 
 	private Equipos_Ext equipo;
 	private int num;
+	
 	/**
-	 * Create the panel.
+	 * Constructor
+	 * @param e
+	 * @param i
 	 */
 	public Panel_Equipos(Equipos_Ext e, int i) {
 		num = i;
@@ -33,7 +38,7 @@ public class Panel_Equipos extends JPanel {
 		
 	}
 	/**
-	 * Introduce los datos en el panel
+	 * Se inicializan los componentes del panel y se introducen los datos correspondientes
 	 */
 	public void Introducir_Datos( )
 	{

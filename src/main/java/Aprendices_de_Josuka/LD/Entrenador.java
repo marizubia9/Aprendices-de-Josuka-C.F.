@@ -16,7 +16,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * Esta clase define objetos de tipo Entrenador
+ * @class Entrenador
+ * @brief Esta clase define objetos de tipo Entrenador
  * @author Alumno
  *
  */

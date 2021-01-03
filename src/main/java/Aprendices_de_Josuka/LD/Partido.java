@@ -1,3 +1,4 @@
+
 package Aprendices_de_Josuka.LD;
 
 import java.io.Serializable;
@@ -10,6 +11,12 @@ import java.util.Set;
 
 import lombok.Getter;
 import lombok.Setter;
+/**
+ * @class Partido
+ * @brief Esta clase define objetos de tipo partido que no están guardados en la base de datos y se obtienen de la raspberry.
+ * @author Alumno
+ *
+ */
 @Getter
 @Setter
 public class Partido implements Serializable{

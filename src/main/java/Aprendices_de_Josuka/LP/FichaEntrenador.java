@@ -24,15 +24,14 @@ import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
 /**
- * Enseña al entrenador su ficha
+ * @class FichaEntrenador
+ * @brief En esta clase se desarrolla la GUI donde se muestra al entrenador su ficha
  * @author Alumno
  *
  */
 public class FichaEntrenador extends JFrame {
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel txtLosAprendicesDe;
@@ -61,7 +60,7 @@ public class FichaEntrenador extends JFrame {
 		this.setVisible(true);
 	}
 	/**
-	 * Inicia componentes
+	 * Se inicializan los componentes
 	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

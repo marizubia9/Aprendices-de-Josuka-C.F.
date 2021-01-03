@@ -27,7 +27,8 @@ import Aprendices_de_Josuka.LD.Partido;
 import Aprendices_de_Josuka.LD.Sancion;
 import Controller.Controller;
 /**
- * Muestra las estadisticas del jugador
+ * @class Estadisticas
+ * @brief En esta clase se desarrolla la GUI donde se muestran las estadisticas del jugador
  * @author Alumno
  *
  */
@@ -75,7 +76,7 @@ public class Estadisticas extends JFrame {
 		this.setVisible(true);
 	}
 	/**
-	 * Inicia componentes
+	 * Se inicializan los componentes
 	 * @throws ParseException
 	 * @throws RemoteException
 	 */
@@ -299,7 +300,7 @@ public class Estadisticas extends JFrame {
 	}
 
 	/**
-	 * Muestra las sanciones en un JPanel
+	 * Se insertan las sanciones en un JPanel
 	 * @throws ParseException
 	 * @throws RemoteException
 	 */

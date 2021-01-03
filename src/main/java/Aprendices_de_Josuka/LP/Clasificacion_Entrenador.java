@@ -27,7 +27,8 @@ import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
 /**
- * Se le muestra la clasificacion al entrenador
+ * @class Clasificacion_Entrenador
+ * @brief En esta clase se desarrolla la GUI donde se muestra la clasificacion al entrenador
  * @author Alumno
  *
  */
@@ -67,7 +68,7 @@ public class Clasificacion_Entrenador extends JFrame {
 		this.setVisible(true);
 	}
 	/**
-	 * Inicia los componentes
+	 * Se inicializan los componentes
 	 * @throws ParseException
 	 */
 	public void initComponents() throws ParseException {
@@ -300,7 +301,7 @@ public class Clasificacion_Entrenador extends JFrame {
 	}
 
 	/**
-	 * Introduce un panel con los equipos externos ordenados segun el ranking
+	 * Se introduce un panel con los equipos externos ordenados según el ranking
 	 * @throws ParseException
 	 */
 	public void InsertarJPanel() throws ParseException {

@@ -23,7 +23,12 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
-
+/**
+ * @class EditarEntrenador
+ * @brief En esta clase se desarrolla la GUI para que el administrador pueda editar parte de la informacion del entrenador
+ * @author Alumno
+ *
+ */
 public class EditarEntrenador extends JFrame {
 
 	private JPanel contentPane;
@@ -58,7 +63,8 @@ public class EditarEntrenador extends JFrame {
 
 
 	/**
-	 * Create the frame.
+	 * Constructor
+	 * @param c
 	 */
 	public EditarEntrenador(Controller c) 
 	{
@@ -66,7 +72,9 @@ public class EditarEntrenador extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Inicializar componentes
+	 */
 	public void initComponents() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -367,7 +375,9 @@ public class EditarEntrenador extends JFrame {
 		VisualizarEntrenadores();
 		
 	}
-	
+	/**
+	 * Se introduce la lista de entrenadores en el ComboBox
+	 */
 	public void IntroducirEntrenadores()
 	{
 		ListaEntrenadores= new ArrayList<Entrenador>();
@@ -382,7 +392,9 @@ public class EditarEntrenador extends JFrame {
 			e.printStackTrace();
 		}	
 	}
-	
+	/**
+	 * Se visualizan las caracterisiticas del entrenador seleccionado
+	 */
 	public void VisualizarEntrenadores()
 	{
 			ListaEntrenadores.forEach(e->{
@@ -401,7 +413,9 @@ public class EditarEntrenador extends JFrame {
 			}
 		});
 	}
-	
+	/**
+	 * Se guardan los cambios efectuados
+	 */
 	public void Guardar()
 	{
 		for(Entrenador e:ListaEntrenadores){

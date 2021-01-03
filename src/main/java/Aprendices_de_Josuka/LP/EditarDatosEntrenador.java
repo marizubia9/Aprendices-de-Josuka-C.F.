@@ -26,15 +26,14 @@ import Aprendices_de_Josuka.LD.Jugador;
 import Aprendices_de_Josuka.LD.Partido;
 import Controller.Controller;
 /**
- * Mediante esta clase el entrenador puede modificar su correo y su contraseña
+ * @class EditarDatosEntrenador
+ * @brief En esta clase se desarrolla la GUI para que el entrenador pueda modificar su correo o su contrasenya
  * @author Alumno
  *
  */
-public class EditarDatosEntrenador extends JFrame {
+public class EditarDatosEntrenador extends JFrame 
+{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel txtLosAprendicesDe;
@@ -68,7 +67,7 @@ public class EditarDatosEntrenador extends JFrame {
 		this.setVisible(true);
 	}
 	/**
-	 * Inicia los componentes
+	 * Se inicializan los componentes
 	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -269,7 +268,7 @@ public class EditarDatosEntrenador extends JFrame {
 	
 	}
 	/**
-	 * Se guardar los datos a modificar
+	 * Se guardan los datos a modificar
 	 * @throws RemoteException
 	 * @throws ParseException
 	 */

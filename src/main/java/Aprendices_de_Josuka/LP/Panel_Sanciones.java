@@ -20,18 +20,28 @@ import java.util.StringTokenizer;
 
 import javax.swing.SwingConstants;
 import javax.swing.border.CompoundBorder;
-
+/**
+ * @class Panel_Sancioness
+ * @brief En esta clase se crea un panel para mostrar por pantalla cada sancion, para luego poder introducirlo en otras ventanas
+ * @author Alumno
+ *
+ */
 public class Panel_Sanciones extends JPanel {
 	private Sancion sancion;
 	private Partido partido;
 	/**
-	 * Create the panel.
+	 * Constructor
+	 * @param p
+	 * @param partido
 	 */
 	public Panel_Sanciones(Sancion p, Partido partido) {
 		this.partido = partido;
 		this.sancion=p;
 		Introducir_Datos();
 	}
+	/**
+	 * Se inicializan los componentes del panel y se introducen los datos correspondientes
+	 */
 	public void Introducir_Datos()
 	{
 		setVisible(true);

@@ -10,8 +10,8 @@ import javax.jdo.annotations.PrimaryKey;
 
 import lombok.Data;
 /**
- * Esta clase define objetos de tipo persona (clase padre), de la que después heredarán las clases entrenador
- * y jugador (las clases hijas)
+ * @class Persona
+ * @brief Esta clase define objetos de tipo persona (clase padre), de la que después heredarán las clases entrenador y jugador (las clases hijas)
  * @author Alumno
  *
  */
