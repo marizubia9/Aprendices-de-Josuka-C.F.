@@ -14,20 +14,24 @@ Autores:
 
 El proyecto cuenta con un servicio externo, de la cual se consiguen los partidos jugados y las sanciones puestas a los jugadores en cada partido. Por ello, es necesario ejecutar el siguiente comando **ANTES** de cualquier ejecución.
 
-``` python launch_AprendicesDeJosuka_partidos.py --host 127.0.0.1 --port 5000 ```
+```bash 
+python launch_AprendicesDeJosuka_partidos.py --host 127.0.0.1 --port 5000 
+```
 
 Para poder ejecutar correctamente este microservicio, requiere:
-* python3
-* flask
-* flask_restful
-* json
-* bson
-* pymongo
-* jsonpickle
+* [python3](https://www.python.org/downloads/)
+* [flask](https://flask.palletsprojects.com/en/1.1.x/installation/)
+* [flask_restful](https://flask-restful.readthedocs.io/en/latest/)
+* [json](https://www.npmjs.com/package/json)
+* [bson](https://pypi.org/project/bson/)
+* [pymongo](https://pypi.org/project/pymongo/)
+* [jsonpickle](https://pypi.org/project/jsonpickle/)
 
 ### Step 2 - Servidor de Aprendices de Josuka C.F
 
-```mvn clean compile```
+```bash 
+mvn clean compile
+```
 
 Al ser una arquitectura cliente-servidor, será necesario ejecutar el servidor y que el cliente se conecte a él. Conexión que se realizará mediante RMI.
 Para ello:  
