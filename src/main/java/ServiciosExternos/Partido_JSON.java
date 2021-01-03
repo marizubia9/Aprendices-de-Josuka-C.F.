@@ -6,7 +6,8 @@ import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.ChronoField;
 import org.json.simple.JSONObject;
 /**
- * Clase para parsear los partidos de la raspberry
+ * @class Partido_JSON
+ * @brief Clase para parsear los partidos de la raspberry
  * @author Alumno
  *
  */

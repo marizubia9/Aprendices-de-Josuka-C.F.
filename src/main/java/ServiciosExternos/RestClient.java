@@ -6,7 +6,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 /**
- * Clase del Rest Client. Sirve para conectar dos aplicaciones. En este caso la raspberry y la aplicación de Aprendices de Josuka
+ * @class RestClient
+ * @brief Sirve para conectar dos aplicaciones. En este caso la raspberry y la aplicación de Aprendices de Josuka
  * @author Alumno
  * @param <T> objeto del que se hara POST o PUT
  */

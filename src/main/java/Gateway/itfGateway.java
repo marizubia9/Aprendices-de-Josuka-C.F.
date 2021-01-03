@@ -12,7 +12,8 @@ import Aprendices_de_Josuka.LD.Sancion;
 import ServiciosExternos.Partido_JSON;
 import ServiciosExternos.Sancion_JSON;
 /**
- * Interfaz del Gateway donde se establecen todos los métodos que tendrá el Gateway
+ * @class itfGateway
+ * @brief Interfaz del Gateway donde se establecen todos los métodos que tendrá el Gateway
  * @author Alumno
  */
 public interface itfGateway

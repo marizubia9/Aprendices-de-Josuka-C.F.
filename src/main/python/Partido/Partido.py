@@ -9,14 +9,9 @@ from time import *
 from datetime import *
 
 class Partido():
-    """"
-    Objeto Partido de la raspberry, establece atributos de los partidos.
-    """
 
     def __init__(self, code: str, equipo_1: Equipo, equipo_2: Equipo, resultado_e1: int, resultado_e2: int,  date : datetime):
-        """
-        Constructor
-        """
+
         self.__code = code
         self.__equipo_1 = equipo_1
         self.__equipo_2 = equipo_2

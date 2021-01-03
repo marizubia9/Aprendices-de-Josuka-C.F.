@@ -2,7 +2,8 @@ package ServiciosExternos;
 
 import org.json.simple.JSONObject;
 /**
- * Clase para parsear las sanciones de la raspberry
+ * @class Sancion_JSON
+ * @brief Clase para parsear las sanciones de la raspberry
  * @author Alumno
  *
  */

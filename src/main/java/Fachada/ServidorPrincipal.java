@@ -33,18 +33,26 @@ import Aprendices_de_Josuka.LD.Partido;
 import Aprendices_de_Josuka.LD.Sancion;
 import Aprendices_de_Josuka.LD.Tipo_Material;
 /**
- * En esta clase se ejecutarán o delegarán todas las funciones de la aplicación
+ * @class ServidorPrincipal
+ * @brief En esta clase se ejecutarán o delegarán todas las funciones de la aplicación
  * @author Alumno
  *
  */
 public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada {
 	private static final long serialVersionUID = 1L;
 	private static ServidorPrincipal INSTANCE = null;
-
+	/**
+	 * Constructor vacio
+	 * @throws RemoteException
+	 */
 	private ServidorPrincipal() throws RemoteException {
 
 	}
-
+	/**
+	 * Método en la cual se implementa el patrón singleton. Así, solo se inicializará el servidor una única vez
+	 * @return la instancia del servidor
+	 * @throws RemoteException
+	 */
 	public static ServidorPrincipal getInstance() throws RemoteException {
 		synchronized (ServidorPrincipal.class) {
 			if (INSTANCE == null) {
@@ -135,19 +143,7 @@ public class ServidorPrincipal extends UnicastRemoteObject implements itfFachada
 	{
 		return Gateway.getInstance().search_partidos();
 	}
-//	public boolean RegistrarEquipo(Equipo e) throws RemoteException {
-//		e.getInventario().forEach((m,c)->
-//		{
-//			int cantidad= m.getCantidad()-c;
-//			m.setCantidad(cantidad);
-//			try {
-//				AsignarInventario(m);
-//			} catch (RemoteException e1) {
-//				e1.printStackTrace();
-//			}
-//		});
-//		return DAO.getInstance().guardarObjeto(e);
-//	}
+
 	public boolean RegistrarEquipo2(String nombre, Categoria cat, Entrenador entrenador, List<Jugador>lista_Jugadores, HashMap<Material, Integer> inventario)throws RemoteException
 	{
 		HashMap <String, Integer> lista = new HashMap<String, Integer>();

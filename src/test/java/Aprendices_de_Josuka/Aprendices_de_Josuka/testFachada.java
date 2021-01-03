@@ -34,7 +34,8 @@ import DAO.DAO;
 import Fachada.ServidorPrincipal;
 import Fachada.itfFachada;
 /**
- * Clase donde se hara el testeo de la fachada (gestor)
+ * @class testFachada
+ * @brief Clase donde se hara el testeo de la fachada (gestor)
  * @author Alumno
  *
  */

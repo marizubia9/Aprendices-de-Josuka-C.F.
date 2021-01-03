@@ -23,7 +23,8 @@ import ServiciosExternos.Partidos_parameters;
 import ServiciosExternos.RestClient;
 import ServiciosExternos.Sancion_JSON;
 /**
- * Clase Gateway, se conectara con la raspberry de partidos y sanciones. Además, implementará la interfaz del gateway
+ * @class Gateway
+ * @brief Se conectara con la raspberry de partidos y sanciones. Además, implementará la interfaz del gateway
  * @author Alumno
  *
  */

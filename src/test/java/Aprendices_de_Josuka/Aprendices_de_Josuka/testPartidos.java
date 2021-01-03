@@ -18,7 +18,8 @@ import Aprendices_de_Josuka.LD.Material;
 import Aprendices_de_Josuka.LD.Partido;
 
 /**
- * Clase donde se hara el testeo con mockito
+ * @class testPartidos
+ * @brief Clase donde se hara el testeo con mockito
  * @author Alumno
  *
  */

@@ -4,7 +4,8 @@
  */
 package ServiciosExternos;
 /**
- * Interfaz con método print que será implementado por Partidos_parameters y Sanciones_parameters para visualizar el contenido de las listas
+ * @class DF_Printable
+ * @brief Interfaz con método print que será implementado por Partidos_parameters y Sanciones_parameters para visualizar el contenido de las listas
  * @author Alumno
  *
  */

@@ -2,8 +2,8 @@ package ServiciosExternos;
 
 import lombok.Data;
 /**
- * Clase que contiene los atributos de las sanciones, con sus getters y setters mediante el plugin de Lombok.
- * Implementa DF_Printable para imprimir el contenido de cada sancion
+ * @class Sanciones_parameters
+ * @brief Clase que contiene los atributos de las sanciones, con sus getters y setters mediante el plugin de Lombok. Implementa DF_Printable para imprimir el contenido de cada sancion
  * @author Alumno
  */
 @Data

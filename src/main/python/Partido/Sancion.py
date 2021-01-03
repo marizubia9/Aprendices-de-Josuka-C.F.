@@ -3,19 +3,14 @@ import jsonpickle
 from json import JSONEncoder
 
 class Sancion():
-"""
-clase donde se establecen los atributos de las sanciones
-"""  
+
 
     def __init__(self, code: str, tipo: str, dni: str, cod_partido: str):
-        """
-        Constructor
-        """
+
         self.__code = code
         self.__tipo = tipo
         self.__dni = dni
         self.__cod_partido = cod_partido
-
 
 
     def get_code(self) -> str:

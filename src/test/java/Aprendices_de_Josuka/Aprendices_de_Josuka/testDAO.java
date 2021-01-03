@@ -34,7 +34,8 @@ import DAO.DAO;
 import Fachada.ServidorPrincipal;
 import Fachada.itfFachada;
 /**
- * Clase donde se hara el testeo de la base de datos
+ * @class testDAO
+ * @brief Clase donde se hara el testeo de la base de datos
  * @author Alumno
  *
  */
