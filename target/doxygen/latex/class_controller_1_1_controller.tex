@@ -1,0 +1,969 @@
+\hypertarget{class_controller_1_1_controller}{}\doxysection{Referencia de la Clase Controller.\+Controller}
+\label{class_controller_1_1_controller}\index{Controller.Controller@{Controller.Controller}}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_controller_1_1_controller_a1a57d6c244d24b61b5e84c79e888153f}{Controller}} ()  throws Remote\+Exception 
+\item 
+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}} $>$ \mbox{\hyperlink{class_controller_1_1_controller_a0cbdbf098e6f3fbc6c7fec2a16ad3634}{get\+Partidos}} ()  throws Remote\+Exception, Parse\+Exception  
+\item 
+boolean \mbox{\hyperlink{class_controller_1_1_controller_af7f3a861f39e1b031afd15bef2cac393}{Entrar\+Jugador}} (String email, String psw)  throws Remote\+Exception 
+\item 
+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext}{Equipos\+\_\+\+Ext}} $>$ \mbox{\hyperlink{class_controller_1_1_controller_a9738e8ad46e298f13ce190d782be98cd}{Clasificacion}} (\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}} cat)  throws Remote\+Exception, Parse\+Exception 
+\item 
+boolean \mbox{\hyperlink{class_controller_1_1_controller_a687028c69d162e79a43e09063329c931}{Entrar\+Entrenador}} (String email, String psw)  throws Remote\+Exception 
+\item 
+boolean \mbox{\hyperlink{class_controller_1_1_controller_a164f82141a49f9c6136a0013b48c25ac}{Entrar\+Administrador}} (String email, String psw)  throws Remote\+Exception 
+\item 
+boolean \mbox{\hyperlink{class_controller_1_1_controller_a35f9cf3ec115b78cccc1828b3a03a469}{Registrar\+Jugador}} (String nombre, String apellido, String fecha\+\_\+S, String DNI, int telefono, String correo, String psw)  throws Remote\+Exception 
+\item 
+void \mbox{\hyperlink{class_controller_1_1_controller_a6f5201c26067964a15890c85ee6ec8a7}{Registrar\+Entrenador}} (String nombre, String apellido, String fecha\+\_\+S, String DNI, int telefono, String correo, String psw, boolean is\+Asignado)  throws Remote\+Exception 
+\item 
+void \mbox{\hyperlink{class_controller_1_1_controller_ad0bcabe821793c20730c19a05fb5ce5e}{Registrar\+Admin}} (String correo, String psw)  throws Remote\+Exception 
+\item 
+boolean \mbox{\hyperlink{class_controller_1_1_controller_a3f1a6528d7a054fe1a02b1cfdc7787e0}{Registrar\+Equipo2}} (String nombre, \mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}} cat, \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}} entrenador, List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$lista\+\_\+\+Jugadores, Hash\+Map$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}}, Integer $>$ inventario)  throws Remote\+Exception
+\item 
+void \mbox{\hyperlink{class_controller_1_1_controller_a01ded1d5d8ab349a58adea7ed4822d4c}{Registrar\+Inventario}} (\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material}{Tipo\+\_\+\+Material}} mat, int cantidad, long precio)  throws Remote\+Exception 
+\item 
+int \mbox{\hyperlink{class_controller_1_1_controller_a2ef3b414d65274f7600eeca663973be0}{partidos\+Ganados}} (String DNI)  throws Remote\+Exception, Parse\+Exception 
+\item 
+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_sancion}{Sancion}} $>$ \mbox{\hyperlink{class_controller_1_1_controller_a607813c23410e8bf5e20f8ff83765141}{sanciones\+Persona}} (String DNI)  throws Remote\+Exception, Parse\+Exception 
+\item 
+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$ \mbox{\hyperlink{class_controller_1_1_controller_a7ed09e99b4cd722b1f86ea89030fb41e}{mis\+Jugadores}} (String ent)  throws Remote\+Exception  
+\item 
+boolean \mbox{\hyperlink{class_controller_1_1_controller_aa63e3ef233ae571eb0d99acb1cc24a31}{modificar\+Correo}} (\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} j, String correo, String psw)  throws Remote\+Exception  
+\item 
+boolean \mbox{\hyperlink{class_controller_1_1_controller_ace41a0f6c7675aa3ac9723897ad970fb}{modificar\+Correo\+Entrenador}} (\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}} j, String correo, String psw)  throws Remote\+Exception  
+\item 
+\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} \mbox{\hyperlink{class_controller_1_1_controller_a657cadd7659c87c26068e51c7dcf3b09}{get\+Jugador}} (String correo, String psw)  throws Remote\+Exception  
+\item 
+\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}} \mbox{\hyperlink{class_controller_1_1_controller_ae0085876df156b949e69a629c93b682e}{get\+Entrenador}} (String correo, String psw)  throws Remote\+Exception  
+\item 
+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$ \mbox{\hyperlink{class_controller_1_1_controller_a35a9758e0dd9d0c06d8d4ccf8016c726}{Mostrar\+Jugadores}} (\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}} c)  throws Remote\+Exception 
+\item 
+int \mbox{\hyperlink{class_controller_1_1_controller_a7d208877c4d12eb4522a64b9de1d87dc}{get\+Ranking}} (String dni)  throws Remote\+Exception, Parse\+Exception   
+\item 
+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$ \mbox{\hyperlink{class_controller_1_1_controller_af97611df0d9c15b8d2883f3c45aca9fe}{equipo\+Jugadores}} (\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}} e)  throws Remote\+Exception 
+\item 
+\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}} \mbox{\hyperlink{class_controller_1_1_controller_a096f87259dd6898fe04e43128a099cba}{equipo\+Entrenador}} (\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}} e)  throws Remote\+Exception 
+\item 
+\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}} \mbox{\hyperlink{class_controller_1_1_controller_a203b6f4c8d4084b09aaa6bd7f9fef7b0}{sancion\+Partido}} (String cod)  throws Remote\+Exception, Parse\+Exception 
+\item 
+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}} $>$ \mbox{\hyperlink{class_controller_1_1_controller_a8982c9a8c2ab5555d736aabf7cdd9906}{jugador\+Partido}} (List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}} $>$ partidos, String DNI)  throws Remote\+Exception, Parse\+Exception 
+\item 
+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}} $>$ \mbox{\hyperlink{class_controller_1_1_controller_a5d78666d59a0df7d7692df909221d450}{get\+Entrenador}} ()  throws Remote\+Exception 
+\item 
+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}} $>$ \mbox{\hyperlink{class_controller_1_1_controller_ae033a351e39d8e37b411590590595eee}{get\+Material}} ()  throws Remote\+Exception 
+\item 
+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}} $>$ \mbox{\hyperlink{class_controller_1_1_controller_a794c86568e4612123ad3fb0e00d335c9}{get\+Equipos}} ()  throws Remote\+Exception 
+\item 
+String \mbox{\hyperlink{class_controller_1_1_controller_ac9c9a2a39f5804f47e6a4c50b77b5fd0}{Obtener\+Equipo\+Jugador}} (\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} jugador)  throws Remote\+Exception 
+\item 
+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}} $>$ \mbox{\hyperlink{class_controller_1_1_controller_a7cdd5e7c8d4e6a896ff29443db44ada2}{get\+Equipos\+Filter}} (\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}} cat)  throws Remote\+Exception  
+\item 
+String \mbox{\hyperlink{class_controller_1_1_controller_aed2d79f3625482dde238a834e9c13217}{Obtener\+Equipo\+Entrenador}} (String entrenador)  throws Remote\+Exception  
+\item 
+void \mbox{\hyperlink{class_controller_1_1_controller_a16586939649c475ffce578c57f72f08c}{Actualizar\+Jugador\+Equipo}} (List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$ lista\+\_\+\+Jugadores)  throws Remote\+Exception 
+\item 
+void \mbox{\hyperlink{class_controller_1_1_controller_a78116709f32ae427fdc80b2a4fb016f1}{Actualizar\+Jugador}} (\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} e, boolean reconocimiento, boolean lesionado, boolean cuota)  throws Remote\+Exception 
+\item 
+void \mbox{\hyperlink{class_controller_1_1_controller_a45e071c55b5f88227a7e979f1f0674f8}{Actualizar\+Entrenador}} (\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}} e, long salario)  throws Remote\+Exception  
+\item 
+void \mbox{\hyperlink{class_controller_1_1_controller_aec7ce88641dfc86600a4773e4145889b}{Actualizar\+Equipo}} (\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}} equipo, Hash\+Map$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}}, Integer $>$ inventario, List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$ jugadores)  throws Remote\+Exception  
+\item 
+void \mbox{\hyperlink{class_controller_1_1_controller_a37a2fe6207a8ec72edc74cae94219131}{Actualizar\+Equipo\+Entrenador}} (\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}} e)  throws Remote\+Exception  
+\item 
+void \mbox{\hyperlink{class_controller_1_1_controller_a3a30c99a72ccef82ed6224df0cbf6dc9}{Asignar\+Inventario}} (\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}} m)  throws Remote\+Exception  
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+
+
+Definición en la línea 26 del archivo Controller.\+java.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_controller_1_1_controller_a1a57d6c244d24b61b5e84c79e888153f}\label{class_controller_1_1_controller_a1a57d6c244d24b61b5e84c79e888153f}} 
+\index{Controller.Controller@{Controller.Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily Controller.\+Controller.\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Constructor 
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 32 del archivo Controller.\+java.
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_controller_1_1_controller_a45e071c55b5f88227a7e979f1f0674f8}\label{class_controller_1_1_controller_a45e071c55b5f88227a7e979f1f0674f8}} 
+\index{Controller.Controller@{Controller.Controller}!ActualizarEntrenador@{ActualizarEntrenador}}
+\index{ActualizarEntrenador@{ActualizarEntrenador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{ActualizarEntrenador()}{ActualizarEntrenador()}}
+{\footnotesize\ttfamily void Controller.\+Controller.\+Actualizar\+Entrenador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}}]{e,  }\item[{long}]{salario }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de modificar la informacion del entrenador que ha editado el administrador 
+\begin{DoxyParams}{Parámetros}
+{\em e} & \\
+\hline
+{\em salario} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 376 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_aec7ce88641dfc86600a4773e4145889b}\label{class_controller_1_1_controller_aec7ce88641dfc86600a4773e4145889b}} 
+\index{Controller.Controller@{Controller.Controller}!ActualizarEquipo@{ActualizarEquipo}}
+\index{ActualizarEquipo@{ActualizarEquipo}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{ActualizarEquipo()}{ActualizarEquipo()}}
+{\footnotesize\ttfamily void Controller.\+Controller.\+Actualizar\+Equipo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}}]{equipo,  }\item[{Hash\+Map$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}}, Integer $>$}]{inventario,  }\item[{List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$}]{jugadores }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de modificar la informacion del equipo que ha editado el administrador 
+\begin{DoxyParams}{Parámetros}
+{\em equipo} & \\
+\hline
+{\em inventario} & \\
+\hline
+{\em jugadores} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 387 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a37a2fe6207a8ec72edc74cae94219131}\label{class_controller_1_1_controller_a37a2fe6207a8ec72edc74cae94219131}} 
+\index{Controller.Controller@{Controller.Controller}!ActualizarEquipoEntrenador@{ActualizarEquipoEntrenador}}
+\index{ActualizarEquipoEntrenador@{ActualizarEquipoEntrenador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{ActualizarEquipoEntrenador()}{ActualizarEquipoEntrenador()}}
+{\footnotesize\ttfamily void Controller.\+Controller.\+Actualizar\+Equipo\+Entrenador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}}]{e }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de modificar el entrenador de un equipo 
+\begin{DoxyParams}{Parámetros}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 396 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a78116709f32ae427fdc80b2a4fb016f1}\label{class_controller_1_1_controller_a78116709f32ae427fdc80b2a4fb016f1}} 
+\index{Controller.Controller@{Controller.Controller}!ActualizarJugador@{ActualizarJugador}}
+\index{ActualizarJugador@{ActualizarJugador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{ActualizarJugador()}{ActualizarJugador()}}
+{\footnotesize\ttfamily void Controller.\+Controller.\+Actualizar\+Jugador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}}]{e,  }\item[{boolean}]{reconocimiento,  }\item[{boolean}]{lesionado,  }\item[{boolean}]{cuota }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de modificar la informacion del jugador que ha editado el administrador 
+\begin{DoxyParams}{Parámetros}
+{\em e} & \\
+\hline
+{\em reconocimiento} & \\
+\hline
+{\em lesionado} & \\
+\hline
+{\em cuota} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 366 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a16586939649c475ffce578c57f72f08c}\label{class_controller_1_1_controller_a16586939649c475ffce578c57f72f08c}} 
+\index{Controller.Controller@{Controller.Controller}!ActualizarJugadorEquipo@{ActualizarJugadorEquipo}}
+\index{ActualizarJugadorEquipo@{ActualizarJugadorEquipo}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{ActualizarJugadorEquipo()}{ActualizarJugadorEquipo()}}
+{\footnotesize\ttfamily void Controller.\+Controller.\+Actualizar\+Jugador\+Equipo (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$}]{lista\+\_\+\+Jugadores }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de actualizar la lista de jugadores de un equipo 
+\begin{DoxyParams}{Parámetros}
+{\em lista\+\_\+\+Jugadores} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 355 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a3a30c99a72ccef82ed6224df0cbf6dc9}\label{class_controller_1_1_controller_a3a30c99a72ccef82ed6224df0cbf6dc9}} 
+\index{Controller.Controller@{Controller.Controller}!AsignarInventario@{AsignarInventario}}
+\index{AsignarInventario@{AsignarInventario}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{AsignarInventario()}{AsignarInventario()}}
+{\footnotesize\ttfamily void Controller.\+Controller.\+Asignar\+Inventario (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}}}]{m }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de modificar el inventario asignado a un equipo 
+\begin{DoxyParams}{Parámetros}
+{\em m} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 405 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a9738e8ad46e298f13ce190d782be98cd}\label{class_controller_1_1_controller_a9738e8ad46e298f13ce190d782be98cd}} 
+\index{Controller.Controller@{Controller.Controller}!Clasificacion@{Clasificacion}}
+\index{Clasificacion@{Clasificacion}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{Clasificacion()}{Clasificacion()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext}{Equipos\+\_\+\+Ext}}$>$ Controller.\+Controller.\+Clasificacion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}}}]{cat }\end{DoxyParamCaption}) throws Remote\+Exception, Parse\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada que obtiene la lista de los equipos obtenidos de la raspberry 
+\begin{DoxyParams}{Parámetros}
+{\em cat} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+la lista de los equipos obtenidos de la raspberry 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 65 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a164f82141a49f9c6136a0013b48c25ac}\label{class_controller_1_1_controller_a164f82141a49f9c6136a0013b48c25ac}} 
+\index{Controller.Controller@{Controller.Controller}!EntrarAdministrador@{EntrarAdministrador}}
+\index{EntrarAdministrador@{EntrarAdministrador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{EntrarAdministrador()}{EntrarAdministrador()}}
+{\footnotesize\ttfamily boolean Controller.\+Controller.\+Entrar\+Administrador (\begin{DoxyParamCaption}\item[{String}]{email,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de inicio de sesion del entrenador administrador 
+\begin{DoxyParams}{Parámetros}
+{\em email} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el administrador ha entrado bien el la aplicacion (true) o no (false) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 85 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a687028c69d162e79a43e09063329c931}\label{class_controller_1_1_controller_a687028c69d162e79a43e09063329c931}} 
+\index{Controller.Controller@{Controller.Controller}!EntrarEntrenador@{EntrarEntrenador}}
+\index{EntrarEntrenador@{EntrarEntrenador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{EntrarEntrenador()}{EntrarEntrenador()}}
+{\footnotesize\ttfamily boolean Controller.\+Controller.\+Entrar\+Entrenador (\begin{DoxyParamCaption}\item[{String}]{email,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de inicio de sesion del entrenador 
+\begin{DoxyParams}{Parámetros}
+{\em email} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el entrenador ha entrado bien el la aplicacion (true) o no (false) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 75 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_af7f3a861f39e1b031afd15bef2cac393}\label{class_controller_1_1_controller_af7f3a861f39e1b031afd15bef2cac393}} 
+\index{Controller.Controller@{Controller.Controller}!EntrarJugador@{EntrarJugador}}
+\index{EntrarJugador@{EntrarJugador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{EntrarJugador()}{EntrarJugador()}}
+{\footnotesize\ttfamily boolean Controller.\+Controller.\+Entrar\+Jugador (\begin{DoxyParamCaption}\item[{String}]{email,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de inicio de sesion del jugador 
+\begin{DoxyParams}{Parámetros}
+{\em email} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el jugador ha entrado bien el la aplicacion (true) o no (false) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 55 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a096f87259dd6898fe04e43128a099cba}\label{class_controller_1_1_controller_a096f87259dd6898fe04e43128a099cba}} 
+\index{Controller.Controller@{Controller.Controller}!equipoEntrenador@{equipoEntrenador}}
+\index{equipoEntrenador@{equipoEntrenador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{equipoEntrenador()}{equipoEntrenador()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}} Controller.\+Controller.\+equipo\+Entrenador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}}]{e }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener el entrenador de un equipo 
+\begin{DoxyParams}{Parámetros}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+el entrenador de un equipo 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 273 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_af97611df0d9c15b8d2883f3c45aca9fe}\label{class_controller_1_1_controller_af97611df0d9c15b8d2883f3c45aca9fe}} 
+\index{Controller.Controller@{Controller.Controller}!equipoJugadores@{equipoJugadores}}
+\index{equipoJugadores@{equipoJugadores}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{equipoJugadores()}{equipoJugadores()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}$>$ Controller.\+Controller.\+equipo\+Jugadores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}}]{e }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener la lista de jugadores de un equipo 
+\begin{DoxyParams}{Parámetros}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+la lista de jugadores de un equipo 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 264 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a5d78666d59a0df7d7692df909221d450}\label{class_controller_1_1_controller_a5d78666d59a0df7d7692df909221d450}} 
+\index{Controller.Controller@{Controller.Controller}!getEntrenador@{getEntrenador}}
+\index{getEntrenador@{getEntrenador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{getEntrenador()}{getEntrenador()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}$>$ Controller.\+Controller.\+get\+Entrenador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener una lista de entrenadores \begin{DoxyReturn}{Devuelve}
+una lista de entrenadores 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 302 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_ae0085876df156b949e69a629c93b682e}\label{class_controller_1_1_controller_ae0085876df156b949e69a629c93b682e}} 
+\index{Controller.Controller@{Controller.Controller}!getEntrenador@{getEntrenador}}
+\index{getEntrenador@{getEntrenador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{getEntrenador()}{getEntrenador()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}} Controller.\+Controller.\+get\+Entrenador (\begin{DoxyParamCaption}\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de la fachada de leer un entrenador 
+\begin{DoxyParams}{Parámetros}
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+el entrenador 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 234 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a794c86568e4612123ad3fb0e00d335c9}\label{class_controller_1_1_controller_a794c86568e4612123ad3fb0e00d335c9}} 
+\index{Controller.Controller@{Controller.Controller}!getEquipos@{getEquipos}}
+\index{getEquipos@{getEquipos}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{getEquipos()}{getEquipos()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}$>$ Controller.\+Controller.\+get\+Equipos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener equipos \begin{DoxyReturn}{Devuelve}
+lista de equipos 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 318 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a7cdd5e7c8d4e6a896ff29443db44ada2}\label{class_controller_1_1_controller_a7cdd5e7c8d4e6a896ff29443db44ada2}} 
+\index{Controller.Controller@{Controller.Controller}!getEquiposFilter@{getEquiposFilter}}
+\index{getEquiposFilter@{getEquiposFilter}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{getEquiposFilter()}{getEquiposFilter()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}$>$ Controller.\+Controller.\+get\+Equipos\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}}}]{cat }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de filtrar los equipos por categoria 
+\begin{DoxyParams}{Parámetros}
+{\em cat} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+la lista de equipos filtrada 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 336 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a657cadd7659c87c26068e51c7dcf3b09}\label{class_controller_1_1_controller_a657cadd7659c87c26068e51c7dcf3b09}} 
+\index{Controller.Controller@{Controller.Controller}!getJugador@{getJugador}}
+\index{getJugador@{getJugador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{getJugador()}{getJugador()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} Controller.\+Controller.\+get\+Jugador (\begin{DoxyParamCaption}\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de leer un jugador 
+\begin{DoxyParams}{Parámetros}
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+el jugador 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 223 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_ae033a351e39d8e37b411590590595eee}\label{class_controller_1_1_controller_ae033a351e39d8e37b411590590595eee}} 
+\index{Controller.Controller@{Controller.Controller}!getMaterial@{getMaterial}}
+\index{getMaterial@{getMaterial}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{getMaterial()}{getMaterial()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}}$>$ Controller.\+Controller.\+get\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener inventario \begin{DoxyReturn}{Devuelve}
+una lista de inventario 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 310 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a0cbdbf098e6f3fbc6c7fec2a16ad3634}\label{class_controller_1_1_controller_a0cbdbf098e6f3fbc6c7fec2a16ad3634}} 
+\index{Controller.Controller@{Controller.Controller}!getPartidos@{getPartidos}}
+\index{getPartidos@{getPartidos}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{getPartidos()}{getPartidos()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}}$>$ Controller.\+Controller.\+get\+Partidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception, Parse\+Exception}
+
+Metodo que devuelve la lista de partidos de la fachada \begin{DoxyReturn}{Devuelve}
+lista de partidos 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 44 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a7d208877c4d12eb4522a64b9de1d87dc}\label{class_controller_1_1_controller_a7d208877c4d12eb4522a64b9de1d87dc}} 
+\index{Controller.Controller@{Controller.Controller}!getRanking@{getRanking}}
+\index{getRanking@{getRanking}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{getRanking()}{getRanking()}}
+{\footnotesize\ttfamily int Controller.\+Controller.\+get\+Ranking (\begin{DoxyParamCaption}\item[{String}]{dni }\end{DoxyParamCaption}) throws Remote\+Exception, Parse\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener el puesto del ranking 
+\begin{DoxyParams}{Parámetros}
+{\em dni} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un int con el puesto del ranking 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 254 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a8982c9a8c2ab5555d736aabf7cdd9906}\label{class_controller_1_1_controller_a8982c9a8c2ab5555d736aabf7cdd9906}} 
+\index{Controller.Controller@{Controller.Controller}!jugadorPartido@{jugadorPartido}}
+\index{jugadorPartido@{jugadorPartido}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{jugadorPartido()}{jugadorPartido()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}}$>$ Controller.\+Controller.\+jugador\+Partido (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}} $>$}]{partidos,  }\item[{String}]{DNI }\end{DoxyParamCaption}) throws Remote\+Exception, Parse\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener una lista de partidos jugados por un jugador 
+\begin{DoxyParams}{Parámetros}
+{\em partidos} & \\
+\hline
+{\em DNI} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+una lista de partidos 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 294 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a7ed09e99b4cd722b1f86ea89030fb41e}\label{class_controller_1_1_controller_a7ed09e99b4cd722b1f86ea89030fb41e}} 
+\index{Controller.Controller@{Controller.Controller}!misJugadores@{misJugadores}}
+\index{misJugadores@{misJugadores}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{misJugadores()}{misJugadores()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}$>$ Controller.\+Controller.\+mis\+Jugadores (\begin{DoxyParamCaption}\item[{String}]{ent }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener la lista de los jugadores de un entrenador 
+\begin{DoxyParams}{Parámetros}
+{\em ent} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+lista de los jugadores de un entrenador 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 188 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_aa63e3ef233ae571eb0d99acb1cc24a31}\label{class_controller_1_1_controller_aa63e3ef233ae571eb0d99acb1cc24a31}} 
+\index{Controller.Controller@{Controller.Controller}!modificarCorreo@{modificarCorreo}}
+\index{modificarCorreo@{modificarCorreo}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{modificarCorreo()}{modificarCorreo()}}
+{\footnotesize\ttfamily boolean Controller.\+Controller.\+modificar\+Correo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}}]{j,  }\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de modificar el correo y la contrasenya de un jugador 
+\begin{DoxyParams}{Parámetros}
+{\em j} & \\
+\hline
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa si se ha modificado correctamente (true) o no (false) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 200 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_ace41a0f6c7675aa3ac9723897ad970fb}\label{class_controller_1_1_controller_ace41a0f6c7675aa3ac9723897ad970fb}} 
+\index{Controller.Controller@{Controller.Controller}!modificarCorreoEntrenador@{modificarCorreoEntrenador}}
+\index{modificarCorreoEntrenador@{modificarCorreoEntrenador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{modificarCorreoEntrenador()}{modificarCorreoEntrenador()}}
+{\footnotesize\ttfamily boolean Controller.\+Controller.\+modificar\+Correo\+Entrenador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}}]{j,  }\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de modificar el correo y la contrasenya de un jugador 
+\begin{DoxyParams}{Parámetros}
+{\em j} & \\
+\hline
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa si se ha modificado correctamente (true) o no (false) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 212 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a35a9758e0dd9d0c06d8d4ccf8016c726}\label{class_controller_1_1_controller_a35a9758e0dd9d0c06d8d4ccf8016c726}} 
+\index{Controller.Controller@{Controller.Controller}!MostrarJugadores@{MostrarJugadores}}
+\index{MostrarJugadores@{MostrarJugadores}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{MostrarJugadores()}{MostrarJugadores()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}$>$ Controller.\+Controller.\+Mostrar\+Jugadores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}}}]{c }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de leer jugadores de una categoria 
+\begin{DoxyParams}{Parámetros}
+{\em c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+la lista de jugadores 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 244 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_aed2d79f3625482dde238a834e9c13217}\label{class_controller_1_1_controller_aed2d79f3625482dde238a834e9c13217}} 
+\index{Controller.Controller@{Controller.Controller}!ObtenerEquipoEntrenador@{ObtenerEquipoEntrenador}}
+\index{ObtenerEquipoEntrenador@{ObtenerEquipoEntrenador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{ObtenerEquipoEntrenador()}{ObtenerEquipoEntrenador()}}
+{\footnotesize\ttfamily String Controller.\+Controller.\+Obtener\+Equipo\+Entrenador (\begin{DoxyParamCaption}\item[{String}]{entrenador }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener el nombre del equipo de un entrenador 
+\begin{DoxyParams}{Parámetros}
+{\em entrenador} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un string con el nombre del equipo de un entrenador 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 346 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_ac9c9a2a39f5804f47e6a4c50b77b5fd0}\label{class_controller_1_1_controller_ac9c9a2a39f5804f47e6a4c50b77b5fd0}} 
+\index{Controller.Controller@{Controller.Controller}!ObtenerEquipoJugador@{ObtenerEquipoJugador}}
+\index{ObtenerEquipoJugador@{ObtenerEquipoJugador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{ObtenerEquipoJugador()}{ObtenerEquipoJugador()}}
+{\footnotesize\ttfamily String Controller.\+Controller.\+Obtener\+Equipo\+Jugador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}}]{jugador }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener el nombre del equipo de un jugador 
+\begin{DoxyParams}{Parámetros}
+{\em jugador} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un String con el nombre de un equipo 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 327 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a2ef3b414d65274f7600eeca663973be0}\label{class_controller_1_1_controller_a2ef3b414d65274f7600eeca663973be0}} 
+\index{Controller.Controller@{Controller.Controller}!partidosGanados@{partidosGanados}}
+\index{partidosGanados@{partidosGanados}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{partidosGanados()}{partidosGanados()}}
+{\footnotesize\ttfamily int Controller.\+Controller.\+partidos\+Ganados (\begin{DoxyParamCaption}\item[{String}]{DNI }\end{DoxyParamCaption}) throws Remote\+Exception, Parse\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener los partidos ganados 
+\begin{DoxyParams}{Parámetros}
+{\em DNI} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em Parse\+Exception} & Metodo que hace la llamada al metodo de la fachada de obtener los partidos ganados \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parámetros}
+{\em DNI} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 169 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_ad0bcabe821793c20730c19a05fb5ce5e}\label{class_controller_1_1_controller_ad0bcabe821793c20730c19a05fb5ce5e}} 
+\index{Controller.Controller@{Controller.Controller}!RegistrarAdmin@{RegistrarAdmin}}
+\index{RegistrarAdmin@{RegistrarAdmin}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{RegistrarAdmin()}{RegistrarAdmin()}}
+{\footnotesize\ttfamily void Controller.\+Controller.\+Registrar\+Admin (\begin{DoxyParamCaption}\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de registrarse del administrador 
+\begin{DoxyParams}{Parámetros}
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 128 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a6f5201c26067964a15890c85ee6ec8a7}\label{class_controller_1_1_controller_a6f5201c26067964a15890c85ee6ec8a7}} 
+\index{Controller.Controller@{Controller.Controller}!RegistrarEntrenador@{RegistrarEntrenador}}
+\index{RegistrarEntrenador@{RegistrarEntrenador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{RegistrarEntrenador()}{RegistrarEntrenador()}}
+{\footnotesize\ttfamily void Controller.\+Controller.\+Registrar\+Entrenador (\begin{DoxyParamCaption}\item[{String}]{nombre,  }\item[{String}]{apellido,  }\item[{String}]{fecha\+\_\+S,  }\item[{String}]{DNI,  }\item[{int}]{telefono,  }\item[{String}]{correo,  }\item[{String}]{psw,  }\item[{boolean}]{is\+Asignado }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de registrarse del entrenador 
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & \\
+\hline
+{\em apellido} & \\
+\hline
+{\em fecha\+\_\+S} & \\
+\hline
+{\em DNI} & \\
+\hline
+{\em telefono} & \\
+\hline
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+{\em is\+Asignado} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 118 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a3f1a6528d7a054fe1a02b1cfdc7787e0}\label{class_controller_1_1_controller_a3f1a6528d7a054fe1a02b1cfdc7787e0}} 
+\index{Controller.Controller@{Controller.Controller}!RegistrarEquipo2@{RegistrarEquipo2}}
+\index{RegistrarEquipo2@{RegistrarEquipo2}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{RegistrarEquipo2()}{RegistrarEquipo2()}}
+{\footnotesize\ttfamily boolean Controller.\+Controller.\+Registrar\+Equipo2 (\begin{DoxyParamCaption}\item[{String}]{nombre,  }\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}}}]{cat,  }\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}}]{entrenador,  }\item[{List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$}]{lista\+\_\+\+Jugadores,  }\item[{Hash\+Map$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}}, Integer $>$}]{inventario }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de registro de equipo 
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & \\
+\hline
+{\em cat} & \\
+\hline
+{\em entrenador} & \\
+\hline
+{\em lista\+\_\+\+Jugadores} & \\
+\hline
+{\em inventario} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+boolean que informa sobre si el equipo se ha guardado bien (true) o no (false) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 141 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a01ded1d5d8ab349a58adea7ed4822d4c}\label{class_controller_1_1_controller_a01ded1d5d8ab349a58adea7ed4822d4c}} 
+\index{Controller.Controller@{Controller.Controller}!RegistrarInventario@{RegistrarInventario}}
+\index{RegistrarInventario@{RegistrarInventario}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{RegistrarInventario()}{RegistrarInventario()}}
+{\footnotesize\ttfamily void Controller.\+Controller.\+Registrar\+Inventario (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material}{Tipo\+\_\+\+Material}}}]{mat,  }\item[{int}]{cantidad,  }\item[{long}]{precio }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de registro de inventario 
+\begin{DoxyParams}{Parámetros}
+{\em mat} & \\
+\hline
+{\em cantidad} & \\
+\hline
+{\em precio} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 152 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a35f9cf3ec115b78cccc1828b3a03a469}\label{class_controller_1_1_controller_a35f9cf3ec115b78cccc1828b3a03a469}} 
+\index{Controller.Controller@{Controller.Controller}!RegistrarJugador@{RegistrarJugador}}
+\index{RegistrarJugador@{RegistrarJugador}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{RegistrarJugador()}{RegistrarJugador()}}
+{\footnotesize\ttfamily boolean Controller.\+Controller.\+Registrar\+Jugador (\begin{DoxyParamCaption}\item[{String}]{nombre,  }\item[{String}]{apellido,  }\item[{String}]{fecha\+\_\+S,  }\item[{String}]{DNI,  }\item[{int}]{telefono,  }\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de registrarse del jugador 
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & \\
+\hline
+{\em apellido} & \\
+\hline
+{\em fecha\+\_\+S} & \\
+\hline
+{\em DNI} & \\
+\hline
+{\em telefono} & \\
+\hline
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el jugador se ha registrado bien el la aplicacion (true) o no (false) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 100 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a607813c23410e8bf5e20f8ff83765141}\label{class_controller_1_1_controller_a607813c23410e8bf5e20f8ff83765141}} 
+\index{Controller.Controller@{Controller.Controller}!sancionesPersona@{sancionesPersona}}
+\index{sancionesPersona@{sancionesPersona}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{sancionesPersona()}{sancionesPersona()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_sancion}{Sancion}}$>$ Controller.\+Controller.\+sanciones\+Persona (\begin{DoxyParamCaption}\item[{String}]{DNI }\end{DoxyParamCaption}) throws Remote\+Exception, Parse\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener la lista de las sanciones 
+\begin{DoxyParams}{Parámetros}
+{\em DNI} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+lista de sanciones 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 179 del archivo Controller.\+java.
+
+\mbox{\Hypertarget{class_controller_1_1_controller_a203b6f4c8d4084b09aaa6bd7f9fef7b0}\label{class_controller_1_1_controller_a203b6f4c8d4084b09aaa6bd7f9fef7b0}} 
+\index{Controller.Controller@{Controller.Controller}!sancionPartido@{sancionPartido}}
+\index{sancionPartido@{sancionPartido}!Controller.Controller@{Controller.Controller}}
+\doxysubsubsection{\texorpdfstring{sancionPartido()}{sancionPartido()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}} Controller.\+Controller.\+sancion\+Partido (\begin{DoxyParamCaption}\item[{String}]{cod }\end{DoxyParamCaption}) throws Remote\+Exception, Parse\+Exception}
+
+Metodo que hace la llamada al metodo de la fachada de obtener en que partido se ha realizado una sancion 
+\begin{DoxyParams}{Parámetros}
+{\em cod} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un partido en el que se haya realizado una sancion 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 283 del archivo Controller.\+java.
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/\+Controller/\mbox{\hyperlink{_controller_8java}{Controller.\+java}}\end{DoxyCompactItemize}
