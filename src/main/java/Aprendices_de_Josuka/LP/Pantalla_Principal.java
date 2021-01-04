@@ -7,13 +7,22 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Controller.Controller;
+
 import java.awt.Color;
 import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.rmi.RemoteException;
+/**
+ * @class Pantalla_Principal
+ * @brief En esta clase se desarrolla la GUI para la pantalla principal de la aplicacion.  
+ * @author Alumno
+ *
+ */
 public class Pantalla_Principal extends JFrame {
 
 	private JPanel contentPane;
@@ -34,39 +43,44 @@ public class Pantalla_Principal extends JFrame {
 	private JTextField txtJuvenilCadeteDe;
 
 	/**
-	 * Launch the application.
+	 * Se ejecuta la aplicacion
+	 * @param args
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Pantalla_Principal frame = new Pantalla_Principal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		Controller c = null;
+		try {
+			c = new Controller();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+		}
+		new Pantalla_Principal(c);
 	}
 
 	/**
-	 * Create the frame.
+	 * Constructor
+	 * @param c 
 	 */
-	public Pantalla_Principal() {
-		initComponents();
+	public Pantalla_Principal(Controller c) {
+		initComponents(c);
 		this.setVisible(true);
 	}
-
-	public void initComponents() {
+	/**
+	 * Se inicializan los componentes
+	 * @param c
+	 */
+	public void initComponents(Controller c) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1351, 862);
+	    setBounds(100, 100, 1300, 740);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JPanel panel_superior = new JPanel();
-		panel_superior.setBounds(0, 0, 1401, 189);
+		panel_superior.setBounds(0, 0, 1278, 189);
 		panel_superior.setBackground(new Color(0, 102, 0));
 		contentPane.add(panel_superior);
 		panel_superior.setLayout(null);
@@ -87,13 +101,13 @@ public class Pantalla_Principal extends JFrame {
 		txtEntrar.setBackground(new Color(153, 204, 0));
 		txtEntrar.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
 		txtEntrar.setText("Entrar");
-		txtEntrar.setBounds(1160, 108, 149, 38);
+		txtEntrar.setBounds(1053, 108, 149, 38);
 		txtEntrar.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		panel_superior.add(txtEntrar);
 
 		JPanel panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(213, 365, 991, 250);
+		panel_central.setBounds(213, 312, 991, 250);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
@@ -217,7 +231,7 @@ public class Pantalla_Principal extends JFrame {
 
 		txtEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				IniciarSesion iniciar = new IniciarSesion();
+				IniciarSesion iniciar = new IniciarSesion(c);
 				setVisible(false);
 				iniciar.setVisible(true);
 

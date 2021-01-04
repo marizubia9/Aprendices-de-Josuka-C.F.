@@ -1,0 +1,6007 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.3)  4 JAN 2021 08:59
+entering extended mode
+**./refman.tex
+(refman.tex
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-12-07> xparse <2020-03-03>
+("C:\Program Files\MiKTeX\tex/latex/base\book.cls"
+Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
+("C:\Program Files\MiKTeX\tex/latex/base\bk10.clo"
+File: bk10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count177
+\c@chapter=\count178
+\c@section=\count179
+\c@subsection=\count180
+\c@subsubsection=\count181
+\c@paragraph=\count182
+\c@subparagraph=\count183
+\c@figure=\count184
+\c@table=\count185
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+("C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX\tex/latex/tools\array.sty"
+Rollback for package 'array' requested -> date 2016-10-06.
+         Best approximation is the release introduced on 2016-10-06.
+
+("C:\Program Files\MiKTeX\tex/latex/tools\array-2016-10-06.sty"
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen139
+\extrarowheight=\dimen140
+\NC@list=\toks15
+\extratabsurround=\skip49
+\backup@length=\skip50
+))
+("C:\Program Files\MiKTeX\tex/latex/base\fixltx2e.sty"
+Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
+Applying: [2015/01/01] Old fixltx2e package on input line 46.
+
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+Already applied: [0000/00/00] Old fixltx2e package on input line 53.
+) (doxygen.sty
+Package: doxygen 
+ ("C:\Program Files\MiKTeX\tex/latex/base\alltt.sty"
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+("C:\Program Files\MiKTeX\tex/latex/tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count186
+\calc@Bcount=\count187
+\calc@Adimen=\dimen141
+\calc@Bdimen=\dimen142
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count188
+\calc@Cskip=\skip53
+)
+("C:\Program Files\MiKTeX\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count189
+\float@exts=\toks16
+\float@box=\box47
+\@float@everytoks=\toks17
+\@floatcapt=\box48
+)
+("C:\Program Files\MiKTeX\tex/latex/tools\verbatim.sty"
+Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks18
+\verbatim@line=\toks19
+\verbatim@in@stream=\read2
+)
+("C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def"
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+)
+("C:\Program Files\MiKTeX\tex/latex/colortbl\colortbl.sty"
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks20
+\minrowclearance=\skip54
+)
+\rownum=\count190
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(longtable_doxygen.sty
+Package: longtable_doxygen 2014/10/28 v4.11 Multi-page Table package (DPC) - fr
+ozen version for doxygen
+\LTleft=\skip55
+\LTright=\skip56
+\LTpre=\skip57
+\LTpost=\skip58
+\LTchunksize=\count191
+\LTcapwidth=\dimen143
+\LT@head=\box49
+\LT@firsthead=\box50
+\LT@foot=\box51
+\LT@lastfoot=\box52
+\LT@cols=\count192
+\LT@rows=\count193
+\c@LT@tables=\count194
+\c@LT@chunks=\count195
+\LT@p@ftn=\toks21
+) (tabu_doxygen.sty
+Package: tabu_doxygen 2011/02/26 v2.8 - flexible LaTeX tabulars (FC), frozen ve
+rsion for doxygen
+
+("C:\Program Files\MiKTeX\tex/latex/varwidth\varwidth.sty"
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box53
+\sift@deathcycles=\count196
+\@vwid@loff=\dimen144
+\@vwid@roff=\dimen145
+)
+\c@taburow=\count197
+\tabu@nbcols=\count198
+\tabu@cnt=\count199
+\tabu@Xcol=\count266
+\tabu@alloc=\count267
+\tabu@nested=\count268
+\tabu@target=\dimen146
+\tabu@spreadtarget=\dimen147
+\tabu@naturalX=\dimen148
+\tabucolX=\dimen149
+\tabu@Xsum=\dimen150
+\extrarowdepth=\dimen151
+\abovetabulinesep=\dimen152
+\belowtabulinesep=\dimen153
+\tabustrutrule=\dimen154
+\tabu@thebody=\toks22
+\tabu@footnotes=\toks23
+\tabu@box=\box54
+\tabu@arstrutbox=\box55
+\tabu@hleads=\box56
+\tabu@vleads=\box57
+\tabu@cellskip=\skip59
+)
+("C:\Program Files\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty"
+Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
+
+("C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks24
+)
+\FV@CodeLineNo=\count269
+\FV@InFile=\read3
+\FV@TabBox=\box58
+\c@FancyVerbLine=\count270
+\FV@StepNumber=\count271
+\FV@OutFile=\write3
+)
+("C:\Program Files\MiKTeX\tex/latex/tools\tabularx.sty"
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen155
+\TX@old@table=\dimen156
+\TX@old@col=\dimen157
+\TX@target=\dimen158
+\TX@delta=\dimen159
+\TX@cols=\count272
+\TX@ftn=\toks25
+)
+("C:\Program Files\MiKTeX\tex/latex/tools\multicol.sty"
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count273
+\mult@box=\box59
+\multicol@leftmargin=\dimen160
+\c@unbalance=\count274
+\c@collectmore=\count275
+\doublecol@number=\count276
+\multicoltolerance=\count277
+\multicolpretolerance=\count278
+\full@width=\dimen161
+\page@free=\dimen162
+\premulticols=\dimen163
+\postmulticols=\dimen164
+\multicolsep=\skip60
+\multicolbaselineskip=\skip61
+\partial@page=\box60
+\last@line=\box61
+\maxbalancingoverflow=\dimen165
+\mult@rightbox=\box62
+\mult@grightbox=\box63
+\mult@gfirstbox=\box64
+\mult@firstbox=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\c@minrows=\count279
+\c@columnbadness=\count280
+\c@finalcolumnbadness=\count281
+\last@try=\dimen166
+\multicolovershoot=\dimen167
+\multicolundershoot=\dimen168
+\mult@nat@firstbox=\box103
+\colbreak@box=\box104
+\mc@col@check@num=\count282
+)
+("C:\Program Files\MiKTeX\tex/latex/multirow\multirow.sty"
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip62
+\multirow@cntb=\count283
+\multirow@dima=\skip63
+\bigstrutjot=\dimen169
+)
+("C:\Program Files\MiKTeX\tex/latex/hanging\hanging.sty"
+Package: hanging 2009/09/02 v1.2b hanging paragraphs and punctuation
+\h@ngcommawd=\skip64
+\h@ngfstopwd=\skip65
+\h@ngquotewd=\skip66
+\h@ngdquotewd=\skip67
+\h@ngquerywd=\skip68
+\h@ngexclwd=\skip69
+\h@ngcolonwd=\skip70
+\h@ngscolonwd=\skip71
+)
+("C:\Program Files\MiKTeX\tex/generic/iftex\ifpdf.sty"
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+
+("C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty"
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+("C:\Program Files\MiKTeX\tex/latex/adjustbox\adjustbox.sty"
+Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+
+("C:\Program Files\MiKTeX\tex/latex/xkeyval\xkeyval.sty"
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+("C:\Program Files\MiKTeX\tex/generic/xkeyval\xkeyval.tex"
+("C:\Program Files\MiKTeX\tex/generic/xkeyval\xkvutils.tex"
+\XKV@toks=\toks26
+\XKV@tempa@toks=\toks27
+)
+\XKV@depth=\count284
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+("C:\Program Files\MiKTeX\tex/latex/adjustbox\adjcalc.sty"
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+("C:\Program Files\MiKTeX\tex/latex/adjustbox\trimclip.sty"
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+("C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty"
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty"
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen170
+\Gin@req@width=\dimen171
+)
+("C:\Program Files\MiKTeX\tex/latex/collectbox\collectbox.sty"
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box105
+)
+\tc@llx=\dimen172
+\tc@lly=\dimen173
+\tc@urx=\dimen174
+\tc@ury=\dimen175
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+("C:\Program Files\MiKTeX\tex/latex/adjustbox\tc-pdftex.def"
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen176
+\adjbox@Height=\dimen177
+\adjbox@Depth=\dimen178
+\adjbox@Totalheight=\dimen179
+\adjbox@pwidth=\dimen180
+\adjbox@pheight=\dimen181
+\adjbox@pdepth=\dimen182
+\adjbox@ptotalheight=\dimen183
+
+("C:\Program Files\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count285
+))
+("C:\Program Files\MiKTeX\tex/latex/amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks28
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files\MiKTeX\tex/latex/stackengine\stackengine.sty"
+Package: stackengine 2017/02/13 v4.01\ Stacking text and objects in convenient 
+ways
+
+("C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty"
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count286
+)
+("C:\Program Files\MiKTeX\tex/latex/listofitems\listofitems.sty"
+("C:\Program Files\MiKTeX\tex/generic/listofitems\listofitems.tex"
+\loi_cnt_foreach_nest=\count287
+\loi_nestcnt=\count288
+)
+Package: listofitems 2019/08/21 v1.63 Grab items in lists using user-specified 
+sep char (CT)
+)
+\c@@stackindex=\count289
+\@boxshift=\skip72
+\stack@tmplength=\skip73
+\temp@stkl=\skip74
+\@stackedboxwidth=\skip75
+\@addedbox=\box106
+\@anchorbox=\box107
+\stackedbox=\box108
+\@centerbox=\box109
+\c@ROWcellindex@=\count290
+)
+("C:\Program Files\MiKTeX\tex/latex/ulem\ulem.sty"
+\UL@box=\box110
+\UL@hyphenbox=\box111
+\UL@skip=\skip76
+\UL@hook=\toks29
+\UL@height=\dimen184
+\UL@pe=\count291
+\UL@pixel=\dimen185
+\ULC@box=\box112
+Package: ulem 2019/11/18
+\ULdepth=\dimen186
+)
+\xrefbox=\box113
+\xreflength=\skip77
+\CodeWidthChar=\skip78
+\CodeHeightChar=\skip79
+\DoxyCodeWidth=\skip80
+)
+("C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty"
+Package: inputenc 2020/08/01 v1.3d Input encoding file
+\inpenc@prehook=\toks30
+\inpenc@posthook=\toks31
+)
+("C:\Program Files\MiKTeX\tex/latex/base\makeidx.sty"
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+("C:\Program Files\MiKTeX\tex/latex/base\textcomp.sty"
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+("C:\Program Files\MiKTeX\tex/latex/wasysym\wasysym.sty"
+Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
+\symwasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
+)
+("C:\Program Files\MiKTeX\tex/generic/iftex\ifxetex.sty"
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+)
+("C:\Program Files\MiKTeX\tex/generic/babel\babel.sty"
+Package: babel 2020/10/27 3.51 The Babel package
+
+("C:\Program Files\MiKTeX\tex/generic/babel\babel.def"
+File: babel.def 2020/10/27 3.51 Babel common definitions
+\babel@savecnt=\count292
+\U@D=\dimen187
+\l@babelnohyphens=\language79
+
+("C:\Program Files\MiKTeX\tex/generic/babel\txtbabel.def")
+\bbl@readstream=\read4
+)
+\bbl@dirlevel=\count293
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files\MiKTeX\tex/latex/arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Program Files\MiKTeX\tex/latex/babel-spanish\spanish.ldf"
+Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
+\es@quottoks=\toks32
+\es@quotdepth=\count294
+Package babel Info: Making " an active character on input line 561.
+Package babel Info: Making . an active character on input line 662.
+Package babel Info: Making < an active character on input line 707.
+Package babel Info: Making > an active character on input line 707.
+))
+("C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty"
+Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
+)
+("C:\Program Files\MiKTeX\tex/latex/psnfss\helvet.sty"
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+)
+("C:\Program Files\MiKTeX\tex/latex/psnfss\courier.sty"
+Package: courier 2020/03/25 PSNFSS-v9.3 (WaS) 
+)
+("C:\Program Files\MiKTeX\tex/latex/sectsty\sectsty.sty"
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
+
+
+LaTeX Warning: Command \underbar  has changed.
+               Check if current package is valid.
+
+
+LaTeX Warning: Command \underline  has changed.
+               Check if current package is valid.
+
+) ("C:\Program Files\MiKTeX\tex/latex/geometry\geometry.sty"
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+("C:\Program Files\MiKTeX\tex/generic/iftex\ifvtex.sty"
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count295
+\Gm@cntv=\count296
+\c@Gm@tempcnt=\count297
+\Gm@bindingoffset=\dimen188
+\Gm@wd@mp=\dimen189
+\Gm@odd@mp=\dimen190
+\Gm@even@mp=\dimen191
+\Gm@layoutwidth=\dimen192
+\Gm@layoutheight=\dimen193
+\Gm@layouthoffset=\dimen194
+\Gm@layoutvoffset=\dimen195
+\Gm@dimlist=\toks33
+
+("C:\Program Files\MiKTeX\tex/latex/geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty"
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip81
+\f@nch@O@elh=\skip82
+\f@nch@O@erh=\skip83
+\f@nch@O@olh=\skip84
+\f@nch@O@orh=\skip85
+\f@nch@O@elf=\skip86
+\f@nch@O@erf=\skip87
+\f@nch@O@olf=\skip88
+\f@nch@O@orf=\skip89
+)
+("C:\Program Files\MiKTeX\tex/latex/natbib\natbib.sty"
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip90
+\bibsep=\skip91
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count298
+)
+("C:\Program Files\MiKTeX\tex/latex/tocloft\tocloft.sty"
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip92
+\cftbeforetoctitleskip=\skip93
+\cftaftertoctitleskip=\skip94
+\cftbeforepartskip=\skip95
+\cftpartnumwidth=\skip96
+\cftpartindent=\skip97
+\cftbeforechapskip=\skip98
+\cftchapindent=\skip99
+\cftchapnumwidth=\skip100
+\cftbeforesecskip=\skip101
+\cftsecindent=\skip102
+\cftsecnumwidth=\skip103
+\cftbeforesubsecskip=\skip104
+\cftsubsecindent=\skip105
+\cftsubsecnumwidth=\skip106
+\cftbeforesubsubsecskip=\skip107
+\cftsubsubsecindent=\skip108
+\cftsubsubsecnumwidth=\skip109
+\cftbeforeparaskip=\skip110
+\cftparaindent=\skip111
+\cftparanumwidth=\skip112
+\cftbeforesubparaskip=\skip113
+\cftsubparaindent=\skip114
+\cftsubparanumwidth=\skip115
+\cftbeforeloftitleskip=\skip116
+\cftafterloftitleskip=\skip117
+\cftbeforefigskip=\skip118
+\cftfigindent=\skip119
+\cftfignumwidth=\skip120
+\c@lofdepth=\count299
+\c@lotdepth=\count300
+\cftbeforelottitleskip=\skip121
+\cftafterlottitleskip=\skip122
+\cftbeforetabskip=\skip123
+\cfttabindent=\skip124
+\cfttabnumwidth=\skip125
+)
+\@indexfile=\write4
+\openout4 = `refman.idx'.
+
+
+Writing index file refman.idx
+("C:\Program Files\MiKTeX\tex/latex/newunicodechar\newunicodechar.sty"
+Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
+)
+
+Package newunicodechar Warning: Redefining Unicode character on input line 117.
+
+
+
+Package newunicodechar Warning: Redefining Unicode character on input line 118.
+
+
+("C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty"
+Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
+
+("C:\Program Files\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty"
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+("C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty"
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files\MiKTeX\tex/generic/infwarerr\infwarerr.sty"
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Program Files\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty"
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+("C:\Program Files\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty"
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+("C:\Program Files\MiKTeX\tex/generic/pdfescape\pdfescape.sty"
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+("C:\Program Files\MiKTeX\tex/latex/hycolor\hycolor.sty"
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty"
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+("C:\Program Files\MiKTeX\tex/latex/auxhook\auxhook.sty"
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+("C:\Program Files\MiKTeX\tex/latex/kvoptions\kvoptions.sty"
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen196
+\Hy@linkcounter=\count301
+\Hy@pagecounter=\count302
+
+("C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def"
+File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+("C:\Program Files\MiKTeX\tex/generic/intcalc\intcalc.sty"
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+("C:\Program Files\MiKTeX\tex/generic/etexcmds\etexcmds.sty"
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count303
+Package hyperref Info: Hyper figures OFF on input line 4464.
+Package hyperref Info: Link nesting OFF on input line 4469.
+Package hyperref Info: Hyper index ON on input line 4472.
+Package hyperref Info: Plain pages OFF on input line 4479.
+Package hyperref Info: Backreferencing ON on input line 4482.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4717.
+
+("C:\Program Files\MiKTeX\tex/latex/hyperref\backref.sty"
+Package: backref 2020/01/14 v1.40 Bibliographical back referencing
+
+("C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty"
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+("C:\Program Files\MiKTeX\tex/latex/base\atveryend-ltx.sty"
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
+e
+with kernel methods
+)
+("C:\Program Files\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty"
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+
+("C:\Program Files\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty"
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+))
+\c@Hy@tempcnt=\count304
+
+("C:\Program Files\MiKTeX\tex/latex/url\url.sty"
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5076.
+\XeTeXLinkMargin=\dimen197
+
+("C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty"
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+)
+\Fld@menulength=\count305
+\Field@Width=\dimen198
+\Fld@charsize=\dimen199
+Package hyperref Info: Hyper figures OFF on input line 6347.
+Package hyperref Info: Link nesting OFF on input line 6352.
+Package hyperref Info: Hyper index ON on input line 6355.
+Package hyperref Info: backreferencing ON on input line 6360.
+Package hyperref Info: Link coloring OFF on input line 6367.
+Package hyperref Info: Link coloring with OCG OFF on input line 6372.
+Package hyperref Info: PDF/A mode OFF on input line 6377.
+LaTeX Info: Redefining \ref on input line 6417.
+LaTeX Info: Redefining \pageref on input line 6421.
+
+("C:\Program Files\MiKTeX\tex/latex/base\atbegshi-ltx.sty"
+Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
+ge
+with kernel methods
+)
+\Hy@abspage=\count306
+\c@Item=\count307
+\c@Hfootnote=\count308
+)
+Package hyperref Info: Driver: hpdftex.
+
+("C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def"
+File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
+\Fld@listcount=\count309
+\c@bookmark@seq@number=\count310
+\Hy@SectionHShift=\skip126
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 136.
+Package hyperref Info: Option `unicode' set `true' on input line 136.
+
+("C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def"
+File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+("C:\Program Files\MiKTeX\tex/latex/caption\caption.sty"
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+("C:\Program Files\MiKTeX\tex/latex/caption\caption3.sty"
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen256
+\captionmargin@=\dimen257
+\captionwidth=\dimen258
+\caption@tempdima=\dimen259
+\caption@indent=\dimen260
+\caption@parindent=\dimen261
+\caption@hangindent=\dimen262
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count311
+\c@continuedfloat=\count312
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+
+("C:\Program Files\MiKTeX\tex/latex/caption\ltcaption.sty"
+Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
+))
+("C:\Program Files\MiKTeX\tex/latex/etoc\etoc.sty"
+Package: etoc 2020/05/15 v1.09c Completely customisable TOCs (JFB)
+\Etoc@toctoks=\toks34
+\c@etoc@tocid=\count313
+\c@etoc@tocdepth=\count314
+\etoc@framed@titlebox=\box114
+\etoc@framed@contentsbox=\box115
+)
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 15
+1.
+
+("C:\Program Files\MiKTeX\tex/latex/psnfss\t1phv.fd"
+File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 151.
+
+("C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def"
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count315
+\l__pdf_internal_box=\box116
+)
+No file refman.aux.
+\openout1 = `refman.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+("C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count316
+\scratchdimen=\dimen263
+\scratchbox=\box117
+\nofMPsegments=\count317
+\nofMParguments=\count318
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count319
+\MPscratchDim=\dimen264
+\MPnumerator=\count320
+\makeMPintoPDFobject=\count321
+\everyMPtoPDFconversion=\toks36
+) ("C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+LaTeX Info: Redefining \. on input line 151.
+LaTeX Info: Redefining \% on input line 151.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-31.2056pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=125.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring ON on input line 151.
+("C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty"
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX\tex/latex/refcount\refcount.sty"
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+("C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty"
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count322
+)
+LaTeX Info: Redefining \ref on input line 151.
+LaTeX Info: Redefining \pageref on input line 151.
+LaTeX Info: Redefining \nameref on input line 151.
+\@outlinefile=\write5
+\openout5 = `refman.out'.
+
+Package backref Info: ** backref set up for natbib ** on input line 151.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+No file refman.toc.
+Package hyperref Info: Option `pageanchor' set `false' on input line 158.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 158.
+
+Package hyperref Info: Option `unicode' set `true' on input line 158.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 12.9599pt on input line 163.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.29996pt on input line 163.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 163
+.
+("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 163
+.
+
+("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 16
+3.
+
+("C:\Program Files\MiKTeX\tex/latex/wasysym\uwasy.fd"
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 165.
+ [1
+
+
+{C:/Users/Alumno/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2
+
+]
+\tf@toc=\write6
+\openout6 = `refman.toc'.
+
+Package hyperref Info: Option `pageanchor' set `true' on input line 173.
+
+Cap\'{\i }tulo 1.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 18.66588pt on input line 176.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 18.66588pt on input line 176.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 18.66588pt on input line 176.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 22.39185pt on input line 176.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 22.39185pt on input line 176.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 22.39185pt on input line 176.
+(namespaces.tex
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 3.
+
+
+LaTeX Warning: Reference `namespace_aprendices__de___josuka_1_1_aprendices__de_
+__josuka' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Reference `namespace_aprendices__de___josuka_1_1_l_d' on page 1 
+undefined on input line 4.
+
+
+LaTeX Warning: Reference `namespace_aprendices__de___josuka_1_1_l_p' on page 1 
+undefined on input line 5.
+
+
+LaTeX Warning: Reference `namespace_aprendices_de_josuka_partidos' on page 1 un
+defined on input line 6.
+
+
+LaTeX Warning: Reference `namespace_aprendices_de_josuka_sanciones' on page 1 u
+ndefined on input line 7.
+
+
+LaTeX Warning: Reference `namespace_controller' on page 1 undefined on input li
+ne 8.
+
+
+LaTeX Warning: Reference `namespace_d_a_o' on page 1 undefined on input line 9.
+
+
+
+LaTeX Warning: Reference `namespace_fachada' on page 1 undefined on input line 
+10.
+
+
+LaTeX Warning: Reference `namespace_gateway' on page 1 undefined on input line 
+11.
+
+
+LaTeX Warning: Reference `namespacepython' on page 1 undefined on input line 12
+.
+
+
+LaTeX Warning: Reference `namespacepython_1_1_partido' on page 1 undefined on i
+nput line 13.
+
+
+LaTeX Warning: Reference `namespacepython_1_1_partido_1_1_equipo' on page 1 und
+efined on input line 14.
+
+
+LaTeX Warning: Reference `namespacepython_1_1_partido_1_1_partido' on page 1 un
+defined on input line 15.
+
+
+LaTeX Warning: Reference `namespacepython_1_1_partido_1_1_sancion' on page 1 un
+defined on input line 16.
+
+
+LaTeX Warning: Reference `namespacepython_1_1_partidos' on page 1 undefined on 
+input line 17.
+
+
+LaTeX Warning: Reference `namespacepython_1_1_partidos_1_1_interface___partidos
+' on page 1 undefined on input line 18.
+
+
+LaTeX Warning: Reference `namespacepython_1_1_partidos_1_1_interface___sancione
+s' on page 1 undefined on input line 19.
+
+
+LaTeX Warning: Reference `namespace_remote' on page 1 undefined on input line 2
+0.
+
+
+LaTeX Warning: Reference `namespace_servicios_externos' on page 1 undefined on 
+input line 21.
+
+)
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 178.
+ [1
+
+
+]
+LaTeX Info: Redefining \. on input line 178.
+LaTeX Info: Redefining \% on input line 178.
+ [2
+
+]
+Cap\'{\i }tulo 2.
+(hierarchy.tex
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_administrad
+or' on page 3 undefined on input line 3.
+
+
+LaTeX Warning: Reference `enum_aprendices__de___josuka_1_1_l_d_1_1_categoria' o
+n page 3 undefined on input line 4.
+
+
+LaTeX Warning: Reference `class_controller_1_1_controller' on page 3 undefined 
+on input line 5.
+
+
+LaTeX Warning: Reference `class_d_a_o_1_1_d_a_o' on page 3 undefined on input l
+ine 6.
+
+
+LaTeX Warning: Reference `interface_servicios_externos_1_1_d_f___printable' on 
+page 3 undefined on input line 7.
+
+
+LaTeX Warning: Reference `class_servicios_externos_1_1_partidos__parameters' on
+ page 3 undefined on input line 9.
+
+
+LaTeX Warning: Reference `class_servicios_externos_1_1_sanciones__parameters' o
+n page 3 undefined on input line 10.
+
+
+LaTeX Warning: Reference `classpython_1_1_partido_1_1_equipo_1_1_equipo' on pag
+e 3 undefined on input line 12.
+
+
+LaTeX Warning: Reference `interface_gateway_1_1itf_gateway' on page 3 undefined
+ on input line 13.
+
+
+LaTeX Warning: Reference `class_gateway_1_1_gateway' on page 3 undefined on inp
+ut line 15.
+
+
+LaTeX Warning: Reference `classpython_1_1_partido_1_1_partido_1_1_partido' on p
+age 3 undefined on input line 17.
+
+
+LaTeX Warning: Reference `class_servicios_externos_1_1_partido___j_s_o_n' on pa
+ge 3 undefined on input line 18.
+
+
+LaTeX Warning: Reference `class_servicios_externos_1_1_rest_client' on page 3 u
+ndefined on input line 19.
+
+
+LaTeX Warning: Reference `class_servicios_externos_1_1_rest_client' on page 3 u
+ndefined on input line 20.
+
+
+LaTeX Warning: Reference `classpython_1_1_partido_1_1_sancion_1_1_sancion' on p
+age 3 undefined on input line 21.
+
+
+LaTeX Warning: Reference `class_servicios_externos_1_1_sancion___j_s_o_n' on pa
+ge 3 undefined on input line 22.
+
+
+LaTeX Warning: Reference `class_remote_1_1_service_locator' on page 3 undefined
+ on input line 23.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_aprendices__de___jo
+suka_1_1test_d_a_o' on page 3 undefined on input line 24.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_aprendices__de___jo
+suka_1_1test_fachada' on page 3 undefined on input line 25.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_aprendices__de___jo
+suka_1_1test_partidos' on page 3 undefined on input line 26.
+
+
+LaTeX Warning: Reference `enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___mater
+ial' on page 3 undefined on input line 27.
+
+
+LaTeX Warning: Reference `enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___sanci
+on' on page 3 undefined on input line 28.
+
+
+LaTeX Warning: Reference `classpython_1_1_partidos_1_1_interface___partidos_1_1
+_interface___partidos' on page 3 undefined on input line 30.
+
+
+LaTeX Warning: Reference `classpython_1_1_partidos_1_1_interface___sanciones_1_
+1_interface___sanciones' on page 3 undefined on input line 31.
+
+
+LaTeX Warning: Reference `class_aprendices_de_josuka_partidos_1_1_aprendices_de
+_josuka_partidos' on page 3 undefined on input line 34.
+
+
+LaTeX Warning: Reference `class_aprendices_de_josuka_sanciones_1_1_aprendices_d
+e_josuka_sanciones' on page 3 undefined on input line 37.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_anyadir___i
+nventario' on page 3 undefined on input line 40.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_clasificaci
+on' on page 3 undefined on input line 41.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_clasificaci
+on___entrenador' on page 3 undefined on input line 42.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_clasificaci
+on___jugador' on page 3 undefined on input line 43.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_editar_dato
+s' on page 3 undefined on input line 44.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_editar_dato
+s_entrenador' on page 3 undefined on input line 45.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_editar_entr
+enador' on page 3 undefined on input line 46.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_editar_equi
+po' on page 3 undefined on input line 47.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_editar_juga
+dor' on page 3 undefined on input line 48.
+
+[3]
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_estadistica
+s' on page 4 undefined on input line 49.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_estadistica
+s_entrenador' on page 4 undefined on input line 50.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_ficha_entre
+nador' on page 4 undefined on input line 51.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugad
+or' on page 4 undefined on input line 52.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_ses
+ion' on page 4 undefined on input line 53.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_ses
+ion___admin' on page 4 undefined on input line 54.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_pantalla___
+principal' on page 4 undefined on input line 55.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_principal__
+_administrador' on page 4 undefined on input line 56.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_principal__
+_entrenador' on page 4 undefined on input line 57.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_principal__
+_jugador' on page 4 undefined on input line 58.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_registrar_a
+dmin' on page 4 undefined on input line 59.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_registrar_e
+ntrenador' on page 4 undefined on input line 60.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_registrar_e
+quipo' on page 4 undefined on input line 61.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_registrar_j
+ugador' on page 4 undefined on input line 62.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_registrar_m
+aterial' on page 4 undefined on input line 63.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_visualizar_
+__entrenadores' on page 4 undefined on input line 64.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_visualizar_
+__equipos' on page 4 undefined on input line 65.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_visualizar_
+__jugadores' on page 4 undefined on input line 66.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_visualizar_
+__mis___jugadores' on page 4 undefined on input line 67.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_panel___ent
+renador' on page 4 undefined on input line 70.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_panel___equ
+ipos' on page 4 undefined on input line 71.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_panel___jug
+ador' on page 4 undefined on input line 72.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_panel___par
+tidos' on page 4 undefined on input line 73.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_panel___san
+ciones' on page 4 undefined on input line 74.
+
+
+LaTeX Warning: Reference `interface_fachada_1_1itf_fachada' on page 4 undefined
+ on input line 77.
+
+
+LaTeX Warning: Reference `class_fachada_1_1_servidor_principal' on page 4 undef
+ined on input line 79.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_entrenador'
+ on page 4 undefined on input line 83.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_equipo' on 
+page 4 undefined on input line 84.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_equipos___e
+xt' on page 4 undefined on input line 85.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_jugador' on
+ page 4 undefined on input line 86.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_material' o
+n page 4 undefined on input line 87.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_partido' on
+ page 4 undefined on input line 88.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_persona' on
+ page 4 undefined on input line 89.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_sancion' on
+ page 4 undefined on input line 90.
+
+
+LaTeX Warning: Reference `class_fachada_1_1_servidor_principal' on page 4 undef
+ined on input line 93.
+
+)
+LaTeX Info: Redefining \. on input line 180.
+LaTeX Info: Redefining \% on input line 180.
+ [4]
+Cap\'{\i }tulo 3.
+(annotated.tex
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_administrad
+or' on page 5 undefined on input line 3.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_anyadir___i
+nventario' on page 5 undefined on input line 4.
+
+
+LaTeX Warning: Reference `class_aprendices_de_josuka_partidos_1_1_aprendices_de
+_josuka_partidos' on page 5 undefined on input line 5.
+
+
+LaTeX Warning: Reference `class_aprendices_de_josuka_sanciones_1_1_aprendices_d
+e_josuka_sanciones' on page 5 undefined on input line 6.
+
+
+LaTeX Warning: Reference `enum_aprendices__de___josuka_1_1_l_d_1_1_categoria' o
+n page 5 undefined on input line 7.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_clasificaci
+on' on page 5 undefined on input line 8.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_clasificaci
+on___entrenador' on page 5 undefined on input line 9.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_clasificaci
+on___jugador' on page 5 undefined on input line 10.
+
+
+LaTeX Warning: Reference `class_controller_1_1_controller' on page 5 undefined 
+on input line 11.
+
+
+LaTeX Warning: Reference `class_d_a_o_1_1_d_a_o' on page 5 undefined on input l
+ine 12.
+
+
+LaTeX Warning: Reference `interface_servicios_externos_1_1_d_f___printable' on 
+page 5 undefined on input line 13.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_editar_dato
+s' on page 5 undefined on input line 14.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_editar_dato
+s_entrenador' on page 5 undefined on input line 15.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_editar_entr
+enador' on page 5 undefined on input line 16.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_editar_equi
+po' on page 5 undefined on input line 17.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_editar_juga
+dor' on page 5 undefined on input line 18.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_entrenador'
+ on page 5 undefined on input line 19.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_equipo' on 
+page 5 undefined on input line 20.
+
+
+LaTeX Warning: Reference `classpython_1_1_partido_1_1_equipo_1_1_equipo' on pag
+e 5 undefined on input line 21.
+
+[5
+
+]
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_equipos___e
+xt' on page 6 undefined on input line 22.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_estadistica
+s' on page 6 undefined on input line 23.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_estadistica
+s_entrenador' on page 6 undefined on input line 24.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_ficha_entre
+nador' on page 6 undefined on input line 25.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugad
+or' on page 6 undefined on input line 26.
+
+
+LaTeX Warning: Reference `class_gateway_1_1_gateway' on page 6 undefined on inp
+ut line 27.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_ses
+ion' on page 6 undefined on input line 28.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_ses
+ion___admin' on page 6 undefined on input line 29.
+
+
+LaTeX Warning: Reference `classpython_1_1_partidos_1_1_interface___partidos_1_1
+_interface___partidos' on page 6 undefined on input line 30.
+
+
+LaTeX Warning: Reference `classpython_1_1_partidos_1_1_interface___sanciones_1_
+1_interface___sanciones' on page 6 undefined on input line 31.
+
+
+LaTeX Warning: Reference `interface_fachada_1_1itf_fachada' on page 6 undefined
+ on input line 32.
+
+
+LaTeX Warning: Reference `interface_gateway_1_1itf_gateway' on page 6 undefined
+ on input line 33.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_jugador' on
+ page 6 undefined on input line 34.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_material' o
+n page 6 undefined on input line 35.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_panel___ent
+renador' on page 6 undefined on input line 36.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_panel___equ
+ipos' on page 6 undefined on input line 37.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_panel___jug
+ador' on page 6 undefined on input line 38.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_panel___par
+tidos' on page 6 undefined on input line 39.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_panel___san
+ciones' on page 6 undefined on input line 40.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_pantalla___
+principal' on page 6 undefined on input line 42.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--42
+ []  
+ []
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_partido' on
+ page 6 undefined on input line 43.
+
+
+LaTeX Warning: Reference `classpython_1_1_partido_1_1_partido_1_1_partido' on p
+age 6 undefined on input line 44.
+
+
+LaTeX Warning: Reference `class_servicios_externos_1_1_partido___j_s_o_n' on pa
+ge 6 undefined on input line 45.
+
+
+LaTeX Warning: Reference `class_servicios_externos_1_1_partidos__parameters' on
+ page 6 undefined on input line 46.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_persona' on
+ page 6 undefined on input line 47.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_principal__
+_administrador' on page 6 undefined on input line 48.
+
+LaTeX Info: Redefining \. on input line 49.
+LaTeX Info: Redefining \% on input line 49.
+[6]
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_principal__
+_entrenador' on page 7 undefined on input line 49.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_principal__
+_jugador' on page 7 undefined on input line 50.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_registrar_a
+dmin' on page 7 undefined on input line 51.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_registrar_e
+ntrenador' on page 7 undefined on input line 52.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_registrar_e
+quipo' on page 7 undefined on input line 53.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_registrar_j
+ugador' on page 7 undefined on input line 54.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_registrar_m
+aterial' on page 7 undefined on input line 55.
+
+
+LaTeX Warning: Reference `class_servicios_externos_1_1_rest_client' on page 7 u
+ndefined on input line 56.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_d_1_1_sancion' on
+ page 7 undefined on input line 57.
+
+
+LaTeX Warning: Reference `classpython_1_1_partido_1_1_sancion_1_1_sancion' on p
+age 7 undefined on input line 58.
+
+
+LaTeX Warning: Reference `class_servicios_externos_1_1_sancion___j_s_o_n' on pa
+ge 7 undefined on input line 59.
+
+
+LaTeX Warning: Reference `class_servicios_externos_1_1_sanciones__parameters' o
+n page 7 undefined on input line 60.
+
+
+LaTeX Warning: Reference `class_remote_1_1_service_locator' on page 7 undefined
+ on input line 61.
+
+
+LaTeX Warning: Reference `class_fachada_1_1_servidor_principal' on page 7 undef
+ined on input line 62.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_aprendices__de___jo
+suka_1_1test_d_a_o' on page 7 undefined on input line 63.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_aprendices__de___jo
+suka_1_1test_fachada' on page 7 undefined on input line 64.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_aprendices__de___jo
+suka_1_1test_partidos' on page 7 undefined on input line 65.
+
+
+LaTeX Warning: Reference `enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___mater
+ial' on page 7 undefined on input line 66.
+
+
+LaTeX Warning: Reference `enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___sanci
+on' on page 7 undefined on input line 67.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_visualizar_
+__entrenadores' on page 7 undefined on input line 68.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_visualizar_
+__equipos' on page 7 undefined on input line 69.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_visualizar_
+__jugadores' on page 7 undefined on input line 70.
+
+
+LaTeX Warning: Reference `class_aprendices__de___josuka_1_1_l_p_1_1_visualizar_
+__mis___jugadores' on page 7 undefined on input line 71.
+
+)
+LaTeX Info: Redefining \. on input line 182.
+LaTeX Info: Redefining \% on input line 182.
+ [7]
+LaTeX Info: Redefining \. on input line 182.
+LaTeX Info: Redefining \% on input line 182.
+ [8
+
+]
+Cap\'{\i }tulo 4.
+(files.tex
+
+LaTeX Warning: Reference `_administrador_8java' on page 9 undefined on input li
+ne 3.
+
+
+LaTeX Warning: Reference `_categoria_8java' on page 9 undefined on input line 4
+.
+
+
+LaTeX Warning: Reference `_entrenador_8java' on page 9 undefined on input line 
+5.
+
+
+LaTeX Warning: Reference `_equipo_8java' on page 9 undefined on input line 6.
+
+
+LaTeX Warning: Reference `_equipos___ext_8java' on page 9 undefined on input li
+ne 7.
+
+
+LaTeX Warning: Reference `_jugador_8java' on page 9 undefined on input line 8.
+
+
+LaTeX Warning: Reference `_material_8java' on page 9 undefined on input line 9.
+
+
+
+LaTeX Warning: Reference `_partido_8java' on page 9 undefined on input line 10.
+
+
+
+LaTeX Warning: Reference `_persona_8java' on page 9 undefined on input line 11.
+
+
+
+LaTeX Warning: Reference `_sancion_8java' on page 9 undefined on input line 12.
+
+
+
+LaTeX Warning: Reference `_tipo___material_8java' on page 9 undefined on input 
+line 13.
+
+
+LaTeX Warning: Reference `_tipo___sancion_8java' on page 9 undefined on input l
+ine 14.
+
+
+LaTeX Warning: Reference `_anyadir___inventario_8java' on page 9 undefined on i
+nput line 15.
+
+
+LaTeX Warning: Reference `_clasificacion_8java' on page 9 undefined on input li
+ne 16.
+
+
+LaTeX Warning: Reference `_clasificacion___entrenador_8java' on page 9 undefine
+d on input line 17.
+
+
+LaTeX Warning: Reference `_clasificacion___jugador_8java' on page 9 undefined o
+n input line 18.
+
+
+LaTeX Warning: Reference `_editar_datos_8java' on page 9 undefined on input lin
+e 19.
+
+
+LaTeX Warning: Reference `_editar_datos_entrenador_8java' on page 9 undefined o
+n input line 20.
+
+
+LaTeX Warning: Reference `_editar_entrenador_8java' on page 9 undefined on inpu
+t line 21.
+
+
+LaTeX Warning: Reference `_editar_equipo_8java' on page 9 undefined on input li
+ne 22.
+
+
+LaTeX Warning: Reference `_editar_jugador_8java' on page 9 undefined on input l
+ine 23.
+
+
+LaTeX Warning: Reference `_estadisticas_8java' on page 9 undefined on input lin
+e 24.
+
+
+LaTeX Warning: Reference `_estadisticas_entrenador_8java' on page 9 undefined o
+n input line 25.
+
+
+LaTeX Warning: Reference `_ficha_entrenador_8java' on page 9 undefined on input
+ line 26.
+
+
+LaTeX Warning: Reference `_ficha_jugador_8java' on page 9 undefined on input li
+ne 27.
+
+
+LaTeX Warning: Reference `_iniciar_sesion_8java' on page 9 undefined on input l
+ine 28.
+
+
+LaTeX Warning: Reference `_iniciar_sesion___admin_8java' on page 9 undefined on
+ input line 29.
+
+
+LaTeX Warning: Reference `_panel___entrenador_8java' on page 9 undefined on inp
+ut line 30.
+
+
+LaTeX Warning: Reference `_panel___equipos_8java' on page 9 undefined on input 
+line 31.
+
+
+LaTeX Warning: Reference `_panel___jugador_8java' on page 9 undefined on input 
+line 32.
+
+
+LaTeX Warning: Reference `_panel___partidos_8java' on page 9 undefined on input
+ line 33.
+
+
+LaTeX Warning: Reference `_panel___sanciones_8java' on page 9 undefined on inpu
+t line 34.
+
+
+LaTeX Warning: Reference `_pantalla___principal_8java' on page 9 undefined on i
+nput line 35.
+
+
+LaTeX Warning: Reference `_principal___administrador_8java' on page 9 undefined
+ on input line 36.
+
+
+LaTeX Warning: Reference `_principal___entrenador_8java' on page 9 undefined on
+ input line 37.
+
+
+LaTeX Warning: Reference `_principal___jugador_8java' on page 9 undefined on in
+put line 38.
+
+
+LaTeX Warning: Reference `_registrar_admin_8java' on page 9 undefined on input 
+line 39.
+
+
+LaTeX Warning: Reference `_registrar_entrenador_8java' on page 9 undefined on i
+nput line 40.
+
+
+LaTeX Warning: Reference `_registrar_equipo_8java' on page 9 undefined on input
+ line 41.
+
+[9]
+
+LaTeX Warning: Reference `_registrar_jugador_8java' on page 10 undefined on inp
+ut line 42.
+
+
+LaTeX Warning: Reference `_registrar_material_8java' on page 10 undefined on in
+put line 43.
+
+
+LaTeX Warning: Reference `_visualizar___entrenadores_8java' on page 10 undefine
+d on input line 44.
+
+
+LaTeX Warning: Reference `_visualizar___equipos_8java' on page 10 undefined on 
+input line 45.
+
+
+LaTeX Warning: Reference `_visualizar___jugadores_8java' on page 10 undefined o
+n input line 46.
+
+
+LaTeX Warning: Reference `_visualizar___mis___jugadores_8java' on page 10 undef
+ined on input line 47.
+
+
+LaTeX Warning: Reference `_controller_8java' on page 10 undefined on input line
+ 48.
+
+
+LaTeX Warning: Reference `_d_a_o_8java' on page 10 undefined on input line 49.
+
+
+LaTeX Warning: Reference `itf_fachada_8java' on page 10 undefined on input line
+ 50.
+
+
+LaTeX Warning: Reference `_servidor_principal_8java' on page 10 undefined on in
+put line 51.
+
+
+LaTeX Warning: Reference `_gateway_8java' on page 10 undefined on input line 52
+.
+
+
+LaTeX Warning: Reference `itf_gateway_8java' on page 10 undefined on input line
+ 53.
+
+
+LaTeX Warning: Reference `_service_locator_8java' on page 10 undefined on input
+ line 54.
+
+
+LaTeX Warning: Reference `_d_f___printable_8java' on page 10 undefined on input
+ line 55.
+
+
+LaTeX Warning: Reference `_partido___j_s_o_n_8java' on page 10 undefined on inp
+ut line 56.
+
+
+LaTeX Warning: Reference `_partidos__parameters_8java' on page 10 undefined on 
+input line 57.
+
+
+LaTeX Warning: Reference `_rest_client_8java' on page 10 undefined on input lin
+e 58.
+
+
+LaTeX Warning: Reference `_sancion___j_s_o_n_8java' on page 10 undefined on inp
+ut line 59.
+
+
+LaTeX Warning: Reference `_sanciones__parameters_8java' on page 10 undefined on
+ input line 60.
+
+
+LaTeX Warning: Reference `python_2____init_____8py' on page 10 undefined on inp
+ut line 61.
+
+
+LaTeX Warning: Reference `python_2_partido_2____init_____8py' on page 10 undefi
+ned on input line 62.
+
+
+LaTeX Warning: Reference `_equipo_8py' on page 10 undefined on input line 63.
+
+
+LaTeX Warning: Reference `_partido_8py' on page 10 undefined on input line 64.
+
+
+LaTeX Warning: Reference `_sancion_8py' on page 10 undefined on input line 65.
+
+
+LaTeX Warning: Reference `python_2_partidos_2____init_____8py' on page 10 undef
+ined on input line 66.
+
+
+LaTeX Warning: Reference `_interface___partidos_8py' on page 10 undefined on in
+put line 67.
+
+
+LaTeX Warning: Reference `_interface___sanciones_8py' on page 10 undefined on i
+nput line 68.
+
+
+LaTeX Warning: Reference `_aprendices_de_josuka_partidos_8py' on page 10 undefi
+ned on input line 69.
+
+
+LaTeX Warning: Reference `_aprendices_de_josuka_sanciones_8py' on page 10 undef
+ined on input line 70.
+
+
+LaTeX Warning: Reference `test_d_a_o_8java' on page 10 undefined on input line 
+71.
+
+
+LaTeX Warning: Reference `test_fachada_8java' on page 10 undefined on input lin
+e 72.
+
+
+LaTeX Warning: Reference `test_partidos_8java' on page 10 undefined on input li
+ne 73.
+
+)
+LaTeX Info: Redefining \. on input line 184.
+LaTeX Info: Redefining \% on input line 184.
+ [10]
+Cap\'{\i }tulo 5.
+(namespace_aprendices__de___josuka_1_1_aprendices__de___josuka.tex
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 8.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 12.
+)
+(namespace_aprendices__de___josuka_1_1_l_d.tex [11
+
+])
+(namespace_aprendices__de___josuka_1_1_l_p.tex
+LaTeX Info: Redefining \. on input line 26.
+LaTeX Info: Redefining \% on input line 26.
+ [12]
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
+[13]) (namespace_aprendices_de_josuka_partidos.tex)
+(namespace_aprendices_de_josuka_sanciones.tex) (namespace_controller.tex)
+(namespace_d_a_o.tex
+LaTeX Info: Redefining \. on input line 18.
+LaTeX Info: Redefining \% on input line 18.
+ [14]
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 8.99994pt on input line 18.
+
+Underfull \hbox (badness 10000) detected at line 18
+[][][]
+ []
+
+) (namespace_fachada.tex) (namespace_gateway.tex) (namespacepython.tex)
+(namespacepython_1_1_partido.tex
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+ [15])
+(namespacepython_1_1_partido_1_1_equipo.tex)
+(namespacepython_1_1_partido_1_1_partido.tex)
+(namespacepython_1_1_partido_1_1_sancion.tex) (namespacepython_1_1_partidos.tex
+) (namespacepython_1_1_partidos_1_1_interface___partidos.tex)
+(namespacepython_1_1_partidos_1_1_interface___sanciones.tex
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+ [16])
+(namespace_remote.tex) (namespace_servicios_externos.tex
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 6.29996pt on input line 12.
+)
+LaTeX Info: Redefining \. on input line 204.
+LaTeX Info: Redefining \% on input line 204.
+ [17]
+LaTeX Info: Redefining \. on input line 204.
+LaTeX Info: Redefining \% on input line 204.
+ [18
+
+]
+Cap\'{\i }tulo 6.
+(class_aprendices__de___josuka_1_1_l_d_1_1_administrador.tex
+Underfull \hbox (badness 10000) detected at line 18
+[][][]
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 32.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 32
+.
+("C:\Program Files\MiKTeX\tex/latex/psnfss\t1pcr.fd"
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 32.
+)
+(class_aprendices__de___josuka_1_1_l_p_1_1_anyadir___inventario.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_anya
+dir___inventario.pdf): PDF inclusion: found PDF version <1.7>, but at most vers
+ion <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_anyadir___inventario.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_anyadir___inventario.pdf, id=558, 50
+1.875pt x 141.52875pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_anyadir___inventario.pdf Graphi
+c file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_anyadir___inventario.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_anyadir___in
+ventario.pdf  used on input line 11.
+(pdftex.def)             Requested size: 201.78792pt x 56.9055pt.
+
+[19]
+Underfull \hbox (badness 10000) detected at line 30
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.1 on input line 54.
+
+
+Overfull \vbox (10.01912pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 54.
+LaTeX Info: Redefining \% on input line 54.
+
+[20]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.2 on input line 72.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+) (class_aprendices_de_josuka_partidos_1_1_aprendices_de_josuka_partidos.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices_de_josuka_partidos_1_1_aprend
+ices_de_josuka_partidos.pdf): PDF inclusion: found PDF version <1.7>, but at mo
+st version <1.5> allowed
+ <./class_aprendices_de_josuka_partidos_1_1_aprendices_de_josuka_partidos.pdf>
+<class_aprendices_de_josuka_partidos_1_1_aprendices_de_josuka_partidos.pdf, id=
+604, 501.875pt x 112.42pt>
+File: class_aprendices_de_josuka_partidos_1_1_aprendices_de_josuka_partidos.pdf
+ Graphic file (type pdf)
+<use class_aprendices_de_josuka_partidos_1_1_aprendices_de_josuka_partidos.pdf>
+
+Package pdftex.def Info: class_aprendices_de_josuka_partidos_1_1_aprendices_de_
+josuka_partidos.pdf  used on input line 6.
+(pdftex.def)             Requested size: 254.04602pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 14.
+LaTeX Info: Redefining \% on input line 14.
+
+[21]
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 69.
+LaTeX Info: Redefining \. on input line 70.
+LaTeX Info: Redefining \% on input line 70.
+ [22])
+(class_aprendices_de_josuka_sanciones_1_1_aprendices_de_josuka_sanciones.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices_de_josuka_sanciones_1_1_apren
+dices_de_josuka_sanciones.pdf): PDF inclusion: found PDF version <1.7>, but at 
+most version <1.5> allowed
+ <./class_aprendices_de_josuka_sanciones_1_1_aprendices_de_josuka_sanciones.pdf
+>
+<class_aprendices_de_josuka_sanciones_1_1_aprendices_de_josuka_sanciones.pdf, i
+d=643, 501.875pt x 105.39375pt>
+File: class_aprendices_de_josuka_sanciones_1_1_aprendices_de_josuka_sanciones.p
+df Graphic file (type pdf)
+<use class_aprendices_de_josuka_sanciones_1_1_aprendices_de_josuka_sanciones.pd
+f>
+Package pdftex.def Info: class_aprendices_de_josuka_sanciones_1_1_aprendices_de
+_josuka_sanciones.pdf  used on input line 6.
+(pdftex.def)             Requested size: 270.98549pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 33.
+LaTeX Info: Redefining \% on input line 33.
+ [23]) (enum_aprendices__de___josuka_1_1_l_d_1_1_categoria.tex
+LaTeX Info: Redefining \. on input line 17.
+LaTeX Info: Redefining \% on input line 17.
+ [24]
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 84.
+LaTeX Info: Redefining \% on input line 84.
+[25]) (class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_clas
+ificacion.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
+5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion.pdf, id=705, 501.875pt
+ x 161.60374pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion.pdf Graphic file 
+(type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_clasificacio
+n.pdf  used on input line 11.
+(pdftex.def)             Requested size: 176.72333pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 48.
+LaTeX Info: Redefining \% on input line 48.
+[26]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.3 on input line 48.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.4 on input line 53.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.5 on input line 71.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.6 on input line 88.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___entrenador.tex
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+
+[27]
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_clas
+ificacion___entrenador.pdf): PDF inclusion: found PDF version <1.7>, but at mos
+t version <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___entrenador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___entrenador.pdf, id=7
+43, 501.875pt x 126.4725pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___entrenador.pdf 
+Graphic file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___entrenador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_clasificacio
+n___entrenador.pdf  used on input line 11.
+(pdftex.def)             Requested size: 225.81868pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.7 on input line 50.
+
+LaTeX Info: Redefining \. on input line 57.
+LaTeX Info: Redefining \% on input line 57.
+[28]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.8 on input line 57.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.9 on input line 75.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.10 on input line 90.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___jugador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_clas
+ificacion___jugador.pdf): PDF inclusion: found PDF version <1.7>, but at most v
+ersion <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___jugador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___jugador.pdf, id=771,
+ 501.875pt x 133.49875pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___jugador.pdf Gra
+phic file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___jugador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_clasificacio
+n___jugador.pdf  used on input line 11.
+(pdftex.def)             Requested size: 213.93349pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 14.
+LaTeX Info: Redefining \% on input line 14.
+
+[29]
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.11 on input line 50.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.12 on input line 57.
+
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
+[30]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.13 on input line 75.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.14 on input line 90.
+
+) (class_controller_1_1_controller.tex
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
+ [31]
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
+ [32]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.15 on input line 98.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.16 on input line 118.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.17 on input line 123.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.18 on input line 142.
+
+LaTeX Info: Redefining \. on input line 147.
+LaTeX Info: Redefining \% on input line 147.
+[33]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.19 on input line 147.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.20 on input line 162.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.21 on input line 167.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.22 on input line 188.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.23 on input line 193.
+
+LaTeX Info: Redefining \. on input line 198.
+LaTeX Info: Redefining \% on input line 198.
+[34]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.24 on input line 208.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.25 on input line 213.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.26 on input line 228.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.27 on input line 233.
+
+LaTeX Info: Redefining \. on input line 248.
+LaTeX Info: Redefining \% on input line 248.
+[35]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.28 on input line 248.
+
+
+Underfull \hbox (badness 10000) detected at line 249
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.29 on input line 258.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.30 on input line 275.
+
+
+Underfull \hbox (badness 10000) detected at line 276
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.31 on input line 283.
+
+LaTeX Info: Redefining \. on input line 300.
+LaTeX Info: Redefining \% on input line 300.
+[36]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.32 on input line 300.
+
+
+Underfull \hbox (badness 10000) detected at line 301
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.33 on input line 308.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.34 on input line 325.
+
+
+Underfull \hbox (badness 10000) detected at line 326
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.35 on input line 333.
+
+LaTeX Info: Redefining \. on input line 348.
+LaTeX Info: Redefining \% on input line 348.
+[37]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.36 on input line 348.
+
+
+Underfull \hbox (badness 10000) detected at line 349
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.37 on input line 356.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.38 on input line 371.
+
+
+Underfull \hbox (badness 10000) detected at line 372
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.39 on input line 379.
+
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 7.19995pt on input line 387.
+
+Underfull \hbox (badness 10000) detected at line 390
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 397.
+LaTeX Info: Redefining \% on input line 397.
+[38]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.40 on input line 397.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.41 on input line 414.
+
+
+Underfull \hbox (badness 10000) detected at line 415
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.42 on input line 422.
+
+
+Underfull \hbox (badness 10000) detected at line 433
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.43 on input line 440.
+
+LaTeX Info: Redefining \. on input line 445.
+LaTeX Info: Redefining \% on input line 445.
+[39]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.44 on input line 455.
+
+
+Underfull \hbox (badness 10000) detected at line 456
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.45 on input line 463.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.46 on input line 480.
+
+
+Underfull \hbox (badness 10000) detected at line 481
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.47 on input line 488.
+
+LaTeX Info: Redefining \. on input line 493.
+LaTeX Info: Redefining \% on input line 493.
+[40]
+Underfull \hbox (badness 10000) detected at line 499
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.48 on input line 506.
+
+
+Underfull \hbox (badness 10000) detected at line 517
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.49 on input line 526.
+
+LaTeX Info: Redefining \. on input line 541.
+LaTeX Info: Redefining \% on input line 541.
+[41]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.50 on input line 541.
+
+
+Underfull \hbox (badness 10000) detected at line 542
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.51 on input line 551.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.52 on input line 568.
+
+
+Underfull \hbox (badness 10000) detected at line 569
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.53 on input line 578.
+
+LaTeX Info: Redefining \. on input line 593.
+LaTeX Info: Redefining \% on input line 593.
+[42]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.54 on input line 593.
+
+
+Underfull \hbox (badness 10000) detected at line 594
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.55 on input line 601.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.56 on input line 620.
+
+
+Underfull \hbox (badness 10000) detected at line 621
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.57 on input line 628.
+
+LaTeX Info: Redefining \. on input line 647.
+LaTeX Info: Redefining \% on input line 647.
+[43]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.58 on input line 647.
+
+
+Underfull \hbox (badness 10000) detected at line 648
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.59 on input line 655.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.60 on input line 670.
+
+
+Underfull \hbox (badness 10000) detected at line 671
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.61 on input line 678.
+
+LaTeX Info: Redefining \. on input line 693.
+LaTeX Info: Redefining \% on input line 693.
+[44]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.62 on input line 693.
+
+
+Underfull \hbox (badness 10000) detected at line 694
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.63 on input line 701.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.64 on input line 716.
+
+
+Underfull \hbox (badness 10000) detected at line 717
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.65 on input line 724.
+
+LaTeX Info: Redefining \. on input line 739.
+LaTeX Info: Redefining \% on input line 739.
+[45]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.66 on input line 739.
+
+
+Underfull \hbox (badness 10000) detected at line 740
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.67 on input line 749.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.68 on input line 754.
+
+
+Underfull \hbox (badness 10000) detected at line 755
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.69 on input line 764.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.70 on input line 781.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.71 on input line 786.
+
+LaTeX Info: Redefining \. on input line 791.
+LaTeX Info: Redefining \% on input line 791.
+[46]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.72 on input line 815.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.73 on input line 820.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.74 on input line 843.
+
+LaTeX Info: Redefining \. on input line 843.
+LaTeX Info: Redefining \% on input line 843.
+[47]
+Underfull \hbox (badness 10000) detected at line 844
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.75 on input line 851.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.76 on input line 870.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.77 on input line 875.
+
+LaTeX Info: Redefining \. on input line 885.
+LaTeX Info: Redefining \% on input line 885.
+[48]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.78 on input line 902.
+
+
+Underfull \hbox (badness 10000) detected at line 903
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.79 on input line 910.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.80 on input line 925.
+
+
+Underfull \hbox (badness 10000) detected at line 926
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.81 on input line 935.
+
+
+Overfull \vbox (1.54788pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 935.
+LaTeX Info: Redefining \% on input line 935.
+
+[49]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.82 on input line 950.
+
+
+Underfull \hbox (badness 10000) detected at line 951
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.83 on input line 960.
+
+) (class_d_a_o_1_1_d_a_o.tex
+LaTeX Info: Redefining \. on input line 46.
+LaTeX Info: Redefining \% on input line 46.
+ [50]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.84 on input line 75.
+
+
+Underfull \hbox (badness 10000) detected at line 76
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
+[51]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.85 on input line 97.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.86 on input line 112.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.87 on input line 127.
+
+LaTeX Info: Redefining \. on input line 148.
+LaTeX Info: Redefining \% on input line 148.
+[52]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.88 on input line 148.
+
+
+Underfull \hbox (badness 10000) detected at line 149
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.89 on input line 166.
+
+LaTeX Info: Redefining \. on input line 191.
+LaTeX Info: Redefining \% on input line 191.
+[53]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.90 on input line 191.
+
+
+Underfull \hbox (badness 10000) detected at line 192
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.91 on input line 209.
+
+
+Underfull \hbox (badness 10000) detected at line 210
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.92 on input line 227.
+
+
+Underfull \hbox (badness 10000) detected at line 228
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 240.
+LaTeX Info: Redefining \% on input line 240.
+[54]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.93 on input line 245.
+
+
+Underfull \hbox (badness 10000) detected at line 246
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.94 on input line 263.
+
+
+Underfull \hbox (badness 10000) detected at line 264
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 277
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 290.
+LaTeX Info: Redefining \% on input line 290.
+[55]
+Underfull \hbox (badness 10000) detected at line 290
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 303
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 316
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 329
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 342
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 352.
+LaTeX Info: Redefining \% on input line 352.
+[56]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.95 on input line 359.
+
+
+Underfull \hbox (badness 10000) detected at line 360
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.96 on input line 381.
+
+LaTeX Info: Redefining \. on input line 382.
+LaTeX Info: Redefining \% on input line 382.
+[57]
+Underfull \hbox (badness 10000) detected at line 382
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.97 on input line 403.
+
+
+Underfull \hbox (badness 10000) detected at line 404
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.98 on input line 425.
+
+
+Underfull \hbox (badness 10000) detected at line 426
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 437.
+LaTeX Info: Redefining \% on input line 437.
+[58]) (interface_servicios_externos_1_1_d_f___printable.tex
+
+pdfTeX warning: pdflatex (file ./interface_servicios_externos_1_1_d_f___printab
+le.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allo
+wed
+ <./interface_servicios_externos_1_1_d_f___printable.pdf>
+<interface_servicios_externos_1_1_d_f___printable.pdf, id=1322, 501.875pt x 79.
+29625pt>
+File: interface_servicios_externos_1_1_d_f___printable.pdf Graphic file (type p
+df)
+<use interface_servicios_externos_1_1_d_f___printable.pdf>
+Package pdftex.def Info: interface_servicios_externos_1_1_d_f___printable.pdf  
+used on input line 11.
+(pdftex.def)             Requested size: 360.17038pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 24
+[][][]
+ []
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_edit
+ar_datos.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5
+> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.pdf, id=1334, 501.875pt
+ x 166.6225pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.pdf Graphic file (
+type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos
+.pdf  used on input line 11.
+(pdftex.def)             Requested size: 171.40103pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+ [59]
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.99 on input line 50.
+
+LaTeX Info: Redefining \. on input line 57.
+LaTeX Info: Redefining \% on input line 57.
+[60]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.100 on input line 57.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.101 on input line 87.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos_entrenador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_edit
+ar_datos_entrenador.pdf): PDF inclusion: found PDF version <1.7>, but at most v
+ersion <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos_entrenador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos_entrenador.pdf, id=1376
+, 501.875pt x 132.495pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos_entrenador.pdf Gra
+phic file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos_entrenador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos
+_entrenador.pdf  used on input line 11.
+(pdftex.def)             Requested size: 215.54932pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 14.
+LaTeX Info: Redefining \% on input line 14.
+
+[61]
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.102 on input line 50.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.103 on input line 57.
+
+LaTeX Info: Redefining \. on input line 68.
+LaTeX Info: Redefining \% on input line 68.
+[62]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.104 on input line 87.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_editar_entrenador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_edit
+ar_entrenador.pdf): PDF inclusion: found PDF version <1.7>, but at most version
+ <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_editar_entrenador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_editar_entrenador.pdf, id=1414, 501.
+875pt x 148.555pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_editar_entrenador.pdf Graphic f
+ile (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_editar_entrenador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_editar_entre
+nador.pdf  used on input line 11.
+(pdftex.def)             Requested size: 192.24606pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 32.
+LaTeX Info: Redefining \% on input line 32.
+ [63]
+Underfull \hbox (badness 10000) detected at line 32
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.105 on input line 52.
+
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+[64]) (class_aprendices__de___josuka_1_1_l_p_1_1_editar_equipo.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_edit
+ar_equipo.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
+5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_editar_equipo.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_editar_equipo.pdf, id=1455, 501.875p
+t x 162.6075pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_editar_equipo.pdf Graphic file 
+(type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_editar_equipo.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_editar_equip
+o.pdf  used on input line 11.
+(pdftex.def)             Requested size: 175.6359pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 38
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 54.
+LaTeX Info: Redefining \% on input line 54.
+[65]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.106 on input line 58.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
+[]\T1/pcr/m/n/8 List$\OML/cmm/m/it/8 <$\T1/pcr/m/n/8 Integer$\OML/cmm/m/it/8 >$
+ \T1/pcr/m/n/8 Aprendices[]_[]de[]_[][]Josuka.[]LP.[]Editar[]Equipo.[]Actualiza
+r[]Material ( ) throws Remote[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 72
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.107 on input line 79.
+
+LaTeX Info: Redefining \. on input line 84.
+LaTeX Info: Redefining \% on input line 84.
+[66]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.108 on input line 114.
+
+LaTeX Info: Redefining \. on input line 139.
+LaTeX Info: Redefining \% on input line 139.
+[67]
+LaTeX Info: Redefining \. on input line 139.
+LaTeX Info: Redefining \% on input line 139.
+ [68]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.109 on input line 139.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_editar_jugador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_edit
+ar_jugador.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1
+.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_editar_jugador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_editar_jugador.pdf, id=1515, 501.875
+pt x 157.58875pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_editar_jugador.pdf Graphic file
+ (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_editar_jugador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_editar_jugad
+or.pdf  used on input line 11.
+(pdftex.def)             Requested size: 181.22623pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 37
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
+[69]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.110 on input line 57.
+
+LaTeX Info: Redefining \. on input line 93.
+LaTeX Info: Redefining \% on input line 93.
+[70]) (class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_d_1_1_entr
+enador.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> 
+allowed
+ <./class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.pdf>
+<class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.pdf, id=1558, 501.875pt x
+ 167.62625pt>
+File: class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.pdf Graphic file (ty
+pe pdf)
+<use class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.p
+df  used on input line 11.
+(pdftex.def)             Requested size: 170.37486pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
+[71]) (class_aprendices__de___josuka_1_1_l_d_1_1_equipo.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_d_1_1_equi
+po.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allo
+wed
+ <./class_aprendices__de___josuka_1_1_l_d_1_1_equipo.pdf>
+<class_aprendices__de___josuka_1_1_l_d_1_1_equipo.pdf, id=1581, 501.875pt x 187
+.70125pt>
+File: class_aprendices__de___josuka_1_1_l_d_1_1_equipo.pdf Graphic file (type p
+df)
+<use class_aprendices__de___josuka_1_1_l_d_1_1_equipo.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_d_1_1_equipo.pdf  
+used on input line 11.
+(pdftex.def)             Requested size: 152.14885pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+ [72]
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+) (classpython_1_1_partido_1_1_equipo_1_1_equipo.tex
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+ [73]
+LaTeX Info: Redefining \. on input line 61.
+LaTeX Info: Redefining \% on input line 61.
+ [74])
+(class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_d_1_1_equi
+pos___ext.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
+5> allowed
+ <./class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext.pdf>
+<class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext.pdf, id=1638, 501.875p
+t x 164.615pt>
+File: class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext.pdf Graphic file 
+(type pdf)
+<use class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ex
+t.pdf  used on input line 11.
+(pdftex.def)             Requested size: 173.49167pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+ [75]
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 69.
+LaTeX Info: Redefining \% on input line 69.
+[76]) (class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_esta
+disticas.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5
+> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas.pdf, id=1671, 501.875pt
+ x 166.6225pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas.pdf Graphic file (
+type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas
+.pdf  used on input line 11.
+(pdftex.def)             Requested size: 171.40103pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 50.
+LaTeX Info: Redefining \% on input line 50.
+[77]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.111 on input line 50.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.112 on input line 57.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]LP.[]Estadisticas.[]init[
+]Components ( ) throws Parse[]Exception, Remote[]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.113 on input line 77.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]LP.[]Estadisticas.[]Inser
+tar[]JPanel ( ) throws Parse[]Exception, Remote[]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.114 on input line 94.
+
+LaTeX Info: Redefining \. on input line 103.
+LaTeX Info: Redefining \% on input line 103.
+[78]) (class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas_entrenador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_esta
+disticas_entrenador.pdf): PDF inclusion: found PDF version <1.7>, but at most v
+ersion <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas_entrenador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas_entrenador.pdf, id=1712
+, 501.875pt x 132.495pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas_entrenador.pdf Gra
+phic file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas_entrenador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas
+_entrenador.pdf  used on input line 11.
+(pdftex.def)             Requested size: 215.54932pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.115 on input line 50.
+
+
+Overfull \vbox (19.4366pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 50.
+LaTeX Info: Redefining \% on input line 50.
+
+[79]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.116 on input line 57.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]LP.[]Estadisticas[]Entren
+ador.[]init[]Components ( ) throws Parse[]Exception,
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.117 on input line 77.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]LP.[]Estadisticas[]Entren
+ador.[]Insertar[]JPanel ( ) throws Parse[]Exception,
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.118 on input line 94.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_ficha_entrenador.tex
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+ [80]
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_fich
+a_entrenador.pdf): PDF inclusion: found PDF version <1.7>, but at most version 
+<1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_ficha_entrenador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_ficha_entrenador.pdf, id=1750, 501.8
+75pt x 148.555pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_ficha_entrenador.pdf Graphic fi
+le (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_ficha_entrenador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_ficha_entren
+ador.pdf  used on input line 11.
+(pdftex.def)             Requested size: 192.24606pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.119 on input line 48.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.120 on input line 55.
+
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
+[81]) (class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_fich
+a_jugador.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
+5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugador.pdf, id=1777, 501.875p
+t x 157.58875pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugador.pdf Graphic file 
+(type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugado
+r.pdf  used on input line 11.
+(pdftex.def)             Requested size: 181.22623pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 42.
+LaTeX Info: Redefining \% on input line 42.
+[82]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.121 on input line 48.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.122 on input line 55.
+
+) (class_gateway_1_1_gateway.tex
+
+pdfTeX warning: pdflatex (file ./class_gateway_1_1_gateway.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+ <./class_gateway_1_1_gateway.pdf>
+<class_gateway_1_1_gateway.pdf, id=1802, 501.875pt x 305.14pt>
+File: class_gateway_1_1_gateway.pdf Graphic file (type pdf)
+<use class_gateway_1_1_gateway.pdf>
+Package pdftex.def Info: class_gateway_1_1_gateway.pdf  used on input line 6.
+(pdftex.def)             Requested size: 93.58824pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 14.
+LaTeX Info: Redefining \% on input line 14.
+ [83]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.123 on input line 51.
+
+
+Underfull \hbox (badness 10000) detected at line 52
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 73.
+LaTeX Info: Redefining \% on input line 73.
+[84]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.124 on input line 73.
+
+
+Underfull \hbox (badness 10000) detected at line 74
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 91
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.125 on input line 98.
+
+
+Underfull \hbox (badness 10000) detected at line 113
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 126.
+LaTeX Info: Redefining \% on input line 126.
+[85]
+Underfull \hbox (badness 10000) detected at line 126
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.126 on input line 133.
+
+
+Underfull \hbox (badness 10000) detected at line 148
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.127 on input line 155.
+
+
+Underfull \hbox (badness 10000) detected at line 170
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 177.
+LaTeX Info: Redefining \% on input line 177.
+[86]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.128 on input line 177.
+
+
+Underfull \hbox (badness 10000) detected at line 192
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.129 on input line 199.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_inic
+iar_sesion.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1
+.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion.pdf, id=1895, 501.875
+pt x 161.60374pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion.pdf Graphic file
+ (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesi
+on.pdf  used on input line 11.
+(pdftex.def)             Requested size: 176.72333pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 33.
+LaTeX Info: Redefining \% on input line 33.
+ [87]
+Underfull \hbox (badness 10000) detected at line 33
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.130 on input line 53.
+
+LaTeX Info: Redefining \. on input line 73.
+LaTeX Info: Redefining \% on input line 73.
+[88]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.131 on input line 73.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.132 on input line 78.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion___admin.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_inic
+iar_sesion___admin.pdf): PDF inclusion: found PDF version <1.7>, but at most ve
+rsion <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion___admin.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion___admin.pdf, id=1935,
+ 501.875pt x 138.5175pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion___admin.pdf Grap
+hic file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion___admin.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesi
+on___admin.pdf  used on input line 11.
+(pdftex.def)             Requested size: 206.17595pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 31.
+LaTeX Info: Redefining \% on input line 31.
+
+[89]
+Underfull \hbox (badness 10000) detected at line 31
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.133 on input line 51.
+
+LaTeX Info: Redefining \. on input line 74.
+LaTeX Info: Redefining \% on input line 74.
+[90])
+(classpython_1_1_partidos_1_1_interface___partidos_1_1_interface___partidos.tex
+
+
+pdfTeX warning: pdflatex (file ./classpython_1_1_partidos_1_1_interface___parti
+dos_1_1_interface___partidos.pdf): PDF inclusion: found PDF version <1.7>, but 
+at most version <1.5> allowed
+ <./classpython_1_1_partidos_1_1_interface___partidos_1_1_interface___partidos.
+pdf>
+<classpython_1_1_partidos_1_1_interface___partidos_1_1_interface___partidos.pdf
+, id=1973, 501.875pt x 125.46875pt>
+File: classpython_1_1_partidos_1_1_interface___partidos_1_1_interface___partido
+s.pdf Graphic file (type pdf)
+<use classpython_1_1_partidos_1_1_interface___partidos_1_1_interface___partidos
+.pdf>
+Package pdftex.def Info: classpython_1_1_partidos_1_1_interface___partidos_1_1_
+interface___partidos.pdf  used on input line 6.
+(pdftex.def)             Requested size: 227.62596pt x 56.9055pt.
+)
+(classpython_1_1_partidos_1_1_interface___sanciones_1_1_interface___sanciones.t
+ex
+
+pdfTeX warning: pdflatex (file ./classpython_1_1_partidos_1_1_interface___sanci
+ones_1_1_interface___sanciones.pdf): PDF inclusion: found PDF version <1.7>, bu
+t at most version <1.5> allowed
+ <./classpython_1_1_partidos_1_1_interface___sanciones_1_1_interface___sancione
+s.pdf>
+<classpython_1_1_partidos_1_1_interface___sanciones_1_1_interface___sanciones.p
+df, id=1981, 501.875pt x 115.43124pt>
+File: classpython_1_1_partidos_1_1_interface___sanciones_1_1_interface___sancio
+nes.pdf Graphic file (type pdf)
+<use classpython_1_1_partidos_1_1_interface___sanciones_1_1_interface___sancion
+es.pdf>
+Package pdftex.def Info: classpython_1_1_partidos_1_1_interface___sanciones_1_1
+_interface___sanciones.pdf  used on input line 6.
+(pdftex.def)             Requested size: 247.4142pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
+ [91]) (interface_fachada_1_1itf_fachada.tex
+
+pdfTeX warning: pdflatex (file ./interface_fachada_1_1itf_fachada.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+ <./interface_fachada_1_1itf_fachada.pdf>
+<interface_fachada_1_1itf_fachada.pdf, id=2001, 501.875pt x 348.30125pt>
+File: interface_fachada_1_1itf_fachada.pdf Graphic file (type pdf)
+<use interface_fachada_1_1itf_fachada.pdf>
+Package pdftex.def Info: interface_fachada_1_1itf_fachada.pdf  used on input li
+ne 11.
+(pdftex.def)             Requested size: 122.9949pt x 85.35826pt.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+ [92]
+Underfull \hbox (badness 10000) detected at line 98
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 111.
+LaTeX Info: Redefining \% on input line 111.
+[93]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.134 on input line 120.
+
+
+Underfull \hbox (badness 10000) detected at line 121
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.135 on input line 128.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.136 on input line 147.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.137 on input line 152.
+
+LaTeX Info: Redefining \. on input line 157.
+LaTeX Info: Redefining \% on input line 157.
+[94]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.138 on input line 167.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.139 on input line 172.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.140 on input line 193.
+
+
+Underfull \hbox (badness 10000) detected at line 194
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.141 on input line 201.
+
+LaTeX Info: Redefining \. on input line 206.
+LaTeX Info: Redefining \% on input line 206.
+[95]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.142 on input line 216.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.143 on input line 221.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.144 on input line 240.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.145 on input line 245.
+
+LaTeX Info: Redefining \. on input line 255.
+LaTeX Info: Redefining \% on input line 255.
+[96]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.146 on input line 260.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.147 on input line 265.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.148 on input line 280.
+
+
+Underfull \hbox (badness 10000) detected at line 281
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.149 on input line 290.
+
+LaTeX Info: Redefining \. on input line 307.
+LaTeX Info: Redefining \% on input line 307.
+[97]
+LaTeX Info: Redefining \. on input line 307.
+LaTeX Info: Redefining \% on input line 307.
+ [98]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.150 on input line 307.
+
+
+Underfull \hbox (badness 10000) detected at line 308
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.151 on input line 315.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.152 on input line 332.
+
+
+Underfull \hbox (badness 10000) detected at line 333
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.153 on input line 340.
+
+LaTeX Info: Redefining \. on input line 357.
+LaTeX Info: Redefining \% on input line 357.
+[99]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.154 on input line 357.
+
+
+Underfull \hbox (badness 10000) detected at line 358
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.155 on input line 365.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.156 on input line 380.
+
+
+Underfull \hbox (badness 10000) detected at line 381
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.157 on input line 388.
+
+LaTeX Info: Redefining \. on input line 403.
+LaTeX Info: Redefining \% on input line 403.
+[100]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.158 on input line 403.
+
+
+Underfull \hbox (badness 10000) detected at line 404
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.159 on input line 411.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.160 on input line 426.
+
+
+Underfull \hbox (badness 10000) detected at line 427
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.161 on input line 434.
+
+LaTeX Info: Redefining \. on input line 451.
+LaTeX Info: Redefining \% on input line 451.
+[101]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.162 on input line 451.
+
+
+Underfull \hbox (badness 10000) detected at line 452
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.163 on input line 459.
+
+
+Underfull \hbox (badness 10000) detected at line 470
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.164 on input line 477.
+
+
+Underfull \hbox (badness 10000) detected at line 488
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.165 on input line 495.
+
+
+Overfull \vbox (7.3033pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 495.
+LaTeX Info: Redefining \% on input line 495.
+
+[102]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.166 on input line 510.
+
+
+Underfull \hbox (badness 10000) detected at line 511
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.167 on input line 518.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.168 on input line 535.
+
+
+Underfull \hbox (badness 10000) detected at line 536
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.169 on input line 543.
+
+LaTeX Info: Redefining \. on input line 548.
+LaTeX Info: Redefining \% on input line 548.
+[103]
+Underfull \hbox (badness 10000) detected at line 554
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.170 on input line 561.
+
+
+Underfull \hbox (badness 10000) detected at line 572
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.171 on input line 579.
+
+
+Underfull \hbox (badness 10000) detected at line 590
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 599.
+LaTeX Info: Redefining \% on input line 599.
+[104]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.172 on input line 599.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.173 on input line 614.
+
+
+Underfull \hbox (badness 10000) detected at line 615
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.174 on input line 624.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.175 on input line 641.
+
+LaTeX Info: Redefining \. on input line 642.
+LaTeX Info: Redefining \% on input line 642.
+[105]
+Underfull \hbox (badness 10000) detected at line 642
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.176 on input line 651.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.177 on input line 666.
+
+
+Underfull \hbox (badness 10000) detected at line 667
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.178 on input line 674.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.179 on input line 693.
+
+
+Overfull \vbox (14.0905pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 693.
+LaTeX Info: Redefining \% on input line 693.
+
+[106]
+Underfull \hbox (badness 10000) detected at line 694
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.180 on input line 701.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.181 on input line 720.
+
+
+Underfull \hbox (badness 10000) detected at line 721
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.182 on input line 728.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.183 on input line 743.
+
+LaTeX Info: Redefining \. on input line 744.
+LaTeX Info: Redefining \% on input line 744.
+[107]
+Underfull \hbox (badness 10000) detected at line 744
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.184 on input line 751.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.185 on input line 766.
+
+
+Underfull \hbox (badness 10000) detected at line 767
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.186 on input line 774.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.187 on input line 789.
+
+LaTeX Info: Redefining \. on input line 790.
+LaTeX Info: Redefining \% on input line 790.
+[108]
+Underfull \hbox (badness 10000) detected at line 790
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.188 on input line 797.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.189 on input line 812.
+
+
+Underfull \hbox (badness 10000) detected at line 813
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.190 on input line 822.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.191 on input line 839.
+
+LaTeX Info: Redefining \. on input line 840.
+LaTeX Info: Redefining \% on input line 840.
+[109]
+Underfull \hbox (badness 10000) detected at line 840
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.192 on input line 847.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.193 on input line 874.
+
+
+Underfull \hbox (badness 10000) detected at line 875
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.194 on input line 882.
+
+LaTeX Info: Redefining \. on input line 892.
+LaTeX Info: Redefining \% on input line 892.
+[110]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.195 on input line 905.
+
+
+Underfull \hbox (badness 10000) detected at line 906
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.196 on input line 913.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.197 on input line 932.
+
+
+Underfull \hbox (badness 10000) detected at line 933
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.198 on input line 940.
+
+
+Overfull \vbox (3.07545pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 940.
+LaTeX Info: Redefining \% on input line 940.
+
+[111]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.199 on input line 967.
+
+
+Underfull \hbox (badness 10000) detected at line 968
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.200 on input line 975.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.201 on input line 990.
+
+LaTeX Info: Redefining \. on input line 991.
+LaTeX Info: Redefining \% on input line 991.
+[112]
+Underfull \hbox (badness 10000) detected at line 991
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.202 on input line 1000.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.203 on input line 1015.
+
+
+Underfull \hbox (badness 10000) detected at line 1016
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.204 on input line 1025.
+
+) (interface_gateway_1_1itf_gateway.tex
+
+pdfTeX warning: pdflatex (file ./interface_gateway_1_1itf_gateway.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+ <./interface_gateway_1_1itf_gateway.pdf>
+<interface_gateway_1_1itf_gateway.pdf, id=2442, 501.875pt x 305.14pt>
+File: interface_gateway_1_1itf_gateway.pdf Graphic file (type pdf)
+<use interface_gateway_1_1itf_gateway.pdf>
+Package pdftex.def Info: interface_gateway_1_1itf_gateway.pdf  used on input li
+ne 11.
+(pdftex.def)             Requested size: 93.58824pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+ [113]
+Underfull \hbox (badness 10000) detected at line 36
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.205 on input line 56.
+
+
+Underfull \hbox (badness 10000) detected at line 57
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 74.
+LaTeX Info: Redefining \% on input line 74.
+[114]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.206 on input line 74.
+
+
+Underfull \hbox (badness 10000) detected at line 75
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 88
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.207 on input line 95.
+
+
+Underfull \hbox (badness 10000) detected at line 106
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.208 on input line 113.
+
+LaTeX Info: Redefining \. on input line 124.
+LaTeX Info: Redefining \% on input line 124.
+[115]
+Underfull \hbox (badness 10000) detected at line 124
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.209 on input line 131.
+
+
+Underfull \hbox (badness 10000) detected at line 142
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.210 on input line 149.
+
+
+Underfull \hbox (badness 10000) detected at line 160
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 167.
+LaTeX Info: Redefining \% on input line 167.
+[116]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.211 on input line 167.
+
+) (class_aprendices__de___josuka_1_1_l_d_1_1_jugador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_d_1_1_juga
+dor.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
+owed
+ <./class_aprendices__de___josuka_1_1_l_d_1_1_jugador.pdf>
+<class_aprendices__de___josuka_1_1_l_d_1_1_jugador.pdf, id=2520, 501.875pt x 17
+9.67125pt>
+File: class_aprendices__de___josuka_1_1_l_d_1_1_jugador.pdf Graphic file (type 
+pdf)
+<use class_aprendices__de___josuka_1_1_l_d_1_1_jugador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_d_1_1_jugador.pdf 
+ used on input line 11.
+(pdftex.def)             Requested size: 158.94914pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 44.
+LaTeX Info: Redefining \% on input line 44.
+[117]) (class_aprendices__de___josuka_1_1_l_d_1_1_material.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_d_1_1_mate
+rial.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> al
+lowed
+ <./class_aprendices__de___josuka_1_1_l_d_1_1_material.pdf>
+<class_aprendices__de___josuka_1_1_l_d_1_1_material.pdf, id=2541, 501.875pt x 1
+80.675pt>
+File: class_aprendices__de___josuka_1_1_l_d_1_1_material.pdf Graphic file (type
+ pdf)
+<use class_aprendices__de___josuka_1_1_l_d_1_1_material.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_d_1_1_material.pdf
+  used on input line 11.
+(pdftex.def)             Requested size: 158.06848pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
+[118]) (class_aprendices__de___josuka_1_1_l_p_1_1_panel___entrenador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_pane
+l___entrenador.pdf): PDF inclusion: found PDF version <1.7>, but at most versio
+n <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_panel___entrenador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_panel___entrenador.pdf, id=2564, 501
+.875pt x 144.54pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_panel___entrenador.pdf Graphic 
+file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_panel___entrenador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_panel___entr
+enador.pdf  used on input line 11.
+(pdftex.def)             Requested size: 197.58368pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 26.
+LaTeX Info: Redefining \% on input line 26.
+ [119]
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.212 on input line 46.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_panel___equipos.tex
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+ [120]
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_pane
+l___equipos.pdf): PDF inclusion: found PDF version <1.7>, but at most version <
+1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_panel___equipos.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_panel___equipos.pdf, id=2600, 501.87
+5pt x 155.58125pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_panel___equipos.pdf Graphic fil
+e (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_panel___equipos.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_panel___equi
+pos.pdf  used on input line 11.
+(pdftex.def)             Requested size: 183.56192pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.213 on input line 48.
+
+LaTeX Info: Redefining \. on input line 59.
+LaTeX Info: Redefining \% on input line 59.
+[121]) (class_aprendices__de___josuka_1_1_l_p_1_1_panel___jugador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_pane
+l___jugador.pdf): PDF inclusion: found PDF version <1.7>, but at most version <
+1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_panel___jugador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_panel___jugador.pdf, id=2624, 501.87
+5pt x 153.57375pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_panel___jugador.pdf Graphic fil
+e (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_panel___jugador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_panel___juga
+dor.pdf  used on input line 11.
+(pdftex.def)             Requested size: 185.96652pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 46.
+LaTeX Info: Redefining \% on input line 46.
+[122]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.214 on input line 46.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_panel___partidos.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_pane
+l___partidos.pdf): PDF inclusion: found PDF version <1.7>, but at most version 
+<1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_panel___partidos.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_panel___partidos.pdf, id=2649, 501.8
+75pt x 154.5775pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_panel___partidos.pdf Graphic fi
+le (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_panel___partidos.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_panel___part
+idos.pdf  used on input line 11.
+(pdftex.def)             Requested size: 184.75656pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 42.
+LaTeX Info: Redefining \% on input line 42.
+[123]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.215 on input line 46.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_pane
+l___sanciones.pdf): PDF inclusion: found PDF version <1.7>, but at most version
+ <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.pdf, id=2673, 501.
+875pt x 146.5475pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.pdf Graphic f
+ile (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanc
+iones.pdf  used on input line 6.
+(pdftex.def)             Requested size: 194.88042pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 29.
+LaTeX Info: Redefining \% on input line 29.
+ [124]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.216 on input line 38.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_pantalla___principal.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_pant
+alla___principal.pdf): PDF inclusion: found PDF version <1.7>, but at most vers
+ion <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_pantalla___principal.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_pantalla___principal.pdf, id=2700, 5
+01.875pt x 144.54pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_pantalla___principal.pdf Graphi
+c file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_pantalla___principal.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_pantalla___p
+rincipal.pdf  used on input line 12.
+(pdftex.def)             Requested size: 197.58368pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 20.
+LaTeX Info: Redefining \% on input line 20.
+
+[125]
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 33
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.217 on input line 53.
+
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
+[126]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.218 on input line 71.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.219 on input line 86.
+
+) (class_aprendices__de___josuka_1_1_l_d_1_1_partido.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_d_1_1_part
+ido.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
+owed
+ <./class_aprendices__de___josuka_1_1_l_d_1_1_partido.pdf>
+<class_aprendices__de___josuka_1_1_l_d_1_1_partido.pdf, id=2742, 501.875pt x 18
+5.69376pt>
+File: class_aprendices__de___josuka_1_1_l_d_1_1_partido.pdf Graphic file (type 
+pdf)
+<use class_aprendices__de___josuka_1_1_l_d_1_1_partido.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_d_1_1_partido.pdf 
+ used on input line 11.
+(pdftex.def)             Requested size: 153.79532pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 24
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 37.
+LaTeX Info: Redefining \% on input line 37.
+[127]) (classpython_1_1_partido_1_1_partido_1_1_partido.tex
+LaTeX Info: Redefining \. on input line 48.
+LaTeX Info: Redefining \% on input line 48.
+ [128]
+LaTeX Info: Redefining \. on input line 100.
+LaTeX Info: Redefining \% on input line 100.
+ [129])
+(class_servicios_externos_1_1_partido___j_s_o_n.tex
+Underfull \hbox (badness 10000) detected at line 44
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 57.
+LaTeX Info: Redefining \% on input line 57.
+[130]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.220 on input line 64.
+
+
+Underfull \hbox (badness 10000) detected at line 78
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 91.
+LaTeX Info: Redefining \% on input line 91.
+[131]
+Underfull \hbox (badness 10000) detected at line 91
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.221 on input line 108.
+
+
+Underfull \hbox (badness 10000) detected at line 109
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 122
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 135
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 145.
+LaTeX Info: Redefining \% on input line 145.
+[132]
+Underfull \hbox (badness 10000) detected at line 148
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 161
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 174
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 187
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 200.
+LaTeX Info: Redefining \% on input line 200.
+[133]
+Underfull \hbox (badness 10000) detected at line 200
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 213
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 226
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 239
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 250.
+LaTeX Info: Redefining \% on input line 250.
+[134]) (class_servicios_externos_1_1_partidos__parameters.tex
+
+pdfTeX warning: pdflatex (file ./class_servicios_externos_1_1_partidos__paramet
+ers.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
+owed
+ <./class_servicios_externos_1_1_partidos__parameters.pdf>
+<class_servicios_externos_1_1_partidos__parameters.pdf, id=2876, 501.875pt x 16
+6.6225pt>
+File: class_servicios_externos_1_1_partidos__parameters.pdf Graphic file (type 
+pdf)
+<use class_servicios_externos_1_1_partidos__parameters.pdf>
+Package pdftex.def Info: class_servicios_externos_1_1_partidos__parameters.pdf 
+ used on input line 11.
+(pdftex.def)             Requested size: 171.40103pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 24
+[][][]
+ []
+
+) (class_aprendices__de___josuka_1_1_l_d_1_1_persona.tex
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+ [135]
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_d_1_1_pers
+ona.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
+owed
+ <./class_aprendices__de___josuka_1_1_l_d_1_1_persona.pdf>
+<class_aprendices__de___josuka_1_1_l_d_1_1_persona.pdf, id=2895, 501.875pt x 17
+9.67125pt>
+File: class_aprendices__de___josuka_1_1_l_d_1_1_persona.pdf Graphic file (type 
+pdf)
+<use class_aprendices__de___josuka_1_1_l_d_1_1_persona.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_d_1_1_persona.pdf 
+ used on input line 11.
+(pdftex.def)             Requested size: 158.94914pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 52.
+LaTeX Info: Redefining \% on input line 52.
+[136]) (class_aprendices__de___josuka_1_1_l_p_1_1_principal___administrador.tex
+
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_prin
+cipal___administrador.pdf): PDF inclusion: found PDF version <1.7>, but at most
+ version <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_principal___administrador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_principal___administrador.pdf, id=29
+16, 501.875pt x 129.48375pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_principal___administrador.pdf G
+raphic file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_principal___administrador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_principal___
+administrador.pdf  used on input line 11.
+(pdftex.def)             Requested size: 220.5653pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 41.
+LaTeX Info: Redefining \% on input line 41.
+[137]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.222 on input line 48.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.223 on input line 55.
+
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
+[138]) (class_aprendices__de___josuka_1_1_l_p_1_1_principal___entrenador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_prin
+cipal___entrenador.pdf): PDF inclusion: found PDF version <1.7>, but at most ve
+rsion <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_principal___entrenador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_principal___entrenador.pdf, id=2953,
+ 501.875pt x 136.51pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_principal___entrenador.pdf Grap
+hic file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_principal___entrenador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_principal___
+entrenador.pdf  used on input line 11.
+(pdftex.def)             Requested size: 209.20851pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 50.
+LaTeX Info: Redefining \% on input line 50.
+[139]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.224 on input line 50.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.225 on input line 57.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_prin
+cipal___jugador.pdf): PDF inclusion: found PDF version <1.7>, but at most versi
+on <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador.pdf, id=2981, 50
+1.875pt x 143.53625pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador.pdf Graphic
+ file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_principal___
+jugador.pdf  used on input line 11.
+(pdftex.def)             Requested size: 198.96979pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
+ [140]
+Underfull \hbox (badness 10000) detected at line 30
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.226 on input line 52.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.227 on input line 59.
+
+LaTeX Info: Redefining \. on input line 73.
+LaTeX Info: Redefining \% on input line 73.
+[141]
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]LP.[]Principal[]_[][]Juga
+dor.[]Insertar[]Mis[]Partidos ( ) throws Remote[]Exception,
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.228 on input line 99.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_registrar_admin.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_regi
+strar_admin.pdf): PDF inclusion: found PDF version <1.7>, but at most version <
+1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_registrar_admin.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_registrar_admin.pdf, id=3022, 501.87
+5pt x 153.57375pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_registrar_admin.pdf Graphic fil
+e (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_registrar_admin.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_registrar_ad
+min.pdf  used on input line 11.
+(pdftex.def)             Requested size: 185.96652pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+ [142]
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.229 on input line 46.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_registrar_entrenador.tex
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+ [143]
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_regi
+strar_entrenador.pdf): PDF inclusion: found PDF version <1.7>, but at most vers
+ion <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_registrar_entrenador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_registrar_entrenador.pdf, id=3057, 5
+01.875pt x 138.5175pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_registrar_entrenador.pdf Graphi
+c file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_registrar_entrenador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_registrar_en
+trenador.pdf  used on input line 11.
+(pdftex.def)             Requested size: 206.17595pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.230 on input line 46.
+
+LaTeX Info: Redefining \. on input line 57.
+LaTeX Info: Redefining \% on input line 57.
+[144]) (class_aprendices__de___josuka_1_1_l_p_1_1_registrar_equipo.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_regi
+strar_equipo.pdf): PDF inclusion: found PDF version <1.7>, but at most version 
+<1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_registrar_equipo.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_registrar_equipo.pdf, id=3081, 501.8
+75pt x 151.56625pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_registrar_equipo.pdf Graphic fi
+le (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_registrar_equipo.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_registrar_eq
+uipo.pdf  used on input line 11.
+(pdftex.def)             Requested size: 188.43239pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 42
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 58.
+LaTeX Info: Redefining \% on input line 58.
+[145]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.231 on input line 62.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.232 on input line 80.
+
+LaTeX Info: Redefining \. on input line 107.
+LaTeX Info: Redefining \% on input line 107.
+[146]
+LaTeX Info: Redefining \. on input line 107.
+LaTeX Info: Redefining \% on input line 107.
+ [147]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.233 on input line 107.
+
+LaTeX Info: Redefining \. on input line 176.
+LaTeX Info: Redefining \% on input line 176.
+[148]) (class_aprendices__de___josuka_1_1_l_p_1_1_registrar_jugador.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_regi
+strar_jugador.pdf): PDF inclusion: found PDF version <1.7>, but at most version
+ <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_registrar_jugador.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_registrar_jugador.pdf, id=3147, 501.
+875pt x 146.5475pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_registrar_jugador.pdf Graphic f
+ile (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_registrar_jugador.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_registrar_ju
+gador.pdf  used on input line 11.
+(pdftex.def)             Requested size: 194.88042pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 48.
+LaTeX Info: Redefining \% on input line 48.
+[149]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.234 on input line 48.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.235 on input line 66.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_registrar_material.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_regi
+strar_material.pdf): PDF inclusion: found PDF version <1.7>, but at most versio
+n <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_registrar_material.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_registrar_material.pdf, id=3173, 501
+.875pt x 147.55125pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_registrar_material.pdf Graphic 
+file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_registrar_material.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_registrar_ma
+terial.pdf  used on input line 11.
+(pdftex.def)             Requested size: 193.55559pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 13.
+LaTeX Info: Redefining \% on input line 13.
+ [150]
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.236 on input line 48.
+
+LaTeX Info: Redefining \. on input line 59.
+LaTeX Info: Redefining \% on input line 59.
+[151]) (class_servicios_externos_1_1_rest_client.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Underfull \hbox (badness 10000) detected at line 37
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 44.
+LaTeX Info: Redefining \% on input line 44.
+[152]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.237 on input line 44.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.238 on input line 64.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+[]\T1/pcr/m/n/8 Invocation.[]Builder []$\OML/cmm/m/it/8 <$ \T1/pcr/m/n/8 T exte
+nds [] $\OML/cmm/m/it/8 >$\T1/pcr/m/n/8 .create[]Invocation[]
+ []
+
+LaTeX Info: Redefining \. on input line 92.
+LaTeX Info: Redefining \% on input line 92.
+[153]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.239 on input line 92.
+
+
+Underfull \hbox (badness 10000) detected at line 93
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.240 on input line 100.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.241 on input line 117.
+
+
+Underfull \hbox (badness 10000) detected at line 118
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.242 on input line 125.
+
+LaTeX Info: Redefining \. on input line 142.
+LaTeX Info: Redefining \% on input line 142.
+[154]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.243 on input line 142.
+
+
+Underfull \hbox (badness 10000) detected at line 143
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.244 on input line 150.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.245 on input line 165.
+
+
+Underfull \hbox (badness 10000) detected at line 166
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.246 on input line 183.
+
+LaTeX Info: Redefining \. on input line 190.
+LaTeX Info: Redefining \% on input line 190.
+[155]) (class_aprendices__de___josuka_1_1_l_d_1_1_sancion.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_d_1_1_sanc
+ion.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
+owed
+ <./class_aprendices__de___josuka_1_1_l_d_1_1_sancion.pdf>
+<class_aprendices__de___josuka_1_1_l_d_1_1_sancion.pdf, id=3292, 501.875pt x 18
+0.675pt>
+File: class_aprendices__de___josuka_1_1_l_d_1_1_sancion.pdf Graphic file (type 
+pdf)
+<use class_aprendices__de___josuka_1_1_l_d_1_1_sancion.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_d_1_1_sancion.pdf 
+ used on input line 11.
+(pdftex.def)             Requested size: 158.06848pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 24
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
+[156]) (classpython_1_1_partido_1_1_sancion_1_1_sancion.tex
+LaTeX Info: Redefining \. on input line 51.
+LaTeX Info: Redefining \% on input line 51.
+ [157])
+(class_servicios_externos_1_1_sancion___j_s_o_n.tex
+LaTeX Info: Redefining \. on input line 20.
+LaTeX Info: Redefining \% on input line 20.
+ [158]
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.247 on input line 46.
+
+LaTeX Info: Redefining \. on input line 60.
+LaTeX Info: Redefining \% on input line 60.
+[159]
+Underfull \hbox (badness 10000) detected at line 60
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 73
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 86
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 99
+[][][]
+ []
+
+) (class_servicios_externos_1_1_sanciones__parameters.tex
+
+pdfTeX warning: pdflatex (file ./class_servicios_externos_1_1_sanciones__parame
+ters.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> al
+lowed
+ <./class_servicios_externos_1_1_sanciones__parameters.pdf>
+<class_servicios_externos_1_1_sanciones__parameters.pdf, id=3371, 501.875pt x 1
+57.58875pt>
+File: class_servicios_externos_1_1_sanciones__parameters.pdf Graphic file (type
+ pdf)
+<use class_servicios_externos_1_1_sanciones__parameters.pdf>
+Package pdftex.def Info: class_servicios_externos_1_1_sanciones__parameters.pdf
+  used on input line 11.
+(pdftex.def)             Requested size: 181.22623pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 14.
+LaTeX Info: Redefining \% on input line 14.
+ [160]
+Underfull \hbox (badness 10000) detected at line 24
+[][][]
+ []
+
+) (class_remote_1_1_service_locator.tex
+LaTeX Info: Redefining \. on input line 20.
+LaTeX Info: Redefining \% on input line 20.
+ [161]
+Underfull \hbox (badness 10000) detected at line 20
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 36
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.248 on input line 53.
+
+
+Overfull \vbox (6.21817pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
+
+[162]) (class_fachada_1_1_servidor_principal.tex
+
+pdfTeX warning: pdflatex (file ./class_fachada_1_1_servidor_principal.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+ <./class_fachada_1_1_servidor_principal.pdf>
+<class_fachada_1_1_servidor_principal.pdf, id=3418, 501.875pt x 174.6525pt>
+File: class_fachada_1_1_servidor_principal.pdf Graphic file (type pdf)
+<use class_fachada_1_1_servidor_principal.pdf>
+Package pdftex.def Info: class_fachada_1_1_servidor_principal.pdf  used on inpu
+t line 11.
+(pdftex.def)             Requested size: 245.28528pt x 85.35826pt.
+LaTeX Info: Redefining \. on input line 79.
+LaTeX Info: Redefining \% on input line 79.
+ [163]
+Underfull \hbox (badness 10000) detected at line 105
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.249 on input line 127.
+
+LaTeX Info: Redefining \. on input line 128.
+LaTeX Info: Redefining \% on input line 128.
+[164]
+Underfull \hbox (badness 10000) detected at line 128
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.250 on input line 135.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.251 on input line 158.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.252 on input line 163.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.253 on input line 182.
+
+LaTeX Info: Redefining \. on input line 187.
+LaTeX Info: Redefining \% on input line 187.
+[165]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.254 on input line 187.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.255 on input line 212.
+
+
+Underfull \hbox (badness 10000) detected at line 213
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.256 on input line 220.
+
+LaTeX Info: Redefining \. on input line 239.
+LaTeX Info: Redefining \% on input line 239.
+[166]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.257 on input line 239.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.258 on input line 244.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.259 on input line 267.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.260 on input line 272.
+
+LaTeX Info: Redefining \. on input line 291.
+LaTeX Info: Redefining \% on input line 291.
+[167]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.261 on input line 291.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.262 on input line 296.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.263 on input line 315.
+
+
+Underfull \hbox (badness 10000) detected at line 316
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.264 on input line 325.
+
+LaTeX Info: Redefining \. on input line 346.
+LaTeX Info: Redefining \% on input line 346.
+[168]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.265 on input line 346.
+
+
+Underfull \hbox (badness 10000) detected at line 347
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.266 on input line 354.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.267 on input line 375.
+
+
+Underfull \hbox (badness 10000) detected at line 376
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.268 on input line 383.
+
+LaTeX Info: Redefining \. on input line 398.
+LaTeX Info: Redefining \% on input line 398.
+[169]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.269 on input line 404.
+
+
+Underfull \hbox (badness 10000) detected at line 405
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.270 on input line 412.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.271 on input line 431.
+
+
+Underfull \hbox (badness 10000) detected at line 432
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.272 on input line 439.
+
+LaTeX Info: Redefining \. on input line 451.
+LaTeX Info: Redefining \% on input line 451.
+[170]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.273 on input line 458.
+
+
+Underfull \hbox (badness 10000) detected at line 459
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.274 on input line 466.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.275 on input line 485.
+
+
+Underfull \hbox (badness 10000) detected at line 486
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.276 on input line 493.
+
+LaTeX Info: Redefining \. on input line 502.
+LaTeX Info: Redefining \% on input line 502.
+[171]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.277 on input line 514.
+
+
+Underfull \hbox (badness 10000) detected at line 515
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.278 on input line 522.
+
+
+Underfull \hbox (badness 10000) detected at line 537
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.279 on input line 544.
+
+LaTeX Info: Redefining \. on input line 559.
+LaTeX Info: Redefining \% on input line 559.
+[172]
+Underfull \hbox (badness 10000) detected at line 559
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.280 on input line 566.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.281 on input line 585.
+
+
+Underfull \hbox (badness 10000) detected at line 586
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.282 on input line 593.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 606--607
+[]\T1/pcr/m/n/8 static [] Fachada.[]Servidor[]Principal.[]get[]Instance ( ) thr
+ows Remote[]Exception
+ []
+
+LaTeX Info: Redefining \. on input line 608.
+LaTeX Info: Redefining \% on input line 608.
+[173]
+Underfull \hbox (badness 10000) detected at line 608
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.283 on input line 615.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.284 on input line 632.
+
+
+Underfull \hbox (badness 10000) detected at line 633
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.285 on input line 640.
+
+
+Underfull \hbox (badness 10000) detected at line 655
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 662.
+LaTeX Info: Redefining \% on input line 662.
+[174]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.286 on input line 662.
+
+
+Underfull \hbox (badness 10000) detected at line 677
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.287 on input line 684.
+
+
+Underfull \hbox (badness 10000) detected at line 699
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.288 on input line 708.
+
+LaTeX Info: Redefining \. on input line 720.
+LaTeX Info: Redefining \% on input line 720.
+[175]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.289 on input line 727.
+
+
+Underfull \hbox (badness 10000) detected at line 728
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.290 on input line 737.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.291 on input line 758.
+
+
+Underfull \hbox (badness 10000) detected at line 759
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.292 on input line 768.
+
+
+Overfull \vbox (14.97711pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 768.
+LaTeX Info: Redefining \% on input line 768.
+
+[176]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.293 on input line 787.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.294 on input line 802.
+
+
+Underfull \hbox (badness 10000) detected at line 803
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.295 on input line 810.
+
+LaTeX Info: Redefining \. on input line 825.
+LaTeX Info: Redefining \% on input line 825.
+[177]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.296 on input line 833.
+
+
+Underfull \hbox (badness 10000) detected at line 834
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.297 on input line 841.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.298 on input line 864.
+
+
+Underfull \hbox (badness 10000) detected at line 865
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.299 on input line 872.
+
+LaTeX Info: Redefining \. on input line 881.
+LaTeX Info: Redefining \% on input line 881.
+[178]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.300 on input line 891.
+
+
+Underfull \hbox (badness 10000) detected at line 892
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.301 on input line 899.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.302 on input line 918.
+
+
+Underfull \hbox (badness 10000) detected at line 919
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.303 on input line 926.
+
+LaTeX Info: Redefining \. on input line 933.
+LaTeX Info: Redefining \% on input line 933.
+[179]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.304 on input line 945.
+
+
+Underfull \hbox (badness 10000) detected at line 946
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.305 on input line 953.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.306 on input line 972.
+
+
+Underfull \hbox (badness 10000) detected at line 973
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 982.
+LaTeX Info: Redefining \% on input line 982.
+[180]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.307 on input line 982.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.308 on input line 1003.
+
+
+Underfull \hbox (badness 10000) detected at line 1004
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.309 on input line 1011.
+
+LaTeX Info: Redefining \. on input line 1042.
+LaTeX Info: Redefining \% on input line 1042.
+[181]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.310 on input line 1042.
+
+
+Underfull \hbox (badness 10000) detected at line 1043
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.311 on input line 1050.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.312 on input line 1077.
+
+
+Underfull \hbox (badness 10000) detected at line 1078
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 1085.
+LaTeX Info: Redefining \% on input line 1085.
+[182]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.313 on input line 1085.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.314 on input line 1108.
+
+
+Underfull \hbox (badness 10000) detected at line 1109
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.315 on input line 1116.
+
+LaTeX Info: Redefining \. on input line 1147.
+LaTeX Info: Redefining \% on input line 1147.
+[183]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.316 on input line 1147.
+
+
+Underfull \hbox (badness 10000) detected at line 1148
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.317 on input line 1155.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.318 on input line 1174.
+
+
+Underfull \hbox (badness 10000) detected at line 1175
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.319 on input line 1184.
+
+LaTeX Info: Redefining \. on input line 1198.
+LaTeX Info: Redefining \% on input line 1198.
+[184]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.320 on input line 1203.
+
+
+Underfull \hbox (badness 10000) detected at line 1204
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.321 on input line 1213.
+
+) (class_aprendices__de___josuka_1_1_aprendices__de___josuka_1_1test_d_a_o.tex
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
+
+[185]
+Underfull \hbox (badness 10000) detected at line 40
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]DAO.[]a[]_[]escribir[]Admin ( ) throws Remote[]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.322 on input line 62.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.323 on input line 79.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]DAO.[]a[]_[]escribir[]Jugadores ( ) throws Remote[]
+ []
+
+LaTeX Info: Redefining \. on input line 89.
+LaTeX Info: Redefining \% on input line 89.
+[186]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.324 on input line 96.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]DAO.[]a[]_[]escribir[]Material ( ) throws Remote[]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.325 on input line 113.
+
+LaTeX Info: Redefining \. on input line 140.
+LaTeX Info: Redefining \% on input line 140.
+[187]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.326 on input line 140.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]DAO.[]leer[]Entrenador ( ) throws Remote[]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.327 on input line 157.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.328 on input line 174.
+
+LaTeX Info: Redefining \. on input line 191.
+LaTeX Info: Redefining \% on input line 191.
+[188]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.329 on input line 191.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]DAO.[]modificar[]Entrenador ( ) throws Remote[]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.330 on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]DAO.[]modificar[]Jugador ( ) throws Remote[]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.331 on input line 225.
+
+LaTeX Info: Redefining \. on input line 242.
+LaTeX Info: Redefining \% on input line 242.
+[189]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.332 on input line 242.
+
+)
+(class_aprendices__de___josuka_1_1_aprendices__de___josuka_1_1test_fachada.tex
+Underfull \hbox (badness 10000) detected at line 55
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]Fachada.[]a[]_[]admin ( ) throws Remote[]Exception,
+ []
+
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
+[190]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.333 on input line 77.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]Fachada.[]a[]_[]entrenador ( ) throws Remote[]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.334 on input line 96.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.335 on input line 115.
+
+
+Overfull \vbox (17.00383pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 115.
+LaTeX Info: Redefining \% on input line 115.
+
+[191]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]Fachada.[]entrar[]Administrador ( ) throws
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.336 on input line 134.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.337 on input line 153.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]Fachada.[]entrar[]Jugador ( ) throws Remote[]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.338 on input line 172.
+
+
+Overfull \vbox (24.2327pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 172.
+LaTeX Info: Redefining \% on input line 172.
+
+[192]
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]Fachada.[]get[]Edad ( ) throws Remote[]Exception,
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.339 on input line 191.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.340 on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]Fachada.[]partidos ( ) throws Parse[]Exception,
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.341 on input line 227.
+
+
+Overfull \vbox (9.72733pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 227.
+LaTeX Info: Redefining \% on input line 227.
+
+[193]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.342 on input line 246.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.343 on input line 273.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]Fachada.[]v[]_[]actualizar[]Entrenador ( ) throws
+ []
+
+LaTeX Info: Redefining \. on input line 283.
+LaTeX Info: Redefining \% on input line 283.
+[194]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.344 on input line 290.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]Fachada.[]v[]_[]actualizar[]Jugador ( ) throws
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.345 on input line 307.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]Fachada.[]v[]_[]eliminar ( ) throws Remote[]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.346 on input line 322.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]Fachada.[]v[]_[]eliminar[]Admin ( ) throws Remote[]
+ []
+
+LaTeX Info: Redefining \. on input line 332.
+LaTeX Info: Redefining \% on input line 332.
+[195]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.347 on input line 337.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
+[]\T1/pcr/m/n/8 void Aprendices[]_[]de[]_[][]Josuka.[]Aprendices[]_[]de[]_[][]J
+osuka.[]test[]Fachada.[]v[]_[]eliminar[]Entrenador ( ) throws
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.348 on input line 352.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.349 on input line 367.
+
+)
+(class_aprendices__de___josuka_1_1_aprendices__de___josuka_1_1test_partidos.tex
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+[196]
+Underfull \hbox (badness 10000) detected at line 20
+[][][]
+ []
+
+) (enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material.tex
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
+ [197]
+Underfull \hbox (badness 10000) detected at line 30
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+[198]) (enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___sancion.tex
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 35.
+LaTeX Info: Redefining \% on input line 35.
+[199]) (class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___entrenadores.tex
+
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_visu
+alizar___entrenadores.pdf): PDF inclusion: found PDF version <1.7>, but at most
+ version <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___entrenadores.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___entrenadores.pdf, id=40
+33, 501.875pt x 127.47626pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___entrenadores.pdf G
+raphic file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___entrenadores.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_visualizar__
+_entrenadores.pdf  used on input line 11.
+(pdftex.def)             Requested size: 224.04202pt x 56.9055pt.
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+
+[200]
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.350 on input line 48.
+
+LaTeX Info: Redefining \. on input line 59.
+LaTeX Info: Redefining \% on input line 59.
+[201]) (class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_visu
+alizar___equipos.pdf): PDF inclusion: found PDF version <1.7>, but at most vers
+ion <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos.pdf, id=4072, 5
+01.875pt x 142.5325pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos.pdf Graphi
+c file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_visualizar__
+_equipos.pdf  used on input line 11.
+(pdftex.def)             Requested size: 200.3712pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 32
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 45.
+LaTeX Info: Redefining \% on input line 45.
+[202]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.351 on input line 52.
+
+LaTeX Info: Redefining \. on input line 90.
+LaTeX Info: Redefining \% on input line 90.
+[203]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.352 on input line 90.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___jugadores.tex
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_visu
+alizar___jugadores.pdf): PDF inclusion: found PDF version <1.7>, but at most ve
+rsion <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___jugadores.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___jugadores.pdf, id=4113,
+ 501.875pt x 134.5025pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___jugadores.pdf Grap
+hic file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___jugadores.pdf>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_visualizar__
+_jugadores.pdf  used on input line 11.
+(pdftex.def)             Requested size: 212.33296pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+LaTeX Info: Redefining \. on input line 41.
+LaTeX Info: Redefining \% on input line 41.
+[204]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.353 on input line 48.
+
+) (class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___mis___jugadores.tex
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+
+[205]
+
+pdfTeX warning: pdflatex (file ./class_aprendices__de___josuka_1_1_l_p_1_1_visu
+alizar___mis___jugadores.pdf): PDF inclusion: found PDF version <1.7>, but at m
+ost version <1.5> allowed
+ <./class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___mis___jugadores.pdf>
+<class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___mis___jugadores.pdf, id
+=4149, 501.875pt x 123.46124pt>
+File: class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___mis___jugadores.pd
+f Graphic file (type pdf)
+<use class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___mis___jugadores.pdf
+>
+Package pdftex.def Info: class_aprendices__de___josuka_1_1_l_p_1_1_visualizar__
+_mis___jugadores.pdf  used on input line 11.
+(pdftex.def)             Requested size: 231.32477pt x 56.9055pt.
+
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.354 on input line 50.
+
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
+[206]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6.355 on input line 55.
+
+)
+LaTeX Info: Redefining \. on input line 273.
+LaTeX Info: Redefining \% on input line 273.
+ [207]
+LaTeX Info: Redefining \. on input line 273.
+LaTeX Info: Redefining \% on input line 273.
+ [208
+
+]
+Cap\'{\i }tulo 7.
+(_administrador_8java.tex) (_categoria_8java.tex) (_entrenador_8java.tex
+[209]) (_equipo_8java.tex) (_equipos___ext_8java.tex) (_jugador_8java.tex)
+(_material_8java.tex
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+ [210]) (_partido_8java.tex) (_persona_8java.tex)
+(_sancion_8java.tex
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+ [211]) (_tipo___material_8java.tex)
+(_tipo___sancion_8java.tex) (_anyadir___inventario_8java.tex
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+ [212])
+(_clasificacion_8java.tex) (_clasificacion___entrenador_8java.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [213])
+(_clasificacion___jugador_8java.tex) (_editar_datos_8java.tex)
+(_editar_datos_entrenador_8java.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [214]) (_editar_entrenador_8java.tex)
+(_editar_equipo_8java.tex) (_editar_jugador_8java.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [215])
+(_estadisticas_8java.tex) (_estadisticas_entrenador_8java.tex)
+(_ficha_entrenador_8java.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [216]) (_ficha_jugador_8java.tex)
+(_iniciar_sesion_8java.tex) (_iniciar_sesion___admin_8java.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [217])
+(_panel___entrenador_8java.tex) (_panel___equipos_8java.tex)
+(_panel___jugador_8java.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [218]) (_panel___partidos_8java.tex)
+(_panel___sanciones_8java.tex) (_pantalla___principal_8java.tex
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+LaTeX Info: Redefining \. on input line 13.
+LaTeX Info: Redefining \% on input line 13.
+[219]) (_principal___administrador_8java.tex)
+(_principal___entrenador_8java.tex) (_principal___jugador_8java.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [220])
+(_registrar_admin_8java.tex) (_registrar_entrenador_8java.tex)
+(_registrar_equipo_8java.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [221]) (_registrar_jugador_8java.tex)
+(_registrar_material_8java.tex) (_visualizar___entrenadores_8java.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [222])
+(_visualizar___equipos_8java.tex) (_visualizar___jugadores_8java.tex)
+(_visualizar___mis___jugadores_8java.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [223]) (_controller_8java.tex)
+(_d_a_o_8java.tex) (itf_fachada_8java.tex) (_servidor_principal_8java.tex
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+
+[224]) (_gateway_8java.tex) (itf_gateway_8java.tex) (_service_locator_8java.tex
+) (_d_f___printable_8java.tex
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+ [225]) (_partido___j_s_o_n_8java.tex)
+(_partidos__parameters_8java.tex) (_rest_client_8java.tex
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+ [226])
+(_sancion___j_s_o_n_8java.tex) (_sanciones__parameters_8java.tex)
+(python_2____init_____8py.tex) (python_2_partido_2____init_____8py.tex
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+ [227])
+(python_2_partidos_2____init_____8py.tex) (_equipo_8py.tex) (_partido_8py.tex)
+(_sancion_8py.tex) (_aprendices_de_josuka_partidos_8py.tex
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+ [228])
+(_aprendices_de_josuka_sanciones_8py.tex) (_interface___partidos_8py.tex)
+(_interface___sanciones_8py.tex) (test_d_a_o_8java.tex
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+ [229])
+(test_fachada_8java.tex) (test_partidos_8java.tex)
+LaTeX Info: Redefining \. on input line 348.
+LaTeX Info: Redefining \% on input line 348.
+ [230]
+No file refman.ind.
+
+Package longtable Warning: Table widths have changed. Rerun LaTeX.
+
+(refman.aux
+LaTeX Info: Redefining \. on input line 27.
+LaTeX Info: Redefining \% on input line 27.
+)
+
+Package rerunfilecheck Warning: File `refman.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `refman.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  50CB84974237F89B4566C6ED50B56054;202928.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 21528 strings out of 479697
+ 408005 string characters out of 2877007
+ 635314 words of memory out of 3000000
+ 35796 multiletter control sequences out of 15000+200000
+ 463827 words of font info for 102 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 107i,16n,115p,1089b,874s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
+gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/ty
+pe1/urw/courier/ucrb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/courier/ucr
+r8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX/fon
+ts/type1/urw/helvetic/uhvb8ac.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helv
+etic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (232 pages, 1367769 bytes).
+PDF statistics:
+ 5133 PDF objects out of 5155 (max. 8388607)
+ 2175 named destinations out of 2487 (max. 500000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+

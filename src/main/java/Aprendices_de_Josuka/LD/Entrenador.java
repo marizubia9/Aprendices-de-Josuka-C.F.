@@ -1,18 +1,31 @@
 package Aprendices_de_Josuka.LD;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.jdo.annotations.Column;
+import javax.jdo.annotations.Discriminator;
+import javax.jdo.annotations.Inheritance;
+import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-@Getter
-@Setter
+/**
+ * @class Entrenador
+ * @brief Esta clase define objetos de tipo Entrenador
+ * @author Alumno
+ *
+ */
 @PersistenceCapable
-public class Entrenador {
+//@Inheritance(strategy=InheritanceStrategy.SUPERCLASS_TABLE)
+//@Discriminator(value="ENTRENADOR")
+@Data
+public class Entrenador  implements Serializable{
 
 	@PrimaryKey
 	private String DNI;
@@ -39,5 +52,13 @@ public class Entrenador {
 
 	}
 
-
+@Override
+public String toString() {
+	return  nombre + " " + apellido + " | "+DNI;
 }
+}
+
+
+
+
+

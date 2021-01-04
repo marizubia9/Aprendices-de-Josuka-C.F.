@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>APRENDICES DE JOSUKA C.F: Fichero Fuente src/main/java/Gateway/itfGateway.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">APRENDICES DE JOSUKA C.F
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('itf_gateway_8java_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">itfGateway.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="itf_gateway_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>Gateway;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> java.util.ArrayList;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> java.util.HashSet;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> org.json.simple.parser.ParseException;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> Aprendices_de_Josuka.LD.Equipos_Ext;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> Aprendices_de_Josuka.LD.Partido;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> Aprendices_de_Josuka.LD.Sancion;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> <a class="code" href="namespace_servicios_externos.html">ServiciosExternos</a>.<a class="code" href="class_servicios_externos_1_1_partido___j_s_o_n.html">Partido_JSON</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> <a class="code" href="namespace_servicios_externos.html">ServiciosExternos</a>.<a class="code" href="class_servicios_externos_1_1_sancion___j_s_o_n.html">Sancion_JSON</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="interface_gateway_1_1itf_gateway.html">   19</a></span>&#160;<span class="keyword">public</span> <span class="keyword">interface </span><a class="code" href="interface_gateway_1_1itf_gateway.html">itfGateway</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="interface_gateway_1_1itf_gateway.html#a5c0947f7cc0ea0c79ba6ef0c1a8ff2ac">   26</a></span>&#160;    <span class="keyword">public</span> List&lt;Partido&gt; <a class="code" href="interface_gateway_1_1itf_gateway.html#a5c0947f7cc0ea0c79ba6ef0c1a8ff2ac">search_partidos</a>() throws ParseException;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="interface_gateway_1_1itf_gateway.html#ab7371e0131674f1e0b7d084bf4653bf0">   32</a></span>&#160;    public List&lt;<a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_sancion.html">Sancion</a>&gt; <a class="code" href="interface_gateway_1_1itf_gateway.html#ab7371e0131674f1e0b7d084bf4653bf0">search_sanciones</a>() throws ParseException;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="interface_gateway_1_1itf_gateway.html#a266084585e62cde44e6ea016563206e2">   38</a></span>&#160;    public ArrayList&lt;<a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_partido.html">Partido</a>&gt; <a class="code" href="interface_gateway_1_1itf_gateway.html#a266084585e62cde44e6ea016563206e2">convertir_partidos</a>(List&lt;<a class="code" href="class_servicios_externos_1_1_partido___j_s_o_n.html">Partido_JSON</a>&gt; json);</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="interface_gateway_1_1itf_gateway.html#a67cbf057c6f7e4a01e4cd051b24edbb7">   44</a></span>&#160;    public ArrayList&lt;<a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_sancion.html">Sancion</a>&gt; <a class="code" href="interface_gateway_1_1itf_gateway.html#a67cbf057c6f7e4a01e4cd051b24edbb7">convertir_sanciones</a>(List&lt;<a class="code" href="class_servicios_externos_1_1_sancion___j_s_o_n.html">Sancion_JSON</a>&gt; json);</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="interface_gateway_1_1itf_gateway.html#a2b96ea0fc2a7b2a31bf40953b5e14483">   50</a></span>&#160;    public HashSet&lt;<a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext.html">Equipos_Ext</a>&gt; <a class="code" href="interface_gateway_1_1itf_gateway.html#a2b96ea0fc2a7b2a31bf40953b5e14483">getEquipos</a>()  throws ParseException;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="interface_gateway_1_1itf_gateway.html#a1f62dd0eb72a9532fd5d0c9d83e8a6bb">   56</a></span>&#160;    public <span class="keywordtype">boolean</span> <a class="code" href="interface_gateway_1_1itf_gateway.html#a1f62dd0eb72a9532fd5d0c9d83e8a6bb">partidos</a>() throws ParseException;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="interface_gateway_1_1itf_gateway.html#aa2b054674ca24884aa9a81bee3b02fb4">   63</a></span>&#160;    public <span class="keywordtype">boolean</span> <a class="code" href="interface_gateway_1_1itf_gateway.html#aa2b054674ca24884aa9a81bee3b02fb4">sanciones</a>() throws ParseException;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext.html">Aprendices_de_Josuka.LD.Equipos_Ext</a></div><div class="ttdoc">Esta clase define objetos de tipo equipo que no están guardados en la base de datos y se obtienen de ...</div><div class="ttdef"><b>Definition:</b> <a href="_equipos___ext_8java_source.html#l00016">Equipos_Ext.java:16</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_partido_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_partido.html">Aprendices_de_Josuka.LD.Partido</a></div><div class="ttdoc">Esta clase define objetos de tipo partido que no están guardados en la base de datos y se obtienen de...</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8java_source.html#l00022">Partido.java:22</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_sancion_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_sancion.html">Aprendices_de_Josuka.LD.Sancion</a></div><div class="ttdoc">Esta clase define objetos de tipo sancion que no están guardados en la base de datos y se obtienen de...</div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8java_source.html#l00019">Sancion.java:19</a></div></div>
+<div class="ttc" id="aclass_servicios_externos_1_1_partido___j_s_o_n_html"><div class="ttname"><a href="class_servicios_externos_1_1_partido___j_s_o_n.html">ServiciosExternos.Partido_JSON</a></div><div class="ttdoc">Clase para parsear los partidos de la raspberry.</div><div class="ttdef"><b>Definition:</b> <a href="_partido___j_s_o_n_8java_source.html#l00013">Partido_JSON.java:14</a></div></div>
+<div class="ttc" id="aclass_servicios_externos_1_1_sancion___j_s_o_n_html"><div class="ttname"><a href="class_servicios_externos_1_1_sancion___j_s_o_n.html">ServiciosExternos.Sancion_JSON</a></div><div class="ttdoc">Clase para parsear las sanciones de la raspberry.</div><div class="ttdef"><b>Definition:</b> <a href="_sancion___j_s_o_n_8java_source.html#l00009">Sancion_JSON.java:10</a></div></div>
+<div class="ttc" id="ainterface_gateway_1_1itf_gateway_html"><div class="ttname"><a href="interface_gateway_1_1itf_gateway.html">Gateway.itfGateway</a></div><div class="ttdoc">Interfaz del Gateway donde se establecen todos los métodos que tendrá el Gateway.</div><div class="ttdef"><b>Definition:</b> <a href="itf_gateway_8java_source.html#l00019">itfGateway.java:20</a></div></div>
+<div class="ttc" id="ainterface_gateway_1_1itf_gateway_html_a1f62dd0eb72a9532fd5d0c9d83e8a6bb"><div class="ttname"><a href="interface_gateway_1_1itf_gateway.html#a1f62dd0eb72a9532fd5d0c9d83e8a6bb">Gateway.itfGateway.partidos</a></div><div class="ttdeci">boolean partidos()</div></div>
+<div class="ttc" id="ainterface_gateway_1_1itf_gateway_html_a266084585e62cde44e6ea016563206e2"><div class="ttname"><a href="interface_gateway_1_1itf_gateway.html#a266084585e62cde44e6ea016563206e2">Gateway.itfGateway.convertir_partidos</a></div><div class="ttdeci">ArrayList&lt; Partido &gt; convertir_partidos(List&lt; Partido_JSON &gt; json)</div></div>
+<div class="ttc" id="ainterface_gateway_1_1itf_gateway_html_a2b96ea0fc2a7b2a31bf40953b5e14483"><div class="ttname"><a href="interface_gateway_1_1itf_gateway.html#a2b96ea0fc2a7b2a31bf40953b5e14483">Gateway.itfGateway.getEquipos</a></div><div class="ttdeci">HashSet&lt; Equipos_Ext &gt; getEquipos()</div></div>
+<div class="ttc" id="ainterface_gateway_1_1itf_gateway_html_a5c0947f7cc0ea0c79ba6ef0c1a8ff2ac"><div class="ttname"><a href="interface_gateway_1_1itf_gateway.html#a5c0947f7cc0ea0c79ba6ef0c1a8ff2ac">Gateway.itfGateway.search_partidos</a></div><div class="ttdeci">List&lt; Partido &gt; search_partidos()</div></div>
+<div class="ttc" id="ainterface_gateway_1_1itf_gateway_html_a67cbf057c6f7e4a01e4cd051b24edbb7"><div class="ttname"><a href="interface_gateway_1_1itf_gateway.html#a67cbf057c6f7e4a01e4cd051b24edbb7">Gateway.itfGateway.convertir_sanciones</a></div><div class="ttdeci">ArrayList&lt; Sancion &gt; convertir_sanciones(List&lt; Sancion_JSON &gt; json)</div></div>
+<div class="ttc" id="ainterface_gateway_1_1itf_gateway_html_aa2b054674ca24884aa9a81bee3b02fb4"><div class="ttname"><a href="interface_gateway_1_1itf_gateway.html#aa2b054674ca24884aa9a81bee3b02fb4">Gateway.itfGateway.sanciones</a></div><div class="ttdeci">boolean sanciones()</div></div>
+<div class="ttc" id="ainterface_gateway_1_1itf_gateway_html_ab7371e0131674f1e0b7d084bf4653bf0"><div class="ttname"><a href="interface_gateway_1_1itf_gateway.html#ab7371e0131674f1e0b7d084bf4653bf0">Gateway.itfGateway.search_sanciones</a></div><div class="ttdeci">List&lt; Sancion &gt; search_sanciones()</div></div>
+<div class="ttc" id="anamespace_servicios_externos_html"><div class="ttname"><a href="namespace_servicios_externos.html">ServiciosExternos</a></div><div class="ttdoc">Clases para hacer posible la conexión con la raspberry y el parseo de la información.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_8195f0a0459a229599eaed70c1fe4b58.html">Gateway</a></li><li class="navelem"><a class="el" href="itf_gateway_8java.html">itfGateway.java</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
+  </ul>
+</div>
+</body>
+</html>

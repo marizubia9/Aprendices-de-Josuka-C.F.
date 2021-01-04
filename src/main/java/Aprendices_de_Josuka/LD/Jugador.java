@@ -1,18 +1,29 @@
 package Aprendices_de_Josuka.LD;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.jdo.annotations.Column;
+import javax.jdo.annotations.Discriminator;
+import javax.jdo.annotations.Inheritance;
+import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 import lombok.Getter;
 import lombok.Setter;
-
+/**
+ * @class Jugador
+ * @brief Esta clase define los objetos de tipo jugador
+ * @author Alumno
+ *
+ */
 @Getter
 @Setter
 @PersistenceCapable
-public class Jugador {
+
+public class Jugador implements Serializable{
 
 	@PrimaryKey
 	private String DNI;
@@ -22,14 +33,15 @@ public class Jugador {
 	private int telefono;
 	private String correo;
 	private String psw;
+	private boolean asignado;
 	private boolean reconocimiento_medico;
-	private boolean estado; // Tiene lesiones o no
+	private boolean lesionado; // Tiene lesiones o no
 	private boolean cuota_pagada;
-	private boolean asignado_equipo;
+	
+
 
 	public Jugador(String nombre, String apellido, String fecha_nacimiento, String DNI, boolean reconocimiento_medico,
-			boolean estado, int telefono, String correo, String password, boolean cuota_pagada,
-			boolean asignado_equipo) {
+			boolean estado, int telefono, String correo, String password, boolean cuota_pagada, boolean asignado) {
 
 		this.DNI = DNI;
 		this.nombre = nombre;
@@ -37,12 +49,19 @@ public class Jugador {
 		this.fecha_nacimiento = fecha_nacimiento;
 		this.telefono = telefono;
 		this.correo = correo;
-		this.psw = password;
+		this.psw = password;		
 		this.reconocimiento_medico = reconocimiento_medico;
-		this.estado = estado;
+		this.lesionado = estado;
 		this.cuota_pagada = cuota_pagada;
-		this.asignado_equipo = asignado_equipo;
-
+		this.asignado=asignado;
+		
 	}
 
+
+@Override
+public String toString() {
+	return  nombre + " " + apellido + " | "+DNI;
 }
+}
+	
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>APRENDICES DE JOSUKA C.F: Fichero Fuente src/main/python/Partido/Partido.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">APRENDICES DE JOSUKA C.F
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_partido_8py_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Partido.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_partido_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacepython_1_1_partido_1_1_partido.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/python3                                                                                                                                                                                                                           # -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">from</span> src.main.python.Partido.Equipo <span class="keyword">import</span> Equipo</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> json</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> jsonpickle</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">from</span> json <span class="keyword">import</span> JSONEncoder</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">from</span> time <span class="keyword">import</span> *</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">from</span> datetime <span class="keyword">import</span> *</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_partido_1_1_partido.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html">Partido</a>():</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a313893507caf267dae2a1dc2ce5b5dda">   13</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a313893507caf267dae2a1dc2ce5b5dda">__init__</a>(self, code: str, equipo_1: Equipo, equipo_2: Equipo, resultado_e1: int, resultado_e2: int,  date : datetime):</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ac3a3be8c576734e0d775c48e3da3533c">__code</a>__code = code</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ae886d2e1f835055f02d049047d27e3b2">__equipo_1</a>__equipo_1 = equipo_1</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#af10442ddbad82756a93e0c400199ae94">__equipo_2</a>__equipo_2 = equipo_2</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a2dcfe82bfc9aa148bd1b28d78d4668d0">__resultado_e1</a>__resultado_e1 = resultado_e1</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a25e3834b5ff8443a3a4102de9bbc82a0">__resultado_e2</a>__resultado_e2 = resultado_e2</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a74dfa4ce064ff68a03d0f24686941cb8">__date</a>__date = date</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a38bb99ac367011d532004be16adc2398">   23</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a38bb99ac367011d532004be16adc2398">get_code</a>(self) -&gt; str:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ac3a3be8c576734e0d775c48e3da3533c">__code</a>__code</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#aeeca71b6faf732537080cb58a1d137e5">   27</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#aeeca71b6faf732537080cb58a1d137e5">get_equipo_1</a>(self) -&gt; Equipo:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ae886d2e1f835055f02d049047d27e3b2">__equipo_1</a>__equipo_1</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a1f7ced1f04a0639512f1b912fb24519b">   31</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a1f7ced1f04a0639512f1b912fb24519b">get_equipo_2</a>(self) -&gt; Equipo:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#af10442ddbad82756a93e0c400199ae94">__equipo_2</a>__equipo_2</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ad45d5b2a7a34f3f5c9874f2741faa0b1">   35</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ad45d5b2a7a34f3f5c9874f2741faa0b1">get_resultado_e1</a>(self) -&gt; int:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a2dcfe82bfc9aa148bd1b28d78d4668d0">__resultado_e1</a>__resultado_e1</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a71e8acf843933052fb5b55094e007805">   39</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a71e8acf843933052fb5b55094e007805">get_resultado_e2</a>(self) -&gt; int:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a25e3834b5ff8443a3a4102de9bbc82a0">__resultado_e2</a>__resultado_e2</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a7c350706b0ca15301533cd8d257a2756">   43</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a7c350706b0ca15301533cd8d257a2756">get_date</a>(self) -&gt; datetime:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a74dfa4ce064ff68a03d0f24686941cb8">__date</a>__date</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ad8d3d2c9483592ef27720f306da0ae2e">   46</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ad8d3d2c9483592ef27720f306da0ae2e">print</a> (self) -&gt; None:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ad8d3d2c9483592ef27720f306da0ae2e">print</a>(<span class="stringliteral">&quot;Printing Partido\n&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;              <span class="stringliteral">&quot;code: {} \n&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;              <span class="stringliteral">&quot;equipo 1: {}\n&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;              <span class="stringliteral">&quot;equipo 2: {} \n&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;              <span class="stringliteral">&quot;res e1: {} \n&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;              <span class="stringliteral">&quot;res e2: {} \n&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;              <span class="stringliteral">&quot;date: {}&quot;</span>.format( self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a38bb99ac367011d532004be16adc2398">get_code</a>get_code(), self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#aeeca71b6faf732537080cb58a1d137e5">get_equipo_1</a>get_equipo_1().get_nombre(), self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a1f7ced1f04a0639512f1b912fb24519b">get_equipo_2</a>get_equipo_2().get_nombre(), self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ad45d5b2a7a34f3f5c9874f2741faa0b1">get_resultado_e1</a>get_resultado_e1(), self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a71e8acf843933052fb5b55094e007805">get_resultado_e2</a>get_resultado_e2(), self.<a class="code" href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a7c350706b0ca15301533cd8d257a2756">get_date</a>get_date() )</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;              )</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html">python.Partido.Partido.Partido</a></div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00011">Partido.py:11</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_a1f7ced1f04a0639512f1b912fb24519b"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a1f7ced1f04a0639512f1b912fb24519b">python.Partido.Partido.Partido.get_equipo_2</a></div><div class="ttdeci">Equipo get_equipo_2(self)</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00031">Partido.py:31</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_a25e3834b5ff8443a3a4102de9bbc82a0"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a25e3834b5ff8443a3a4102de9bbc82a0">python.Partido.Partido.Partido.__resultado_e2</a></div><div class="ttdeci">__resultado_e2</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00019">Partido.py:19</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_a2dcfe82bfc9aa148bd1b28d78d4668d0"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a2dcfe82bfc9aa148bd1b28d78d4668d0">python.Partido.Partido.Partido.__resultado_e1</a></div><div class="ttdeci">__resultado_e1</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00018">Partido.py:18</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_a313893507caf267dae2a1dc2ce5b5dda"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a313893507caf267dae2a1dc2ce5b5dda">python.Partido.Partido.Partido.__init__</a></div><div class="ttdeci">def __init__(self, str code, Equipo equipo_1, Equipo equipo_2, int resultado_e1, int resultado_e2, datetime date)</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00013">Partido.py:13</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_a38bb99ac367011d532004be16adc2398"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a38bb99ac367011d532004be16adc2398">python.Partido.Partido.Partido.get_code</a></div><div class="ttdeci">str get_code(self)</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00023">Partido.py:23</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_a71e8acf843933052fb5b55094e007805"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a71e8acf843933052fb5b55094e007805">python.Partido.Partido.Partido.get_resultado_e2</a></div><div class="ttdeci">int get_resultado_e2(self)</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00039">Partido.py:39</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_a74dfa4ce064ff68a03d0f24686941cb8"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a74dfa4ce064ff68a03d0f24686941cb8">python.Partido.Partido.Partido.__date</a></div><div class="ttdeci">__date</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00020">Partido.py:20</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_a7c350706b0ca15301533cd8d257a2756"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#a7c350706b0ca15301533cd8d257a2756">python.Partido.Partido.Partido.get_date</a></div><div class="ttdeci">datetime get_date(self)</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00043">Partido.py:43</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_ac3a3be8c576734e0d775c48e3da3533c"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ac3a3be8c576734e0d775c48e3da3533c">python.Partido.Partido.Partido.__code</a></div><div class="ttdeci">__code</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00015">Partido.py:15</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_ad45d5b2a7a34f3f5c9874f2741faa0b1"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ad45d5b2a7a34f3f5c9874f2741faa0b1">python.Partido.Partido.Partido.get_resultado_e1</a></div><div class="ttdeci">int get_resultado_e1(self)</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00035">Partido.py:35</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_ad8d3d2c9483592ef27720f306da0ae2e"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ad8d3d2c9483592ef27720f306da0ae2e">python.Partido.Partido.Partido.print</a></div><div class="ttdeci">None print(self)</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00046">Partido.py:46</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_ae886d2e1f835055f02d049047d27e3b2"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#ae886d2e1f835055f02d049047d27e3b2">python.Partido.Partido.Partido.__equipo_1</a></div><div class="ttdeci">__equipo_1</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00016">Partido.py:16</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_aeeca71b6faf732537080cb58a1d137e5"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#aeeca71b6faf732537080cb58a1d137e5">python.Partido.Partido.Partido.get_equipo_1</a></div><div class="ttdeci">Equipo get_equipo_1(self)</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00027">Partido.py:27</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_partido_1_1_partido_html_af10442ddbad82756a93e0c400199ae94"><div class="ttname"><a href="classpython_1_1_partido_1_1_partido_1_1_partido.html#af10442ddbad82756a93e0c400199ae94">python.Partido.Partido.Partido.__equipo_2</a></div><div class="ttdeci">__equipo_2</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8py_source.html#l00017">Partido.py:17</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_7e9092afbe841c74c37274bfdad3750c.html">python</a></li><li class="navelem"><a class="el" href="dir_cbe1fc700ece7cd82f495e89bfcaeebb.html">Partido</a></li><li class="navelem"><a class="el" href="_partido_8py.html">Partido.py</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
+  </ul>
+</div>
+</body>
+</html>

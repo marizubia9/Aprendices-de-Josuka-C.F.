@@ -1,21 +1,18 @@
 package Aprendices_de_Josuka.LP;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Aprendices_de_Josuka.LD.Equipo;
+import org.json.simple.parser.ParseException;
+
 import Aprendices_de_Josuka.LD.Jugador;
-import Aprendices_de_Josuka.LN.Gestor;
+import Controller.Controller;
 
 import java.awt.Color;
 import javax.swing.JTextField;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
@@ -23,9 +20,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JSpinnerDateEditor;
-
+/**
+ * @class RegistrarJugador
+ * @brief En esta clase se desarrolla la GUI para el registro del jugador
+ * @author Alumno
+ */
 public class RegistrarJugador extends JFrame {
 
 	private JPanel contentPane;
@@ -40,44 +43,38 @@ public class RegistrarJugador extends JFrame {
 	private JTextField txtDNI;
 	private JTextField txtTelefono;
 	private JTextField txtCorreo;
+	private JButton btnRegistrarse;
 	private JTextField txtPsw;
 	private JDateChooser dateChooser;
 	private Date objDate;
+	private Controller controller;
+
 
 	/**
-	 * Launch the application.
+	 * Constructor
+	 * @param controller 
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RegistrarJugador frame = new RegistrarJugador();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public RegistrarJugador() {
+	public RegistrarJugador(Controller controller) 
+	{
+		this.controller=controller;
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 */
 	public void initComponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1351, 862);
+//	    setBounds(100, 100, 1300, 740);
+	    setExtendedState(JFrame.MAXIMIZED_BOTH);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JPanel panel_superior = new JPanel();
-		panel_superior.setBounds(0, 0, 1401, 189);
+		panel_superior.setBounds(0, 0, 1278, 189);
 		panel_superior.setBackground(new Color(0, 102, 0));
 		contentPane.add(panel_superior);
 		panel_superior.setLayout(null);
@@ -95,121 +92,176 @@ public class RegistrarJugador extends JFrame {
 
 		JPanel panel_central = new JPanel();
 		panel_central.setBackground(Color.WHITE);
-		panel_central.setBounds(0, 190, 1401, 658);
+		panel_central.setBounds(0, 190, 1278, 494);
 		contentPane.add(panel_central);
 		panel_central.setLayout(null);
 
 		lblNuevoJugador = new JLabel("NUEVO JUGADOR");
 		lblNuevoJugador.setForeground(Color.DARK_GRAY);
 		lblNuevoJugador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 30));
-		lblNuevoJugador.setBounds(68, 45, 338, 38);
+		lblNuevoJugador.setBounds(69, 16, 338, 38);
 		panel_central.add(lblNuevoJugador);
 
 		lblNombre = new JLabel("Nombre");
 		lblNombre.setForeground(Color.DARK_GRAY);
 		lblNombre.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblNombre.setBounds(113, 97, 115, 31);
+		lblNombre.setBounds(393, 59, 115, 31);
 		panel_central.add(lblNombre);
 
 		lblApellido = new JLabel("Apellido");
 		lblApellido.setForeground(Color.DARK_GRAY);
 		lblApellido.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblApellido.setBounds(113, 163, 115, 31);
+		lblApellido.setBounds(393, 106, 115, 31);
 		panel_central.add(lblApellido);
 
 		lblDni = new JLabel("DNI");
 		lblDni.setForeground(Color.DARK_GRAY);
 		lblDni.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblDni.setBounds(113, 235, 115, 31);
+		lblDni.setBounds(393, 153, 115, 31);
 		panel_central.add(lblDni);
 
 		lblFechaDeNacimiento = new JLabel("Fecha de nacimiento");
 		lblFechaDeNacimiento.setForeground(Color.DARK_GRAY);
 		lblFechaDeNacimiento.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblFechaDeNacimiento.setBounds(113, 307, 260, 31);
+		lblFechaDeNacimiento.setBounds(393, 200, 260, 31);
 		panel_central.add(lblFechaDeNacimiento);
 
 		txtNombre = new JTextField();
-		txtNombre.setBounds(271, 97, 260, 32);
+		txtNombre.setBounds(551, 59, 260, 32);
 		panel_central.add(txtNombre);
 		txtNombre.setColumns(10);
 
 		txtApellido = new JTextField();
 		txtApellido.setColumns(10);
-		txtApellido.setBounds(271, 166, 260, 32);
+		txtApellido.setBounds(551, 105, 260, 32);
 		panel_central.add(txtApellido);
 
 		txtDNI = new JTextField();
 		txtDNI.setColumns(10);
-		txtDNI.setBounds(271, 235, 260, 32);
+		txtDNI.setBounds(551, 152, 260, 32);
 		panel_central.add(txtDNI);
 
 		JLabel lblTelefono = new JLabel("Telefono");
 		lblTelefono.setForeground(Color.DARK_GRAY);
 		lblTelefono.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblTelefono.setBounds(113, 378, 260, 31);
+		lblTelefono.setBounds(393, 247, 146, 31);
 		panel_central.add(lblTelefono);
 
 		JLabel lblCorreo = new JLabel("Correo");
 		lblCorreo.setForeground(Color.DARK_GRAY);
 		lblCorreo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblCorreo.setBounds(113, 458, 260, 31);
+		lblCorreo.setBounds(393, 294, 260, 31);
 		panel_central.add(lblCorreo);
 
 		txtTelefono = new JTextField();
 		txtTelefono.setColumns(10);
-		txtTelefono.setBounds(271, 378, 260, 32);
+		txtTelefono.setBounds(551, 250, 260, 32);
 		panel_central.add(txtTelefono);
 
 		txtCorreo = new JTextField();
 		txtCorreo.setColumns(10);
-		txtCorreo.setBounds(271, 457, 260, 32);
+		txtCorreo.setBounds(551, 297, 260, 32);
 		panel_central.add(txtCorreo);
 
-		JButton btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse = new JButton("Registrarse");
 		btnRegistrarse.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
 		btnRegistrarse.setForeground(Color.WHITE);
 		btnRegistrarse.setBackground(new Color(0, 102, 0));
-		btnRegistrarse.setBounds(745, 551, 178, 38);
+		btnRegistrarse.setBounds(591, 402, 178, 38);
 		panel_central.add(btnRegistrarse);
 
 		JLabel lblPsw = new JLabel("Password");
 		lblPsw.setForeground(Color.DARK_GRAY);
 		lblPsw.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 23));
-		lblPsw.setBounds(113, 536, 260, 31);
+		lblPsw.setBounds(393, 341, 130, 31);
 		panel_central.add(lblPsw);
 
 		txtPsw = new JTextField();
 		txtPsw.setColumns(10);
-		txtPsw.setBounds(271, 535, 260, 32);
+		txtPsw.setBounds(551, 341, 260, 32);
 		panel_central.add(txtPsw);
 
-		dateChooser = new JDateChooser();
-		dateChooser.setBounds(383, 307, 148, 31);
+		dateChooser = new JDateChooser(null, null, null, new JSpinnerDateEditor());
+		objDate = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		sdf.format(objDate);
+		dateChooser.setDate(objDate);
+		dateChooser.setBounds(674, 200, 137, 31);
 		panel_central.add(dateChooser);
-
+		
+		
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				String nombre = txtNombre.getText();
-				String apellido = txtApellido.getText();
-				Date fecha_date = dateChooser.getDate();
-				String DATE_FORMAT = "dd/MM/yyyy";
-				SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-				String fecha_S = sdf.format(fecha_date);
-				String DNI = txtDNI.getText();
-				int telefono = Integer.parseInt(txtTelefono.getText());
-				String correo = txtCorreo.getText();
-				String psw = txtPsw.getText();
-
-				try {
-					Gestor.getInstance().RegistrarJugador(nombre, apellido, fecha_S, DNI, telefono, correo, psw, false);
-				} catch (RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-
+			try {
+				guardar();
+			} catch (ParseException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			}
 		});
 	}
+	/**
+	 * Guarda los datos del jugador en la base de datos y entra en la aplicación
+	 * @throws ParseException
+	 */
+	public void guardar() throws ParseException
+	{
+		String nombre = txtNombre.getText();
+		String apellido = txtApellido.getText();
+		objDate = dateChooser.getDate();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	    String date = dateFormat.format(objDate);
+		
+		String DNI = txtDNI.getText();
+		int telefono = Integer.parseInt(txtTelefono.getText());
+		String correo = txtCorreo.getText();
+		String psw = txtPsw.getText();
+		if(nombre.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "Introduce correctamente el nombre");
+		}
+		else if(apellido.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "Introduce correctamente el apellido");
+		}
+		else if(DNI.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "Introduce correctamente el DNI");
+		}
+		else if (txtTelefono.getText().equals("")|txtTelefono.getText().length()!=9)
+		{
+			JOptionPane.showMessageDialog(null, "Introduce correctamente el telefono");
+		}
+		else if (correo.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "Introduce correctamente el correo");
+		}
+		else if (psw.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "Introduce correctamente la contrasenya");
+		}
+		else
+		{
+		try {
+			if(controller.RegistrarJugador(nombre, apellido, date, DNI, telefono, correo, psw) == true)
+			{
+				if(controller.EntrarJugador(correo, psw)==true)
+				{
+					Principal_Jugador a = new Principal_Jugador(controller, new Jugador(nombre, apellido, date, DNI, false, false, telefono, correo, psw, false, false));
+					a.setVisible(true);
+					setVisible(false);
+				}
+			}
+					
+		} catch (RemoteException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		}
+
+	}
+	
 }

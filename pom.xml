@@ -13,24 +13,39 @@
 
   <properties>
     <config.files.dir>src/main/resources</config.files.dir>
+    <doxygen.config.file>${config.files.dir}/Doxyfile</doxygen.config.file>
     <encoding>UTF-8</encoding>
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+    	<dependency>
+      		<groupId>junit</groupId>
+      		<artifactId>junit</artifactId>
+      		<version>4.11</version>
+      		<scope>test</scope>
+   		</dependency>
+   		
+ 		<dependency>
+            <groupId>org.databene</groupId>
+            <artifactId>contiperf</artifactId>
+            <version>2.3.4</version>
+            <scope>test</scope>
+        </dependency>
  
-  <dependency>
+		<dependency>
+    		<groupId>org.mockito</groupId>
+    		<artifactId>mockito-all</artifactId>
+    		<version>1.10.19</version>
+    		<scope>test</scope>
+		</dependency>
+ 
+  		<dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-core</artifactId>
             <version>[5.1.6, 5.9)</version>
         </dependency>
         
-        	<dependency>
+        <dependency>
     <groupId>com.toedter</groupId>
     <artifactId>jcalendar</artifactId>
     <version>1.4</version>
@@ -41,23 +56,26 @@
             <artifactId>datanucleus-api-jdo</artifactId>
             <version>[5.1.4, 5.9)</version>
         </dependency>
+        
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.16</version>
 			<scope>provided</scope>
-	</dependency>
+		</dependency>
 
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>
             <version>[5.1.6, 5.9)</version>
         </dependency>
-                <dependency>
+        
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.45</version>
         </dependency>
+        
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>javax.jdo</artifactId>
@@ -70,23 +88,69 @@
         	<version>[1.2.17, )</version>
         </dependency>
         
-                <dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        
+        <dependency>
             <groupId>javax.activation</groupId>
             <artifactId>activation</artifactId>
             <version>1.1.1</version>
         </dependency>
 
-       
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.3.0</version>
         </dependency>
-
+        
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>2.29</version>
+        </dependency>
+        
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-core</artifactId>
             <version>2.3.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet</artifactId>
+            <version>2.29</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-common</artifactId>
+            <version>2.29</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>2.29</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>2.29</version>
+        </dependency>
+          <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1</version>
         </dependency>
 
         <dependency>
@@ -94,18 +158,37 @@
             <artifactId>jaxb-impl</artifactId>
             <version>2.3.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+        
 		<dependency>
    	 		<groupId>org.jacoco</groupId>
    	 		<artifactId>jacoco-maven-plugin</artifactId>
    	 		<version>0.8.6</version>
 		</dependency>
-        
-  </dependencies>
- <build>
-<sourceDirectory>src/main/java</sourceDirectory>
-        <testSourceDirectory>src/test/java</testSourceDirectory>
+		
+		<dependency>
+    		<groupId>org.slf4j</groupId>
+    		<artifactId>slf4j-jdk14</artifactId>
+    		<version>1.7.25</version>
+		</dependency>
+		
+		<dependency>
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-api</artifactId>
+        	<version>1.7.25</version>
+   		</dependency>
+   		
 
+
+<dependency>
+  <groupId>org.assertj</groupId>
+  <artifactId>assertj-swing-junit</artifactId>
+  <version>3.8.0</version>
+</dependency>
+        
+ </dependencies>
+ <build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
         <resources>
             <resource>
                 <directory>${config.files.dir}</directory>
@@ -117,6 +200,7 @@
             </resource>
           </resources>
         <plugins>
+       
         <plugin>
             <artifactId>maven-clean-plugin</artifactId>
             <version>3.0.0</version>
@@ -133,22 +217,91 @@
             </configuration>
         </plugin>
         
-
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+        <configuration>
+          <includes>
+            <include>**/Test*.java</include>
+            <include>**/test*.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+        
         <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.7.0</version>
             <configuration>
                 <source>1.8</source>
                 <target>1.8</target>
-                <encoding>UTF-8</encoding>
-                
+                <encoding>UTF-8</encoding>             
             </configuration>
         </plugin>
+         	<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-site-plugin</artifactId>
+			  <version>3.7.1</version>
+			</plugin>
+	
+       
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-project-info-reports-plugin</artifactId>
+			  <version>3.0.0</version>
+			</plugin>
+        	<plugin>
+				<groupId>com.soebes.maven.plugins</groupId>
+				<artifactId>doxygen-maven-plugin</artifactId>
+				<version>1.1.0</version>
+				<configuration>
+					<configurationFile>${doxygen.config.file}</configurationFile>
+				</configuration>
+			</plugin>
+		
+        <plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.3</version>
+				<configuration>
+				<!-- Sets the path to the file which contains the execution data. -->
+							<dataFile>target/jacoco.exec</dataFile>
+							<!-- Sets the output directory for the code coverage report. -->
+							<outputDirectory>target/my-reports</outputDirectory>
+        		<excludes>
+        		 	<exclude>Controller/**/*</exclude>
+        		 	<exclude>Remote/**/*</exclude>
+        		 	<exclude>Aprendices_de_Josuka/LP/**/*</exclude>
+        		</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>post-unit-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+		</plugin>
 
         <plugin>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-maven-plugin</artifactId>
-            <version>5.0.2</version>
+            <version>5.2.1</version>
             <configuration>
                 <log4jConfiguration>${config.files.dir}/log4j.properties</log4jConfiguration>
                 <verbose>true</verbose>
@@ -171,10 +324,11 @@
                     </goals>
                 </execution>
             </executions>
-        </plugin>
-     </plugins>
+		</plugin>
+</plugins>
  
 </build>
+
  <profiles>
         <!-- run as 'mvn exec:java -PventanaPrincipal' -->
         <profile>
@@ -196,6 +350,7 @@
                 </plugins>
             </build>
         </profile>
+        
         <!-- run as 'mvn exec:java -PRegistrarEquipo' -->
         <profile>
             <id>RegistrarEquipo</id>
@@ -216,9 +371,9 @@
                 </plugins>
             </build>
         </profile>
-          <!-- run as 'mvn exec:java -Pprueba' -->
+        
         <profile>
-            <id>prueba</id>
+            <id>Partidos</id>
             <build>
                 <plugins>
                     <plugin>
@@ -226,7 +381,7 @@
                         <artifactId>exec-maven-plugin</artifactId>
                         <version>1.2.1</version>
                         <configuration>
-                            <mainClass>prueba2</mainClass>
+                            <mainClass>Aprendices_de_Josuka.LN.clsMain</mainClass>
                             <arguments>
                                 <argument>${server.hostname}</argument>
                                 <argument>${server.port}</argument>
@@ -237,6 +392,236 @@
             </build>
         </profile>
         
-       
+         <!-- run as 'mvn exec:java -PVisualizar_Jugadores' -->
+        <profile>
+            <id>Visualizar_Jugadores</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.Visualizar_Jugadores</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration> 
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+         <!-- run as 'mvn exec:java -PVisualizar_Entrenadores' -->
+        <profile>
+            <id>Visualizar_Entrenadores</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.Visualizar_Entrenadores</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+        <!-- run as 'mvn exec:java -PVisualizar_Equipos' -->
+        <profile>
+            <id>Visualizar_Equipos</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.Visualizar_Equipos</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+         <!-- run as 'mvn exec:java -PPrincipal_Administrador' -->
+        <profile>
+            <id>Principal_Administrador</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.Principal_Administrador</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+         <!-- run as 'mvn exec:java -PRegistrarMaterial' -->
+        <profile>
+            <id>RegistrarMaterial</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.RegistrarMaterial</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+        <!-- run as 'mvn exec:java -PRegistrarJugador' -->
+        <profile>
+            <id>RegistrarJugador</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.RegistrarJugador</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+        <!-- run as 'mvn exec:java -PRegistrarEntrenador' -->
+        <profile>
+            <id>RegistrarEntrenador</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.RegistrarEntrenador</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+     <!-- run as 'mvn exec:java -PEditarEntrenador' -->
+        <profile>
+            <id>EditarEntrenador</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.EditarEntrenador</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+        <!-- run as 'mvn exec:java -PEditarJugador' -->
+        <profile>
+            <id>EditarJugador</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.EditarJugador</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+        <!-- run as 'mvn exec:java -PEditarEquipo' -->
+        <profile>
+            <id>EditarEquipo</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Aprendices_de_Josuka.LP.EditarEquipo</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+          <!-- run as 'mvn exec:java -PServer' -->
+        <profile>
+            <id>Server</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>Fachada.ServidorPrincipal</mainClass>
+                            <arguments>
+                                <argument>${server.hostname}</argument>
+                                <argument>${server.port}</argument>
+                            </arguments>
+                            
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 </project>

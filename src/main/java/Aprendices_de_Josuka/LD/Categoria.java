@@ -1,5 +1,10 @@
 package Aprendices_de_Josuka.LD;
-
+/**
+ * @class Categoria
+ * @brief Esta clase define objetos de tipo Categoria mediante un enumerado
+ * @author Alumno
+ *
+ */
 public enum Categoria {
 
 	ALEVIN, INFANTIL, CADETE, JUVENIL, SENIOR
