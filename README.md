@@ -59,7 +59,7 @@ Esta parte es la referente a los jugadores del club.
 Aquí, se podrá:
 - Ver estadísticas
 - Ver partidos (según categoría) y partidos personales
-- Ver ficha y equipos
+- Ver ficha
 - Editar datos personales
 - Clasificación
 
