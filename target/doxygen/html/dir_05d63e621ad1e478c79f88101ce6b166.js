@@ -93,9 +93,6 @@ var dir_05d63e621ad1e478c79f88101ce6b166 =
     [ "Visualizar_Equipos.java", "_visualizar___equipos_8java.html", [
       [ "Visualizar_Equipos", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos" ]
     ] ],
-    [ "Visualizar_Equipos_Jugador.java", "_visualizar___equipos___jugador_8java.html", [
-      [ "Visualizar_Equipos_Jugador", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos___jugador.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos___jugador" ]
-    ] ],
     [ "Visualizar_Jugadores.java", "_visualizar___jugadores_8java.html", [
       [ "Visualizar_Jugadores", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___jugadores.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___jugadores" ]
     ] ],

@@ -1,5 +1,10 @@
 \hypertarget{class_remote_1_1_service_locator}{}\doxysection{Referencia de la Clase Remote.\+Service\+Locator}
 \label{class_remote_1_1_service_locator}\index{Remote.ServiceLocator@{Remote.ServiceLocator}}
+
+
+Esta clase establece la conexion entre la fachada y controller.  
+
+
 \doxysubsection*{Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
@@ -10,9 +15,14 @@ void \mbox{\hyperlink{class_remote_1_1_service_locator_ac96293f3ef7e87fa2300c346
 
 
 \doxysubsection{Descripción detallada}
+Esta clase establece la conexion entre la fachada y controller. 
+
+\begin{DoxyAuthor}{Autor}
+Alumno 
+\end{DoxyAuthor}
 
 
-Definición en la línea 9 del archivo Service\+Locator.\+java.
+Definición en la línea 17 del archivo Service\+Locator.\+java.
 
 
 
@@ -23,9 +33,12 @@ Definición en la línea 9 del archivo Service\+Locator.\+java.
 \doxysubsubsection{\texorpdfstring{getService()}{getService()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{interface_fachada_1_1itf_fachada}{itf\+Fachada}} Remote.\+Service\+Locator.\+get\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Devuelve la referencia del servicio externo, es decir, de la fachada \begin{DoxyReturn}{Devuelve}
+la referencia de la fachada 
+\end{DoxyReturn}
 
 
-Definición en la línea 35 del archivo Service\+Locator.\+java.
+Definición en la línea 49 del archivo Service\+Locator.\+java.
 
 \mbox{\Hypertarget{class_remote_1_1_service_locator_ac96293f3ef7e87fa2300c346a6851a0a}\label{class_remote_1_1_service_locator_ac96293f3ef7e87fa2300c346a6851a0a}} 
 \index{Remote.ServiceLocator@{Remote.ServiceLocator}!setService@{setService}}
@@ -33,9 +46,14 @@ Definición en la línea 35 del archivo Service\+Locator.\+java.
 \doxysubsubsection{\texorpdfstring{setService()}{setService()}}
 {\footnotesize\ttfamily void Remote.\+Service\+Locator.\+set\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Establece la conexion con el servidor mediante el Set Service 
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
-Definición en la línea 12 del archivo Service\+Locator.\+java.
+Definición en la línea 23 del archivo Service\+Locator.\+java.
 
 
 

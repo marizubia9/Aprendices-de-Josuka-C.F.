@@ -103,50 +103,50 @@ $(document).ready(function(){initNavTree('_entrenador_8java_source.html',''); in
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> lombok.Setter;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> lombok.ToString;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;@PersistenceCapable</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//@Inheritance(strategy=InheritanceStrategy.SUPERCLASS_TABLE)</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//@Discriminator(value=&quot;ENTRENADOR&quot;)</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;@Data</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html">   27</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html">Entrenador</a>  <span class="keyword">implements</span> Serializable{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    @PrimaryKey</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">private</span> String DNI;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">private</span> String nombre;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span> String apellido;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">private</span> String fecha_nacimiento;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> telefono;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">private</span> String correo;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">private</span> String psw;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">long</span> salario; <span class="comment">// Bruto anual</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">boolean</span> asignado_equipo;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html#a8afeb90586e91091827036dae328c15b">   40</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html#a8afeb90586e91091827036dae328c15b">Entrenador</a>(String nombre, String apellido, String fecha_nacimiento, String DNI, <span class="keywordtype">int</span> telefono, String correo,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            String psw, <span class="keywordtype">long</span> salario, <span class="keywordtype">boolean</span> asignado_equipo) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        this.DNI = DNI;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        this.nombre = nombre;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        this.apellido = apellido;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        this.fecha_nacimiento = fecha_nacimiento;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        this.telefono = telefono;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        this.correo = correo;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        this.psw = psw;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        this.salario = salario;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        this.asignado_equipo = asignado_equipo;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;@Override</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html#a8ac30545ad5ab3d847ef5ca7505019be">   55</a></span>&#160;<span class="keyword">public</span> String <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html#a8ac30545ad5ab3d847ef5ca7505019be">toString</a>() {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span>  nombre + <span class="stringliteral">&quot; &quot;</span> + apellido + <span class="stringliteral">&quot; | &quot;</span>+DNI;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;@PersistenceCapable</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//@Inheritance(strategy=InheritanceStrategy.SUPERCLASS_TABLE)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//@Discriminator(value=&quot;ENTRENADOR&quot;)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;@Data</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html">   28</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html">Entrenador</a>  <span class="keyword">implements</span> Serializable{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    @PrimaryKey</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">private</span> String DNI;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span> String nombre;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">private</span> String apellido;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">private</span> String fecha_nacimiento;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> telefono;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">private</span> String correo;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">private</span> String psw;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">long</span> salario; <span class="comment">// Bruto anual</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">boolean</span> asignado_equipo;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html#a8afeb90586e91091827036dae328c15b">   41</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html#a8afeb90586e91091827036dae328c15b">Entrenador</a>(String nombre, String apellido, String fecha_nacimiento, String DNI, <span class="keywordtype">int</span> telefono, String correo,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            String psw, <span class="keywordtype">long</span> salario, <span class="keywordtype">boolean</span> asignado_equipo) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        this.DNI = DNI;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        this.nombre = nombre;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        this.apellido = apellido;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        this.fecha_nacimiento = fecha_nacimiento;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        this.telefono = telefono;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        this.correo = correo;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        this.psw = psw;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        this.salario = salario;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        this.asignado_equipo = asignado_equipo;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;@Override</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html#a8ac30545ad5ab3d847ef5ca7505019be">   56</a></span>&#160;<span class="keyword">public</span> String <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html#a8ac30545ad5ab3d847ef5ca7505019be">toString</a>() {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span>  nombre + <span class="stringliteral">&quot; &quot;</span> + apellido + <span class="stringliteral">&quot; | &quot;</span>+DNI;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_entrenador_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html">Aprendices_de_Josuka.LD.Entrenador</a></div><div class="ttdef"><b>Definition:</b> <a href="_entrenador_8java_source.html#l00027">Entrenador.java:27</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_entrenador_html_a8ac30545ad5ab3d847ef5ca7505019be"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html#a8ac30545ad5ab3d847ef5ca7505019be">Aprendices_de_Josuka.LD.Entrenador.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_entrenador_8java_source.html#l00055">Entrenador.java:55</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_entrenador_html_a8afeb90586e91091827036dae328c15b"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html#a8afeb90586e91091827036dae328c15b">Aprendices_de_Josuka.LD.Entrenador.Entrenador</a></div><div class="ttdeci">Entrenador(String nombre, String apellido, String fecha_nacimiento, String DNI, int telefono, String correo, String psw, long salario, boolean asignado_equipo)</div><div class="ttdef"><b>Definition:</b> <a href="_entrenador_8java_source.html#l00040">Entrenador.java:40</a></div></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_entrenador_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html">Aprendices_de_Josuka.LD.Entrenador</a></div><div class="ttdoc">Esta clase define objetos de tipo Entrenador.</div><div class="ttdef"><b>Definition:</b> <a href="_entrenador_8java_source.html#l00028">Entrenador.java:28</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_entrenador_html_a8ac30545ad5ab3d847ef5ca7505019be"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html#a8ac30545ad5ab3d847ef5ca7505019be">Aprendices_de_Josuka.LD.Entrenador.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_entrenador_8java_source.html#l00056">Entrenador.java:56</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_entrenador_html_a8afeb90586e91091827036dae328c15b"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_entrenador.html#a8afeb90586e91091827036dae328c15b">Aprendices_de_Josuka.LD.Entrenador.Entrenador</a></div><div class="ttdeci">Entrenador(String nombre, String apellido, String fecha_nacimiento, String DNI, int telefono, String correo, String psw, long salario, boolean asignado_equipo)</div><div class="ttdef"><b>Definition:</b> <a href="_entrenador_8java_source.html#l00041">Entrenador.java:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

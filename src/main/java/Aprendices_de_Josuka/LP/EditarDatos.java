@@ -197,30 +197,9 @@ public class EditarDatos extends JFrame
 		btnVisualizarJugador.setForeground(Color.WHITE);
 		btnVisualizarJugador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnVisualizarJugador.setBackground(new Color(0, 102, 0));
-		btnVisualizarJugador.setBounds(0, 202, 328, 42);
+		btnVisualizarJugador.setBounds(0, 162, 328, 42);
 		panel_izquierdo.add(btnVisualizarJugador);
 				
-		btnVisualziarEquipo = new JButton("VISUALIZAR  EQUIPOS");
-		btnVisualziarEquipo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				Visualizar_Equipos_Jugador v = null;
-				try {
-					v = new Visualizar_Equipos_Jugador(controller, j);
-				} catch (RemoteException | ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				v.setVisible(true);
-				setVisible(false);
-			}
-		});
-		btnVisualziarEquipo.setHorizontalAlignment(SwingConstants.LEFT);
-		btnVisualziarEquipo.setForeground(Color.WHITE);
-		btnVisualziarEquipo.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
-		btnVisualziarEquipo.setBackground(new Color(0, 102, 0));
-		btnVisualziarEquipo.setBounds(0, 162, 328, 42);
-		panel_izquierdo.add(btnVisualziarEquipo);
 		
 		
 		btnEditarJugador = new JButton("EDITAR JUGADOR");

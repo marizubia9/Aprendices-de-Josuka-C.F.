@@ -33,9 +33,7 @@ public class EditarEntrenador extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtLosAprendicesDe;
-	private Date objDate;
 	private List<Entrenador> ListaEntrenadores;
-	private JPanel panel_scrollpane;
 	private JPanel panel_central;
 
 	private JPanel panel_izquierdo;

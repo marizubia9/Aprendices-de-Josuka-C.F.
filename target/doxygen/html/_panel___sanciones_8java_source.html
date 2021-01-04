@@ -108,86 +108,85 @@ $(document).ready(function(){initNavTree('_panel___sanciones_8java_source.html',
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> javax.swing.SwingConstants;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> javax.swing.border.CompoundBorder;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html">   24</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html">Panel_Sanciones</a> <span class="keyword">extends</span> JPanel {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">private</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_sancion.html">Sancion</a> sancion;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">private</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_partido.html">Partido</a> partido;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a67b4a469282a5e6bc1623e0a4d8126ba">   30</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a67b4a469282a5e6bc1623e0a4d8126ba">Panel_Sanciones</a>(<a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_sancion.html">Sancion</a> p, <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_partido.html">Partido</a> partido) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        this.partido = partido;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        this.sancion=p;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a7d9a7f0d9620da370b496f3c1a7fbc2b">Introducir_Datos</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a7d9a7f0d9620da370b496f3c1a7fbc2b">   35</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a7d9a7f0d9620da370b496f3c1a7fbc2b">Introducir_Datos</a>()</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        setBackground(Color.WHITE);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        setSize(1005, 130);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        setLayout(<span class="keyword">null</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        JPanel pFoto = <span class="keyword">new</span> JPanel();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        pFoto.setBackground(Color.WHITE);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        pFoto.setBounds(10, 11, 117, 108);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        add(pFoto);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        String cat =sancion.getTipo().toString();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        JLabel lblCat= <span class="keyword">new</span> JLabel(cat);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        lblCat.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 18));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        lblCat.setBackground(Color.WHITE);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        lblCat.setBounds(160, 11, 150, 31);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        add(lblCat);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        JLabel lblNombre = <span class="keyword">new</span> JLabel(partido.getEquipo_1().getNombre());</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        lblNombre.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 16));</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        lblNombre.setBackground(Color.WHITE);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        lblNombre.setBounds(320, 11, 150, 31);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        add(lblNombre);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        String res1 = String.valueOf(partido.getResultado_e1());</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        JLabel lblR1= <span class="keyword">new</span> JLabel(res1);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        lblR1.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 16));</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        lblR1.setBackground(Color.WHITE);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        lblR1.setBounds(470, 11, 50, 31);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        add(lblR1);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        JLabel lblA = <span class="keyword">new</span> JLabel(<span class="stringliteral">&quot;-&quot;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        lblA.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 16));</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        lblA.setBackground(Color.WHITE);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        lblA.setBounds(520, 11, 50, 31);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        add(lblA);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        String eq2= partido.getEquipo_2().getNombre();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        JLabel lblDNI = <span class="keyword">new</span> JLabel(eq2);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        lblDNI.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 16));</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        lblDNI.setBounds(570, 11, 150, 31);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        add(lblDNI);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        String res2 = String.valueOf(partido.getResultado_e2());</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        JLabel lblR2= <span class="keyword">new</span> JLabel(res2);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        lblR2.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 16));</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        lblR2.setBackground(Color.WHITE);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        lblR2.setBounds(730, 11, 50, 31);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        add(lblR2);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(<span class="stringliteral">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        String fecha = String.valueOf(partido.getFecha().format(formatter));</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        JLabel lblFecha= <span class="keyword">new</span> JLabel(fecha);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        lblFecha.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 16));</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        lblFecha.setBackground(Color.WHITE);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        lblFecha.setBounds(780, 11, 250, 31);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        add(lblFecha);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html">   29</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html">Panel_Sanciones</a> <span class="keyword">extends</span> JPanel {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">private</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_sancion.html">Sancion</a> sancion;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">private</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_partido.html">Partido</a> partido;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a67b4a469282a5e6bc1623e0a4d8126ba">   37</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a67b4a469282a5e6bc1623e0a4d8126ba">Panel_Sanciones</a>(<a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_sancion.html">Sancion</a> p, <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_partido.html">Partido</a> partido) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        this.partido = partido;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        this.sancion=p;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a7d9a7f0d9620da370b496f3c1a7fbc2b">Introducir_Datos</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a7d9a7f0d9620da370b496f3c1a7fbc2b">   45</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a7d9a7f0d9620da370b496f3c1a7fbc2b">Introducir_Datos</a>()</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        setBackground(Color.WHITE);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        setSize(1005, 130);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        setLayout(<span class="keyword">null</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        JPanel pFoto = <span class="keyword">new</span> JPanel();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        pFoto.setBackground(Color.WHITE);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        pFoto.setBounds(10, 11, 117, 108);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        add(pFoto);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        String cat =sancion.getTipo().toString();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        JLabel lblCat= <span class="keyword">new</span> JLabel(cat);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        lblCat.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 18));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        lblCat.setBackground(Color.WHITE);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        lblCat.setBounds(160, 11, 150, 31);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        add(lblCat);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        JLabel lblNombre = <span class="keyword">new</span> JLabel(partido.getEquipo_1().getNombre());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        lblNombre.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 16));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        lblNombre.setBackground(Color.WHITE);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        lblNombre.setBounds(320, 11, 150, 31);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        add(lblNombre);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        String res1 = String.valueOf(partido.getResultado_e1());</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        JLabel lblR1= <span class="keyword">new</span> JLabel(res1);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        lblR1.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 16));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        lblR1.setBackground(Color.WHITE);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        lblR1.setBounds(470, 11, 50, 31);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        add(lblR1);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        JLabel lblA = <span class="keyword">new</span> JLabel(<span class="stringliteral">&quot;-&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        lblA.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 16));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        lblA.setBackground(Color.WHITE);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        lblA.setBounds(520, 11, 50, 31);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        add(lblA);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        String eq2= partido.getEquipo_2().getNombre();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        JLabel lblDNI = <span class="keyword">new</span> JLabel(eq2);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        lblDNI.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 16));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        lblDNI.setBounds(570, 11, 150, 31);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        add(lblDNI);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        String res2 = String.valueOf(partido.getResultado_e2());</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        JLabel lblR2= <span class="keyword">new</span> JLabel(res2);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        lblR2.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 16));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        lblR2.setBackground(Color.WHITE);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        lblR2.setBounds(730, 11, 50, 31);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        add(lblR2);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_partido_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_partido.html">Aprendices_de_Josuka.LD.Partido</a></div><div class="ttdef"><b>Definition:</b> <a href="_partido_8java_source.html#l00015">Partido.java:15</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_sancion_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_sancion.html">Aprendices_de_Josuka.LD.Sancion</a></div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8java_source.html#l00019">Sancion.java:19</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html">Aprendices_de_Josuka.LP.Panel_Sanciones</a></div><div class="ttdef"><b>Definition:</b> <a href="_panel___sanciones_8java_source.html#l00024">Panel_Sanciones.java:24</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones_html_a67b4a469282a5e6bc1623e0a4d8126ba"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a67b4a469282a5e6bc1623e0a4d8126ba">Aprendices_de_Josuka.LP.Panel_Sanciones.Panel_Sanciones</a></div><div class="ttdeci">Panel_Sanciones(Sancion p, Partido partido)</div><div class="ttdef"><b>Definition:</b> <a href="_panel___sanciones_8java_source.html#l00030">Panel_Sanciones.java:30</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones_html_a7d9a7f0d9620da370b496f3c1a7fbc2b"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a7d9a7f0d9620da370b496f3c1a7fbc2b">Aprendices_de_Josuka.LP.Panel_Sanciones.Introducir_Datos</a></div><div class="ttdeci">void Introducir_Datos()</div><div class="ttdef"><b>Definition:</b> <a href="_panel___sanciones_8java_source.html#l00035">Panel_Sanciones.java:35</a></div></div>
-<div class="ttc" id="aclass_d_a_o_1_1_d_a_o_html"><div class="ttname"><a href="class_d_a_o_1_1_d_a_o.html">DAO.DAO</a></div><div class="ttdef"><b>Definition:</b> <a href="_d_a_o_8java_source.html#l00024">DAO.java:24</a></div></div>
-<div class="ttc" id="anamespace_d_a_o_html"><div class="ttname"><a href="namespace_d_a_o.html">DAO</a></div><div class="ttdef"><b>Definition:</b> <a href="_d_a_o_8java_source.html#l00001">DAO.java:1</a></div></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(<span class="stringliteral">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        String fecha = String.valueOf(partido.getFecha().format(formatter));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        JLabel lblFecha= <span class="keyword">new</span> JLabel(fecha);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        lblFecha.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic&quot;</span>, Font.PLAIN, 16));</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        lblFecha.setBackground(Color.WHITE);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        lblFecha.setBounds(780, 11, 250, 31);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        add(lblFecha);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_partido_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_partido.html">Aprendices_de_Josuka.LD.Partido</a></div><div class="ttdoc">Esta clase define objetos de tipo partido que no están guardados en la base de datos y se obtienen de...</div><div class="ttdef"><b>Definition:</b> <a href="_partido_8java_source.html#l00022">Partido.java:22</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_sancion_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_sancion.html">Aprendices_de_Josuka.LD.Sancion</a></div><div class="ttdoc">Esta clase define objetos de tipo sancion que no están guardados en la base de datos y se obtienen de...</div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8java_source.html#l00019">Sancion.java:19</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html">Aprendices_de_Josuka.LP.Panel_Sanciones</a></div><div class="ttdef"><b>Definition:</b> <a href="_panel___sanciones_8java_source.html#l00029">Panel_Sanciones.java:29</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones_html_a67b4a469282a5e6bc1623e0a4d8126ba"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a67b4a469282a5e6bc1623e0a4d8126ba">Aprendices_de_Josuka.LP.Panel_Sanciones.Panel_Sanciones</a></div><div class="ttdeci">Panel_Sanciones(Sancion p, Partido partido)</div><div class="ttdef"><b>Definition:</b> <a href="_panel___sanciones_8java_source.html#l00037">Panel_Sanciones.java:37</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones_html_a7d9a7f0d9620da370b496f3c1a7fbc2b"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_panel___sanciones.html#a7d9a7f0d9620da370b496f3c1a7fbc2b">Aprendices_de_Josuka.LP.Panel_Sanciones.Introducir_Datos</a></div><div class="ttdeci">void Introducir_Datos()</div><div class="ttdef"><b>Definition:</b> <a href="_panel___sanciones_8java_source.html#l00045">Panel_Sanciones.java:45</a></div></div>
+<div class="ttc" id="aclass_d_a_o_1_1_d_a_o_html"><div class="ttname"><a href="class_d_a_o_1_1_d_a_o.html">DAO.DAO</a></div><div class="ttdef"><b>Definition:</b> <a href="_d_a_o_8java_source.html#l00030">DAO.java:30</a></div></div>
+<div class="ttc" id="anamespace_d_a_o_html"><div class="ttname"><a href="namespace_d_a_o.html">DAO</a></div><div class="ttdoc">En este paquete estan incluidas todas las clases que tienen relacion con la base de datos.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

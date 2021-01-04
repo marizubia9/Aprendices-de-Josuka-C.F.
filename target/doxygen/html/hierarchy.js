@@ -61,7 +61,6 @@ var hierarchy =
       [ "Aprendices_de_Josuka.LP.RegistrarMaterial", "class_aprendices__de___josuka_1_1_l_p_1_1_registrar_material.html", null ],
       [ "Aprendices_de_Josuka.LP.Visualizar_Entrenadores", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___entrenadores.html", null ],
       [ "Aprendices_de_Josuka.LP.Visualizar_Equipos", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos.html", null ],
-      [ "Aprendices_de_Josuka.LP.Visualizar_Equipos_Jugador", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos___jugador.html", null ],
       [ "Aprendices_de_Josuka.LP.Visualizar_Jugadores", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___jugadores.html", null ],
       [ "Aprendices_de_Josuka.LP.Visualizar_Mis_Jugadores", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___mis___jugadores.html", null ]
     ] ],

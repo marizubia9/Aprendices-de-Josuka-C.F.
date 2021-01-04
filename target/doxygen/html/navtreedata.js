@@ -47,8 +47,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "",
-"class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion.html#a37c56319a3dd53e7afa747dd89f6bcd6",
-"dir_444880e2d040587dda64e1408d4e49bc.html"
+"class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion.html#ad29caf810b88c97f2533ad1ea530009b",
+"classpython_1_1_partido_1_1_sancion_1_1_sancion.html"
 ];
 
 var SYNCONMSG = 'click en deshabilitar sincronización';

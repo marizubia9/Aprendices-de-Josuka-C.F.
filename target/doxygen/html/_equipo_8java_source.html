@@ -102,39 +102,39 @@ $(document).ready(function(){initNavTree('_equipo_8java_source.html',''); initRe
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> lombok.Getter;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> lombok.Setter;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;@Getter</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;@Setter</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;@PersistenceCapable</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html">   25</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html">Equipo</a> <span class="keyword">implements</span> Serializable{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    @PrimaryKey</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span> String nombre;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">private</span> <a class="code" href="enum_aprendices__de___josuka_1_1_l_d_1_1_categoria.html">Categoria</a> categoria;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">private</span> String dni_entrenador;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    @Join</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span> List&lt;String&gt; lista_jugador;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    @Join</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">private</span> HashMap&lt;String, Integer&gt; inventario ;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html#aae162188ea9599f1d37ff90f77dedc24">   36</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html#aae162188ea9599f1d37ff90f77dedc24">Equipo</a>(String nombre, <a class="code" href="enum_aprendices__de___josuka_1_1_l_d_1_1_categoria.html">Categoria</a> categoria,String entrenador, List&lt;String&gt;lista_jugador, HashMap&lt;String, Integer&gt; inventario) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        super();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        this.nombre = nombre;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        this.categoria = categoria;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        this.dni_entrenador=entrenador;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        this.lista_jugador=lista_jugador;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        this.inventario = inventario;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    @Override</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html#ade63ffb11435a0e4e188e644edac8ad4">   46</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html#ade63ffb11435a0e4e188e644edac8ad4">toString</a>() {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> nombre;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;@Getter</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;@Setter</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;@PersistenceCapable</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html">   26</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html">Equipo</a> <span class="keyword">implements</span> Serializable{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    @PrimaryKey</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">private</span> String nombre;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">private</span> <a class="code" href="enum_aprendices__de___josuka_1_1_l_d_1_1_categoria.html">Categoria</a> categoria;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">private</span> String dni_entrenador;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    @Join</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">private</span> List&lt;String&gt; lista_jugador;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    @Join</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">private</span> HashMap&lt;String, Integer&gt; inventario ;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html#aae162188ea9599f1d37ff90f77dedc24">   37</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html#aae162188ea9599f1d37ff90f77dedc24">Equipo</a>(String nombre, <a class="code" href="enum_aprendices__de___josuka_1_1_l_d_1_1_categoria.html">Categoria</a> categoria,String entrenador, List&lt;String&gt;lista_jugador, HashMap&lt;String, Integer&gt; inventario) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        super();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        this.nombre = nombre;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        this.categoria = categoria;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        this.dni_entrenador=entrenador;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        this.lista_jugador=lista_jugador;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        this.inventario = inventario;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    @Override</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html#ade63ffb11435a0e4e188e644edac8ad4">   47</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html#ade63ffb11435a0e4e188e644edac8ad4">toString</a>() {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> nombre;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_equipo_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html">Aprendices_de_Josuka.LD.Equipo</a></div><div class="ttdef"><b>Definition:</b> <a href="_equipo_8java_source.html#l00025">Equipo.java:25</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_equipo_html_aae162188ea9599f1d37ff90f77dedc24"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html#aae162188ea9599f1d37ff90f77dedc24">Aprendices_de_Josuka.LD.Equipo.Equipo</a></div><div class="ttdeci">Equipo(String nombre, Categoria categoria, String entrenador, List&lt; String &gt;lista_jugador, HashMap&lt; String, Integer &gt; inventario)</div><div class="ttdef"><b>Definition:</b> <a href="_equipo_8java_source.html#l00036">Equipo.java:36</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_equipo_html_ade63ffb11435a0e4e188e644edac8ad4"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html#ade63ffb11435a0e4e188e644edac8ad4">Aprendices_de_Josuka.LD.Equipo.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_equipo_8java_source.html#l00046">Equipo.java:46</a></div></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_equipo_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html">Aprendices_de_Josuka.LD.Equipo</a></div><div class="ttdoc">Esta clase define objetos de tipo equipo.</div><div class="ttdef"><b>Definition:</b> <a href="_equipo_8java_source.html#l00026">Equipo.java:26</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_equipo_html_aae162188ea9599f1d37ff90f77dedc24"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html#aae162188ea9599f1d37ff90f77dedc24">Aprendices_de_Josuka.LD.Equipo.Equipo</a></div><div class="ttdeci">Equipo(String nombre, Categoria categoria, String entrenador, List&lt; String &gt;lista_jugador, HashMap&lt; String, Integer &gt; inventario)</div><div class="ttdef"><b>Definition:</b> <a href="_equipo_8java_source.html#l00037">Equipo.java:37</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_equipo_html_ade63ffb11435a0e4e188e644edac8ad4"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_equipo.html#ade63ffb11435a0e4e188e644edac8ad4">Aprendices_de_Josuka.LD.Equipo.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_equipo_8java_source.html#l00047">Equipo.java:47</a></div></div>
 <div class="ttc" id="aenum_aprendices__de___josuka_1_1_l_d_1_1_categoria_html"><div class="ttname"><a href="enum_aprendices__de___josuka_1_1_l_d_1_1_categoria.html">Aprendices_de_Josuka.LD.Categoria</a></div><div class="ttdoc">Esta clase define objetos de tipo Categoria mediante un enumerado.</div><div class="ttdef"><b>Definition:</b> <a href="_categoria_8java_source.html#l00008">Categoria.java:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

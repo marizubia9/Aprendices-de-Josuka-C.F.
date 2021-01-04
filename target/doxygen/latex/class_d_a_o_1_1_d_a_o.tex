@@ -55,7 +55,7 @@ static \mbox{\hyperlink{class_d_a_o_1_1_d_a_o}{DAO}} \mbox{\hyperlink{class_d_a_
 \doxysubsection{Descripción detallada}
 
 
-Definición en la línea 24 del archivo DAO.\+java.
+Definición en la línea 30 del archivo DAO.\+java.
 
 
 
@@ -66,9 +66,19 @@ Definición en la línea 24 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{ActualizarEntrenador()}{ActualizarEntrenador()}}
 {\footnotesize\ttfamily boolean DAO.\+DAO.\+Actualizar\+Entrenador (\begin{DoxyParamCaption}\item[{Long}]{salario,  }\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}}]{entrenador }\end{DoxyParamCaption})}
 
+Metodo para modificar los entrenadores (de la parte de administrador) 
+\begin{DoxyParams}{Parámetros}
+{\em salario} & \\
+\hline
+{\em entrenador} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el entrenador se ha modificado correctamente (true) o no (false) 
+\end{DoxyReturn}
 
 
-Definición en la línea 178 del archivo DAO.\+java.
+Definición en la línea 219 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_ac8404ea11422bc017ec405accb08c4ba}\label{class_d_a_o_1_1_d_a_o_ac8404ea11422bc017ec405accb08c4ba}} 
 \index{DAO.DAO@{DAO.DAO}!ActualizarEquipo@{ActualizarEquipo}}
@@ -76,9 +86,18 @@ Definición en la línea 178 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{ActualizarEquipo()}{ActualizarEquipo()}}
 {\footnotesize\ttfamily void DAO.\+DAO.\+Actualizar\+Equipo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}}]{equipo,  }\item[{Hash\+Map}]{inventario,  }\item[{List$<$ String $>$}]{jugadores }\end{DoxyParamCaption})}
 
+Metodo para modificar un equipo 
+\begin{DoxyParams}{Parámetros}
+{\em equipo} & \\
+\hline
+{\em inventario} & \\
+\hline
+{\em jugadores} & \\
+\hline
+\end{DoxyParams}
 
 
-Definición en la línea 297 del archivo DAO.\+java.
+Definición en la línea 372 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a248128aec1214ab4b49a779bf7ba37e8}\label{class_d_a_o_1_1_d_a_o_a248128aec1214ab4b49a779bf7ba37e8}} 
 \index{DAO.DAO@{DAO.DAO}!ActualizarEquipoEntrenador@{ActualizarEquipoEntrenador}}
@@ -86,9 +105,14 @@ Definición en la línea 297 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{ActualizarEquipoEntrenador()}{ActualizarEquipoEntrenador()}}
 {\footnotesize\ttfamily void DAO.\+DAO.\+Actualizar\+Equipo\+Entrenador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}}]{ent }\end{DoxyParamCaption})}
 
+Metodo para modificar el boolean asignado a un entrenador 
+\begin{DoxyParams}{Parámetros}
+{\em ent} & \\
+\hline
+\end{DoxyParams}
 
 
-Definición en la línea 279 del archivo DAO.\+java.
+Definición en la línea 348 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_aaf900459c66e6ec8d9e4ca3419485336}\label{class_d_a_o_1_1_d_a_o_aaf900459c66e6ec8d9e4ca3419485336}} 
 \index{DAO.DAO@{DAO.DAO}!ActualizarEquipoJugador@{ActualizarEquipoJugador}}
@@ -96,9 +120,14 @@ Definición en la línea 279 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{ActualizarEquipoJugador()}{ActualizarEquipoJugador()}}
 {\footnotesize\ttfamily void DAO.\+DAO.\+Actualizar\+Equipo\+Jugador (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$}]{jugadores }\end{DoxyParamCaption})}
 
+Metodo para modificar los jugadores de un equipo 
+\begin{DoxyParams}{Parámetros}
+{\em jugadores} & \\
+\hline
+\end{DoxyParams}
 
 
-Definición en la línea 260 del archivo DAO.\+java.
+Definición en la línea 325 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a50eb94a41da88888d34abb248817849a}\label{class_d_a_o_1_1_d_a_o_a50eb94a41da88888d34abb248817849a}} 
 \index{DAO.DAO@{DAO.DAO}!ActualizarJugador@{ActualizarJugador}}
@@ -106,9 +135,23 @@ Definición en la línea 260 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{ActualizarJugador()}{ActualizarJugador()}}
 {\footnotesize\ttfamily boolean DAO.\+DAO.\+Actualizar\+Jugador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}}]{jugador,  }\item[{boolean}]{reconocimiento,  }\item[{boolean}]{lesionado,  }\item[{boolean}]{cuota }\end{DoxyParamCaption})}
 
+Metodo para modificar los jugadores (de la parte de administrador) 
+\begin{DoxyParams}{Parámetros}
+{\em jugador} & \\
+\hline
+{\em reconocimiento} & \\
+\hline
+{\em lesionado} & \\
+\hline
+{\em cuota} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el jugador se ha modificado correctamente (true) o no (false) 
+\end{DoxyReturn}
 
 
-Definición en la línea 197 del archivo DAO.\+java.
+Definición en la línea 246 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a66fa38c7c8fcfb59070b698c6da641e5}\label{class_d_a_o_1_1_d_a_o_a66fa38c7c8fcfb59070b698c6da641e5}} 
 \index{DAO.DAO@{DAO.DAO}!ActualizarMaterial@{ActualizarMaterial}}
@@ -116,9 +159,14 @@ Definición en la línea 197 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{ActualizarMaterial()}{ActualizarMaterial()}}
 {\footnotesize\ttfamily void DAO.\+DAO.\+Actualizar\+Material (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}} $>$}]{lista\+\_\+material }\end{DoxyParamCaption})}
 
+Metodo para modificar el inventario 
+\begin{DoxyParams}{Parámetros}
+{\em lista\+\_\+material} & \\
+\hline
+\end{DoxyParams}
 
 
-Definición en la línea 316 del archivo DAO.\+java.
+Definición en la línea 394 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a223b83ab038c638abb9b26ef39527e57}\label{class_d_a_o_1_1_d_a_o_a223b83ab038c638abb9b26ef39527e57}} 
 \index{DAO.DAO@{DAO.DAO}!cerrarConexion@{cerrarConexion}}
@@ -126,9 +174,9 @@ Definición en la línea 316 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{cerrarConexion()}{cerrarConexion()}}
 {\footnotesize\ttfamily void DAO.\+DAO.\+cerrar\+Conexion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Metodo para cerrar la conexion con la base de datos 
 
-
-Definición en la línea 486 del archivo DAO.\+java.
+Definición en la línea 592 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a390302df4285a6cf194cd4ac99717566}\label{class_d_a_o_1_1_d_a_o_a390302df4285a6cf194cd4ac99717566}} 
 \index{DAO.DAO@{DAO.DAO}!EliminarAdmin@{EliminarAdmin}}
@@ -136,9 +184,17 @@ Definición en la línea 486 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{EliminarAdmin()}{EliminarAdmin()}}
 {\footnotesize\ttfamily boolean DAO.\+DAO.\+Eliminar\+Admin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_administrador}{Administrador}}}]{a }\end{DoxyParamCaption})}
 
+Metodo para eliminar un administrador registrado 
+\begin{DoxyParams}{Parámetros}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el administrador se ha eliminado correctamente (true) o no (false) 
+\end{DoxyReturn}
 
 
-Definición en la línea 335 del archivo DAO.\+java.
+Definición en la línea 418 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a8e97f2d5e109388841415a98951cb3ee}\label{class_d_a_o_1_1_d_a_o_a8e97f2d5e109388841415a98951cb3ee}} 
 \index{DAO.DAO@{DAO.DAO}!EliminarEntrenador@{EliminarEntrenador}}
@@ -146,9 +202,17 @@ Definición en la línea 335 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{EliminarEntrenador()}{EliminarEntrenador()}}
 {\footnotesize\ttfamily boolean DAO.\+DAO.\+Eliminar\+Entrenador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}}]{e }\end{DoxyParamCaption})}
 
+Metodo para eliminar un entrenador registrado 
+\begin{DoxyParams}{Parámetros}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el entrenador se ha eliminado correctamente (true) o no (false) 
+\end{DoxyReturn}
 
 
-Definición en la línea 396 del archivo DAO.\+java.
+Definición en la línea 489 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a51d5d20d78f6e25d40f9ce7a0d8be126}\label{class_d_a_o_1_1_d_a_o_a51d5d20d78f6e25d40f9ce7a0d8be126}} 
 \index{DAO.DAO@{DAO.DAO}!EliminarEquipo@{EliminarEquipo}}
@@ -156,9 +220,17 @@ Definición en la línea 396 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{EliminarEquipo()}{EliminarEquipo()}}
 {\footnotesize\ttfamily boolean DAO.\+DAO.\+Eliminar\+Equipo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}}]{e }\end{DoxyParamCaption})}
 
+Metodo para eliminar un equipo 
+\begin{DoxyParams}{Parámetros}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el equipo se ha eliminado correctamente (true) o no (false) 
+\end{DoxyReturn}
 
 
-Definición en la línea 426 del archivo DAO.\+java.
+Definición en la línea 524 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_aaa39bc7065be5a1aa5540b8ea4a3a288}\label{class_d_a_o_1_1_d_a_o_aaa39bc7065be5a1aa5540b8ea4a3a288}} 
 \index{DAO.DAO@{DAO.DAO}!EliminarJugador@{EliminarJugador}}
@@ -166,9 +238,17 @@ Definición en la línea 426 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{EliminarJugador()}{EliminarJugador()}}
 {\footnotesize\ttfamily boolean DAO.\+DAO.\+Eliminar\+Jugador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}}]{j }\end{DoxyParamCaption})}
 
+Metodo para eliminar un jugador registrado 
+\begin{DoxyParams}{Parámetros}
+{\em j} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el jugador se ha eliminado correctamente (true) o no (false) 
+\end{DoxyReturn}
 
 
-Definición en la línea 365 del archivo DAO.\+java.
+Definición en la línea 453 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a011d579e04c2c8fc6529d9688a78caf2}\label{class_d_a_o_1_1_d_a_o_a011d579e04c2c8fc6529d9688a78caf2}} 
 \index{DAO.DAO@{DAO.DAO}!EliminarMaterial@{EliminarMaterial}}
@@ -176,9 +256,17 @@ Definición en la línea 365 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{EliminarMaterial()}{EliminarMaterial()}}
 {\footnotesize\ttfamily boolean DAO.\+DAO.\+Eliminar\+Material (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}}}]{e }\end{DoxyParamCaption})}
 
+Metodo para eliminar el material registrado 
+\begin{DoxyParams}{Parámetros}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el material se ha eliminado correctamente (true) o no (false) 
+\end{DoxyReturn}
 
 
-Definición en la línea 456 del archivo DAO.\+java.
+Definición en la línea 559 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a84c9dd346d95687a8f1abb1bfac34736}\label{class_d_a_o_1_1_d_a_o_a84c9dd346d95687a8f1abb1bfac34736}} 
 \index{DAO.DAO@{DAO.DAO}!getAdmin@{getAdmin}}
@@ -186,9 +274,12 @@ Definición en la línea 456 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{getAdmin()}{getAdmin()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_administrador}{Administrador}}$>$ DAO.\+DAO.\+get\+Admin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Metodo para leer los administradores registrados \begin{DoxyReturn}{Devuelve}
+la lista de administradores 
+\end{DoxyReturn}
 
 
-Definición en la línea 126 del archivo DAO.\+java.
+Definición en la línea 153 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_ae293365e801a4d7503631a71c8ad5185}\label{class_d_a_o_1_1_d_a_o_ae293365e801a4d7503631a71c8ad5185}} 
 \index{DAO.DAO@{DAO.DAO}!getEntrenador@{getEntrenador}}
@@ -196,9 +287,12 @@ Definición en la línea 126 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{getEntrenador()}{getEntrenador()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}$>$ DAO.\+DAO.\+get\+Entrenador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Metodo para leer los entrenadores registrados \begin{DoxyReturn}{Devuelve}
+la lista de entrenadores 
+\end{DoxyReturn}
 
 
-Definición en la línea 153 del archivo DAO.\+java.
+Definición en la línea 186 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a7d8fed2a3e35538fe56493e268471f38}\label{class_d_a_o_1_1_d_a_o_a7d8fed2a3e35538fe56493e268471f38}} 
 \index{DAO.DAO@{DAO.DAO}!getEquipo@{getEquipo}}
@@ -206,9 +300,12 @@ Definición en la línea 153 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{getEquipo()}{getEquipo()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}$>$ DAO.\+DAO.\+get\+Equipo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Metodo para leer los equipos registrados \begin{DoxyReturn}{Devuelve}
+la lista de equipos 
+\end{DoxyReturn}
 
 
-Definición en la línea 166 del archivo DAO.\+java.
+Definición en la línea 202 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_ae25e80f03bd70f6b447f34d595a07bdc}\label{class_d_a_o_1_1_d_a_o_ae25e80f03bd70f6b447f34d595a07bdc}} 
 \index{DAO.DAO@{DAO.DAO}!getInstance@{getInstance}}
@@ -216,9 +313,12 @@ Definición en la línea 166 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{class_d_a_o_1_1_d_a_o}{DAO}} DAO.\+DAO.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Patrón singleton \begin{DoxyReturn}{Devuelve}
+un new del \mbox{\hyperlink{class_d_a_o_1_1_d_a_o}{DAO}} 
+\end{DoxyReturn}
 
 
-Definición en la línea 37 del archivo DAO.\+java.
+Definición en la línea 48 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a72678625bfd886f318150e2c88252be5}\label{class_d_a_o_1_1_d_a_o_a72678625bfd886f318150e2c88252be5}} 
 \index{DAO.DAO@{DAO.DAO}!getJugador@{getJugador}}
@@ -226,9 +326,12 @@ Definición en la línea 37 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{getJugador()}{getJugador()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}$>$ DAO.\+DAO.\+get\+Jugador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Metodo para leer los jugadores registrados \begin{DoxyReturn}{Devuelve}
+la lista de jugadores 
+\end{DoxyReturn}
 
 
-Definición en la línea 139 del archivo DAO.\+java.
+Definición en la línea 169 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a365801f979c864747c29f45ece9a2dc3}\label{class_d_a_o_1_1_d_a_o_a365801f979c864747c29f45ece9a2dc3}} 
 \index{DAO.DAO@{DAO.DAO}!getMaterial@{getMaterial}}
@@ -236,9 +339,12 @@ Definición en la línea 139 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{getMaterial()}{getMaterial()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}}$>$ DAO.\+DAO.\+get\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Metodo para obtener la lista completa del inventario registrada \begin{DoxyReturn}{Devuelve}
+el inventario registrado en la base de datos 
+\end{DoxyReturn}
 
 
-Definición en la línea 97 del archivo DAO.\+java.
+Definición en la línea 114 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_af3aca46da8e07e10303e0ca1ecb73521}\label{class_d_a_o_1_1_d_a_o_af3aca46da8e07e10303e0ca1ecb73521}} 
 \index{DAO.DAO@{DAO.DAO}!guardarObjeto@{guardarObjeto}}
@@ -246,9 +352,17 @@ Definición en la línea 97 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{guardarObjeto()}{guardarObjeto()}}
 {\footnotesize\ttfamily boolean DAO.\+DAO.\+guardar\+Objeto (\begin{DoxyParamCaption}\item[{Object}]{objeto }\end{DoxyParamCaption})}
 
+Se guardan los objetos en la base de datos en funcion de su tipo 
+\begin{DoxyParams}{Parámetros}
+{\em objeto} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el objeto se ha guardado correctamente (true) o no (false) 
+\end{DoxyReturn}
 
 
-Definición en la línea 43 del archivo DAO.\+java.
+Definición en la línea 57 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a59b718c0ce0580a8dc9019b1338b0648}\label{class_d_a_o_1_1_d_a_o_a59b718c0ce0580a8dc9019b1338b0648}} 
 \index{DAO.DAO@{DAO.DAO}!modificarCorreo@{modificarCorreo}}
@@ -256,9 +370,21 @@ Definición en la línea 43 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{modificarCorreo()}{modificarCorreo()}}
 {\footnotesize\ttfamily boolean DAO.\+DAO.\+modificar\+Correo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}}]{jugador,  }\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption})}
 
+Metodo para modificar los jugadores (parte jugador) 
+\begin{DoxyParams}{Parámetros}
+{\em jugador} & \\
+\hline
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el jugador se ha modificado correctamente (true) o no (false) 
+\end{DoxyReturn}
 
 
-Definición en la línea 219 del archivo DAO.\+java.
+Definición en la línea 274 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_a8f1d0cc59f0bcbe0613ecb6755e18104}\label{class_d_a_o_1_1_d_a_o_a8f1d0cc59f0bcbe0613ecb6755e18104}} 
 \index{DAO.DAO@{DAO.DAO}!modificarCorreoEntrenador@{modificarCorreoEntrenador}}
@@ -266,9 +392,21 @@ Definición en la línea 219 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{modificarCorreoEntrenador()}{modificarCorreoEntrenador()}}
 {\footnotesize\ttfamily boolean DAO.\+DAO.\+modificar\+Correo\+Entrenador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}}]{e,  }\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption})}
 
+Metodo para modificar los entrenadores (parte entrenador) 
+\begin{DoxyParams}{Parámetros}
+{\em e} & \\
+\hline
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el entrenador se ha modificado correctamente (true) o no (false) 
+\end{DoxyReturn}
 
 
-Definición en la línea 239 del archivo DAO.\+java.
+Definición en la línea 301 del archivo DAO.\+java.
 
 \mbox{\Hypertarget{class_d_a_o_1_1_d_a_o_aacb7ceb7d1f6e301b78b9ef86d3ad900}\label{class_d_a_o_1_1_d_a_o_aacb7ceb7d1f6e301b78b9ef86d3ad900}} 
 \index{DAO.DAO@{DAO.DAO}!ModificarMaterial@{ModificarMaterial}}
@@ -276,9 +414,21 @@ Definición en la línea 239 del archivo DAO.\+java.
 \doxysubsubsection{\texorpdfstring{ModificarMaterial()}{ModificarMaterial()}}
 {\footnotesize\ttfamily boolean DAO.\+DAO.\+Modificar\+Material (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material}{Tipo\+\_\+\+Material}}}]{tipo,  }\item[{int}]{cantidad,  }\item[{long}]{precio }\end{DoxyParamCaption})}
 
+Metodo para modificar el inventario 
+\begin{DoxyParams}{Parámetros}
+{\em tipo} & \\
+\hline
+{\em cantidad} & \\
+\hline
+{\em precio} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un boolean que informa sobre si el material se ha modificado correctamente (true) o no (false) 
+\end{DoxyReturn}
 
 
-Definición en la línea 107 del archivo DAO.\+java.
+Definición en la línea 131 del archivo DAO.\+java.
 
 
 

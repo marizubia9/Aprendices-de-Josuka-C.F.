@@ -99,36 +99,36 @@ $(document).ready(function(){initNavTree('_material_8java_source.html',''); init
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> lombok.Getter;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> lombok.Setter;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;@Getter</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;@Setter</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;@PersistenceCapable</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html">   22</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html">Material</a> <span class="keyword">implements</span> Serializable {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    @PrimaryKey</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">private</span> <a class="code" href="enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material.html">Tipo_Material</a> tipo;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> cantidad;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">long</span> precio;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;@Getter</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;@Setter</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;@PersistenceCapable</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html">   23</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html">Material</a> <span class="keyword">implements</span> Serializable {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    @PrimaryKey</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">private</span> <a class="code" href="enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material.html">Tipo_Material</a> tipo;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> cantidad;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">long</span> precio;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html#abf1672aff34c8014efe330a5b639efbe">   30</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html#abf1672aff34c8014efe330a5b639efbe">Material</a>( <a class="code" href="enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material.html">Tipo_Material</a> tipo, <span class="keywordtype">int</span> cantidad, <span class="keywordtype">long</span> precio) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        super();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        this.tipo = tipo;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        this.cantidad = cantidad;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        this.precio = precio;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    @Override</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html#a63bfa142dd019aee3c7f54974442fdcb">   39</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html#a63bfa142dd019aee3c7f54974442fdcb">toString</a>() {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> tipo + <span class="stringliteral">&quot;: &quot;</span> + cantidad + <span class="stringliteral">&quot;uds&quot;</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html#abf1672aff34c8014efe330a5b639efbe">   31</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html#abf1672aff34c8014efe330a5b639efbe">Material</a>( <a class="code" href="enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material.html">Tipo_Material</a> tipo, <span class="keywordtype">int</span> cantidad, <span class="keywordtype">long</span> precio) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        super();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        this.tipo = tipo;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        this.cantidad = cantidad;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        this.precio = precio;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    @Override</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html#a63bfa142dd019aee3c7f54974442fdcb">   40</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html#a63bfa142dd019aee3c7f54974442fdcb">toString</a>() {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> tipo + <span class="stringliteral">&quot;: &quot;</span> + cantidad + <span class="stringliteral">&quot;uds&quot;</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_material_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html">Aprendices_de_Josuka.LD.Material</a></div><div class="ttdef"><b>Definition:</b> <a href="_material_8java_source.html#l00022">Material.java:22</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_material_html_a63bfa142dd019aee3c7f54974442fdcb"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html#a63bfa142dd019aee3c7f54974442fdcb">Aprendices_de_Josuka.LD.Material.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_material_8java_source.html#l00039">Material.java:39</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_material_html_abf1672aff34c8014efe330a5b639efbe"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html#abf1672aff34c8014efe330a5b639efbe">Aprendices_de_Josuka.LD.Material.Material</a></div><div class="ttdeci">Material(Tipo_Material tipo, int cantidad, long precio)</div><div class="ttdef"><b>Definition:</b> <a href="_material_8java_source.html#l00030">Material.java:30</a></div></div>
-<div class="ttc" id="aenum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material_html"><div class="ttname"><a href="enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material.html">Aprendices_de_Josuka.LD.Tipo_Material</a></div><div class="ttdef"><b>Definition:</b> <a href="_tipo___material_8java_source.html#l00008">Tipo_Material.java:8</a></div></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_material_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html">Aprendices_de_Josuka.LD.Material</a></div><div class="ttdoc">Esta clase define los objetos de tipo material, es decir, del inventario.</div><div class="ttdef"><b>Definition:</b> <a href="_material_8java_source.html#l00023">Material.java:23</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_material_html_a63bfa142dd019aee3c7f54974442fdcb"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html#a63bfa142dd019aee3c7f54974442fdcb">Aprendices_de_Josuka.LD.Material.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_material_8java_source.html#l00040">Material.java:40</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_material_html_abf1672aff34c8014efe330a5b639efbe"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_material.html#abf1672aff34c8014efe330a5b639efbe">Aprendices_de_Josuka.LD.Material.Material</a></div><div class="ttdeci">Material(Tipo_Material tipo, int cantidad, long precio)</div><div class="ttdef"><b>Definition:</b> <a href="_material_8java_source.html#l00031">Material.java:31</a></div></div>
+<div class="ttc" id="aenum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material_html"><div class="ttname"><a href="enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material.html">Aprendices_de_Josuka.LD.Tipo_Material</a></div><div class="ttdoc">Esta clase define un enumerado para el atributo tipo de la clase Material.</div><div class="ttdef"><b>Definition:</b> <a href="_tipo___material_8java_source.html#l00009">Tipo_Material.java:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

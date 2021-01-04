@@ -112,8 +112,9 @@ $(document).ready(function(){initNavTree('_editar_datos_8java_source.html',''); 
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> Aprendices_de_Josuka.LD.Jugador;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">import</span> Aprendices_de_Josuka.LD.Partido;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">import</span> <a class="code" href="namespace_controller.html">Controller</a>.<a class="code" href="class_controller_1_1_controller.html">Controller</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html">   32</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html">EditarDatos</a> <span class="keyword">extends</span> JFrame {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html">   34</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html">EditarDatos</a> <span class="keyword">extends</span> JFrame </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keywordtype">long</span> serialVersionUID = 1L;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">private</span> JPanel contentPane;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span> JLabel txtLosAprendicesDe;</div>
@@ -267,127 +268,105 @@ $(document).ready(function(){initNavTree('_editar_datos_8java_source.html',''); 
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        btnVisualizarJugador.setForeground(Color.WHITE);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        btnVisualizarJugador.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic Semilight&quot;</span>, Font.BOLD, 20));</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        btnVisualizarJugador.setBackground(<span class="keyword">new</span> Color(0, 102, 0));</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        btnVisualizarJugador.setBounds(0, 202, 328, 42);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        btnVisualizarJugador.setBounds(0, 162, 328, 42);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        panel_izquierdo.add(btnVisualizarJugador);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        btnVisualziarEquipo = <span class="keyword">new</span> JButton(<span class="stringliteral">&quot;VISUALIZAR  EQUIPOS&quot;</span>);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        btnVisualziarEquipo.addActionListener(<span class="keyword">new</span> ActionListener() {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> actionPerformed(ActionEvent e) {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos___jugador.html">Visualizar_Equipos_Jugador</a> v = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    v = <span class="keyword">new</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos___jugador.html">Visualizar_Equipos_Jugador</a>(controller, j);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                } <span class="keywordflow">catch</span> (RemoteException | ParseException e1) {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <span class="comment">// TODO Auto-generated catch block</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    e1.printStackTrace();</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                v.setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            }</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        });</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        btnVisualziarEquipo.setHorizontalAlignment(SwingConstants.LEFT);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        btnVisualziarEquipo.setForeground(Color.WHITE);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        btnVisualziarEquipo.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic Semilight&quot;</span>, Font.BOLD, 20));</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        btnVisualziarEquipo.setBackground(<span class="keyword">new</span> Color(0, 102, 0));</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        btnVisualziarEquipo.setBounds(0, 162, 328, 42);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        panel_izquierdo.add(btnVisualziarEquipo);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        btnEditarJugador = <span class="keyword">new</span> JButton(<span class="stringliteral">&quot;EDITAR JUGADOR&quot;</span>);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        btnEditarJugador.setEnabled(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        btnEditarJugador.setHorizontalAlignment(SwingConstants.LEFT);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        btnEditarJugador.setForeground(Color.WHITE);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        btnEditarJugador.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic Semilight&quot;</span>, Font.BOLD, 20));</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        btnEditarJugador.setBackground(<span class="keyword">new</span> Color(0, 102, 0));</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        btnEditarJugador.setBounds(0, 120, 328, 42);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        panel_izquierdo.add(btnEditarJugador);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        JLabel lblTit = <span class="keyword">new</span> JLabel(<span class="stringliteral">&quot;MODIFICAR DATOS&quot;</span>);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        lblTit.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic Semilight&quot;</span>, Font.BOLD, 20));</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        lblTit.setBounds(450, 50, 250, 100);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        panel_central.add(lblTit);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        JLabel lblNombre = <span class="keyword">new</span> JLabel(<span class="stringliteral">&quot;Nuevo Email&quot;</span>);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        lblNombre.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic Semilight&quot;</span>, Font.BOLD, 15));</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        lblNombre.setBounds(450, 160, 250, 26);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        panel_central.add(lblNombre);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        </div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        btnEditarJugador = <span class="keyword">new</span> JButton(<span class="stringliteral">&quot;EDITAR JUGADOR&quot;</span>);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        btnEditarJugador.setEnabled(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        btnEditarJugador.setHorizontalAlignment(SwingConstants.LEFT);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        btnEditarJugador.setForeground(Color.WHITE);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        btnEditarJugador.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic Semilight&quot;</span>, Font.BOLD, 20));</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        btnEditarJugador.setBackground(<span class="keyword">new</span> Color(0, 102, 0));</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        btnEditarJugador.setBounds(0, 120, 328, 42);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        panel_izquierdo.add(btnEditarJugador);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        JLabel lblTit = <span class="keyword">new</span> JLabel(<span class="stringliteral">&quot;MODIFICAR DATOS&quot;</span>);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        lblTit.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic Semilight&quot;</span>, Font.BOLD, 20));</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        lblTit.setBounds(450, 50, 250, 100);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        panel_central.add(lblTit);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        txtCorreo = <span class="keyword">new</span> JTextField(j.getCorreo());</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        txtCorreo.setColumns(10);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        txtCorreo.setBounds(700, 160, 260, 32);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        panel_central.add(txtCorreo);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        JLabel lblPsw = <span class="keyword">new</span> JLabel(<span class="stringliteral">&quot;Nueva Contrasena&quot;</span>);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        lblPsw.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic Semilight&quot;</span>, Font.BOLD, 15));</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        lblPsw.setBounds(450, 190, 250, 26);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        panel_central.add(lblPsw);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        txtPsw = <span class="keyword">new</span> JTextField();</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        txtPsw.setColumns(10);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        txtPsw.setBounds(700, 190, 260, 32);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        panel_central.add(txtPsw);</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        </div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        JLabel lblNombre = <span class="keyword">new</span> JLabel(<span class="stringliteral">&quot;Nuevo Email&quot;</span>);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        lblNombre.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic Semilight&quot;</span>, Font.BOLD, 15));</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        lblNombre.setBounds(450, 160, 250, 26);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        panel_central.add(lblNombre);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        txtCorreo = <span class="keyword">new</span> JTextField(j.getCorreo());</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        txtCorreo.setColumns(10);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        txtCorreo.setBounds(700, 160, 260, 32);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        panel_central.add(txtCorreo);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        JLabel lblPsw = <span class="keyword">new</span> JLabel(<span class="stringliteral">&quot;Nueva Contrasena&quot;</span>);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        lblPsw.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic Semilight&quot;</span>, Font.BOLD, 15));</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        lblPsw.setBounds(450, 190, 250, 26);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        panel_central.add(lblPsw);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        txtPsw = <span class="keyword">new</span> JTextField();</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        txtPsw.setColumns(10);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        txtPsw.setBounds(700, 190, 260, 32);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        panel_central.add(txtPsw);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        btnModificar = <span class="keyword">new</span> JButton(<span class="stringliteral">&quot;Guardar&quot;</span>);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        btnModificar.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic Semilight&quot;</span>, Font.BOLD, 20));</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        btnModificar.setForeground(Color.WHITE);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        btnModificar.setBackground(<span class="keyword">new</span> Color(0, 102, 0));</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        btnModificar.setBounds(470, 400, 200, 38);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        panel_central.add(btnModificar);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        btnModificar.addActionListener(<span class="keyword">new</span> ActionListener() {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> actionPerformed(ActionEvent e) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html#aeaccba49033f69d305549b1434f94ae2">modificar</a>();</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            } <span class="keywordflow">catch</span> (RemoteException e1) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <span class="comment">// TODO Auto-generated catch block</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                e1.printStackTrace();</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            } <span class="keywordflow">catch</span> (ParseException e1) {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                <span class="comment">// TODO Auto-generated catch block</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                e1.printStackTrace();</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        });</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        btnModificar = <span class="keyword">new</span> JButton(<span class="stringliteral">&quot;Guardar&quot;</span>);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        btnModificar.setFont(<span class="keyword">new</span> Font(<span class="stringliteral">&quot;Malgun Gothic Semilight&quot;</span>, Font.BOLD, 20));</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        btnModificar.setForeground(Color.WHITE);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        btnModificar.setBackground(<span class="keyword">new</span> Color(0, 102, 0));</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        btnModificar.setBounds(470, 400, 200, 38);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        panel_central.add(btnModificar);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        btnModificar.addActionListener(<span class="keyword">new</span> ActionListener() {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> actionPerformed(ActionEvent e) {</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html#aeaccba49033f69d305549b1434f94ae2">modificar</a>();</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            } <span class="keywordflow">catch</span> (RemoteException e1) {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="comment">// TODO Auto-generated catch block</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                e1.printStackTrace();</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            } <span class="keywordflow">catch</span> (ParseException e1) {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <span class="comment">// TODO Auto-generated catch block</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                e1.printStackTrace();</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            }</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        });</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div>
-<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html#aeaccba49033f69d305549b1434f94ae2">  292</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html#aeaccba49033f69d305549b1434f94ae2">modificar</a>() throws RemoteException, ParseException</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        String correo = txtCorreo.getText();</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        String psw = txtPsw.getText();</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">if</span> (correo.equals(<span class="stringliteral">&quot;&quot;</span>) || psw.equals(<span class="stringliteral">&quot;&quot;</span>))</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="stringliteral">&quot;Introduzca los datos&quot;</span>);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        }</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <span class="keywordflow">if</span> (controller.<a class="code" href="class_controller_1_1_controller.html#aa63e3ef233ae571eb0d99acb1cc24a31">modificarCorreo</a>(j, correo, psw))</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="stringliteral">&quot;Cambios guardados&quot;</span>);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador.html">Principal_Jugador</a> p= <span class="keyword">new</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador.html">Principal_Jugador</a>(controller, j);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                p.setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            }</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        }</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_jugador_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_jugador.html">Aprendices_de_Josuka.LD.Jugador</a></div><div class="ttdef"><b>Definition:</b> <a href="_jugador_8java_source.html#l00025">Jugador.java:25</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___jugador_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___jugador.html">Aprendices_de_Josuka.LP.Clasificacion_Jugador</a></div><div class="ttdef"><b>Definition:</b> <a href="_clasificacion___jugador_8java_source.html#l00033">Clasificacion_Jugador.java:33</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_editar_datos_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html">Aprendices_de_Josuka.LP.EditarDatos</a></div><div class="ttdef"><b>Definition:</b> <a href="_editar_datos_8java_source.html#l00032">EditarDatos.java:32</a></div></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
+<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html#aeaccba49033f69d305549b1434f94ae2">  271</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html#aeaccba49033f69d305549b1434f94ae2">modificar</a>() throws RemoteException, ParseException</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        String correo = txtCorreo.getText();</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        String psw = txtPsw.getText();</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordflow">if</span> (correo.equals(<span class="stringliteral">&quot;&quot;</span>) || psw.equals(<span class="stringliteral">&quot;&quot;</span>))</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="stringliteral">&quot;Introduzca los datos&quot;</span>);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordflow">if</span> (controller.<a class="code" href="class_controller_1_1_controller.html#aa63e3ef233ae571eb0d99acb1cc24a31">modificarCorreo</a>(j, correo, psw))</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="stringliteral">&quot;Cambios guardados&quot;</span>);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador.html">Principal_Jugador</a> p= <span class="keyword">new</span> <a class="code" href="class_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador.html">Principal_Jugador</a>(controller, j);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                p.setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        }</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;}</div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_d_1_1_jugador_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_d_1_1_jugador.html">Aprendices_de_Josuka.LD.Jugador</a></div><div class="ttdoc">Esta clase define los objetos de tipo jugador.</div><div class="ttdef"><b>Definition:</b> <a href="_jugador_8java_source.html#l00026">Jugador.java:26</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___jugador_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_clasificacion___jugador.html">Aprendices_de_Josuka.LP.Clasificacion_Jugador</a></div><div class="ttdoc">En esta clase se desarrolla la GUI donde se muestra la clasificacion al jugador.</div><div class="ttdef"><b>Definition:</b> <a href="_clasificacion___jugador_8java_source.html#l00034">Clasificacion_Jugador.java:34</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_editar_datos_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html">Aprendices_de_Josuka.LP.EditarDatos</a></div><div class="ttdoc">En esta clase se desarrolla la GUI para que el jugador pueda modificar su correo o su contrasenya.</div><div class="ttdef"><b>Definition:</b> <a href="_editar_datos_8java_source.html#l00034">EditarDatos.java:35</a></div></div>
 <div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_editar_datos_html_a0baeb0a6fd11f2ac3178dc1dc7d7871c"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html#a0baeb0a6fd11f2ac3178dc1dc7d7871c">Aprendices_de_Josuka.LP.EditarDatos.initComponents</a></div><div class="ttdeci">void initComponents()</div><div class="ttdef"><b>Definition:</b> <a href="_editar_datos_8java_source.html#l00072">EditarDatos.java:72</a></div></div>
 <div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_editar_datos_html_a5ee38f8c1287cde52da1ab89fbaa17b8"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html#a5ee38f8c1287cde52da1ab89fbaa17b8">Aprendices_de_Josuka.LP.EditarDatos.EditarDatos</a></div><div class="ttdeci">EditarDatos(Controller controller, Jugador j)</div><div class="ttdef"><b>Definition:</b> <a href="_editar_datos_8java_source.html#l00062">EditarDatos.java:62</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_editar_datos_html_aeaccba49033f69d305549b1434f94ae2"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html#aeaccba49033f69d305549b1434f94ae2">Aprendices_de_Josuka.LP.EditarDatos.modificar</a></div><div class="ttdeci">void modificar()</div><div class="ttdef"><b>Definition:</b> <a href="_editar_datos_8java_source.html#l00292">EditarDatos.java:292</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_estadisticas_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas.html">Aprendices_de_Josuka.LP.Estadisticas</a></div><div class="ttdef"><b>Definition:</b> <a href="_estadisticas_8java_source.html#l00034">Estadisticas.java:34</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugador_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugador.html">Aprendices_de_Josuka.LP.FichaJugador</a></div><div class="ttdef"><b>Definition:</b> <a href="_ficha_jugador_8java_source.html#l00030">FichaJugador.java:30</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador.html">Aprendices_de_Josuka.LP.Principal_Jugador</a></div><div class="ttdef"><b>Definition:</b> <a href="_principal___jugador_8java_source.html#l00033">Principal_Jugador.java:33</a></div></div>
-<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos___jugador_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos___jugador.html">Aprendices_de_Josuka.LP.Visualizar_Equipos_Jugador</a></div><div class="ttdef"><b>Definition:</b> <a href="_visualizar___equipos___jugador_8java_source.html#l00031">Visualizar_Equipos_Jugador.java:31</a></div></div>
-<div class="ttc" id="aclass_controller_1_1_controller_html"><div class="ttname"><a href="class_controller_1_1_controller.html">Controller.Controller</a></div><div class="ttdef"><b>Definition:</b> <a href="_controller_8java_source.html#l00024">Controller.java:24</a></div></div>
-<div class="ttc" id="aclass_controller_1_1_controller_html_aa63e3ef233ae571eb0d99acb1cc24a31"><div class="ttname"><a href="class_controller_1_1_controller.html#aa63e3ef233ae571eb0d99acb1cc24a31">Controller.Controller.modificarCorreo</a></div><div class="ttdeci">boolean modificarCorreo(Jugador j, String correo, String psw)</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8java_source.html#l00091">Controller.java:91</a></div></div>
-<div class="ttc" id="anamespace_controller_html"><div class="ttname"><a href="namespace_controller.html">Controller</a></div><div class="ttdoc">Necesario para incorporar el patrón de diseño del controller.</div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_editar_datos_html_aeaccba49033f69d305549b1434f94ae2"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_editar_datos.html#aeaccba49033f69d305549b1434f94ae2">Aprendices_de_Josuka.LP.EditarDatos.modificar</a></div><div class="ttdeci">void modificar()</div><div class="ttdef"><b>Definition:</b> <a href="_editar_datos_8java_source.html#l00271">EditarDatos.java:271</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_estadisticas_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_estadisticas.html">Aprendices_de_Josuka.LP.Estadisticas</a></div><div class="ttdoc">En esta clase se desarrolla la GUI donde se muestran las estadisticas del jugador.</div><div class="ttdef"><b>Definition:</b> <a href="_estadisticas_8java_source.html#l00035">Estadisticas.java:35</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugador_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugador.html">Aprendices_de_Josuka.LP.FichaJugador</a></div><div class="ttdoc">En esta clase se desarrolla la GUI donde se muestra al jugador su ficha.</div><div class="ttdef"><b>Definition:</b> <a href="_ficha_jugador_8java_source.html#l00031">FichaJugador.java:31</a></div></div>
+<div class="ttc" id="aclass_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador_html"><div class="ttname"><a href="class_aprendices__de___josuka_1_1_l_p_1_1_principal___jugador.html">Aprendices_de_Josuka.LP.Principal_Jugador</a></div><div class="ttdoc">En esta clase se desarrolla la GUI que visualiza el jugador cuando abre la aplicacion despues de habe...</div><div class="ttdef"><b>Definition:</b> <a href="_principal___jugador_8java_source.html#l00034">Principal_Jugador.java:34</a></div></div>
+<div class="ttc" id="aclass_controller_1_1_controller_html"><div class="ttname"><a href="class_controller_1_1_controller.html">Controller.Controller</a></div><div class="ttdef"><b>Definition:</b> <a href="_controller_8java_source.html#l00026">Controller.java:26</a></div></div>
+<div class="ttc" id="aclass_controller_1_1_controller_html_aa63e3ef233ae571eb0d99acb1cc24a31"><div class="ttname"><a href="class_controller_1_1_controller.html#aa63e3ef233ae571eb0d99acb1cc24a31">Controller.Controller.modificarCorreo</a></div><div class="ttdeci">boolean modificarCorreo(Jugador j, String correo, String psw)</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8java_source.html#l00200">Controller.java:200</a></div></div>
+<div class="ttc" id="anamespace_controller_html"><div class="ttname"><a href="namespace_controller.html">Controller</a></div><div class="ttdoc">Necesario para incorporar el patron de diseño del controller.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

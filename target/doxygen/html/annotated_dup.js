@@ -52,16 +52,15 @@ var annotated_dup =
         [ "RegistrarMaterial", "class_aprendices__de___josuka_1_1_l_p_1_1_registrar_material.html", "class_aprendices__de___josuka_1_1_l_p_1_1_registrar_material" ],
         [ "Visualizar_Entrenadores", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___entrenadores.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___entrenadores" ],
         [ "Visualizar_Equipos", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos" ],
-        [ "Visualizar_Equipos_Jugador", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos___jugador.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos___jugador" ],
         [ "Visualizar_Jugadores", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___jugadores.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___jugadores" ],
         [ "Visualizar_Mis_Jugadores", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___mis___jugadores.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___mis___jugadores" ]
       ] ]
     ] ],
     [ "AprendicesDeJosukaPartidos", "namespace_aprendices_de_josuka_partidos.html", [
-      [ "AprendicesDeJosukaPartidos", "class_aprendices_de_josuka_partidos_1_1_aprendices_de_josuka_partidos.html", null ]
+      [ "AprendicesDeJosukaPartidos", "class_aprendices_de_josuka_partidos_1_1_aprendices_de_josuka_partidos.html", "class_aprendices_de_josuka_partidos_1_1_aprendices_de_josuka_partidos" ]
     ] ],
     [ "AprendicesDeJosukaSanciones", "namespace_aprendices_de_josuka_sanciones.html", [
-      [ "AprendicesDeJosukaSanciones", "class_aprendices_de_josuka_sanciones_1_1_aprendices_de_josuka_sanciones.html", null ]
+      [ "AprendicesDeJosukaSanciones", "class_aprendices_de_josuka_sanciones_1_1_aprendices_de_josuka_sanciones.html", "class_aprendices_de_josuka_sanciones_1_1_aprendices_de_josuka_sanciones" ]
     ] ],
     [ "Controller", "namespace_controller.html", [
       [ "Controller", "class_controller_1_1_controller.html", "class_controller_1_1_controller" ]
@@ -80,21 +79,21 @@ var annotated_dup =
     [ "python", "namespacepython.html", [
       [ "Partido", "namespacepython_1_1_partido.html", [
         [ "Equipo", "namespacepython_1_1_partido_1_1_equipo.html", [
-          [ "Equipo", "classpython_1_1_partido_1_1_equipo_1_1_equipo.html", null ]
+          [ "Equipo", "classpython_1_1_partido_1_1_equipo_1_1_equipo.html", "classpython_1_1_partido_1_1_equipo_1_1_equipo" ]
         ] ],
         [ "Partido", "namespacepython_1_1_partido_1_1_partido.html", [
           [ "Partido", "classpython_1_1_partido_1_1_partido_1_1_partido.html", "classpython_1_1_partido_1_1_partido_1_1_partido" ]
         ] ],
         [ "Sancion", "namespacepython_1_1_partido_1_1_sancion.html", [
-          [ "Sancion", "classpython_1_1_partido_1_1_sancion_1_1_sancion.html", null ]
+          [ "Sancion", "classpython_1_1_partido_1_1_sancion_1_1_sancion.html", "classpython_1_1_partido_1_1_sancion_1_1_sancion" ]
         ] ]
       ] ],
       [ "Partidos", "namespacepython_1_1_partidos.html", [
         [ "Interface_Partidos", "namespacepython_1_1_partidos_1_1_interface___partidos.html", [
-          [ "Interface_Partidos", "classpython_1_1_partidos_1_1_interface___partidos_1_1_interface___partidos.html", null ]
+          [ "Interface_Partidos", "classpython_1_1_partidos_1_1_interface___partidos_1_1_interface___partidos.html", "classpython_1_1_partidos_1_1_interface___partidos_1_1_interface___partidos" ]
         ] ],
         [ "Interface_Sanciones", "namespacepython_1_1_partidos_1_1_interface___sanciones.html", [
-          [ "Interface_Sanciones", "classpython_1_1_partidos_1_1_interface___sanciones_1_1_interface___sanciones.html", null ]
+          [ "Interface_Sanciones", "classpython_1_1_partidos_1_1_interface___sanciones_1_1_interface___sanciones.html", "classpython_1_1_partidos_1_1_interface___sanciones_1_1_interface___sanciones" ]
         ] ]
       ] ]
     ] ],

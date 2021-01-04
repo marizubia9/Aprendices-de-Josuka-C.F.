@@ -91,46 +91,51 @@ $(document).ready(function(){initNavTree('_sancion_8py_source.html',''); initRes
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">from</span> json <span class="keyword">import</span> JSONEncoder</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html">Sancion</a>():</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">clase donde se establecen los atributos de las sanciones</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span>  </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#aea0271ce710e1ed88b878be35eb01aa6">    8</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#aea0271ce710e1ed88b878be35eb01aa6">__init__</a>(self, code: str, tipo: str, dni: str, cod_partido: str):</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">def </span>__init__(self, code: str, tipo: str, dni: str, cod_partido: str):</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral">        Constructor</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        self.__code = code</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        self.__tipo = tipo</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        self.__dni = dni</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        self.__cod_partido = cod_partido</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        self.<a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a3f9273e84f633b475976770fbdd8c294">__code</a>__code = code</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        self.<a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a5115cc60ee89acbac10e7384bc3f4933">__tipo</a>__tipo = tipo</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        self.<a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#ae91664af988efe579df94fdf06239f57">__dni</a>__dni = dni</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        self.<a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a8f830f60eb136d7882150357ec2b0deb">__cod_partido</a>__cod_partido = cod_partido</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a3a8a1302142feaf34e9ba6e3f5a5fda6">   16</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a3a8a1302142feaf34e9ba6e3f5a5fda6">get_code</a>(self) -&gt; str:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a3f9273e84f633b475976770fbdd8c294">__code</a>__code</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">def </span>get_code(self) -&gt; str:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> self.__code</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">def </span>get_tipo(self) -&gt; str:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> self.__tipo</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">def </span>get_dni(self) -&gt; str:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">return</span> self.__dni</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">def </span>get_cod_partido(self) -&gt; str:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> self.__cod_partido</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">def </span>print (self) -&gt; None:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        print(<span class="stringliteral">&quot;Printing sancion\n&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;              <span class="stringliteral">&quot;Code: {} \n&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;              <span class="stringliteral">&quot;Tipo: {} \n&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;              <span class="stringliteral">&quot;Dni: {}\n&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;              <span class="stringliteral">&quot;Cod partido: {}\n&quot;</span>.format( self.get_code(), self.get_tipo(), self.get_dni(), self.get_cod_partido()))</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#afecae837c5e764659f3b5835a2efc428">   20</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#afecae837c5e764659f3b5835a2efc428">get_tipo</a>(self) -&gt; str:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a5115cc60ee89acbac10e7384bc3f4933">__tipo</a>__tipo</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#acd89c89d248666e9f22d0bc4225e82a6">   23</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#acd89c89d248666e9f22d0bc4225e82a6">get_dni</a>(self) -&gt; str:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#ae91664af988efe579df94fdf06239f57">__dni</a>__dni</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a59f55f54b35a8bddc3ff581dd25a4341">   26</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a59f55f54b35a8bddc3ff581dd25a4341">get_cod_partido</a>(self) -&gt; str:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a8f830f60eb136d7882150357ec2b0deb">__cod_partido</a>__cod_partido</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a0569dd06c8ad013dc4b964077ee926c9">   30</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a0569dd06c8ad013dc4b964077ee926c9">print</a> (self) -&gt; None:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a0569dd06c8ad013dc4b964077ee926c9">print</a>(<span class="stringliteral">&quot;Printing sancion\n&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;              <span class="stringliteral">&quot;Code: {} \n&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;              <span class="stringliteral">&quot;Tipo: {} \n&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;              <span class="stringliteral">&quot;Dni: {}\n&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;              <span class="stringliteral">&quot;Cod partido: {}\n&quot;</span>.format( self.<a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a3a8a1302142feaf34e9ba6e3f5a5fda6">get_code</a>get_code(), self.<a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#afecae837c5e764659f3b5835a2efc428">get_tipo</a>get_tipo(), self.<a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#acd89c89d248666e9f22d0bc4225e82a6">get_dni</a>get_dni(), self.<a class="code" href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a59f55f54b35a8bddc3ff581dd25a4341">get_cod_partido</a>get_cod_partido()))</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="ttc" id="aclasspython_1_1_partido_1_1_sancion_1_1_sancion_html"><div class="ttname"><a href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html">python.Partido.Sancion.Sancion</a></div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8py_source.html#l00005">Sancion.py:5</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_sancion_1_1_sancion_html_a0569dd06c8ad013dc4b964077ee926c9"><div class="ttname"><a href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a0569dd06c8ad013dc4b964077ee926c9">python.Partido.Sancion.Sancion.print</a></div><div class="ttdeci">None print(self)</div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8py_source.html#l00030">Sancion.py:30</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_sancion_1_1_sancion_html_a3a8a1302142feaf34e9ba6e3f5a5fda6"><div class="ttname"><a href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a3a8a1302142feaf34e9ba6e3f5a5fda6">python.Partido.Sancion.Sancion.get_code</a></div><div class="ttdeci">str get_code(self)</div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8py_source.html#l00016">Sancion.py:16</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_sancion_1_1_sancion_html_a3f9273e84f633b475976770fbdd8c294"><div class="ttname"><a href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a3f9273e84f633b475976770fbdd8c294">python.Partido.Sancion.Sancion.__code</a></div><div class="ttdeci">__code</div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8py_source.html#l00010">Sancion.py:10</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_sancion_1_1_sancion_html_a5115cc60ee89acbac10e7384bc3f4933"><div class="ttname"><a href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a5115cc60ee89acbac10e7384bc3f4933">python.Partido.Sancion.Sancion.__tipo</a></div><div class="ttdeci">__tipo</div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8py_source.html#l00011">Sancion.py:11</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_sancion_1_1_sancion_html_a59f55f54b35a8bddc3ff581dd25a4341"><div class="ttname"><a href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a59f55f54b35a8bddc3ff581dd25a4341">python.Partido.Sancion.Sancion.get_cod_partido</a></div><div class="ttdeci">str get_cod_partido(self)</div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8py_source.html#l00026">Sancion.py:26</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_sancion_1_1_sancion_html_a8f830f60eb136d7882150357ec2b0deb"><div class="ttname"><a href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#a8f830f60eb136d7882150357ec2b0deb">python.Partido.Sancion.Sancion.__cod_partido</a></div><div class="ttdeci">__cod_partido</div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8py_source.html#l00013">Sancion.py:13</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_sancion_1_1_sancion_html_acd89c89d248666e9f22d0bc4225e82a6"><div class="ttname"><a href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#acd89c89d248666e9f22d0bc4225e82a6">python.Partido.Sancion.Sancion.get_dni</a></div><div class="ttdeci">str get_dni(self)</div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8py_source.html#l00023">Sancion.py:23</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_sancion_1_1_sancion_html_ae91664af988efe579df94fdf06239f57"><div class="ttname"><a href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#ae91664af988efe579df94fdf06239f57">python.Partido.Sancion.Sancion.__dni</a></div><div class="ttdeci">__dni</div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8py_source.html#l00012">Sancion.py:12</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_sancion_1_1_sancion_html_aea0271ce710e1ed88b878be35eb01aa6"><div class="ttname"><a href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#aea0271ce710e1ed88b878be35eb01aa6">python.Partido.Sancion.Sancion.__init__</a></div><div class="ttdeci">def __init__(self, str code, str tipo, str dni, str cod_partido)</div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8py_source.html#l00008">Sancion.py:8</a></div></div>
+<div class="ttc" id="aclasspython_1_1_partido_1_1_sancion_1_1_sancion_html_afecae837c5e764659f3b5835a2efc428"><div class="ttname"><a href="classpython_1_1_partido_1_1_sancion_1_1_sancion.html#afecae837c5e764659f3b5835a2efc428">python.Partido.Sancion.Sancion.get_tipo</a></div><div class="ttdeci">str get_tipo(self)</div><div class="ttdef"><b>Definition:</b> <a href="_sancion_8py_source.html#l00020">Sancion.py:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

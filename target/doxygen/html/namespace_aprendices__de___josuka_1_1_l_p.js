@@ -31,7 +31,6 @@ var namespace_aprendices__de___josuka_1_1_l_p =
     [ "RegistrarMaterial", "class_aprendices__de___josuka_1_1_l_p_1_1_registrar_material.html", "class_aprendices__de___josuka_1_1_l_p_1_1_registrar_material" ],
     [ "Visualizar_Entrenadores", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___entrenadores.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___entrenadores" ],
     [ "Visualizar_Equipos", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos" ],
-    [ "Visualizar_Equipos_Jugador", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos___jugador.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___equipos___jugador" ],
     [ "Visualizar_Jugadores", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___jugadores.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___jugadores" ],
     [ "Visualizar_Mis_Jugadores", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___mis___jugadores.html", "class_aprendices__de___josuka_1_1_l_p_1_1_visualizar___mis___jugadores" ]
 ];

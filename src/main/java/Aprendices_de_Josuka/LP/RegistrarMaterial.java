@@ -151,7 +151,7 @@ public class RegistrarMaterial extends JFrame {
 		btnHome.setBounds(0, 0, 328, 42);
 		panel_izquierdo.add(btnHome);
 		
-		btnAnyadirEquipo = new JButton("AÑADIR EQUIPO");
+		btnAnyadirEquipo = new JButton("ANADIR EQUIPO");
 		btnAnyadirEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -190,7 +190,7 @@ public class RegistrarMaterial extends JFrame {
 		btnClasificacion.setBounds(0, 364, 328, 42);
 		panel_izquierdo.add(btnClasificacion);
 		
-		btnAnyadirInventario = new JButton("AÑADIR INVENTARIO");
+		btnAnyadirInventario = new JButton("ANADIR INVENTARIO");
 		btnAnyadirInventario.setEnabled(false);
 		btnAnyadirInventario.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAnyadirInventario.setForeground(Color.WHITE);

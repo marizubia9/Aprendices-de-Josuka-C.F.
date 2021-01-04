@@ -38,9 +38,6 @@ public class Visualizar_Entrenadores extends JFrame {
 	private JPanel panel_central;
 	private List<Entrenador> ListaEntrenadores;
 	private Controller controller;
-
-
-	private List<String> jugadores_lista;
 	private JPanel panel_izquierdo;
 	private JButton btnHome;
 	private JButton btnAnyadirEquipo;
@@ -106,7 +103,7 @@ public class Visualizar_Entrenadores extends JFrame {
 		lblListaEntrenadores.setBounds(360, 39, 360, 38);
 		panel_central.add(lblListaEntrenadores);
 
-		jugadores_lista = new ArrayList<String>();
+		new ArrayList<String>();
 		ListaEntrenadores = new ArrayList<>();
 		
 		panel_izquierdo = new JPanel();

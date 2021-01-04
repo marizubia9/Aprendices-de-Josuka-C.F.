@@ -123,12 +123,10 @@ var NAVTREEINDEX0 =
 "_visualizar___entrenadores_8java_source.html":[2,0,0,0,0,0,1,29],
 "_visualizar___equipos_8java.html":[2,0,0,0,0,0,1,30],
 "_visualizar___equipos_8java_source.html":[2,0,0,0,0,0,1,30],
-"_visualizar___equipos___jugador_8java.html":[2,0,0,0,0,0,1,31],
-"_visualizar___equipos___jugador_8java_source.html":[2,0,0,0,0,0,1,31],
-"_visualizar___jugadores_8java.html":[2,0,0,0,0,0,1,32],
-"_visualizar___jugadores_8java_source.html":[2,0,0,0,0,0,1,32],
-"_visualizar___mis___jugadores_8java.html":[2,0,0,0,0,0,1,33],
-"_visualizar___mis___jugadores_8java_source.html":[2,0,0,0,0,0,1,33],
+"_visualizar___jugadores_8java.html":[2,0,0,0,0,0,1,31],
+"_visualizar___jugadores_8java_source.html":[2,0,0,0,0,0,1,31],
+"_visualizar___mis___jugadores_8java.html":[2,0,0,0,0,0,1,32],
+"_visualizar___mis___jugadores_8java_source.html":[2,0,0,0,0,0,1,32],
 "annotated.html":[1,0],
 "class_aprendices__de___josuka_1_1_aprendices__de___josuka_1_1test_d_a_o.html":[1,0,0,0,0],
 "class_aprendices__de___josuka_1_1_aprendices__de___josuka_1_1test_d_a_o.html#a08d369721e878a979fd1ac641bba9fb0":[1,0,0,0,0,5],
@@ -249,5 +247,7 @@ var NAVTREEINDEX0 =
 "class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugador.html":[1,0,0,2,12],
 "class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugador.html#a77a8422abf666fbb1505d6ecbd8bd933":[1,0,0,2,12,1],
 "class_aprendices__de___josuka_1_1_l_p_1_1_ficha_jugador.html#a80a4e1cece26844dc1eac4a745754867":[1,0,0,2,12,0],
-"class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion.html":[1,0,0,2,13]
+"class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion.html":[1,0,0,2,13],
+"class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion.html#a37c56319a3dd53e7afa747dd89f6bcd6":[1,0,0,2,13,1],
+"class_aprendices__de___josuka_1_1_l_p_1_1_iniciar_sesion.html#a4d854625e89e1e0bb9cff2a88be87e30":[1,0,0,2,13,0]
 };

@@ -24,7 +24,6 @@ public class Panel_Entrenador extends JPanel {
 	 * @param e
 	 */
 	public Panel_Entrenador(Entrenador e) {
-		System.out.println("entro al constructor");
 		entrenador=e;
 		Introducir_Datos();
 	}

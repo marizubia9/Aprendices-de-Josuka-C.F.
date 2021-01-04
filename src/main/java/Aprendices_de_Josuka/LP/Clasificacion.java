@@ -23,12 +23,16 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import java.awt.GridBagLayout;
 
-
+/**
+ * @class Clasificacion
+ * @brief En esta clase se desarrolla la GUI donde se muestra la clasificacion al administrador
+ * @author Alumno
+ *
+ */
 public class Clasificacion  extends JFrame {
 
 	private JPanel contentPane;
 	private JLabel txtLosAprendicesDe;
-	private JPanel panel_central;
 	private List<Equipos_Ext> ListaEquipos;
 
 	private JButton btnAnyadirEquipo;
@@ -66,7 +70,10 @@ public class Clasificacion  extends JFrame {
 		initComponents();
 		this.setVisible(true);
 	}
-
+	/**
+	 * Se inicializan los componentes
+	 * @throws ParseException
+	 */
 	public void initComponents() throws ParseException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 1300, 740);
@@ -105,7 +112,7 @@ public class Clasificacion  extends JFrame {
 		panel_izquierdo.setBounds(0, 0, 328, 528);
 		panel_central.add(panel_izquierdo);
 		
-		comboCategoria = new JComboBox();
+		comboCategoria = new JComboBox<Categoria>();
 		comboCategoria.addItem(Categoria.ALEVIN);
 		comboCategoria.addItem(Categoria.INFANTIL);
 		comboCategoria.addItem(Categoria.CADETE);
@@ -135,7 +142,21 @@ public class Clasificacion  extends JFrame {
 		panel_central.add(btnGO);
 		
 		btnHome = new JButton("HOME");
-		btnHome.setEnabled(false);
+		btnHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				
+				Principal_Administrador r = null;
+				try {
+					r = new Principal_Administrador(controller);
+				} catch (RemoteException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				r.setVisible(true);
+				setVisible(false);
+			}
+		});
 		btnHome.setHorizontalAlignment(SwingConstants.LEFT);
 		btnHome.setForeground(Color.WHITE);
 		btnHome.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -273,21 +294,7 @@ public class Clasificacion  extends JFrame {
 		panel_izquierdo.add(btnEditarJugador);
 		
 		btnClasificacion = new JButton("VER CLASIFICACION");
-		btnClasificacion.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				
-				Clasificacion r = null;
-				try {
-					r = new Clasificacion(controller);
-				} catch (ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				r.setVisible(true);
-				setVisible(false);
-			}
-		});
+		btnClasificacion.setEnabled(false);
 		btnClasificacion.setHorizontalAlignment(SwingConstants.LEFT);
 		btnClasificacion.setForeground(Color.WHITE);
 		btnClasificacion.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
@@ -338,8 +345,11 @@ public class Clasificacion  extends JFrame {
 		pScrollPane.setLayout(gbl_pScrollPane);
 		InsertarJPanel();
 	}
-
-	
+	/**
+	 * Se insertan las sanciones en un JPanel
+	 * @throws ParseException
+	 * @throws RemoteException
+	 */
 	public void InsertarJPanel() throws ParseException {
 		pScrollPane.removeAll();
 		int x = 0;

@@ -1,5 +1,10 @@
 \hypertarget{interface_fachada_1_1itf_fachada}{}\doxysection{Referencia de la Interfaz Fachada.\+itf\+Fachada}
 \label{interface_fachada_1_1itf_fachada}\index{Fachada.itfFachada@{Fachada.itfFachada}}
+
+
+interfaz que contiene todos los métodos que implementará el servidor  
+
+
 Diagrama de herencias de Fachada.\+itf\+Fachada\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -83,14 +88,19 @@ void \mbox{\hyperlink{interface_fachada_1_1itf_fachada_a25bd0decc4d950b30db80ab6
 \item 
 List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$ \mbox{\hyperlink{interface_fachada_1_1itf_fachada_ac76969b4c4bf0491f7ff659bcbe82813}{equipo\+Jugadores}} (\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}} e)  throws Remote\+Exception
 \item 
-List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext}{Equipos\+\_\+\+Ext}} $>$ \mbox{\hyperlink{interface_fachada_1_1itf_fachada_a996b99be8bf114e4c6b2d3989903094d}{clasificacion}} (\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}} cat)  throws Remote\+Exception, org.\+json.\+simple.\+parser.\+Parse\+Exception
+List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext}{Equipos\+\_\+\+Ext}} $>$ \mbox{\hyperlink{interface_fachada_1_1itf_fachada_a996b99be8bf114e4c6b2d3989903094d}{clasificacion}} (\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}} cat)  throws Remote\+Exception, Parse\+Exception
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Descripción detallada}
+interfaz que contiene todos los métodos que implementará el servidor 
+
+\begin{DoxyAuthor}{Autor}
+Alumno 
+\end{DoxyAuthor}
 
 
-Definición en la línea 20 del archivo itf\+Fachada.\+java.
+Definición en la línea 25 del archivo itf\+Fachada.\+java.
 
 
 
@@ -101,6 +111,21 @@ Definición en la línea 20 del archivo itf\+Fachada.\+java.
 \doxysubsubsection{\texorpdfstring{ActualizarEntrenador()}{ActualizarEntrenador()}}
 {\footnotesize\ttfamily boolean Fachada.\+itf\+Fachada.\+Actualizar\+Entrenador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}}]{e,  }\item[{long}]{salario }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Mediante este método se actualizará el salario de un entrenador 
+\begin{DoxyParams}{Parámetros}
+{\em e} & entrenador al que se le actualizarán los datos \\
+\hline
+{\em salario} & nuevo salario \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+devuelve true si se ha modificado correctamente 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a4b1c305ab7f1db46b564e38b35ecb8bb}{Fachada.\+Servidor\+Principal}}.
@@ -111,6 +136,20 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a4b1c305ab
 \doxysubsubsection{\texorpdfstring{ActualizarEquipo()}{ActualizarEquipo()}}
 {\footnotesize\ttfamily void Fachada.\+itf\+Fachada.\+Actualizar\+Equipo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}}]{equipo,  }\item[{Hash\+Map$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}}, Integer $>$}]{inventario,  }\item[{List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$}]{jugadores }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Método mediante la cual se actualizan los datos de un equipo 
+\begin{DoxyParams}{Parámetros}
+{\em equipo} & al cual se le modificarán los datos \\
+\hline
+{\em inventario} & nuevo inventario \\
+\hline
+{\em jugadores} & nuevos jugadores \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a37535ed64717dd8712d45aeaaf196100}{Fachada.\+Servidor\+Principal}}.
@@ -121,6 +160,16 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a37535ed64
 \doxysubsubsection{\texorpdfstring{ActualizarEquipoEntrenador()}{ActualizarEquipoEntrenador()}}
 {\footnotesize\ttfamily void Fachada.\+itf\+Fachada.\+Actualizar\+Equipo\+Entrenador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}}]{ent }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Mediante este método se actualizan los entrenadores, estableciendo así su asignación 
+\begin{DoxyParams}{Parámetros}
+{\em ent} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_ae618ff44fcaca57362d4cb8d93919e32}{Fachada.\+Servidor\+Principal}}.
@@ -131,6 +180,25 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_ae618ff44f
 \doxysubsubsection{\texorpdfstring{ActualizarJugador()}{ActualizarJugador()}}
 {\footnotesize\ttfamily boolean Fachada.\+itf\+Fachada.\+Actualizar\+Jugador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}}]{e,  }\item[{boolean}]{reconocimiento,  }\item[{boolean}]{lesionado,  }\item[{boolean}]{cuota }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Método para actualizar el estado del jugador, tanto médico como de su cuota 
+\begin{DoxyParams}{Parámetros}
+{\em e} & jugador al que se le actualizarán los datos \\
+\hline
+{\em reconocimiento} & si ha superado el reconocimiento médico o no \\
+\hline
+{\em lesionado} & si esta lesionado o no \\
+\hline
+{\em cuota} & si ha pagado la cuota o no \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+devuelve true si se ha modificado correctamente 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a2c8f79d3503fd5f7624393a37992502a}{Fachada.\+Servidor\+Principal}}.
@@ -141,6 +209,16 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a2c8f79d35
 \doxysubsubsection{\texorpdfstring{ActualizarJugadorEquipo()}{ActualizarJugadorEquipo()}}
 {\footnotesize\ttfamily void Fachada.\+itf\+Fachada.\+Actualizar\+Jugador\+Equipo (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}} $>$}]{lista\+\_\+\+Jugadores }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Cuando un equipo se crea y se añaden jugadores a este, se ejecuta este metodo para actualizar el estado de los jugadores a ASIGNADO 
+\begin{DoxyParams}{Parámetros}
+{\em lista\+\_\+\+Jugadores} & jugadores a los que se les actualizará el estado \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a49f30748873b082024b549ea4952fb41}{Fachada.\+Servidor\+Principal}}.
@@ -151,6 +229,20 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a49f307488
 \doxysubsubsection{\texorpdfstring{ActualizarMaterial()}{ActualizarMaterial()}}
 {\footnotesize\ttfamily void Fachada.\+itf\+Fachada.\+Actualizar\+Material (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_tipo___material}{Tipo\+\_\+\+Material}}}]{tipo,  }\item[{int}]{cantidad,  }\item[{long}]{precio }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Este método sirve para modificar el material 
+\begin{DoxyParams}{Parámetros}
+{\em tipo} & de material \\
+\hline
+{\em cantidad} & \\
+\hline
+{\em precio} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a9850beeafa0582e59f4c595c9b46a890}{Fachada.\+Servidor\+Principal}}.
@@ -161,6 +253,16 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a9850beeaf
 \doxysubsubsection{\texorpdfstring{AsignarInventario()}{AsignarInventario()}}
 {\footnotesize\ttfamily void Fachada.\+itf\+Fachada.\+Asignar\+Inventario (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}}}]{m }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Cuando se asigna un material a un equipo, hay que reducir el inventario del club. Es lo que se hace en este método mediante la conexión a la base de datos 
+\begin{DoxyParams}{Parámetros}
+{\em m} & material a modificar \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a3a2e2aaccb0e87c9a2a2914934070698}{Fachada.\+Servidor\+Principal}}.
@@ -169,7 +271,7 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a3a2e2aacc
 \index{Fachada.itfFachada@{Fachada.itfFachada}!clasificacion@{clasificacion}}
 \index{clasificacion@{clasificacion}!Fachada.itfFachada@{Fachada.itfFachada}}
 \doxysubsubsection{\texorpdfstring{clasificacion()}{clasificacion()}}
-{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext}{Equipos\+\_\+\+Ext}}$>$ Fachada.\+itf\+Fachada.\+clasificacion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}}}]{cat }\end{DoxyParamCaption}) throws Remote\+Exception, org.\+json.\+simple.\+parser.\+Parse\+Exception}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipos___ext}{Equipos\+\_\+\+Ext}}$>$ Fachada.\+itf\+Fachada.\+clasificacion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}}}]{cat }\end{DoxyParamCaption}) throws Remote\+Exception, Parse\+Exception}
 
 Devuelve una lista ordenada de los equipos de la liga según la categoria para hacer clasificación 
 \begin{DoxyParams}{Parámetros}
@@ -271,6 +373,19 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a657154979
 \doxysubsubsection{\texorpdfstring{equipoEntrenador()}{equipoEntrenador()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}} Fachada.\+itf\+Fachada.\+equipo\+Entrenador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}}]{e }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Mediante este método se obtiene el entrenador asignado a un equipo concreto 
+\begin{DoxyParams}{Parámetros}
+{\em e} & el equipo en cuestión \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+devuelve el entrenador 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a6a9917a0a14f36f439d58160815ad224}{Fachada.\+Servidor\+Principal}}.
@@ -281,6 +396,19 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a6a9917a0a
 \doxysubsubsection{\texorpdfstring{equipoJugadores()}{equipoJugadores()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}$>$ Fachada.\+itf\+Fachada.\+equipo\+Jugadores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}}]{e }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Este método sirve para obtener los DNIs de los jugadores asignados a un equipo 
+\begin{DoxyParams}{Parámetros}
+{\em e} & el equipo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+devuelve la lista de jugadores 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a285d231b31d82fa291cf9fd14e52c144}{Fachada.\+Servidor\+Principal}}.
@@ -291,6 +419,19 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a285d231b3
 \doxysubsubsection{\texorpdfstring{getEdad()}{getEdad()}}
 {\footnotesize\ttfamily int Fachada.\+itf\+Fachada.\+get\+Edad (\begin{DoxyParamCaption}\item[{String}]{date }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Calcula la edad en base a una fecha, para así clasificar los jugadores en categorias 
+\begin{DoxyParams}{Parámetros}
+{\em date} & fecha de nacimiento \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+devuelve años 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a2019264d326f4a3e31ea4adab305e7df}{Fachada.\+Servidor\+Principal}}.
@@ -326,6 +467,14 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a4c11a8cff
 \doxysubsubsection{\texorpdfstring{getEntrenador()}{getEntrenador()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}$>$ Fachada.\+itf\+Fachada.\+get\+Entrenador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Método para obtener todos los entrenadores almacenados en la base de datos \begin{DoxyReturn}{Devuelve}
+devuelve lista de entrenadores 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a74a25a42a40e709ee877eab2cd572d2a}{Fachada.\+Servidor\+Principal}}.
@@ -336,6 +485,14 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a74a25a42a
 \doxysubsubsection{\texorpdfstring{getEquipos()}{getEquipos()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}$>$ Fachada.\+itf\+Fachada.\+get\+Equipos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Mediante este método se obtienen todos los equipos de la base de datos que pertenecen al club \begin{DoxyReturn}{Devuelve}
+lista de equipos 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a3a20a324d435bef15c21b706804c57db}{Fachada.\+Servidor\+Principal}}.
@@ -346,6 +503,19 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a3a20a324d
 \doxysubsubsection{\texorpdfstring{getEquiposFilter()}{getEquiposFilter()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_equipo}{Equipo}}$>$ Fachada.\+itf\+Fachada.\+get\+Equipos\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_aprendices__de___josuka_1_1_l_d_1_1_categoria}{Categoria}}}]{cat }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Es un método mediante la cual se filtran los equipos dependiendo de la categoria 
+\begin{DoxyParams}{Parámetros}
+{\em cat} & categoria por la cual se filtrará \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+lista filtrada 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_abff93110e99acc1da4b143b6b5419754}{Fachada.\+Servidor\+Principal}}.
@@ -399,6 +569,14 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a1f88dce9e
 \doxysubsubsection{\texorpdfstring{getMaterial()}{getMaterial()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_material}{Material}}$>$ Fachada.\+itf\+Fachada.\+get\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Obtiene la lista de materiales desde la base de datos \begin{DoxyReturn}{Devuelve}
+devuelve la lista 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a5170c3dbac763e9d021fc9c4ad670294}{Fachada.\+Servidor\+Principal}}.
@@ -429,6 +607,21 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_aefe03a816
 \doxysubsubsection{\texorpdfstring{getRanking()}{getRanking()}}
 {\footnotesize\ttfamily int Fachada.\+itf\+Fachada.\+get\+Ranking (\begin{DoxyParamCaption}\item[{String}]{dni }\end{DoxyParamCaption}) throws Parse\+Exception, Remote\+Exception}
 
+Método para calcular el puesto en el que se encuentra un equipo 
+\begin{DoxyParams}{Parámetros}
+{\em dni} & del jugador/entrenador del cual se quiere conocer el ranking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+devuelve el número del puesto 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Parse\+Exception} & \\
+\hline
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a2a47b864078c3cef4782f8378cb873c3}{Fachada.\+Servidor\+Principal}}.
@@ -439,6 +632,23 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a2a47b8640
 \doxysubsubsection{\texorpdfstring{jugadorPartido()}{jugadorPartido()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}}$>$ Fachada.\+itf\+Fachada.\+jugador\+Partido (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_partido}{Partido}} $>$}]{partidos,  }\item[{String}]{DNI }\end{DoxyParamCaption}) throws Remote\+Exception, Parse\+Exception}
 
+Con este método se obtienen los partidos de un jugador 
+\begin{DoxyParams}{Parámetros}
+{\em partidos} & lista de todos los partidos \\
+\hline
+{\em DNI} & del jugador del cual se quieren conocer sus partidos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+devuelve lista de partidos 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+{\em Parse\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_ada94310d530c8cdd5b0d69bd38227a5d}{Fachada.\+Servidor\+Principal}}.
@@ -499,6 +709,23 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_ac260e5d79
 \doxysubsubsection{\texorpdfstring{modificarCorreoEntrenador()}{modificarCorreoEntrenador()}}
 {\footnotesize\ttfamily boolean Fachada.\+itf\+Fachada.\+modificar\+Correo\+Entrenador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_entrenador}{Entrenador}}}]{j,  }\item[{String}]{correo,  }\item[{String}]{psw }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Mediante este método se modifican el correo y la contraseña del entrenador 
+\begin{DoxyParams}{Parámetros}
+{\em j} & el objeto entrenador a modificar \\
+\hline
+{\em correo} & \\
+\hline
+{\em psw} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+devuelve un true si la modificación se realiza con éxito 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a65d91484642c586490bb2669db669811}{Fachada.\+Servidor\+Principal}}.
@@ -532,6 +759,19 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a99b4645ae
 \doxysubsubsection{\texorpdfstring{ObtenerEquipoEntrenador()}{ObtenerEquipoEntrenador()}}
 {\footnotesize\ttfamily String Fachada.\+itf\+Fachada.\+Obtener\+Equipo\+Entrenador (\begin{DoxyParamCaption}\item[{String}]{entrenador }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Mediante este método se obtiene el equipo asignado al entrenador 
+\begin{DoxyParams}{Parámetros}
+{\em entrenador} & dni del entrenador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+devuelve el nombre del equipo 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a63e1662119f68be8a019234624df69e4}{Fachada.\+Servidor\+Principal}}.
@@ -542,6 +782,19 @@ Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a63e166211
 \doxysubsubsection{\texorpdfstring{ObtenerEquipoJugador()}{ObtenerEquipoJugador()}}
 {\footnotesize\ttfamily String Fachada.\+itf\+Fachada.\+Obtener\+Equipo\+Jugador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aprendices__de___josuka_1_1_l_d_1_1_jugador}{Jugador}}}]{jugador }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+Obtiene, mediante este metodo, el equipo en el que juega un jugador 
+\begin{DoxyParams}{Parámetros}
+{\em jugador} & el jugador en cuestión \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+devuelve el nombre del equipo 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implementado en \mbox{\hyperlink{class_fachada_1_1_servidor_principal_a8cd85c379d94f492e2bb5f301daa59fe}{Fachada.\+Servidor\+Principal}}.

@@ -5,8 +5,6 @@
  */
 package DAO;
 
-import java.rmi.RemoteException;
-import java.security.KeyFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,8 +14,6 @@ import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
-
-import com.google.inject.Key;
 
 import Aprendices_de_Josuka.LD.Administrador;
 import Aprendices_de_Josuka.LD.Entrenador;
@@ -46,7 +42,7 @@ public class DAO {
 		transaction = persistentManager.currentTransaction();
 	}
 	/**
-	 * Constructor
+	 * Patrón singleton
 	 * @return un new del DAO
 	 */
 	public static DAO getInstance() {
@@ -58,7 +54,6 @@ public class DAO {
 	 * @param objeto
 	 * @return un boolean que informa sobre si el objeto se ha guardado correctamente (true) o no (false)
 	 */
-	@SuppressWarnings("unchecked")
 	public boolean guardarObjeto(Object objeto) {
 		try {
 			if (objeto instanceof Jugador) {

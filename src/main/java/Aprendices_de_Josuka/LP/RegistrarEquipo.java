@@ -50,8 +50,6 @@ public class RegistrarEquipo extends JFrame {
 	private List<Entrenador> ListaEntrenador;
 	private JComboBox<String> comboEntrenador;
 	private JLabel lblJugadores;
-	private JList<String> listaJugadores1;
-	private JPanel panel_scrollpane;
 	private JButton btnAnyadirJugador;
 	private JButton btnMostrarJugadores;
 	private JPanel panel_central;
