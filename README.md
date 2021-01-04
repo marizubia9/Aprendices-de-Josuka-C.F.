@@ -4,6 +4,8 @@ Proyecto realizado por cuatro estudiantes de la Universidad de Deusto en la asig
 Consiste en una aplicación doble del tipo cliente servidor, donde se ejecuta un servicio externo programado en python al que se conecta mediante Jersey. 
 Por otro lado, está el servidor y la parte cliente de la club de fútbol cuya conexión se realiza mediante RMI.
 
+![Aprendices de Josuka](https://github.com/marizubia9/Aprendices-de-Josuka-C.F./tree/main/src/main/resources/logo.png)
+
 Autores: 
 - Eider Albarracín Arbilla
 - Maider Dorronsoro Aldaz
